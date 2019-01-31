@@ -27,7 +27,7 @@
                                             <constraint firstAttribute="width" secondItem="PeW-eg-9HV" secondAttribute="height" multiplier="683:404" id="hCv-WH-JGP"/>
                                         </constraints>
                                     </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="container_with_letters" translatesAutoresizingMaskIntoConstraints="NO" id="ISy-aB-qyd">
+                                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="container_with_letters" translatesAutoresizingMaskIntoConstraints="NO" id="ISy-aB-qyd">
                                         <rect key="frame" x="200" y="20" width="1006" height="119"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="119" id="AJb-Hb-viv"/>
@@ -126,6 +126,29 @@
                                             <action selector="noteG:" destination="BYZ-38-t0r" eventType="touchUpInside" id="M15-Pj-T75"/>
                                         </connections>
                                     </button>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="score" translatesAutoresizingMaskIntoConstraints="NO" id="mS9-aU-D0p">
+                                        <rect key="frame" x="50" y="754" width="372" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="372" id="8Sd-NA-M96"/>
+                                            <constraint firstAttribute="height" constant="44" id="VAe-wz-xZT"/>
+                                        </constraints>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="stars0" translatesAutoresizingMaskIntoConstraints="NO" id="fee-2h-mBH">
+                                        <rect key="frame" x="983" y="754" width="373" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="373" id="hpO-B8-lrH"/>
+                                            <constraint firstAttribute="height" constant="44" id="z1K-pa-OOJ"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sBK-js-cjK">
+                                        <rect key="frame" x="318" y="741" width="144" height="49"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="41"/>
+                                        <color key="textColor" red="0.50196078431372548" green="0.95686274509803915" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                        <color key="shadowColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <size key="shadowOffset" width="1" height="1"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -142,6 +165,7 @@
                                     <constraint firstItem="ISy-aB-qyd" firstAttribute="top" secondItem="JI7-xy-e6Q" secondAttribute="top" constant="20" id="UKe-ps-OKu"/>
                                     <constraint firstItem="PeW-eg-9HV" firstAttribute="centerX" secondItem="ISy-aB-qyd" secondAttribute="centerX" id="VR0-oo-WkO"/>
                                     <constraint firstItem="YCd-Zs-4kT" firstAttribute="centerX" secondItem="JI7-xy-e6Q" secondAttribute="centerX" id="YJ3-jG-E1M"/>
+                                    <constraint firstItem="mS9-aU-D0p" firstAttribute="leading" secondItem="JI7-xy-e6Q" secondAttribute="leading" constant="50" id="YN6-a1-0nM"/>
                                     <constraint firstItem="ucd-Eh-NI4" firstAttribute="width" secondItem="ucd-Eh-NI4" secondAttribute="height" multiplier="1:1" id="b4R-8Z-zz9"/>
                                     <constraint firstItem="R7e-Tw-SC2" firstAttribute="centerY" secondItem="ISy-aB-qyd" secondAttribute="centerY" id="fjX-Cl-PYF"/>
                                     <constraint firstItem="Cpq-fy-UKY" firstAttribute="centerY" secondItem="ISy-aB-qyd" secondAttribute="centerY" id="gz2-Bl-UNe"/>
@@ -152,6 +176,9 @@
                                     <constraint firstItem="PEp-9J-Ifz" firstAttribute="centerY" secondItem="ISy-aB-qyd" secondAttribute="centerY" id="ldX-jX-KSv"/>
                                     <constraint firstItem="zPC-OD-elJ" firstAttribute="centerY" secondItem="ISy-aB-qyd" secondAttribute="centerY" id="mgZ-DS-ERX"/>
                                     <constraint firstItem="YCd-Zs-4kT" firstAttribute="centerY" secondItem="ISy-aB-qyd" secondAttribute="centerY" id="npU-g9-EVZ"/>
+                                    <constraint firstAttribute="bottom" secondItem="mS9-aU-D0p" secondAttribute="bottom" constant="50" id="sDU-MF-6f5"/>
+                                    <constraint firstAttribute="bottom" secondItem="fee-2h-mBH" secondAttribute="bottom" constant="50" id="vbQ-u7-w6l"/>
+                                    <constraint firstAttribute="trailing" secondItem="fee-2h-mBH" secondAttribute="trailing" constant="50" id="zxe-Bj-ORa"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -172,11 +199,12 @@
                         <outlet property="noteButtonF" destination="PEp-9J-Ifz" id="jWq-t6-OOk"/>
                         <outlet property="noteButtonG" destination="zPC-OD-elJ" id="p89-Mr-19y"/>
                         <outlet property="pianoImage" destination="PeW-eg-9HV" id="aHr-fh-2dz"/>
+                        <outlet property="scoreLabel" destination="sBK-js-cjK" id="lwG-mi-Vee"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="69.7265625" y="110.68814055636895"/>
+            <point key="canvasLocation" x="69.399707174231324" y="110.15625"/>
         </scene>
     </scenes>
     <resources>
@@ -195,6 +223,8 @@
         <image name="G_default" width="220" height="220"/>
         <image name="G_pressed" width="220" height="220"/>
         <image name="container_with_letters" width="2012" height="238"/>
+        <image name="score" width="744" height="88"/>
+        <image name="stars0" width="746" height="88"/>
         <image name="white_piano_12.9_large" width="2732" height="1616"/>
     </resources>
 </document>
