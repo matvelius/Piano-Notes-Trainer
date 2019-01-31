@@ -72,6 +72,7 @@ class ViewController: UIViewController {
         // placeholder variable for button image name
         var imageName = ""
         
+        // right answer
         if currentUserAnswer == currentCorrectAnswer {
             
             // show result (green button)
@@ -89,7 +90,7 @@ class ViewController: UIViewController {
                 self.enableButtons()
             })
             
-            
+        // wrong answer
         } else {
             
             // color button red
@@ -99,6 +100,7 @@ class ViewController: UIViewController {
             
             if totalScore > 0 {
                 totalScore -= 1
+                // flash red FF3939
             }
             
         }
