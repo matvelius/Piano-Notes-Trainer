@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D71E3D0C2205EA8E0001F995 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D71E3D0B2205EA8E0001F995 /* AVFoundation.framework */; };
+		D71E3D45220622430001F995 /* note.wav in Resources */ = {isa = PBXBuildFile; fileRef = D71E3D44220622430001F995 /* note.wav */; };
+		D71E3D47220622C50001F995 /* note.aif in Resources */ = {isa = PBXBuildFile; fileRef = D71E3D46220622C50001F995 /* note.aif */; };
 		D777C81822009DDB00FA472E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D777C81722009DDB00FA472E /* AppDelegate.swift */; };
 		D777C81A22009DDB00FA472E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D777C81922009DDB00FA472E /* ViewController.swift */; };
 		D777C81D22009DDB00FA472E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D777C81B22009DDB00FA472E /* Main.storyboard */; };
@@ -15,6 +18,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D71E3D0B2205EA8E0001F995 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		D71E3D44220622430001F995 /* note.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = note.wav; sourceTree = "<group>"; };
+		D71E3D46220622C50001F995 /* note.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = note.aif; sourceTree = "<group>"; };
 		D777C81422009DDB00FA472E /* Piano Notes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Piano Notes.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D777C81722009DDB00FA472E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D777C81922009DDB00FA472E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -29,17 +35,36 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D71E3D0C2205EA8E0001F995 /* AVFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D71E3D0A2205EA8E0001F995 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D71E3D0B2205EA8E0001F995 /* AVFoundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D71E3D0F2205ED7D0001F995 /* Sound Files */ = {
+			isa = PBXGroup;
+			children = (
+				D71E3D46220622C50001F995 /* note.aif */,
+				D71E3D44220622430001F995 /* note.wav */,
+			);
+			path = "Sound Files";
+			sourceTree = "<group>";
+		};
 		D777C80B22009DDB00FA472E = {
 			isa = PBXGroup;
 			children = (
 				D777C81622009DDB00FA472E /* Piano Notes */,
 				D777C81522009DDB00FA472E /* Products */,
+				D71E3D0A2205EA8E0001F995 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,6 +83,7 @@
 				D777C81922009DDB00FA472E /* ViewController.swift */,
 				D777C81B22009DDB00FA472E /* Main.storyboard */,
 				D777C81E22009DE000FA472E /* Assets.xcassets */,
+				D71E3D0F2205ED7D0001F995 /* Sound Files */,
 				D777C82022009DE000FA472E /* LaunchScreen.storyboard */,
 				D777C82322009DE000FA472E /* Info.plist */,
 			);
@@ -90,6 +116,9 @@
 		D777C80C22009DDB00FA472E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				KnownAssetTags = (
+					New,
+				);
 				LastSwiftUpdateCheck = 1010;
 				LastUpgradeCheck = 1010;
 				ORGANIZATIONNAME = Matvey;
@@ -124,7 +153,9 @@
 			files = (
 				D777C82222009DE000FA472E /* LaunchScreen.storyboard in Resources */,
 				D777C81F22009DE000FA472E /* Assets.xcassets in Resources */,
+				D71E3D45220622430001F995 /* note.wav in Resources */,
 				D777C81D22009DDB00FA472E /* Main.storyboard in Resources */,
+				D71E3D47220622C50001F995 /* note.aif in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

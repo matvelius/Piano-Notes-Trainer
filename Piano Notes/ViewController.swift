@@ -7,9 +7,14 @@
 //
 
 import UIKit
+import AVFoundation
+
+// audio toolbox has lower latency?
 
 class ViewController: UIViewController {
     
+    // instance variable to hold the AVAudioPlayer object
+    var audioPlayer: AVAudioPlayer?
     
     // placeholder variables for comparing answers
     var currentCorrectAnswer = ""
@@ -51,6 +56,11 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         startNewRound()
+    }
+    
+    @IBAction func playSound(_ sender: UIButton) {
+        loadSound()
+        audioPlayer!.play()
     }
     
     func startNewRound() {
@@ -218,6 +228,21 @@ class ViewController: UIViewController {
         noteButtonE.isEnabled = true;
         noteButtonF.isEnabled = true;
         noteButtonG.isEnabled = true;
+    }
+    
+    func loadSound() {
+        // sound file
+        let sound = Bundle.main.path(forResource: "note", ofType: "aif")!
+        
+        //print(String(sound))
+        
+        do {
+            // try to initialize with the URL created above
+            audioPlayer = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: sound))
+        }
+        catch {
+            print(error)
+        }
     }
     
     @IBAction func noteA(_ sender: UIButton) {
