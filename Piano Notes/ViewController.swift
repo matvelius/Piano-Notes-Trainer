@@ -93,16 +93,16 @@ class ViewController: UIViewController {
         // right answer
         if currentUserAnswer == currentCorrectAnswer {
             
+            // play sound
+            loadSound()
+            audioPlayer!.play()
+            
             // show result (green button)
             imageName = "\(currentCorrectAnswer)_right"
             let image = UIImage(named: imageName)
             currentNoteButton.setImage(image, for: UIControl.State.normal)
             
             disableButtons()
-            
-            // play sound
-            loadSound()
-            audioPlayer!.play()
             
             // update score
             totalScore += 1

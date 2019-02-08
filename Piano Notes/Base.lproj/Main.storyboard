@@ -128,6 +128,7 @@
                                     </imageView>
                                     <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cpq-fy-UKY" userLabel="B">
                                         <rect key="frame" x="332" y="10" width="110" height="110"/>
+                                        <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="Cpq-fy-UKY" secondAttribute="height" multiplier="1:1" id="VQr-Vv-KLF"/>
                                         </constraints>
@@ -142,6 +143,7 @@
                                     </imageView>
                                     <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tVB-E4-Spp" userLabel="A">
                                         <rect key="frame" x="184" y="10" width="110" height="110"/>
+                                        <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="tVB-E4-Spp" secondAttribute="height" multiplier="1:1" id="QNI-cv-xKF"/>
                                         </constraints>
@@ -153,6 +155,7 @@
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstItem="zPC-OD-elJ" firstAttribute="centerY" secondItem="YCd-Zs-4kT" secondAttribute="centerY" id="19O-CR-8lJ"/>
                                     <constraint firstItem="zPC-OD-elJ" firstAttribute="width" secondItem="YCd-Zs-4kT" secondAttribute="width" id="2n2-PB-ca8"/>
@@ -227,6 +230,7 @@
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="JI7-xy-e6Q" firstAttribute="bottom" secondItem="8bC-Xf-vdC" secondAttribute="bottom" id="8Bd-4l-V8L"/>
                             <constraint firstItem="JI7-xy-e6Q" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="DGU-wT-gU7"/>
