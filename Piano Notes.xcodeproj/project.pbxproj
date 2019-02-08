@@ -8,19 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		D71E3D0C2205EA8E0001F995 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D71E3D0B2205EA8E0001F995 /* AVFoundation.framework */; };
-		D71E3D45220622430001F995 /* note.wav in Resources */ = {isa = PBXBuildFile; fileRef = D71E3D44220622430001F995 /* note.wav */; };
-		D71E3D47220622C50001F995 /* note.aif in Resources */ = {isa = PBXBuildFile; fileRef = D71E3D46220622C50001F995 /* note.aif */; };
 		D777C81822009DDB00FA472E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D777C81722009DDB00FA472E /* AppDelegate.swift */; };
 		D777C81A22009DDB00FA472E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D777C81922009DDB00FA472E /* ViewController.swift */; };
 		D777C81D22009DDB00FA472E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D777C81B22009DDB00FA472E /* Main.storyboard */; };
 		D777C81F22009DE000FA472E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D777C81E22009DE000FA472E /* Assets.xcassets */; };
 		D777C82222009DE000FA472E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D777C82022009DE000FA472E /* LaunchScreen.storyboard */; };
+		D78AC361220D531E00299687 /* A4.wav in Resources */ = {isa = PBXBuildFile; fileRef = D78AC360220D531E00299687 /* A4.wav */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		D71E3D0B2205EA8E0001F995 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
-		D71E3D44220622430001F995 /* note.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = note.wav; sourceTree = "<group>"; };
-		D71E3D46220622C50001F995 /* note.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = note.aif; sourceTree = "<group>"; };
 		D777C81422009DDB00FA472E /* Piano Notes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Piano Notes.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D777C81722009DDB00FA472E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D777C81922009DDB00FA472E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -28,6 +25,7 @@
 		D777C81E22009DE000FA472E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D777C82122009DE000FA472E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D777C82322009DE000FA472E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D78AC360220D531E00299687 /* A4.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = A4.wav; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,8 +51,7 @@
 		D71E3D0F2205ED7D0001F995 /* Sound Files */ = {
 			isa = PBXGroup;
 			children = (
-				D71E3D46220622C50001F995 /* note.aif */,
-				D71E3D44220622430001F995 /* note.wav */,
+				D78AC360220D531E00299687 /* A4.wav */,
 			);
 			path = "Sound Files";
 			sourceTree = "<group>";
@@ -153,9 +150,8 @@
 			files = (
 				D777C82222009DE000FA472E /* LaunchScreen.storyboard in Resources */,
 				D777C81F22009DE000FA472E /* Assets.xcassets in Resources */,
-				D71E3D45220622430001F995 /* note.wav in Resources */,
 				D777C81D22009DDB00FA472E /* Main.storyboard in Resources */,
-				D71E3D47220622C50001F995 /* note.aif in Resources */,
+				D78AC361220D531E00299687 /* A4.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

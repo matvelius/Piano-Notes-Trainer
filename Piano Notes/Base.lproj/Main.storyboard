@@ -27,15 +27,6 @@
                                             <constraint firstAttribute="width" secondItem="PeW-eg-9HV" secondAttribute="height" multiplier="683:404" id="hM4-ng-BIN"/>
                                         </constraints>
                                     </imageView>
-                                    <button opaque="NO" alpha="0.0" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ovN-ye-oft">
-                                        <rect key="frame" x="638" y="371" width="89" height="64"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="43"/>
-                                        <state key="normal" title="play!"/>
-                                        <connections>
-                                            <action selector="playSound:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tig-pP-Yb1"/>
-                                        </connections>
-                                    </button>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="score" translatesAutoresizingMaskIntoConstraints="NO" id="mS9-aU-D0p">
                                         <rect key="frame" x="50" y="728" width="372" height="44"/>
                                         <constraints>

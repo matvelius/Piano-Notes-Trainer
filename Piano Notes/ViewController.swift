@@ -20,6 +20,9 @@ class ViewController: UIViewController {
     var currentCorrectAnswer = ""
     var currentUserAnswer = ""
     
+    // placeholder for current note
+    var currentNote = ""
+    
     // note button outlets
     @IBOutlet weak var noteButtonA: UIButton!
     @IBOutlet weak var noteButtonB: UIButton!
@@ -58,11 +61,6 @@ class ViewController: UIViewController {
         startNewRound()
     }
     
-    @IBAction func playSound(_ sender: UIButton) {
-        loadSound()
-        audioPlayer!.play()
-    }
-    
     func startNewRound() {
         lastRandomNumber = randomNewNoteIndex
         totalScore = 0
@@ -78,8 +76,8 @@ class ViewController: UIViewController {
 //            print("generateNewNote() called; randomNewNoteIndex = \(randomNewNoteIndex)")
         }
         
-        let highlightedNoteChoice = ["C4", "D4", "E4", "F4", "G4", "A5", "B5"]
-        let currentNote: String = highlightedNoteChoice[randomNewNoteIndex]
+        let highlightedNoteChoice = ["C4", "D4", "E4", "F4", "G4", "A4", "B4"]
+        currentNote = highlightedNoteChoice[randomNewNoteIndex]
         currentCorrectAnswer = String(currentNote[currentNote.startIndex])
         pianoImage.image = UIImage(named: currentNote)
         
@@ -99,7 +97,14 @@ class ViewController: UIViewController {
             imageName = "\(currentCorrectAnswer)_right"
             let image = UIImage(named: imageName)
             currentNoteButton.setImage(image, for: UIControl.State.normal)
+            
             disableButtons()
+            
+            if currentNote == "A4" {
+                loadSound()
+                audioPlayer!.play()
+            }
+            
             totalScore += 1
             correctAnswersInARow += 1
             incorrectAnswersInARow = 0
@@ -232,7 +237,7 @@ class ViewController: UIViewController {
     
     func loadSound() {
         // sound file
-        let sound = Bundle.main.path(forResource: "note", ofType: "aif")!
+        let sound = Bundle.main.path(forResource: "\(currentNote)", ofType: "wav")!
         
         //print(String(sound))
         
