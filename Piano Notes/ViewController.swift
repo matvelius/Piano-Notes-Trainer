@@ -106,7 +106,7 @@ class ViewController: UIViewController {
             giveOrTakeAStar()
             
 //            usleep(1000000) //will sleep for 1 second
-            
+//            Thread.sleep(forTimeInterval: 60/cadence)
             DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1), execute:{
                 self.resetButtonsToDefault()
                 self.generateNewNote()
