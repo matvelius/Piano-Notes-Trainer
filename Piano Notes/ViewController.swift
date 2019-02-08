@@ -100,11 +100,11 @@ class ViewController: UIViewController {
             
             disableButtons()
             
-            if currentNote == "A4" {
-                loadSound()
-                audioPlayer!.play()
-            }
+            // play sound
+            loadSound()
+            audioPlayer!.play()
             
+            // update score
             totalScore += 1
             correctAnswersInARow += 1
             incorrectAnswersInARow = 0
@@ -237,7 +237,7 @@ class ViewController: UIViewController {
     
     func loadSound() {
         // sound file
-        let sound = Bundle.main.path(forResource: "\(currentNote)", ofType: "wav")!
+        let sound = Bundle.main.path(forResource: "\(currentNote)", ofType: "aiff")!
         
         //print(String(sound))
         
