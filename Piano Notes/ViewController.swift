@@ -78,6 +78,8 @@ class ViewController: UIViewController {
         
         let highlightedNoteChoice = ["C4", "D4", "E4", "F4", "G4", "A4", "B4"]
         currentNote = highlightedNoteChoice[randomNewNoteIndex]
+        // load the appropriate sound
+        loadSound()
         currentCorrectAnswer = String(currentNote[currentNote.startIndex])
         pianoImage.image = UIImage(named: currentNote)
         
@@ -94,7 +96,6 @@ class ViewController: UIViewController {
         if currentUserAnswer == currentCorrectAnswer {
             
             // play sound
-            loadSound()
             audioPlayer!.play()
             
             // show result (green button)
