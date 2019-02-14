@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="ipad9_7" orientation="landscape">
+    <device id="ipad12_9rounded" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -15,37 +15,46 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Piano_Notes" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1366" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JI7-xy-e6Q">
-                                <rect key="frame" x="0.0" y="151.5" width="1024" height="616.5"/>
+                                <rect key="frame" x="0.0" y="216" width="1366" height="808"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="white_piano_12.9_large" translatesAutoresizingMaskIntoConstraints="NO" id="PeW-eg-9HV">
-                                        <rect key="frame" x="0.0" y="11" width="1024" height="605.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="1366" height="808"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="PeW-eg-9HV" secondAttribute="height" multiplier="683:404" id="hM4-ng-BIN"/>
                                         </constraints>
                                     </imageView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ysp-nm-Oue" userLabel="Score &amp; Stars">
-                                        <rect key="frame" x="22.5" y="552" width="979" height="72.5"/>
+                                        <rect key="frame" x="30" y="699" width="1306" height="97"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="score" translatesAutoresizingMaskIntoConstraints="NO" id="mS9-aU-D0p">
-                                                <rect key="frame" x="15" y="10.5" width="282.5" height="51"/>
+                                                <rect key="frame" x="20" y="23" width="377" height="51"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="51" id="VAe-wz-xZT"/>
                                                 </constraints>
                                             </imageView>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="stars0" translatesAutoresizingMaskIntoConstraints="NO" id="fee-2h-mBH">
-                                                <rect key="frame" x="681.5" y="10.5" width="282.5" height="51"/>
+                                                <rect key="frame" x="909" y="23" width="377" height="51"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="51" id="z1K-pa-OOJ"/>
                                                 </constraints>
                                             </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sBK-js-cjK">
-                                                <rect key="frame" x="183.5" y="10.5" width="27" height="35"/>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Uxe-4T-2YK" userLabel="between score &amp; stars">
+                                                <rect key="frame" x="397" y="0.0" width="512" height="97"/>
+                                            </imageView>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1pd-8Z-aLk">
+                                                <rect key="frame" x="304" y="24" width="93" height="49"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" secondItem="sBK-js-cjK" secondAttribute="height" multiplier="27:35" id="x7h-bk-N4a"/>
+                                                    <constraint firstAttribute="width" secondItem="1pd-8Z-aLk" secondAttribute="height" multiplier="116:49" constant="-23.591836734693871" id="ArD-dr-kI4"/>
+                                                </constraints>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="999" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sBK-js-cjK">
+                                                <rect key="frame" x="228.5" y="23" width="76" height="35"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="sBK-js-cjK" secondAttribute="height" multiplier="76:35" id="rff-sX-iJZ"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="41"/>
                                                 <color key="textColor" red="0.50196078431372548" green="0.95686274509803915" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -53,25 +62,16 @@
                                                 <color key="shadowColor" white="0.74982163245342459" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <size key="shadowOffset" width="1" height="1"/>
                                             </label>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Uxe-4T-2YK" userLabel="between score &amp; stars">
-                                                <rect key="frame" x="297.5" y="0.0" width="384" height="72.5"/>
-                                            </imageView>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1pd-8Z-aLk">
-                                                <rect key="frame" x="210.5" y="18" width="87" height="36.5"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" secondItem="1pd-8Z-aLk" secondAttribute="height" multiplier="116:49" id="ArD-dr-kI4"/>
-                                                </constraints>
-                                            </imageView>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstItem="1pd-8Z-aLk" firstAttribute="width" secondItem="Uxe-4T-2YK" secondAttribute="width" multiplier="0.2266" id="06U-Mv-Umh"/>
+                                            <constraint firstItem="1pd-8Z-aLk" firstAttribute="width" secondItem="Uxe-4T-2YK" secondAttribute="width" multiplier="0.2266" constant="-23.014399999999995" id="06U-Mv-Umh"/>
                                             <constraint firstItem="fee-2h-mBH" firstAttribute="centerY" secondItem="Uxe-4T-2YK" secondAttribute="centerY" id="2Rh-IN-acg"/>
                                             <constraint firstItem="sBK-js-cjK" firstAttribute="height" secondItem="mS9-aU-D0p" secondAttribute="height" multiplier="0.6863" id="CII-Xq-npe"/>
                                             <constraint firstItem="Uxe-4T-2YK" firstAttribute="width" secondItem="ysp-nm-Oue" secondAttribute="width" multiplier="0.392" id="EVy-PL-fzy"/>
                                             <constraint firstItem="mS9-aU-D0p" firstAttribute="trailing" secondItem="Uxe-4T-2YK" secondAttribute="leading" id="FsZ-ac-Nbl"/>
                                             <constraint firstAttribute="width" secondItem="ysp-nm-Oue" secondAttribute="height" multiplier="1306:97" id="Ge8-eP-snv"/>
-                                            <constraint firstItem="1pd-8Z-aLk" firstAttribute="leading" secondItem="sBK-js-cjK" secondAttribute="trailing" id="J0h-Hz-zSm"/>
+                                            <constraint firstItem="sBK-js-cjK" firstAttribute="trailing" secondItem="1pd-8Z-aLk" secondAttribute="leading" constant="0.5" id="Ko3-LP-JK4"/>
                                             <constraint firstItem="Uxe-4T-2YK" firstAttribute="height" secondItem="ysp-nm-Oue" secondAttribute="height" id="Mqu-U7-qWQ"/>
                                             <constraint firstItem="Uxe-4T-2YK" firstAttribute="centerY" secondItem="ysp-nm-Oue" secondAttribute="centerY" id="Oye-vP-e3z"/>
                                             <constraint firstItem="1pd-8Z-aLk" firstAttribute="centerY" secondItem="Uxe-4T-2YK" secondAttribute="centerY" id="TNi-LJ-KHy"/>
@@ -85,7 +85,7 @@
                                         </constraints>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zPC-OD-elJ" userLabel="G">
-                                        <rect key="frame" x="803.5" y="10" width="82.5" height="82"/>
+                                        <rect key="frame" x="1072" y="10" width="110" height="110"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="zPC-OD-elJ" secondAttribute="height" multiplier="1:1" id="kCW-PF-nNd"/>
                                         </constraints>
@@ -96,10 +96,10 @@
                                         </connections>
                                     </button>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Oyr-TJ-21U" userLabel="between F &amp; G">
-                                        <rect key="frame" x="775" y="10" width="28.5" height="82"/>
+                                        <rect key="frame" x="1034" y="10" width="38" height="110"/>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PEp-9J-Ifz" userLabel="F">
-                                        <rect key="frame" x="692.5" y="10" width="82.5" height="82"/>
+                                        <rect key="frame" x="924" y="10" width="110" height="110"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="PEp-9J-Ifz" secondAttribute="height" multiplier="1:1" id="hPf-Fi-yOq"/>
                                         </constraints>
@@ -110,10 +110,10 @@
                                         </connections>
                                     </button>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="RmL-Tp-3tm" userLabel="between E &amp; F">
-                                        <rect key="frame" x="664" y="10" width="28.5" height="82"/>
+                                        <rect key="frame" x="886" y="10" width="38" height="110"/>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ucd-Eh-NI4" userLabel="E">
-                                        <rect key="frame" x="581.5" y="10" width="82.5" height="82"/>
+                                        <rect key="frame" x="776" y="10" width="110" height="110"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="ucd-Eh-NI4" secondAttribute="height" multiplier="1:1" id="Tsm-AO-7b3"/>
                                         </constraints>
@@ -124,10 +124,10 @@
                                         </connections>
                                     </button>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="UZI-Ox-EoS" userLabel="between D &amp; E">
-                                        <rect key="frame" x="553" y="10" width="28.5" height="82"/>
+                                        <rect key="frame" x="738" y="10" width="38" height="110"/>
                                     </imageView>
                                     <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YCd-Zs-4kT" userLabel="D">
-                                        <rect key="frame" x="471" y="10" width="82" height="82"/>
+                                        <rect key="frame" x="628" y="10" width="110" height="110"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="YCd-Zs-4kT" secondAttribute="height" multiplier="1:1" id="1X4-ZY-vCL"/>
                                             <constraint firstAttribute="height" relation="lessThanOrEqual" constant="110" id="FNe-52-8Ff"/>
@@ -142,10 +142,10 @@
                                         </connections>
                                     </button>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="i4X-je-UF6" userLabel="between C &amp; D">
-                                        <rect key="frame" x="442.5" y="10" width="28.5" height="82"/>
+                                        <rect key="frame" x="590" y="10" width="38" height="110"/>
                                     </imageView>
                                     <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R7e-Tw-SC2" userLabel="C">
-                                        <rect key="frame" x="360" y="10" width="82.5" height="82"/>
+                                        <rect key="frame" x="480" y="10" width="110" height="110"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="R7e-Tw-SC2" secondAttribute="height" multiplier="1:1" id="gPA-Cx-b6c"/>
                                         </constraints>
@@ -156,10 +156,10 @@
                                         </connections>
                                     </button>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2oz-1q-Abw" userLabel="between B &amp; C">
-                                        <rect key="frame" x="331.5" y="10" width="28.5" height="82"/>
+                                        <rect key="frame" x="442" y="10" width="38" height="110"/>
                                     </imageView>
                                     <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cpq-fy-UKY" userLabel="B">
-                                        <rect key="frame" x="249" y="10" width="82.5" height="82"/>
+                                        <rect key="frame" x="332" y="10" width="110" height="110"/>
                                         <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="Cpq-fy-UKY" secondAttribute="height" multiplier="1:1" id="VQr-Vv-KLF"/>
@@ -171,10 +171,10 @@
                                         </connections>
                                     </button>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bLo-vd-vTh" userLabel="between A &amp; B">
-                                        <rect key="frame" x="220.5" y="10" width="28.5" height="82"/>
+                                        <rect key="frame" x="294" y="10" width="38" height="110"/>
                                     </imageView>
                                     <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tVB-E4-Spp" userLabel="A">
-                                        <rect key="frame" x="138" y="10" width="82.5" height="82"/>
+                                        <rect key="frame" x="184" y="10" width="110" height="110"/>
                                         <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="tVB-E4-Spp" secondAttribute="height" multiplier="1:1" id="QNI-cv-xKF"/>
@@ -248,14 +248,14 @@
                                 </constraints>
                             </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="BdG-ug-ScI" userLabel="between D &amp; title">
-                                <rect key="frame" x="493" y="76.5" width="38" height="85"/>
+                                <rect key="frame" x="664" y="141" width="38" height="85"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="85" id="MnP-aY-A9s"/>
                                     <constraint firstAttribute="width" secondItem="BdG-ug-ScI" secondAttribute="height" multiplier="38:85" id="dtA-b9-FIZ"/>
                                 </constraints>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="name_the_highlighted_note" translatesAutoresizingMaskIntoConstraints="NO" id="8yb-AG-ugB">
-                                <rect key="frame" x="223" y="38" width="578" height="38.5"/>
+                                <rect key="frame" x="297.5" y="90" width="771" height="51"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="8yb-AG-ugB" secondAttribute="height" multiplier="257:17" id="GJ4-ZB-Zb4"/>
                                 </constraints>
@@ -294,7 +294,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="68.081991215226935" y="108.3984375"/>
+            <point key="canvasLocation" x="67.96875" y="107.8125"/>
         </scene>
     </scenes>
     <resources>
