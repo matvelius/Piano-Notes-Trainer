@@ -8,6 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		D71E3D0C2205EA8E0001F995 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D71E3D0B2205EA8E0001F995 /* AVFoundation.framework */; };
+		D73381072216577000D1AA84 /* F4.wav in Resources */ = {isa = PBXBuildFile; fileRef = D73381002216577000D1AA84 /* F4.wav */; };
+		D73381082216577000D1AA84 /* E4.wav in Resources */ = {isa = PBXBuildFile; fileRef = D73381012216577000D1AA84 /* E4.wav */; };
+		D73381092216577000D1AA84 /* B4.wav in Resources */ = {isa = PBXBuildFile; fileRef = D73381022216577000D1AA84 /* B4.wav */; };
+		D733810A2216577000D1AA84 /* C4.wav in Resources */ = {isa = PBXBuildFile; fileRef = D73381032216577000D1AA84 /* C4.wav */; };
+		D733810B2216577000D1AA84 /* A4.wav in Resources */ = {isa = PBXBuildFile; fileRef = D73381042216577000D1AA84 /* A4.wav */; };
+		D733810C2216577000D1AA84 /* G4.wav in Resources */ = {isa = PBXBuildFile; fileRef = D73381052216577000D1AA84 /* G4.wav */; };
+		D733810D2216577000D1AA84 /* D4.wav in Resources */ = {isa = PBXBuildFile; fileRef = D73381062216577000D1AA84 /* D4.wav */; };
 		D777C81822009DDB00FA472E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D777C81722009DDB00FA472E /* AppDelegate.swift */; };
 		D777C81A22009DDB00FA472E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D777C81922009DDB00FA472E /* ViewController.swift */; };
 		D777C81D22009DDB00FA472E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D777C81B22009DDB00FA472E /* Main.storyboard */; };
@@ -24,6 +31,13 @@
 
 /* Begin PBXFileReference section */
 		D71E3D0B2205EA8E0001F995 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		D73381002216577000D1AA84 /* F4.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = F4.wav; sourceTree = "<group>"; };
+		D73381012216577000D1AA84 /* E4.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = E4.wav; sourceTree = "<group>"; };
+		D73381022216577000D1AA84 /* B4.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = B4.wav; sourceTree = "<group>"; };
+		D73381032216577000D1AA84 /* C4.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = C4.wav; sourceTree = "<group>"; };
+		D73381042216577000D1AA84 /* A4.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = A4.wav; sourceTree = "<group>"; };
+		D73381052216577000D1AA84 /* G4.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = G4.wav; sourceTree = "<group>"; };
+		D73381062216577000D1AA84 /* D4.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = D4.wav; sourceTree = "<group>"; };
 		D777C81422009DDB00FA472E /* Piano Notes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Piano Notes.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D777C81722009DDB00FA472E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D777C81922009DDB00FA472E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -63,6 +77,13 @@
 		D71E3D0F2205ED7D0001F995 /* Sound Files */ = {
 			isa = PBXGroup;
 			children = (
+				D73381042216577000D1AA84 /* A4.wav */,
+				D73381022216577000D1AA84 /* B4.wav */,
+				D73381032216577000D1AA84 /* C4.wav */,
+				D73381062216577000D1AA84 /* D4.wav */,
+				D73381012216577000D1AA84 /* E4.wav */,
+				D73381002216577000D1AA84 /* F4.wav */,
+				D73381052216577000D1AA84 /* G4.wav */,
 				D78AC366220D563800299687 /* A4.aiff */,
 				D78AC364220D563700299687 /* B4.aiff */,
 				D78AC365220D563800299687 /* C4.aiff */,
@@ -166,14 +187,21 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D733810B2216577000D1AA84 /* A4.wav in Resources */,
+				D73381092216577000D1AA84 /* B4.wav in Resources */,
 				D78AC36D220D563800299687 /* A4.aiff in Resources */,
 				D777C82222009DE000FA472E /* LaunchScreen.storyboard in Resources */,
 				D78AC36A220D563800299687 /* D4.aiff in Resources */,
 				D78AC36F220D563800299687 /* F4.aiff in Resources */,
 				D777C81F22009DE000FA472E /* Assets.xcassets in Resources */,
+				D73381072216577000D1AA84 /* F4.wav in Resources */,
 				D78AC36B220D563800299687 /* B4.aiff in Resources */,
+				D73381082216577000D1AA84 /* E4.wav in Resources */,
 				D78AC369220D563800299687 /* G4.aiff in Resources */,
+				D733810D2216577000D1AA84 /* D4.wav in Resources */,
 				D78AC36E220D563800299687 /* E4.aiff in Resources */,
+				D733810A2216577000D1AA84 /* C4.wav in Resources */,
+				D733810C2216577000D1AA84 /* G4.wav in Resources */,
 				D78AC36C220D563800299687 /* C4.aiff in Resources */,
 				D777C81D22009DDB00FA472E /* Main.storyboard in Resources */,
 			);
