@@ -143,7 +143,7 @@ class ViewController: UIViewController {
                 totalScore -= 1
             }
             
-            // flash score label red FF3939
+            // flash score label red #FF3939
             self.scoreLabel.textColor = UIColor(red:1.00, green:0.22, blue:0.22, alpha:1.0)
             // bring it back to green after a second
             DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1), execute:{
