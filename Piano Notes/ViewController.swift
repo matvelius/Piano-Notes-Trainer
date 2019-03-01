@@ -49,7 +49,7 @@ class ViewController: UIViewController {
     
     // placeholder variable for last-selected random number
     var lastRandomNumber: Int = -1
-    var randomNewNoteIndex = Int.random(in: 0...6)
+    var randomNewNoteIndex = Int.random(in: 0...15)
     
     // placeholder variable for keeping the score
     var totalScore = 0
@@ -80,16 +80,16 @@ class ViewController: UIViewController {
     
     func generateNewNote() {
         
-        randomNewNoteIndex = Int.random(in: 0...6)
+        randomNewNoteIndex = Int.random(in: 0...15)
         
         while randomNewNoteIndex == lastRandomNumber {
-            randomNewNoteIndex = Int.random(in: 0...6)
+            randomNewNoteIndex = Int.random(in: 0...15)
 //            print("generateNewNote() called; randomNewNoteIndex = \(randomNewNoteIndex)")
         }
         
-        let highlightedNoteChoice = ["C4", "D4", "E4", "F4", "G4", "A4", "B4"]
+        let highlightedNoteChoice = ["G3", "A3", "B3", "C4", "D4", "E4", "F4", "G4", "A4", "B4", "C5", "D5", "E5", "F5", "G5", "A5"]
         currentNote = highlightedNoteChoice[randomNewNoteIndex]
-//        print(currentNote)
+        print("the current note is \(currentNote)")
 //        // load the appropriate sound
 //        loadSound()
         currentCorrectAnswer = String(currentNote[currentNote.startIndex])
@@ -284,7 +284,7 @@ class ViewController: UIViewController {
                     // Handle it with no sound or retry
                 }
             } else {
-                print("how about this?!")
+                print("some problem with sound \(sound)")
             }
         }
     }
