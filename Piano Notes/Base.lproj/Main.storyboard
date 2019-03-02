@@ -185,6 +185,10 @@
                                             <action selector="noteA:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0mq-tr-kHB"/>
                                         </connections>
                                     </button>
+                                    <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gdl-It-3iu" userLabel="note button stack">
+                                        <rect key="frame" x="0.0" y="518" width="46" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </stackView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <gestureRecognizers/>
@@ -294,7 +298,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="67.96875" y="107.8125"/>
+            <point key="canvasLocation" x="67.642752562225468" y="107.8125"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="ioq-EP-eBb">
