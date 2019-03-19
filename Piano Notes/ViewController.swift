@@ -7,15 +7,16 @@
 //
 
 import UIKit
-//import AVFoundation
-import AudioToolbox
+import AVFoundation
 
 // audio toolbox has lower latency?
+//import AudioToolbox
+
 
 class ViewController: UIViewController {
     
-//    // instance variable to hold the AVAudioPlayer object
-//    var audioPlayer: AVAudioPlayer?
+    // instance variable to hold the AVAudioPlayer object
+    var audioPlayer: AVAudioPlayer?
     
     // placeholder variables for comparing answers
     var currentCorrectAnswer = ""
@@ -24,13 +25,13 @@ class ViewController: UIViewController {
     // placeholder for current note
     var currentNote = ""
     
-    var notificationSoundLookupTable = [String: SystemSoundID]()
+//    var notificationSoundLookupTable = [String: SystemSoundID]()
     
-    enum SoundExtension : String {
-//        case caf
-//        case aiff
-        case wav
-    }
+//    enum SoundExtension : String {
+////        case caf
+////        case aiff
+//        case wav
+//    }
     
     // note button outlets
     @IBOutlet weak var noteButtonA: UIButton!
@@ -74,7 +75,7 @@ class ViewController: UIViewController {
     func startNewRound() {
         lastRandomNumber = randomNewNoteIndex
         totalScore = 0
-        disposeSoundIDs()
+//        disposeSoundIDs()
         generateNewNote()
     }
     
@@ -90,8 +91,8 @@ class ViewController: UIViewController {
         let highlightedNoteChoice = ["G3", "A3", "B3", "C4", "D4", "E4", "F4", "G4", "A4", "B4", "C5", "D5", "E5", "F5", "G5", "A5"]
         currentNote = highlightedNoteChoice[randomNewNoteIndex]
         print("the current note is \(currentNote)")
-//        // load the appropriate sound
-//        loadSound()
+        // load the appropriate sound
+        loadSound()
         currentCorrectAnswer = String(currentNote[currentNote.startIndex])
         pianoImage.image = UIImage(named: currentNote)
         
@@ -112,9 +113,10 @@ class ViewController: UIViewController {
             let image = UIImage(named: imageName)
             currentNoteButton.setImage(image, for: UIControl.State.normal)
             // play sound
-//            audioPlayer!.play()
-//            print(currentNote)
-            play(sound: "\(currentNote)", ofType: .wav)
+            audioPlayer!.play()
+            audioPlayer!.setVolume(0, fadeDuration: 1)
+            print(currentNote)
+//            play(sound: "\(currentNote)", ofType: .wav)
             disableButtons()
             
             // update score
@@ -248,52 +250,55 @@ class ViewController: UIViewController {
         noteButtonG.isEnabled = true;
     }
     
-//    func loadSound() {
-//        // sound file
-//        let sound = Bundle.main.path(forResource: "\(currentNote)", ofType: "aiff")!
-//
-//        //print(String(sound))
-//
-//        do {
-//            // try to initialize with the URL created above
-//            audioPlayer = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: sound))
-//            audioPlayer?.prepareToPlay()
-//        }
-//        catch {
-//            print(error)
+    func loadSound() {
+        // sound file
+        if let sound = Bundle.main.path(forResource: "\(currentNote)", ofType: "aiff") {
+
+            //print(String(sound))
+
+            do {
+                // try to initialize with the URL created above
+                audioPlayer = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: sound))
+                audioPlayer?.prepareToPlay()
+            }
+            catch {
+                print(error)
+            }
+        } else {
+            print("whoops")
+        }
+    }
+    
+//    func play(sound: String, ofType type: SoundExtension) {
+////        print("1: \(notificationSoundLookupTable)")
+//        if let soundID = notificationSoundLookupTable[sound] {
+//            AudioServicesPlaySystemSound(soundID)
+////            print("2: \(notificationSoundLookupTable)")
+////            print("this happened!")
+//        } else {
+////            print("3: \(notificationSoundLookupTable)")
+//            if let soundURL : CFURL = Bundle.main.url(forResource: sound, withExtension: type.rawValue) as CFURL? {
+//                var soundID  : SystemSoundID = 0
+//                let osStatus : OSStatus = AudioServicesCreateSystemSoundID(soundURL, &soundID)
+//                if osStatus == kAudioServicesNoError {
+//                    AudioServicesPlaySystemSound(soundID);
+//                    notificationSoundLookupTable[sound] = (soundID)
+//                } else {
+////                    print("This is the osStatus error thing!")
+//                    // This happens in exceptional cases
+//                    // Handle it with no sound or retry
+//                }
+//            } else {
+//                print("some problem with sound \(sound)")
+//            }
 //        }
 //    }
     
-    func play(sound: String, ofType type: SoundExtension) {
-//        print("1: \(notificationSoundLookupTable)")
-        if let soundID = notificationSoundLookupTable[sound] {
-            AudioServicesPlaySystemSound(soundID)
-//            print("2: \(notificationSoundLookupTable)")
-//            print("this happened!")
-        } else {
-//            print("3: \(notificationSoundLookupTable)")
-            if let soundURL : CFURL = Bundle.main.url(forResource: sound, withExtension: type.rawValue) as CFURL? {
-                var soundID  : SystemSoundID = 0
-                let osStatus : OSStatus = AudioServicesCreateSystemSoundID(soundURL, &soundID)
-                if osStatus == kAudioServicesNoError {
-                    AudioServicesPlaySystemSound(soundID);
-                    notificationSoundLookupTable[sound] = (soundID)
-                } else {
-//                    print("This is the osStatus error thing!")
-                    // This happens in exceptional cases
-                    // Handle it with no sound or retry
-                }
-            } else {
-                print("some problem with sound \(sound)")
-            }
-        }
-    }
-    
-    func disposeSoundIDs() {
-        for soundID in notificationSoundLookupTable.values {
-            AudioServicesDisposeSystemSoundID(soundID)
-        }
-    }
+//    func disposeSoundIDs() {
+//        for soundID in notificationSoundLookupTable.values {
+//            AudioServicesDisposeSystemSoundID(soundID)
+//        }
+//    }
     
     @IBAction func noteA(_ sender: UIButton) {
         currentUserAnswer = "A"
