@@ -13,7 +13,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController modalTransitionStyle="partialCurl" id="BYZ-38-t0r" customClass="ViewController" customModule="Piano_Notes" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Level1" modalTransitionStyle="partialCurl" id="BYZ-38-t0r" customClass="ViewController" customModule="Piano_Notes" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="1366" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -300,15 +300,15 @@
             </objects>
             <point key="canvasLocation" x="67.642752562225468" y="107.8125"/>
         </scene>
-        <!--View Controller-->
+        <!--Explainer View Controller-->
         <scene sceneID="ioq-EP-eBb">
             <objects>
-                <viewController id="ocB-fJ-hDj" sceneMemberID="viewController">
+                <viewController id="ocB-fJ-hDj" customClass="ExplainerViewController" customModule="Piano_Notes" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ciP-ib-WW8">
                         <rect key="frame" x="0.0" y="0.0" width="1366" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="explainer_1" translatesAutoresizingMaskIntoConstraints="NO" id="Xd0-0D-gns">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="explainer_1" translatesAutoresizingMaskIntoConstraints="NO" id="Xd0-0D-gns" userLabel="explainer_image">
                                 <rect key="frame" x="0.0" y="24" width="1366" height="980"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pvh-OJ-xAE">
@@ -326,16 +326,57 @@
                                     <segue destination="BYZ-38-t0r" kind="presentation" id="0z7-So-mTa"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oXW-qM-tFj" userLabel="navTriangleLeft">
+                                <rect key="frame" x="20" y="333" width="84.5" height="358.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="358.5" id="SVN-hm-1KA"/>
+                                    <constraint firstAttribute="width" constant="84.5" id="veR-bp-ueu"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="nav_triangle_L_normal"/>
+                                <connections>
+                                    <action selector="navTriangleLeftPressed:" destination="ocB-fJ-hDj" eventType="touchUpInside" id="LUE-fe-M8w"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oUe-B0-TM1" userLabel="navTriangleRight">
+                                <rect key="frame" x="1261.5" y="333" width="84.5" height="358.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="358.5" id="77t-hG-qaH"/>
+                                    <constraint firstAttribute="width" constant="84.5" id="aBL-Jm-5zk"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="nav_triangle_R_normal"/>
+                                <state key="selected" image="nav_triangle_R_pressed"/>
+                                <connections>
+                                    <action selector="navTriangleRightPressed:" destination="ocB-fJ-hDj" eventType="touchUpInside" id="eps-zv-KKP"/>
+                                </connections>
+                            </button>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progressViewStyle="bar" progress="0.69999999999999996" translatesAutoresizingMaskIntoConstraints="NO" id="POa-Tj-g11">
+                                <rect key="frame" x="0.0" y="999" width="1366" height="6"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="5" id="zBk-zO-9cL"/>
+                                </constraints>
+                            </progressView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.27450980392156865" green="0.27450980392156865" blue="0.27450980392156865" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="oXW-qM-tFj" firstAttribute="centerY" secondItem="ciP-ib-WW8" secondAttribute="centerY" id="5cf-ew-zrJ"/>
                             <constraint firstItem="Xd0-0D-gns" firstAttribute="top" secondItem="GME-4K-2zm" secondAttribute="top" id="Kbt-sY-r8y"/>
+                            <constraint firstAttribute="trailing" secondItem="POa-Tj-g11" secondAttribute="trailing" id="QtW-K0-TB1"/>
+                            <constraint firstItem="POa-Tj-g11" firstAttribute="leading" secondItem="ciP-ib-WW8" secondAttribute="leading" id="aGb-HS-9Lv"/>
                             <constraint firstItem="GME-4K-2zm" firstAttribute="trailing" secondItem="Xd0-0D-gns" secondAttribute="trailing" id="caj-ek-a8e"/>
                             <constraint firstItem="GME-4K-2zm" firstAttribute="bottom" secondItem="Xd0-0D-gns" secondAttribute="bottom" id="hWW-yq-T0d"/>
+                            <constraint firstItem="GME-4K-2zm" firstAttribute="trailing" secondItem="oUe-B0-TM1" secondAttribute="trailing" constant="20" id="jnG-kA-6QZ"/>
+                            <constraint firstItem="oXW-qM-tFj" firstAttribute="leading" secondItem="GME-4K-2zm" secondAttribute="leading" constant="20" id="pRZ-Rf-Qo0"/>
                             <constraint firstItem="Xd0-0D-gns" firstAttribute="leading" secondItem="GME-4K-2zm" secondAttribute="leading" id="puh-AB-KuH"/>
+                            <constraint firstItem="oUe-B0-TM1" firstAttribute="centerY" secondItem="ciP-ib-WW8" secondAttribute="centerY" id="qH5-As-nNc"/>
+                            <constraint firstItem="GME-4K-2zm" firstAttribute="bottom" secondItem="POa-Tj-g11" secondAttribute="bottom" id="qSP-Ai-BSH"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="GME-4K-2zm"/>
                     </view>
+                    <connections>
+                        <outlet property="explainerImage" destination="Xd0-0D-gns" id="zQ1-h8-hUP"/>
+                        <outlet property="navTriangleLeft" destination="oXW-qM-tFj" id="Di1-aQ-lzb"/>
+                        <outlet property="navTriangleRight" destination="oUe-B0-TM1" id="3gG-nu-3ZY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cmE-Yr-TVd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -359,6 +400,9 @@
         <image name="G_pressed" width="220" height="220"/>
         <image name="explainer_1" width="2732" height="2048"/>
         <image name="name_the_highlighted_note" width="1543" height="102"/>
+        <image name="nav_triangle_L_normal" width="115" height="717"/>
+        <image name="nav_triangle_R_normal" width="115" height="717"/>
+        <image name="nav_triangle_R_pressed" width="115" height="717"/>
         <image name="score" width="754" height="102"/>
         <image name="stars0" width="754" height="102"/>
         <image name="white_piano_12.9_large" width="2732" height="1616"/>
