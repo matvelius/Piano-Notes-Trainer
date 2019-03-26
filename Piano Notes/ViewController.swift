@@ -91,8 +91,7 @@ class ViewController: UIViewController {
         let highlightedNoteChoice = ["G3", "A3", "B3", "C4", "D4", "E4", "F4", "G4", "A4", "B4", "C5", "D5", "E5", "F5", "G5", "A5"]
         currentNote = highlightedNoteChoice[randomNewNoteIndex]
         print("the current note is \(currentNote)")
-        // load the appropriate sound
-        loadSound()
+        
         currentCorrectAnswer = String(currentNote[currentNote.startIndex])
         pianoImage.image = UIImage(named: currentNote)
         
@@ -113,9 +112,10 @@ class ViewController: UIViewController {
             let image = UIImage(named: imageName)
             currentNoteButton.setImage(image, for: UIControl.State.normal)
             // play sound
+            loadSound(currentSound: currentNote)
             audioPlayer!.play()
             audioPlayer!.setVolume(0, fadeDuration: 2.5)
-            print(currentNote)
+//            print(currentNote)
 //            play(sound: "\(currentNote)", ofType: .wav)
             disableButtons()
             
@@ -135,6 +135,11 @@ class ViewController: UIViewController {
             
         // wrong answer
         } else {
+            
+            // play "wrong" sound
+            loadSound(currentSound: "wrong")
+            audioPlayer!.play()
+            audioPlayer!.setVolume(0.06, fadeDuration: 0)
             
             // color button red
             imageName = "\(currentUserAnswer)_wrong"
@@ -250,9 +255,9 @@ class ViewController: UIViewController {
         noteButtonG.isEnabled = true;
     }
     
-    func loadSound() {
+    func loadSound(currentSound: String) {
         // sound file
-        if let sound = Bundle.main.path(forResource: "\(currentNote)", ofType: "aiff") {
+        if let sound = Bundle.main.path(forResource: currentSound, ofType: "aiff") {
 
             //print(String(sound))
 
@@ -265,7 +270,7 @@ class ViewController: UIViewController {
                 print(error)
             }
         } else {
-            print("whoops")
+            print("whoops, couldn't load the sound '\(currentSound)'")
         }
     }
     

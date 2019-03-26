@@ -43,6 +43,7 @@
 		D777C81F22009DE000FA472E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D777C81E22009DE000FA472E /* Assets.xcassets */; };
 		D777C82222009DE000FA472E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D777C82022009DE000FA472E /* LaunchScreen.storyboard */; };
 		D7C2E3DA2241C9E300A72D5C /* ExplainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C2E3D92241C9E300A72D5C /* ExplainerViewController.swift */; };
+		D7C88AC52249EFA0000F484F /* wrong.aiff in Resources */ = {isa = PBXBuildFile; fileRef = D7C88AC42249EFA0000F484F /* wrong.aiff */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -84,6 +85,7 @@
 		D777C82122009DE000FA472E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D777C82322009DE000FA472E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D7C2E3D92241C9E300A72D5C /* ExplainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExplainerViewController.swift; sourceTree = "<group>"; };
+		D7C88AC42249EFA0000F484F /* wrong.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = wrong.aiff; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +140,7 @@
 				D742578F22414EF100ACA7A2 /* G3.aiff */,
 				D742579C22414EF700ACA7A2 /* G4.aiff */,
 				D742578C22414EEF00ACA7A2 /* G5.aiff */,
+				D7C88AC42249EFA0000F484F /* wrong.aiff */,
 			);
 			path = "Sound Files";
 			sourceTree = "<group>";
@@ -252,6 +255,7 @@
 				D74257AD22414EF700ACA7A2 /* A#4.aiff in Resources */,
 				D74257A922414EF700ACA7A2 /* G5.aiff in Resources */,
 				D74257B222414EF700ACA7A2 /* F#3.aiff in Resources */,
+				D7C88AC52249EFA0000F484F /* wrong.aiff in Resources */,
 				D74257AC22414EF700ACA7A2 /* G3.aiff in Resources */,
 				D74257B422414EF700ACA7A2 /* G#3.aiff in Resources */,
 				D74257A522414EF700ACA7A2 /* F5.aiff in Resources */,
