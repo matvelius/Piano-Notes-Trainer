@@ -114,7 +114,7 @@ class ViewController: UIViewController {
             currentNoteButton.setImage(image, for: UIControl.State.normal)
             // play sound
             audioPlayer!.play()
-            audioPlayer!.setVolume(0, fadeDuration: 1)
+            audioPlayer!.setVolume(0, fadeDuration: 2.5)
             print(currentNote)
 //            play(sound: "\(currentNote)", ofType: .wav)
             disableButtons()
