@@ -376,6 +376,7 @@
                         <outlet property="explainerImage" destination="Xd0-0D-gns" id="zQ1-h8-hUP"/>
                         <outlet property="navTriangleLeft" destination="oXW-qM-tFj" id="Di1-aQ-lzb"/>
                         <outlet property="navTriangleRight" destination="oUe-B0-TM1" id="3gG-nu-3ZY"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="doneExplaining" id="gpG-aX-QFw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cmE-Yr-TVd" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -407,4 +408,7 @@
         <image name="stars0" width="754" height="102"/>
         <image name="white_piano_12.9_large" width="2732" height="1616"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="gpG-aX-QFw"/>
+    </inferredMetricsTieBreakers>
 </document>

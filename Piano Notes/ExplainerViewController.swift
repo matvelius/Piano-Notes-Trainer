@@ -11,6 +11,7 @@ import UIKit
 class ExplainerViewController: UIViewController {
     
     var explainerIndex = 1
+    var numberOfExplainers = 4
 
     @IBOutlet weak var explainerImage: UIImageView!
     
@@ -22,8 +23,12 @@ class ExplainerViewController: UIViewController {
     }
     
     @IBAction func navTriangleRightPressed(_ sender: UIButton) {
-        explainerIndex += 1
-        explainerImage.image = UIImage(named: "explainer_\(explainerIndex)")
+        if explainerIndex < numberOfExplainers {
+            explainerIndex += 1
+            explainerImage.image = UIImage(named: "explainer_\(explainerIndex)")
+        } else {
+            performSegue(withIdentifier: "doneExplaining", sender: sender)
+        }
     }
     
     override func viewDidLoad() {
