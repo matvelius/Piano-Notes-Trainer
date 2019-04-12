@@ -522,13 +522,16 @@
                                     <constraint firstItem="Ucu-fc-WoN" firstAttribute="bottom" secondItem="SfW-Tf-CLW" secondAttribute="top" constant="-10" id="ANB-oE-xfg"/>
                                     <constraint firstItem="lkt-CX-jcE" firstAttribute="centerX" secondItem="JI7-xy-e6Q" secondAttribute="centerX" id="GCz-lj-oh5"/>
                                     <constraint firstItem="SfW-Tf-CLW" firstAttribute="centerX" secondItem="PeW-eg-9HV" secondAttribute="centerX" id="I71-Hh-4Ma"/>
+                                    <constraint firstItem="Ucu-fc-WoN" firstAttribute="width" secondItem="SfW-Tf-CLW" secondAttribute="width" id="Pb1-j6-Frq"/>
                                     <constraint firstItem="SfW-Tf-CLW" firstAttribute="centerX" secondItem="JI7-xy-e6Q" secondAttribute="centerX" id="QY7-Ev-rBa"/>
                                     <constraint firstItem="PeW-eg-9HV" firstAttribute="leading" secondItem="JI7-xy-e6Q" secondAttribute="leading" id="Smy-zz-gow"/>
                                     <constraint firstItem="lkt-CX-jcE" firstAttribute="top" secondItem="SfW-Tf-CLW" secondAttribute="bottom" constant="10" id="UUD-Eb-byo"/>
                                     <constraint firstAttribute="bottom" secondItem="PeW-eg-9HV" secondAttribute="bottom" id="UzX-Ju-qoe"/>
+                                    <constraint firstItem="lkt-CX-jcE" firstAttribute="height" secondItem="Ucu-fc-WoN" secondAttribute="height" id="WNi-QH-XCb"/>
                                     <constraint firstItem="ysp-nm-Oue" firstAttribute="centerX" secondItem="JI7-xy-e6Q" secondAttribute="centerX" id="X5N-s0-4XZ"/>
                                     <constraint firstItem="Ucu-fc-WoN" firstAttribute="centerX" secondItem="JI7-xy-e6Q" secondAttribute="centerX" id="Xeq-82-hfd"/>
                                     <constraint firstItem="BdG-ug-ScI" firstAttribute="centerX" secondItem="JI7-xy-e6Q" secondAttribute="centerX" id="c7u-1o-04a"/>
+                                    <constraint firstItem="lkt-CX-jcE" firstAttribute="width" secondItem="SfW-Tf-CLW" secondAttribute="width" id="fOw-Ca-Umg"/>
                                     <constraint firstItem="BdG-ug-ScI" firstAttribute="top" secondItem="JI7-xy-e6Q" secondAttribute="top" id="h8H-hB-Psa"/>
                                     <constraint firstItem="PeW-eg-9HV" firstAttribute="centerX" secondItem="JI7-xy-e6Q" secondAttribute="centerX" id="ks2-nk-Xia"/>
                                     <constraint firstItem="Ucu-fc-WoN" firstAttribute="height" secondItem="SfW-Tf-CLW" secondAttribute="height" multiplier="0.559:1" id="lwM-Dn-ewq"/>
@@ -545,6 +548,7 @@
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="8yb-AG-ugB" firstAttribute="bottom" secondItem="JI7-xy-e6Q" secondAttribute="top" id="1vg-fd-9Ag"/>
+                            <constraint firstItem="YCd-Zs-4kT" firstAttribute="height" secondItem="6Tk-OE-BBY" secondAttribute="height" multiplier="110:980" id="4XZ-hk-FVG"/>
                             <constraint firstItem="JI7-xy-e6Q" firstAttribute="bottom" secondItem="8bC-Xf-vdC" secondAttribute="bottom" id="8Bd-4l-V8L"/>
                             <constraint firstItem="8yb-AG-ugB" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="8Ga-MD-6Hp"/>
                             <constraint firstItem="ysp-nm-Oue" firstAttribute="width" secondItem="6Tk-OE-BBY" secondAttribute="width" multiplier="0.9561" id="C1R-kZ-wld"/>
