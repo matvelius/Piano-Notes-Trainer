@@ -79,6 +79,7 @@ class ViewController: UIViewController {
         totalScore = 0
 //        disposeSoundIDs()
         generateNewNote()
+        
     }
     
     func generateNewNote() {
@@ -280,6 +281,10 @@ class ViewController: UIViewController {
     @IBAction func handlePanGesture(recognizer: UIPanGestureRecognizer) {
         print(recognizer.location(in: self.view).y)
         print("<-- current Y location")
+        
+        if recognizer.location(in: self.view).y > 150 && recognizer.location(in: self.view).y < 400 {
+            print("we're above 150 and below 400!")
+        }
         // use tag to identify button?
 //        print(recognizer.view?.tag)
         
