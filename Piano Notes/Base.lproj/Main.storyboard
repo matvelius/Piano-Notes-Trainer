@@ -257,31 +257,34 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ucu-fc-WoN" userLabel="new sharps">
                                         <rect key="frame" x="184" y="13.5" width="998" height="61.5"/>
                                         <subviews>
-                                            <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WWC-jf-Chu" userLabel="G">
+                                            <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WWC-jf-Chu" userLabel="sharp">
                                                 <rect key="frame" x="888" y="0.0" width="110" height="61.5"/>
                                                 <state key="normal" image="sharp"/>
-                                                <state key="highlighted" image="G_pressed"/>
+                                                <state key="selected" image="sharp_pressed"/>
+                                                <state key="highlighted" image="sharp_pressed"/>
                                             </button>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="OD8-iz-GA4" userLabel="between F &amp; G">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="OD8-iz-GA4" userLabel="between">
                                                 <rect key="frame" x="850" y="0.0" width="38" height="61.5"/>
                                             </imageView>
-                                            <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cQS-mJ-CEi" userLabel="F">
+                                            <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cQS-mJ-CEi" userLabel="sharp">
                                                 <rect key="frame" x="740" y="0.0" width="110" height="61.5"/>
                                                 <state key="normal" image="sharp"/>
-                                                <state key="highlighted" image="F_pressed"/>
+                                                <state key="selected" image="sharp_pressed"/>
+                                                <state key="highlighted" image="sharp_pressed"/>
                                             </button>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="u8z-EJ-zjP" userLabel="between E &amp; F">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="u8z-EJ-zjP" userLabel="between">
                                                 <rect key="frame" x="702" y="0.0" width="38" height="61.5"/>
                                             </imageView>
-                                            <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xod-po-PyJ" userLabel="E">
+                                            <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xod-po-PyJ" userLabel="sharp">
                                                 <rect key="frame" x="592" y="0.0" width="110" height="61.5"/>
                                                 <state key="normal" image="sharp"/>
-                                                <state key="highlighted" image="E_pressed"/>
+                                                <state key="selected" image="sharp_pressed"/>
+                                                <state key="highlighted" image="sharp_pressed"/>
                                             </button>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="FFd-Jh-RM4" userLabel="between D &amp; E">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="FFd-Jh-RM4" userLabel="between">
                                                 <rect key="frame" x="554" y="0.0" width="38" height="61.5"/>
                                             </imageView>
-                                            <button opaque="NO" tag="4" contentMode="scaleToFill" placeholderIntrinsicWidth="110" placeholderIntrinsicHeight="110" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zoM-hy-uSw" userLabel="D">
+                                            <button opaque="NO" tag="4" contentMode="scaleToFill" placeholderIntrinsicWidth="110" placeholderIntrinsicHeight="110" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zoM-hy-uSw" userLabel="sharp">
                                                 <rect key="frame" x="444" y="0.0" width="110" height="61.5"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" relation="lessThanOrEqual" constant="61.5" id="QZO-yI-Mbi"/>
@@ -290,36 +293,40 @@
                                                 <state key="normal" image="sharp">
                                                     <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
-                                                <state key="highlighted" image="D_pressed"/>
+                                                <state key="selected" image="sharp_pressed"/>
+                                                <state key="highlighted" image="sharp_pressed"/>
                                             </button>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pUD-Kw-zA0" userLabel="between C &amp; D">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pUD-Kw-zA0" userLabel="between">
                                                 <rect key="frame" x="406" y="0.0" width="38" height="61.5"/>
                                             </imageView>
-                                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xEQ-Nq-1Tz" userLabel="C">
+                                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xEQ-Nq-1Tz" userLabel="sharp">
                                                 <rect key="frame" x="296" y="0.0" width="110" height="61.5"/>
                                                 <state key="normal" image="sharp"/>
-                                                <state key="highlighted" image="C_pressed"/>
+                                                <state key="selected" image="sharp_pressed"/>
+                                                <state key="highlighted" image="sharp_pressed"/>
                                             </button>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="h2E-xV-J0V" userLabel="between B &amp; C">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="h2E-xV-J0V" userLabel="between">
                                                 <rect key="frame" x="258" y="0.0" width="38" height="61.5"/>
                                             </imageView>
-                                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7HQ-9a-elb" userLabel="B">
+                                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7HQ-9a-elb" userLabel="sharp">
                                                 <rect key="frame" x="148" y="0.0" width="110" height="61.5"/>
                                                 <gestureRecognizers/>
                                                 <state key="normal" image="sharp"/>
-                                                <state key="highlighted" image="B_pressed"/>
+                                                <state key="selected" image="sharp_pressed"/>
+                                                <state key="highlighted" image="sharp_pressed"/>
                                             </button>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9Wj-ys-DBX" userLabel="between A &amp; B">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9Wj-ys-DBX" userLabel="between">
                                                 <rect key="frame" x="110" y="0.0" width="38" height="61.5"/>
                                             </imageView>
-                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vfi-DJ-p56" userLabel="A">
+                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vfi-DJ-p56" userLabel="sharp">
                                                 <rect key="frame" x="0.0" y="0.0" width="110" height="61.5"/>
                                                 <gestureRecognizers/>
                                                 <state key="normal" image="sharp"/>
-                                                <state key="highlighted" image="A_pressed"/>
+                                                <state key="selected" image="sharp_pressed"/>
+                                                <state key="highlighted" image="sharp_pressed"/>
                                             </button>
                                         </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstItem="FFd-Jh-RM4" firstAttribute="centerY" secondItem="zoM-hy-uSw" secondAttribute="centerY" id="1VA-Qu-bre"/>
                                             <constraint firstItem="Xod-po-PyJ" firstAttribute="centerY" secondItem="zoM-hy-uSw" secondAttribute="centerY" id="2yQ-8D-McE"/>
@@ -376,6 +383,136 @@
                                         </constraints>
                                         <viewLayoutGuide key="safeArea" id="nHJ-KH-D92"/>
                                     </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lkt-CX-jcE" userLabel="new flats">
+                                        <rect key="frame" x="184" y="205" width="998" height="61.5"/>
+                                        <subviews>
+                                            <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="byI-wM-mVi" userLabel="flat">
+                                                <rect key="frame" x="888" y="0.0" width="110" height="61.5"/>
+                                                <state key="normal" image="flat"/>
+                                                <state key="selected" image="flat_pressed"/>
+                                                <state key="highlighted" image="flat_pressed"/>
+                                            </button>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tEw-sp-C3e" userLabel="between">
+                                                <rect key="frame" x="850" y="0.0" width="38" height="61.5"/>
+                                            </imageView>
+                                            <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hu4-y0-jV2" userLabel="flat">
+                                                <rect key="frame" x="740" y="0.0" width="110" height="61.5"/>
+                                                <state key="normal" image="flat"/>
+                                                <state key="selected" image="flat_pressed"/>
+                                                <state key="highlighted" image="flat_pressed"/>
+                                            </button>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lhr-7p-e37" userLabel="between">
+                                                <rect key="frame" x="702" y="0.0" width="38" height="61.5"/>
+                                            </imageView>
+                                            <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cbJ-UK-jH1" userLabel="flat">
+                                                <rect key="frame" x="592" y="0.0" width="110" height="61.5"/>
+                                                <state key="normal" image="flat"/>
+                                                <state key="selected" image="flat_pressed"/>
+                                                <state key="highlighted" image="flat_pressed"/>
+                                            </button>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fLR-2H-DgZ" userLabel="between">
+                                                <rect key="frame" x="554" y="0.0" width="38" height="61.5"/>
+                                            </imageView>
+                                            <button opaque="NO" tag="4" contentMode="scaleToFill" placeholderIntrinsicWidth="110" placeholderIntrinsicHeight="110" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cmD-DR-DtT" userLabel="flat">
+                                                <rect key="frame" x="444" y="0.0" width="110" height="61.5"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="61.5" id="Tgs-B6-YzH"/>
+                                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="110" id="mYg-09-Ttc"/>
+                                                </constraints>
+                                                <state key="normal" image="flat">
+                                                    <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <state key="selected" image="flat_pressed"/>
+                                                <state key="highlighted" image="flat_pressed"/>
+                                            </button>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="r97-Ae-KWT" userLabel="between">
+                                                <rect key="frame" x="406" y="0.0" width="38" height="61.5"/>
+                                            </imageView>
+                                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AMe-ET-9L3" userLabel="flat">
+                                                <rect key="frame" x="296" y="0.0" width="110" height="61.5"/>
+                                                <state key="normal" image="flat"/>
+                                                <state key="selected" image="flat_pressed"/>
+                                                <state key="highlighted" image="flat_pressed"/>
+                                            </button>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="akz-Rb-paA" userLabel="between">
+                                                <rect key="frame" x="258" y="0.0" width="38" height="61.5"/>
+                                            </imageView>
+                                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QNg-Cz-Bky" userLabel="flat">
+                                                <rect key="frame" x="148" y="0.0" width="110" height="61.5"/>
+                                                <gestureRecognizers/>
+                                                <state key="normal" image="flat"/>
+                                                <state key="selected" image="flat_pressed"/>
+                                                <state key="highlighted" image="flat_pressed"/>
+                                            </button>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KAw-hO-nR4" userLabel="between">
+                                                <rect key="frame" x="110" y="0.0" width="38" height="61.5"/>
+                                            </imageView>
+                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HJv-nR-U3N" userLabel="flat">
+                                                <rect key="frame" x="0.0" y="0.0" width="110" height="61.5"/>
+                                                <color key="backgroundColor" white="1" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <gestureRecognizers/>
+                                                <state key="normal" image="flat"/>
+                                                <state key="selected" image="flat_pressed"/>
+                                                <state key="highlighted" image="flat_pressed"/>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="r97-Ae-KWT" firstAttribute="trailing" secondItem="cmD-DR-DtT" secondAttribute="leading" id="0Ko-Pq-zde"/>
+                                            <constraint firstItem="lhr-7p-e37" firstAttribute="centerY" secondItem="cmD-DR-DtT" secondAttribute="centerY" id="0kI-tG-k7T"/>
+                                            <constraint firstItem="hu4-y0-jV2" firstAttribute="width" secondItem="cmD-DR-DtT" secondAttribute="width" id="1ET-aX-8KG"/>
+                                            <constraint firstItem="byI-wM-mVi" firstAttribute="leading" secondItem="tEw-sp-C3e" secondAttribute="trailing" id="2Xt-lt-S8Z"/>
+                                            <constraint firstItem="QNg-Cz-Bky" firstAttribute="centerY" secondItem="cmD-DR-DtT" secondAttribute="centerY" id="2x6-BM-RS4"/>
+                                            <constraint firstItem="HJv-nR-U3N" firstAttribute="centerY" secondItem="cmD-DR-DtT" secondAttribute="centerY" id="3BY-AC-MlZ"/>
+                                            <constraint firstItem="cbJ-UK-jH1" firstAttribute="leading" secondItem="fLR-2H-DgZ" secondAttribute="trailing" id="3d7-lq-2JA"/>
+                                            <constraint firstItem="KAw-hO-nR4" firstAttribute="leading" secondItem="HJv-nR-U3N" secondAttribute="trailing" id="3uM-H6-fmM"/>
+                                            <constraint firstItem="akz-Rb-paA" firstAttribute="leading" secondItem="QNg-Cz-Bky" secondAttribute="trailing" id="4b5-8X-cEU"/>
+                                            <constraint firstItem="fLR-2H-DgZ" firstAttribute="centerY" secondItem="cmD-DR-DtT" secondAttribute="centerY" id="5Do-6C-Qax"/>
+                                            <constraint firstItem="KAw-hO-nR4" firstAttribute="height" secondItem="cmD-DR-DtT" secondAttribute="height" id="5kE-Ak-gAy"/>
+                                            <constraint firstItem="KAw-hO-nR4" firstAttribute="trailing" secondItem="QNg-Cz-Bky" secondAttribute="leading" id="7fj-c1-XC0"/>
+                                            <constraint firstItem="hu4-y0-jV2" firstAttribute="height" secondItem="cmD-DR-DtT" secondAttribute="height" id="DrS-x1-7d5"/>
+                                            <constraint firstItem="lhr-7p-e37" firstAttribute="height" secondItem="cmD-DR-DtT" secondAttribute="height" id="EbE-2t-AyV"/>
+                                            <constraint firstItem="KAw-hO-nR4" firstAttribute="centerY" secondItem="cmD-DR-DtT" secondAttribute="centerY" id="Kb4-5F-hwU"/>
+                                            <constraint firstItem="HJv-nR-U3N" firstAttribute="height" secondItem="cmD-DR-DtT" secondAttribute="height" id="Ksc-Yi-87z"/>
+                                            <constraint firstItem="akz-Rb-paA" firstAttribute="height" secondItem="AMe-ET-9L3" secondAttribute="height" id="Lk4-gf-Atq"/>
+                                            <constraint firstItem="tEw-sp-C3e" firstAttribute="leading" secondItem="hu4-y0-jV2" secondAttribute="trailing" id="RvW-RJ-NLD"/>
+                                            <constraint firstItem="r97-Ae-KWT" firstAttribute="centerY" secondItem="cmD-DR-DtT" secondAttribute="centerY" id="Sgt-Ha-TNb"/>
+                                            <constraint firstItem="akz-Rb-paA" firstAttribute="width" secondItem="AMe-ET-9L3" secondAttribute="width" multiplier="0.3455" id="UhI-Bs-zfr"/>
+                                            <constraint firstAttribute="height" secondItem="cmD-DR-DtT" secondAttribute="height" id="X6I-qE-mpb"/>
+                                            <constraint firstItem="hu4-y0-jV2" firstAttribute="centerY" secondItem="cmD-DR-DtT" secondAttribute="centerY" id="aN4-1U-5nT"/>
+                                            <constraint firstItem="akz-Rb-paA" firstAttribute="centerY" secondItem="AMe-ET-9L3" secondAttribute="centerY" id="arY-2Z-zBT"/>
+                                            <constraint firstItem="KAw-hO-nR4" firstAttribute="width" secondItem="cmD-DR-DtT" secondAttribute="width" multiplier="0.3455" id="b7j-7g-NEa"/>
+                                            <constraint firstItem="byI-wM-mVi" firstAttribute="height" secondItem="cmD-DR-DtT" secondAttribute="height" id="bni-WD-UFM"/>
+                                            <constraint firstItem="cbJ-UK-jH1" firstAttribute="width" secondItem="cmD-DR-DtT" secondAttribute="width" id="e4C-Cw-vVo"/>
+                                            <constraint firstItem="cmD-DR-DtT" firstAttribute="top" secondItem="lkt-CX-jcE" secondAttribute="top" id="eQu-sT-1m5"/>
+                                            <constraint firstItem="tEw-sp-C3e" firstAttribute="height" secondItem="cmD-DR-DtT" secondAttribute="height" id="fFT-ag-2sD"/>
+                                            <constraint firstItem="fLR-2H-DgZ" firstAttribute="width" secondItem="cmD-DR-DtT" secondAttribute="width" multiplier="0.3455" id="fGZ-wd-Fps"/>
+                                            <constraint firstItem="QNg-Cz-Bky" firstAttribute="width" secondItem="cmD-DR-DtT" secondAttribute="width" id="fYv-wd-qig"/>
+                                            <constraint firstItem="HJv-nR-U3N" firstAttribute="width" secondItem="cmD-DR-DtT" secondAttribute="width" id="fag-Ix-eFD"/>
+                                            <constraint firstItem="cbJ-UK-jH1" firstAttribute="height" secondItem="cmD-DR-DtT" secondAttribute="height" id="hF2-Sk-l3z"/>
+                                            <constraint firstItem="lhr-7p-e37" firstAttribute="leading" secondItem="cbJ-UK-jH1" secondAttribute="trailing" id="hSg-gU-4RE"/>
+                                            <constraint firstItem="AMe-ET-9L3" firstAttribute="height" secondItem="cmD-DR-DtT" secondAttribute="height" id="ivA-bV-cqp"/>
+                                            <constraint firstItem="AMe-ET-9L3" firstAttribute="centerY" secondItem="cmD-DR-DtT" secondAttribute="centerY" id="m68-3i-xRh"/>
+                                            <constraint firstItem="r97-Ae-KWT" firstAttribute="leading" secondItem="AMe-ET-9L3" secondAttribute="trailing" id="ngL-Vt-00y"/>
+                                            <constraint firstItem="fLR-2H-DgZ" firstAttribute="leading" secondItem="cmD-DR-DtT" secondAttribute="trailing" id="o7B-bg-BJz"/>
+                                            <constraint firstItem="lhr-7p-e37" firstAttribute="width" secondItem="cmD-DR-DtT" secondAttribute="width" multiplier="0.3455" id="q0U-35-Wop"/>
+                                            <constraint firstItem="tEw-sp-C3e" firstAttribute="width" secondItem="cmD-DR-DtT" secondAttribute="width" multiplier="0.3455" id="qS5-Vb-keO"/>
+                                            <constraint firstAttribute="trailing" secondItem="byI-wM-mVi" secondAttribute="trailing" id="r5W-fs-oI3"/>
+                                            <constraint firstItem="byI-wM-mVi" firstAttribute="centerY" secondItem="cmD-DR-DtT" secondAttribute="centerY" id="sN5-JP-RMG"/>
+                                            <constraint firstItem="HJv-nR-U3N" firstAttribute="leading" secondItem="lkt-CX-jcE" secondAttribute="leading" id="tby-xl-4vc"/>
+                                            <constraint firstItem="hu4-y0-jV2" firstAttribute="leading" secondItem="lhr-7p-e37" secondAttribute="trailing" id="tlu-Vq-bWq"/>
+                                            <constraint firstItem="r97-Ae-KWT" firstAttribute="width" secondItem="cmD-DR-DtT" secondAttribute="width" multiplier="0.3455" id="tw6-CM-Uug"/>
+                                            <constraint firstItem="QNg-Cz-Bky" firstAttribute="height" secondItem="cmD-DR-DtT" secondAttribute="height" id="ueJ-sP-7Ht"/>
+                                            <constraint firstItem="fLR-2H-DgZ" firstAttribute="height" secondItem="cmD-DR-DtT" secondAttribute="height" id="vBV-SZ-GDt"/>
+                                            <constraint firstItem="akz-Rb-paA" firstAttribute="trailing" secondItem="AMe-ET-9L3" secondAttribute="leading" id="vIY-hF-ceH"/>
+                                            <constraint firstItem="byI-wM-mVi" firstAttribute="width" secondItem="cmD-DR-DtT" secondAttribute="width" id="wwb-hg-zBB"/>
+                                            <constraint firstItem="r97-Ae-KWT" firstAttribute="height" secondItem="cmD-DR-DtT" secondAttribute="height" id="zYc-gp-BP8"/>
+                                            <constraint firstItem="tEw-sp-C3e" firstAttribute="centerY" secondItem="cmD-DR-DtT" secondAttribute="centerY" id="zZO-SH-4qb"/>
+                                            <constraint firstItem="AMe-ET-9L3" firstAttribute="width" secondItem="cmD-DR-DtT" secondAttribute="width" id="zai-GX-pdD"/>
+                                            <constraint firstItem="cbJ-UK-jH1" firstAttribute="centerY" secondItem="cmD-DR-DtT" secondAttribute="centerY" id="zeQ-Dr-rhv"/>
+                                        </constraints>
+                                        <viewLayoutGuide key="safeArea" id="5hy-NT-01q"/>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <gestureRecognizers/>
@@ -383,9 +520,11 @@
                                     <constraint firstItem="SfW-Tf-CLW" firstAttribute="top" secondItem="BdG-ug-ScI" secondAttribute="bottom" id="1By-X3-Ve4"/>
                                     <constraint firstItem="PeW-eg-9HV" firstAttribute="trailing" secondItem="JI7-xy-e6Q" secondAttribute="trailing" id="8lY-dE-uMg"/>
                                     <constraint firstItem="Ucu-fc-WoN" firstAttribute="bottom" secondItem="SfW-Tf-CLW" secondAttribute="top" constant="-10" id="ANB-oE-xfg"/>
+                                    <constraint firstItem="lkt-CX-jcE" firstAttribute="centerX" secondItem="JI7-xy-e6Q" secondAttribute="centerX" id="GCz-lj-oh5"/>
                                     <constraint firstItem="SfW-Tf-CLW" firstAttribute="centerX" secondItem="PeW-eg-9HV" secondAttribute="centerX" id="I71-Hh-4Ma"/>
                                     <constraint firstItem="SfW-Tf-CLW" firstAttribute="centerX" secondItem="JI7-xy-e6Q" secondAttribute="centerX" id="QY7-Ev-rBa"/>
                                     <constraint firstItem="PeW-eg-9HV" firstAttribute="leading" secondItem="JI7-xy-e6Q" secondAttribute="leading" id="Smy-zz-gow"/>
+                                    <constraint firstItem="lkt-CX-jcE" firstAttribute="top" secondItem="SfW-Tf-CLW" secondAttribute="bottom" constant="10" id="UUD-Eb-byo"/>
                                     <constraint firstAttribute="bottom" secondItem="PeW-eg-9HV" secondAttribute="bottom" id="UzX-Ju-qoe"/>
                                     <constraint firstItem="ysp-nm-Oue" firstAttribute="centerX" secondItem="JI7-xy-e6Q" secondAttribute="centerX" id="X5N-s0-4XZ"/>
                                     <constraint firstItem="Ucu-fc-WoN" firstAttribute="centerX" secondItem="JI7-xy-e6Q" secondAttribute="centerX" id="Xeq-82-hfd"/>
@@ -545,12 +684,15 @@
         <image name="G_default" width="220" height="220"/>
         <image name="G_pressed" width="220" height="220"/>
         <image name="explainer_1" width="2732" height="2048"/>
+        <image name="flat" width="210" height="123"/>
+        <image name="flat_pressed" width="210" height="123"/>
         <image name="name_the_highlighted_note" width="1543" height="102"/>
         <image name="nav_triangle_L_normal" width="115" height="717"/>
         <image name="nav_triangle_R_normal" width="115" height="717"/>
         <image name="nav_triangle_R_pressed" width="115" height="717"/>
         <image name="score" width="754" height="102"/>
         <image name="sharp" width="210" height="123"/>
+        <image name="sharp_pressed" width="210" height="123"/>
         <image name="stars0" width="754" height="102"/>
         <image name="white_piano_12.9_large" width="910.66668701171875" height="538.66668701171875"/>
     </resources>
