@@ -89,6 +89,7 @@
                                         <subviews>
                                             <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zPC-OD-elJ" userLabel="G">
                                                 <rect key="frame" x="888" y="0.0" width="110" height="110"/>
+                                                <gestureRecognizers/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="zPC-OD-elJ" secondAttribute="height" multiplier="1:1" id="kCW-PF-nNd"/>
                                                 </constraints>
@@ -96,6 +97,8 @@
                                                 <state key="highlighted" image="G_pressed"/>
                                                 <connections>
                                                     <action selector="noteG:" destination="BYZ-38-t0r" eventType="touchUpInside" id="M15-Pj-T75"/>
+                                                    <action selector="touchDownG:" destination="BYZ-38-t0r" eventType="touchDown" id="EvT-XD-adX"/>
+                                                    <outletCollection property="gestureRecognizers" destination="kBH-Rn-xZO" appends="YES" id="Qed-zB-CNP"/>
                                                 </connections>
                                             </button>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Oyr-TJ-21U" userLabel="between F &amp; G">
@@ -103,6 +106,7 @@
                                             </imageView>
                                             <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PEp-9J-Ifz" userLabel="F">
                                                 <rect key="frame" x="740" y="0.0" width="110" height="110"/>
+                                                <gestureRecognizers/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="PEp-9J-Ifz" secondAttribute="height" multiplier="1:1" id="hPf-Fi-yOq"/>
                                                 </constraints>
@@ -110,6 +114,8 @@
                                                 <state key="highlighted" image="F_pressed"/>
                                                 <connections>
                                                     <action selector="noteF:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ebm-GT-iSw"/>
+                                                    <action selector="touchDownF:" destination="BYZ-38-t0r" eventType="touchDown" id="skH-uE-hcw"/>
+                                                    <outletCollection property="gestureRecognizers" destination="m60-MP-b97" appends="YES" id="VtF-nX-xdq"/>
                                                 </connections>
                                             </button>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="RmL-Tp-3tm" userLabel="between E &amp; F">
@@ -117,6 +123,7 @@
                                             </imageView>
                                             <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ucd-Eh-NI4" userLabel="E">
                                                 <rect key="frame" x="592" y="0.0" width="110" height="110"/>
+                                                <gestureRecognizers/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="ucd-Eh-NI4" secondAttribute="height" multiplier="1:1" id="Tsm-AO-7b3"/>
                                                 </constraints>
@@ -124,6 +131,8 @@
                                                 <state key="highlighted" image="E_pressed"/>
                                                 <connections>
                                                     <action selector="noteE:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1ap-R2-oSA"/>
+                                                    <action selector="touchDownE:" destination="BYZ-38-t0r" eventType="touchDown" id="pxJ-uW-djA"/>
+                                                    <outletCollection property="gestureRecognizers" destination="lcs-bZ-y39" appends="YES" id="TsN-NQ-I5N"/>
                                                 </connections>
                                             </button>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="UZI-Ox-EoS" userLabel="between D &amp; E">
@@ -131,6 +140,7 @@
                                             </imageView>
                                             <button opaque="NO" tag="4" contentMode="scaleToFill" placeholderIntrinsicWidth="110" placeholderIntrinsicHeight="110" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YCd-Zs-4kT" userLabel="D">
                                                 <rect key="frame" x="444" y="0.0" width="110" height="110"/>
+                                                <gestureRecognizers/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="YCd-Zs-4kT" secondAttribute="height" multiplier="1:1" id="1X4-ZY-vCL"/>
                                                     <constraint firstAttribute="height" relation="lessThanOrEqual" constant="110" id="FNe-52-8Ff"/>
@@ -142,6 +152,8 @@
                                                 <state key="highlighted" image="D_pressed"/>
                                                 <connections>
                                                     <action selector="noteD:" destination="BYZ-38-t0r" eventType="touchUpInside" id="WMR-2d-dtC"/>
+                                                    <action selector="touchDownD:" destination="BYZ-38-t0r" eventType="touchDown" id="HSu-UZ-0gw"/>
+                                                    <outletCollection property="gestureRecognizers" destination="SoQ-uf-XIO" appends="YES" id="u1u-l1-2Xd"/>
                                                 </connections>
                                             </button>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="i4X-je-UF6" userLabel="between C &amp; D">
@@ -149,6 +161,7 @@
                                             </imageView>
                                             <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R7e-Tw-SC2" userLabel="C">
                                                 <rect key="frame" x="296" y="0.0" width="110" height="110"/>
+                                                <gestureRecognizers/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="R7e-Tw-SC2" secondAttribute="height" multiplier="1:1" id="gPA-Cx-b6c"/>
                                                 </constraints>
@@ -156,6 +169,8 @@
                                                 <state key="highlighted" image="C_pressed"/>
                                                 <connections>
                                                     <action selector="noteC:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Zfc-Jp-w4h"/>
+                                                    <action selector="touchDownC:" destination="BYZ-38-t0r" eventType="touchDown" id="xtR-4D-HH4"/>
+                                                    <outletCollection property="gestureRecognizers" destination="vwZ-Si-xOd" appends="YES" id="8lH-ZC-NwO"/>
                                                 </connections>
                                             </button>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2oz-1q-Abw" userLabel="between B &amp; C">
@@ -171,6 +186,7 @@
                                                 <state key="highlighted" image="B_pressed"/>
                                                 <connections>
                                                     <action selector="noteB:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fRM-4P-M5z"/>
+                                                    <action selector="touchDownB:" destination="BYZ-38-t0r" eventType="touchDown" id="avy-C8-jnn"/>
                                                     <outletCollection property="gestureRecognizers" destination="3tY-WC-Wpo" appends="YES" id="hs4-oz-v79"/>
                                                 </connections>
                                             </button>
@@ -561,10 +577,6 @@
                             <constraint firstItem="JI7-xy-e6Q" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="lSd-Sr-joe"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <connections>
-                            <outletCollection property="gestureRecognizers" destination="LNg-c0-tQQ" appends="YES" id="yod-NT-cg0"/>
-                            <outletCollection property="gestureRecognizers" destination="3tY-WC-Wpo" appends="YES" id="quT-fY-Jlo"/>
-                        </connections>
                     </view>
                     <connections>
                         <outlet property="noteButtonA" destination="tVB-E4-Spp" id="GUG-jX-giW"/>
@@ -588,6 +600,31 @@
                 <panGestureRecognizer minimumNumberOfTouches="1" id="3tY-WC-Wpo" userLabel="B Pan Gesture Recognizer">
                     <connections>
                         <action selector="handlePanGestureWithRecognizer:" destination="BYZ-38-t0r" id="uAT-jq-4ne"/>
+                    </connections>
+                </panGestureRecognizer>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="vwZ-Si-xOd" userLabel="C Pan Gesture Recognizer">
+                    <connections>
+                        <action selector="handlePanGestureWithRecognizer:" destination="BYZ-38-t0r" id="UVr-Md-aR2"/>
+                    </connections>
+                </panGestureRecognizer>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="SoQ-uf-XIO" userLabel="D Pan Gesture Recognizer">
+                    <connections>
+                        <action selector="handlePanGestureWithRecognizer:" destination="BYZ-38-t0r" id="0Qw-3L-928"/>
+                    </connections>
+                </panGestureRecognizer>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="lcs-bZ-y39" userLabel="E Pan Gesture Recognizer">
+                    <connections>
+                        <action selector="handlePanGestureWithRecognizer:" destination="BYZ-38-t0r" id="svT-Of-mI3"/>
+                    </connections>
+                </panGestureRecognizer>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="m60-MP-b97" userLabel="F Pan Gesture Recognizer">
+                    <connections>
+                        <action selector="handlePanGestureWithRecognizer:" destination="BYZ-38-t0r" id="ACA-fe-997"/>
+                    </connections>
+                </panGestureRecognizer>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="kBH-Rn-xZO" userLabel="G Pan Gesture Recognizer">
+                    <connections>
+                        <action selector="handlePanGestureWithRecognizer:" destination="BYZ-38-t0r" id="rdD-Dg-anO"/>
                     </connections>
                 </panGestureRecognizer>
             </objects>

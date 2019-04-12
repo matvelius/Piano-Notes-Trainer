@@ -284,35 +284,60 @@ class ViewController: UIViewController {
 //        print(recognizer.location(in: self.view).y)
 //        print("<-- current Y location")
         
-        func checkIfStateEnded() {
+        var panGestureOver: Bool = false
+        
+        func checkIfStateEnded() -> Bool {
+            
             if recognizer.state == .ended {
-                
                 let image = UIImage(named: "\(currentUserAnswer)_default")
                 currentNoteButton.setImage(image, for: UIControl.State.normal)
-                
+                print("ended! currentUserAnswer is: \(currentUserAnswer)")
+                return true
             }
+            
+            return false
+            
         }
         
         let image = UIImage(named: "\(currentUserAnswer)_pressed")
+        print("currentUserAnswer is: \(currentUserAnswer)")
         currentNoteButton.setImage(image, for: UIControl.State.normal)
         
         let currentLocationY = recognizer.location(in: self.view).y
         
+        panGestureOver = checkIfStateEnded()
+        
         // recognize flat
         if currentLocationY > 360 && currentLocationY < 450 {
             
-            print("we're below 360 and above 450! \(currentLocationY)")
-            checkIfStateEnded()
+            print("flat! \(currentLocationY)")
+            
+            if panGestureOver {
+                currentUserAnswer = "\(currentUserAnswer)b"
+                print(currentUserAnswer)
+                
+                checkAnswer()
+            }
+            
+            
             
         // recognize sharp
         } else if currentLocationY < 225 && currentLocationY > 0 {
             
             print("sharp! \(currentLocationY)")
-            checkIfStateEnded()
+            
+            if panGestureOver {
+                currentUserAnswer = "\(currentUserAnswer)#"
+                print(currentUserAnswer)
+                
+                checkAnswer()
+            }
+            
+            
         
         }
         
-        checkIfStateEnded()
+//        checkIfStateEnded()
         
         // when pan gesture is over, reset the button
 //        } else if recognizer.state == .ended {
@@ -365,43 +390,33 @@ class ViewController: UIViewController {
 //        }
 //    }
     
+    // REFACTOR:
+    
     @IBAction func noteA(_ sender: UIButton) {
         checkAnswer()
     }
     
     @IBAction func noteB(_ sender: UIButton) {
-        currentUserAnswer = "B"
-        currentNoteButton = noteButtonB
         checkAnswer()
     }
 
     @IBAction func noteC(_ sender: UIButton) {
-        currentUserAnswer = "C"
-        currentNoteButton = noteButtonC
         checkAnswer()
     }
     
     @IBAction func noteD(_ sender: UIButton) {
-        currentUserAnswer = "D"
-        currentNoteButton = noteButtonD
         checkAnswer()
     }
     
     @IBAction func noteE(_ sender: UIButton) {
-        currentUserAnswer = "E"
-        currentNoteButton = noteButtonE
         checkAnswer()
     }
     
     @IBAction func noteF(_ sender: UIButton) {
-        currentUserAnswer = "F"
-        currentNoteButton = noteButtonF
         checkAnswer()
     }
     
     @IBAction func noteG(_ sender: UIButton) {
-        currentUserAnswer = "G"
-        currentNoteButton = noteButtonG
         checkAnswer()
     }
 
@@ -409,5 +424,39 @@ class ViewController: UIViewController {
         currentUserAnswer = "A"
         currentNoteButton = noteButtonA
     }
+    
+    @IBAction func touchDownB(_ sender: UIButton) {
+        currentUserAnswer = "B"
+        currentNoteButton = noteButtonB
+    }
+    
+    @IBAction func touchDownC(_ sender: UIButton) {
+        currentUserAnswer = "C"
+        currentNoteButton = noteButtonC
+    }
+    
+    
+    @IBAction func touchDownD(_ sender: UIButton) {
+        currentUserAnswer = "D"
+        currentNoteButton = noteButtonD
+    }
+    
+    @IBAction func touchDownE(_ sender: UIButton) {
+        currentUserAnswer = "E"
+        currentNoteButton = noteButtonE
+    }
+    
+    @IBAction func touchDownF(_ sender: UIButton) {
+        currentUserAnswer = "F"
+        currentNoteButton = noteButtonF
+    }
+    
+    
+    @IBAction func touchDownG(_ sender: UIButton) {
+        currentUserAnswer = "G"
+        currentNoteButton = noteButtonG
+    }
+    
+    
 }
 
