@@ -70,8 +70,10 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         scoreLabel.text = "0"
         startNewRound()
-        print("noteButtonA's coordinateSpace is: ")
-        print(noteButtonA.coordinateSpace)
+//        print("noteButtonA's coordinateSpace is: ")
+//        print(noteButtonA.coordinateSpace)
+//
+//        print(UIApplication.shared.keyWindow?.coordinateSpace)
     }
     
     func startNewRound() {
@@ -279,14 +281,50 @@ class ViewController: UIViewController {
     
     
     @IBAction func handlePanGesture(recognizer: UIPanGestureRecognizer) {
-        print(recognizer.location(in: self.view).y)
-        print("<-- current Y location")
+//        print(recognizer.location(in: self.view).y)
+//        print("<-- current Y location")
         
-        if recognizer.location(in: self.view).y > 150 && recognizer.location(in: self.view).y < 400 {
-            print("we're above 150 and below 400!")
+        func checkIfStateEnded() {
+            if recognizer.state == .ended {
+                
+                let image = UIImage(named: "\(currentUserAnswer)_default")
+                currentNoteButton.setImage(image, for: UIControl.State.normal)
+                
+            }
         }
+        
+        let image = UIImage(named: "\(currentUserAnswer)_pressed")
+        currentNoteButton.setImage(image, for: UIControl.State.normal)
+        
+        let currentLocationY = recognizer.location(in: self.view).y
+        
+        // recognize flat
+        if currentLocationY > 360 && currentLocationY < 450 {
+            
+            print("we're below 360 and above 450! \(currentLocationY)")
+            checkIfStateEnded()
+            
+        // recognize sharp
+        } else if currentLocationY < 225 && currentLocationY > 0 {
+            
+            print("sharp! \(currentLocationY)")
+            checkIfStateEnded()
+        
+        }
+        
+        checkIfStateEnded()
+        
+        // when pan gesture is over, reset the button
+//        } else if recognizer.state == .ended {
+//
+//            let image = UIImage(named: "\(currentUserAnswer)_default")
+//            currentNoteButton.setImage(image, for: UIControl.State.normal)
+//
+//        }
         // use tag to identify button?
 //        print(recognizer.view?.tag)
+        
+        
         
     }
     
@@ -328,8 +366,6 @@ class ViewController: UIViewController {
 //    }
     
     @IBAction func noteA(_ sender: UIButton) {
-        currentUserAnswer = "A"
-        currentNoteButton = noteButtonA
         checkAnswer()
     }
     
@@ -369,5 +405,9 @@ class ViewController: UIViewController {
         checkAnswer()
     }
 
+    @IBAction func touchDownA(_ sender: UIButton) {
+        currentUserAnswer = "A"
+        currentNoteButton = noteButtonA
+    }
 }
 

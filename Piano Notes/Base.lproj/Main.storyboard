@@ -187,6 +187,7 @@
                                                 <state key="highlighted" image="A_pressed"/>
                                                 <connections>
                                                     <action selector="noteA:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0mq-tr-kHB"/>
+                                                    <action selector="touchDownA:" destination="BYZ-38-t0r" eventType="touchDown" id="r2R-dD-EZH"/>
                                                     <outletCollection property="gestureRecognizers" destination="LNg-c0-tQQ" appends="YES" id="05n-o1-Lrr"/>
                                                 </connections>
                                             </button>
@@ -560,6 +561,10 @@
                             <constraint firstItem="JI7-xy-e6Q" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="lSd-Sr-joe"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="LNg-c0-tQQ" appends="YES" id="yod-NT-cg0"/>
+                            <outletCollection property="gestureRecognizers" destination="3tY-WC-Wpo" appends="YES" id="quT-fY-Jlo"/>
+                        </connections>
                     </view>
                     <connections>
                         <outlet property="noteButtonA" destination="tVB-E4-Spp" id="GUG-jX-giW"/>
@@ -628,10 +633,12 @@
                                     <action selector="navTriangleLeftPressed:" destination="ocB-fJ-hDj" eventType="touchUpInside" id="LUE-fe-M8w"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pvh-OJ-xAE">
-                                <rect key="frame" x="1219" y="91" width="108" height="52"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pvh-OJ-xAE">
+                                <rect key="frame" x="1231" y="74" width="85" height="52"/>
                                 <color key="backgroundColor" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="85" id="Mwp-Xd-ycM"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="33"/>
                                 <state key="normal" title="SKIP"/>
                                 <userDefinedRuntimeAttributes>
@@ -647,7 +654,9 @@
                         <color key="backgroundColor" red="0.27450980392156865" green="0.27450980392156865" blue="0.27450980392156865" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="oXW-qM-tFj" firstAttribute="centerY" secondItem="ciP-ib-WW8" secondAttribute="centerY" id="5cf-ew-zrJ"/>
+                            <constraint firstItem="GME-4K-2zm" firstAttribute="trailing" secondItem="Pvh-OJ-xAE" secondAttribute="trailing" constant="50" id="Ijn-fD-hot"/>
                             <constraint firstItem="Xd0-0D-gns" firstAttribute="top" secondItem="GME-4K-2zm" secondAttribute="top" id="Kbt-sY-r8y"/>
+                            <constraint firstItem="Pvh-OJ-xAE" firstAttribute="top" secondItem="GME-4K-2zm" secondAttribute="top" constant="50" id="NFw-1d-KiF"/>
                             <constraint firstAttribute="trailing" secondItem="POa-Tj-g11" secondAttribute="trailing" id="QtW-K0-TB1"/>
                             <constraint firstItem="POa-Tj-g11" firstAttribute="leading" secondItem="ciP-ib-WW8" secondAttribute="leading" id="aGb-HS-9Lv"/>
                             <constraint firstItem="GME-4K-2zm" firstAttribute="trailing" secondItem="Xd0-0D-gns" secondAttribute="trailing" id="caj-ek-a8e"/>
