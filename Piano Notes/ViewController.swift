@@ -274,6 +274,20 @@ class ViewController: UIViewController {
         }
     }
     
+    
+    @IBAction func handlePanGesture(recognizer: UIPanGestureRecognizer) {
+        print(recognizer.translation(in: self.view).y)
+        print("<-- current Y translation")
+        print(recognizer.view?.tag)
+        
+    }
+    
+    //  figure out which button is sending the translation message
+    //  get coordinates of the triangle button (as a variable -- changes with size right?)
+    //  make sure buttons look correct depending on user action
+    //  disable red button
+    
+    
 //    func play(sound: String, ofType type: SoundExtension) {
 ////        print("1: \(notificationSoundLookupTable)")
 //        if let soundID = notificationSoundLookupTable[sound] {

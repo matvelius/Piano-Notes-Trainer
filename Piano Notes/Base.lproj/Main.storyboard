@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ocB-fJ-hDj">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ocB-fJ-hDj">
     <device id="ipad12_9rounded" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -84,7 +84,7 @@
                                             <constraint firstItem="1pd-8Z-aLk" firstAttribute="trailing" secondItem="Uxe-4T-2YK" secondAttribute="leading" id="yvH-5J-Vd7"/>
                                         </constraints>
                                     </view>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zPC-OD-elJ" userLabel="G">
+                                    <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zPC-OD-elJ" userLabel="G">
                                         <rect key="frame" x="1072" y="10" width="110" height="110"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="zPC-OD-elJ" secondAttribute="height" multiplier="1:1" id="kCW-PF-nNd"/>
@@ -98,7 +98,7 @@
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Oyr-TJ-21U" userLabel="between F &amp; G">
                                         <rect key="frame" x="1034" y="10" width="38" height="110"/>
                                     </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PEp-9J-Ifz" userLabel="F">
+                                    <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PEp-9J-Ifz" userLabel="F">
                                         <rect key="frame" x="924" y="10" width="110" height="110"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="PEp-9J-Ifz" secondAttribute="height" multiplier="1:1" id="hPf-Fi-yOq"/>
@@ -112,7 +112,7 @@
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="RmL-Tp-3tm" userLabel="between E &amp; F">
                                         <rect key="frame" x="886" y="10" width="38" height="110"/>
                                     </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ucd-Eh-NI4" userLabel="E">
+                                    <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ucd-Eh-NI4" userLabel="E">
                                         <rect key="frame" x="776" y="10" width="110" height="110"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="ucd-Eh-NI4" secondAttribute="height" multiplier="1:1" id="Tsm-AO-7b3"/>
@@ -168,6 +168,7 @@
                                         <state key="highlighted" image="B_pressed"/>
                                         <connections>
                                             <action selector="noteB:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fRM-4P-M5z"/>
+                                            <outletCollection property="gestureRecognizers" destination="3tY-WC-Wpo" appends="YES" id="hs4-oz-v79"/>
                                         </connections>
                                     </button>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bLo-vd-vTh" userLabel="between A &amp; B">
@@ -183,6 +184,7 @@
                                         <state key="highlighted" image="A_pressed"/>
                                         <connections>
                                             <action selector="noteA:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0mq-tr-kHB"/>
+                                            <outletCollection property="gestureRecognizers" destination="LNg-c0-tQQ" appends="YES" id="05n-o1-Lrr"/>
                                         </connections>
                                     </button>
                                     <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gdl-It-3iu" userLabel="note button stack">
@@ -297,6 +299,16 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="LNg-c0-tQQ" userLabel="A Pan Gesture Recognizer">
+                    <connections>
+                        <action selector="handlePanGestureWithRecognizer:" destination="BYZ-38-t0r" id="N6p-a2-mQy"/>
+                    </connections>
+                </panGestureRecognizer>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="3tY-WC-Wpo" userLabel="B Pan Gesture Recognizer">
+                    <connections>
+                        <action selector="handlePanGestureWithRecognizer:" destination="BYZ-38-t0r" id="uAT-jq-4ne"/>
+                    </connections>
+                </panGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="67.642752562225468" y="107.8125"/>
         </scene>
@@ -308,6 +320,35 @@
                         <rect key="frame" x="0.0" y="0.0" width="1366" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progressViewStyle="bar" progress="0.69999999999999996" translatesAutoresizingMaskIntoConstraints="NO" id="POa-Tj-g11">
+                                <rect key="frame" x="0.0" y="999" width="1366" height="6"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="5" id="zBk-zO-9cL"/>
+                                </constraints>
+                            </progressView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oUe-B0-TM1" userLabel="navTriangleRight">
+                                <rect key="frame" x="1261.5" y="333" width="84.5" height="358.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="358.5" id="77t-hG-qaH"/>
+                                    <constraint firstAttribute="width" constant="84.5" id="aBL-Jm-5zk"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="nav_triangle_R_normal"/>
+                                <state key="selected" image="nav_triangle_R_pressed"/>
+                                <connections>
+                                    <action selector="navTriangleRightPressed:" destination="ocB-fJ-hDj" eventType="touchUpInside" id="eps-zv-KKP"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oXW-qM-tFj" userLabel="navTriangleLeft">
+                                <rect key="frame" x="20" y="333" width="84.5" height="358.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="358.5" id="SVN-hm-1KA"/>
+                                    <constraint firstAttribute="width" constant="84.5" id="veR-bp-ueu"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="nav_triangle_L_normal"/>
+                                <connections>
+                                    <action selector="navTriangleLeftPressed:" destination="ocB-fJ-hDj" eventType="touchUpInside" id="LUE-fe-M8w"/>
+                                </connections>
+                            </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="explainer_1" translatesAutoresizingMaskIntoConstraints="NO" id="Xd0-0D-gns" userLabel="explainer_image">
                                 <rect key="frame" x="0.0" y="24" width="1366" height="980"/>
                             </imageView>
@@ -323,38 +364,9 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <segue destination="BYZ-38-t0r" kind="presentation" id="0z7-So-mTa"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="0z7-So-mTa"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oXW-qM-tFj" userLabel="navTriangleLeft">
-                                <rect key="frame" x="20" y="333" width="84.5" height="358.5"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="358.5" id="SVN-hm-1KA"/>
-                                    <constraint firstAttribute="width" constant="84.5" id="veR-bp-ueu"/>
-                                </constraints>
-                                <state key="normal" title="Button" image="nav_triangle_L_normal"/>
-                                <connections>
-                                    <action selector="navTriangleLeftPressed:" destination="ocB-fJ-hDj" eventType="touchUpInside" id="LUE-fe-M8w"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oUe-B0-TM1" userLabel="navTriangleRight">
-                                <rect key="frame" x="1261.5" y="333" width="84.5" height="358.5"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="358.5" id="77t-hG-qaH"/>
-                                    <constraint firstAttribute="width" constant="84.5" id="aBL-Jm-5zk"/>
-                                </constraints>
-                                <state key="normal" title="Button" image="nav_triangle_R_normal"/>
-                                <state key="selected" image="nav_triangle_R_pressed"/>
-                                <connections>
-                                    <action selector="navTriangleRightPressed:" destination="ocB-fJ-hDj" eventType="touchUpInside" id="eps-zv-KKP"/>
-                                </connections>
-                            </button>
-                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progressViewStyle="bar" progress="0.69999999999999996" translatesAutoresizingMaskIntoConstraints="NO" id="POa-Tj-g11">
-                                <rect key="frame" x="0.0" y="999" width="1366" height="6"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="5" id="zBk-zO-9cL"/>
-                                </constraints>
-                            </progressView>
                         </subviews>
                         <color key="backgroundColor" red="0.27450980392156865" green="0.27450980392156865" blue="0.27450980392156865" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -406,7 +418,7 @@
         <image name="nav_triangle_R_pressed" width="115" height="717"/>
         <image name="score" width="754" height="102"/>
         <image name="stars0" width="754" height="102"/>
-        <image name="white_piano_12.9_large" width="2732" height="1616"/>
+        <image name="white_piano_12.9_large" width="910.66668701171875" height="538.66668701171875"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="gpG-aX-QFw"/>
