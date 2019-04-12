@@ -70,6 +70,8 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         scoreLabel.text = "0"
         startNewRound()
+        print("noteButtonA's coordinateSpace is: ")
+        print(noteButtonA.coordinateSpace)
     }
     
     func startNewRound() {
@@ -276,9 +278,10 @@ class ViewController: UIViewController {
     
     
     @IBAction func handlePanGesture(recognizer: UIPanGestureRecognizer) {
-        print(recognizer.translation(in: self.view).y)
-        print("<-- current Y translation")
-        print(recognizer.view?.tag)
+        print(recognizer.location(in: self.view).y)
+        print("<-- current Y location")
+        // use tag to identify button?
+//        print(recognizer.view?.tag)
         
     }
     
