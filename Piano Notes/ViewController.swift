@@ -93,11 +93,23 @@ class ViewController: UIViewController {
 //            print("generateNewNote() called; randomNewNoteIndex = \(randomNewNoteIndex)")
         }
         
-        let highlightedNoteChoice = ["G3", "A3", "B3", "C4", "D4", "E4", "F4", "G4", "A4", "B4", "C5", "D5", "E5", "F5", "G5", "A5"]
+//        let highlightedNoteChoice = ["G3", "A3", "B3", "C4", "D4", "E4", "F4", "G4", "A4", "B4", "C5", "D5", "E5", "F5", "G5", "A5"]
+        
+        let highlightedNoteChoice = ["F#3", "G3", "G#3", "A3", "A#3", "B3", "C4", "C#4", "D4", "D#4", "E4", "F4", "F#4", "G4", "G#4", "A4", "A#4", "B4", "C5", "C#5",  "D5", "D#5", "E5", "F5", "F#5", "G5", "G#5", "A5", "A#5"]
         currentNote = highlightedNoteChoice[randomNewNoteIndex]
         print("the current note is \(currentNote)")
         
-        currentCorrectAnswer = String(currentNote[currentNote.startIndex])
+        let currentNoteNameLength = currentNote.count
+        
+        if currentNoteNameLength == 3 {
+            currentCorrectAnswer = String(currentNote[currentNote.startIndex...currentNote.index(after: currentNote.startIndex)])
+            print("currentCorrectAnswer when name length == 3: \(currentCorrectAnswer)")
+        } else {
+            currentCorrectAnswer = String(currentNote[currentNote.startIndex])
+            print("currentCorrectAnswer when name length == \(currentNoteNameLength): \(currentCorrectAnswer)")
+        }
+//        currentCorrectAnswer = String(currentNote[currentNote.startIndex])
+        print("currentCorrectAnswer is \(currentCorrectAnswer)")
         pianoImage.image = UIImage(named: currentNote)
         
         lastRandomNumber = randomNewNoteIndex
@@ -113,7 +125,7 @@ class ViewController: UIViewController {
         if currentUserAnswer == currentCorrectAnswer {
             
             // show result (green button)
-            imageName = "\(currentCorrectAnswer)_right"
+            imageName = "\(currentCorrectAnswer.startIndex)_right"
             let image = UIImage(named: imageName)
             currentNoteButton.setImage(image, for: UIControl.State.normal)
             // play sound
@@ -147,7 +159,7 @@ class ViewController: UIViewController {
             audioPlayer!.setVolume(0.06, fadeDuration: 0)
             
             // color button red
-            imageName = "\(currentUserAnswer)_wrong"
+            imageName = "\(currentCorrectAnswer.startIndex)_wrong"
             let image = UIImage(named: imageName)
             currentNoteButton.setImage(image, for: UIControl.State.normal)
             
@@ -286,13 +298,26 @@ class ViewController: UIViewController {
         
         var panGestureOver: Bool = false
         
-        func checkIfStateEnded() -> Bool {
+        func checkIfStateEnded(onSharpOrFlat: String) -> Bool {
             
             if recognizer.state == .ended {
-                let image = UIImage(named: "\(currentUserAnswer)_default")
-                currentNoteButton.setImage(image, for: UIControl.State.normal)
-                print("ended! currentUserAnswer is: \(currentUserAnswer)")
-                return true
+                switch onSharpOrFlat {
+                case "b":
+                    currentUserAnswer = "\(currentUserAnswer)b"
+                    let image = UIImage(named: "\(currentUserAnswer)_default")
+                    currentNoteButton.setImage(image, for: UIControl.State.normal)
+                    print("ended! currentUserAnswer is: \(currentUserAnswer)")
+                    return true
+                case "#":
+                    currentUserAnswer = "\(currentUserAnswer)#"
+                    let image = UIImage(named: "\(currentUserAnswer)_default")
+                    currentNoteButton.setImage(image, for: UIControl.State.normal)
+                    print("ended! currentUserAnswer is: \(currentUserAnswer)")
+                    return true
+                default:
+                    print("something went weird...")
+                    break
+                }
             }
             
             return false
@@ -300,56 +325,41 @@ class ViewController: UIViewController {
         }
         
         let image = UIImage(named: "\(currentUserAnswer)_pressed")
-        print("currentUserAnswer is: \(currentUserAnswer)")
+//        print("currentUserAnswer is: \(currentUserAnswer)")
         currentNoteButton.setImage(image, for: UIControl.State.normal)
         
         let currentLocationY = recognizer.location(in: self.view).y
         
-        panGestureOver = checkIfStateEnded()
+        
         
         // recognize flat
         if currentLocationY > 360 && currentLocationY < 450 {
             
-            print("flat! \(currentLocationY)")
+//            print("flat! \(currentLocationY)")
+            
+            panGestureOver = checkIfStateEnded(onSharpOrFlat: "b")
             
             if panGestureOver {
-                currentUserAnswer = "\(currentUserAnswer)b"
-                print(currentUserAnswer)
+//                currentUserAnswer = "\(currentUserAnswer)b"
+//                print(currentUserAnswer)
                 
                 checkAnswer()
             }
-            
-            
             
         // recognize sharp
         } else if currentLocationY < 225 && currentLocationY > 0 {
             
-            print("sharp! \(currentLocationY)")
+//            print("sharp! \(currentLocationY)")
+            panGestureOver = checkIfStateEnded(onSharpOrFlat: "#")
             
             if panGestureOver {
-                currentUserAnswer = "\(currentUserAnswer)#"
-                print(currentUserAnswer)
+//                currentUserAnswer = "\(currentUserAnswer)#"
+//                print(currentUserAnswer)
                 
                 checkAnswer()
             }
             
-            
-        
         }
-        
-//        checkIfStateEnded()
-        
-        // when pan gesture is over, reset the button
-//        } else if recognizer.state == .ended {
-//
-//            let image = UIImage(named: "\(currentUserAnswer)_default")
-//            currentNoteButton.setImage(image, for: UIControl.State.normal)
-//
-//        }
-        // use tag to identify button?
-//        print(recognizer.view?.tag)
-        
-        
         
     }
     
@@ -357,6 +367,19 @@ class ViewController: UIViewController {
     //  get coordinates of the triangle button (as a variable -- changes with size right?)
     //  make sure buttons look correct depending on user action
     //  disable red button
+    
+    //        checkIfStateEnded()
+    
+    // when pan gesture is over, reset the button
+    //        } else if recognizer.state == .ended {
+    //
+    //            let image = UIImage(named: "\(currentUserAnswer)_default")
+    //            currentNoteButton.setImage(image, for: UIControl.State.normal)
+    //
+    //        }
+    // use tag to identify button?
+    //        print(recognizer.view?.tag)
+    
     
     
 //    func play(sound: String, ofType type: SoundExtension) {
