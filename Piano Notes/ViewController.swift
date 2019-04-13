@@ -138,14 +138,19 @@ class ViewController: UIViewController {
         // placeholder variable for button image name
         var imageName = ""
         
+        // get enharmonic equivalent
+        let currentEnharmonic: String? = getEnharmonic(currentNote: currentUserAnswer)
+        
         // right answer
-        if currentUserAnswer == currentCorrectAnswer {
+        if currentUserAnswer == currentCorrectAnswer || currentEnharmonic == currentCorrectAnswer {
+            print("CORRECT!!!")
+            
             print("in checkAnswer, currentCorrectAnswer is: \(currentCorrectAnswer)")
             print("in checkAnswer, currentUserAnswer is: \(currentUserAnswer)")
+            print("in checkAnswer, currentEnharmonic is: \(currentEnharmonic)")
             
-            // show result (green button)
             // if dealing with sharp or flat, light up regular letter + #/b symbol
-            if currentCorrectAnswer.count == 2 {
+            if currentUserAnswer.count == 2 {
                 
                 switch currentAccidental {
                     
@@ -164,19 +169,31 @@ class ViewController: UIViewController {
                 }
                 
             }
+            
+            // user answers Cb, correct answer is B
         
-            imageName = "\(currentCorrectAnswer[currentCorrectAnswer.startIndex])_right"
-//            }
+            if currentEnharmonic == currentCorrectAnswer {
+                
+                // change the correct note buttons' colors
+                imageName = "\(currentUserAnswer[currentUserAnswer.startIndex])_right"
+                
+            } else {
+        
+                imageName = "\(currentCorrectAnswer[currentCorrectAnswer.startIndex])_right"
+
+            }
+            
             print("imageName = \(imageName)")
-//            print("currentButton.tag = \(currentNoteButton.tag)")
+            //            print("currentButton.tag = \(currentNoteButton.tag)")
             let image = UIImage(named: imageName)
             currentNoteButton.setImage(image, for: UIControl.State.normal)
+            
             // play sound
             loadSound(currentSound: currentNote)
             audioPlayer!.play()
             audioPlayer!.setVolume(0, fadeDuration: 2.5)
-//            print(currentNote)
-//            play(sound: "\(currentNote)", ofType: .wav)
+            //            print(currentNote)
+            //            play(sound: "\(currentNote)", ofType: .wav)
             disableButtons()
             
             // update score
@@ -185,8 +202,8 @@ class ViewController: UIViewController {
             incorrectAnswersInARow = 0
             giveOrTakeAStar()
             
-//            usleep(1000000) //will sleep for 1 second
-//            Thread.sleep(forTimeInterval: 60/cadence)
+            //            usleep(1000000) //will sleep for 1 second
+            //            Thread.sleep(forTimeInterval: 60/cadence)
             DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1), execute:{
                 self.resetButtonsToDefault()
                 self.generateNewNote()
