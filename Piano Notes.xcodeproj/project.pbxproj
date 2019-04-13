@@ -44,6 +44,7 @@
 		D777C82222009DE000FA472E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D777C82022009DE000FA472E /* LaunchScreen.storyboard */; };
 		D7C2E3DA2241C9E300A72D5C /* ExplainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C2E3D92241C9E300A72D5C /* ExplainerViewController.swift */; };
 		D7C88AC52249EFA0000F484F /* wrong.aiff in Resources */ = {isa = PBXBuildFile; fileRef = D7C88AC42249EFA0000F484F /* wrong.aiff */; };
+		D7DFCFEB22619FC700468F71 /* MusicalAlphabet.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7DFCFEA22619FC700468F71 /* MusicalAlphabet.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -86,6 +87,7 @@
 		D777C82322009DE000FA472E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D7C2E3D92241C9E300A72D5C /* ExplainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExplainerViewController.swift; sourceTree = "<group>"; };
 		D7C88AC42249EFA0000F484F /* wrong.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = wrong.aiff; sourceTree = "<group>"; };
+		D7DFCFEA22619FC700468F71 /* MusicalAlphabet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicalAlphabet.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,6 +169,7 @@
 			children = (
 				D777C81722009DDB00FA472E /* AppDelegate.swift */,
 				D777C81922009DDB00FA472E /* ViewController.swift */,
+				D7DFCFEA22619FC700468F71 /* MusicalAlphabet.swift */,
 				D7C2E3D92241C9E300A72D5C /* ExplainerViewController.swift */,
 				D777C81B22009DDB00FA472E /* Main.storyboard */,
 				D777C81E22009DE000FA472E /* Assets.xcassets */,
@@ -284,6 +287,7 @@
 				D777C81A22009DDB00FA472E /* ViewController.swift in Sources */,
 				D7C2E3DA2241C9E300A72D5C /* ExplainerViewController.swift in Sources */,
 				D777C81822009DDB00FA472E /* AppDelegate.swift in Sources */,
+				D7DFCFEB22619FC700468F71 /* MusicalAlphabet.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

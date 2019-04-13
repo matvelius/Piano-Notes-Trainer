@@ -25,6 +25,16 @@ class ViewController: UIViewController {
     // placeholder for current note
     var currentNote = ""
     
+    
+    // keeping track of the accidentals
+    enum Accidentals {
+        case sharp
+        case flat
+    }
+    
+    var currentAccidental: Accidentals = .flat
+    
+    
 //    var notificationSoundLookupTable = [String: SystemSoundID]()
     
 //    enum SoundExtension : String {
@@ -41,6 +51,12 @@ class ViewController: UIViewController {
     @IBOutlet weak var noteButtonE: UIButton!
     @IBOutlet weak var noteButtonF: UIButton!
     @IBOutlet weak var noteButtonG: UIButton!
+    
+    @IBOutlet var sharpsOutletCollection: [UIButton]!
+    
+    
+    @IBOutlet var flatsOutletCollection: [UIButton]!
+    
     
     // placeholder variable for the button user presses
     var currentNoteButton: UIButton!
@@ -86,16 +102,17 @@ class ViewController: UIViewController {
     
     func generateNewNote() {
         
-        randomNewNoteIndex = Int.random(in: 0...15)
+        randomNewNoteIndex = Int.random(in: 0...28)
         
         while randomNewNoteIndex == lastRandomNumber {
-            randomNewNoteIndex = Int.random(in: 0...15)
+            randomNewNoteIndex = Int.random(in: 0...28)
 //            print("generateNewNote() called; randomNewNoteIndex = \(randomNewNoteIndex)")
         }
         
 //        let highlightedNoteChoice = ["G3", "A3", "B3", "C4", "D4", "E4", "F4", "G4", "A4", "B4", "C5", "D5", "E5", "F5", "G5", "A5"]
         
         let highlightedNoteChoice = ["F#3", "G3", "G#3", "A3", "A#3", "B3", "C4", "C#4", "D4", "D#4", "E4", "F4", "F#4", "G4", "G#4", "A4", "A#4", "B4", "C5", "C#5",  "D5", "D#5", "E5", "F5", "F#5", "G5", "G#5", "A5", "A#5"]
+//        print("NUMBER OF NOTES: \(highlightedNoteChoice.count)")
         currentNote = highlightedNoteChoice[randomNewNoteIndex]
         print("the current note is \(currentNote)")
         
@@ -123,9 +140,48 @@ class ViewController: UIViewController {
         
         // right answer
         if currentUserAnswer == currentCorrectAnswer {
+            print("in checkAnswer, currentCorrectAnswer is: \(currentCorrectAnswer)")
+            print("in checkAnswer, currentUserAnswer is: \(currentUserAnswer)")
             
             // show result (green button)
-            imageName = "\(currentCorrectAnswer.startIndex)_right"
+            // if dealing with sharp or flat, light up regular letter + #/b symbol
+            if currentCorrectAnswer.count == 2 {
+                imageName = "\(String(currentCorrectAnswer[currentCorrectAnswer.startIndex...currentCorrectAnswer.index(after: currentCorrectAnswer.startIndex)]))_right"
+                
+                switch currentAccidental {
+                    
+                case .flat:
+                    for flat in flatsOutletCollection {
+                        if flat.tag == currentNoteButton.tag {
+                            flat.setImage(UIImage(named: "flat_right"), for: .normal)
+                        }
+                    }
+                case .sharp:
+                    for sharp in sharpsOutletCollection {
+                        if sharp.tag == currentNoteButton.tag {
+                            sharp.setImage(UIImage(named: "sharp_right"), for: .normal)
+                        }
+                    }
+                }
+        
+//                switch currentAccidental {
+//                case .flat:
+////                    imageName =
+//                    // find the correct flat button
+//                    flatsOutletCollection[currentNoteButton.tag - 1].setImage(UIImage(named: "flat_right"), for: .normal)
+////                    break
+//                case .sharp:
+//                    // find the correct sharp button based on currentNoteButton.tag
+//                    // change its image to sharp_right
+////                    break
+//                    sharpsOutletCollection[currentNoteButton.tag - 1].setImage(UIImage(named: "sharp_right"), for: .normal)
+////                        .setImage(UIImage(named: "sharp_right"), for: UIControl.State.normal)
+//                }
+            } else {
+                imageName = "\(currentCorrectAnswer[currentCorrectAnswer.startIndex])_right"
+            }
+            print("imageName = \(imageName)")
+            print("currentButton.tag = \(currentNoteButton.tag)")
             let image = UIImage(named: imageName)
             currentNoteButton.setImage(image, for: UIControl.State.normal)
             // play sound
@@ -292,23 +348,26 @@ class ViewController: UIViewController {
     }
     
     
+    
     @IBAction func handlePanGesture(recognizer: UIPanGestureRecognizer) {
 //        print(recognizer.location(in: self.view).y)
 //        print("<-- current Y location")
         
         var panGestureOver: Bool = false
         
-        func checkIfStateEnded(onSharpOrFlat: String) -> Bool {
+        func checkIfStateEnded(onSharpOrFlat: Accidentals) -> Bool {
             
             if recognizer.state == .ended {
                 switch onSharpOrFlat {
-                case "b":
+                case .flat:
+                    currentAccidental = .flat
                     currentUserAnswer = "\(currentUserAnswer)b"
                     let image = UIImage(named: "\(currentUserAnswer)_default")
                     currentNoteButton.setImage(image, for: UIControl.State.normal)
                     print("ended! currentUserAnswer is: \(currentUserAnswer)")
                     return true
-                case "#":
+                case .sharp:
+                    currentAccidental = .sharp
                     currentUserAnswer = "\(currentUserAnswer)#"
                     let image = UIImage(named: "\(currentUserAnswer)_default")
                     currentNoteButton.setImage(image, for: UIControl.State.normal)
@@ -337,7 +396,7 @@ class ViewController: UIViewController {
             
 //            print("flat! \(currentLocationY)")
             
-            panGestureOver = checkIfStateEnded(onSharpOrFlat: "b")
+            panGestureOver = checkIfStateEnded(onSharpOrFlat: .flat)
             
             if panGestureOver {
 //                currentUserAnswer = "\(currentUserAnswer)b"
@@ -350,7 +409,7 @@ class ViewController: UIViewController {
         } else if currentLocationY < 225 && currentLocationY > 0 {
             
 //            print("sharp! \(currentLocationY)")
-            panGestureOver = checkIfStateEnded(onSharpOrFlat: "#")
+            panGestureOver = checkIfStateEnded(onSharpOrFlat: .sharp)
             
             if panGestureOver {
 //                currentUserAnswer = "\(currentUserAnswer)#"

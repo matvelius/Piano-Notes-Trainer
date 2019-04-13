@@ -271,7 +271,7 @@
                                             <constraint firstAttribute="width" secondItem="BdG-ug-ScI" secondAttribute="height" multiplier="38:85" id="dtA-b9-FIZ"/>
                                         </constraints>
                                     </imageView>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ucu-fc-WoN" userLabel="new sharps">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ucu-fc-WoN" userLabel="sharps">
                                         <rect key="frame" x="184" y="13.5" width="998" height="61.5"/>
                                         <subviews>
                                             <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WWC-jf-Chu" userLabel="sharp">
@@ -400,7 +400,7 @@
                                         </constraints>
                                         <viewLayoutGuide key="safeArea" id="nHJ-KH-D92"/>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lkt-CX-jcE" userLabel="new flats">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lkt-CX-jcE" userLabel="flats">
                                         <rect key="frame" x="184" y="205" width="998" height="61.5"/>
                                         <subviews>
                                             <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="byI-wM-mVi" userLabel="flat">
@@ -589,6 +589,20 @@
                         <outlet property="pianoImage" destination="PeW-eg-9HV" id="aHr-fh-2dz"/>
                         <outlet property="scoreLabel" destination="sBK-js-cjK" id="lwG-mi-Vee"/>
                         <outlet property="stars" destination="fee-2h-mBH" id="c84-78-SiM"/>
+                        <outletCollection property="sharpsOutletCollection" destination="WWC-jf-Chu" collectionClass="NSMutableArray" id="ytB-1o-UAp"/>
+                        <outletCollection property="sharpsOutletCollection" destination="cQS-mJ-CEi" collectionClass="NSMutableArray" id="NqA-BS-Sbz"/>
+                        <outletCollection property="sharpsOutletCollection" destination="Xod-po-PyJ" collectionClass="NSMutableArray" id="Jpd-YF-EOO"/>
+                        <outletCollection property="sharpsOutletCollection" destination="zoM-hy-uSw" collectionClass="NSMutableArray" id="WaB-oH-iJm"/>
+                        <outletCollection property="sharpsOutletCollection" destination="xEQ-Nq-1Tz" collectionClass="NSMutableArray" id="qEO-Gn-1O5"/>
+                        <outletCollection property="sharpsOutletCollection" destination="7HQ-9a-elb" collectionClass="NSMutableArray" id="x0t-PZ-7zs"/>
+                        <outletCollection property="sharpsOutletCollection" destination="Vfi-DJ-p56" collectionClass="NSMutableArray" id="H4j-jp-AAr"/>
+                        <outletCollection property="flatsOutletCollection" destination="byI-wM-mVi" collectionClass="NSMutableArray" id="p4g-TM-M0i"/>
+                        <outletCollection property="flatsOutletCollection" destination="QNg-Cz-Bky" collectionClass="NSMutableArray" id="Kze-yD-cXk"/>
+                        <outletCollection property="flatsOutletCollection" destination="HJv-nR-U3N" collectionClass="NSMutableArray" id="v6q-lt-WHc"/>
+                        <outletCollection property="flatsOutletCollection" destination="AMe-ET-9L3" collectionClass="NSMutableArray" id="BhU-5b-4aZ"/>
+                        <outletCollection property="flatsOutletCollection" destination="cmD-DR-DtT" collectionClass="NSMutableArray" id="ZyF-Ba-EiQ"/>
+                        <outletCollection property="flatsOutletCollection" destination="cbJ-UK-jH1" collectionClass="NSMutableArray" id="Yao-k1-2OX"/>
+                        <outletCollection property="flatsOutletCollection" destination="hu4-y0-jV2" collectionClass="NSMutableArray" id="aPQ-S6-e70"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
