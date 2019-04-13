@@ -146,7 +146,6 @@ class ViewController: UIViewController {
             // show result (green button)
             // if dealing with sharp or flat, light up regular letter + #/b symbol
             if currentCorrectAnswer.count == 2 {
-                imageName = "\(String(currentCorrectAnswer[currentCorrectAnswer.startIndex...currentCorrectAnswer.index(after: currentCorrectAnswer.startIndex)]))_right"
                 
                 switch currentAccidental {
                     
@@ -163,25 +162,13 @@ class ViewController: UIViewController {
                         }
                     }
                 }
-        
-//                switch currentAccidental {
-//                case .flat:
-////                    imageName =
-//                    // find the correct flat button
-//                    flatsOutletCollection[currentNoteButton.tag - 1].setImage(UIImage(named: "flat_right"), for: .normal)
-////                    break
-//                case .sharp:
-//                    // find the correct sharp button based on currentNoteButton.tag
-//                    // change its image to sharp_right
-////                    break
-//                    sharpsOutletCollection[currentNoteButton.tag - 1].setImage(UIImage(named: "sharp_right"), for: .normal)
-////                        .setImage(UIImage(named: "sharp_right"), for: UIControl.State.normal)
-//                }
-            } else {
-                imageName = "\(currentCorrectAnswer[currentCorrectAnswer.startIndex])_right"
+                
             }
+        
+            imageName = "\(currentCorrectAnswer[currentCorrectAnswer.startIndex])_right"
+//            }
             print("imageName = \(imageName)")
-            print("currentButton.tag = \(currentNoteButton.tag)")
+//            print("currentButton.tag = \(currentNoteButton.tag)")
             let image = UIImage(named: imageName)
             currentNoteButton.setImage(image, for: UIControl.State.normal)
             // play sound
@@ -209,16 +196,42 @@ class ViewController: UIViewController {
         // wrong answer
         } else {
             
+            // show result (red button)
+            // if dealing with sharp or flat, light up regular letter + #/b symbol
+            if currentUserAnswer.count == 2 {
+                
+                switch currentAccidental {
+                    
+                case .flat:
+                    for flat in flatsOutletCollection {
+                        if flat.tag == currentNoteButton.tag {
+                            flat.setImage(UIImage(named: "flat_wrong"), for: .normal)
+                        }
+                    }
+                case .sharp:
+                    for sharp in sharpsOutletCollection {
+                        if sharp.tag == currentNoteButton.tag {
+                            sharp.setImage(UIImage(named: "sharp_wrong"), for: .normal)
+                        }
+                    }
+                }
+                
+            }
+            
             // play "wrong" sound
             loadSound(currentSound: "wrong")
             audioPlayer!.play()
             audioPlayer!.setVolume(0.06, fadeDuration: 0)
             
+            print("currentUserAnswer is: \(currentUserAnswer)")
             // color button red
-            imageName = "\(currentCorrectAnswer.startIndex)_wrong"
+            imageName = "\(currentUserAnswer[currentUserAnswer.startIndex])_wrong"
+//            imageName = "\(currentUserAnswer.startIndex)_wrong"
+            print("imageName is \(imageName)")
             let image = UIImage(named: imageName)
             currentNoteButton.setImage(image, for: UIControl.State.normal)
             
+            // subtract a point
             if totalScore > 0 {
                 totalScore -= 1
             }
@@ -303,6 +316,16 @@ class ViewController: UIViewController {
 
         image = UIImage(named: "B_default")
         self.noteButtonB.setImage(image, for: UIControl.State.normal)
+        
+        for flat in flatsOutletCollection {
+            image = UIImage(named: "flat")
+            flat.setImage(image, for: UIControl.State.normal)
+        }
+        
+        for sharp in sharpsOutletCollection {
+            image = UIImage(named: "sharp")
+            sharp.setImage(image, for: UIControl.State.normal)
+        }
 
     }
     
