@@ -87,6 +87,17 @@ class ViewController: UIViewController {
     
     @IBOutlet var sharpsOutletCollection: [UIButton]!
     
+    // placeholders for calculating sharps & flats bounds
+    // to use for pan gesture recognition
+    
+    @IBOutlet weak var sharpsViewOutlet: UIView!
+    
+    @IBOutlet weak var flatsViewOutlet: UIView!
+    
+    var sharpsLowerBound: CGFloat = 0.0
+    var sharpsUpperBound: CGFloat = 0.0
+    var flatsLowerBound: CGFloat = 0.0
+    var flatsUpperBound: CGFloat = 0.0
     
     @IBOutlet var flatsOutletCollection: [UIButton]!
     
@@ -114,9 +125,27 @@ class ViewController: UIViewController {
     // keeping track of incorrect answers in a row to take away stars
     var incorrectAnswersInARow = 0
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        sharpsUpperBound = sharpsViewOutlet.bounds.maxY + 10
+        sharpsLowerBound = sharpsViewOutlet.bounds.minY - 10
+        
+        flatsUpperBound = flatsViewOutlet.bounds.maxY + 10
+        flatsLowerBound = flatsViewOutlet.bounds.minY - 10
+        
+//        accidentalsBottomEdgeYCoordinate = sharpsOutletCollection.first!.bounds.maxY
+//        print("accidentalsBottomEdgeYCoordinate: \(accidentalsBottomEdgeYCoordinate)")
+//        let boundsOfSharps = sharpsOutletCollection.first?.bounds
+//        let bottomOfSharps =
+        
+        
+//        print("first sharp bounds minY: \(sharpsOutletCollection.first?.bounds.minY)")
+//        print("first sharp bounds maxY: \(sharpsOutletCollection.first?.bounds.maxY)")
+//
+//        print("UIApplication shared keyWindow bounds minY: \(UIApplication.shared.keyWindow?.bounds.minY)")
+//
+//        print("UIApplication shared keyWindow bounds maxY: \(UIApplication.shared.keyWindow?.bounds.maxY)")
         
         menuBackgroundOutlet.alpha = 0
         
@@ -275,7 +304,7 @@ class ViewController: UIViewController {
             // play "wrong" sound
             loadSound(currentSound: "wrong")
             audioPlayer!.play()
-            audioPlayer!.setVolume(0.06, fadeDuration: 0)
+            audioPlayer!.setVolume(0.05, fadeDuration: 0)
             
             print("currentUserAnswer is: \(currentUserAnswer)")
             // color button red
@@ -427,15 +456,55 @@ class ViewController: UIViewController {
     
     
     @IBAction func handlePanGesture(recognizer: UIPanGestureRecognizer) {
-        print(recognizer.location(in: self.view).y)
-        print("<-- current Y location")
+        
+        print("recognizer.location(in: self.view).y: \(recognizer.location(in: self.view).y)")
+        
+        print("sharpsViewOutlet.bounds: \(sharpsViewOutlet.bounds)")
+//        print("<-- current Y location")
+        
+//        let sharpView = sharpsOutletCollection.first
+//        let appWindowView = UIApplication.shared.keyWindow
+        let convertedCoordinatesOfRecognizer = sharpsViewOutlet.convert(recognizer.location(in: self.view), to: sharpsViewOutlet)
+        
+        let convertedCoordinatesOfSharp = sharpsViewOutlet.convert(sharpsOutletCollection.first!.bounds, to: sharpsViewOutlet)
+        
+        print("convertedCoordinatesOfRecognizer: \(convertedCoordinatesOfRecognizer)")
+        print("convertedCoordinatesOfSharp: \(convertedCoordinatesOfSharp)")
+        
+        
+        
+        let currentYCoordinateOfPanInRespectToSharps = recognizer.location(in: sharpsOutletCollection.first).y
+        
+        let currentYCoordinateOfPanInRespectToFlats = recognizer.location(in: flatsOutletCollection.first).y
+        
+    
+        
+        print("current Y location in respect to sharp: \(currentYCoordinateOfPanInRespectToSharps)")
+        
+        print("sharpsViewOutlet.bounds.maxY: \(sharpsViewOutlet.bounds.maxY)")
+        
+        print("current Y location in respect to flats: \(currentYCoordinateOfPanInRespectToFlats)")
+        
+        let recognizerWithinSharpRange = (sharpsLowerBound...sharpsUpperBound).contains(currentYCoordinateOfPanInRespectToSharps)
+        
+        let recognizerWithinFlatRange = (flatsLowerBound...flatsUpperBound).contains(currentYCoordinateOfPanInRespectToFlats)
+        
+        if recognizerWithinSharpRange {
+            print("WE'RE INSIDE THE SHARP!!!")
+        } else if recognizerWithinFlatRange {
+            print("WE'RE INSIDE THE FLAT!!!")
+        }
         
         var panGestureOver: Bool = false
         
         func checkIfStateEnded(onSharpOrFlat: Accidentals) -> Bool {
             
+//            let contains = (lowerBounds...upperBounds).contains(x)
+            
             if recognizer.state == .ended {
+                
                 switch onSharpOrFlat {
+                    
                 case .flat:
                     currentAccidental = .flat
                     currentUserAnswer = "\(currentUserAnswer)b"
@@ -443,6 +512,7 @@ class ViewController: UIViewController {
                     currentNoteButton.setImage(image, for: UIControl.State.normal)
                     print("ended! currentUserAnswer is: \(currentUserAnswer)")
                     return true
+                    
                 case .sharp:
                     currentAccidental = .sharp
                     currentUserAnswer = "\(currentUserAnswer)#"
@@ -450,10 +520,12 @@ class ViewController: UIViewController {
                     currentNoteButton.setImage(image, for: UIControl.State.normal)
                     print("ended! currentUserAnswer is: \(currentUserAnswer)")
                     return true
-                default:
-                    print("something went weird...")
-                    break
+                    
+//                default:
+//                    print("something went weird...")
+//                    break
                 }
+                
             }
             
             return false
@@ -502,7 +574,6 @@ class ViewController: UIViewController {
     //  figure out which button is sending the translation message
     //  get coordinates of the triangle button (as a variable -- changes with size right?)
     //  make sure buttons look correct depending on user action
-    //  disable red button
     
     //        checkIfStateEnded()
     
