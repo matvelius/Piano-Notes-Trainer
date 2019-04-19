@@ -18,6 +18,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="1366" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="SETTINGS" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QLt-BR-BcN">
+                                <rect key="frame" x="455" y="453" width="455.5" height="116.5"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JI7-xy-e6Q" userLabel="Main Container">
                                 <rect key="frame" x="0.0" y="149" width="1366" height="875"/>
                                 <subviews>
@@ -598,32 +605,57 @@
                                     <constraint firstAttribute="width" secondItem="8yb-AG-ugB" secondAttribute="height" multiplier="257:17" id="GJ4-ZB-Zb4"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2co-F0-3U7">
-                                <rect key="frame" x="40" y="44" width="45" height="45"/>
+                            <button opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TMX-dv-0h9" userLabel="dark overlay">
+                                <rect key="frame" x="0.0" y="24" width="1366" height="980"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <action selector="darkOverlayPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="a36-X9-Yae"/>
+                                </connections>
+                            </button>
+                            <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QG9-26-Oaz" userLabel="Menu Background">
+                                <rect key="frame" x="0.0" y="24" width="455.5" height="980"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2co-F0-3U7" userLabel="Menu Button">
+                                <rect key="frame" x="40" y="44" width="30" height="52"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="33"/>
                                 <state key="normal" title="☰"/>
+                                <connections>
+                                    <action selector="menuButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="O8X-qH-DO0"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="8yb-AG-ugB" firstAttribute="bottom" secondItem="JI7-xy-e6Q" secondAttribute="top" id="1vg-fd-9Ag"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="TMX-dv-0h9" secondAttribute="bottom" id="20i-Xv-8gl"/>
                             <constraint firstItem="YCd-Zs-4kT" firstAttribute="height" secondItem="6Tk-OE-BBY" secondAttribute="height" multiplier="110:980" id="4XZ-hk-FVG"/>
                             <constraint firstItem="JI7-xy-e6Q" firstAttribute="bottom" secondItem="8bC-Xf-vdC" secondAttribute="bottom" id="8Bd-4l-V8L"/>
                             <constraint firstItem="8yb-AG-ugB" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="8Ga-MD-6Hp"/>
+                            <constraint firstItem="QG9-26-Oaz" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="9Ag-ab-CVF"/>
                             <constraint firstItem="ysp-nm-Oue" firstAttribute="width" secondItem="6Tk-OE-BBY" secondAttribute="width" multiplier="0.9561" id="C1R-kZ-wld"/>
+                            <constraint firstItem="QG9-26-Oaz" firstAttribute="width" secondItem="6Tk-OE-BBY" secondAttribute="width" multiplier="1:3" id="C7y-uZ-YdQ"/>
                             <constraint firstItem="JI7-xy-e6Q" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="DGU-wT-gU7"/>
+                            <constraint firstItem="QG9-26-Oaz" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="EHH-lo-W0B"/>
+                            <constraint firstItem="TMX-dv-0h9" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="FkZ-pR-L0u"/>
                             <constraint firstItem="2co-F0-3U7" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="Flp-fT-apA"/>
                             <constraint firstItem="JI7-xy-e6Q" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailing" id="Frd-S3-Eux"/>
                             <constraint firstItem="2co-F0-3U7" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="20" id="GzS-K7-6uY"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="TMX-dv-0h9" secondAttribute="trailing" id="L2I-B8-2d8"/>
                             <constraint firstItem="ysp-nm-Oue" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" constant="8" id="RkO-yA-pqp"/>
+                            <constraint firstItem="QG9-26-Oaz" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="SGs-z2-q8j"/>
                             <constraint firstItem="8yb-AG-ugB" firstAttribute="width" secondItem="6Tk-OE-BBY" secondAttribute="width" multiplier="0.56442" id="V3e-aa-CjG"/>
                             <constraint firstItem="JI7-xy-e6Q" firstAttribute="height" secondItem="6Tk-OE-BBY" secondAttribute="height" multiplier="875:980" id="VL2-xl-One"/>
+                            <constraint firstItem="TMX-dv-0h9" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="bko-Vx-yc5"/>
                             <constraint firstItem="JI7-xy-e6Q" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="lSd-Sr-joe"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="darkOverlayOutlet" destination="TMX-dv-0h9" id="Tgn-Ej-7Zi"/>
+                        <outlet property="menuBackgroundOutlet" destination="QG9-26-Oaz" id="5NY-0c-wug"/>
+                        <outlet property="menuButtonOutlet" destination="2co-F0-3U7" id="1ST-40-bMw"/>
                         <outlet property="noteButtonA" destination="tVB-E4-Spp" id="GUG-jX-giW"/>
                         <outlet property="noteButtonB" destination="Cpq-fy-UKY" id="vej-iy-FDY"/>
                         <outlet property="noteButtonC" destination="R7e-Tw-SC2" id="dod-Pv-7O4"/>

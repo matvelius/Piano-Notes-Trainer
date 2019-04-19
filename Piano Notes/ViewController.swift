@@ -42,6 +42,23 @@ class ViewController: UIViewController {
 ////        case aiff
 //        case wav
 //    }
+    @IBOutlet weak var menuButtonOutlet: UIButton!
+    
+    @IBOutlet weak var darkOverlayOutlet: UIButton!
+    
+    @IBAction func darkOverlayPressed(_ sender: UIButton) {
+    }
+    
+    @IBOutlet weak var menuBackgroundOutlet: UIView!
+    
+    @IBAction func menuButtonPressed(_ sender: UIButton) {
+        
+        darkOverlayOutlet.alpha = 0.73
+        menuBackgroundOutlet.alpha = 1
+//        menuButtonOutlet.titleLabel?.text = "✕"
+        menuButtonOutlet.setTitle("✕", for: .normal)
+    }
+    
     
     // note button outlets
     @IBOutlet weak var noteButtonA: UIButton!
