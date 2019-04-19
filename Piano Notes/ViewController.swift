@@ -128,11 +128,11 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        sharpsUpperBound = sharpsViewOutlet.bounds.maxY + 10
+        sharpsUpperBound = sharpsViewOutlet.bounds.maxY + 5
         sharpsLowerBound = sharpsViewOutlet.bounds.minY - 10
         
         flatsUpperBound = flatsViewOutlet.bounds.maxY + 10
-        flatsLowerBound = flatsViewOutlet.bounds.minY - 10
+        flatsLowerBound = flatsViewOutlet.bounds.minY - 5
         
 //        accidentalsBottomEdgeYCoordinate = sharpsOutletCollection.first!.bounds.maxY
 //        print("accidentalsBottomEdgeYCoordinate: \(accidentalsBottomEdgeYCoordinate)")
@@ -209,11 +209,11 @@ class ViewController: UIViewController {
         
         // right answer
         if currentUserAnswer == currentCorrectAnswer || currentEnharmonic == currentCorrectAnswer {
-            print("CORRECT!!!")
-            
-            print("in checkAnswer, currentCorrectAnswer is: \(currentCorrectAnswer)")
-            print("in checkAnswer, currentUserAnswer is: \(currentUserAnswer)")
-            print("in checkAnswer, currentEnharmonic is: \(currentEnharmonic)")
+//            print("CORRECT!!!")
+//
+//            print("in checkAnswer, currentCorrectAnswer is: \(currentCorrectAnswer)")
+//            print("in checkAnswer, currentUserAnswer is: \(currentUserAnswer)")
+//            print("in checkAnswer, currentEnharmonic is: \(currentEnharmonic)")
             
             // if dealing with sharp or flat, light up regular letter + #/b symbol
             if currentUserAnswer.count == 2 {
@@ -485,21 +485,46 @@ class ViewController: UIViewController {
         
         print("current Y location in respect to flats: \(currentYCoordinateOfPanInRespectToFlats)")
         
+        
+        // determine if the user's finger is within the sharps range
         let recognizerWithinSharpRange = (sharpsLowerBound...sharpsUpperBound).contains(currentYCoordinateOfPanInRespectToSharps)
         
+        // determine if the user's finger is within the flats range
         let recognizerWithinFlatRange = (flatsLowerBound...flatsUpperBound).contains(currentYCoordinateOfPanInRespectToFlats)
         
+        // alter the sharp & flat buttons depending on
+        // where the user's finger is
+        
         if recognizerWithinSharpRange {
-            print("WE'RE INSIDE THE SHARP!!!")
+            for sharp in sharpsOutletCollection {
+                if sharp.tag == currentNoteButton.tag {
+                    sharp.setImage(UIImage(named: "sharp_pressed"), for: .normal)
+                }
+            }
         } else if recognizerWithinFlatRange {
-            print("WE'RE INSIDE THE FLAT!!!")
+            for flat in flatsOutletCollection {
+                if flat.tag == currentNoteButton.tag {
+                    flat.setImage(UIImage(named: "flat_pressed"), for: .normal)
+                }
+            }
+        } else {
+            
+            for sharp in sharpsOutletCollection {
+                if sharp.tag == currentNoteButton.tag {
+                    sharp.setImage(UIImage(named: "sharp"), for: .normal)
+                }
+            }
+            
+            for flat in flatsOutletCollection {
+                if flat.tag == currentNoteButton.tag {
+                    flat.setImage(UIImage(named: "flat"), for: .normal)
+                }
+            }
         }
         
         var panGestureOver: Bool = false
         
         func checkIfStateEnded(onSharpOrFlat: Accidentals) -> Bool {
-            
-//            let contains = (lowerBounds...upperBounds).contains(x)
             
             if recognizer.state == .ended {
                 
@@ -541,7 +566,7 @@ class ViewController: UIViewController {
         
         
         // recognize flat
-        if currentLocationY > 295 && currentLocationY < 360 {
+        if recognizerWithinFlatRange {
             
 //            print("flat! \(currentLocationY)")
             
@@ -555,7 +580,7 @@ class ViewController: UIViewController {
             }
             
         // recognize sharp
-        } else if currentLocationY < 188 && currentLocationY > 0 {
+        } else if recognizerWithinSharpRange {
             
 //            print("sharp! \(currentLocationY)")
             panGestureOver = checkIfStateEnded(onSharpOrFlat: .sharp)
