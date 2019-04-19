@@ -427,8 +427,8 @@ class ViewController: UIViewController {
     
     
     @IBAction func handlePanGesture(recognizer: UIPanGestureRecognizer) {
-//        print(recognizer.location(in: self.view).y)
-//        print("<-- current Y location")
+        print(recognizer.location(in: self.view).y)
+        print("<-- current Y location")
         
         var panGestureOver: Bool = false
         
@@ -469,7 +469,7 @@ class ViewController: UIViewController {
         
         
         // recognize flat
-        if currentLocationY > 360 && currentLocationY < 450 {
+        if currentLocationY > 295 && currentLocationY < 360 {
             
 //            print("flat! \(currentLocationY)")
             
@@ -483,7 +483,7 @@ class ViewController: UIViewController {
             }
             
         // recognize sharp
-        } else if currentLocationY < 225 && currentLocationY > 0 {
+        } else if currentLocationY < 188 && currentLocationY > 0 {
             
 //            print("sharp! \(currentLocationY)")
             panGestureOver = checkIfStateEnded(onSharpOrFlat: .sharp)
