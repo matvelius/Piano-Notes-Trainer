@@ -34,6 +34,8 @@ class ViewController: UIViewController {
     
     var currentAccidental: Accidentals = .flat
     
+    var menuIsClosed: Bool = true
+    
     
 //    var notificationSoundLookupTable = [String: SystemSoundID]()
     
@@ -53,10 +55,24 @@ class ViewController: UIViewController {
     
     @IBAction func menuButtonPressed(_ sender: UIButton) {
         
-        darkOverlayOutlet.alpha = 0.73
-        menuBackgroundOutlet.alpha = 1
-//        menuButtonOutlet.titleLabel?.text = "✕"
-        menuButtonOutlet.setTitle("✕", for: .normal)
+        if menuIsClosed {
+        
+            darkOverlayOutlet.alpha = 0.73
+            menuBackgroundOutlet.alpha = 1
+            menuButtonOutlet.setTitle("✕", for: .normal)
+            
+            menuIsClosed = false
+            
+        } else {
+            
+            darkOverlayOutlet.alpha = 0
+            menuBackgroundOutlet.alpha = 0
+            menuButtonOutlet.setTitle("☰", for: .normal)
+            
+            menuIsClosed = true
+            
+        }
+        
     }
     
     
@@ -101,7 +117,11 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        menuBackgroundOutlet.alpha = 0
+        
         scoreLabel.text = "0"
+        
         startNewRound()
 //        print("noteButtonA's coordinateSpace is: ")
 //        print(noteButtonA.coordinateSpace)
