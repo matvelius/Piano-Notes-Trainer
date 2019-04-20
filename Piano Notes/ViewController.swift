@@ -75,6 +75,29 @@ class ViewController: UIViewController {
         
     }
     
+    @IBAction func onlyWhiteKeysSwitch(_ sender: UISwitch) {
+    }
+    
+    @IBAction func whiteKeySettingsSegmentedControl(_ sender: UISegmentedControl) {
+    }
+    
+    
+    @IBAction func includeEnharmonicsSwitch(_ sender: UISwitch) {
+    }
+    
+    @IBAction func onlyBlackKeysSwitch(_ sender: UISwitch) {
+    }
+    
+    @IBAction func blackKeySettingsSegmentedControl(_ sender: UISegmentedControl) {
+    }
+    
+    @IBAction func enableSoundsSwitch(_ sender: UISwitch) {
+    }
+    
+    @IBAction func reEnableExplainersSwitch(_ sender: UISwitch) {
+    }
+    
+    
     
     // note button outlets
     @IBOutlet weak var noteButtonA: UIButton!
