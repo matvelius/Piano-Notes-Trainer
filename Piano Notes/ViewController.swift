@@ -37,18 +37,19 @@ class ViewController: UIViewController {
     var menuIsClosed: Bool = true
     
     
-//    var notificationSoundLookupTable = [String: SystemSoundID]()
-    
-//    enum SoundExtension : String {
-////        case caf
-////        case aiff
-//        case wav
-//    }
     @IBOutlet weak var menuButtonOutlet: UIButton!
     
     @IBOutlet weak var darkOverlayOutlet: UIButton!
     
+    // close menu
     @IBAction func darkOverlayPressed(_ sender: UIButton) {
+        
+        darkOverlayOutlet.alpha = 0
+        menuBackgroundOutlet.alpha = 0
+        menuButtonOutlet.setTitle("☰", for: .normal)
+        
+        menuIsClosed = true
+        
     }
     
     @IBOutlet weak var menuBackgroundOutlet: UIView!
@@ -76,9 +77,127 @@ class ViewController: UIViewController {
     }
     
     @IBAction func onlyWhiteKeysSwitch(_ sender: UISwitch) {
+        
+        // disable sharps and flats, make them invisible, disable gesture recognizers
+        if sender.isOn == true {
+            
+            currentNoteChoices = onlyWhiteKeyChoices
+            randomNewNoteIndexUpperLimit = onlyWhiteKeyChoices.count - 1
+        
+            for sharp in sharpsOutletCollection {
+                sharp.isEnabled = false
+            }
+            
+            for flat in flatsOutletCollection {
+                flat.isEnabled = false
+            }
+            
+            sharpsViewOutlet.alpha = 0
+            flatsViewOutlet.alpha = 0
+            
+            for panGestureRecognizer in panGestureRecognizersCollection {
+                panGestureRecognizer.isEnabled = false
+            }
+            
+            startNewRound()
+        
+        // otherwise reenable everything
+        } else {
+            
+            currentNoteChoices = allNoteChoices
+            randomNewNoteIndexUpperLimit = allNoteChoices.count - 1
+            
+            for sharp in sharpsOutletCollection {
+                sharp.isEnabled = true
+            }
+            
+            for flat in flatsOutletCollection {
+                flat.isEnabled = true
+            }
+            
+            sharpsViewOutlet.alpha = 1
+            flatsViewOutlet.alpha = 1
+            
+            for panGestureRecognizer in panGestureRecognizersCollection {
+                panGestureRecognizer.isEnabled = true
+            }
+            
+            startNewRound()
+            
+        }
+            
     }
     
+    // enable / disable based on the white keys switch
     @IBAction func whiteKeySettingsSegmentedControl(_ sender: UISegmentedControl) {
+        
+        if sender.selectedSegmentIndex == 0 {
+            
+            // all white keys
+            currentNoteChoices = onlyWhiteKeyChoices
+            randomNewNoteIndexUpperLimit = onlyWhiteKeyChoices.count - 1
+            
+            enableButtons()
+            
+            noteButtonA.alpha = 1
+            noteButtonB.alpha = 1
+            noteButtonC.alpha = 1
+            noteButtonD.alpha = 1
+            noteButtonE.alpha = 1
+            noteButtonF.alpha = 1
+            noteButtonG.alpha = 1
+            
+            startNewRound()
+            
+        } else if sender.selectedSegmentIndex == 1 {
+            
+            // only C D E
+            currentNoteChoices = onlyCDE
+            randomNewNoteIndexUpperLimit = onlyCDE.count - 1
+            
+            disableButtons()
+            
+            noteButtonA.alpha = 0.3
+            noteButtonB.alpha = 0.3
+            noteButtonF.alpha = 0.3
+            noteButtonG.alpha = 0.3
+            
+            noteButtonC.alpha = 1
+            noteButtonD.alpha = 1
+            noteButtonE.alpha = 1
+            
+            noteButtonC.isEnabled = true
+            noteButtonD.isEnabled = true
+            noteButtonE.isEnabled = true
+            
+            startNewRound()
+            
+        } else {
+            
+            // only F G A B
+            currentNoteChoices = onlyFGAB
+            randomNewNoteIndexUpperLimit = onlyFGAB.count - 1
+            
+            disableButtons()
+            
+            noteButtonC.alpha = 0.3
+            noteButtonD.alpha = 0.3
+            noteButtonE.alpha = 0.3
+            
+            noteButtonA.alpha = 1
+            noteButtonB.alpha = 1
+            noteButtonF.alpha = 1
+            noteButtonG.alpha = 1
+            
+            noteButtonF.isEnabled = true
+            noteButtonG.isEnabled = true
+            noteButtonA.isEnabled = true
+            noteButtonB.isEnabled = true
+            
+            startNewRound()
+            
+        }
+        
     }
     
     
@@ -97,6 +216,7 @@ class ViewController: UIViewController {
     @IBAction func reEnableExplainersSwitch(_ sender: UISwitch) {
     }
     
+    @IBOutlet var panGestureRecognizersCollection: [UIPanGestureRecognizer]!
     
     
     // note button outlets
@@ -131,10 +251,6 @@ class ViewController: UIViewController {
     // piano image outlet
     @IBOutlet weak var pianoImage: UIImageView!
     
-    // placeholder variable for last-selected random number
-    var lastRandomNumber: Int = -1
-    var randomNewNoteIndex = Int.random(in: 0...15)
-    
     // placeholder variable for keeping the score
     var totalScore = 0
     @IBOutlet weak var scoreLabel: UILabel!
@@ -148,8 +264,46 @@ class ViewController: UIViewController {
     // keeping track of incorrect answers in a row to take away stars
     var incorrectAnswersInARow = 0
     
+    var currentNoteChoices = [""]
+    
+    let allNoteChoices = ["F#3", "G3", "G#3", "A3", "A#3", "B3", "C4", "C#4", "D4", "D#4", "E4", "F4", "F#4", "G4", "G#4", "A4", "A#4", "B4", "C5", "C#5",  "D5", "D#5", "E5", "F5", "F#5", "G5", "G#5", "A5", "A#5"]
+    
+    let onlyWhiteKeyChoices = ["G3", "A3", "B3", "C4", "D4", "E4", "F4", "G4", "A4", "B4", "C5", "D5", "E5", "F5", "G5", "A5"]
+    
+    let onlyCDE = ["C4", "D4", "E4", "C5", "D5", "E5"]
+    
+    let onlyFGAB = ["G3", "A3", "B3", "F4", "G4", "A4", "B4", "F5", "G5", "A5"]
+    
+    var randomNewNoteIndexUpperLimit = 0
+    
+    // placeholder variable for last-selected random number
+    var lastRandomNumber: Int = -1
+    var randomNewNoteIndex = Int.random(in: 0...15)
+    
     override func viewDidLoad() {
+        
         super.viewDidLoad()
+        
+        currentNoteChoices = onlyWhiteKeyChoices
+        randomNewNoteIndexUpperLimit = onlyWhiteKeyChoices.count - 1
+//        print("onlyWhiteKeyChoices.count: \(onlyWhiteKeyChoices.count)")
+        
+        // disable sharps and flats, make them invisible, disable gesture recognizers
+        for sharp in sharpsOutletCollection {
+            sharp.isEnabled = false
+        }
+        
+        for flat in flatsOutletCollection {
+            flat.isEnabled = false
+        }
+        
+        sharpsViewOutlet.alpha = 0
+        flatsViewOutlet.alpha = 0
+        
+        for panGestureRecognizer in panGestureRecognizersCollection {
+            panGestureRecognizer.isEnabled = false
+        }
+        
         
         sharpsUpperBound = sharpsViewOutlet.bounds.maxY + 5
         sharpsLowerBound = sharpsViewOutlet.bounds.minY - 10
@@ -184,6 +338,9 @@ class ViewController: UIViewController {
     func startNewRound() {
         lastRandomNumber = randomNewNoteIndex
         totalScore = 0
+        scoreLabel.text = "0"
+        // RESET STARS AND ANSWERSinARow too !!
+        
 //        disposeSoundIDs()
         generateNewNote()
         
@@ -191,18 +348,15 @@ class ViewController: UIViewController {
     
     func generateNewNote() {
         
-        randomNewNoteIndex = Int.random(in: 0...28)
+        randomNewNoteIndex = Int.random(in: 0...randomNewNoteIndexUpperLimit)
         
         while randomNewNoteIndex == lastRandomNumber {
-            randomNewNoteIndex = Int.random(in: 0...28)
+            randomNewNoteIndex = Int.random(in: 0...randomNewNoteIndexUpperLimit)
 //            print("generateNewNote() called; randomNewNoteIndex = \(randomNewNoteIndex)")
         }
         
-//        let highlightedNoteChoice = ["G3", "A3", "B3", "C4", "D4", "E4", "F4", "G4", "A4", "B4", "C5", "D5", "E5", "F5", "G5", "A5"]
-        
-        let highlightedNoteChoice = ["F#3", "G3", "G#3", "A3", "A#3", "B3", "C4", "C#4", "D4", "D#4", "E4", "F4", "F#4", "G4", "G#4", "A4", "A#4", "B4", "C5", "C#5",  "D5", "D#5", "E5", "F5", "F#5", "G5", "G#5", "A5", "A#5"]
 //        print("NUMBER OF NOTES: \(highlightedNoteChoice.count)")
-        currentNote = highlightedNoteChoice[randomNewNoteIndex]
+        currentNote = currentNoteChoices[randomNewNoteIndex]
         print("the current note is \(currentNote)")
         
         let currentNoteNameLength = currentNote.count

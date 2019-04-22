@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="l1o-7Z-dlW">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="ipad11_0rounded" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
@@ -875,6 +875,13 @@
                         <outletCollection property="flatsOutletCollection" destination="cmD-DR-DtT" collectionClass="NSMutableArray" id="ZyF-Ba-EiQ"/>
                         <outletCollection property="flatsOutletCollection" destination="cbJ-UK-jH1" collectionClass="NSMutableArray" id="Yao-k1-2OX"/>
                         <outletCollection property="flatsOutletCollection" destination="hu4-y0-jV2" collectionClass="NSMutableArray" id="aPQ-S6-e70"/>
+                        <outletCollection property="panGestureRecognizersCollection" destination="LNg-c0-tQQ" collectionClass="NSMutableArray" id="zzg-eb-K8n"/>
+                        <outletCollection property="panGestureRecognizersCollection" destination="3tY-WC-Wpo" collectionClass="NSMutableArray" id="MyY-6L-b0L"/>
+                        <outletCollection property="panGestureRecognizersCollection" destination="vwZ-Si-xOd" collectionClass="NSMutableArray" id="YHW-Nj-azb"/>
+                        <outletCollection property="panGestureRecognizersCollection" destination="SoQ-uf-XIO" collectionClass="NSMutableArray" id="z62-Wy-OcD"/>
+                        <outletCollection property="panGestureRecognizersCollection" destination="lcs-bZ-y39" collectionClass="NSMutableArray" id="sow-w8-NDf"/>
+                        <outletCollection property="panGestureRecognizersCollection" destination="m60-MP-b97" collectionClass="NSMutableArray" id="vI6-E5-sfA"/>
+                        <outletCollection property="panGestureRecognizersCollection" destination="kBH-Rn-xZO" collectionClass="NSMutableArray" id="unL-el-I9A"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
