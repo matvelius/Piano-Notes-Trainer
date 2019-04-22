@@ -336,12 +336,15 @@ class ViewController: UIViewController {
     }
     
     func startNewRound() {
+        
         lastRandomNumber = randomNewNoteIndex
         totalScore = 0
         scoreLabel.text = "0"
-        // RESET STARS AND ANSWERSinARow too !!
-        
-//        disposeSoundIDs()
+        correctAnswersInARow = 0
+        incorrectAnswersInARow = 0
+        currentNumberOfStars = 0
+        stars.image = UIImage(named: "stars\(currentNumberOfStars)")
+
         generateNewNote()
         
     }
