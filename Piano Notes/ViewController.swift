@@ -42,13 +42,20 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var darkOverlayOutlet: UIButton!
     
+    @IBOutlet weak var menuLeadingConstraint: NSLayoutConstraint!
+    
     // close menu
     @IBAction func darkOverlayPressed(_ sender: UIButton) {
         
-        UIView.animate(withDuration: 0.5) {
+        self.menuLeadingConstraint.constant = -460
+        
+        UIView.animate(withDuration: 0.5, delay: 0.0, options: .curveEaseIn, animations: {
+            
+            self.view.layoutIfNeeded()
             self.darkOverlayOutlet.alpha = 0
             self.menuBackgroundOutlet.alpha = 0
-        }
+            
+        })
         
         menuButtonOutlet.setTitle("☰", for: .normal)
         
@@ -58,14 +65,33 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var menuBackgroundOutlet: UIView!
     
+//    var openMenuCenterPoint = CGPoint(x: 0, y: 0)
+//    var currentMenuCenterPointY: CGFloat = 0.0
+//    var closedMenuCenterPoint = CGPoint(x: -100, y: 0)
+    
     @IBAction func menuButtonPressed(_ sender: UIButton) {
         
-        if menuIsClosed {
+        // figure out how to slide the menu out
         
-            UIView.animate(withDuration: 0.5) {
+        if menuIsClosed {
+            
+            self.menuLeadingConstraint.constant = 0
+            
+            UIView.animate(withDuration: 0.5, delay: 0.0, options: .curveEaseIn, animations: {
+                
+                self.view.layoutIfNeeded()
                 self.darkOverlayOutlet.alpha = 0.73
                 self.menuBackgroundOutlet.alpha = 1
-            }
+                self.menuLeadingConstraint.constant = 0
+                
+            })
+        
+//            UIView.animate(withDuration: 3.5) {
+//
+////                self.menuBackgroundOutlet.center = CGPoint(x: 200, y: self.currentMenuCenterPointY)
+////                self.menuBackgroundOutlet.leadingAnchor = self.
+////                self.menuBackgroundOutlet.leadingAnchor = self.menuBackgroundOutlet.superview?.leadingAnchor
+//            }
             
             menuButtonOutlet.setTitle("✕", for: .normal)
             
@@ -73,10 +99,23 @@ class ViewController: UIViewController {
             
         } else {
             
-            UIView.animate(withDuration: 0.5) {
+//            closedMenuCenterPoint = CGPoint(x: -100, y: 0)
+            
+            self.menuLeadingConstraint.constant = -460
+            
+            UIView.animate(withDuration: 0.5, delay: 0.0, options: .curveEaseIn, animations: {
+            
+                self.view.layoutIfNeeded()
                 self.darkOverlayOutlet.alpha = 0
                 self.menuBackgroundOutlet.alpha = 0
-            }
+            
+            })
+            
+//            UIView.animate(withDuration: 3.5) {
+//
+//
+////                self.menuBackgroundOutlet.center = CGPoint(x: 400, y: self.currentMenuCenterPointY)
+//            }
             
             menuButtonOutlet.setTitle("☰", for: .normal)
             
@@ -264,6 +303,8 @@ class ViewController: UIViewController {
     var sharpsUpperBound: CGFloat = 0.0
     var flatsLowerBound: CGFloat = 0.0
     var flatsUpperBound: CGFloat = 0.0
+    var noteButtonLowerBound: CGFloat = 0.0
+    var noteButtonUpperBound: CGFloat = 0.0
     
     @IBOutlet var flatsOutletCollection: [UIButton]!
     
@@ -328,11 +369,17 @@ class ViewController: UIViewController {
         }
         
         
+        // calculate shaprs & flats bounds for pan gesture recognition
         sharpsUpperBound = sharpsViewOutlet.bounds.maxY + 5
         sharpsLowerBound = sharpsViewOutlet.bounds.minY - 10
         
         flatsUpperBound = flatsViewOutlet.bounds.maxY + 10
         flatsLowerBound = flatsViewOutlet.bounds.minY - 5
+        
+        // calculate note button bounds for pan gesture recognition
+        noteButtonUpperBound = noteButtonD.bounds.maxY
+        noteButtonLowerBound = noteButtonD.bounds.minY
+    
         
 //        accidentalsBottomEdgeYCoordinate = sharpsOutletCollection.first!.bounds.maxY
 //        print("accidentalsBottomEdgeYCoordinate: \(accidentalsBottomEdgeYCoordinate)")
@@ -348,6 +395,11 @@ class ViewController: UIViewController {
 //        print("UIApplication shared keyWindow bounds maxY: \(UIApplication.shared.keyWindow?.bounds.maxY)")
         
         menuBackgroundOutlet.alpha = 0
+        
+        menuLeadingConstraint.constant = -460
+        
+//        openMenuCenterPoint = menuBackgroundOutlet.center
+//        currentMenuCenterPointY = menuBackgroundOutlet.center.y
         
         scoreLabel.text = "0"
         
@@ -625,7 +677,6 @@ class ViewController: UIViewController {
     
     func disableButtons() {
         
-        // is there a way to loop thru these?
         noteButtonA.isEnabled = false;
         noteButtonB.isEnabled = false;
         noteButtonC.isEnabled = false;
@@ -688,6 +739,10 @@ class ViewController: UIViewController {
         
         let currentYCoordinateOfPanInRespectToFlats = recognizer.location(in: flatsOutletCollection.first).y
         
+        let currentYCoordinateOfPanInRespectToNoteButtons = recognizer.location(in: currentNoteButton).y
+        
+        print("currentYCoordinateOfPanInRespectToCurrentNoteButton: \(currentYCoordinateOfPanInRespectToNoteButtons)")
+        
     
         
 //        print("current Y location in respect to sharp: \(currentYCoordinateOfPanInRespectToSharps)")
@@ -702,6 +757,8 @@ class ViewController: UIViewController {
         
         // determine if the user's finger is within the flats range
         let recognizerWithinFlatRange = (flatsLowerBound...flatsUpperBound).contains(currentYCoordinateOfPanInRespectToFlats)
+        
+        let recognizerWithinNoteButtonRange = (noteButtonLowerBound...noteButtonUpperBound).contains(currentYCoordinateOfPanInRespectToNoteButtons)
         
         // alter the sharp & flat buttons depending on
         // where the user's finger is
@@ -763,7 +820,12 @@ class ViewController: UIViewController {
                     
                 case .neither:
                     // ****if not sharp or flat, RESET THE BUTTON THAT THE GESTURE RECOGNIZER STARTED ON (NOT ALL OF 'EM!)... PLUS GIVE USER A CHANCE TO SLIDE OFF THAT BUTTON TO TRY ANOTHER (W/O COUNTING IT WRONG)***
-                    resetButtonsToDefault()
+//                    resetButtonsToDefault()
+                    let image = UIImage(named: "\(currentUserAnswer)_default")
+                    print("CASE .neither, currentUserAnswer: \(currentUserAnswer)")
+                    currentNoteButton.setImage(image, for: UIControl.State.normal)
+                    
+//                    self.note
                     return true
                     
 //                default:
@@ -812,7 +874,8 @@ class ViewController: UIViewController {
                 checkAnswer()
             }
             
-        } else {
+        // CHECK THIS LOGIC!!
+        } else if recognizerWithinNoteButtonRange {
             
             panGestureOver = checkIfStateEnded(onSharpOrFlat: .neither)
             
@@ -820,10 +883,25 @@ class ViewController: UIViewController {
                 //                currentUserAnswer = "\(currentUserAnswer)#"
                 //                print(currentUserAnswer)
                 
+//                let image = UIImage(named: "\(currentUserAnswer)_default")
+//                currentNoteButton.setImage(image, for: UIControl.State.normal)
+                
                 checkAnswer()
             }
             
         }
+//        else {
+//
+//            panGestureOver = checkIfStateEnded(onSharpOrFlat: .neither)
+//
+//            if panGestureOver {
+//                //                currentUserAnswer = "\(currentUserAnswer)#"
+//                //                print(currentUserAnswer)
+//
+//                checkAnswer()
+//            }
+//
+//        }
         
     }
     
@@ -921,7 +999,6 @@ class ViewController: UIViewController {
         currentNoteButton = noteButtonC
     }
     
-    
     @IBAction func touchDownD(_ sender: UIButton) {
         currentUserAnswer = "D"
         currentNoteButton = noteButtonD
@@ -937,12 +1014,9 @@ class ViewController: UIViewController {
         currentNoteButton = noteButtonF
     }
     
-    
     @IBAction func touchDownG(_ sender: UIButton) {
         currentUserAnswer = "G"
         currentNoteButton = noteButtonG
     }
     
-    
 }
-
