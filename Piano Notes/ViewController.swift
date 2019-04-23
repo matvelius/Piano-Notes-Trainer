@@ -30,6 +30,7 @@ class ViewController: UIViewController {
     enum Accidentals {
         case sharp
         case flat
+        case neither
     }
     
     var currentAccidental: Accidentals = .flat
@@ -210,7 +211,20 @@ class ViewController: UIViewController {
     @IBAction func blackKeySettingsSegmentedControl(_ sender: UISegmentedControl) {
     }
     
+    var soundsEnabled = true
+    
     @IBAction func enableSoundsSwitch(_ sender: UISwitch) {
+        
+        if sender.isOn == false {
+            
+            soundsEnabled = false
+            
+        } else {
+            
+            soundsEnabled = true
+            
+        }
+        
     }
     
     @IBAction func reEnableExplainersSwitch(_ sender: UISwitch) {
@@ -412,6 +426,8 @@ class ViewController: UIViewController {
                             sharp.setImage(UIImage(named: "sharp_right"), for: .normal)
                         }
                     }
+                case .neither:
+                    break
                 }
                 
             }
@@ -435,9 +451,11 @@ class ViewController: UIViewController {
             currentNoteButton.setImage(image, for: UIControl.State.normal)
             
             // play sound
-            loadSound(currentSound: currentNote)
-            audioPlayer!.play()
-            audioPlayer!.setVolume(0, fadeDuration: 2.5)
+            if soundsEnabled {
+                loadSound(currentSound: currentNote)
+                audioPlayer!.play()
+                audioPlayer!.setVolume(0, fadeDuration: 2.5)
+            }
             //            print(currentNote)
             //            play(sound: "\(currentNote)", ofType: .wav)
             disableButtons()
@@ -477,14 +495,18 @@ class ViewController: UIViewController {
                             sharp.setImage(UIImage(named: "sharp_wrong"), for: .normal)
                         }
                     }
+                case .neither:
+                    break
                 }
                 
             }
             
             // play "wrong" sound
-            loadSound(currentSound: "wrong")
-            audioPlayer!.play()
-            audioPlayer!.setVolume(0.05, fadeDuration: 0)
+            if soundsEnabled {
+                loadSound(currentSound: "wrong")
+                audioPlayer!.play()
+                audioPlayer!.setVolume(0.05, fadeDuration: 0)
+            }
             
             print("currentUserAnswer is: \(currentUserAnswer)")
             // color button red
@@ -637,9 +659,9 @@ class ViewController: UIViewController {
     
     @IBAction func handlePanGesture(recognizer: UIPanGestureRecognizer) {
         
-        print("recognizer.location(in: self.view).y: \(recognizer.location(in: self.view).y)")
-        
-        print("sharpsViewOutlet.bounds: \(sharpsViewOutlet.bounds)")
+//        print("recognizer.location(in: self.view).y: \(recognizer.location(in: self.view).y)")
+//
+//        print("sharpsViewOutlet.bounds: \(sharpsViewOutlet.bounds)")
 //        print("<-- current Y location")
         
 //        let sharpView = sharpsOutletCollection.first
@@ -648,8 +670,8 @@ class ViewController: UIViewController {
         
         let convertedCoordinatesOfSharp = sharpsViewOutlet.convert(sharpsOutletCollection.first!.bounds, to: sharpsViewOutlet)
         
-        print("convertedCoordinatesOfRecognizer: \(convertedCoordinatesOfRecognizer)")
-        print("convertedCoordinatesOfSharp: \(convertedCoordinatesOfSharp)")
+//        print("convertedCoordinatesOfRecognizer: \(convertedCoordinatesOfRecognizer)")
+//        print("convertedCoordinatesOfSharp: \(convertedCoordinatesOfSharp)")
         
         
         
@@ -659,11 +681,11 @@ class ViewController: UIViewController {
         
     
         
-        print("current Y location in respect to sharp: \(currentYCoordinateOfPanInRespectToSharps)")
-        
-        print("sharpsViewOutlet.bounds.maxY: \(sharpsViewOutlet.bounds.maxY)")
-        
-        print("current Y location in respect to flats: \(currentYCoordinateOfPanInRespectToFlats)")
+//        print("current Y location in respect to sharp: \(currentYCoordinateOfPanInRespectToSharps)")
+//
+//        print("sharpsViewOutlet.bounds.maxY: \(sharpsViewOutlet.bounds.maxY)")
+//
+//        print("current Y location in respect to flats: \(currentYCoordinateOfPanInRespectToFlats)")
         
         
         // determine if the user's finger is within the sharps range
@@ -674,19 +696,22 @@ class ViewController: UIViewController {
         
         // alter the sharp & flat buttons depending on
         // where the user's finger is
-        
         if recognizerWithinSharpRange {
+            
             for sharp in sharpsOutletCollection {
                 if sharp.tag == currentNoteButton.tag {
                     sharp.setImage(UIImage(named: "sharp_pressed"), for: .normal)
                 }
             }
+            
         } else if recognizerWithinFlatRange {
+            
             for flat in flatsOutletCollection {
                 if flat.tag == currentNoteButton.tag {
                     flat.setImage(UIImage(named: "flat_pressed"), for: .normal)
                 }
             }
+            
         } else {
             
             for sharp in sharpsOutletCollection {
@@ -700,6 +725,7 @@ class ViewController: UIViewController {
                     flat.setImage(UIImage(named: "flat"), for: .normal)
                 }
             }
+            
         }
         
         var panGestureOver: Bool = false
@@ -726,6 +752,11 @@ class ViewController: UIViewController {
                     print("ended! currentUserAnswer is: \(currentUserAnswer)")
                     return true
                     
+                case .neither:
+                    // if not sharp or flat, RESET THE BUTTON THAT THE GESTURE RECOGNIZER STARTED ON... PLUS GIVE USER A CHANCE TO SLIDE OFF THAT BUTTON TO TRY ANOTHER (W/O COUNTING IT WRONG)
+                    resetButtonsToDefault()
+                    return true
+                    
 //                default:
 //                    print("something went weird...")
 //                    break
@@ -741,7 +772,7 @@ class ViewController: UIViewController {
 //        print("currentUserAnswer is: \(currentUserAnswer)")
         currentNoteButton.setImage(image, for: UIControl.State.normal)
         
-        let currentLocationY = recognizer.location(in: self.view).y
+//        let currentLocationY = recognizer.location(in: self.view).y
         
         
         
@@ -768,6 +799,17 @@ class ViewController: UIViewController {
             if panGestureOver {
 //                currentUserAnswer = "\(currentUserAnswer)#"
 //                print(currentUserAnswer)
+                
+                checkAnswer()
+            }
+            
+        } else {
+            
+            panGestureOver = checkIfStateEnded(onSharpOrFlat: .neither)
+            
+            if panGestureOver {
+                //                currentUserAnswer = "\(currentUserAnswer)#"
+                //                print(currentUserAnswer)
                 
                 checkAnswer()
             }
