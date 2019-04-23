@@ -45,8 +45,11 @@ class ViewController: UIViewController {
     // close menu
     @IBAction func darkOverlayPressed(_ sender: UIButton) {
         
-        darkOverlayOutlet.alpha = 0
-        menuBackgroundOutlet.alpha = 0
+        UIView.animate(withDuration: 0.5) {
+            self.darkOverlayOutlet.alpha = 0
+            self.menuBackgroundOutlet.alpha = 0
+        }
+        
         menuButtonOutlet.setTitle("☰", for: .normal)
         
         menuIsClosed = true
@@ -59,16 +62,22 @@ class ViewController: UIViewController {
         
         if menuIsClosed {
         
-            darkOverlayOutlet.alpha = 0.73
-            menuBackgroundOutlet.alpha = 1
+            UIView.animate(withDuration: 0.5) {
+                self.darkOverlayOutlet.alpha = 0.73
+                self.menuBackgroundOutlet.alpha = 1
+            }
+            
             menuButtonOutlet.setTitle("✕", for: .normal)
             
             menuIsClosed = false
             
         } else {
             
-            darkOverlayOutlet.alpha = 0
-            menuBackgroundOutlet.alpha = 0
+            UIView.animate(withDuration: 0.5) {
+                self.darkOverlayOutlet.alpha = 0
+                self.menuBackgroundOutlet.alpha = 0
+            }
+            
             menuButtonOutlet.setTitle("☰", for: .normal)
             
             menuIsClosed = true
@@ -753,7 +762,7 @@ class ViewController: UIViewController {
                     return true
                     
                 case .neither:
-                    // if not sharp or flat, RESET THE BUTTON THAT THE GESTURE RECOGNIZER STARTED ON... PLUS GIVE USER A CHANCE TO SLIDE OFF THAT BUTTON TO TRY ANOTHER (W/O COUNTING IT WRONG)
+                    // ****if not sharp or flat, RESET THE BUTTON THAT THE GESTURE RECOGNIZER STARTED ON (NOT ALL OF 'EM!)... PLUS GIVE USER A CHANCE TO SLIDE OFF THAT BUTTON TO TRY ANOTHER (W/O COUNTING IT WRONG)***
                     resetButtonsToDefault()
                     return true
                     
