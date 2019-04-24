@@ -33,7 +33,7 @@ class ViewController: UIViewController {
         case neither
     }
     
-    var currentAccidental: Accidentals = .flat
+    var currentAccidental: Accidentals = .neither
     
     var menuIsClosed: Bool = true
     
@@ -774,7 +774,14 @@ class ViewController: UIViewController {
                 }
             }
             
+//            // THIS WORKS!!! do it everywhere -- UMM NO IT DOESN'T!
+//            let currentSharp = sharpsOutletCollection[currentNoteButton.tag - 1]
+//            currentSharp.setImage(UIImage(named: "sharp_pressed"), for: .normal)
+            
         } else if recognizerWithinFlatRange {
+            
+//            let currentFlat = flatsOutletCollection[currentNoteButton.tag - 1]
+//            currentFlat.setImage(UIImage(named: "flat_pressed"), for: .normal)
             
             for flat in flatsOutletCollection {
                 if flat.tag == currentNoteButton.tag {
@@ -784,12 +791,18 @@ class ViewController: UIViewController {
             
         } else {
             
+//            let currentSharp = sharpsOutletCollection[currentNoteButton.tag - 1]
+//            currentSharp.setImage(UIImage(named: "sharp"), for: .normal)
+//
+//            let currentFlat = flatsOutletCollection[currentNoteButton.tag - 1]
+//            currentFlat.setImage(UIImage(named: "flat"), for: .normal)
+            
             for sharp in sharpsOutletCollection {
                 if sharp.tag == currentNoteButton.tag {
                     sharp.setImage(UIImage(named: "sharp"), for: .normal)
                 }
             }
-            
+
             for flat in flatsOutletCollection {
                 if flat.tag == currentNoteButton.tag {
                     flat.setImage(UIImage(named: "flat"), for: .normal)
@@ -811,7 +824,7 @@ class ViewController: UIViewController {
                     currentUserAnswer = "\(currentUserAnswer)b"
                     let image = UIImage(named: "\(currentUserAnswer)_default")
                     currentNoteButton.setImage(image, for: UIControl.State.normal)
-                    print("ended! currentUserAnswer is: \(currentUserAnswer)")
+//                    print("ended! currentUserAnswer is: \(currentUserAnswer)")
                     return true
                     
                 case .sharp:
@@ -819,14 +832,14 @@ class ViewController: UIViewController {
                     currentUserAnswer = "\(currentUserAnswer)#"
                     let image = UIImage(named: "\(currentUserAnswer)_default")
                     currentNoteButton.setImage(image, for: UIControl.State.normal)
-                    print("ended! currentUserAnswer is: \(currentUserAnswer)")
+//                    print("ended! currentUserAnswer is: \(currentUserAnswer)")
                     return true
                     
                 case .neither:
-                    // ****if not sharp or flat, RESET THE BUTTON THAT THE GESTURE RECOGNIZER STARTED ON (NOT ALL OF 'EM!)... PLUS GIVE USER A CHANCE TO SLIDE OFF THAT BUTTON TO TRY ANOTHER (W/O COUNTING IT WRONG)***
-//                    resetButtonsToDefault()
+                    
+                    currentAccidental = .neither
                     let image = UIImage(named: "\(currentUserAnswer)_default")
-                    print("CASE .neither, currentUserAnswer: \(currentUserAnswer)")
+//                    print("CASE .neither, currentUserAnswer: \(currentUserAnswer)")
                     currentNoteButton.setImage(image, for: UIControl.State.normal)
                     
 //                    self.note
@@ -844,48 +857,33 @@ class ViewController: UIViewController {
         }
         
         let image = UIImage(named: "\(currentUserAnswer)_pressed")
-//        print("currentUserAnswer is: \(currentUserAnswer)")
         currentNoteButton.setImage(image, for: UIControl.State.normal)
-        
-//        let currentLocationY = recognizer.location(in: self.view).y
-        
-        
         
         // recognize flat
         if recognizerWithinFlatRange {
             
-//            print("flat! \(currentLocationY)")
-            
             panGestureOver = checkIfStateEnded(onSharpOrFlat: .flat)
             
-            if panGestureOver {
-//                currentUserAnswer = "\(currentUserAnswer)b"
-//                print(currentUserAnswer)
-                
-                checkAnswer()
-            }
+            if panGestureOver { checkAnswer() }
             
         // recognize sharp
         } else if recognizerWithinSharpRange {
             
-//            print("sharp! \(currentLocationY)")
             panGestureOver = checkIfStateEnded(onSharpOrFlat: .sharp)
             
-            if panGestureOver {
-//                currentUserAnswer = "\(currentUserAnswer)#"
-//                print(currentUserAnswer)
-                
-                checkAnswer()
-            }
+            if panGestureOver { checkAnswer() }
             
-        // CHECK THIS LOGIC!!
+        // if landed withing the current button range
+        } else if recognizerWithinNoteButtonRange {
+            
+            panGestureOver = checkIfStateEnded(onSharpOrFlat: .neither)
+
+            if panGestureOver { checkAnswer() }
+        
+        // if landed outside the current button range
         } else if !recognizerWithinNoteButtonRange {
             
             panGestureOver = checkIfStateEnded(onSharpOrFlat: .neither)
-            
-//            if panGestureOver {
-//                checkAnswer()
-//            }
             
         }
 //        else {

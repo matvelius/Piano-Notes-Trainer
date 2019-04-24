@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="l1o-7Z-dlW">
     <device id="ipad12_9rounded" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
@@ -18,13 +18,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="1366" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="SETTINGS" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QLt-BR-BcN">
-                                <rect key="frame" x="455" y="453" width="455.5" height="116.5"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="24"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JI7-xy-e6Q" userLabel="Main Container">
                                 <rect key="frame" x="0.0" y="139" width="1366" height="885"/>
                                 <subviews>
@@ -845,6 +838,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" id="upv-Dd-Knf"/>
                     <connections>
                         <outlet property="darkOverlayOutlet" destination="TMX-dv-0h9" id="Tgn-Ej-7Zi"/>
                         <outlet property="flatsViewOutlet" destination="lkt-CX-jcE" id="dEz-0q-upx"/>
@@ -862,20 +856,6 @@
                         <outlet property="scoreLabel" destination="sBK-js-cjK" id="lwG-mi-Vee"/>
                         <outlet property="sharpsViewOutlet" destination="Ucu-fc-WoN" id="rGN-gL-672"/>
                         <outlet property="stars" destination="fee-2h-mBH" id="c84-78-SiM"/>
-                        <outletCollection property="sharpsOutletCollection" destination="WWC-jf-Chu" collectionClass="NSMutableArray" id="ytB-1o-UAp"/>
-                        <outletCollection property="sharpsOutletCollection" destination="cQS-mJ-CEi" collectionClass="NSMutableArray" id="NqA-BS-Sbz"/>
-                        <outletCollection property="sharpsOutletCollection" destination="Xod-po-PyJ" collectionClass="NSMutableArray" id="Jpd-YF-EOO"/>
-                        <outletCollection property="sharpsOutletCollection" destination="zoM-hy-uSw" collectionClass="NSMutableArray" id="WaB-oH-iJm"/>
-                        <outletCollection property="sharpsOutletCollection" destination="xEQ-Nq-1Tz" collectionClass="NSMutableArray" id="qEO-Gn-1O5"/>
-                        <outletCollection property="sharpsOutletCollection" destination="7HQ-9a-elb" collectionClass="NSMutableArray" id="x0t-PZ-7zs"/>
-                        <outletCollection property="sharpsOutletCollection" destination="Vfi-DJ-p56" collectionClass="NSMutableArray" id="H4j-jp-AAr"/>
-                        <outletCollection property="flatsOutletCollection" destination="byI-wM-mVi" collectionClass="NSMutableArray" id="p4g-TM-M0i"/>
-                        <outletCollection property="flatsOutletCollection" destination="QNg-Cz-Bky" collectionClass="NSMutableArray" id="Kze-yD-cXk"/>
-                        <outletCollection property="flatsOutletCollection" destination="HJv-nR-U3N" collectionClass="NSMutableArray" id="v6q-lt-WHc"/>
-                        <outletCollection property="flatsOutletCollection" destination="AMe-ET-9L3" collectionClass="NSMutableArray" id="BhU-5b-4aZ"/>
-                        <outletCollection property="flatsOutletCollection" destination="cmD-DR-DtT" collectionClass="NSMutableArray" id="ZyF-Ba-EiQ"/>
-                        <outletCollection property="flatsOutletCollection" destination="cbJ-UK-jH1" collectionClass="NSMutableArray" id="Yao-k1-2OX"/>
-                        <outletCollection property="flatsOutletCollection" destination="hu4-y0-jV2" collectionClass="NSMutableArray" id="aPQ-S6-e70"/>
                         <outletCollection property="panGestureRecognizersCollection" destination="LNg-c0-tQQ" collectionClass="NSMutableArray" id="zzg-eb-K8n"/>
                         <outletCollection property="panGestureRecognizersCollection" destination="3tY-WC-Wpo" collectionClass="NSMutableArray" id="MyY-6L-b0L"/>
                         <outletCollection property="panGestureRecognizersCollection" destination="vwZ-Si-xOd" collectionClass="NSMutableArray" id="YHW-Nj-azb"/>
@@ -883,6 +863,20 @@
                         <outletCollection property="panGestureRecognizersCollection" destination="lcs-bZ-y39" collectionClass="NSMutableArray" id="sow-w8-NDf"/>
                         <outletCollection property="panGestureRecognizersCollection" destination="m60-MP-b97" collectionClass="NSMutableArray" id="vI6-E5-sfA"/>
                         <outletCollection property="panGestureRecognizersCollection" destination="kBH-Rn-xZO" collectionClass="NSMutableArray" id="unL-el-I9A"/>
+                        <outletCollection property="sharpsOutletCollection" destination="Vfi-DJ-p56" collectionClass="NSMutableArray" id="L6A-xK-M5u"/>
+                        <outletCollection property="sharpsOutletCollection" destination="7HQ-9a-elb" collectionClass="NSMutableArray" id="Oeo-C9-ax1"/>
+                        <outletCollection property="sharpsOutletCollection" destination="xEQ-Nq-1Tz" collectionClass="NSMutableArray" id="9hp-g1-zNr"/>
+                        <outletCollection property="sharpsOutletCollection" destination="zoM-hy-uSw" collectionClass="NSMutableArray" id="v0f-g6-Jgi"/>
+                        <outletCollection property="sharpsOutletCollection" destination="Xod-po-PyJ" collectionClass="NSMutableArray" id="Lg4-wH-LCB"/>
+                        <outletCollection property="sharpsOutletCollection" destination="cQS-mJ-CEi" collectionClass="NSMutableArray" id="Ehb-Fe-emL"/>
+                        <outletCollection property="sharpsOutletCollection" destination="WWC-jf-Chu" collectionClass="NSMutableArray" id="BVl-aM-DRx"/>
+                        <outletCollection property="flatsOutletCollection" destination="HJv-nR-U3N" collectionClass="NSMutableArray" id="szx-1c-nTA"/>
+                        <outletCollection property="flatsOutletCollection" destination="QNg-Cz-Bky" collectionClass="NSMutableArray" id="nDQ-NA-2LN"/>
+                        <outletCollection property="flatsOutletCollection" destination="AMe-ET-9L3" collectionClass="NSMutableArray" id="4Ta-Ha-60c"/>
+                        <outletCollection property="flatsOutletCollection" destination="cmD-DR-DtT" collectionClass="NSMutableArray" id="ro7-1d-sGa"/>
+                        <outletCollection property="flatsOutletCollection" destination="cbJ-UK-jH1" collectionClass="NSMutableArray" id="g58-de-Oyc"/>
+                        <outletCollection property="flatsOutletCollection" destination="hu4-y0-jV2" collectionClass="NSMutableArray" id="BhU-VA-qYs"/>
+                        <outletCollection property="flatsOutletCollection" destination="byI-wM-mVi" collectionClass="NSMutableArray" id="00w-QY-pLc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -970,7 +964,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <segue destination="BYZ-38-t0r" kind="show" id="pUi-Sx-F5I"/>
+                                            <segue destination="BYZ-38-t0r" kind="show" animates="NO" id="gqn-dQ-6bT"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -1116,6 +1110,6 @@
         <image name="white_piano_12.9_large" width="910.66668701171875" height="538.66668701171875"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="pUi-Sx-F5I"/>
+        <segue reference="gqn-dQ-6bT"/>
     </inferredMetricsTieBreakers>
 </document>
