@@ -20,15 +20,37 @@ class ExplainerViewController: UIViewController {
     @IBOutlet weak var navTriangleRight: UIButton!
     
     @IBAction func navTriangleLeftPressed(_ sender: UIButton) {
+        
+        if explainerIndex > 1 {
+            
+            explainerIndex -= 1
+            explainerImage.image = UIImage(named: "explainer_\(explainerIndex)")
+            
+            if explainerIndex == 1 {
+                
+                navTriangleLeft.isEnabled = false
+                
+            }
+            
+        }
+        
     }
     
     @IBAction func navTriangleRightPressed(_ sender: UIButton) {
+        
         if explainerIndex < numberOfExplainers {
+            
             explainerIndex += 1
             explainerImage.image = UIImage(named: "explainer_\(explainerIndex)")
+            
         } else {
+            
             performSegue(withIdentifier: "doneExplaining", sender: sender)
+            
         }
+        
+        navTriangleLeft.isEnabled = true
+        
     }
     
     override func viewDidLoad() {
@@ -45,6 +67,7 @@ class ExplainerViewController: UIViewController {
         navTriangleLeft.setImage(UIImage(named: "nav_triangle_L_inactive"), for: UIControl.State.disabled)
         
         navTriangleRight.setImage(UIImage(named: "nav_triangle_R_normal"), for: UIControl.State.normal)
+        
     }
     
 

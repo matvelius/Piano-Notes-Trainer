@@ -964,7 +964,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <segue destination="BYZ-38-t0r" kind="show" animates="NO" id="gqn-dQ-6bT"/>
+                                            <segue destination="ocB-fJ-hDj" kind="show" animates="NO" id="ZYe-Mn-iuK"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -1031,10 +1031,10 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pvh-OJ-xAE">
-                                <rect key="frame" x="1231" y="74" width="85" height="52"/>
+                                <rect key="frame" x="1206" y="74" width="110" height="52"/>
                                 <color key="backgroundColor" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="85" id="Mwp-Xd-ycM"/>
+                                    <constraint firstAttribute="width" constant="110" id="Mwp-Xd-ycM"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="33"/>
                                 <state key="normal" title="SKIP"/>
@@ -1044,7 +1044,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="0z7-So-mTa"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" animates="NO" id="0z7-So-mTa"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -1070,7 +1070,7 @@
                         <outlet property="explainerImage" destination="Xd0-0D-gns" id="zQ1-h8-hUP"/>
                         <outlet property="navTriangleLeft" destination="oXW-qM-tFj" id="Di1-aQ-lzb"/>
                         <outlet property="navTriangleRight" destination="oUe-B0-TM1" id="3gG-nu-3ZY"/>
-                        <segue destination="BYZ-38-t0r" kind="show" identifier="doneExplaining" id="gpG-aX-QFw"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="doneExplaining" animates="NO" id="gpG-aX-QFw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cmE-Yr-TVd" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1110,6 +1110,6 @@
         <image name="white_piano_12.9_large" width="910.66668701171875" height="538.66668701171875"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="gqn-dQ-6bT"/>
+        <segue reference="0z7-So-mTa"/>
     </inferredMetricsTieBreakers>
 </document>
