@@ -303,8 +303,10 @@ class ViewController: UIViewController {
     var sharpsUpperBound: CGFloat = 0.0
     var flatsLowerBound: CGFloat = 0.0
     var flatsUpperBound: CGFloat = 0.0
-    var noteButtonLowerBound: CGFloat = 0.0
-    var noteButtonUpperBound: CGFloat = 0.0
+    var noteButtonLowerBoundY: CGFloat = 0.0
+    var noteButtonUpperBoundY: CGFloat = 0.0
+    var noteButtonLowerBoundX: CGFloat = 0.0
+    var noteButtonUpperBoundX: CGFloat = 0.0
     
     @IBOutlet var flatsOutletCollection: [UIButton]!
     
@@ -377,8 +379,8 @@ class ViewController: UIViewController {
         flatsLowerBound = flatsViewOutlet.bounds.minY - 5
         
         // calculate note button bounds for pan gesture recognition
-        noteButtonUpperBound = noteButtonD.bounds.maxY
-        noteButtonLowerBound = noteButtonD.bounds.minY
+        noteButtonUpperBoundY = noteButtonD.bounds.maxY
+        noteButtonLowerBoundY = noteButtonD.bounds.minY
     
         
 //        accidentalsBottomEdgeYCoordinate = sharpsOutletCollection.first!.bounds.maxY
@@ -726,9 +728,9 @@ class ViewController: UIViewController {
         
 //        let sharpView = sharpsOutletCollection.first
 //        let appWindowView = UIApplication.shared.keyWindow
-        let convertedCoordinatesOfRecognizer = sharpsViewOutlet.convert(recognizer.location(in: self.view), to: sharpsViewOutlet)
-        
-        let convertedCoordinatesOfSharp = sharpsViewOutlet.convert(sharpsOutletCollection.first!.bounds, to: sharpsViewOutlet)
+//        let convertedCoordinatesOfRecognizer = sharpsViewOutlet.convert(recognizer.location(in: self.view), to: sharpsViewOutlet)
+//
+//        let convertedCoordinatesOfSharp = sharpsViewOutlet.convert(sharpsOutletCollection.first!.bounds, to: sharpsViewOutlet)
         
 //        print("convertedCoordinatesOfRecognizer: \(convertedCoordinatesOfRecognizer)")
 //        print("convertedCoordinatesOfSharp: \(convertedCoordinatesOfSharp)")
@@ -741,7 +743,9 @@ class ViewController: UIViewController {
         
         let currentYCoordinateOfPanInRespectToNoteButtons = recognizer.location(in: currentNoteButton).y
         
-        print("currentYCoordinateOfPanInRespectToCurrentNoteButton: \(currentYCoordinateOfPanInRespectToNoteButtons)")
+        let currentXCoordinateOfPanInRespectToCurrentNoteButton = recognizer.location(in: currentNoteButton).x
+        
+//        print("currentYCoordinateOfPanInRespectToCurrentNoteButton: \(currentYCoordinateOfPanInRespectToNoteButtons)")
         
     
         
@@ -753,12 +757,12 @@ class ViewController: UIViewController {
         
         
         // determine if the user's finger is within the sharps range
-        let recognizerWithinSharpRange = (sharpsLowerBound...sharpsUpperBound).contains(currentYCoordinateOfPanInRespectToSharps)
+        let recognizerWithinSharpRange = (sharpsLowerBound...sharpsUpperBound).contains(currentYCoordinateOfPanInRespectToSharps) && (noteButtonLowerBoundX...noteButtonUpperBoundX).contains(currentXCoordinateOfPanInRespectToCurrentNoteButton)
         
         // determine if the user's finger is within the flats range
-        let recognizerWithinFlatRange = (flatsLowerBound...flatsUpperBound).contains(currentYCoordinateOfPanInRespectToFlats)
+        let recognizerWithinFlatRange = (flatsLowerBound...flatsUpperBound).contains(currentYCoordinateOfPanInRespectToFlats) && (noteButtonLowerBoundX...noteButtonUpperBoundX).contains(currentXCoordinateOfPanInRespectToCurrentNoteButton)
         
-        let recognizerWithinNoteButtonRange = (noteButtonLowerBound...noteButtonUpperBound).contains(currentYCoordinateOfPanInRespectToNoteButtons)
+        let recognizerWithinNoteButtonRange = (noteButtonLowerBoundY...noteButtonUpperBoundY).contains(currentYCoordinateOfPanInRespectToNoteButtons) && (noteButtonLowerBoundX...noteButtonUpperBoundX).contains(currentXCoordinateOfPanInRespectToCurrentNoteButton)
         
         // alter the sharp & flat buttons depending on
         // where the user's finger is
@@ -875,19 +879,13 @@ class ViewController: UIViewController {
             }
             
         // CHECK THIS LOGIC!!
-        } else if recognizerWithinNoteButtonRange {
+        } else if !recognizerWithinNoteButtonRange {
             
             panGestureOver = checkIfStateEnded(onSharpOrFlat: .neither)
             
-            if panGestureOver {
-                //                currentUserAnswer = "\(currentUserAnswer)#"
-                //                print(currentUserAnswer)
-                
-//                let image = UIImage(named: "\(currentUserAnswer)_default")
-//                currentNoteButton.setImage(image, for: UIControl.State.normal)
-                
-                checkAnswer()
-            }
+//            if panGestureOver {
+//                checkAnswer()
+//            }
             
         }
 //        else {
@@ -987,36 +985,48 @@ class ViewController: UIViewController {
     @IBAction func touchDownA(_ sender: UIButton) {
         currentUserAnswer = "A"
         currentNoteButton = noteButtonA
+        setCurrentNoteXBounds()
     }
     
     @IBAction func touchDownB(_ sender: UIButton) {
         currentUserAnswer = "B"
         currentNoteButton = noteButtonB
+        setCurrentNoteXBounds()
     }
     
     @IBAction func touchDownC(_ sender: UIButton) {
         currentUserAnswer = "C"
         currentNoteButton = noteButtonC
+        setCurrentNoteXBounds()
     }
     
     @IBAction func touchDownD(_ sender: UIButton) {
         currentUserAnswer = "D"
         currentNoteButton = noteButtonD
+        setCurrentNoteXBounds()
     }
     
     @IBAction func touchDownE(_ sender: UIButton) {
         currentUserAnswer = "E"
         currentNoteButton = noteButtonE
+        setCurrentNoteXBounds()
     }
     
     @IBAction func touchDownF(_ sender: UIButton) {
         currentUserAnswer = "F"
         currentNoteButton = noteButtonF
+        setCurrentNoteXBounds()
     }
     
     @IBAction func touchDownG(_ sender: UIButton) {
         currentUserAnswer = "G"
         currentNoteButton = noteButtonG
+        setCurrentNoteXBounds()
+    }
+    
+    func setCurrentNoteXBounds() {
+        noteButtonLowerBoundX = currentNoteButton.bounds.minX
+        noteButtonUpperBoundX = currentNoteButton.bounds.maxX
     }
     
 }
