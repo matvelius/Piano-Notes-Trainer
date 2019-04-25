@@ -346,6 +346,9 @@ class ViewController: UIViewController {
     var lastRandomNumber: Int = -1
     var randomNewNoteIndex = Int.random(in: 0...15)
     
+    // SHOULD I ANIMATE THE BUTTON SIZE?
+    @IBOutlet weak var noteButtonAHeight: NSLayoutConstraint!
+    
     override func viewDidLoad() {
         
         super.viewDidLoad()
@@ -522,6 +525,26 @@ class ViewController: UIViewController {
             //            print(currentNote)
             //            play(sound: "\(currentNote)", ofType: .wav)
             disableButtons()
+            
+            // ANIMATING BUTTON SIZE ON CORRECT ANSWER:
+            
+//            noteButtonAHeight.constant = 130
+//
+//            UIView.animate(withDuration: 2.5) {
+//
+//                self.view.layoutIfNeeded()
+//
+//            }
+            
+//            self.menuLeadingConstraint.constant = -460
+            
+//            UIView.animate(withDuration: 0.5, delay: 0.0, options: .curveEaseIn, animations: {
+//
+//                self.view.layoutIfNeeded()
+//                self.darkOverlayOutlet.alpha = 0
+//                self.menuBackgroundOutlet.alpha = 0
+//
+//            })
             
             // update score
             totalScore += 1

@@ -846,6 +846,7 @@
                         <outlet property="menuButtonOutlet" destination="2co-F0-3U7" id="1ST-40-bMw"/>
                         <outlet property="menuLeadingConstraint" destination="EHH-lo-W0B" id="n9K-O9-YNZ"/>
                         <outlet property="noteButtonA" destination="tVB-E4-Spp" id="GUG-jX-giW"/>
+                        <outlet property="noteButtonAHeight" destination="YSb-X8-rCg" id="xLn-uj-kq1"/>
                         <outlet property="noteButtonB" destination="Cpq-fy-UKY" id="vej-iy-FDY"/>
                         <outlet property="noteButtonC" destination="R7e-Tw-SC2" id="dod-Pv-7O4"/>
                         <outlet property="noteButtonD" destination="YCd-Zs-4kT" id="HYS-TV-omh"/>
