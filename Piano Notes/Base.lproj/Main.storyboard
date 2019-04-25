@@ -965,7 +965,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <segue destination="ocB-fJ-hDj" kind="show" animates="NO" id="ZYe-Mn-iuK"/>
+                                            <segue destination="ocB-fJ-hDj" kind="show" id="ZYe-Mn-iuK"/>
                                         </connections>
                                     </button>
                                 </subviews>

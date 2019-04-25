@@ -821,13 +821,14 @@ class ViewController: UIViewController {
 //            currentFlat.setImage(UIImage(named: "flat"), for: .normal)
             
             for sharp in sharpsOutletCollection {
-                if sharp.tag == currentNoteButton.tag {
+                if sharp.tag == currentNoteButton.tag && sharp.currentImage != UIImage(named: "sharp_wrong") {
                     sharp.setImage(UIImage(named: "sharp"), for: .normal)
+                    print("setting sharp image back to normal")
                 }
             }
 
             for flat in flatsOutletCollection {
-                if flat.tag == currentNoteButton.tag {
+                if flat.tag == currentNoteButton.tag && flat.currentImage != UIImage(named: "flat_wrong") {
                     flat.setImage(UIImage(named: "flat"), for: .normal)
                 }
             }
