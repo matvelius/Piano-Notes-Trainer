@@ -45,14 +45,14 @@
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Uxe-4T-2YK" userLabel="between score &amp; stars">
                                                 <rect key="frame" x="397" y="0.0" width="512" height="97"/>
                                             </imageView>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1pd-8Z-aLk">
-                                                <rect key="frame" x="282" y="19.5" width="115" height="58"/>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1pd-8Z-aLk" userLabel="right edge of score">
+                                                <rect key="frame" x="299" y="28" width="98" height="41"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" secondItem="1pd-8Z-aLk" secondAttribute="height" multiplier="116:49" constant="-23.591836734693871" id="ArD-dr-kI4"/>
+                                                    <constraint firstAttribute="width" secondItem="1pd-8Z-aLk" secondAttribute="height" multiplier="116:49" id="ArD-dr-kI4"/>
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="999" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sBK-js-cjK">
-                                                <rect key="frame" x="206.5" y="23" width="76" height="35"/>
+                                                <rect key="frame" x="223.5" y="23" width="76" height="35"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="sBK-js-cjK" secondAttribute="height" multiplier="76:35" id="rff-sX-iJZ"/>
                                                 </constraints>
@@ -65,7 +65,7 @@
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstItem="Uxe-4T-2YK" firstAttribute="width" secondItem="1pd-8Z-aLk" secondAttribute="width" multiplier="4.41306" constant="5.2150630399999987" id="06U-Mv-Umh"/>
+                                            <constraint firstItem="Uxe-4T-2YK" firstAttribute="width" secondItem="1pd-8Z-aLk" secondAttribute="width" multiplier="4.41306" constant="80" id="06U-Mv-Umh"/>
                                             <constraint firstItem="fee-2h-mBH" firstAttribute="centerY" secondItem="Uxe-4T-2YK" secondAttribute="centerY" id="2Rh-IN-acg"/>
                                             <constraint firstItem="sBK-js-cjK" firstAttribute="height" secondItem="mS9-aU-D0p" secondAttribute="height" multiplier="0.6863" id="CII-Xq-npe"/>
                                             <constraint firstItem="Uxe-4T-2YK" firstAttribute="width" secondItem="ysp-nm-Oue" secondAttribute="width" multiplier="0.392" id="EVy-PL-fzy"/>
@@ -604,7 +604,7 @@
                                     <action selector="darkOverlayPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="a36-X9-Yae"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QG9-26-Oaz" userLabel="Menu Container">
+                            <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QG9-26-Oaz" userLabel="Menu Container">
                                 <rect key="frame" x="0.0" y="0.0" width="455.5" height="1024"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SETTINGS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l7U-vx-unQ">

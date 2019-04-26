@@ -177,6 +177,10 @@ class ViewController: UIViewController {
             
     }
     
+    var allWhiteKeysEnabled = true
+    var onlyCDEEnabled = false
+    var onlyFGABEnabled = false
+    
     // enable / disable based on the white keys switch
     @IBAction func whiteKeySettingsSegmentedControl(_ sender: UISegmentedControl) {
         
@@ -185,6 +189,10 @@ class ViewController: UIViewController {
             // all white keys
             currentNoteChoices = onlyWhiteKeyChoices
             randomNewNoteIndexUpperLimit = onlyWhiteKeyChoices.count - 1
+            
+            allWhiteKeysEnabled = true
+            onlyCDEEnabled = false
+            onlyFGABEnabled = false
             
             enableButtons()
             
@@ -203,6 +211,10 @@ class ViewController: UIViewController {
             // only C D E
             currentNoteChoices = onlyCDE
             randomNewNoteIndexUpperLimit = onlyCDE.count - 1
+            
+            allWhiteKeysEnabled = false
+            onlyCDEEnabled = true
+            onlyFGABEnabled = false
             
             disableButtons()
             
@@ -226,6 +238,10 @@ class ViewController: UIViewController {
             // only F G A B
             currentNoteChoices = onlyFGAB
             randomNewNoteIndexUpperLimit = onlyFGAB.count - 1
+            
+            allWhiteKeysEnabled = false
+            onlyCDEEnabled = false
+            onlyFGABEnabled = true
             
             disableButtons()
             
@@ -353,6 +369,7 @@ class ViewController: UIViewController {
         
         super.viewDidLoad()
         
+        // start with white keys only (?)
         currentNoteChoices = onlyWhiteKeyChoices
         randomNewNoteIndexUpperLimit = onlyWhiteKeyChoices.count - 1
 //        print("onlyWhiteKeyChoices.count: \(onlyWhiteKeyChoices.count)")
@@ -424,6 +441,7 @@ class ViewController: UIViewController {
         incorrectAnswersInARow = 0
         currentNumberOfStars = 0
         stars.image = UIImage(named: "stars\(currentNumberOfStars)")
+        resetButtonsToDefault()
 
         generateNewNote()
         
@@ -712,13 +730,33 @@ class ViewController: UIViewController {
     }
     
     func enableButtons() {
-        noteButtonA.isEnabled = true;
-        noteButtonB.isEnabled = true;
-        noteButtonC.isEnabled = true;
-        noteButtonD.isEnabled = true;
-        noteButtonE.isEnabled = true;
-        noteButtonF.isEnabled = true;
-        noteButtonG.isEnabled = true;
+        
+//        allWhiteKeysEnabled = true
+//        onlyCDEEnabled = false
+//        onlyFGABEnabled = false
+        if allWhiteKeysEnabled {
+            
+            noteButtonA.isEnabled = true;
+            noteButtonB.isEnabled = true;
+            noteButtonC.isEnabled = true;
+            noteButtonD.isEnabled = true;
+            noteButtonE.isEnabled = true;
+            noteButtonF.isEnabled = true;
+            noteButtonG.isEnabled = true;
+            
+        } else if onlyCDEEnabled {
+            
+            noteButtonC.isEnabled = true;
+            noteButtonD.isEnabled = true;
+            noteButtonE.isEnabled = true;
+            
+        } else if onlyFGABEnabled {
+            
+            noteButtonF.isEnabled = true;
+            noteButtonG.isEnabled = true;
+            noteButtonA.isEnabled = true;
+            noteButtonB.isEnabled = true;
+        }
     }
     
     func loadSound(currentSound: String) {
