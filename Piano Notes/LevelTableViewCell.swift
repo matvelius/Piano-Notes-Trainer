@@ -17,7 +17,7 @@ class LevelTableViewCell: UITableViewCell {
     @IBOutlet weak var levelImage: UIImageView!
     
     func updateCell(with level: Level) {
-        levelTitle.text = level.title
+        levelTitle.text = level.title.uppercased()
         levelSubtitle.text = level.subtitle
         levelImage.image = UIImage(named: "\(level.imageName)")
     }
@@ -25,6 +25,7 @@ class LevelTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

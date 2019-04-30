@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="8JC-u7-HER">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="l1o-7Z-dlW">
     <device id="ipad12_9rounded" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
@@ -18,38 +18,40 @@
                         <rect key="frame" x="0.0" y="0.0" width="1366" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleAspectFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="LevelCell" rowHeight="116" id="LI0-cB-Ct0" customClass="LevelTableViewCell" customModule="Piano_Notes" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="1366" height="116"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleAspectFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="LevelCell" focusStyle="custom" rowHeight="205" id="LI0-cB-Ct0" customClass="LevelTableViewCell" customModule="Piano_Notes" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="1366" height="205"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="LI0-cB-Ct0" id="qwI-5X-ttC">
-                                    <rect key="frame" x="0.0" y="0.0" width="1328" height="115.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="1328" height="204.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LEVEL 1:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lKS-KE-S9p">
-                                            <rect key="frame" x="30" y="15" width="194.5" height="86"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="52"/>
-                                            <nil key="textColor"/>
+                                            <rect key="frame" x="50" y="15" width="246.5" height="175"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="65"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ES5-3h-EEF">
-                                            <rect key="frame" x="229.5" y="15" width="878.5" height="86"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="52"/>
-                                            <nil key="textColor"/>
+                                            <rect key="frame" x="316.5" y="15" width="791.5" height="175"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="65"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ghX-Zs-vBI">
-                                            <rect key="frame" x="1118" y="0.0" width="200" height="115.5"/>
+                                            <rect key="frame" x="1118" y="0.0" width="200" height="204.5"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="200" id="u9A-B6-MfN"/>
                                             </constraints>
                                         </imageView>
                                     </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
-                                        <constraint firstItem="lKS-KE-S9p" firstAttribute="leading" secondItem="qwI-5X-ttC" secondAttribute="leadingMargin" constant="10" id="4AZ-Cb-f0J"/>
+                                        <constraint firstItem="lKS-KE-S9p" firstAttribute="leading" secondItem="qwI-5X-ttC" secondAttribute="leadingMargin" constant="30" id="4AZ-Cb-f0J"/>
                                         <constraint firstItem="ES5-3h-EEF" firstAttribute="top" secondItem="qwI-5X-ttC" secondAttribute="topMargin" id="9gM-wh-roH"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="lKS-KE-S9p" secondAttribute="bottom" id="CTS-5X-ukV"/>
-                                        <constraint firstItem="ES5-3h-EEF" firstAttribute="leading" secondItem="lKS-KE-S9p" secondAttribute="trailing" constant="5" id="CkD-BC-lQZ"/>
+                                        <constraint firstItem="ES5-3h-EEF" firstAttribute="leading" secondItem="lKS-KE-S9p" secondAttribute="trailing" constant="20" id="CkD-BC-lQZ"/>
                                         <constraint firstAttribute="bottom" secondItem="ghX-Zs-vBI" secondAttribute="bottom" id="Pnq-vm-y4b"/>
                                         <constraint firstItem="lKS-KE-S9p" firstAttribute="top" secondItem="qwI-5X-ttC" secondAttribute="topMargin" id="RHT-V0-WiP"/>
                                         <constraint firstAttribute="trailing" secondItem="ghX-Zs-vBI" secondAttribute="trailing" constant="10" id="Rse-v3-1J1"/>
@@ -58,6 +60,7 @@
                                         <constraint firstItem="ghX-Zs-vBI" firstAttribute="top" secondItem="qwI-5X-ttC" secondAttribute="top" id="mzx-7I-2Aa"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <outlet property="levelImage" destination="ghX-Zs-vBI" id="a2x-Sn-RvZ"/>
                                     <outlet property="levelSubtitle" destination="ES5-3h-EEF" id="LTM-br-VHy"/>
@@ -77,7 +80,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VpB-Rx-fLn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-747" y="-678"/>
+            <point key="canvasLocation" x="-747.14494875549042" y="-678.515625"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">

@@ -12,6 +12,8 @@ class LevelsTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        tableView.backgroundView = UIImageView(image: UIImage(named: "intro_screen_background_blurry"))
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -41,6 +43,10 @@ class LevelsTableViewController: UITableViewController {
         cell.updateCell(with: level)
         
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 200
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
