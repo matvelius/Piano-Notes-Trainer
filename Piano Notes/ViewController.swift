@@ -367,27 +367,16 @@ class ViewController: UIViewController {
         
         super.viewDidLoad()
         
+        
+        
         // start with white keys only (?)
-        setToOnlyWhiteKeys()
+//        setToOnlyWhiteKeys()
+        setupGameForCurrentLevel()
 //        currentNoteChoices = onlyWhiteKeyChoices
 //        randomNewNoteIndexUpperLimit = currentNoteChoices.count - 1
 //        print("onlyWhiteKeyChoices.count: \(onlyWhiteKeyChoices.count)")
         
-        // disable sharps and flats, make them invisible, disable gesture recognizers
-        for sharp in sharpsOutletCollection {
-            sharp.isEnabled = false
-        }
         
-        for flat in flatsOutletCollection {
-            flat.isEnabled = false
-        }
-        
-        sharpsViewOutlet.alpha = 0
-        flatsViewOutlet.alpha = 0
-        
-        for panGestureRecognizer in panGestureRecognizersCollection {
-            panGestureRecognizer.isEnabled = false
-        }
         
         
         // calculate shaprs & flats bounds for pan gesture recognition
@@ -724,9 +713,6 @@ class ViewController: UIViewController {
     
     func enableButtons() {
         
-//        allWhiteKeysEnabled = true
-//        onlyCDEEnabled = false
-//        onlyFGABEnabled = false
         if onlyWhiteKeysEnabled || allNoteChoicesEnabled {
             
             noteButtonA.isEnabled = true;
@@ -737,11 +723,28 @@ class ViewController: UIViewController {
             noteButtonF.isEnabled = true;
             noteButtonG.isEnabled = true;
             
+            noteButtonA.alpha = 1
+            noteButtonB.alpha = 1
+            noteButtonC.alpha = 1
+            noteButtonD.alpha = 1
+            noteButtonE.alpha = 1
+            noteButtonF.alpha = 1
+            noteButtonG.alpha = 1
+            
         } else if onlyCDEEnabled {
             
             noteButtonC.isEnabled = true;
             noteButtonD.isEnabled = true;
             noteButtonE.isEnabled = true;
+            
+            noteButtonA.alpha = 0.3
+            noteButtonB.alpha = 0.3
+            noteButtonF.alpha = 0.3
+            noteButtonG.alpha = 0.3
+            
+            noteButtonC.alpha = 1
+            noteButtonD.alpha = 1
+            noteButtonE.alpha = 1
             
         } else if onlyFGABEnabled {
             
@@ -749,14 +752,21 @@ class ViewController: UIViewController {
             noteButtonG.isEnabled = true;
             noteButtonA.isEnabled = true;
             noteButtonB.isEnabled = true;
+            
+            noteButtonA.alpha = 1
+            noteButtonB.alpha = 1
+            noteButtonF.alpha = 1
+            noteButtonG.alpha = 1
+            
+            noteButtonC.alpha = 0.3
+            noteButtonD.alpha = 0.3
+            noteButtonE.alpha = 0.3
         }
     }
     
     func loadSound(currentSound: String) {
         // sound file
         if let sound = Bundle.main.path(forResource: currentSound, ofType: "aiff") {
-
-            //print(String(sound))
 
             do {
                 // try to initialize with the URL created above
@@ -775,21 +785,6 @@ class ViewController: UIViewController {
     
     @IBAction func handlePanGesture(recognizer: UIPanGestureRecognizer) {
         
-//        print("recognizer.location(in: self.view).y: \(recognizer.location(in: self.view).y)")
-//
-//        print("sharpsViewOutlet.bounds: \(sharpsViewOutlet.bounds)")
-//        print("<-- current Y location")
-        
-//        let sharpView = sharpsOutletCollection.first
-//        let appWindowView = UIApplication.shared.keyWindow
-//        let convertedCoordinatesOfRecognizer = sharpsViewOutlet.convert(recognizer.location(in: self.view), to: sharpsViewOutlet)
-//
-//        let convertedCoordinatesOfSharp = sharpsViewOutlet.convert(sharpsOutletCollection.first!.bounds, to: sharpsViewOutlet)
-        
-//        print("convertedCoordinatesOfRecognizer: \(convertedCoordinatesOfRecognizer)")
-//        print("convertedCoordinatesOfSharp: \(convertedCoordinatesOfSharp)")
-        
-        
         
         let currentYCoordinateOfPanInRespectToSharps = recognizer.location(in: sharpsOutletCollection.first).y
         
@@ -798,16 +793,6 @@ class ViewController: UIViewController {
         let currentYCoordinateOfPanInRespectToNoteButtons = recognizer.location(in: currentNoteButton).y
         
         let currentXCoordinateOfPanInRespectToCurrentNoteButton = recognizer.location(in: currentNoteButton).x
-        
-//        print("currentYCoordinateOfPanInRespectToCurrentNoteButton: \(currentYCoordinateOfPanInRespectToNoteButtons)")
-        
-    
-        
-//        print("current Y location in respect to sharp: \(currentYCoordinateOfPanInRespectToSharps)")
-//
-//        print("sharpsViewOutlet.bounds.maxY: \(sharpsViewOutlet.bounds.maxY)")
-//
-//        print("current Y location in respect to flats: \(currentYCoordinateOfPanInRespectToFlats)")
         
         
         // determine if the user's finger is within the sharps range
@@ -879,7 +864,7 @@ class ViewController: UIViewController {
                     currentUserAnswer = "\(currentUserAnswer)b"
                     let image = UIImage(named: "\(currentUserAnswer)_default")
                     currentNoteButton.setImage(image, for: UIControl.State.normal)
-//                    print("ended! currentUserAnswer is: \(currentUserAnswer)")
+
                     return true
                     
                 case .sharp:
@@ -887,22 +872,17 @@ class ViewController: UIViewController {
                     currentUserAnswer = "\(currentUserAnswer)#"
                     let image = UIImage(named: "\(currentUserAnswer)_default")
                     currentNoteButton.setImage(image, for: UIControl.State.normal)
-//                    print("ended! currentUserAnswer is: \(currentUserAnswer)")
+
                     return true
                     
                 case .neither:
                     
                     currentAccidental = .neither
                     let image = UIImage(named: "\(currentUserAnswer)_default")
-//                    print("CASE .neither, currentUserAnswer: \(currentUserAnswer)")
                     currentNoteButton.setImage(image, for: UIControl.State.normal)
                     
-//                    self.note
                     return true
                     
-//                default:
-//                    print("something went weird...")
-//                    break
                 }
                 
             }
@@ -1081,5 +1061,103 @@ class ViewController: UIViewController {
         noteButtonLowerBoundX = currentNoteButton.bounds.minX
         noteButtonUpperBoundX = currentNoteButton.bounds.maxX
     }
+    
+    func setupGameForCurrentLevel() {
+        
+        disableButtons()
+        
+        // note choices
+        currentNoteChoices = Level.currentLevel.noteChoices
+        
+        // set the keys to display
+        let currentLevelID = Level.currentLevel.id
+        
+        switch currentLevelID {
+        case 1:
+            setToOnlyCDE()
+            disableSharps()
+            disableFlats()
+            disableGestureRecognizers()
+        case 2:
+            setToOnlyFGAB()
+            disableSharps()
+            disableFlats()
+            disableGestureRecognizers()
+        case 3:
+            setToOnlyWhiteKeys()
+            disableSharps()
+            disableFlats()
+            disableGestureRecognizers()
+        case 4:
+            setToOnlyBlackKeys()
+            enableSharps()
+            enableFlats()
+            enableGestureRecognizers()
+        case 5:
+            setToOnlyBlackKeys()
+            enableSharps()
+            enableFlats()
+            enableGestureRecognizers()
+        case 6:
+            setToAllNoteChoices()
+            enableSharps()
+            enableFlats()
+            enableGestureRecognizers()
+        case 7:
+            setToAllNoteChoices()
+            enableSharps()
+            enableFlats()
+            enableGestureRecognizers()
+        default: break
+        }
+        
+        enableButtons()
+        
+        // determine next level
+        
+    }
+    
+    func enableSharps() {
+        for sharp in sharpsOutletCollection {
+            sharp.isEnabled = true
+        }
+        sharpsViewOutlet.alpha = 1
+    }
+    
+    func disableSharps() {
+        for sharp in sharpsOutletCollection {
+            sharp.isEnabled = false
+        }
+        sharpsViewOutlet.alpha = 0
+    }
+    
+    func enableFlats() {
+        for flat in flatsOutletCollection {
+            flat.isEnabled = true
+        }
+        flatsViewOutlet.alpha = 1
+    }
+    
+    func disableFlats() {
+        for flat in flatsOutletCollection {
+            flat.isEnabled = false
+        }
+        flatsViewOutlet.alpha = 0
+    }
+
+    func enableGestureRecognizers() {
+        for panGestureRecognizer in panGestureRecognizersCollection {
+            panGestureRecognizer.isEnabled = true
+        }
+    }
+    
+    func disableGestureRecognizers() {
+        for panGestureRecognizer in panGestureRecognizersCollection {
+            panGestureRecognizer.isEnabled = false
+        }
+    }
+    
+    
+
     
 }

@@ -71,8 +71,8 @@
                         </connections>
                     </tableView>
                     <connections>
-                        <segue destination="ocB-fJ-hDj" kind="show" identifier="segueToExplainers" id="Dij-og-4Df"/>
-                        <segue destination="BYZ-38-t0r" kind="show" identifier="segueToGame" id="h7l-c7-UJA"/>
+                        <segue destination="ocB-fJ-hDj" kind="show" identifier="segueToExplainers" animates="NO" id="Dij-og-4Df"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="segueToGame" animates="NO" id="h7l-c7-UJA"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VpB-Rx-fLn" userLabel="First Responder" sceneMemberID="firstResponder"/>

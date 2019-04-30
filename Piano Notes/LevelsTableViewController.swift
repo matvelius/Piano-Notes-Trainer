@@ -45,6 +45,8 @@ class LevelsTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
+        Level.currentLevel = allLevels[indexPath.row]
+        
         if explainersOn {
         
             performSegue(withIdentifier: "segueToExplainers", sender: nil)
