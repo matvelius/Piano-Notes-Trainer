@@ -47,6 +47,8 @@
 		D7C88AC52249EFA0000F484F /* wrong.aiff in Resources */ = {isa = PBXBuildFile; fileRef = D7C88AC42249EFA0000F484F /* wrong.aiff */; };
 		D7DFCFEB22619FC700468F71 /* Enharmonics.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7DFCFEA22619FC700468F71 /* Enharmonics.swift */; };
 		D7EF7738227785CE00943F54 /* NoteChoices.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7EF7737227785CE00943F54 /* NoteChoices.swift */; };
+		D7EF773A2277F06B00943F54 /* Accidentals.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7EF77392277F06B00943F54 /* Accidentals.swift */; };
+		D7EF773C2277F3D200943F54 /* LevelsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7EF773B2277F3D200943F54 /* LevelsTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -92,6 +94,8 @@
 		D7C88AC42249EFA0000F484F /* wrong.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = wrong.aiff; sourceTree = "<group>"; };
 		D7DFCFEA22619FC700468F71 /* Enharmonics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enharmonics.swift; sourceTree = "<group>"; };
 		D7EF7737227785CE00943F54 /* NoteChoices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteChoices.swift; sourceTree = "<group>"; };
+		D7EF77392277F06B00943F54 /* Accidentals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Accidentals.swift; sourceTree = "<group>"; };
+		D7EF773B2277F3D200943F54 /* LevelsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelsTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,8 +178,10 @@
 				D777C81722009DDB00FA472E /* AppDelegate.swift */,
 				D777C81922009DDB00FA472E /* ViewController.swift */,
 				D7EF7737227785CE00943F54 /* NoteChoices.swift */,
+				D7EF77392277F06B00943F54 /* Accidentals.swift */,
 				D7DFCFEA22619FC700468F71 /* Enharmonics.swift */,
 				D777C81B22009DDB00FA472E /* Main.storyboard */,
+				D7EF773B2277F3D200943F54 /* LevelsTableViewController.swift */,
 				D7C2E3D92241C9E300A72D5C /* ExplainerViewController.swift */,
 				D78A61DE22643EBC008706E2 /* InitialViewController.swift */,
 				D777C81E22009DE000FA472E /* Assets.xcassets */,
@@ -293,6 +299,8 @@
 				D78A61DF22643EBC008706E2 /* InitialViewController.swift in Sources */,
 				D777C81A22009DDB00FA472E /* ViewController.swift in Sources */,
 				D7EF7738227785CE00943F54 /* NoteChoices.swift in Sources */,
+				D7EF773A2277F06B00943F54 /* Accidentals.swift in Sources */,
+				D7EF773C2277F3D200943F54 /* LevelsTableViewController.swift in Sources */,
 				D7C2E3DA2241C9E300A72D5C /* ExplainerViewController.swift in Sources */,
 				D777C81822009DDB00FA472E /* AppDelegate.swift in Sources */,
 				D7DFCFEB22619FC700468F71 /* Enharmonics.swift in Sources */,

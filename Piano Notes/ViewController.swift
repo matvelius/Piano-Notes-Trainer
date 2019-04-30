@@ -25,16 +25,6 @@ class ViewController: UIViewController {
     // placeholder for current note
     var currentNote = ""
     
-    
-    // keeping track of the accidentals
-    enum Accidentals {
-        case sharp
-        case flat
-        case neither
-    }
-    
-    var currentAccidental: Accidentals = .neither
-    
     var menuIsClosed: Bool = true
     
     
@@ -496,11 +486,6 @@ class ViewController: UIViewController {
         
         // right answer
         if currentUserAnswer == currentCorrectAnswer || currentEnharmonic == currentCorrectAnswer {
-//            print("CORRECT!!!")
-//
-//            print("in checkAnswer, currentCorrectAnswer is: \(currentCorrectAnswer)")
-//            print("in checkAnswer, currentUserAnswer is: \(currentUserAnswer)")
-//            print("in checkAnswer, currentEnharmonic is: \(currentEnharmonic)")
             
             // if dealing with sharp or flat, light up regular letter + #/b symbol
             if currentUserAnswer.count == 2 {
@@ -525,8 +510,7 @@ class ViewController: UIViewController {
                 
             }
             
-            // user answers Cb, correct answer is B
-        
+            // deal w/ enharmonics (user answers Cb, correct answer is B)
             if currentEnharmonic == currentCorrectAnswer {
                 
                 // change the correct note buttons' colors
