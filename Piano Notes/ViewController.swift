@@ -93,6 +93,7 @@ class ViewController: UIViewController {
 ////                self.menuBackgroundOutlet.leadingAnchor = self.menuBackgroundOutlet.superview?.leadingAnchor
 //            }
             
+            // MAKE THIS HAPPEN AFTER A DELAY!
             menuButtonOutlet.setTitle("✕", for: .normal)
             
             menuIsClosed = false
@@ -130,8 +131,10 @@ class ViewController: UIViewController {
         // disable sharps and flats, make them invisible, disable gesture recognizers
         if sender.isOn == true {
             
-            currentNoteChoices = onlyWhiteKeyChoices
-            randomNewNoteIndexUpperLimit = onlyWhiteKeyChoices.count - 1
+            setToOnlyWhiteKeys()
+            
+//            currentNoteChoices = onlyWhiteKeys
+//            randomNewNoteIndexUpperLimit = currentNoteChoices.count - 1
         
             for sharp in sharpsOutletCollection {
                 sharp.isEnabled = false
@@ -153,8 +156,10 @@ class ViewController: UIViewController {
         // otherwise reenable everything
         } else {
             
-            currentNoteChoices = allNoteChoices
-            randomNewNoteIndexUpperLimit = allNoteChoices.count - 1
+            setToAllNoteChoices()
+            
+//            currentNoteChoices = allNoteChoices
+//            randomNewNoteIndexUpperLimit = allNoteChoices.count - 1
             
             for sharp in sharpsOutletCollection {
                 sharp.isEnabled = true
@@ -177,9 +182,9 @@ class ViewController: UIViewController {
             
     }
     
-    var allWhiteKeysEnabled = true
-    var onlyCDEEnabled = false
-    var onlyFGABEnabled = false
+//    var allWhiteKeysEnabled = true
+//    var onlyCDEEnabled = false
+//    var onlyFGABEnabled = false
     
     // enable / disable based on the white keys switch
     @IBAction func whiteKeySettingsSegmentedControl(_ sender: UISegmentedControl) {
@@ -187,12 +192,13 @@ class ViewController: UIViewController {
         if sender.selectedSegmentIndex == 0 {
             
             // all white keys
-            currentNoteChoices = onlyWhiteKeyChoices
-            randomNewNoteIndexUpperLimit = onlyWhiteKeyChoices.count - 1
+//            currentNoteChoices = onlyWhiteKeys
+            setToOnlyWhiteKeys()
+//            randomNewNoteIndexUpperLimit = currentNoteChoices.count - 1
             
-            allWhiteKeysEnabled = true
-            onlyCDEEnabled = false
-            onlyFGABEnabled = false
+//            allWhiteKeysEnabled = true
+//            onlyCDEEnabled = false
+//            onlyFGABEnabled = false
             
             enableButtons()
             
@@ -209,12 +215,13 @@ class ViewController: UIViewController {
         } else if sender.selectedSegmentIndex == 1 {
             
             // only C D E
-            currentNoteChoices = onlyCDE
-            randomNewNoteIndexUpperLimit = onlyCDE.count - 1
+            setToOnlyCDE()
+//            currentNoteChoices = onlyCDE
+//            randomNewNoteIndexUpperLimit = currentNoteChoices.count - 1
             
-            allWhiteKeysEnabled = false
-            onlyCDEEnabled = true
-            onlyFGABEnabled = false
+//            allWhiteKeysEnabled = false
+//            onlyCDEEnabled = true
+//            onlyFGABEnabled = false
             
             disableButtons()
             
@@ -236,12 +243,13 @@ class ViewController: UIViewController {
         } else {
             
             // only F G A B
-            currentNoteChoices = onlyFGAB
-            randomNewNoteIndexUpperLimit = onlyFGAB.count - 1
+            setToOnlyFGAB()
+//            currentNoteChoices = onlyFGAB
+//            randomNewNoteIndexUpperLimit = onlyFGAB.count - 1
             
-            allWhiteKeysEnabled = false
-            onlyCDEEnabled = false
-            onlyFGABEnabled = true
+//            allWhiteKeysEnabled = false
+//            onlyCDEEnabled = false
+//            onlyFGABEnabled = true
             
             disableButtons()
             
@@ -346,17 +354,17 @@ class ViewController: UIViewController {
     // keeping track of incorrect answers in a row to take away stars
     var incorrectAnswersInARow = 0
     
-    var currentNoteChoices = [""]
+//    var currentNoteChoices = [""]
+//
+//    let allNoteChoices = ["F#3", "G3", "G#3", "A3", "A#3", "B3", "C4", "C#4", "D4", "D#4", "E4", "F4", "F#4", "G4", "G#4", "A4", "A#4", "B4", "C5", "C#5",  "D5", "D#5", "E5", "F5", "F#5", "G5", "G#5", "A5", "A#5"]
+//
+//    let onlyWhiteKeyChoices = ["G3", "A3", "B3", "C4", "D4", "E4", "F4", "G4", "A4", "B4", "C5", "D5", "E5", "F5", "G5", "A5"]
+//
+//    let onlyCDE = ["C4", "D4", "E4", "C5", "D5", "E5"]
+//
+//    let onlyFGAB = ["G3", "A3", "B3", "F4", "G4", "A4", "B4", "F5", "G5", "A5"]
     
-    let allNoteChoices = ["F#3", "G3", "G#3", "A3", "A#3", "B3", "C4", "C#4", "D4", "D#4", "E4", "F4", "F#4", "G4", "G#4", "A4", "A#4", "B4", "C5", "C#5",  "D5", "D#5", "E5", "F5", "F#5", "G5", "G#5", "A5", "A#5"]
     
-    let onlyWhiteKeyChoices = ["G3", "A3", "B3", "C4", "D4", "E4", "F4", "G4", "A4", "B4", "C5", "D5", "E5", "F5", "G5", "A5"]
-    
-    let onlyCDE = ["C4", "D4", "E4", "C5", "D5", "E5"]
-    
-    let onlyFGAB = ["G3", "A3", "B3", "F4", "G4", "A4", "B4", "F5", "G5", "A5"]
-    
-    var randomNewNoteIndexUpperLimit = 0
     
     // placeholder variable for last-selected random number
     var lastRandomNumber: Int = -1
@@ -370,8 +378,9 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         // start with white keys only (?)
-        currentNoteChoices = onlyWhiteKeyChoices
-        randomNewNoteIndexUpperLimit = onlyWhiteKeyChoices.count - 1
+        setToOnlyWhiteKeys()
+//        currentNoteChoices = onlyWhiteKeyChoices
+//        randomNewNoteIndexUpperLimit = currentNoteChoices.count - 1
 //        print("onlyWhiteKeyChoices.count: \(onlyWhiteKeyChoices.count)")
         
         // disable sharps and flats, make them invisible, disable gesture recognizers
@@ -734,7 +743,7 @@ class ViewController: UIViewController {
 //        allWhiteKeysEnabled = true
 //        onlyCDEEnabled = false
 //        onlyFGABEnabled = false
-        if allWhiteKeysEnabled {
+        if onlyWhiteKeysEnabled || allNoteChoicesEnabled {
             
             noteButtonA.isEnabled = true;
             noteButtonB.isEnabled = true;
