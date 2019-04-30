@@ -49,6 +49,8 @@
 		D7EF7738227785CE00943F54 /* NoteChoices.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7EF7737227785CE00943F54 /* NoteChoices.swift */; };
 		D7EF773A2277F06B00943F54 /* Accidentals.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7EF77392277F06B00943F54 /* Accidentals.swift */; };
 		D7EF773C2277F3D200943F54 /* LevelsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7EF773B2277F3D200943F54 /* LevelsTableViewController.swift */; };
+		D7EF773E2277F97100943F54 /* Levels.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7EF773D2277F97100943F54 /* Levels.swift */; };
+		D7EF77402277FFF000943F54 /* LevelTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7EF773F2277FFF000943F54 /* LevelTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -96,6 +98,8 @@
 		D7EF7737227785CE00943F54 /* NoteChoices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteChoices.swift; sourceTree = "<group>"; };
 		D7EF77392277F06B00943F54 /* Accidentals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Accidentals.swift; sourceTree = "<group>"; };
 		D7EF773B2277F3D200943F54 /* LevelsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelsTableViewController.swift; sourceTree = "<group>"; };
+		D7EF773D2277F97100943F54 /* Levels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Levels.swift; sourceTree = "<group>"; };
+		D7EF773F2277FFF000943F54 /* LevelTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -181,6 +185,8 @@
 				D7EF77392277F06B00943F54 /* Accidentals.swift */,
 				D7DFCFEA22619FC700468F71 /* Enharmonics.swift */,
 				D777C81B22009DDB00FA472E /* Main.storyboard */,
+				D7EF773D2277F97100943F54 /* Levels.swift */,
+				D7EF773F2277FFF000943F54 /* LevelTableViewCell.swift */,
 				D7EF773B2277F3D200943F54 /* LevelsTableViewController.swift */,
 				D7C2E3D92241C9E300A72D5C /* ExplainerViewController.swift */,
 				D78A61DE22643EBC008706E2 /* InitialViewController.swift */,
@@ -296,9 +302,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D7EF773E2277F97100943F54 /* Levels.swift in Sources */,
 				D78A61DF22643EBC008706E2 /* InitialViewController.swift in Sources */,
 				D777C81A22009DDB00FA472E /* ViewController.swift in Sources */,
 				D7EF7738227785CE00943F54 /* NoteChoices.swift in Sources */,
+				D7EF77402277FFF000943F54 /* LevelTableViewCell.swift in Sources */,
 				D7EF773A2277F06B00943F54 /* Accidentals.swift in Sources */,
 				D7EF773C2277F3D200943F54 /* LevelsTableViewController.swift in Sources */,
 				D7C2E3DA2241C9E300A72D5C /* ExplainerViewController.swift in Sources */,
