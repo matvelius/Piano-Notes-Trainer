@@ -70,10 +70,14 @@
                             <outlet property="delegate" destination="8JC-u7-HER" id="A2G-6O-WuI"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <segue destination="ocB-fJ-hDj" kind="show" identifier="segueToExplainers" id="Dij-og-4Df"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="segueToGame" id="h7l-c7-UJA"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VpB-Rx-fLn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="713.76281112737911" y="-812.109375"/>
+            <point key="canvasLocation" x="-747" y="-678"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -1030,7 +1034,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <segue destination="ocB-fJ-hDj" kind="show" id="ZYe-Mn-iuK"/>
+                                            <segue destination="8JC-u7-HER" kind="show" id="tas-Qi-FZ0"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -1054,7 +1058,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WPh-0Z-vGj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-250.36603221083453" y="-921.09374999999989"/>
+            <point key="canvasLocation" x="-337" y="-1423"/>
         </scene>
         <!--Explainer View Controller-->
         <scene sceneID="ioq-EP-eBb">
@@ -1176,6 +1180,6 @@
         <image name="white_piano_12.9_large" width="910.66668701171875" height="538.66668701171875"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="0z7-So-mTa"/>
+        <segue reference="h7l-c7-UJA"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -43,6 +43,19 @@ class LevelsTableViewController: UITableViewController {
         return cell
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        if explainersOn {
+        
+            performSegue(withIdentifier: "segueToExplainers", sender: nil)
+            
+        } else {
+            
+            performSegue(withIdentifier: "segueToGame", sender: nil)
+                
+        }
+        
+    }
 //    func configureCell() {
 //
 //    }
