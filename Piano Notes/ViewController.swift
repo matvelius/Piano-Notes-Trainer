@@ -65,14 +65,17 @@ class ViewController: UIViewController {
         
         if menuIsClosed {
             
+            
+            
             self.menuLeadingConstraint.constant = 0
             
             UIView.animate(withDuration: 0.5, delay: 0.0, options: .curveEaseIn, animations: {
                 
                 self.view.layoutIfNeeded()
+                self.menuButtonOutlet.alpha = 0
                 self.darkOverlayOutlet.alpha = 0.73
                 self.menuBackgroundOutlet.alpha = 1
-                self.menuLeadingConstraint.constant = 0
+//                self.menuLeadingConstraint.constant = 0
                 
             })
         
@@ -84,7 +87,12 @@ class ViewController: UIViewController {
 //            }
             
             // MAKE THIS HAPPEN AFTER A DELAY!
-            menuButtonOutlet.setTitle("✕", for: .normal)
+            self.menuButtonOutlet.setTitle("✕", for: .normal)
+            
+            UIView.animate(withDuration: 0.4, delay: 0.6, options: .curveEaseIn, animations: {
+                self.menuButtonOutlet.alpha = 1
+                self.view.layoutIfNeeded()
+            })
             
             menuIsClosed = false
             
@@ -97,6 +105,7 @@ class ViewController: UIViewController {
             UIView.animate(withDuration: 0.5, delay: 0.0, options: .curveEaseIn, animations: {
             
                 self.view.layoutIfNeeded()
+                self.menuButtonOutlet.alpha = 0
                 self.darkOverlayOutlet.alpha = 0
                 self.menuBackgroundOutlet.alpha = 0
             
@@ -107,8 +116,15 @@ class ViewController: UIViewController {
 //
 ////                self.menuBackgroundOutlet.center = CGPoint(x: 400, y: self.currentMenuCenterPointY)
 //            }
+            // MAKE THIS HAPPEN AFTER A DELAY!
+            self.menuButtonOutlet.setTitle("☰", for: .normal)
             
-            menuButtonOutlet.setTitle("☰", for: .normal)
+            UIView.animate(withDuration: 0.4, delay: 0.6, options: .curveEaseIn, animations: {
+                self.menuButtonOutlet.alpha = 1
+                self.view.layoutIfNeeded()
+            })
+            
+            
             
             menuIsClosed = true
             

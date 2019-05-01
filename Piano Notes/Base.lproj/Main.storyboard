@@ -84,7 +84,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VpB-Rx-fLn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-747.14494875549042" y="-678.515625"/>
+            <point key="canvasLocation" x="-16" y="-677"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -993,7 +993,7 @@
                     </connections>
                 </panGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="67.336683417085425" y="107.19424460431655"/>
+            <point key="canvasLocation" x="677" y="108"/>
         </scene>
         <!--Initial View Controller-->
         <scene sceneID="8XM-xb-p9F">
@@ -1152,7 +1152,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cmE-Yr-TVd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-630.74670571010245" y="107.8125"/>
+            <point key="canvasLocation" x="-16" y="108"/>
         </scene>
     </scenes>
     <resources>
@@ -1187,6 +1187,6 @@
         <image name="white_piano_12.9_large" width="910.66668701171875" height="538.66668701171875"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="h7l-c7-UJA"/>
+        <segue reference="gpG-aX-QFw"/>
     </inferredMetricsTieBreakers>
 </document>
