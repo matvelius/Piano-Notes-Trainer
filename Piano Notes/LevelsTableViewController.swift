@@ -42,16 +42,29 @@ class LevelsTableViewController: UITableViewController {
         
         cell.updateCell(with: level)
         
+        let selectedView = UIView()
+        selectedView.backgroundColor = UIColor(red: 250/255, green: 250/255, blue: 250/255, alpha: 0.1)
+        cell.selectedBackgroundView = selectedView
+
+        
+//        if cell.isSelected {
+//            cell.backgroundColor = UIColor.red
+////            cell.backgroundColor = UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 0.1)
+//        } else {
+//            cell.backgroundColor = UIColor.clear
+//        }
+        
         return cell
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 200
+        return 220
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         Level.currentLevel = allLevels[indexPath.row]
+        
         
         if explainersOn {
         
