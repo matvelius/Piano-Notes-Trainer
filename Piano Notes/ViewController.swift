@@ -132,6 +132,9 @@ class ViewController: UIViewController {
         
     }
     
+    
+    @IBOutlet weak var onlyWhiteKeysSwitchOutlet: UISwitch!
+    
     @IBAction func onlyWhiteKeysSwitch(_ sender: UISwitch) {
         
         // disable sharps and flats, make them invisible, disable gesture recognizers
@@ -207,6 +210,8 @@ class ViewController: UIViewController {
             // all white keys
 //            currentNoteChoices = onlyWhiteKeys
             setToOnlyWhiteKeys()
+            
+            onlyWhiteKeysSwitchOutlet.setOn(true, animated: true)
 //            randomNewNoteIndexUpperLimit = currentNoteChoices.count - 1
             
 //            allWhiteKeysEnabled = true
@@ -229,6 +234,9 @@ class ViewController: UIViewController {
             
             // only C D E
             setToOnlyCDE()
+            
+            onlyWhiteKeysSwitchOutlet.setOn(true, animated: true)
+
 //            currentNoteChoices = onlyCDE
 //            randomNewNoteIndexUpperLimit = currentNoteChoices.count - 1
             
@@ -237,6 +245,8 @@ class ViewController: UIViewController {
 //            onlyFGABEnabled = false
             
             disableButtons()
+            disableSharps()
+            disableFlats()
             
             noteButtonA.alpha = 0.3
             noteButtonB.alpha = 0.3
@@ -257,6 +267,9 @@ class ViewController: UIViewController {
             
             // only F G A B
             setToOnlyFGAB()
+            
+            onlyWhiteKeysSwitchOutlet.setOn(true, animated: true)
+
 //            currentNoteChoices = onlyFGAB
 //            randomNewNoteIndexUpperLimit = onlyFGAB.count - 1
             
@@ -265,6 +278,8 @@ class ViewController: UIViewController {
 //            onlyFGABEnabled = true
             
             disableButtons()
+            disableSharps()
+            disableFlats()
             
             noteButtonC.alpha = 0.3
             noteButtonD.alpha = 0.3
@@ -430,6 +445,13 @@ class ViewController: UIViewController {
         menuBackgroundOutlet.alpha = 0
         
         menuLeadingConstraint.constant = -460
+        
+        switch Level.currentLevel.id {
+        case 4, 5, 6, 7:
+            onlyWhiteKeysSwitchOutlet.setOn(false, animated: true)
+        default:
+            onlyWhiteKeysSwitchOutlet.setOn(true, animated: true)
+        }
         
 //        openMenuCenterPoint = menuBackgroundOutlet.center
 //        currentMenuCenterPointY = menuBackgroundOutlet.center.y

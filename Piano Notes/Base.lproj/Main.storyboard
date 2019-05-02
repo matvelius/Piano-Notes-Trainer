@@ -929,6 +929,7 @@
                         <outlet property="noteButtonE" destination="ucd-Eh-NI4" id="eJ7-KA-1sg"/>
                         <outlet property="noteButtonF" destination="PEp-9J-Ifz" id="jWq-t6-OOk"/>
                         <outlet property="noteButtonG" destination="zPC-OD-elJ" id="p89-Mr-19y"/>
+                        <outlet property="onlyWhiteKeysSwitchOutlet" destination="wkB-FH-tXJ" id="lOG-js-VlV"/>
                         <outlet property="pianoImage" destination="PeW-eg-9HV" id="aHr-fh-2dz"/>
                         <outlet property="scoreLabel" destination="sBK-js-cjK" id="lwG-mi-Vee"/>
                         <outlet property="sharpsViewOutlet" destination="Ucu-fc-WoN" id="rGN-gL-672"/>
