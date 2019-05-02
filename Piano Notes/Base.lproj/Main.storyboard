@@ -884,11 +884,6 @@
                                     <action selector="menuButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="O8X-qH-DO0"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SDr-YL-kgY">
-                                <rect key="frame" x="1264" y="653" width="40" height="42"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <gestureRecognizers/>
@@ -938,6 +933,7 @@
                         <outlet property="scoreLabel" destination="sBK-js-cjK" id="lwG-mi-Vee"/>
                         <outlet property="sharpsViewOutlet" destination="Ucu-fc-WoN" id="rGN-gL-672"/>
                         <outlet property="stars" destination="fee-2h-mBH" id="c84-78-SiM"/>
+                        <outlet property="whiteKeySettingsSegmentedControlOutlet" destination="WIM-Ub-mQ8" id="YY1-FU-Olz"/>
                         <outletCollection property="panGestureRecognizersCollection" destination="LNg-c0-tQQ" collectionClass="NSMutableArray" id="zzg-eb-K8n"/>
                         <outletCollection property="panGestureRecognizersCollection" destination="3tY-WC-Wpo" collectionClass="NSMutableArray" id="MyY-6L-b0L"/>
                         <outletCollection property="panGestureRecognizersCollection" destination="vwZ-Si-xOd" collectionClass="NSMutableArray" id="YHW-Nj-azb"/>

@@ -164,6 +164,10 @@ class ViewController: UIViewController {
             
             setToAllNoteChoices()
             
+            enableButtons()
+            
+            whiteKeySettingsSegmentedControlOutlet.selectedSegmentIndex = 0
+            
 //            currentNoteChoices = allNoteChoices
 //            randomNewNoteIndexUpperLimit = allNoteChoices.count - 1
             
@@ -191,6 +195,9 @@ class ViewController: UIViewController {
 //    var allWhiteKeysEnabled = true
 //    var onlyCDEEnabled = false
 //    var onlyFGABEnabled = false
+    
+    
+    @IBOutlet weak var whiteKeySettingsSegmentedControlOutlet: UISegmentedControl!
     
     // enable / disable based on the white keys switch
     @IBAction func whiteKeySettingsSegmentedControl(_ sender: UISegmentedControl) {
