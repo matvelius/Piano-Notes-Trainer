@@ -884,6 +884,11 @@
                                     <action selector="menuButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="O8X-qH-DO0"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleAspectFit" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aQh-Rl-9mW" customClass="FromPaintCode" customModule="Piano_Notes" customModuleProvider="target">
+                                <rect key="frame" x="1224" y="488" width="103" height="251"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <gestureRecognizers/>
@@ -916,6 +921,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="upv-Dd-Knf"/>
                     <connections>
+                        <outlet property="aSharp6ViewOutlet" destination="aQh-Rl-9mW" id="qcZ-jB-eLl"/>
                         <outlet property="darkOverlayOutlet" destination="TMX-dv-0h9" id="Tgn-Ej-7Zi"/>
                         <outlet property="flatsViewOutlet" destination="lkt-CX-jcE" id="dEz-0q-upx"/>
                         <outlet property="menuBackgroundOutlet" destination="QG9-26-Oaz" id="5NY-0c-wug"/>

@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		D71E3D0C2205EA8E0001F995 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D71E3D0B2205EA8E0001F995 /* AVFoundation.framework */; };
+		D7373575227B3F1800BE2B8A /* StyleKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7373574227B3F1800BE2B8A /* StyleKit.swift */; };
+		D7373577227B3FCC00BE2B8A /* FromPaintCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7373576227B3FCC00BE2B8A /* FromPaintCode.swift */; };
 		D742579D22414EF700ACA7A2 /* D4.aiff in Resources */ = {isa = PBXBuildFile; fileRef = D742578022414EEA00ACA7A2 /* D4.aiff */; };
 		D742579E22414EF700ACA7A2 /* B3.aiff in Resources */ = {isa = PBXBuildFile; fileRef = D742578122414EEA00ACA7A2 /* B3.aiff */; };
 		D742579F22414EF700ACA7A2 /* G#5.aiff in Resources */ = {isa = PBXBuildFile; fileRef = D742578222414EEB00ACA7A2 /* G#5.aiff */; };
@@ -56,6 +58,8 @@
 
 /* Begin PBXFileReference section */
 		D71E3D0B2205EA8E0001F995 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		D7373574227B3F1800BE2B8A /* StyleKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StyleKit.swift; sourceTree = SOURCE_ROOT; };
+		D7373576227B3FCC00BE2B8A /* FromPaintCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FromPaintCode.swift; sourceTree = "<group>"; };
 		D742578022414EEA00ACA7A2 /* D4.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; name = D4.aiff; path = "../../../sounds/Ivy Audio/D4.aiff"; sourceTree = "<group>"; };
 		D742578122414EEA00ACA7A2 /* B3.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = B3.aiff; sourceTree = "<group>"; };
 		D742578222414EEB00ACA7A2 /* G#5.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = "G#5.aiff"; sourceTree = "<group>"; };
@@ -183,6 +187,8 @@
 			children = (
 				D777C81722009DDB00FA472E /* AppDelegate.swift */,
 				D777C81922009DDB00FA472E /* ViewController.swift */,
+				D7373574227B3F1800BE2B8A /* StyleKit.swift */,
+				D7373576227B3FCC00BE2B8A /* FromPaintCode.swift */,
 				D7EF7737227785CE00943F54 /* NoteChoices.swift */,
 				D7EF77392277F06B00943F54 /* Accidentals.swift */,
 				D7DFCFEA22619FC700468F71 /* Enharmonics.swift */,
@@ -311,8 +317,10 @@
 				D777C81A22009DDB00FA472E /* ViewController.swift in Sources */,
 				D7EF7738227785CE00943F54 /* NoteChoices.swift in Sources */,
 				D7EF77402277FFF000943F54 /* LevelTableViewCell.swift in Sources */,
+				D7373575227B3F1800BE2B8A /* StyleKit.swift in Sources */,
 				D7EF773A2277F06B00943F54 /* Accidentals.swift in Sources */,
 				D7EF773C2277F3D200943F54 /* LevelsTableViewController.swift in Sources */,
+				D7373577227B3FCC00BE2B8A /* FromPaintCode.swift in Sources */,
 				D7C2E3DA2241C9E300A72D5C /* ExplainerViewController.swift in Sources */,
 				D777C81822009DDB00FA472E /* AppDelegate.swift in Sources */,
 				D7DFCFEB22619FC700468F71 /* Enharmonics.swift in Sources */,

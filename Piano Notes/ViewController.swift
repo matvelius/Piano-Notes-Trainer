@@ -15,6 +15,9 @@ import AVFoundation
 
 class ViewController: UIViewController {
     
+    @IBOutlet weak var aSharp6ViewOutlet: FromPaintCode!
+    
+
     // instance variable to hold the AVAudioPlayer object
     var audioPlayer: AVAudioPlayer?
     
@@ -401,12 +404,31 @@ class ViewController: UIViewController {
     // SHOULD I ANIMATE THE BUTTON SIZE?
     @IBOutlet weak var noteButtonAHeight: NSLayoutConstraint!
     
+//    @objc public func tapDetected(tapRecognizer:UITapGestureRecognizer){
+//        let tapLocation:CGPoint = tapRecognizer.location(in: aSharp6ViewOutlet)
+//        aSharp6ViewOutlet.hitTest(CGPoint(x: tapLocation.x, y: tapLocation.y), with: nil)
+//    }
+    
+//    private func hitTest(tapLocation:CGPoint){
+//        let path:UIBezierPath = FromPaintCode.
+//        
+//        if path.contains(tapLocation){
+//            //tap detected do what ever you want ..;)
+//        }else{
+//            //ooops you taped on other position in view
+//        }
+//    }
+    
     override func viewDidLoad() {
         
         super.viewDidLoad()
         
+        let tapRecognizer = UITapGestureRecognizer(target: aSharp6ViewOutlet, action: #selector(aSharp6ViewOutlet.tapDetected(tapRecognizer:)))
+        aSharp6ViewOutlet.addGestureRecognizer(tapRecognizer)
         
-        
+//        ///Catch layer by tap detection
+//        let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(FromPaintCode.tapDetected(tapRecognizer:)))
+//        UIView.addGestureRecognizer(tapRecognizer)
         // start with white keys only (?)
 //        setToOnlyWhiteKeys()
         setupGameForCurrentLevel()
