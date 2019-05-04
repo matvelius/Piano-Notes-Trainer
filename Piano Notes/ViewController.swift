@@ -17,7 +17,9 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var aSharp6ViewOutlet: FromPaintCode!
     
-
+    @IBInspectable
+    @IBOutlet weak var testButton: UIButton!
+    
     // instance variable to hold the AVAudioPlayer object
     var audioPlayer: AVAudioPlayer?
     
@@ -423,8 +425,12 @@ class ViewController: UIViewController {
         
         super.viewDidLoad()
         
-        let tapRecognizer = UITapGestureRecognizer(target: aSharp6ViewOutlet, action: #selector(aSharp6ViewOutlet.tapDetected(tapRecognizer:)))
-        aSharp6ViewOutlet.addGestureRecognizer(tapRecognizer)
+        let testTransform = CGAffineTransform(rotationAngle: .pi * 0.93)
+        
+        testButton.transform = testTransform
+        
+//        let tapRecognizer = UITapGestureRecognizer(target: aSharp6ViewOutlet, action: #selector(aSharp6ViewOutlet.tapDetected(tapRecognizer:)))
+//        aSharp6ViewOutlet.addGestureRecognizer(tapRecognizer)
         
 //        ///Catch layer by tap detection
 //        let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(FromPaintCode.tapDetected(tapRecognizer:)))
