@@ -15,11 +15,6 @@ import AVFoundation
 
 class ViewController: UIViewController {
     
-    @IBOutlet weak var aSharp6ViewOutlet: FromPaintCode!
-    
-    @IBInspectable
-    @IBOutlet weak var testButton: UIButton!
-    
     // instance variable to hold the AVAudioPlayer object
     var audioPlayer: AVAudioPlayer?
     
@@ -70,8 +65,6 @@ class ViewController: UIViewController {
         
         if menuIsClosed {
             
-            
-            
             self.menuLeadingConstraint.constant = 0
             
             UIView.animate(withDuration: 0.5, delay: 0.0, options: .curveEaseIn, animations: {
@@ -80,18 +73,9 @@ class ViewController: UIViewController {
                 self.menuButtonOutlet.alpha = 0
                 self.darkOverlayOutlet.alpha = 0.73
                 self.menuBackgroundOutlet.alpha = 1
-//                self.menuLeadingConstraint.constant = 0
                 
             })
         
-//            UIView.animate(withDuration: 3.5) {
-//
-////                self.menuBackgroundOutlet.center = CGPoint(x: 200, y: self.currentMenuCenterPointY)
-////                self.menuBackgroundOutlet.leadingAnchor = self.
-////                self.menuBackgroundOutlet.leadingAnchor = self.menuBackgroundOutlet.superview?.leadingAnchor
-//            }
-            
-            // MAKE THIS HAPPEN AFTER A DELAY!
             self.menuButtonOutlet.setTitle("✕", for: .normal)
             
             UIView.animate(withDuration: 0.4, delay: 0.6, options: .curveEaseIn, animations: {
@@ -102,8 +86,6 @@ class ViewController: UIViewController {
             menuIsClosed = false
             
         } else {
-            
-//            closedMenuCenterPoint = CGPoint(x: -100, y: 0)
             
             self.menuLeadingConstraint.constant = -460
             
@@ -116,20 +98,12 @@ class ViewController: UIViewController {
             
             })
             
-//            UIView.animate(withDuration: 3.5) {
-//
-//
-////                self.menuBackgroundOutlet.center = CGPoint(x: 400, y: self.currentMenuCenterPointY)
-//            }
-            // MAKE THIS HAPPEN AFTER A DELAY!
             self.menuButtonOutlet.setTitle("☰", for: .normal)
             
             UIView.animate(withDuration: 0.4, delay: 0.6, options: .curveEaseIn, animations: {
                 self.menuButtonOutlet.alpha = 1
                 self.view.layoutIfNeeded()
             })
-            
-            
             
             menuIsClosed = true
             
@@ -147,9 +121,6 @@ class ViewController: UIViewController {
             
             setToOnlyWhiteKeys()
             
-//            currentNoteChoices = onlyWhiteKeys
-//            randomNewNoteIndexUpperLimit = currentNoteChoices.count - 1
-        
             for sharp in sharpsOutletCollection {
                 sharp.isEnabled = false
             }
@@ -176,8 +147,6 @@ class ViewController: UIViewController {
             
             whiteKeySettingsSegmentedControlOutlet.selectedSegmentIndex = 0
             
-//            currentNoteChoices = allNoteChoices
-//            randomNewNoteIndexUpperLimit = allNoteChoices.count - 1
             
             for sharp in sharpsOutletCollection {
                 sharp.isEnabled = true
@@ -200,10 +169,6 @@ class ViewController: UIViewController {
             
     }
     
-//    var allWhiteKeysEnabled = true
-//    var onlyCDEEnabled = false
-//    var onlyFGABEnabled = false
-    
     
     @IBOutlet weak var whiteKeySettingsSegmentedControlOutlet: UISegmentedControl!
     
@@ -213,15 +178,9 @@ class ViewController: UIViewController {
         if sender.selectedSegmentIndex == 0 {
             
             // all white keys
-//            currentNoteChoices = onlyWhiteKeys
             setToOnlyWhiteKeys()
             
             onlyWhiteKeysSwitchOutlet.setOn(true, animated: true)
-//            randomNewNoteIndexUpperLimit = currentNoteChoices.count - 1
-            
-//            allWhiteKeysEnabled = true
-//            onlyCDEEnabled = false
-//            onlyFGABEnabled = false
             
             enableButtons()
             
@@ -241,13 +200,6 @@ class ViewController: UIViewController {
             setToOnlyCDE()
             
             onlyWhiteKeysSwitchOutlet.setOn(true, animated: true)
-
-//            currentNoteChoices = onlyCDE
-//            randomNewNoteIndexUpperLimit = currentNoteChoices.count - 1
-            
-//            allWhiteKeysEnabled = false
-//            onlyCDEEnabled = true
-//            onlyFGABEnabled = false
             
             disableButtons()
             disableSharps()
@@ -275,13 +227,6 @@ class ViewController: UIViewController {
             
             onlyWhiteKeysSwitchOutlet.setOn(true, animated: true)
 
-//            currentNoteChoices = onlyFGAB
-//            randomNewNoteIndexUpperLimit = onlyFGAB.count - 1
-            
-//            allWhiteKeysEnabled = false
-//            onlyCDEEnabled = false
-//            onlyFGABEnabled = true
-            
             disableButtons()
             disableSharps()
             disableFlats()
@@ -387,16 +332,6 @@ class ViewController: UIViewController {
     // keeping track of incorrect answers in a row to take away stars
     var incorrectAnswersInARow = 0
     
-//    var currentNoteChoices = [""]
-//
-//    let allNoteChoices = ["F#3", "G3", "G#3", "A3", "A#3", "B3", "C4", "C#4", "D4", "D#4", "E4", "F4", "F#4", "G4", "G#4", "A4", "A#4", "B4", "C5", "C#5",  "D5", "D#5", "E5", "F5", "F#5", "G5", "G#5", "A5", "A#5"]
-//
-//    let onlyWhiteKeyChoices = ["G3", "A3", "B3", "C4", "D4", "E4", "F4", "G4", "A4", "B4", "C5", "D5", "E5", "F5", "G5", "A5"]
-//
-//    let onlyCDE = ["C4", "D4", "E4", "C5", "D5", "E5"]
-//
-//    let onlyFGAB = ["G3", "A3", "B3", "F4", "G4", "A4", "B4", "F5", "G5", "A5"]
-    
     
     
     // placeholder variable for last-selected random number
@@ -406,44 +341,21 @@ class ViewController: UIViewController {
     // SHOULD I ANIMATE THE BUTTON SIZE?
     @IBOutlet weak var noteButtonAHeight: NSLayoutConstraint!
     
-//    @objc public func tapDetected(tapRecognizer:UITapGestureRecognizer){
-//        let tapLocation:CGPoint = tapRecognizer.location(in: aSharp6ViewOutlet)
-//        aSharp6ViewOutlet.hitTest(CGPoint(x: tapLocation.x, y: tapLocation.y), with: nil)
-//    }
+
+    @IBOutlet var blackKeyButtons: [UIButton]!
     
-//    private func hitTest(tapLocation:CGPoint){
-//        let path:UIBezierPath = FromPaintCode.
-//        
-//        if path.contains(tapLocation){
-//            //tap detected do what ever you want ..;)
-//        }else{
-//            //ooops you taped on other position in view
-//        }
-//    }
+    
+    
     
     override func viewDidLoad() {
         
         super.viewDidLoad()
         
-        let testTransform = CGAffineTransform(rotationAngle: .pi * 0.93)
+//        let testTransform = CGAffineTransform(rotationAngle: .pi * 0.93)
+//        blackKeyButton.transform = testTransform
         
-        testButton.transform = testTransform
-        
-//        let tapRecognizer = UITapGestureRecognizer(target: aSharp6ViewOutlet, action: #selector(aSharp6ViewOutlet.tapDetected(tapRecognizer:)))
-//        aSharp6ViewOutlet.addGestureRecognizer(tapRecognizer)
-        
-//        ///Catch layer by tap detection
-//        let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(FromPaintCode.tapDetected(tapRecognizer:)))
-//        UIView.addGestureRecognizer(tapRecognizer)
-        // start with white keys only (?)
-//        setToOnlyWhiteKeys()
+
         setupGameForCurrentLevel()
-//        currentNoteChoices = onlyWhiteKeyChoices
-//        randomNewNoteIndexUpperLimit = currentNoteChoices.count - 1
-//        print("onlyWhiteKeyChoices.count: \(onlyWhiteKeyChoices.count)")
-        
-        
-        
         
         // calculate shaprs & flats bounds for pan gesture recognition
         sharpsUpperBound = sharpsViewOutlet.bounds.maxY + 5
@@ -457,19 +369,6 @@ class ViewController: UIViewController {
         noteButtonLowerBoundY = noteButtonD.bounds.minY
     
         
-//        accidentalsBottomEdgeYCoordinate = sharpsOutletCollection.first!.bounds.maxY
-//        print("accidentalsBottomEdgeYCoordinate: \(accidentalsBottomEdgeYCoordinate)")
-//        let boundsOfSharps = sharpsOutletCollection.first?.bounds
-//        let bottomOfSharps =
-        
-        
-//        print("first sharp bounds minY: \(sharpsOutletCollection.first?.bounds.minY)")
-//        print("first sharp bounds maxY: \(sharpsOutletCollection.first?.bounds.maxY)")
-//
-//        print("UIApplication shared keyWindow bounds minY: \(UIApplication.shared.keyWindow?.bounds.minY)")
-//
-//        print("UIApplication shared keyWindow bounds maxY: \(UIApplication.shared.keyWindow?.bounds.maxY)")
-        
         menuBackgroundOutlet.alpha = 0
         
         menuLeadingConstraint.constant = -460
@@ -481,16 +380,10 @@ class ViewController: UIViewController {
             onlyWhiteKeysSwitchOutlet.setOn(true, animated: true)
         }
         
-//        openMenuCenterPoint = menuBackgroundOutlet.center
-//        currentMenuCenterPointY = menuBackgroundOutlet.center.y
-        
         scoreLabel.text = "0"
         
         startNewRound()
-//        print("noteButtonA's coordinateSpace is: ")
-//        print(noteButtonA.coordinateSpace)
-//
-//        print(UIApplication.shared.keyWindow?.coordinateSpace)
+
     }
     
     func startNewRound() {
@@ -514,10 +407,9 @@ class ViewController: UIViewController {
         
         while randomNewNoteIndex == lastRandomNumber {
             randomNewNoteIndex = Int.random(in: 0...randomNewNoteIndexUpperLimit)
-//            print("generateNewNote() called; randomNewNoteIndex = \(randomNewNoteIndex)")
+
         }
         
-//        print("NUMBER OF NOTES: \(highlightedNoteChoice.count)")
         currentNote = currentNoteChoices[randomNewNoteIndex]
         print("the current note is \(currentNote)")
         
