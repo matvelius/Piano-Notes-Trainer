@@ -344,6 +344,7 @@ class ViewController: UIViewController {
 
     @IBOutlet var blackKeyButtons: [UIButton]!
     
+    // the proper way to sort an outlet collection:
     
     
     
@@ -351,9 +352,23 @@ class ViewController: UIViewController {
         
         super.viewDidLoad()
         
+//        let startingRotationAngle: CGFloat = 0.23
+        
 //        let testTransform = CGAffineTransform(rotationAngle: .pi * 0.93)
+//        let testTransform = CGAffineTransform(rotationAngle: -(startingRotationAngle))
+//        let testTransform2 = CGAffineTransform(rotationAngle: -(startingRotationAngle - 0.02))
 //        blackKeyButton.transform = testTransform
         
+        // sort the black keys outlet collection by tag
+        blackKeyButtons = blackKeyButtons.sorted(by: { $0.tag < $1.tag })
+        
+        for x in (9...18).reversed() {
+            let rotationAngle = CGFloat(Double(x)/100 + 0.05)
+            blackKeyButtons[x].transform = CGAffineTransform(rotationAngle: -rotationAngle)
+        }
+        
+//        blackKeyButtons[17].transform = testTransform
+//        blackKeyButtons[16].transform = testTransform2
 
         setupGameForCurrentLevel()
         
