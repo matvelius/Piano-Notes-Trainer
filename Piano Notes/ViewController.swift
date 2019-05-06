@@ -428,12 +428,15 @@ class ViewController: UIViewController {
         // sort the black keys outlet collection by tag
         whiteKeyButtons = whiteKeyButtons.sorted(by: { $0.tag < $1.tag })
         
+        // rotate and move white keys on the left
         for index in (0...7) {
-            whiteKeyButtons[index].transform = positiveRotationTransforms[8 - index]
+            whiteKeyButtons[index].transform = positiveRotationTransforms[8 - index].concatenating(CGAffineTransform(translationX: CGFloat(Double((8-index)) * 1.2), y: 0)).concatenating(CGAffineTransform(scaleX: CGFloat(1 - (Double(7-index) * 0.008)), y: 1))
         }
         
+        // rotate and move white keys on the right
         for index in (1...9) {
-            whiteKeyButtons[index + 8].transform = negativeRotationTransforms[index]
+            whiteKeyButtons[index + 8].transform = negativeRotationTransforms[index].concatenating(CGAffineTransform(translationX: CGFloat(Double((index)) * -1.6), y: 0)).concatenating(CGAffineTransform(scaleX: CGFloat(1 - (Double(index) * 0.008)), y: 1))
+//            whiteKeyButtons[index + 8].transform = negativeRotationTransforms[index]
         }
         
         setupGameForCurrentLevel()

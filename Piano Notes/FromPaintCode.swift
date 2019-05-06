@@ -8,7 +8,7 @@
 
 import UIKit
 
-@IBDesignable
+//@IBDesignable
 class FromPaintCode: UIView {
     
     override func draw(_ rect: CGRect) {
