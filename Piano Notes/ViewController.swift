@@ -341,9 +341,14 @@ class ViewController: UIViewController {
     // SHOULD I ANIMATE THE BUTTON SIZE?
     @IBOutlet weak var noteButtonAHeight: NSLayoutConstraint!
     
-
+    @IBOutlet var whiteKeyButtons: [UIButton]!
+    
     @IBOutlet var blackKeyButtons: [UIButton]!
     
+    
+    @IBAction func whiteKeyButtonPressed(_ sender: UIButton) {
+        print(sender.tag)
+    }
     
     @IBAction func blackKeyButtonPressed(_ sender: UIButton) {
         print(sender.tag)
@@ -416,7 +421,20 @@ class ViewController: UIViewController {
         blackKeyButtons[18].isEnabled = false
         blackKeyButtons[18].alpha = 0
         
-  
+        ////////////////////////////////////////////
+        //////// LINE UP WHITE KEY BUTTONS /////////
+        ////////////////////////////////////////////
+        
+        // sort the black keys outlet collection by tag
+        whiteKeyButtons = whiteKeyButtons.sorted(by: { $0.tag < $1.tag })
+        
+        for index in (0...7) {
+            whiteKeyButtons[index].transform = positiveRotationTransforms[8 - index]
+        }
+        
+        for index in (1...9) {
+            whiteKeyButtons[index + 8].transform = negativeRotationTransforms[index]
+        }
         
         setupGameForCurrentLevel()
         
