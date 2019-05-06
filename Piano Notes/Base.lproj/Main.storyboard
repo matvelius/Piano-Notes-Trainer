@@ -884,140 +884,140 @@
                                     <action selector="menuButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="O8X-qH-DO0"/>
                                 </connections>
                             </button>
-                            <stackView opaque="NO" alpha="0.55000000000000004" contentMode="scaleToFill" distribution="equalSpacing" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="whS-R1-wiA">
-                                <rect key="frame" x="0.0" y="485" width="1378" height="250"/>
+                            <stackView opaque="NO" alpha="0.55000000000000004" contentMode="scaleToFill" distribution="equalSpacing" spacing="26" translatesAutoresizingMaskIntoConstraints="NO" id="whS-R1-wiA">
+                                <rect key="frame" x="18" y="485" width="1353" height="250"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MKc-a2-hoK" userLabel="blackKeyButton">
-                                        <rect key="frame" x="0.0" y="0.0" width="41" height="250"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="43" height="250"/>
                                         <color key="backgroundColor" red="1" green="0.50360402540000004" blue="0.23813805369999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="41" id="xKD-qo-IOd"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="43" id="WPJ-qV-xlo"/>
                                         </constraints>
                                     </button>
                                     <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RgE-uD-iDc" userLabel="blackKeyButton">
-                                        <rect key="frame" x="74.5" y="0.0" width="41" height="250"/>
+                                        <rect key="frame" x="73" y="0.0" width="43" height="250"/>
                                         <color key="backgroundColor" red="1" green="0.50360402540000004" blue="0.23813805369999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="41" id="Gy5-ap-YeC"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="43" id="vVJ-ui-e9Z"/>
                                         </constraints>
                                     </button>
                                     <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CZU-4E-dTI" userLabel="blackKeyButton">
-                                        <rect key="frame" x="148.5" y="0.0" width="41" height="250"/>
+                                        <rect key="frame" x="145.5" y="0.0" width="43" height="250"/>
                                         <color key="backgroundColor" red="1" green="0.50360402540000004" blue="0.23813805369999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="41" id="lGC-7W-bnw"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="43" id="UYt-cC-1Gi"/>
                                         </constraints>
                                     </button>
                                     <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HT0-sk-Ibi" userLabel="blackKeyButton">
-                                        <rect key="frame" x="223" y="0.0" width="41" height="250"/>
+                                        <rect key="frame" x="218.5" y="0.0" width="43" height="250"/>
                                         <color key="backgroundColor" red="1" green="0.50360402540000004" blue="0.23813805369999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="41" id="NtY-ud-srS"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="43" id="wnz-oN-VcV"/>
                                         </constraints>
                                     </button>
                                     <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QTW-GJ-1Dh" userLabel="blackKeyButton">
-                                        <rect key="frame" x="297" y="0.0" width="41" height="250"/>
+                                        <rect key="frame" x="291" y="0.0" width="43" height="250"/>
                                         <color key="backgroundColor" red="1" green="0.50360402540000004" blue="0.23813805369999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="41" id="ker-NH-wYB"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="43" id="XZC-YB-a44"/>
                                         </constraints>
                                     </button>
                                     <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V7C-9b-7Sa" userLabel="blackKeyButton">
-                                        <rect key="frame" x="371.5" y="0.0" width="41" height="250"/>
+                                        <rect key="frame" x="364" y="0.0" width="43" height="250"/>
                                         <color key="backgroundColor" red="1" green="0.50360402540000004" blue="0.23813805369999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="41" id="4KX-RF-Fc4"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="43" id="GxU-hu-Gfa"/>
                                         </constraints>
                                     </button>
                                     <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ps0-h7-KPi" userLabel="blackKeyButton">
-                                        <rect key="frame" x="445.5" y="0.0" width="41" height="250"/>
+                                        <rect key="frame" x="436.5" y="0.0" width="43" height="250"/>
                                         <color key="backgroundColor" red="1" green="0.50360402540000004" blue="0.23813805369999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="41" id="kFF-gJ-42T"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="43" id="Xyj-Wi-nbp"/>
                                         </constraints>
                                     </button>
                                     <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZKb-0V-Kvp" userLabel="blackKeyButton">
-                                        <rect key="frame" x="520" y="0.0" width="41" height="250"/>
+                                        <rect key="frame" x="509.5" y="0.0" width="43" height="250"/>
                                         <color key="backgroundColor" red="1" green="0.50360402540000004" blue="0.23813805369999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="41" id="Y3n-WH-6hg"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="43" id="SOi-jT-SCH"/>
                                         </constraints>
                                     </button>
                                     <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C8e-nE-3CX" userLabel="blackKeyButton">
-                                        <rect key="frame" x="594" y="0.0" width="41" height="250"/>
+                                        <rect key="frame" x="582" y="0.0" width="43" height="250"/>
                                         <color key="backgroundColor" red="1" green="0.50360402540000004" blue="0.23813805369999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="41" id="zQb-da-hzs"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="43" id="0YW-tI-DDT"/>
                                         </constraints>
                                     </button>
                                     <button opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s0V-AI-fU8" userLabel="blackKeyButton">
-                                        <rect key="frame" x="668.5" y="0.0" width="41" height="250"/>
+                                        <rect key="frame" x="655" y="0.0" width="43" height="250"/>
                                         <color key="backgroundColor" red="1" green="0.50360402540000004" blue="0.23813805369999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="41" id="dHq-4U-iX1"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="43" id="23u-Cd-kr4"/>
                                         </constraints>
                                     </button>
                                     <button opaque="NO" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0g8-W0-10Q" userLabel="blackKeyButton">
-                                        <rect key="frame" x="743" y="0.0" width="41" height="250"/>
+                                        <rect key="frame" x="728" y="0.0" width="43" height="250"/>
                                         <color key="backgroundColor" red="1" green="0.50360402540000004" blue="0.23813805369999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="41" id="qjw-hV-9Ta"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="43" id="g82-jm-cVd"/>
                                         </constraints>
                                     </button>
                                     <button opaque="NO" tag="11" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P5j-xx-Hpz" userLabel="blackKeyButton">
-                                        <rect key="frame" x="817" y="0.0" width="41" height="250"/>
+                                        <rect key="frame" x="800.5" y="0.0" width="43" height="250"/>
                                         <color key="backgroundColor" red="1" green="0.50360402540000004" blue="0.23813805369999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="41" id="cOQ-Sc-Eqj"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="43" id="3GU-Os-hId"/>
                                         </constraints>
                                     </button>
                                     <button opaque="NO" tag="12" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nRD-K0-69u" userLabel="blackKeyButton">
-                                        <rect key="frame" x="891.5" y="0.0" width="41" height="250"/>
+                                        <rect key="frame" x="873.5" y="0.0" width="43" height="250"/>
                                         <color key="backgroundColor" red="1" green="0.50360402540000004" blue="0.23813805369999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="41" id="rGK-A9-rPQ"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="43" id="CxD-Da-B5h"/>
                                         </constraints>
                                     </button>
                                     <button opaque="NO" tag="13" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Du-p6-yXQ" userLabel="blackKeyButton">
-                                        <rect key="frame" x="965.5" y="0.0" width="41" height="250"/>
+                                        <rect key="frame" x="946" y="0.0" width="43" height="250"/>
                                         <color key="backgroundColor" red="1" green="0.50360402540000004" blue="0.23813805369999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="41" id="2k7-TX-ICs"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="43" id="3Vg-xV-64z"/>
                                         </constraints>
                                     </button>
                                     <button opaque="NO" tag="14" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yxY-cs-rL2" userLabel="blackKeyButton">
-                                        <rect key="frame" x="1040" y="0.0" width="41" height="250"/>
+                                        <rect key="frame" x="1019" y="0.0" width="43" height="250"/>
                                         <color key="backgroundColor" red="1" green="0.50360402540000004" blue="0.23813805369999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="41" id="PXn-2w-nR8"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="43" id="O6b-nU-z5h"/>
                                         </constraints>
                                     </button>
                                     <button opaque="NO" tag="15" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tk6-si-MJ9" userLabel="blackKeyButton">
-                                        <rect key="frame" x="1114" y="0.0" width="41" height="250"/>
+                                        <rect key="frame" x="1091.5" y="0.0" width="43" height="250"/>
                                         <color key="backgroundColor" red="1" green="0.50360402540000004" blue="0.23813805369999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="41" id="LXw-da-kGg"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="43" id="8fD-0n-pEu"/>
                                         </constraints>
                                     </button>
                                     <button opaque="NO" tag="16" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CTb-CL-S9b" userLabel="blackKeyButton">
-                                        <rect key="frame" x="1188.5" y="0.0" width="41" height="250"/>
+                                        <rect key="frame" x="1164.5" y="0.0" width="43" height="250"/>
                                         <color key="backgroundColor" red="1" green="0.50360402540000004" blue="0.23813805369999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="41" id="YVr-oc-8uL"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="43" id="K4K-yh-n0Z"/>
                                         </constraints>
                                     </button>
                                     <button opaque="NO" tag="17" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="naF-VO-IUP" userLabel="blackKeyButton">
-                                        <rect key="frame" x="1262.5" y="0.0" width="41" height="250"/>
+                                        <rect key="frame" x="1237" y="0.0" width="43" height="250"/>
                                         <color key="backgroundColor" red="1" green="0.50360402540000004" blue="0.23813805369999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="41" id="oq2-Z7-EMD"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="43" id="fJE-3D-6vG"/>
                                         </constraints>
                                     </button>
                                     <button opaque="NO" tag="18" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bgn-Tv-J1G" userLabel="blackKeyButton">
-                                        <rect key="frame" x="1337" y="0.0" width="41" height="250"/>
+                                        <rect key="frame" x="1310" y="0.0" width="43" height="250"/>
                                         <color key="backgroundColor" red="1" green="0.50360402540000004" blue="0.23813805369999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="41" id="Yjd-M4-DZ8"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="43" id="ge7-lt-Hku"/>
                                         </constraints>
                                     </button>
                                 </subviews>
@@ -1051,8 +1051,8 @@
                             <constraint firstItem="8yb-AG-ugB" firstAttribute="width" secondItem="6Tk-OE-BBY" secondAttribute="width" multiplier="0.56442" id="V3e-aa-CjG"/>
                             <constraint firstItem="JI7-xy-e6Q" firstAttribute="height" secondItem="6Tk-OE-BBY" secondAttribute="height" multiplier="885:980" id="VL2-xl-One"/>
                             <constraint firstItem="whS-R1-wiA" firstAttribute="top" secondItem="8yb-AG-ugB" secondAttribute="bottom" constant="346" id="VdV-6U-ZVV"/>
-                            <constraint firstItem="whS-R1-wiA" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Zug-VM-nV8"/>
-                            <constraint firstAttribute="trailing" secondItem="whS-R1-wiA" secondAttribute="trailing" constant="-12" id="aW1-zG-Cnu"/>
+                            <constraint firstItem="whS-R1-wiA" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="18" id="Zug-VM-nV8"/>
+                            <constraint firstAttribute="trailing" secondItem="whS-R1-wiA" secondAttribute="trailing" constant="-5" id="aW1-zG-Cnu"/>
                             <constraint firstItem="TMX-dv-0h9" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="bko-Vx-yc5"/>
                             <constraint firstItem="JI7-xy-e6Q" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="lSd-Sr-joe"/>
                         </constraints>

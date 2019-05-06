@@ -362,10 +362,85 @@ class ViewController: UIViewController {
         // sort the black keys outlet collection by tag
         blackKeyButtons = blackKeyButtons.sorted(by: { $0.tag < $1.tag })
         
-        for x in (9...18).reversed() {
-            let rotationAngle = CGFloat(Double(x)/100 + 0.05)
-            blackKeyButtons[x].transform = CGAffineTransform(rotationAngle: -rotationAngle)
+        let angleIncrement = 0.024
+        
+//        var rotationAngles = [CGFloat]()
+        var positiveRotationTransforms = [CGAffineTransform]()
+        var negativeRotationTransforms = [CGAffineTransform]()
+        
+        for angleMultiplier in (0...9) {
+            positiveRotationTransforms.append(CGAffineTransform(rotationAngle: CGFloat(Double(angleMultiplier) * (angleIncrement))))
+            negativeRotationTransforms.append(CGAffineTransform(rotationAngle: CGFloat(Double(angleMultiplier) * -(angleIncrement))))
         }
+        
+        let translation1xPositive = CGAffineTransform(translationX: 10, y: 0)
+        let translation1xNegative = CGAffineTransform(translationX: -10, y: 0)
+        let translation2xPositive = CGAffineTransform(translationX: 20, y: 0)
+        let translation2xNegative = CGAffineTransform(translationX: -20, y: 0)
+        
+        let blackKey1Transform = positiveRotationTransforms[8]
+        let blackKey2Transform = positiveRotationTransforms[7].concatenating(translation1xPositive)
+        let blackKey3Transform = positiveRotationTransforms[6].concatenating(translation2xPositive)
+        let blackKey5Transform = positiveRotationTransforms[4]
+        let blackKey6Transform = positiveRotationTransforms[3].concatenating(translation1xPositive)
+        let blackKey8Transform = positiveRotationTransforms[1].concatenating(translation1xNegative)
+        let blackKey10Transform = negativeRotationTransforms[1].concatenating(translation1xPositive)
+        let blackKey12Transform = negativeRotationTransforms[3].concatenating(translation1xNegative)
+        let blackKey13Transform = negativeRotationTransforms[4]
+        let blackKey15Transform = negativeRotationTransforms[6].concatenating(translation2xNegative)
+        let blackKey16Transform = negativeRotationTransforms[7].concatenating(translation1xNegative)
+        let blackKey17Transform = negativeRotationTransforms[8]
+        
+        blackKeyButtons[0].isEnabled = false
+        blackKeyButtons[0].alpha = 0
+        blackKeyButtons[1].transform = blackKey1Transform
+        blackKeyButtons[2].transform = blackKey2Transform
+        blackKeyButtons[3].transform = blackKey3Transform
+        blackKeyButtons[4].isEnabled = false
+        blackKeyButtons[4].alpha = 0
+        blackKeyButtons[5].transform = blackKey5Transform
+        blackKeyButtons[6].transform = blackKey6Transform
+        blackKeyButtons[7].isEnabled = false
+        blackKeyButtons[7].alpha = 0
+        blackKeyButtons[8].transform = blackKey8Transform
+        blackKeyButtons[10].transform = blackKey10Transform
+        blackKeyButtons[11].isEnabled = false
+        blackKeyButtons[11].alpha = 0
+        blackKeyButtons[12].transform = blackKey12Transform
+        blackKeyButtons[13].transform = blackKey13Transform
+        blackKeyButtons[14].isEnabled = false
+        blackKeyButtons[14].alpha = 0
+        blackKeyButtons[15].transform = blackKey15Transform
+        blackKeyButtons[16].transform = blackKey16Transform
+        blackKeyButtons[17].transform = blackKey17Transform
+        blackKeyButtons[18].isEnabled = false
+        blackKeyButtons[18].alpha = 0
+        
+        
+//        for indexAndMultiplier in (0...9) {
+//            let rotationAngle = CGFloat(Double(indexAndMultiplier) * angleIncrement)
+//            blackKeyButtons[indexAndMultiplier + 9].transform = CGAffineTransform(rotationAngle: -rotationAngle)
+//
+//            if indexAndMultiplier > 0 {
+//                blackKeyButtons[9 - indexAndMultiplier].transform = CGAffineTransform(rotationAngle: rotationAngle - CGFloat(angleIncrement))
+//            }
+//        }
+        
+
+//
+//        blackKeyButtons[2].transform = translation1x
+//        blackKeyButtons[6].transform = translation1x
+//        blackKeyButtons[12].transform = translation1xNegative
+//        blackKeyButtons[16].transform = translation1xNegative
+        
+//        let scaleTranform = CGAffineTransform(scaleX: 0.7, y: 1)
+//
+//        blackKeyButtons[0].transform = scaleTranform
+//        blackKeyButtons[4].transform = scaleTranform
+//        blackKeyButtons[7].transform = scaleTranform
+//        blackKeyButtons[11].transform = scaleTranform
+//        blackKeyButtons[14].transform = scaleTranform
+//        blackKeyButtons[18].transform = scaleTranform
         
 //        blackKeyButtons[17].transform = testTransform
 //        blackKeyButtons[16].transform = testTransform2
