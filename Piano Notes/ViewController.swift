@@ -344,8 +344,10 @@ class ViewController: UIViewController {
 
     @IBOutlet var blackKeyButtons: [UIButton]!
     
-    // the proper way to sort an outlet collection:
     
+    @IBAction func blackKeyButtonPressed(_ sender: UIButton) {
+        print(sender.tag)
+    }
     
     
     override func viewDidLoad() {
