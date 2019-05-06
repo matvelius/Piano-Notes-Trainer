@@ -354,22 +354,19 @@ class ViewController: UIViewController {
         
         super.viewDidLoad()
         
-//        let startingRotationAngle: CGFloat = 0.23
-        
-//        let testTransform = CGAffineTransform(rotationAngle: .pi * 0.93)
-//        let testTransform = CGAffineTransform(rotationAngle: -(startingRotationAngle))
-//        let testTransform2 = CGAffineTransform(rotationAngle: -(startingRotationAngle - 0.02))
-//        blackKeyButton.transform = testTransform
+        ////////////////////////////////////////////
+        //////// LINE UP BLACK KEY BUTTONS /////////
+        ////////////////////////////////////////////
         
         // sort the black keys outlet collection by tag
         blackKeyButtons = blackKeyButtons.sorted(by: { $0.tag < $1.tag })
         
         let angleIncrement = 0.024
         
-//        var rotationAngles = [CGFloat]()
         var positiveRotationTransforms = [CGAffineTransform]()
         var negativeRotationTransforms = [CGAffineTransform]()
         
+        // calculate rotation transforms
         for angleMultiplier in (0...9) {
             positiveRotationTransforms.append(CGAffineTransform(rotationAngle: CGFloat(Double(angleMultiplier) * (angleIncrement))))
             negativeRotationTransforms.append(CGAffineTransform(rotationAngle: CGFloat(Double(angleMultiplier) * -(angleIncrement))))
@@ -380,6 +377,7 @@ class ViewController: UIViewController {
         let translation2xPositive = CGAffineTransform(translationX: 20, y: 0)
         let translation2xNegative = CGAffineTransform(translationX: -20, y: 0)
         
+        // concat with translation transforms
         let blackKey1Transform = positiveRotationTransforms[8]
         let blackKey2Transform = positiveRotationTransforms[7].concatenating(translation1xPositive)
         let blackKey3Transform = positiveRotationTransforms[6].concatenating(translation2xPositive)
@@ -418,35 +416,8 @@ class ViewController: UIViewController {
         blackKeyButtons[18].isEnabled = false
         blackKeyButtons[18].alpha = 0
         
+  
         
-//        for indexAndMultiplier in (0...9) {
-//            let rotationAngle = CGFloat(Double(indexAndMultiplier) * angleIncrement)
-//            blackKeyButtons[indexAndMultiplier + 9].transform = CGAffineTransform(rotationAngle: -rotationAngle)
-//
-//            if indexAndMultiplier > 0 {
-//                blackKeyButtons[9 - indexAndMultiplier].transform = CGAffineTransform(rotationAngle: rotationAngle - CGFloat(angleIncrement))
-//            }
-//        }
-        
-
-//
-//        blackKeyButtons[2].transform = translation1x
-//        blackKeyButtons[6].transform = translation1x
-//        blackKeyButtons[12].transform = translation1xNegative
-//        blackKeyButtons[16].transform = translation1xNegative
-        
-//        let scaleTranform = CGAffineTransform(scaleX: 0.7, y: 1)
-//
-//        blackKeyButtons[0].transform = scaleTranform
-//        blackKeyButtons[4].transform = scaleTranform
-//        blackKeyButtons[7].transform = scaleTranform
-//        blackKeyButtons[11].transform = scaleTranform
-//        blackKeyButtons[14].transform = scaleTranform
-//        blackKeyButtons[18].transform = scaleTranform
-        
-//        blackKeyButtons[17].transform = testTransform
-//        blackKeyButtons[16].transform = testTransform2
-
         setupGameForCurrentLevel()
         
         // calculate shaprs & flats bounds for pan gesture recognition
@@ -569,7 +540,6 @@ class ViewController: UIViewController {
             }
             
             print("imageName = \(imageName)")
-            //            print("currentButton.tag = \(currentNoteButton.tag)")
             let image = UIImage(named: imageName)
             currentNoteButton.setImage(image, for: UIControl.State.normal)
             
