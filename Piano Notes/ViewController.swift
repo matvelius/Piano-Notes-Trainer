@@ -112,6 +112,10 @@ class ViewController: UIViewController {
     }
     
     
+    @IBAction func modeSwitchFlipped(_ sender: UISegmentedControl) {
+    }
+    
+    
     @IBOutlet weak var onlyWhiteKeysSwitchOutlet: UISwitch!
     
     @IBAction func onlyWhiteKeysSwitch(_ sender: UISwitch) {
