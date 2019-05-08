@@ -55,9 +55,7 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var menuBackgroundOutlet: UIView!
     
-//    var openMenuCenterPoint = CGPoint(x: 0, y: 0)
-//    var currentMenuCenterPointY: CGFloat = 0.0
-//    var closedMenuCenterPoint = CGPoint(x: -100, y: 0)
+
     
     @IBAction func menuButtonPressed(_ sender: UIButton) {
         
@@ -495,7 +493,6 @@ class ViewController: UIViewController {
         
         while randomNewNoteIndex == lastRandomNumber {
             randomNewNoteIndex = Int.random(in: 0...randomNewNoteIndexUpperLimit)
-
         }
         
         currentNote = currentNoteChoices[randomNewNoteIndex]
@@ -503,6 +500,8 @@ class ViewController: UIViewController {
         
         let currentNoteNameLength = currentNote.count
         
+        // 3-character note names need to be converted to 2-character ones
+        // (because octave doesn't matter)
         if currentNoteNameLength == 3 {
             currentCorrectAnswer = String(currentNote[currentNote.startIndex...currentNote.index(after: currentNote.startIndex)])
             print("currentCorrectAnswer when name length == 3: \(currentCorrectAnswer)")
@@ -617,7 +616,7 @@ class ViewController: UIViewController {
             
             // show result (red button)
             // if dealing with sharp or flat, light up regular letter + #/b symbol
-            if currentUserAnswer.count == 2 {
+            if currentUserAnswer.count == 2 && currentGameMode == .A {
                 
                 switch currentAccidental {
                     
@@ -647,13 +646,16 @@ class ViewController: UIViewController {
             }
             
             print("currentUserAnswer is: \(currentUserAnswer)")
-            // color button red
-            imageName = "\(currentUserAnswer[currentUserAnswer.startIndex])_wrong"
-//            imageName = "\(currentUserAnswer.startIndex)_wrong"
-            print("imageName is \(imageName)")
-            let image = UIImage(named: imageName)
-            currentNoteButton.setImage(image, for: UIControl.State.normal)
             
+            if currentGameMode == .A {
+                // color button red
+                imageName = "\(currentUserAnswer[currentUserAnswer.startIndex])_wrong"
+    //            imageName = "\(currentUserAnswer.startIndex)_wrong"
+                print("imageName is \(imageName)")
+                let image = UIImage(named: imageName)
+                currentNoteButton.setImage(image, for: UIControl.State.normal)
+            }
+                
             // subtract a point
             if totalScore > 0 {
                 totalScore -= 1
