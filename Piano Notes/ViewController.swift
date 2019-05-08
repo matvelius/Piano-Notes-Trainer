@@ -511,7 +511,7 @@ class ViewController: UIViewController {
         }
 //        currentCorrectAnswer = String(currentNote[currentNote.startIndex])
         print("currentCorrectAnswer is \(currentCorrectAnswer)")
-        pianoImage.image = UIImage(named: currentNote)
+        pianoImage.image = UIImage(named: "\(currentNote)_shown")
         
         lastRandomNumber = randomNewNoteIndex
         

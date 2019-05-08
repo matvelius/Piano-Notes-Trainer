@@ -97,6 +97,9 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JI7-xy-e6Q" userLabel="Main Container">
                                 <rect key="frame" x="0.0" y="139" width="1366" height="885"/>
                                 <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="white_piano_12.9_large" translatesAutoresizingMaskIntoConstraints="NO" id="Kqr-Q3-q8M">
+                                        <rect key="frame" x="0.0" y="77" width="1366" height="808"/>
+                                    </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="white_piano_12.9_large" translatesAutoresizingMaskIntoConstraints="NO" id="PeW-eg-9HV">
                                         <rect key="frame" x="0.0" y="77" width="1366" height="808"/>
                                         <constraints>
@@ -649,6 +652,7 @@
                                 <constraints>
                                     <constraint firstItem="SfW-Tf-CLW" firstAttribute="top" secondItem="BdG-ug-ScI" secondAttribute="bottom" id="1By-X3-Ve4"/>
                                     <constraint firstItem="PeW-eg-9HV" firstAttribute="trailing" secondItem="JI7-xy-e6Q" secondAttribute="trailing" id="8lY-dE-uMg"/>
+                                    <constraint firstItem="Kqr-Q3-q8M" firstAttribute="bottom" secondItem="PeW-eg-9HV" secondAttribute="bottom" id="91e-47-cx6"/>
                                     <constraint firstItem="Ucu-fc-WoN" firstAttribute="bottom" secondItem="SfW-Tf-CLW" secondAttribute="top" constant="-10" id="ANB-oE-xfg"/>
                                     <constraint firstItem="lkt-CX-jcE" firstAttribute="centerX" secondItem="JI7-xy-e6Q" secondAttribute="centerX" id="GCz-lj-oh5"/>
                                     <constraint firstItem="SfW-Tf-CLW" firstAttribute="centerX" secondItem="PeW-eg-9HV" secondAttribute="centerX" id="I71-Hh-4Ma"/>
@@ -660,11 +664,14 @@
                                     <constraint firstItem="lkt-CX-jcE" firstAttribute="height" secondItem="Ucu-fc-WoN" secondAttribute="height" id="WNi-QH-XCb"/>
                                     <constraint firstItem="ysp-nm-Oue" firstAttribute="centerX" secondItem="JI7-xy-e6Q" secondAttribute="centerX" id="X5N-s0-4XZ"/>
                                     <constraint firstItem="Ucu-fc-WoN" firstAttribute="centerX" secondItem="JI7-xy-e6Q" secondAttribute="centerX" id="Xeq-82-hfd"/>
+                                    <constraint firstItem="Kqr-Q3-q8M" firstAttribute="leading" secondItem="PeW-eg-9HV" secondAttribute="leading" id="a3o-lG-yyT"/>
                                     <constraint firstItem="BdG-ug-ScI" firstAttribute="centerX" secondItem="JI7-xy-e6Q" secondAttribute="centerX" id="c7u-1o-04a"/>
                                     <constraint firstItem="lkt-CX-jcE" firstAttribute="width" secondItem="SfW-Tf-CLW" secondAttribute="width" id="fOw-Ca-Umg"/>
                                     <constraint firstItem="BdG-ug-ScI" firstAttribute="top" secondItem="JI7-xy-e6Q" secondAttribute="top" id="h8H-hB-Psa"/>
+                                    <constraint firstItem="Kqr-Q3-q8M" firstAttribute="trailing" secondItem="PeW-eg-9HV" secondAttribute="trailing" id="kST-fg-i2s"/>
                                     <constraint firstItem="PeW-eg-9HV" firstAttribute="centerX" secondItem="JI7-xy-e6Q" secondAttribute="centerX" id="ks2-nk-Xia"/>
                                     <constraint firstItem="Ucu-fc-WoN" firstAttribute="height" secondItem="SfW-Tf-CLW" secondAttribute="height" multiplier="0.559:1" id="lwM-Dn-ewq"/>
+                                    <constraint firstItem="Kqr-Q3-q8M" firstAttribute="top" secondItem="PeW-eg-9HV" secondAttribute="top" id="n7u-Vr-rSP"/>
                                 </constraints>
                             </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="name_the_highlighted_note" translatesAutoresizingMaskIntoConstraints="NO" id="8yb-AG-ugB">
