@@ -111,6 +111,8 @@ class ViewController: UIViewController {
     
     
     @IBAction func modeSwitchFlipped(_ sender: UISegmentedControl) {
+        currentGameMode = (currentGameMode == .B) ? .A : .B
+//        print(currentGameMode)
     }
     
     
