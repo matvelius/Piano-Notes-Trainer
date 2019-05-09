@@ -324,7 +324,7 @@ class ViewController: UIViewController {
     var currentNoteButton: UIButton!
     
     // piano image outlet
-    @IBOutlet weak var pianoImage: UIImageView!
+    @IBOutlet weak var pianoKeyImage: UIImageView!
     
     // placeholder variable for keeping the score
     var totalScore = 0
@@ -522,9 +522,11 @@ class ViewController: UIViewController {
     //        currentCorrectAnswer = String(currentNote[currentNote.startIndex])
             print("currentCorrectAnswer is \(currentCorrectAnswer)")
             
-            pianoImage.image = UIImage(named: "\(currentNote)_shown")
+            pianoKeyImage.image = UIImage(named: "\(currentNote)_shown")
             
         } else {
+            
+            pianoKeyImage.image = nil
             
             randomNewNoteIndex = Int.random(in: 0...6)
             
