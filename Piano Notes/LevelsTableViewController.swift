@@ -12,6 +12,8 @@ class LevelsTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        tableView.backgroundView = UIImageView(image: UIImage(named: "intro_screen_background_blurry"))
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -29,18 +31,56 @@ class LevelsTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return allLevels.count
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "LevelCell", for: indexPath) as! LevelTableViewCell
 
-        // Configure the cell...
+        let level = allLevels[indexPath.row]
+        
+        cell.updateCell(with: level)
+        
+        let selectedView = UIView()
+        selectedView.backgroundColor = UIColor(red: 250/255, green: 250/255, blue: 250/255, alpha: 0.1)
+        cell.selectedBackgroundView = selectedView
 
+        
+//        if cell.isSelected {
+//            cell.backgroundColor = UIColor.red
+////            cell.backgroundColor = UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 0.1)
+//        } else {
+//            cell.backgroundColor = UIColor.clear
+//        }
+        
         return cell
     }
-    */
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 220
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        Level.currentLevel = allLevels[indexPath.row]
+        
+        
+        if explainersOn {
+        
+            performSegue(withIdentifier: "segueToExplainers", sender: nil)
+            
+        } else {
+            
+            performSegue(withIdentifier: "segueToGame", sender: nil)
+                
+        }
+        
+    }
+//    func configureCell() {
+//
+//    }
+    
 
     /*
     // Override to support conditional editing of the table view.

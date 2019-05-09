@@ -55,9 +55,7 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var menuBackgroundOutlet: UIView!
     
-//    var openMenuCenterPoint = CGPoint(x: 0, y: 0)
-//    var currentMenuCenterPointY: CGFloat = 0.0
-//    var closedMenuCenterPoint = CGPoint(x: -100, y: 0)
+
     
     @IBAction func menuButtonPressed(_ sender: UIButton) {
         
@@ -70,51 +68,53 @@ class ViewController: UIViewController {
             UIView.animate(withDuration: 0.5, delay: 0.0, options: .curveEaseIn, animations: {
                 
                 self.view.layoutIfNeeded()
+                self.menuButtonOutlet.alpha = 0
                 self.darkOverlayOutlet.alpha = 0.73
                 self.menuBackgroundOutlet.alpha = 1
-                self.menuLeadingConstraint.constant = 0
                 
             })
         
-//            UIView.animate(withDuration: 3.5) {
-//
-////                self.menuBackgroundOutlet.center = CGPoint(x: 200, y: self.currentMenuCenterPointY)
-////                self.menuBackgroundOutlet.leadingAnchor = self.
-////                self.menuBackgroundOutlet.leadingAnchor = self.menuBackgroundOutlet.superview?.leadingAnchor
-//            }
+            self.menuButtonOutlet.setTitle("✕", for: .normal)
             
-            // MAKE THIS HAPPEN AFTER A DELAY!
-            menuButtonOutlet.setTitle("✕", for: .normal)
+            UIView.animate(withDuration: 0.4, delay: 0.6, options: .curveEaseIn, animations: {
+                self.menuButtonOutlet.alpha = 1
+                self.view.layoutIfNeeded()
+            })
             
             menuIsClosed = false
             
         } else {
-            
-//            closedMenuCenterPoint = CGPoint(x: -100, y: 0)
             
             self.menuLeadingConstraint.constant = -460
             
             UIView.animate(withDuration: 0.5, delay: 0.0, options: .curveEaseIn, animations: {
             
                 self.view.layoutIfNeeded()
+                self.menuButtonOutlet.alpha = 0
                 self.darkOverlayOutlet.alpha = 0
                 self.menuBackgroundOutlet.alpha = 0
             
             })
             
-//            UIView.animate(withDuration: 3.5) {
-//
-//
-////                self.menuBackgroundOutlet.center = CGPoint(x: 400, y: self.currentMenuCenterPointY)
-//            }
+            self.menuButtonOutlet.setTitle("☰", for: .normal)
             
-            menuButtonOutlet.setTitle("☰", for: .normal)
+            UIView.animate(withDuration: 0.4, delay: 0.6, options: .curveEaseIn, animations: {
+                self.menuButtonOutlet.alpha = 1
+                self.view.layoutIfNeeded()
+            })
             
             menuIsClosed = true
             
         }
         
     }
+    
+    
+    @IBAction func modeSwitchFlipped(_ sender: UISegmentedControl) {
+    }
+    
+    
+    @IBOutlet weak var onlyWhiteKeysSwitchOutlet: UISwitch!
     
     @IBAction func onlyWhiteKeysSwitch(_ sender: UISwitch) {
         
@@ -123,9 +123,6 @@ class ViewController: UIViewController {
             
             setToOnlyWhiteKeys()
             
-//            currentNoteChoices = onlyWhiteKeys
-//            randomNewNoteIndexUpperLimit = currentNoteChoices.count - 1
-        
             for sharp in sharpsOutletCollection {
                 sharp.isEnabled = false
             }
@@ -148,8 +145,10 @@ class ViewController: UIViewController {
             
             setToAllNoteChoices()
             
-//            currentNoteChoices = allNoteChoices
-//            randomNewNoteIndexUpperLimit = allNoteChoices.count - 1
+            enableButtons()
+            
+            whiteKeySettingsSegmentedControlOutlet.selectedSegmentIndex = 0
+            
             
             for sharp in sharpsOutletCollection {
                 sharp.isEnabled = true
@@ -172,9 +171,8 @@ class ViewController: UIViewController {
             
     }
     
-//    var allWhiteKeysEnabled = true
-//    var onlyCDEEnabled = false
-//    var onlyFGABEnabled = false
+    
+    @IBOutlet weak var whiteKeySettingsSegmentedControlOutlet: UISegmentedControl!
     
     // enable / disable based on the white keys switch
     @IBAction func whiteKeySettingsSegmentedControl(_ sender: UISegmentedControl) {
@@ -182,13 +180,9 @@ class ViewController: UIViewController {
         if sender.selectedSegmentIndex == 0 {
             
             // all white keys
-//            currentNoteChoices = onlyWhiteKeys
             setToOnlyWhiteKeys()
-//            randomNewNoteIndexUpperLimit = currentNoteChoices.count - 1
             
-//            allWhiteKeysEnabled = true
-//            onlyCDEEnabled = false
-//            onlyFGABEnabled = false
+            onlyWhiteKeysSwitchOutlet.setOn(true, animated: true)
             
             enableButtons()
             
@@ -206,14 +200,12 @@ class ViewController: UIViewController {
             
             // only C D E
             setToOnlyCDE()
-//            currentNoteChoices = onlyCDE
-//            randomNewNoteIndexUpperLimit = currentNoteChoices.count - 1
             
-//            allWhiteKeysEnabled = false
-//            onlyCDEEnabled = true
-//            onlyFGABEnabled = false
+            onlyWhiteKeysSwitchOutlet.setOn(true, animated: true)
             
             disableButtons()
+            disableSharps()
+            disableFlats()
             
             noteButtonA.alpha = 0.3
             noteButtonB.alpha = 0.3
@@ -234,14 +226,12 @@ class ViewController: UIViewController {
             
             // only F G A B
             setToOnlyFGAB()
-//            currentNoteChoices = onlyFGAB
-//            randomNewNoteIndexUpperLimit = onlyFGAB.count - 1
             
-//            allWhiteKeysEnabled = false
-//            onlyCDEEnabled = false
-//            onlyFGABEnabled = true
-            
+            onlyWhiteKeysSwitchOutlet.setOn(true, animated: true)
+
             disableButtons()
+            disableSharps()
+            disableFlats()
             
             noteButtonC.alpha = 0.3
             noteButtonD.alpha = 0.3
@@ -344,16 +334,6 @@ class ViewController: UIViewController {
     // keeping track of incorrect answers in a row to take away stars
     var incorrectAnswersInARow = 0
     
-//    var currentNoteChoices = [""]
-//
-//    let allNoteChoices = ["F#3", "G3", "G#3", "A3", "A#3", "B3", "C4", "C#4", "D4", "D#4", "E4", "F4", "F#4", "G4", "G#4", "A4", "A#4", "B4", "C5", "C#5",  "D5", "D#5", "E5", "F5", "F#5", "G5", "G#5", "A5", "A#5"]
-//
-//    let onlyWhiteKeyChoices = ["G3", "A3", "B3", "C4", "D4", "E4", "F4", "G4", "A4", "B4", "C5", "D5", "E5", "F5", "G5", "A5"]
-//
-//    let onlyCDE = ["C4", "D4", "E4", "C5", "D5", "E5"]
-//
-//    let onlyFGAB = ["G3", "A3", "B3", "F4", "G4", "A4", "B4", "F5", "G5", "A5"]
-    
     
     
     // placeholder variable for last-selected random number
@@ -363,32 +343,105 @@ class ViewController: UIViewController {
     // SHOULD I ANIMATE THE BUTTON SIZE?
     @IBOutlet weak var noteButtonAHeight: NSLayoutConstraint!
     
+    @IBOutlet var whiteKeyButtons: [UIButton]!
+    
+    @IBOutlet var blackKeyButtons: [UIButton]!
+    
+    
+    @IBAction func whiteKeyButtonPressed(_ sender: UIButton) {
+        print(sender.tag)
+    }
+    
+    @IBAction func blackKeyButtonPressed(_ sender: UIButton) {
+        print(sender.tag)
+    }
+    
+    
     override func viewDidLoad() {
         
         super.viewDidLoad()
         
-        // start with white keys only (?)
-        setToOnlyWhiteKeys()
-//        currentNoteChoices = onlyWhiteKeyChoices
-//        randomNewNoteIndexUpperLimit = currentNoteChoices.count - 1
-//        print("onlyWhiteKeyChoices.count: \(onlyWhiteKeyChoices.count)")
+        ////////////////////////////////////////////
+        //////// LINE UP BLACK KEY BUTTONS /////////
+        ////////////////////////////////////////////
         
-        // disable sharps and flats, make them invisible, disable gesture recognizers
-        for sharp in sharpsOutletCollection {
-            sharp.isEnabled = false
+        // sort the black keys outlet collection by tag
+        blackKeyButtons = blackKeyButtons.sorted(by: { $0.tag < $1.tag })
+        
+        let angleIncrement = 0.024
+        
+        var positiveRotationTransforms = [CGAffineTransform]()
+        var negativeRotationTransforms = [CGAffineTransform]()
+        
+        // calculate rotation transforms
+        for angleMultiplier in (0...9) {
+            positiveRotationTransforms.append(CGAffineTransform(rotationAngle: CGFloat(Double(angleMultiplier) * (angleIncrement))))
+            negativeRotationTransforms.append(CGAffineTransform(rotationAngle: CGFloat(Double(angleMultiplier) * -(angleIncrement))))
         }
         
-        for flat in flatsOutletCollection {
-            flat.isEnabled = false
+        let translation1xPositive = CGAffineTransform(translationX: 10, y: 0)
+        let translation1xNegative = CGAffineTransform(translationX: -10, y: 0)
+        let translation2xPositive = CGAffineTransform(translationX: 20, y: 0)
+        let translation2xNegative = CGAffineTransform(translationX: -20, y: 0)
+        
+        // concat with translation transforms
+        let blackKey1Transform = positiveRotationTransforms[8]
+        let blackKey2Transform = positiveRotationTransforms[7].concatenating(translation1xPositive)
+        let blackKey3Transform = positiveRotationTransforms[6].concatenating(translation2xPositive)
+        let blackKey5Transform = positiveRotationTransforms[4]
+        let blackKey6Transform = positiveRotationTransforms[3].concatenating(translation1xPositive)
+        let blackKey8Transform = positiveRotationTransforms[1].concatenating(translation1xNegative)
+        let blackKey10Transform = negativeRotationTransforms[1].concatenating(translation1xPositive)
+        let blackKey12Transform = negativeRotationTransforms[3].concatenating(translation1xNegative)
+        let blackKey13Transform = negativeRotationTransforms[4]
+        let blackKey15Transform = negativeRotationTransforms[6].concatenating(translation2xNegative)
+        let blackKey16Transform = negativeRotationTransforms[7].concatenating(translation1xNegative)
+        let blackKey17Transform = negativeRotationTransforms[8]
+        
+        blackKeyButtons[0].isEnabled = false
+        blackKeyButtons[0].alpha = 0
+        blackKeyButtons[1].transform = blackKey1Transform
+        blackKeyButtons[2].transform = blackKey2Transform
+        blackKeyButtons[3].transform = blackKey3Transform
+        blackKeyButtons[4].isEnabled = false
+        blackKeyButtons[4].alpha = 0
+        blackKeyButtons[5].transform = blackKey5Transform
+        blackKeyButtons[6].transform = blackKey6Transform
+        blackKeyButtons[7].isEnabled = false
+        blackKeyButtons[7].alpha = 0
+        blackKeyButtons[8].transform = blackKey8Transform
+        blackKeyButtons[10].transform = blackKey10Transform
+        blackKeyButtons[11].isEnabled = false
+        blackKeyButtons[11].alpha = 0
+        blackKeyButtons[12].transform = blackKey12Transform
+        blackKeyButtons[13].transform = blackKey13Transform
+        blackKeyButtons[14].isEnabled = false
+        blackKeyButtons[14].alpha = 0
+        blackKeyButtons[15].transform = blackKey15Transform
+        blackKeyButtons[16].transform = blackKey16Transform
+        blackKeyButtons[17].transform = blackKey17Transform
+        blackKeyButtons[18].isEnabled = false
+        blackKeyButtons[18].alpha = 0
+        
+        ////////////////////////////////////////////
+        //////// LINE UP WHITE KEY BUTTONS /////////
+        ////////////////////////////////////////////
+        
+        // sort the black keys outlet collection by tag
+        whiteKeyButtons = whiteKeyButtons.sorted(by: { $0.tag < $1.tag })
+        
+        // rotate and move white keys on the left
+        for index in (0...7) {
+            whiteKeyButtons[index].transform = positiveRotationTransforms[8 - index].concatenating(CGAffineTransform(translationX: CGFloat(Double((8-index)) * 1.2), y: 0)).concatenating(CGAffineTransform(scaleX: CGFloat(1 - (Double(7-index) * 0.008)), y: 1))
         }
         
-        sharpsViewOutlet.alpha = 0
-        flatsViewOutlet.alpha = 0
-        
-        for panGestureRecognizer in panGestureRecognizersCollection {
-            panGestureRecognizer.isEnabled = false
+        // rotate and move white keys on the right
+        for index in (1...9) {
+            whiteKeyButtons[index + 8].transform = negativeRotationTransforms[index].concatenating(CGAffineTransform(translationX: CGFloat(Double((index)) * -1.6), y: 0)).concatenating(CGAffineTransform(scaleX: CGFloat(1 - (Double(index) * 0.008)), y: 1))
+//            whiteKeyButtons[index + 8].transform = negativeRotationTransforms[index]
         }
         
+        setupGameForCurrentLevel()
         
         // calculate shaprs & flats bounds for pan gesture recognition
         sharpsUpperBound = sharpsViewOutlet.bounds.maxY + 5
@@ -402,33 +455,21 @@ class ViewController: UIViewController {
         noteButtonLowerBoundY = noteButtonD.bounds.minY
     
         
-//        accidentalsBottomEdgeYCoordinate = sharpsOutletCollection.first!.bounds.maxY
-//        print("accidentalsBottomEdgeYCoordinate: \(accidentalsBottomEdgeYCoordinate)")
-//        let boundsOfSharps = sharpsOutletCollection.first?.bounds
-//        let bottomOfSharps =
-        
-        
-//        print("first sharp bounds minY: \(sharpsOutletCollection.first?.bounds.minY)")
-//        print("first sharp bounds maxY: \(sharpsOutletCollection.first?.bounds.maxY)")
-//
-//        print("UIApplication shared keyWindow bounds minY: \(UIApplication.shared.keyWindow?.bounds.minY)")
-//
-//        print("UIApplication shared keyWindow bounds maxY: \(UIApplication.shared.keyWindow?.bounds.maxY)")
-        
         menuBackgroundOutlet.alpha = 0
         
         menuLeadingConstraint.constant = -460
         
-//        openMenuCenterPoint = menuBackgroundOutlet.center
-//        currentMenuCenterPointY = menuBackgroundOutlet.center.y
+        switch Level.currentLevel.id {
+        case 4, 5, 6, 7:
+            onlyWhiteKeysSwitchOutlet.setOn(false, animated: true)
+        default:
+            onlyWhiteKeysSwitchOutlet.setOn(true, animated: true)
+        }
         
         scoreLabel.text = "0"
         
         startNewRound()
-//        print("noteButtonA's coordinateSpace is: ")
-//        print(noteButtonA.coordinateSpace)
-//
-//        print(UIApplication.shared.keyWindow?.coordinateSpace)
+
     }
     
     func startNewRound() {
@@ -452,15 +493,15 @@ class ViewController: UIViewController {
         
         while randomNewNoteIndex == lastRandomNumber {
             randomNewNoteIndex = Int.random(in: 0...randomNewNoteIndexUpperLimit)
-//            print("generateNewNote() called; randomNewNoteIndex = \(randomNewNoteIndex)")
         }
         
-//        print("NUMBER OF NOTES: \(highlightedNoteChoice.count)")
         currentNote = currentNoteChoices[randomNewNoteIndex]
         print("the current note is \(currentNote)")
         
         let currentNoteNameLength = currentNote.count
         
+        // 3-character note names need to be converted to 2-character ones
+        // (because octave doesn't matter)
         if currentNoteNameLength == 3 {
             currentCorrectAnswer = String(currentNote[currentNote.startIndex...currentNote.index(after: currentNote.startIndex)])
             print("currentCorrectAnswer when name length == 3: \(currentCorrectAnswer)")
@@ -470,7 +511,7 @@ class ViewController: UIViewController {
         }
 //        currentCorrectAnswer = String(currentNote[currentNote.startIndex])
         print("currentCorrectAnswer is \(currentCorrectAnswer)")
-        pianoImage.image = UIImage(named: currentNote)
+        pianoImage.image = UIImage(named: "\(currentNote)_shown")
         
         lastRandomNumber = randomNewNoteIndex
         
@@ -523,7 +564,6 @@ class ViewController: UIViewController {
             }
             
             print("imageName = \(imageName)")
-            //            print("currentButton.tag = \(currentNoteButton.tag)")
             let image = UIImage(named: imageName)
             currentNoteButton.setImage(image, for: UIControl.State.normal)
             
@@ -576,7 +616,7 @@ class ViewController: UIViewController {
             
             // show result (red button)
             // if dealing with sharp or flat, light up regular letter + #/b symbol
-            if currentUserAnswer.count == 2 {
+            if currentUserAnswer.count == 2 && currentGameMode == .A {
                 
                 switch currentAccidental {
                     
@@ -606,13 +646,16 @@ class ViewController: UIViewController {
             }
             
             print("currentUserAnswer is: \(currentUserAnswer)")
-            // color button red
-            imageName = "\(currentUserAnswer[currentUserAnswer.startIndex])_wrong"
-//            imageName = "\(currentUserAnswer.startIndex)_wrong"
-            print("imageName is \(imageName)")
-            let image = UIImage(named: imageName)
-            currentNoteButton.setImage(image, for: UIControl.State.normal)
             
+            if currentGameMode == .A {
+                // color button red
+                imageName = "\(currentUserAnswer[currentUserAnswer.startIndex])_wrong"
+    //            imageName = "\(currentUserAnswer.startIndex)_wrong"
+                print("imageName is \(imageName)")
+                let image = UIImage(named: imageName)
+                currentNoteButton.setImage(image, for: UIControl.State.normal)
+            }
+                
             // subtract a point
             if totalScore > 0 {
                 totalScore -= 1
@@ -724,9 +767,6 @@ class ViewController: UIViewController {
     
     func enableButtons() {
         
-//        allWhiteKeysEnabled = true
-//        onlyCDEEnabled = false
-//        onlyFGABEnabled = false
         if onlyWhiteKeysEnabled || allNoteChoicesEnabled {
             
             noteButtonA.isEnabled = true;
@@ -737,11 +777,28 @@ class ViewController: UIViewController {
             noteButtonF.isEnabled = true;
             noteButtonG.isEnabled = true;
             
+            noteButtonA.alpha = 1
+            noteButtonB.alpha = 1
+            noteButtonC.alpha = 1
+            noteButtonD.alpha = 1
+            noteButtonE.alpha = 1
+            noteButtonF.alpha = 1
+            noteButtonG.alpha = 1
+            
         } else if onlyCDEEnabled {
             
             noteButtonC.isEnabled = true;
             noteButtonD.isEnabled = true;
             noteButtonE.isEnabled = true;
+            
+            noteButtonA.alpha = 0.3
+            noteButtonB.alpha = 0.3
+            noteButtonF.alpha = 0.3
+            noteButtonG.alpha = 0.3
+            
+            noteButtonC.alpha = 1
+            noteButtonD.alpha = 1
+            noteButtonE.alpha = 1
             
         } else if onlyFGABEnabled {
             
@@ -749,14 +806,21 @@ class ViewController: UIViewController {
             noteButtonG.isEnabled = true;
             noteButtonA.isEnabled = true;
             noteButtonB.isEnabled = true;
+            
+            noteButtonA.alpha = 1
+            noteButtonB.alpha = 1
+            noteButtonF.alpha = 1
+            noteButtonG.alpha = 1
+            
+            noteButtonC.alpha = 0.3
+            noteButtonD.alpha = 0.3
+            noteButtonE.alpha = 0.3
         }
     }
     
     func loadSound(currentSound: String) {
         // sound file
         if let sound = Bundle.main.path(forResource: currentSound, ofType: "aiff") {
-
-            //print(String(sound))
 
             do {
                 // try to initialize with the URL created above
@@ -775,21 +839,6 @@ class ViewController: UIViewController {
     
     @IBAction func handlePanGesture(recognizer: UIPanGestureRecognizer) {
         
-//        print("recognizer.location(in: self.view).y: \(recognizer.location(in: self.view).y)")
-//
-//        print("sharpsViewOutlet.bounds: \(sharpsViewOutlet.bounds)")
-//        print("<-- current Y location")
-        
-//        let sharpView = sharpsOutletCollection.first
-//        let appWindowView = UIApplication.shared.keyWindow
-//        let convertedCoordinatesOfRecognizer = sharpsViewOutlet.convert(recognizer.location(in: self.view), to: sharpsViewOutlet)
-//
-//        let convertedCoordinatesOfSharp = sharpsViewOutlet.convert(sharpsOutletCollection.first!.bounds, to: sharpsViewOutlet)
-        
-//        print("convertedCoordinatesOfRecognizer: \(convertedCoordinatesOfRecognizer)")
-//        print("convertedCoordinatesOfSharp: \(convertedCoordinatesOfSharp)")
-        
-        
         
         let currentYCoordinateOfPanInRespectToSharps = recognizer.location(in: sharpsOutletCollection.first).y
         
@@ -798,16 +847,6 @@ class ViewController: UIViewController {
         let currentYCoordinateOfPanInRespectToNoteButtons = recognizer.location(in: currentNoteButton).y
         
         let currentXCoordinateOfPanInRespectToCurrentNoteButton = recognizer.location(in: currentNoteButton).x
-        
-//        print("currentYCoordinateOfPanInRespectToCurrentNoteButton: \(currentYCoordinateOfPanInRespectToNoteButtons)")
-        
-    
-        
-//        print("current Y location in respect to sharp: \(currentYCoordinateOfPanInRespectToSharps)")
-//
-//        print("sharpsViewOutlet.bounds.maxY: \(sharpsViewOutlet.bounds.maxY)")
-//
-//        print("current Y location in respect to flats: \(currentYCoordinateOfPanInRespectToFlats)")
         
         
         // determine if the user's finger is within the sharps range
@@ -879,7 +918,7 @@ class ViewController: UIViewController {
                     currentUserAnswer = "\(currentUserAnswer)b"
                     let image = UIImage(named: "\(currentUserAnswer)_default")
                     currentNoteButton.setImage(image, for: UIControl.State.normal)
-//                    print("ended! currentUserAnswer is: \(currentUserAnswer)")
+
                     return true
                     
                 case .sharp:
@@ -887,22 +926,17 @@ class ViewController: UIViewController {
                     currentUserAnswer = "\(currentUserAnswer)#"
                     let image = UIImage(named: "\(currentUserAnswer)_default")
                     currentNoteButton.setImage(image, for: UIControl.State.normal)
-//                    print("ended! currentUserAnswer is: \(currentUserAnswer)")
+
                     return true
                     
                 case .neither:
                     
                     currentAccidental = .neither
                     let image = UIImage(named: "\(currentUserAnswer)_default")
-//                    print("CASE .neither, currentUserAnswer: \(currentUserAnswer)")
                     currentNoteButton.setImage(image, for: UIControl.State.normal)
                     
-//                    self.note
                     return true
                     
-//                default:
-//                    print("something went weird...")
-//                    break
                 }
                 
             }
@@ -1081,5 +1115,103 @@ class ViewController: UIViewController {
         noteButtonLowerBoundX = currentNoteButton.bounds.minX
         noteButtonUpperBoundX = currentNoteButton.bounds.maxX
     }
+    
+    func setupGameForCurrentLevel() {
+        
+        disableButtons()
+        
+        // note choices
+        currentNoteChoices = Level.currentLevel.noteChoices
+        
+        // set the keys to display
+        let currentLevelID = Level.currentLevel.id
+        
+        switch currentLevelID {
+        case 1:
+            setToOnlyCDE()
+            disableSharps()
+            disableFlats()
+            disableGestureRecognizers()
+        case 2:
+            setToOnlyFGAB()
+            disableSharps()
+            disableFlats()
+            disableGestureRecognizers()
+        case 3:
+            setToOnlyWhiteKeys()
+            disableSharps()
+            disableFlats()
+            disableGestureRecognizers()
+        case 4:
+            setToOnlyBlackKeys()
+            enableSharps()
+            enableFlats()
+            enableGestureRecognizers()
+        case 5:
+            setToOnlyBlackKeys()
+            enableSharps()
+            enableFlats()
+            enableGestureRecognizers()
+        case 6:
+            setToAllNoteChoices()
+            enableSharps()
+            enableFlats()
+            enableGestureRecognizers()
+        case 7:
+            setToAllNoteChoices()
+            enableSharps()
+            enableFlats()
+            enableGestureRecognizers()
+        default: break
+        }
+        
+        enableButtons()
+        
+        // determine next level
+        
+    }
+    
+    func enableSharps() {
+        for sharp in sharpsOutletCollection {
+            sharp.isEnabled = true
+        }
+        sharpsViewOutlet.alpha = 1
+    }
+    
+    func disableSharps() {
+        for sharp in sharpsOutletCollection {
+            sharp.isEnabled = false
+        }
+        sharpsViewOutlet.alpha = 0
+    }
+    
+    func enableFlats() {
+        for flat in flatsOutletCollection {
+            flat.isEnabled = true
+        }
+        flatsViewOutlet.alpha = 1
+    }
+    
+    func disableFlats() {
+        for flat in flatsOutletCollection {
+            flat.isEnabled = false
+        }
+        flatsViewOutlet.alpha = 0
+    }
+
+    func enableGestureRecognizers() {
+        for panGestureRecognizer in panGestureRecognizersCollection {
+            panGestureRecognizer.isEnabled = true
+        }
+    }
+    
+    func disableGestureRecognizers() {
+        for panGestureRecognizer in panGestureRecognizersCollection {
+            panGestureRecognizer.isEnabled = false
+        }
+    }
+    
+    
+
     
 }
