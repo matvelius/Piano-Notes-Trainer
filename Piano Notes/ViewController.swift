@@ -112,7 +112,7 @@ class ViewController: UIViewController {
     
     @IBAction func modeSwitchFlipped(_ sender: UISegmentedControl) {
         currentGameMode = (currentGameMode == .B) ? .A : .B
-//        print(currentGameMode)
+        startNewRound()
     }
     
     
@@ -296,6 +296,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var noteButtonF: UIButton!
     @IBOutlet weak var noteButtonG: UIButton!
     
+    
+    @IBOutlet var noteButtonsOutletCollection: [UIButton]!
+    
     @IBOutlet var sharpsOutletCollection: [UIButton]!
     
     // placeholders for calculating sharps & flats bounds
@@ -443,6 +446,9 @@ class ViewController: UIViewController {
 //            whiteKeyButtons[index + 8].transform = negativeRotationTransforms[index]
         }
         
+        // sort the note buttons outlet collection by tag
+        noteButtonsOutletCollection = noteButtonsOutletCollection.sorted(by: { $0.tag < $1.tag })
+        
         setupGameForCurrentLevel()
         
         // calculate shaprs & flats bounds for pan gesture recognition
@@ -491,29 +497,57 @@ class ViewController: UIViewController {
     
     func generateNewNote() {
         
-        randomNewNoteIndex = Int.random(in: 0...randomNewNoteIndexUpperLimit)
+        if currentGameMode == .A {
         
-        while randomNewNoteIndex == lastRandomNumber {
             randomNewNoteIndex = Int.random(in: 0...randomNewNoteIndexUpperLimit)
-        }
-        
-        currentNote = currentNoteChoices[randomNewNoteIndex]
-        print("the current note is \(currentNote)")
-        
-        let currentNoteNameLength = currentNote.count
-        
-        // 3-character note names need to be converted to 2-character ones
-        // (because octave doesn't matter)
-        if currentNoteNameLength == 3 {
-            currentCorrectAnswer = String(currentNote[currentNote.startIndex...currentNote.index(after: currentNote.startIndex)])
-            print("currentCorrectAnswer when name length == 3: \(currentCorrectAnswer)")
+            
+            while randomNewNoteIndex == lastRandomNumber {
+                randomNewNoteIndex = Int.random(in: 0...randomNewNoteIndexUpperLimit)
+            }
+            
+            currentNote = currentNoteChoices[randomNewNoteIndex]
+            print("the current note is \(currentNote)")
+            
+            let currentNoteNameLength = currentNote.count
+            
+            // 3-character note names need to be converted to 2-character ones
+            // (because octave doesn't matter)
+            if currentNoteNameLength == 3 {
+                currentCorrectAnswer = String(currentNote[currentNote.startIndex...currentNote.index(after: currentNote.startIndex)])
+    //            print("currentCorrectAnswer when name length == 3: \(currentCorrectAnswer)")
+            } else {
+                currentCorrectAnswer = String(currentNote[currentNote.startIndex])
+    //            print("currentCorrectAnswer when name length == \(currentNoteNameLength): \(currentCorrectAnswer)")
+            }
+    //        currentCorrectAnswer = String(currentNote[currentNote.startIndex])
+            print("currentCorrectAnswer is \(currentCorrectAnswer)")
+            
+            pianoImage.image = UIImage(named: "\(currentNote)_shown")
+            
         } else {
-            currentCorrectAnswer = String(currentNote[currentNote.startIndex])
-            print("currentCorrectAnswer when name length == \(currentNoteNameLength): \(currentCorrectAnswer)")
+            
+            randomNewNoteIndex = Int.random(in: 0...6)
+            
+            while randomNewNoteIndex == lastRandomNumber {
+                randomNewNoteIndex = Int.random(in: 0...6)
+            }
+            
+            currentNote = basicNoteNames[randomNewNoteIndex]
+            
+            print("current note should be: \(currentNote)")
+            
+//            print("\(currentCorrectAnswer[currentCorrectAnswer.startIndex])_shown")
+           
+            let imageName = "\(currentNote)_shown"
+            
+            guard let image = UIImage(named: imageName) else { return }
+            
+            print(image)
+            
+            noteButtonsOutletCollection[randomNewNoteIndex].setImage(image, for: UIControl.State.normal)
+//            currentNoteButton.setImage(image, for: UIControl.State.normal)
+            
         }
-//        currentCorrectAnswer = String(currentNote[currentNote.startIndex])
-        print("currentCorrectAnswer is \(currentCorrectAnswer)")
-        pianoImage.image = UIImage(named: "\(currentNote)_shown")
         
         lastRandomNumber = randomNewNoteIndex
         

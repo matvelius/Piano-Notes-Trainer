@@ -92,4 +92,4 @@ func setRandomNewNoteUpperIndex() {
     randomNewNoteIndexUpperLimit = currentNoteChoices.count - 1
 }
 
-
+var basicNoteNames = ["A", "B", "C", "D", "E", "F", "G"]
