@@ -55,8 +55,6 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var menuBackgroundOutlet: UIView!
     
-
-    
     @IBAction func menuButtonPressed(_ sender: UIButton) {
         
         // figure out how to slide the menu out
@@ -112,6 +110,10 @@ class ViewController: UIViewController {
     
     @IBAction func modeSwitchFlipped(_ sender: UISegmentedControl) {
         currentGameMode = (currentGameMode == .B) ? .A : .B
+        
+        // disable certain white & black keys
+        enableOrDisableWhiteKeys()
+        
         startNewRound()
     }
     
@@ -124,21 +126,13 @@ class ViewController: UIViewController {
         if sender.isOn == true {
             
             setToOnlyWhiteKeys()
-            
-            for sharp in sharpsOutletCollection {
-                sharp.isEnabled = false
-            }
-            
-            for flat in flatsOutletCollection {
-                flat.isEnabled = false
-            }
-            
+        
+            disableSharps()
             sharpsViewOutlet.alpha = 0
+            disableFlats()
             flatsViewOutlet.alpha = 0
             
-            for panGestureRecognizer in panGestureRecognizersCollection {
-                panGestureRecognizer.isEnabled = false
-            }
+            disableGestureRecognizers()
             
             startNewRound()
         
@@ -152,20 +146,12 @@ class ViewController: UIViewController {
             whiteKeySettingsSegmentedControlOutlet.selectedSegmentIndex = 0
             
             
-            for sharp in sharpsOutletCollection {
-                sharp.isEnabled = true
-            }
-            
-            for flat in flatsOutletCollection {
-                flat.isEnabled = true
-            }
-            
+            enableSharps()
             sharpsViewOutlet.alpha = 1
+            enableFlats()
             flatsViewOutlet.alpha = 1
             
-            for panGestureRecognizer in panGestureRecognizersCollection {
-                panGestureRecognizer.isEnabled = true
-            }
+            enableGestureRecognizers()
             
             startNewRound()
             
@@ -207,7 +193,9 @@ class ViewController: UIViewController {
             
             disableButtons()
             disableSharps()
+            sharpsViewOutlet.alpha = 0
             disableFlats()
+            flatsViewOutlet.alpha = 0
             
             noteButtonA.alpha = 0.3
             noteButtonB.alpha = 0.3
@@ -233,7 +221,9 @@ class ViewController: UIViewController {
 
             disableButtons()
             disableSharps()
+            sharpsViewOutlet.alpha = 0
             disableFlats()
+            flatsViewOutlet.alpha = 0
             
             noteButtonC.alpha = 0.3
             noteButtonD.alpha = 0.3
@@ -355,10 +345,20 @@ class ViewController: UIViewController {
     
     @IBAction func whiteKeyButtonPressed(_ sender: UIButton) {
         print(sender.tag)
+        
+        currentUserAnswer = onlyWhiteKeys[sender.tag - 1]
+        print("currentUserAnswer: \(currentUserAnswer)")
+//        currentNoteButton = noteButtonB
+//        setCurrentNoteXBounds()
     }
     
     @IBAction func blackKeyButtonPressed(_ sender: UIButton) {
-        print(sender.tag)
+//        print(sender.accessibilityIdentifier)
+        
+        guard let keyIndex = Int(sender.accessibilityIdentifier!) else { return }
+        
+        currentUserAnswer = onlyBlackKeys[keyIndex]
+        print("currentUserAnswer: \(currentUserAnswer)")
     }
     
     
@@ -428,6 +428,8 @@ class ViewController: UIViewController {
         blackKeyButtons[18].isEnabled = false
         blackKeyButtons[18].alpha = 0
         
+        print("blackKeyButtons[1].accessibilityIdentifier: \(blackKeyButtons[1].accessibilityIdentifier)")
+        
         ////////////////////////////////////////////
         //////// LINE UP WHITE KEY BUTTONS /////////
         ////////////////////////////////////////////
@@ -451,17 +453,8 @@ class ViewController: UIViewController {
         
         setupGameForCurrentLevel()
         
-        // calculate shaprs & flats bounds for pan gesture recognition
-        sharpsUpperBound = sharpsViewOutlet.bounds.maxY + 5
-        sharpsLowerBound = sharpsViewOutlet.bounds.minY - 10
+        calculateSharpAndFlatBounds()
         
-        flatsUpperBound = flatsViewOutlet.bounds.maxY + 10
-        flatsLowerBound = flatsViewOutlet.bounds.minY - 5
-        
-        // calculate note button bounds for pan gesture recognition
-        noteButtonUpperBoundY = noteButtonD.bounds.maxY
-        noteButtonLowerBoundY = noteButtonD.bounds.minY
-    
         
         menuBackgroundOutlet.alpha = 0
         
@@ -527,6 +520,10 @@ class ViewController: UIViewController {
         } else {
             
             pianoKeyImage.image = nil
+            disableButtons()
+            disableSharps()
+            disableFlats()
+            
             
             randomNewNoteIndex = Int.random(in: 0...6)
             
@@ -1168,37 +1165,51 @@ class ViewController: UIViewController {
         case 1:
             setToOnlyCDE()
             disableSharps()
+            sharpsViewOutlet.alpha = 0
             disableFlats()
+            flatsViewOutlet.alpha = 0
             disableGestureRecognizers()
         case 2:
             setToOnlyFGAB()
             disableSharps()
+            sharpsViewOutlet.alpha = 0
             disableFlats()
+            flatsViewOutlet.alpha = 0
             disableGestureRecognizers()
         case 3:
             setToOnlyWhiteKeys()
             disableSharps()
+            sharpsViewOutlet.alpha = 0
             disableFlats()
+            flatsViewOutlet.alpha = 0
             disableGestureRecognizers()
         case 4:
             setToOnlyBlackKeys()
             enableSharps()
-            enableFlats()
+            sharpsViewOutlet.alpha = 1
+            disableFlats()
+            flatsViewOutlet.alpha = 0
             enableGestureRecognizers()
         case 5:
             setToOnlyBlackKeys()
-            enableSharps()
+            disableSharps()
+            sharpsViewOutlet.alpha = 0
             enableFlats()
+            flatsViewOutlet.alpha = 1
             enableGestureRecognizers()
         case 6:
             setToAllNoteChoices()
             enableSharps()
+            sharpsViewOutlet.alpha = 1
             enableFlats()
+            flatsViewOutlet.alpha = 1
             enableGestureRecognizers()
         case 7:
             setToAllNoteChoices()
             enableSharps()
+            sharpsViewOutlet.alpha = 1
             enableFlats()
+            flatsViewOutlet.alpha = 1
             enableGestureRecognizers()
         default: break
         }
@@ -1213,28 +1224,24 @@ class ViewController: UIViewController {
         for sharp in sharpsOutletCollection {
             sharp.isEnabled = true
         }
-        sharpsViewOutlet.alpha = 1
     }
     
     func disableSharps() {
         for sharp in sharpsOutletCollection {
             sharp.isEnabled = false
         }
-        sharpsViewOutlet.alpha = 0
     }
     
     func enableFlats() {
         for flat in flatsOutletCollection {
             flat.isEnabled = true
         }
-        flatsViewOutlet.alpha = 1
     }
     
     func disableFlats() {
         for flat in flatsOutletCollection {
             flat.isEnabled = false
         }
-        flatsViewOutlet.alpha = 0
     }
 
     func enableGestureRecognizers() {
@@ -1249,7 +1256,22 @@ class ViewController: UIViewController {
         }
     }
     
+    func enableOrDisableWhiteKeys() {
+        whiteKeyButtons[0].isEnabled = false
+        whiteKeyButtons[17].isEnabled = false
+    }
     
-
+    func calculateSharpAndFlatBounds() {
+        // calculate shaprs & flats bounds for pan gesture recognition
+        sharpsUpperBound = sharpsViewOutlet.bounds.maxY + 5
+        sharpsLowerBound = sharpsViewOutlet.bounds.minY - 10
+        
+        flatsUpperBound = flatsViewOutlet.bounds.maxY + 10
+        flatsLowerBound = flatsViewOutlet.bounds.minY - 5
+        
+        // calculate note button bounds for pan gesture recognition
+        noteButtonUpperBoundY = noteButtonD.bounds.maxY
+        noteButtonLowerBoundY = noteButtonD.bounds.minY
+    }
     
 }
