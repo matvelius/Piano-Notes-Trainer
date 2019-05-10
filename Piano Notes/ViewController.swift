@@ -255,7 +255,8 @@ class ViewController: UIViewController {
     @IBAction func blackKeySettingsSegmentedControl(_ sender: UISegmentedControl) {
     }
     
-    var soundsEnabled = true
+    // CHANGE BACK TO TRUE!!
+    var soundsEnabled = false
     
     @IBAction func enableSoundsSwitch(_ sender: UISwitch) {
         
@@ -344,9 +345,16 @@ class ViewController: UIViewController {
     
     @IBOutlet var blackKeyButtons: [UIButton]!
     
+    var whiteKeyButtonIndex = 0
     
     @IBAction func whiteKeyButtonPressed(_ sender: UIButton) {
         print(sender.tag)
+        
+        whiteKeyButtonIndex = sender.tag
+        
+        let nameOfKeyToHighlight = onlyWhiteKeys[whiteKeyButtonIndex - 1]
+        
+        pianoKeyImage.image = UIImage(named: "\(nameOfKeyToHighlight)_pressed")
         
         let currentUserAnswerComplete = onlyWhiteKeys[sender.tag - 1]
         currentUserAnswer = String(currentUserAnswerComplete[currentUserAnswerComplete.startIndex])
@@ -354,6 +362,8 @@ class ViewController: UIViewController {
         print("currentUserAnswer: \(currentUserAnswer)")
 //        currentNoteButton = noteButtonB
 //        setCurrentNoteXBounds()
+        
+        checkAnswer()
     }
     
     @IBAction func blackKeyButtonPressed(_ sender: UIButton) {
@@ -366,6 +376,8 @@ class ViewController: UIViewController {
         currentUserAnswer = String(currentUserAnswerComplete[currentUserAnswerComplete.startIndex...currentUserAnswerComplete.index(after: currentUserAnswerComplete.startIndex)])
         
         print("currentUserAnswer: \(currentUserAnswer)")
+        
+        checkAnswer()
     }
     
     
@@ -553,16 +565,21 @@ class ViewController: UIViewController {
             switch accidentalOrNot {
             case .neither:
                 currentNote = basicNoteNames[randomNewNoteIndex]
+                currentAccidental = .neither
             case .sharp:
                 currentNote = basicNoteNames[randomNewNoteIndex] + "#"
                 sharpsOutletCollection[randomNewNoteIndex].setImage(UIImage(named: "sharp_shown"), for: UIControl.State.normal)
+                currentAccidental = .sharp
             case .flat:
                 currentNote = basicNoteNames[randomNewNoteIndex] + "b"
                 flatsOutletCollection[randomNewNoteIndex].setImage(UIImage(named: "flat_shown"), for: UIControl.State.normal)
+                currentAccidental = .flat
             }
             
             
             print("current note should be: \(currentNote)")
+            
+            currentCorrectAnswer = currentNote
             
            
             let buttonImageName = "\(currentNote[currentNote.startIndex])_shown"
@@ -583,47 +600,67 @@ class ViewController: UIViewController {
         // get enharmonic equivalent
         let currentEnharmonic: String? = getEnharmonic(currentNote: currentUserAnswer)
         
+        print("currentEnharmonic: \(currentEnharmonic)")
+        
         // right answer
         if currentUserAnswer == currentCorrectAnswer || currentEnharmonic == currentCorrectAnswer {
             
-            // if dealing with sharp or flat, light up regular letter + #/b symbol
-            if currentUserAnswer.count == 2 {
+            print("CORRECT")
+            
+            switch currentGameMode {
                 
-                switch currentAccidental {
+            case .A:
+                // if dealing with sharp or flat, light up regular letter + #/b symbol
+                if currentUserAnswer.count == 2 {
                     
-                case .flat:
-                    for flat in flatsOutletCollection {
-                        if flat.tag == currentNoteButton.tag {
-                            flat.setImage(UIImage(named: "flat_right"), for: .normal)
+                    switch currentAccidental {
+                        
+                    case .flat:
+                        for flat in flatsOutletCollection {
+                            if flat.tag == currentNoteButton.tag {
+                                flat.setImage(UIImage(named: "flat_right"), for: .normal)
+                            }
                         }
-                    }
-                case .sharp:
-                    for sharp in sharpsOutletCollection {
-                        if sharp.tag == currentNoteButton.tag {
-                            sharp.setImage(UIImage(named: "sharp_right"), for: .normal)
+                    case .sharp:
+                        for sharp in sharpsOutletCollection {
+                            if sharp.tag == currentNoteButton.tag {
+                                sharp.setImage(UIImage(named: "sharp_right"), for: .normal)
+                            }
                         }
+                    case .neither:
+                        break
                     }
-                case .neither:
-                    break
+                    
                 }
                 
+                // deal w/ enharmonics (user answers Cb, correct answer is B)
+                if currentEnharmonic == currentCorrectAnswer {
+                    
+                    // change the correct note buttons' colors
+                    imageName = "\(currentUserAnswer[currentUserAnswer.startIndex])_right"
+                    
+                } else {
+                    
+                    imageName = "\(currentCorrectAnswer[currentCorrectAnswer.startIndex])_right"
+                    
+                }
+                
+                print("imageName = \(imageName)")
+                let image = UIImage(named: imageName)
+                currentNoteButton.setImage(image, for: UIControl.State.normal)
+                
+            case .B:
+                // turn the key user pressed to green
+                // (identify whether it's a white or black key)
+                print("CORRECT! CASE .B")
+                
+                let nameOfKeyToHighlight = onlyWhiteKeys[whiteKeyButtonIndex - 1]
+                
+                pianoKeyImage.image = UIImage(named: "\(nameOfKeyToHighlight)_right")
+                
             }
             
-            // deal w/ enharmonics (user answers Cb, correct answer is B)
-            if currentEnharmonic == currentCorrectAnswer {
-                
-                // change the correct note buttons' colors
-                imageName = "\(currentUserAnswer[currentUserAnswer.startIndex])_right"
-                
-            } else {
-        
-                imageName = "\(currentCorrectAnswer[currentCorrectAnswer.startIndex])_right"
-
-            }
             
-            print("imageName = \(imageName)")
-            let image = UIImage(named: imageName)
-            currentNoteButton.setImage(image, for: UIControl.State.normal)
             
             // play sound
             if soundsEnabled {
