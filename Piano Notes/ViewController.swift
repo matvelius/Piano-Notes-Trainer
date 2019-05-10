@@ -348,7 +348,9 @@ class ViewController: UIViewController {
     @IBAction func whiteKeyButtonPressed(_ sender: UIButton) {
         print(sender.tag)
         
-        currentUserAnswer = onlyWhiteKeys[sender.tag - 1]
+        let currentUserAnswerComplete = onlyWhiteKeys[sender.tag - 1]
+        currentUserAnswer = String(currentUserAnswerComplete[currentUserAnswerComplete.startIndex])
+//        currentCorrectAnswer = String(currentNote[currentNote.startIndex...currentNote.index(after: currentNote.startIndex)])
         print("currentUserAnswer: \(currentUserAnswer)")
 //        currentNoteButton = noteButtonB
 //        setCurrentNoteXBounds()
@@ -359,7 +361,10 @@ class ViewController: UIViewController {
         
         guard let keyIndex = Int(sender.accessibilityIdentifier!) else { return }
         
-        currentUserAnswer = onlyBlackKeys[keyIndex]
+        let currentUserAnswerComplete = onlyBlackKeys[keyIndex]
+        
+        currentUserAnswer = String(currentUserAnswerComplete[currentUserAnswerComplete.startIndex...currentUserAnswerComplete.index(after: currentUserAnswerComplete.startIndex)])
+        
         print("currentUserAnswer: \(currentUserAnswer)")
     }
     
