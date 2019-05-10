@@ -334,6 +334,8 @@ class ViewController: UIViewController {
     // placeholder variable for last-selected random number
     var lastRandomNumber: Int = -1
     var randomNewNoteIndex = Int.random(in: 0...15)
+    var lastAccidentalOrNotIndex: Int = -1
+    var accidentalOrNotIndex = Int.random(in: 0...2)
     
     // SHOULD I ANIMATE THE BUTTON SIZE?
     @IBOutlet weak var noteButtonAHeight: NSLayoutConstraint!
@@ -365,6 +367,10 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         
         super.viewDidLoad()
+        
+        // sort sharps & flats outlet collections
+        sharpsOutletCollection = sharpsOutletCollection.sorted(by: { $0.tag < $1.tag })
+        flatsOutletCollection = flatsOutletCollection.sorted(by: { $0.tag < $1.tag })
         
         ////////////////////////////////////////////
         //////// LINE UP BLACK KEY BUTTONS /////////
@@ -531,25 +537,37 @@ class ViewController: UIViewController {
                 randomNewNoteIndex = Int.random(in: 0...6)
             }
             
-            currentNote = basicNoteNames[randomNewNoteIndex]
+            accidentalOrNotIndex = Int.random(in: 0...2)
+            
+            while accidentalOrNotIndex == lastAccidentalOrNotIndex {
+                accidentalOrNotIndex = Int.random(in: 0...2)
+            }
+            
+            let accidentalOrNot = Accidentals.allCases[accidentalOrNotIndex]
+
+            switch accidentalOrNot {
+            case .neither:
+                currentNote = basicNoteNames[randomNewNoteIndex]
+            case .sharp:
+                currentNote = basicNoteNames[randomNewNoteIndex] + "#"
+                sharpsOutletCollection[randomNewNoteIndex].setImage(UIImage(named: "sharp_shown"), for: UIControl.State.normal)
+            case .flat:
+                currentNote = basicNoteNames[randomNewNoteIndex] + "b"
+                flatsOutletCollection[randomNewNoteIndex].setImage(UIImage(named: "flat_shown"), for: UIControl.State.normal)
+            }
+            
             
             print("current note should be: \(currentNote)")
             
-//            print("\(currentCorrectAnswer[currentCorrectAnswer.startIndex])_shown")
            
-            let imageName = "\(currentNote)_shown"
-            
-            guard let image = UIImage(named: imageName) else { return }
-            
-            print(image)
-            
+            let buttonImageName = "\(currentNote[currentNote.startIndex])_shown"
+            guard let image = UIImage(named: buttonImageName) else { return }
             noteButtonsOutletCollection[randomNewNoteIndex].setImage(image, for: UIControl.State.normal)
-//            currentNoteButton.setImage(image, for: UIControl.State.normal)
             
         }
         
         lastRandomNumber = randomNewNoteIndex
-        
+        lastAccidentalOrNotIndex = accidentalOrNotIndex
     }
     
     func checkAnswer() {
