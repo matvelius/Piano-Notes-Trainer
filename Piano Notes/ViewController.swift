@@ -346,18 +346,18 @@ class ViewController: UIViewController {
     @IBOutlet var blackKeyButtons: [UIButton]!
     
     var whiteKeyButtonIndex = 0
+    var nameOfKeyToHighlight = ""
     
     @IBAction func whiteKeyButtonPressed(_ sender: UIButton) {
-        print(sender.tag)
+        print("white key sender.tag: \(sender.tag)")
         
         whiteKeyButtonIndex = sender.tag
         
-        let nameOfKeyToHighlight = onlyWhiteKeys[whiteKeyButtonIndex - 1]
+        nameOfKeyToHighlight = onlyWhiteKeys[whiteKeyButtonIndex - 1]
         
         pianoKeyImage.image = UIImage(named: "\(nameOfKeyToHighlight)_pressed")
         
-        let currentUserAnswerComplete = onlyWhiteKeys[sender.tag - 1]
-        currentUserAnswer = String(currentUserAnswerComplete[currentUserAnswerComplete.startIndex])
+        currentUserAnswer = String(nameOfKeyToHighlight[nameOfKeyToHighlight.startIndex])
 //        currentCorrectAnswer = String(currentNote[currentNote.startIndex...currentNote.index(after: currentNote.startIndex)])
         print("currentUserAnswer: \(currentUserAnswer)")
 //        currentNoteButton = noteButtonB
@@ -371,9 +371,9 @@ class ViewController: UIViewController {
         
         guard let keyIndex = Int(sender.accessibilityIdentifier!) else { return }
         
-        let currentUserAnswerComplete = onlyBlackKeys[keyIndex]
+        let nameOfKeyToHighlight = onlyBlackKeys[keyIndex]
         
-        currentUserAnswer = String(currentUserAnswerComplete[currentUserAnswerComplete.startIndex...currentUserAnswerComplete.index(after: currentUserAnswerComplete.startIndex)])
+        currentUserAnswer = String(nameOfKeyToHighlight[nameOfKeyToHighlight.startIndex...nameOfKeyToHighlight.index(after: nameOfKeyToHighlight.startIndex)])
         
         print("currentUserAnswer: \(currentUserAnswer)")
         
@@ -539,7 +539,8 @@ class ViewController: UIViewController {
             print("currentCorrectAnswer is \(currentCorrectAnswer)")
             
             pianoKeyImage.image = UIImage(named: "\(currentNote)_shown")
-            
+           
+        // MODE B
         } else {
             
             pianoKeyImage.image = nil
@@ -554,13 +555,21 @@ class ViewController: UIViewController {
                 randomNewNoteIndex = Int.random(in: 0...6)
             }
             
-            accidentalOrNotIndex = Int.random(in: 0...2)
+            var accidentalOrNot: Accidentals = .neither
             
-            while accidentalOrNotIndex == lastAccidentalOrNotIndex {
+            if allNoteChoicesEnabled || onlyBlackKeysEnabled {
+            
                 accidentalOrNotIndex = Int.random(in: 0...2)
+                
+                while accidentalOrNotIndex == lastAccidentalOrNotIndex {
+                    accidentalOrNotIndex = Int.random(in: 0...2)
+                }
+                
+                accidentalOrNot = Accidentals.allCases[accidentalOrNotIndex]
+            
             }
             
-            let accidentalOrNot = Accidentals.allCases[accidentalOrNotIndex]
+            
 
             switch accidentalOrNot {
             case .neither:
@@ -654,7 +663,7 @@ class ViewController: UIViewController {
                 // (identify whether it's a white or black key)
                 print("CORRECT! CASE .B")
                 
-                let nameOfKeyToHighlight = onlyWhiteKeys[whiteKeyButtonIndex - 1]
+//                nameOfKeyToHighlight = onlyWhiteKeys[whiteKeyButtonIndex - 1]
                 
                 pianoKeyImage.image = UIImage(named: "\(nameOfKeyToHighlight)_right")
                 
@@ -708,6 +717,8 @@ class ViewController: UIViewController {
             
         // wrong answer
         } else {
+            
+            print("wrong!")
             
             // show result (red button)
             // if dealing with sharp or flat, light up regular letter + #/b symbol
