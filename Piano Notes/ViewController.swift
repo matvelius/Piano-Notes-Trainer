@@ -732,6 +732,12 @@ class ViewController: UIViewController {
                 self.enableButtons()
             })
             
+            if !notesAlreadyAttempted.isEmpty {
+                for subview in self.pianoKeyImage.subviews {
+                    subview.removeFromSuperview()
+                }
+            }
+            
             notesAlreadyAttempted = [""]
             
         // wrong answer
