@@ -345,7 +345,7 @@ class ViewController: UIViewController {
     
     
     @IBAction func whiteKeyButtonTouched(_ sender: UIButton) {
-        print("white key sender.tag: \(sender.tag)")
+        print("white key touched; sender.tag: \(sender.tag)")
         
         whiteKeyButtonIndex = sender.tag
         
@@ -356,12 +356,21 @@ class ViewController: UIViewController {
     
     // IMPLEMENT TOUCH CANCEL, OR TOUCH DRAG/UP OUTSIDE?
     
+    
+    @IBAction func touchDraggedOutsideKeyButton(_ sender: UIButton) {
+        pianoKeyImage.image = nil
+    }
+
+    
+    // LOCK SCREEN WHEN ANSWER CORRECT!
+    
+    
     @IBAction func whiteKeyButtonPressed(_ sender: UIButton) {
         print("white key sender.tag: \(sender.tag)")
         
         whiteKeyButtonIndex = sender.tag
         nameOfKeyToHighlight = onlyWhiteKeys[whiteKeyButtonIndex - 1]
-        pianoKeyImage.image = UIImage(named: "\(nameOfKeyToHighlight)_pressed")
+//        pianoKeyImage.image = UIImage(named: "\(nameOfKeyToHighlight)_pressed")
         currentUserAnswer = String(nameOfKeyToHighlight[nameOfKeyToHighlight.startIndex])
 //        currentCorrectAnswer = String(currentNote[currentNote.startIndex...currentNote.index(after: currentNote.startIndex)])
         print("currentUserAnswer: \(currentUserAnswer)")
@@ -371,12 +380,23 @@ class ViewController: UIViewController {
         checkAnswer()
     }
     
+    @IBAction func blackKeyButtonTouched(_ sender: UIButton) {
+        
+        guard let blackKeyButtonIndex = Int(sender.accessibilityIdentifier!) else { return }
+        
+        print("black key touched; blackKeyButtonIndex: \(blackKeyButtonIndex)")
+        nameOfKeyToHighlight = onlyBlackKeys[blackKeyButtonIndex]
+        pianoKeyImage.image = UIImage(named: "\(nameOfKeyToHighlight)_pressed")
+        
+    }
+    
+    
     @IBAction func blackKeyButtonPressed(_ sender: UIButton) {
 //        print(sender.accessibilityIdentifier)
         
         guard let blackKeyButtonIndex = Int(sender.accessibilityIdentifier!) else { return }
         nameOfKeyToHighlight = onlyBlackKeys[blackKeyButtonIndex]
-        pianoKeyImage.image = UIImage(named: "\(nameOfKeyToHighlight)_pressed")
+//        pianoKeyImage.image = UIImage(named: "\(nameOfKeyToHighlight)_pressed")
         
         currentUserAnswer = String(nameOfKeyToHighlight[nameOfKeyToHighlight.startIndex...nameOfKeyToHighlight.index(after: nameOfKeyToHighlight.startIndex)])
         
