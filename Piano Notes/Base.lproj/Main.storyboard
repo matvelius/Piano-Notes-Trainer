@@ -702,6 +702,7 @@
                                         </constraints>
                                         <connections>
                                             <action selector="blackKeyButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="l3C-wP-qKU"/>
+                                            <action selector="blackKeyButtonTouched:" destination="BYZ-38-t0r" eventType="touchDragInside" id="CbM-S9-xs9"/>
                                             <action selector="blackKeyButtonTouched:" destination="BYZ-38-t0r" eventType="touchDown" id="Ebe-CW-mmJ"/>
                                             <action selector="touchDraggedOutsideKeyButton:" destination="BYZ-38-t0r" eventType="touchDragOutside" id="Hbs-Sa-Unm"/>
                                         </connections>
@@ -715,6 +716,7 @@
                                         </constraints>
                                         <connections>
                                             <action selector="blackKeyButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="CcF-n1-h1y"/>
+                                            <action selector="blackKeyButtonTouched:" destination="BYZ-38-t0r" eventType="touchDragInside" id="jG1-w7-oeh"/>
                                             <action selector="blackKeyButtonTouched:" destination="BYZ-38-t0r" eventType="touchDown" id="zZf-Fn-yFb"/>
                                             <action selector="touchDraggedOutsideKeyButton:" destination="BYZ-38-t0r" eventType="touchDragOutside" id="KQZ-iW-SJ6"/>
                                         </connections>
@@ -728,6 +730,7 @@
                                         </constraints>
                                         <connections>
                                             <action selector="blackKeyButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="SiF-Yv-mM7"/>
+                                            <action selector="blackKeyButtonTouched:" destination="BYZ-38-t0r" eventType="touchDragInside" id="IEP-hF-kYQ"/>
                                             <action selector="blackKeyButtonTouched:" destination="BYZ-38-t0r" eventType="touchDown" id="NNH-Il-2NS"/>
                                             <action selector="touchDraggedOutsideKeyButton:" destination="BYZ-38-t0r" eventType="touchDragOutside" id="QR5-3e-mCz"/>
                                         </connections>
@@ -752,6 +755,7 @@
                                         <connections>
                                             <action selector="blackKeyButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rka-XU-hyF"/>
                                             <action selector="blackKeyButtonTouched:" destination="BYZ-38-t0r" eventType="touchDown" id="65T-s4-kCW"/>
+                                            <action selector="blackKeyButtonTouched:" destination="BYZ-38-t0r" eventType="touchDragInside" id="Do3-aF-xYa"/>
                                             <action selector="touchDraggedOutsideKeyButton:" destination="BYZ-38-t0r" eventType="touchDragOutside" id="B05-Z7-1TE"/>
                                         </connections>
                                     </button>
@@ -764,6 +768,7 @@
                                         </constraints>
                                         <connections>
                                             <action selector="blackKeyButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="k9w-TE-Yx3"/>
+                                            <action selector="blackKeyButtonTouched:" destination="BYZ-38-t0r" eventType="touchDragInside" id="b7q-ND-2XP"/>
                                             <action selector="blackKeyButtonTouched:" destination="BYZ-38-t0r" eventType="touchDown" id="pCl-y3-8vN"/>
                                             <action selector="touchDraggedOutsideKeyButton:" destination="BYZ-38-t0r" eventType="touchDragOutside" id="HnZ-5n-MOy"/>
                                         </connections>
@@ -788,6 +793,7 @@
                                         <connections>
                                             <action selector="blackKeyButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tm9-ih-8jc"/>
                                             <action selector="blackKeyButtonTouched:" destination="BYZ-38-t0r" eventType="touchDown" id="Rew-up-6cd"/>
+                                            <action selector="blackKeyButtonTouched:" destination="BYZ-38-t0r" eventType="touchDragInside" id="iTO-uw-8Gc"/>
                                             <action selector="touchDraggedOutsideKeyButton:" destination="BYZ-38-t0r" eventType="touchDragOutside" id="F7P-je-vNC"/>
                                         </connections>
                                     </button>
@@ -800,6 +806,7 @@
                                         </constraints>
                                         <connections>
                                             <action selector="blackKeyButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mQX-Ii-JYc"/>
+                                            <action selector="blackKeyButtonTouched:" destination="BYZ-38-t0r" eventType="touchDragInside" id="s8u-GP-M9Q"/>
                                             <action selector="blackKeyButtonTouched:" destination="BYZ-38-t0r" eventType="touchDown" id="sbU-e9-waN"/>
                                             <action selector="touchDraggedOutsideKeyButton:" destination="BYZ-38-t0r" eventType="touchDragOutside" id="7WS-hm-QNT"/>
                                         </connections>
@@ -813,6 +820,7 @@
                                         </constraints>
                                         <connections>
                                             <action selector="blackKeyButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RFt-Vu-IPI"/>
+                                            <action selector="blackKeyButtonTouched:" destination="BYZ-38-t0r" eventType="touchDragInside" id="6sx-hq-CPk"/>
                                             <action selector="blackKeyButtonTouched:" destination="BYZ-38-t0r" eventType="touchDown" id="bxf-Vb-LG6"/>
                                             <action selector="touchDraggedOutsideKeyButton:" destination="BYZ-38-t0r" eventType="touchDragOutside" id="aQa-ES-vTh"/>
                                         </connections>
@@ -837,6 +845,7 @@
                                         <connections>
                                             <action selector="blackKeyButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eT4-o7-GH9"/>
                                             <action selector="blackKeyButtonTouched:" destination="BYZ-38-t0r" eventType="touchDown" id="2be-UK-5LX"/>
+                                            <action selector="blackKeyButtonTouched:" destination="BYZ-38-t0r" eventType="touchDragInside" id="HBa-PL-1RI"/>
                                             <action selector="touchDraggedOutsideKeyButton:" destination="BYZ-38-t0r" eventType="touchDragOutside" id="CaJ-OD-hI4"/>
                                         </connections>
                                     </button>
@@ -849,6 +858,7 @@
                                         </constraints>
                                         <connections>
                                             <action selector="blackKeyButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Xpb-Ed-1hg"/>
+                                            <action selector="blackKeyButtonTouched:" destination="BYZ-38-t0r" eventType="touchDragInside" id="BHe-4J-kwW"/>
                                             <action selector="blackKeyButtonTouched:" destination="BYZ-38-t0r" eventType="touchDown" id="iVV-a1-mP4"/>
                                             <action selector="touchDraggedOutsideKeyButton:" destination="BYZ-38-t0r" eventType="touchDragOutside" id="1Cd-Oj-s13"/>
                                         </connections>
@@ -872,6 +882,7 @@
                                         </constraints>
                                         <connections>
                                             <action selector="blackKeyButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="g7P-et-uJG"/>
+                                            <action selector="blackKeyButtonTouched:" destination="BYZ-38-t0r" eventType="touchDragInside" id="mlj-4k-qdF"/>
                                             <action selector="blackKeyButtonTouched:" destination="BYZ-38-t0r" eventType="touchDown" id="zvG-g2-RGF"/>
                                             <action selector="touchDraggedOutsideKeyButton:" destination="BYZ-38-t0r" eventType="touchDragOutside" id="gfy-qd-AhK"/>
                                         </connections>
@@ -885,6 +896,7 @@
                                         </constraints>
                                         <connections>
                                             <action selector="blackKeyButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="oxN-kP-zDt"/>
+                                            <action selector="blackKeyButtonTouched:" destination="BYZ-38-t0r" eventType="touchDragInside" id="ATh-Yw-8Ua"/>
                                             <action selector="blackKeyButtonTouched:" destination="BYZ-38-t0r" eventType="touchDown" id="f7S-dw-LFZ"/>
                                             <action selector="touchDraggedOutsideKeyButton:" destination="BYZ-38-t0r" eventType="touchDragOutside" id="4GS-D3-svN"/>
                                         </connections>
@@ -898,6 +910,7 @@
                                         </constraints>
                                         <connections>
                                             <action selector="blackKeyButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Yg5-bA-TbU"/>
+                                            <action selector="blackKeyButtonTouched:" destination="BYZ-38-t0r" eventType="touchDragInside" id="6Fl-Fi-BOL"/>
                                             <action selector="blackKeyButtonTouched:" destination="BYZ-38-t0r" eventType="touchDown" id="xNT-AT-iOV"/>
                                             <action selector="touchDraggedOutsideKeyButton:" destination="BYZ-38-t0r" eventType="touchDragOutside" id="e9p-Ad-CU1"/>
                                         </connections>
@@ -929,6 +942,7 @@
                                         <connections>
                                             <action selector="touchDraggedOutsideKeyButton:" destination="BYZ-38-t0r" eventType="touchDragOutside" id="BqZ-6r-k5P"/>
                                             <action selector="whiteKeyButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="OfY-hb-0Qq"/>
+                                            <action selector="whiteKeyButtonTouched:" destination="BYZ-38-t0r" eventType="touchDragInside" id="5JH-I8-qXs"/>
                                             <action selector="whiteKeyButtonTouched:" destination="BYZ-38-t0r" eventType="touchDown" id="75P-5C-y2X"/>
                                         </connections>
                                     </button>
@@ -942,6 +956,7 @@
                                             <action selector="touchDraggedOutsideKeyButton:" destination="BYZ-38-t0r" eventType="touchDragOutside" id="egl-j5-3ye"/>
                                             <action selector="whiteKeyButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ukC-Fa-BnP"/>
                                             <action selector="whiteKeyButtonTouched:" destination="BYZ-38-t0r" eventType="touchDown" id="kaw-u7-sTd"/>
+                                            <action selector="whiteKeyButtonTouched:" destination="BYZ-38-t0r" eventType="touchDragInside" id="ztC-yM-vNi"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HAJ-0h-ee4">
@@ -954,6 +969,7 @@
                                             <action selector="touchDraggedOutsideKeyButton:" destination="BYZ-38-t0r" eventType="touchDragOutside" id="8h7-Pp-EYP"/>
                                             <action selector="whiteKeyButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dgT-ET-iAY"/>
                                             <action selector="whiteKeyButtonTouched:" destination="BYZ-38-t0r" eventType="touchDown" id="t3t-NC-ZvU"/>
+                                            <action selector="whiteKeyButtonTouched:" destination="BYZ-38-t0r" eventType="touchDragInside" id="vH6-T5-Ezy"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X82-vR-Ejw">
@@ -965,6 +981,7 @@
                                         <connections>
                                             <action selector="touchDraggedOutsideKeyButton:" destination="BYZ-38-t0r" eventType="touchDragOutside" id="pNS-ui-mK6"/>
                                             <action selector="whiteKeyButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qrz-Ux-BLB"/>
+                                            <action selector="whiteKeyButtonTouched:" destination="BYZ-38-t0r" eventType="touchDragInside" id="3z7-ej-QxF"/>
                                             <action selector="whiteKeyButtonTouched:" destination="BYZ-38-t0r" eventType="touchDown" id="tWS-Po-xhA"/>
                                         </connections>
                                     </button>
@@ -977,6 +994,7 @@
                                         <connections>
                                             <action selector="touchDraggedOutsideKeyButton:" destination="BYZ-38-t0r" eventType="touchDragOutside" id="F1v-9L-ts0"/>
                                             <action selector="whiteKeyButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Vaj-sA-aqu"/>
+                                            <action selector="whiteKeyButtonTouched:" destination="BYZ-38-t0r" eventType="touchDragInside" id="GKt-Xe-5yK"/>
                                             <action selector="whiteKeyButtonTouched:" destination="BYZ-38-t0r" eventType="touchDown" id="NSs-gn-2NT"/>
                                         </connections>
                                     </button>
@@ -990,6 +1008,7 @@
                                             <action selector="touchDraggedOutsideKeyButton:" destination="BYZ-38-t0r" eventType="touchDragOutside" id="JbO-XJ-L1t"/>
                                             <action selector="whiteKeyButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="To8-2v-IaB"/>
                                             <action selector="whiteKeyButtonTouched:" destination="BYZ-38-t0r" eventType="touchDown" id="7yf-LJ-agP"/>
+                                            <action selector="whiteKeyButtonTouched:" destination="BYZ-38-t0r" eventType="touchDragInside" id="dTl-Ch-RwI"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9vJ-a0-t2M">
@@ -1001,6 +1020,7 @@
                                         <connections>
                                             <action selector="touchDraggedOutsideKeyButton:" destination="BYZ-38-t0r" eventType="touchDragOutside" id="xRW-aK-cUO"/>
                                             <action selector="whiteKeyButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JAa-eU-RVS"/>
+                                            <action selector="whiteKeyButtonTouched:" destination="BYZ-38-t0r" eventType="touchDragInside" id="jPB-Y3-IGP"/>
                                             <action selector="whiteKeyButtonTouched:" destination="BYZ-38-t0r" eventType="touchDown" id="o6M-DV-qf4"/>
                                         </connections>
                                     </button>
@@ -1014,6 +1034,7 @@
                                             <action selector="touchDraggedOutsideKeyButton:" destination="BYZ-38-t0r" eventType="touchDragOutside" id="UHB-kx-y9s"/>
                                             <action selector="whiteKeyButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6Y2-wC-hXW"/>
                                             <action selector="whiteKeyButtonTouched:" destination="BYZ-38-t0r" eventType="touchDown" id="1vu-2p-VvC"/>
+                                            <action selector="whiteKeyButtonTouched:" destination="BYZ-38-t0r" eventType="touchDragInside" id="Cga-Kp-6en"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w2z-MX-O9d">
@@ -1026,6 +1047,7 @@
                                             <action selector="touchDraggedOutsideKeyButton:" destination="BYZ-38-t0r" eventType="touchDragOutside" id="maH-rL-Lw8"/>
                                             <action selector="whiteKeyButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="SQ7-lg-Oad"/>
                                             <action selector="whiteKeyButtonTouched:" destination="BYZ-38-t0r" eventType="touchDown" id="Kjd-Z0-xbb"/>
+                                            <action selector="whiteKeyButtonTouched:" destination="BYZ-38-t0r" eventType="touchDragInside" id="yLj-oi-giV"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Pu-M8-v7R">
@@ -1037,6 +1059,7 @@
                                         <connections>
                                             <action selector="touchDraggedOutsideKeyButton:" destination="BYZ-38-t0r" eventType="touchDragOutside" id="1ga-gc-Yge"/>
                                             <action selector="whiteKeyButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GDc-la-3mS"/>
+                                            <action selector="whiteKeyButtonTouched:" destination="BYZ-38-t0r" eventType="touchDragInside" id="7zg-5Z-PVV"/>
                                             <action selector="whiteKeyButtonTouched:" destination="BYZ-38-t0r" eventType="touchDown" id="v5U-Mz-OBZ"/>
                                         </connections>
                                     </button>
@@ -1049,6 +1072,7 @@
                                         <connections>
                                             <action selector="touchDraggedOutsideKeyButton:" destination="BYZ-38-t0r" eventType="touchDragOutside" id="50f-6f-Wr5"/>
                                             <action selector="whiteKeyButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6D7-Yz-KDZ"/>
+                                            <action selector="whiteKeyButtonTouched:" destination="BYZ-38-t0r" eventType="touchDragInside" id="ebe-Q3-5IQ"/>
                                             <action selector="whiteKeyButtonTouched:" destination="BYZ-38-t0r" eventType="touchDown" id="ow6-TS-CKv"/>
                                         </connections>
                                     </button>
@@ -1061,6 +1085,7 @@
                                         <connections>
                                             <action selector="touchDraggedOutsideKeyButton:" destination="BYZ-38-t0r" eventType="touchDragOutside" id="lWm-gv-V0N"/>
                                             <action selector="whiteKeyButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="h6q-yM-URn"/>
+                                            <action selector="whiteKeyButtonTouched:" destination="BYZ-38-t0r" eventType="touchDragInside" id="cOb-ic-ej3"/>
                                             <action selector="whiteKeyButtonTouched:" destination="BYZ-38-t0r" eventType="touchDown" id="suq-b8-MRh"/>
                                         </connections>
                                     </button>
@@ -1074,6 +1099,7 @@
                                             <action selector="touchDraggedOutsideKeyButton:" destination="BYZ-38-t0r" eventType="touchDragOutside" id="6fe-zU-zI8"/>
                                             <action selector="whiteKeyButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0GI-0K-xzq"/>
                                             <action selector="whiteKeyButtonTouched:" destination="BYZ-38-t0r" eventType="touchDown" id="Ubw-qB-tDj"/>
+                                            <action selector="whiteKeyButtonTouched:" destination="BYZ-38-t0r" eventType="touchDragInside" id="iDk-0a-CW3"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="13" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ktx-fs-y1h">
@@ -1085,6 +1111,7 @@
                                         <connections>
                                             <action selector="touchDraggedOutsideKeyButton:" destination="BYZ-38-t0r" eventType="touchDragOutside" id="5By-A6-xKT"/>
                                             <action selector="whiteKeyButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4YW-xt-3pv"/>
+                                            <action selector="whiteKeyButtonTouched:" destination="BYZ-38-t0r" eventType="touchDragInside" id="IMr-ZL-aPC"/>
                                             <action selector="whiteKeyButtonTouched:" destination="BYZ-38-t0r" eventType="touchDown" id="tFe-g2-jye"/>
                                         </connections>
                                     </button>
@@ -1098,6 +1125,7 @@
                                             <action selector="touchDraggedOutsideKeyButton:" destination="BYZ-38-t0r" eventType="touchDragOutside" id="fwl-1G-MU4"/>
                                             <action selector="whiteKeyButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RNb-V0-1bN"/>
                                             <action selector="whiteKeyButtonTouched:" destination="BYZ-38-t0r" eventType="touchDown" id="6LP-6J-d2I"/>
+                                            <action selector="whiteKeyButtonTouched:" destination="BYZ-38-t0r" eventType="touchDragInside" id="fXs-gg-l4M"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="15" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Giw-Xu-hZn">
@@ -1110,6 +1138,7 @@
                                             <action selector="touchDraggedOutsideKeyButton:" destination="BYZ-38-t0r" eventType="touchDragOutside" id="V9g-AW-qpV"/>
                                             <action selector="whiteKeyButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pCx-1E-TAb"/>
                                             <action selector="whiteKeyButtonTouched:" destination="BYZ-38-t0r" eventType="touchDown" id="97L-WZ-fo1"/>
+                                            <action selector="whiteKeyButtonTouched:" destination="BYZ-38-t0r" eventType="touchDragInside" id="Bul-C9-DsA"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="16" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j5R-ok-GDh">
@@ -1121,6 +1150,7 @@
                                         <connections>
                                             <action selector="touchDraggedOutsideKeyButton:" destination="BYZ-38-t0r" eventType="touchDragOutside" id="TCb-Cn-kDM"/>
                                             <action selector="whiteKeyButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="AXb-6u-ify"/>
+                                            <action selector="whiteKeyButtonTouched:" destination="BYZ-38-t0r" eventType="touchDragInside" id="ZA8-LW-0f9"/>
                                             <action selector="whiteKeyButtonTouched:" destination="BYZ-38-t0r" eventType="touchDown" id="vPX-Zw-GGs"/>
                                         </connections>
                                     </button>
@@ -1134,6 +1164,7 @@
                                             <action selector="touchDraggedOutsideKeyButton:" destination="BYZ-38-t0r" eventType="touchDragOutside" id="kCE-WD-eMX"/>
                                             <action selector="whiteKeyButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="NN4-ZU-eUn"/>
                                             <action selector="whiteKeyButtonTouched:" destination="BYZ-38-t0r" eventType="touchDown" id="b5A-Ar-dnx"/>
+                                            <action selector="whiteKeyButtonTouched:" destination="BYZ-38-t0r" eventType="touchDragInside" id="oCx-u4-bQe"/>
                                         </connections>
                                     </button>
                                 </subviews>
