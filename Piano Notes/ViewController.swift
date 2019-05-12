@@ -360,11 +360,8 @@ class ViewController: UIViewController {
         print("white key sender.tag: \(sender.tag)")
         
         whiteKeyButtonIndex = sender.tag
-        
         nameOfKeyToHighlight = onlyWhiteKeys[whiteKeyButtonIndex - 1]
-        
         pianoKeyImage.image = UIImage(named: "\(nameOfKeyToHighlight)_pressed")
-        
         currentUserAnswer = String(nameOfKeyToHighlight[nameOfKeyToHighlight.startIndex])
 //        currentCorrectAnswer = String(currentNote[currentNote.startIndex...currentNote.index(after: currentNote.startIndex)])
         print("currentUserAnswer: \(currentUserAnswer)")
@@ -377,9 +374,9 @@ class ViewController: UIViewController {
     @IBAction func blackKeyButtonPressed(_ sender: UIButton) {
 //        print(sender.accessibilityIdentifier)
         
-        guard let keyIndex = Int(sender.accessibilityIdentifier!) else { return }
-        
-        let nameOfKeyToHighlight = onlyBlackKeys[keyIndex]
+        guard let blackKeyButtonIndex = Int(sender.accessibilityIdentifier!) else { return }
+        nameOfKeyToHighlight = onlyBlackKeys[blackKeyButtonIndex]
+        pianoKeyImage.image = UIImage(named: "\(nameOfKeyToHighlight)_pressed")
         
         currentUserAnswer = String(nameOfKeyToHighlight[nameOfKeyToHighlight.startIndex...nameOfKeyToHighlight.index(after: nameOfKeyToHighlight.startIndex)])
         
@@ -522,6 +519,14 @@ class ViewController: UIViewController {
     
     func generateNewNote() {
         
+        if !notesAlreadyAttempted.isEmpty {
+            for subview in self.pianoKeyImage.subviews {
+                subview.removeFromSuperview()
+            }
+        }
+        
+        notesAlreadyAttempted = [""]
+        
         if currentGameMode == .A {
         
             randomNewNoteIndex = Int.random(in: 0...randomNewNoteIndexUpperLimit)
@@ -552,11 +557,11 @@ class ViewController: UIViewController {
         // MODE B
         } else {
             
+            // am I even using this view?
             pianoKeyImage.image = nil
             disableButtons()
             disableSharps()
             disableFlats()
-            
             
             randomNewNoteIndex = Int.random(in: 0...6)
             
@@ -577,8 +582,6 @@ class ViewController: UIViewController {
                 accidentalOrNot = Accidentals.allCases[accidentalOrNotIndex]
             
             }
-            
-            
 
             switch accidentalOrNot {
             case .neither:
@@ -608,9 +611,10 @@ class ViewController: UIViewController {
         
         lastRandomNumber = randomNewNoteIndex
         lastAccidentalOrNotIndex = accidentalOrNotIndex
+        
     }
     
-    // for keeping track which piano keys have already been tried
+    // for keeping track of piano keys already tried
     var notesAlreadyAttempted = [String]()
     
     func checkAnswer() {
@@ -681,8 +685,6 @@ class ViewController: UIViewController {
                 
             }
             
-            // FIX SOUND NAME FOR MODE B
-            
             // play sound
             if soundsEnabled {
                 
@@ -699,13 +701,10 @@ class ViewController: UIViewController {
             disableButtons()
             
             // ANIMATING BUTTON SIZE ON CORRECT ANSWER:
-            
 //            noteButtonAHeight.constant = 130
 //
 //            UIView.animate(withDuration: 2.5) {
-//
 //                self.view.layoutIfNeeded()
-//
 //            }
             
 //            self.menuLeadingConstraint.constant = -460
@@ -731,14 +730,6 @@ class ViewController: UIViewController {
                 self.generateNewNote()
                 self.enableButtons()
             })
-            
-            if !notesAlreadyAttempted.isEmpty {
-                for subview in self.pianoKeyImage.subviews {
-                    subview.removeFromSuperview()
-                }
-            }
-            
-            notesAlreadyAttempted = [""]
             
         // wrong answer
         } else {
@@ -781,14 +772,14 @@ class ViewController: UIViewController {
             if currentGameMode == .A {
                 // color button red
                 imageName = "\(currentUserAnswer[currentUserAnswer.startIndex])_wrong"
-    //            imageName = "\(currentUserAnswer.startIndex)_wrong"
                 print("imageName is \(imageName)")
                 let image = UIImage(named: imageName)
                 currentNoteButton.setImage(image, for: UIControl.State.normal)
                 
+            // MODE B wrong answer
             } else {
                 
-                // ONLY ADD WRONG NOTE IMAGE IF IT HASN'T BEEN ADDED FOR THIS KEY YET (SO KEEP TRACK OF WRONG NOTE)
+                pianoKeyImage.image = nil
                 
                 if !notesAlreadyAttempted.contains(nameOfKeyToHighlight) {
                     
@@ -809,27 +800,6 @@ class ViewController: UIViewController {
                 
                 notesAlreadyAttempted.append(nameOfKeyToHighlight)
                 
-                // RESET THE PIANO KEYBOARD AT THE END!
-                
-//                wrongNoteImageView.frame = pianoKeyImage.frame
-//                let pianoKeyImageConstraints = pianoKeyImage.constraints
-//                wrongNoteImageView.addConstraint(pianoKeyImageConstraints)
-                
-//                let testView = UIView(frame: .zero)
-//                testView.translatesAutoresizingMaskIntoConstraints = false
-//                self.view.addSubview(testView)
-//                NSLayoutConstraint.activate([
-//                    testView.widthAnchor.constraint(equalToConstant: 64),
-//                    testView.widthAnchor.constraint(equalTo: testView.heightAnchor),
-//                    testView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
-//                    testView.centerYAnchor.constraint(equalTo: self.view.centerYAnchor),
-//                    ])
-//                self.testView = testView
-                
-                
-            
-//                pianoKeyImage.image = UIImage(named: "\(nameOfKeyToHighlight)_wrong")
-                // FIGURE OUT HOW TO DISPLAY MULTIPLE WRONG NOTES... PROGRAMMATICALLY ADD MORE IMAGES ON TOP OF ONE ANOTHER?
             }
                 
             // subtract a point
