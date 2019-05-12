@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="l1o-7Z-dlW">
     <device id="ipad12_9rounded" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
@@ -884,6 +884,7 @@
                                         </state>
                                         <connections>
                                             <action selector="whiteKeyButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="OfY-hb-0Qq"/>
+                                            <action selector="whiteKeyButtonTouched:" destination="BYZ-38-t0r" eventType="touchDown" id="75P-5C-y2X"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EK9-hD-XMY">
@@ -894,6 +895,7 @@
                                         </state>
                                         <connections>
                                             <action selector="whiteKeyButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ukC-Fa-BnP"/>
+                                            <action selector="whiteKeyButtonTouched:" destination="BYZ-38-t0r" eventType="touchDown" id="kaw-u7-sTd"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HAJ-0h-ee4">
@@ -904,6 +906,7 @@
                                         </state>
                                         <connections>
                                             <action selector="whiteKeyButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dgT-ET-iAY"/>
+                                            <action selector="whiteKeyButtonTouched:" destination="BYZ-38-t0r" eventType="touchDown" id="t3t-NC-ZvU"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X82-vR-Ejw">
@@ -914,6 +917,7 @@
                                         </state>
                                         <connections>
                                             <action selector="whiteKeyButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qrz-Ux-BLB"/>
+                                            <action selector="whiteKeyButtonTouched:" destination="BYZ-38-t0r" eventType="touchDown" id="tWS-Po-xhA"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bep-su-jKK">
@@ -924,6 +928,7 @@
                                         </state>
                                         <connections>
                                             <action selector="whiteKeyButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Vaj-sA-aqu"/>
+                                            <action selector="whiteKeyButtonTouched:" destination="BYZ-38-t0r" eventType="touchDown" id="NSs-gn-2NT"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Qu-pC-S2M">
@@ -934,6 +939,7 @@
                                         </state>
                                         <connections>
                                             <action selector="whiteKeyButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="To8-2v-IaB"/>
+                                            <action selector="whiteKeyButtonTouched:" destination="BYZ-38-t0r" eventType="touchDown" id="7yf-LJ-agP"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9vJ-a0-t2M">
@@ -944,6 +950,7 @@
                                         </state>
                                         <connections>
                                             <action selector="whiteKeyButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JAa-eU-RVS"/>
+                                            <action selector="whiteKeyButtonTouched:" destination="BYZ-38-t0r" eventType="touchDown" id="o6M-DV-qf4"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rcW-Od-0ja">
@@ -954,6 +961,7 @@
                                         </state>
                                         <connections>
                                             <action selector="whiteKeyButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6Y2-wC-hXW"/>
+                                            <action selector="whiteKeyButtonTouched:" destination="BYZ-38-t0r" eventType="touchDown" id="1vu-2p-VvC"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w2z-MX-O9d">
@@ -964,6 +972,7 @@
                                         </state>
                                         <connections>
                                             <action selector="whiteKeyButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="SQ7-lg-Oad"/>
+                                            <action selector="whiteKeyButtonTouched:" destination="BYZ-38-t0r" eventType="touchDown" id="Kjd-Z0-xbb"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Pu-M8-v7R">
@@ -974,6 +983,7 @@
                                         </state>
                                         <connections>
                                             <action selector="whiteKeyButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GDc-la-3mS"/>
+                                            <action selector="whiteKeyButtonTouched:" destination="BYZ-38-t0r" eventType="touchDown" id="v5U-Mz-OBZ"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S6E-33-xfc">
@@ -984,6 +994,7 @@
                                         </state>
                                         <connections>
                                             <action selector="whiteKeyButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6D7-Yz-KDZ"/>
+                                            <action selector="whiteKeyButtonTouched:" destination="BYZ-38-t0r" eventType="touchDown" id="ow6-TS-CKv"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="11" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Dq-Xi-qwx">
@@ -994,6 +1005,7 @@
                                         </state>
                                         <connections>
                                             <action selector="whiteKeyButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="h6q-yM-URn"/>
+                                            <action selector="whiteKeyButtonTouched:" destination="BYZ-38-t0r" eventType="touchDown" id="suq-b8-MRh"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="12" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xp4-gK-qjh">
@@ -1004,6 +1016,7 @@
                                         </state>
                                         <connections>
                                             <action selector="whiteKeyButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0GI-0K-xzq"/>
+                                            <action selector="whiteKeyButtonTouched:" destination="BYZ-38-t0r" eventType="touchDown" id="Ubw-qB-tDj"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="13" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ktx-fs-y1h">
@@ -1014,6 +1027,7 @@
                                         </state>
                                         <connections>
                                             <action selector="whiteKeyButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4YW-xt-3pv"/>
+                                            <action selector="whiteKeyButtonTouched:" destination="BYZ-38-t0r" eventType="touchDown" id="tFe-g2-jye"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="14" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="db5-Bs-NoT">
@@ -1024,6 +1038,7 @@
                                         </state>
                                         <connections>
                                             <action selector="whiteKeyButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RNb-V0-1bN"/>
+                                            <action selector="whiteKeyButtonTouched:" destination="BYZ-38-t0r" eventType="touchDown" id="6LP-6J-d2I"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="15" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Giw-Xu-hZn">
@@ -1034,6 +1049,7 @@
                                         </state>
                                         <connections>
                                             <action selector="whiteKeyButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pCx-1E-TAb"/>
+                                            <action selector="whiteKeyButtonTouched:" destination="BYZ-38-t0r" eventType="touchDown" id="97L-WZ-fo1"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="16" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j5R-ok-GDh">
@@ -1044,6 +1060,7 @@
                                         </state>
                                         <connections>
                                             <action selector="whiteKeyButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="AXb-6u-ify"/>
+                                            <action selector="whiteKeyButtonTouched:" destination="BYZ-38-t0r" eventType="touchDown" id="vPX-Zw-GGs"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="17" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pC5-aU-wZg">
@@ -1054,6 +1071,7 @@
                                         </state>
                                         <connections>
                                             <action selector="whiteKeyButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="NN4-ZU-eUn"/>
+                                            <action selector="whiteKeyButtonTouched:" destination="BYZ-38-t0r" eventType="touchDown" id="b5A-Ar-dnx"/>
                                         </connections>
                                     </button>
                                 </subviews>

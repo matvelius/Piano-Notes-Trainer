@@ -255,8 +255,7 @@ class ViewController: UIViewController {
     @IBAction func blackKeySettingsSegmentedControl(_ sender: UISegmentedControl) {
     }
     
-    // CHANGE BACK TO TRUE!!
-    var soundsEnabled = false
+    var soundsEnabled = true
     
     @IBAction func enableSoundsSwitch(_ sender: UISwitch) {
         
@@ -348,6 +347,19 @@ class ViewController: UIViewController {
     var whiteKeyButtonIndex = 0
     var nameOfKeyToHighlight = ""
     
+    
+    @IBAction func whiteKeyButtonTouched(_ sender: UIButton) {
+        print("white key sender.tag: \(sender.tag)")
+        
+        whiteKeyButtonIndex = sender.tag
+        
+        nameOfKeyToHighlight = onlyWhiteKeys[whiteKeyButtonIndex - 1]
+        
+        pianoKeyImage.image = UIImage(named: "\(nameOfKeyToHighlight)_pressed")
+    }
+    
+    // IMPLEMENT TOUCH CANCEL, OR TOUCH DRAG/UP OUTSIDE?
+    
     @IBAction func whiteKeyButtonPressed(_ sender: UIButton) {
         print("white key sender.tag: \(sender.tag)")
         
@@ -394,6 +406,7 @@ class ViewController: UIViewController {
         ////////////////////////////////////////////
         
         // sort the black keys outlet collection by tag
+        // use sort by!
         blackKeyButtons = blackKeyButtons.sorted(by: { $0.tag < $1.tag })
         
         let angleIncrement = 0.024
@@ -669,11 +682,16 @@ class ViewController: UIViewController {
                 
             }
             
-            
+            // FIX SOUND NAME FOR MODE B
             
             // play sound
             if soundsEnabled {
-                loadSound(currentSound: currentNote)
+                
+                switch currentGameMode {
+                case .A: loadSound(currentSound: currentNote)
+                case .B: loadSound(currentSound: nameOfKeyToHighlight)
+                }
+                
                 audioPlayer!.play()
                 audioPlayer!.setVolume(0, fadeDuration: 2.5)
             }
@@ -760,6 +778,11 @@ class ViewController: UIViewController {
                 print("imageName is \(imageName)")
                 let image = UIImage(named: imageName)
                 currentNoteButton.setImage(image, for: UIControl.State.normal)
+                
+            } else {
+            
+                pianoKeyImage.image = UIImage(named: "\(nameOfKeyToHighlight)_wrong")
+                // FIGURE OUT HOW TO DISPLAY MULTIPLE WRONG NOTES... PROGRAMMATICALLY ADD MORE IMAGES ON TOP OF ONE ANOTHER?
             }
                 
             // subtract a point
