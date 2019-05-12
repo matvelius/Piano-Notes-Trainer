@@ -111,9 +111,6 @@ class ViewController: UIViewController {
     @IBAction func modeSwitchFlipped(_ sender: UISegmentedControl) {
         currentGameMode = (currentGameMode == .B) ? .A : .B
         
-        // disable certain white & black keys
-        enableOrDisableWhiteKeys()
-        
         startNewRound()
     }
     
@@ -497,6 +494,9 @@ class ViewController: UIViewController {
 //            whiteKeyButtons[index + 8].transform = negativeRotationTransforms[index]
         }
         
+        whiteKeyButtons[0].isEnabled = false
+        whiteKeyButtons[17].isEnabled = false
+        
         // sort the note buttons outlet collection by tag
         noteButtonsOutletCollection = noteButtonsOutletCollection.sorted(by: { $0.tag < $1.tag })
         
@@ -539,6 +539,21 @@ class ViewController: UIViewController {
     
     func generateNewNote() {
         
+        switch currentGameMode {
+        case .A:
+            enableButtons()
+            enableSharps()
+            enableFlats()
+            disableWhiteKeyButtons()
+            disableBlackKeyButtons()
+        case .B:
+            disableButtons()
+            disableSharps()
+            disableFlats()
+            enableWhiteKeyButtons()
+            enableBlackKeyButtons()
+        }
+        
         if !notesAlreadyAttempted.isEmpty {
             for subview in self.pianoKeyImage.subviews {
                 subview.removeFromSuperview()
@@ -577,11 +592,7 @@ class ViewController: UIViewController {
         // MODE B
         } else {
             
-            // am I even using this view?
             pianoKeyImage.image = nil
-            disableButtons()
-            disableSharps()
-            disableFlats()
             
             randomNewNoteIndex = Int.random(in: 0...6)
             
@@ -694,6 +705,8 @@ class ViewController: UIViewController {
                 let image = UIImage(named: imageName)
                 currentNoteButton.setImage(image, for: UIControl.State.normal)
                 
+                disableButtons()
+                
             case .B:
                 // turn the key user pressed to green
                 // (identify whether it's a white or black key)
@@ -702,6 +715,9 @@ class ViewController: UIViewController {
 //                nameOfKeyToHighlight = onlyWhiteKeys[whiteKeyButtonIndex - 1]
                 
                 pianoKeyImage.image = UIImage(named: "\(nameOfKeyToHighlight)_right")
+                
+                disableWhiteKeyButtons()
+                disableBlackKeyButtons()
                 
             }
             
@@ -718,7 +734,7 @@ class ViewController: UIViewController {
             }
             //            print(currentNote)
             //            play(sound: "\(currentNote)", ofType: .wav)
-            disableButtons()
+            
             
             // ANIMATING BUTTON SIZE ON CORRECT ANSWER:
 //            noteButtonAHeight.constant = 130
@@ -745,10 +761,19 @@ class ViewController: UIViewController {
             
             //            usleep(1000000) //will sleep for 1 second
             //            Thread.sleep(forTimeInterval: 60/cadence)
-            DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1), execute:{
+            DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1), execute: {
+                
                 self.resetButtonsToDefault()
+                
+                switch currentGameMode {
+                case .A:
+                    self.enableButtons()
+                case .B:
+                    self.enableWhiteKeyButtons()
+                    self.enableBlackKeyButtons()
+                }
+                
                 self.generateNewNote()
-                self.enableButtons()
             })
             
         // wrong answer
@@ -1390,6 +1415,38 @@ class ViewController: UIViewController {
     func enableOrDisableWhiteKeys() {
         whiteKeyButtons[0].isEnabled = false
         whiteKeyButtons[17].isEnabled = false
+    }
+    
+    func enableWhiteKeyButtons() {
+        for index in 1...16 {
+            whiteKeyButtons[index].isEnabled = true
+        }
+    }
+    
+    func disableWhiteKeyButtons() {
+        for index in 1...16 {
+            whiteKeyButtons[index].isEnabled = false
+        }
+    }
+    
+    func enableBlackKeyButtons() {
+        for blackKeyButton in blackKeyButtons {
+            if let currentBlackKeyButtonIdentifier = blackKeyButton.accessibilityIdentifier {
+                if (0...12).contains(Int(currentBlackKeyButtonIdentifier)!) {
+                    blackKeyButton.isEnabled = true
+                }
+            }
+        }
+    }
+    
+    func disableBlackKeyButtons() {
+        for blackKeyButton in blackKeyButtons {
+            if let currentBlackKeyButtonIdentifier = blackKeyButton.accessibilityIdentifier {
+                if (0...12).contains(Int(currentBlackKeyButtonIdentifier)!) {
+                    blackKeyButton.isEnabled = false
+                }
+            }
+        }
     }
     
     func calculateSharpAndFlatBounds() {
