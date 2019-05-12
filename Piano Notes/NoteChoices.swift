@@ -30,6 +30,8 @@ var onlyWhiteKeysEnabled = true
 var onlyBlackKeysEnabled = false
 var onlyCDEEnabled = false
 var onlyFGABEnabled = false
+var onlySharpsEnabled = false
+var onlyFlatsEnabled = false
 
 var randomNewNoteIndexUpperLimit = 0
 
@@ -39,6 +41,8 @@ func setToAllNoteChoices() {
     onlyBlackKeysEnabled = false
     onlyCDEEnabled = false
     onlyFGABEnabled = false
+    onlySharpsEnabled = false
+    onlyFlatsEnabled = false
     
     currentNoteChoices = allNoteChoices
     setRandomNewNoteUpperIndex()
@@ -50,6 +54,8 @@ func setToOnlyWhiteKeys() {
     onlyBlackKeysEnabled = false
     onlyCDEEnabled = false
     onlyFGABEnabled = false
+    onlySharpsEnabled = false
+    onlyFlatsEnabled = false
     
     currentNoteChoices = onlyWhiteKeys
     setRandomNewNoteUpperIndex()
@@ -61,6 +67,8 @@ func setToOnlyBlackKeys() {
     onlyBlackKeysEnabled = true
     onlyCDEEnabled = false
     onlyFGABEnabled = false
+    onlySharpsEnabled = false
+    onlyFlatsEnabled = false
     
     currentNoteChoices = onlyBlackKeys
     setRandomNewNoteUpperIndex()
@@ -72,6 +80,8 @@ func setToOnlyCDE() {
     onlyBlackKeysEnabled = false
     onlyCDEEnabled = true
     onlyFGABEnabled = false
+    onlySharpsEnabled = false
+    onlyFlatsEnabled = false
     
     currentNoteChoices = onlyCDE
     setRandomNewNoteUpperIndex()
@@ -83,8 +93,40 @@ func setToOnlyFGAB() {
     onlyBlackKeysEnabled = false
     onlyCDEEnabled = false
     onlyFGABEnabled = true
+    onlySharpsEnabled = false
+    onlyFlatsEnabled = false
     
     currentNoteChoices = onlyFGAB
+    setRandomNewNoteUpperIndex()
+}
+
+func setToOnlySharps() {
+    allNoteChoicesEnabled = false
+    onlyWhiteKeysEnabled = false
+    onlyBlackKeysEnabled = true // CONFIRM THIS IS CORRECT!
+    onlyCDEEnabled = false
+    onlyFGABEnabled = false
+    onlySharpsEnabled = true
+    onlyFlatsEnabled = false
+    
+    // HOW TO DIFFERENTIATE BETWEEN SHARPS & FLATS
+    
+    currentNoteChoices = onlyBlackKeys
+    setRandomNewNoteUpperIndex()
+}
+
+func setToOnlyFlats() {
+    allNoteChoicesEnabled = false
+    onlyWhiteKeysEnabled = false
+    onlyBlackKeysEnabled = true // CONFIRM THIS IS CORRECT!
+    onlyCDEEnabled = false
+    onlyFGABEnabled = false
+    onlySharpsEnabled = false
+    onlyFlatsEnabled = true
+    
+    // HOW TO DIFFERENTIATE BETWEEN SHARPS & FLATS
+    
+    currentNoteChoices = onlyBlackKeys
     setRandomNewNoteUpperIndex()
 }
 

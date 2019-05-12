@@ -247,9 +247,43 @@ class ViewController: UIViewController {
     }
     
     @IBAction func onlyBlackKeysSwitch(_ sender: UISwitch) {
+        setToOnlyBlackKeys()
+        onlyWhiteKeysSwitchOutlet.setOn(false, animated: true)
+        startNewRound()
     }
     
     @IBAction func blackKeySettingsSegmentedControl(_ sender: UISegmentedControl) {
+        
+        if sender.selectedSegmentIndex == 0 {
+            // all black keys
+            setToOnlyBlackKeys()
+            
+            enableSharps()
+            sharpsViewOutlet.alpha = 1
+            enableFlats()
+            flatsViewOutlet.alpha = 1
+            
+        } else if sender.selectedSegmentIndex == 1 {
+            // only sharps
+            setToOnlySharps()
+            
+            enableSharps()
+            sharpsViewOutlet.alpha = 1
+            disableFlats()
+            flatsViewOutlet.alpha = 0
+            
+        } else {
+            // only flats
+            setToOnlyFlats()
+            
+            disableSharps()
+            sharpsViewOutlet.alpha = 0
+            enableFlats()
+            flatsViewOutlet.alpha = 1
+        }
+        
+        startNewRound()
+        
     }
     
     var soundsEnabled = true
@@ -351,16 +385,11 @@ class ViewController: UIViewController {
         pianoKeyImage.image = UIImage(named: "\(nameOfKeyToHighlight)_pressed")
     }
     
-    // IMPLEMENT TOUCH CANCEL, OR TOUCH DRAG/UP OUTSIDE?
-    
     
     @IBAction func touchDraggedOutsideKeyButton(_ sender: UIButton) {
         pianoKeyImage.image = nil
     }
 
-    
-    // LOCK SCREEN WHEN ANSWER CORRECT!
-    
     
     @IBAction func whiteKeyButtonPressed(_ sender: UIButton) {
         print("white key sender.tag: \(sender.tag)")
@@ -389,11 +418,9 @@ class ViewController: UIViewController {
     
     
     @IBAction func blackKeyButtonPressed(_ sender: UIButton) {
-//        print(sender.accessibilityIdentifier)
         
         guard let blackKeyButtonIndex = Int(sender.accessibilityIdentifier!) else { return }
         nameOfKeyToHighlight = onlyBlackKeys[blackKeyButtonIndex]
-//        pianoKeyImage.image = UIImage(named: "\(nameOfKeyToHighlight)_pressed")
         
         currentUserAnswer = String(nameOfKeyToHighlight[nameOfKeyToHighlight.startIndex...nameOfKeyToHighlight.index(after: nameOfKeyToHighlight.startIndex)])
         
@@ -594,10 +621,22 @@ class ViewController: UIViewController {
             
             pianoKeyImage.image = nil
             
-            randomNewNoteIndex = Int.random(in: 0...6)
+            var upperNoteChoiceLimit = 6
+            
+            // LIMIT NUMBER OF NOTE CHOICES FOR NEW NOTE
+            
+            switch currentNoteChoices {
+            case onlyCDE:
+                upperNoteChoiceLimit = 2
+            case onlyFGAB:
+                upperNoteChoiceLimit = 3
+            default: break
+            }
+            
+            randomNewNoteIndex = Int.random(in: 0...upperNoteChoiceLimit)
             
             while randomNewNoteIndex == lastRandomNumber {
-                randomNewNoteIndex = Int.random(in: 0...6)
+                randomNewNoteIndex = Int.random(in: 0...upperNoteChoiceLimit)
             }
             
             var accidentalOrNot: Accidentals = .neither
@@ -613,9 +652,12 @@ class ViewController: UIViewController {
                 accidentalOrNot = Accidentals.allCases[accidentalOrNotIndex]
             
             }
+            
+            // if noteChoices[1] == "#" (for only sharps) !
 
             switch accidentalOrNot {
             case .neither:
+                // NOT BASIC NOTE NAMES, BUT... ?
                 currentNote = basicNoteNames[randomNewNoteIndex]
                 currentAccidental = .neither
             case .sharp:
