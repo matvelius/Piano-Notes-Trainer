@@ -610,6 +610,9 @@ class ViewController: UIViewController {
         lastAccidentalOrNotIndex = accidentalOrNotIndex
     }
     
+    // for keeping track which piano keys have already been tried
+    var notesAlreadyAttempted = [String]()
+    
     func checkAnswer() {
         
         // placeholder variable for button image name
@@ -729,6 +732,8 @@ class ViewController: UIViewController {
                 self.enableButtons()
             })
             
+            notesAlreadyAttempted = [""]
+            
         // wrong answer
         } else {
             
@@ -777,19 +782,28 @@ class ViewController: UIViewController {
                 
             } else {
                 
+                // ONLY ADD WRONG NOTE IMAGE IF IT HASN'T BEEN ADDED FOR THIS KEY YET (SO KEEP TRACK OF WRONG NOTE)
                 
-                let wrongNoteImageName = "\(nameOfKeyToHighlight)_wrong"
-                let wrongNoteImage = UIImage(named: wrongNoteImageName)
-                let wrongNoteImageView = UIImageView(image: wrongNoteImage!)
+                if !notesAlreadyAttempted.contains(nameOfKeyToHighlight) {
+                    
+                    let wrongNoteImageName = "\(nameOfKeyToHighlight)_wrong"
+                    let wrongNoteImage = UIImage(named: wrongNoteImageName)
+                    let wrongNoteImageView = UIImageView(image: wrongNoteImage!)
+                    
+                    wrongNoteImageView.translatesAutoresizingMaskIntoConstraints = false
+                    pianoKeyImage.addSubview(wrongNoteImageView)
+                    
+                    NSLayoutConstraint.activate([
+                        wrongNoteImageView.widthAnchor.constraint(equalToConstant: pianoKeyImage!.frame.width),
+                        wrongNoteImageView.heightAnchor.constraint(equalToConstant: pianoKeyImage!.frame.height),
+        
+                    ])
+                    
+                }
                 
-                wrongNoteImageView.translatesAutoresizingMaskIntoConstraints = false
-                pianoKeyImage.addSubview(wrongNoteImageView)
+                notesAlreadyAttempted.append(nameOfKeyToHighlight)
                 
-                NSLayoutConstraint.activate([
-                    wrongNoteImageView.widthAnchor.constraint(equalToConstant: pianoKeyImage!.frame.width),
-                    wrongNoteImageView.heightAnchor.constraint(equalToConstant: pianoKeyImage!.frame.height),
-    
-                ])
+                // RESET THE PIANO KEYBOARD AT THE END!
                 
 //                wrongNoteImageView.frame = pianoKeyImage.frame
 //                let pianoKeyImageConstraints = pianoKeyImage.constraints
