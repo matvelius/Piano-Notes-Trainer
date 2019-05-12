@@ -258,17 +258,11 @@ class ViewController: UIViewController {
     var soundsEnabled = true
     
     @IBAction func enableSoundsSwitch(_ sender: UISwitch) {
-        
         if sender.isOn == false {
-            
             soundsEnabled = false
-            
         } else {
-            
             soundsEnabled = true
-            
         }
-        
     }
     
     @IBAction func reEnableExplainersSwitch(_ sender: UISwitch) {
@@ -313,6 +307,9 @@ class ViewController: UIViewController {
     // placeholder variable for the button user presses
     var currentNoteButton: UIButton!
     
+    
+    @IBOutlet weak var pianoBackgroundImage: UIImageView!
+    
     // piano image outlet
     @IBOutlet weak var pianoKeyImage: UIImageView!
     
@@ -328,7 +325,6 @@ class ViewController: UIViewController {
     var correctAnswersInARow = 0
     // keeping track of incorrect answers in a row to take away stars
     var incorrectAnswersInARow = 0
-    
     
     
     // placeholder variable for last-selected random number
@@ -780,8 +776,39 @@ class ViewController: UIViewController {
                 currentNoteButton.setImage(image, for: UIControl.State.normal)
                 
             } else {
+                
+                
+                let wrongNoteImageName = "\(nameOfKeyToHighlight)_wrong"
+                let wrongNoteImage = UIImage(named: wrongNoteImageName)
+                let wrongNoteImageView = UIImageView(image: wrongNoteImage!)
+                
+                wrongNoteImageView.translatesAutoresizingMaskIntoConstraints = false
+                pianoKeyImage.addSubview(wrongNoteImageView)
+                
+                NSLayoutConstraint.activate([
+                    wrongNoteImageView.widthAnchor.constraint(equalToConstant: pianoKeyImage!.frame.width),
+                    wrongNoteImageView.heightAnchor.constraint(equalToConstant: pianoKeyImage!.frame.height),
+    
+                ])
+                
+//                wrongNoteImageView.frame = pianoKeyImage.frame
+//                let pianoKeyImageConstraints = pianoKeyImage.constraints
+//                wrongNoteImageView.addConstraint(pianoKeyImageConstraints)
+                
+//                let testView = UIView(frame: .zero)
+//                testView.translatesAutoresizingMaskIntoConstraints = false
+//                self.view.addSubview(testView)
+//                NSLayoutConstraint.activate([
+//                    testView.widthAnchor.constraint(equalToConstant: 64),
+//                    testView.widthAnchor.constraint(equalTo: testView.heightAnchor),
+//                    testView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
+//                    testView.centerYAnchor.constraint(equalTo: self.view.centerYAnchor),
+//                    ])
+//                self.testView = testView
+                
+                
             
-                pianoKeyImage.image = UIImage(named: "\(nameOfKeyToHighlight)_wrong")
+//                pianoKeyImage.image = UIImage(named: "\(nameOfKeyToHighlight)_wrong")
                 // FIGURE OUT HOW TO DISPLAY MULTIPLE WRONG NOTES... PROGRAMMATICALLY ADD MORE IMAGES ON TOP OF ONE ANOTHER?
             }
                 
