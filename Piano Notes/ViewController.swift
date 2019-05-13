@@ -628,7 +628,7 @@ class ViewController: UIViewController {
             switch currentNoteChoices {
             case onlyCDE:
                 upperNoteChoiceLimit = 2
-            case onlyFGAB:
+            case onlyFGAB, onlyWeirdEnharmonics:
                 upperNoteChoiceLimit = 3
             default: break
             }
@@ -651,6 +651,25 @@ class ViewController: UIViewController {
                 
                 accidentalOrNot = Accidentals.allCases[accidentalOrNotIndex]
             
+            } else if onlyWeirdEnharmonicsEnabled {
+                
+                accidentalOrNotIndex = Int.random(in: 1...2)
+                
+                // IF I LEFT THIS IN, IT WOULD JUST KEEP SWITCHING, RIGHT?
+//                while accidentalOrNotIndex == lastAccidentalOrNotIndex {
+//                    accidentalOrNotIndex = Int.random(in: 1...2)
+//                }
+                
+                accidentalOrNot = Accidentals.allCases[accidentalOrNotIndex]
+            
+            } else if onlySharpsEnabled {
+                
+                accidentalOrNot = .sharp
+                
+            } else if onlyFlatsEnabled {
+                
+                accidentalOrNot = .flat
+                
             }
             
             // if noteChoices[1] == "#" (for only sharps) !
@@ -658,7 +677,15 @@ class ViewController: UIViewController {
             switch accidentalOrNot {
             case .neither:
                 // NOT BASIC NOTE NAMES, BUT... ?
-                currentNote = basicNoteNames[randomNewNoteIndex]
+                switch currentNoteChoices {
+                case onlyCDE:
+                    currentNote = basicNoteNamesOnlyCDE[randomNewNoteIndex]
+                case onlyFGAB:
+                    currentNote = basicNoteNamesOnlyFGAB[randomNewNoteIndex]
+                default:
+                    currentNote = basicNoteNames[randomNewNoteIndex]
+                }
+                
                 currentAccidental = .neither
             case .sharp:
                 currentNote = basicNoteNames[randomNewNoteIndex] + "#"
@@ -675,10 +702,12 @@ class ViewController: UIViewController {
             
             currentCorrectAnswer = currentNote
             
+            let currentNoteToShow = currentNote[currentNote.startIndex]
+            let currentNoteIndex = basicNoteNames.firstIndex(of: String(currentNoteToShow))!
            
-            let buttonImageName = "\(currentNote[currentNote.startIndex])_shown"
+            let buttonImageName = "\(currentNoteToShow)_shown"
             guard let image = UIImage(named: buttonImageName) else { return }
-            noteButtonsOutletCollection[randomNewNoteIndex].setImage(image, for: UIControl.State.normal)
+            noteButtonsOutletCollection![currentNoteIndex].setImage(image, for: UIControl.State.normal)
             
         }
         

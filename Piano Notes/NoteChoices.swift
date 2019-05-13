@@ -25,6 +25,12 @@ let onlyFGAB = ["G3", "A3", "B3", "F4", "G4", "A4", "B4", "F5", "G5", "A5"]
 // IMPLEMENT WEIRD ENHARMONICS FOR LEVEL 6!
 let onlyWeirdEnharmonics = ["B3", "C4", "E4", "F4", "B4", "C5", "E5", "F5"]
 
+// FOR MODE B
+let basicNoteNames = ["A", "B", "C", "D", "E", "F", "G"]
+let basicNoteNamesOnlyCDE = ["C", "D", "E"]
+let basicNoteNamesOnlyFGAB = ["F", "G", "A", "B"]
+let basicNoteNamesOnlyWeirdEnharmonics = ["B", "C", "E", "F"]
+
 var allNoteChoicesEnabled = false
 var onlyWhiteKeysEnabled = true
 var onlyBlackKeysEnabled = false
@@ -32,6 +38,7 @@ var onlyCDEEnabled = false
 var onlyFGABEnabled = false
 var onlySharpsEnabled = false
 var onlyFlatsEnabled = false
+var onlyWeirdEnharmonicsEnabled = false
 
 var randomNewNoteIndexUpperLimit = 0
 
@@ -43,6 +50,7 @@ func setToAllNoteChoices() {
     onlyFGABEnabled = false
     onlySharpsEnabled = false
     onlyFlatsEnabled = false
+    onlyWeirdEnharmonicsEnabled = false
     
     currentNoteChoices = allNoteChoices
     setRandomNewNoteUpperIndex()
@@ -56,6 +64,7 @@ func setToOnlyWhiteKeys() {
     onlyFGABEnabled = false
     onlySharpsEnabled = false
     onlyFlatsEnabled = false
+    onlyWeirdEnharmonicsEnabled = false
     
     currentNoteChoices = onlyWhiteKeys
     setRandomNewNoteUpperIndex()
@@ -69,6 +78,7 @@ func setToOnlyBlackKeys() {
     onlyFGABEnabled = false
     onlySharpsEnabled = false
     onlyFlatsEnabled = false
+    onlyWeirdEnharmonicsEnabled = false
     
     currentNoteChoices = onlyBlackKeys
     setRandomNewNoteUpperIndex()
@@ -82,6 +92,7 @@ func setToOnlyCDE() {
     onlyFGABEnabled = false
     onlySharpsEnabled = false
     onlyFlatsEnabled = false
+    onlyWeirdEnharmonicsEnabled = false
     
     currentNoteChoices = onlyCDE
     setRandomNewNoteUpperIndex()
@@ -95,6 +106,7 @@ func setToOnlyFGAB() {
     onlyFGABEnabled = true
     onlySharpsEnabled = false
     onlyFlatsEnabled = false
+    onlyWeirdEnharmonicsEnabled = false
     
     currentNoteChoices = onlyFGAB
     setRandomNewNoteUpperIndex()
@@ -103,11 +115,12 @@ func setToOnlyFGAB() {
 func setToOnlySharps() {
     allNoteChoicesEnabled = false
     onlyWhiteKeysEnabled = false
-    onlyBlackKeysEnabled = true // CONFIRM THIS IS CORRECT!
+    onlyBlackKeysEnabled = false // CONFIRM THIS IS CORRECT!
     onlyCDEEnabled = false
     onlyFGABEnabled = false
     onlySharpsEnabled = true
     onlyFlatsEnabled = false
+    onlyWeirdEnharmonicsEnabled = false
     
     // HOW TO DIFFERENTIATE BETWEEN SHARPS & FLATS
     
@@ -118,11 +131,12 @@ func setToOnlySharps() {
 func setToOnlyFlats() {
     allNoteChoicesEnabled = false
     onlyWhiteKeysEnabled = false
-    onlyBlackKeysEnabled = true // CONFIRM THIS IS CORRECT!
+    onlyBlackKeysEnabled = false // CONFIRM THIS IS CORRECT!
     onlyCDEEnabled = false
     onlyFGABEnabled = false
     onlySharpsEnabled = false
     onlyFlatsEnabled = true
+    onlyWeirdEnharmonicsEnabled = false
     
     // HOW TO DIFFERENTIATE BETWEEN SHARPS & FLATS
     
@@ -130,10 +144,24 @@ func setToOnlyFlats() {
     setRandomNewNoteUpperIndex()
 }
 
+func setToOnlyWeirdEnharmonics() {
+    allNoteChoicesEnabled = false
+    onlyWhiteKeysEnabled = false
+    onlyBlackKeysEnabled = false
+    onlyCDEEnabled = false
+    onlyFGABEnabled = false
+    onlySharpsEnabled = false
+    onlyFlatsEnabled = false
+    onlyWeirdEnharmonicsEnabled = true
+    
+    currentNoteChoices = onlyWeirdEnharmonics
+    setRandomNewNoteUpperIndex()
+}
+
 func setRandomNewNoteUpperIndex() {
     randomNewNoteIndexUpperLimit = currentNoteChoices.count - 1
 }
 
-let basicNoteNames = ["A", "B", "C", "D", "E", "F", "G"]
+
 
 //let sharpFlatOrNil = ["#", "b", ""]
