@@ -39,6 +39,7 @@ var onlyFGABEnabled = false
 var onlySharpsEnabled = false
 var onlyFlatsEnabled = false
 var onlyWeirdEnharmonicsEnabled = false
+var weirdEnharmonicsEnabled = false
 
 var randomNewNoteIndexUpperLimit = 0
 
@@ -51,6 +52,7 @@ func setToAllNoteChoices() {
     onlySharpsEnabled = false
     onlyFlatsEnabled = false
     onlyWeirdEnharmonicsEnabled = false
+    weirdEnharmonicsEnabled = true
     
     currentNoteChoices = allNoteChoices
     setRandomNewNoteUpperIndex()
@@ -65,6 +67,7 @@ func setToOnlyWhiteKeys() {
     onlySharpsEnabled = false
     onlyFlatsEnabled = false
     onlyWeirdEnharmonicsEnabled = false
+    weirdEnharmonicsEnabled = false
     
     currentNoteChoices = onlyWhiteKeys
     setRandomNewNoteUpperIndex()
@@ -79,6 +82,7 @@ func setToOnlyBlackKeys() {
     onlySharpsEnabled = false
     onlyFlatsEnabled = false
     onlyWeirdEnharmonicsEnabled = false
+    weirdEnharmonicsEnabled = false
     
     currentNoteChoices = onlyBlackKeys
     setRandomNewNoteUpperIndex()
@@ -93,6 +97,7 @@ func setToOnlyCDE() {
     onlySharpsEnabled = false
     onlyFlatsEnabled = false
     onlyWeirdEnharmonicsEnabled = false
+    weirdEnharmonicsEnabled = false
     
     currentNoteChoices = onlyCDE
     setRandomNewNoteUpperIndex()
@@ -107,6 +112,7 @@ func setToOnlyFGAB() {
     onlySharpsEnabled = false
     onlyFlatsEnabled = false
     onlyWeirdEnharmonicsEnabled = false
+    weirdEnharmonicsEnabled = false
     
     currentNoteChoices = onlyFGAB
     setRandomNewNoteUpperIndex()
@@ -121,6 +127,7 @@ func setToOnlySharps() {
     onlySharpsEnabled = true
     onlyFlatsEnabled = false
     onlyWeirdEnharmonicsEnabled = false
+    weirdEnharmonicsEnabled = false
     
     // HOW TO DIFFERENTIATE BETWEEN SHARPS & FLATS
     
@@ -137,6 +144,7 @@ func setToOnlyFlats() {
     onlySharpsEnabled = false
     onlyFlatsEnabled = true
     onlyWeirdEnharmonicsEnabled = false
+    weirdEnharmonicsEnabled = false
     
     // HOW TO DIFFERENTIATE BETWEEN SHARPS & FLATS
     
@@ -153,6 +161,7 @@ func setToOnlyWeirdEnharmonics() {
     onlySharpsEnabled = false
     onlyFlatsEnabled = false
     onlyWeirdEnharmonicsEnabled = true
+    weirdEnharmonicsEnabled = true
     
     currentNoteChoices = onlyWeirdEnharmonics
     setRandomNewNoteUpperIndex()

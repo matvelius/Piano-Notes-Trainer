@@ -1456,6 +1456,7 @@
                     <connections>
                         <outlet property="darkOverlayOutlet" destination="TMX-dv-0h9" id="Tgn-Ej-7Zi"/>
                         <outlet property="flatsViewOutlet" destination="lkt-CX-jcE" id="dEz-0q-upx"/>
+                        <outlet property="includeEnharmonicsSwitchOutlet" destination="TfK-IR-Y48" id="ODY-8Q-555"/>
                         <outlet property="menuBackgroundOutlet" destination="QG9-26-Oaz" id="5NY-0c-wug"/>
                         <outlet property="menuButtonOutlet" destination="2co-F0-3U7" id="1ST-40-bMw"/>
                         <outlet property="menuLeadingConstraint" destination="EHH-lo-W0B" id="n9K-O9-YNZ"/>

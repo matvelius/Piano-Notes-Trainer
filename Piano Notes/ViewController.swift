@@ -109,7 +109,16 @@ class ViewController: UIViewController {
     
     
     @IBAction func modeSwitchFlipped(_ sender: UISegmentedControl) {
-        currentGameMode = (currentGameMode == .B) ? .A : .B
+//        currentGameMode = (currentGameMode == .B) ? .A : .B
+        
+        switch currentGameMode {
+        case .A:
+            currentGameMode = .B
+            includeEnharmonicsSwitchOutlet.isEnabled = true
+        case .B:
+            currentGameMode = .A
+            includeEnharmonicsSwitchOutlet.isEnabled = false
+        }
         
         startNewRound()
     }
@@ -243,7 +252,17 @@ class ViewController: UIViewController {
     }
     
     
+    @IBOutlet weak var includeEnharmonicsSwitchOutlet: UISwitch!
+    
+    // mode B only!
     @IBAction func includeEnharmonicsSwitch(_ sender: UISwitch) {
+        
+        if sender.isOn == true {
+            weirdEnharmonicsEnabled = true
+        } else {
+            weirdEnharmonicsEnabled = false
+        }
+        
     }
     
     @IBAction func onlyBlackKeysSwitch(_ sender: UISwitch) {
@@ -542,6 +561,9 @@ class ViewController: UIViewController {
         default:
             onlyWhiteKeysSwitchOutlet.setOn(true, animated: true)
         }
+        // add this to levels above
+        includeEnharmonicsSwitchOutlet.isEnabled = false
+        weirdEnharmonicsEnabled = false
         
         scoreLabel.text = "0"
         
@@ -689,12 +711,24 @@ class ViewController: UIViewController {
                 currentAccidental = .neither
             case .sharp:
                 currentNote = basicNoteNames[randomNewNoteIndex] + "#"
-                sharpsOutletCollection[randomNewNoteIndex].setImage(UIImage(named: "sharp_shown"), for: UIControl.State.normal)
-                currentAccidental = .sharp
+            
+                // generate new note if current note is a weird enharmonic
+                if !weirdEnharmonicsEnabled && (currentNote == "B#" || currentNote == "E#") {
+                    generateNewNote()
+                } else {
+                    sharpsOutletCollection[randomNewNoteIndex].setImage(UIImage(named: "sharp_shown"), for: UIControl.State.normal)
+                    currentAccidental = .sharp
+                }
             case .flat:
                 currentNote = basicNoteNames[randomNewNoteIndex] + "b"
-                flatsOutletCollection[randomNewNoteIndex].setImage(UIImage(named: "flat_shown"), for: UIControl.State.normal)
-                currentAccidental = .flat
+                
+                // generate new note if current note is a weird enharmonic
+                if !weirdEnharmonicsEnabled && (currentNote == "Cb" || currentNote == "Fb") {
+                    generateNewNote()
+                } else {
+                    flatsOutletCollection[randomNewNoteIndex].setImage(UIImage(named: "flat_shown"), for: UIControl.State.normal)
+                    currentAccidental = .flat
+                }
             }
             
             
