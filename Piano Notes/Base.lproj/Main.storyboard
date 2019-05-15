@@ -1269,7 +1269,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="bottom" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="REk-5q-Mva" userLabel="only black keys">
                                         <rect key="frame" x="66" y="539" width="323" height="67"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" translatesAutoresizingMaskIntoConstraints="NO" id="ygK-mO-yER" userLabel="white keys">
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" translatesAutoresizingMaskIntoConstraints="NO" id="ygK-mO-yER" userLabel="stack">
                                                 <rect key="frame" x="0.0" y="0.0" width="323" height="31"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="bottom" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ONLY BLACK KEYS:" textAlignment="center" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zii-bm-afJ">
@@ -1454,6 +1454,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="upv-Dd-Knf"/>
                     <connections>
+                        <outlet property="blackKeySettingsSegmentedControlOutlet" destination="eFW-Mp-dPM" id="Ngn-Hn-dpV"/>
                         <outlet property="darkOverlayOutlet" destination="TMX-dv-0h9" id="Tgn-Ej-7Zi"/>
                         <outlet property="flatsViewOutlet" destination="lkt-CX-jcE" id="dEz-0q-upx"/>
                         <outlet property="includeEnharmonicsSwitchOutlet" destination="TfK-IR-Y48" id="ODY-8Q-555"/>

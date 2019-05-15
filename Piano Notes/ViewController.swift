@@ -276,6 +276,8 @@ class ViewController: UIViewController {
             startNewRound()
         }
     }
+
+    @IBOutlet weak var blackKeySettingsSegmentedControlOutlet: UISegmentedControl!
     
     @IBAction func blackKeySettingsSegmentedControl(_ sender: UISegmentedControl) {
         
@@ -570,6 +572,8 @@ class ViewController: UIViewController {
         // add this to levels above
         includeEnharmonicsSwitchOutlet.isEnabled = false
         weirdEnharmonicsEnabled = false
+        
+        blackKeySettingsSegmentedControlOutlet.isEnabled = true
         
         scoreLabel.text = "0"
         
