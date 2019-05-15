@@ -39,6 +39,7 @@
 		D74257B722414EF700ACA7A2 /* B4.aiff in Resources */ = {isa = PBXBuildFile; fileRef = D742579A22414EF600ACA7A2 /* B4.aiff */; };
 		D74257B822414EF700ACA7A2 /* C5.aiff in Resources */ = {isa = PBXBuildFile; fileRef = D742579B22414EF600ACA7A2 /* C5.aiff */; };
 		D74257B922414EF700ACA7A2 /* G4.aiff in Resources */ = {isa = PBXBuildFile; fileRef = D742579C22414EF700ACA7A2 /* G4.aiff */; };
+		D74992D9228C3FD90095C1B7 /* NotesOnStaffViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74992D8228C3FD90095C1B7 /* NotesOnStaffViewController.swift */; };
 		D75DE89322828C5800BBFDEF /* GameMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75DE89222828C5800BBFDEF /* GameMode.swift */; };
 		D777C81822009DDB00FA472E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D777C81722009DDB00FA472E /* AppDelegate.swift */; };
 		D777C81A22009DDB00FA472E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D777C81922009DDB00FA472E /* ViewController.swift */; };
@@ -90,6 +91,7 @@
 		D742579A22414EF600ACA7A2 /* B4.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; name = B4.aiff; path = "../../../sounds/Ivy Audio/B4.aiff"; sourceTree = "<group>"; };
 		D742579B22414EF600ACA7A2 /* C5.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = C5.aiff; sourceTree = "<group>"; };
 		D742579C22414EF700ACA7A2 /* G4.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; name = G4.aiff; path = "../../../sounds/Ivy Audio/G4.aiff"; sourceTree = "<group>"; };
+		D74992D8228C3FD90095C1B7 /* NotesOnStaffViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesOnStaffViewController.swift; sourceTree = "<group>"; };
 		D75DE89222828C5800BBFDEF /* GameMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameMode.swift; sourceTree = "<group>"; };
 		D777C81422009DDB00FA472E /* Piano Notes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Piano Notes.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D777C81722009DDB00FA472E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -196,6 +198,7 @@
 				D7EF77392277F06B00943F54 /* Accidentals.swift */,
 				D7DFCFEA22619FC700468F71 /* Enharmonics.swift */,
 				D777C81B22009DDB00FA472E /* Main.storyboard */,
+				D74992D8228C3FD90095C1B7 /* NotesOnStaffViewController.swift */,
 				D7EF773D2277F97100943F54 /* Levels.swift */,
 				D7EF773F2277FFF000943F54 /* LevelTableViewCell.swift */,
 				D7EF773B2277F3D200943F54 /* LevelsTableViewController.swift */,
@@ -321,6 +324,7 @@
 				D777C81A22009DDB00FA472E /* ViewController.swift in Sources */,
 				D7EF7738227785CE00943F54 /* NoteChoices.swift in Sources */,
 				D7EF77402277FFF000943F54 /* LevelTableViewCell.swift in Sources */,
+				D74992D9228C3FD90095C1B7 /* NotesOnStaffViewController.swift in Sources */,
 				D7373575227B3F1800BE2B8A /* StyleKit.swift in Sources */,
 				D7EF773A2277F06B00943F54 /* Accidentals.swift in Sources */,
 				D7EF773C2277F3D200943F54 /* LevelsTableViewController.swift in Sources */,
