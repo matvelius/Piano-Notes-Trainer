@@ -257,7 +257,7 @@ class ViewController: UIViewController {
     // mode B only!
     @IBAction func includeEnharmonicsSwitch(_ sender: UISwitch) {
         
-        if sender.isOn == true {
+        if sender.isOn {
             weirdEnharmonicsEnabled = true
         } else {
             weirdEnharmonicsEnabled = false
@@ -266,9 +266,15 @@ class ViewController: UIViewController {
     }
     
     @IBAction func onlyBlackKeysSwitch(_ sender: UISwitch) {
-        setToOnlyBlackKeys()
-        onlyWhiteKeysSwitchOutlet.setOn(false, animated: true)
-        startNewRound()
+        if sender.isOn {
+            setToOnlyBlackKeys()
+            weirdEnharmonicsEnabled = false
+            onlyWhiteKeysSwitchOutlet.setOn(false, animated: true)
+            startNewRound()
+        } else {
+            setToAllNoteChoices()
+            startNewRound()
+        }
     }
     
     @IBAction func blackKeySettingsSegmentedControl(_ sender: UISegmentedControl) {
@@ -308,7 +314,7 @@ class ViewController: UIViewController {
     var soundsEnabled = true
     
     @IBAction func enableSoundsSwitch(_ sender: UISwitch) {
-        if sender.isOn == false {
+        if sender.isOn {
             soundsEnabled = false
         } else {
             soundsEnabled = true
@@ -873,6 +879,7 @@ class ViewController: UIViewController {
                 switch currentGameMode {
                 case .A:
                     self.enableButtons()
+                    print("buttons should be enabled!")
                 case .B:
                     self.enableWhiteKeyButtons()
                     self.enableBlackKeyButtons()
@@ -1063,25 +1070,7 @@ class ViewController: UIViewController {
     
     func enableButtons() {
         
-        if onlyWhiteKeysEnabled || allNoteChoicesEnabled {
-            
-            noteButtonA.isEnabled = true;
-            noteButtonB.isEnabled = true;
-            noteButtonC.isEnabled = true;
-            noteButtonD.isEnabled = true;
-            noteButtonE.isEnabled = true;
-            noteButtonF.isEnabled = true;
-            noteButtonG.isEnabled = true;
-            
-            noteButtonA.alpha = 1
-            noteButtonB.alpha = 1
-            noteButtonC.alpha = 1
-            noteButtonD.alpha = 1
-            noteButtonE.alpha = 1
-            noteButtonF.alpha = 1
-            noteButtonG.alpha = 1
-            
-        } else if onlyCDEEnabled {
+        if onlyCDEEnabled {
             
             noteButtonC.isEnabled = true;
             noteButtonD.isEnabled = true;
@@ -1111,6 +1100,25 @@ class ViewController: UIViewController {
             noteButtonC.alpha = 0.3
             noteButtonD.alpha = 0.3
             noteButtonE.alpha = 0.3
+            
+        } else {
+                
+            noteButtonA.isEnabled = true;
+            noteButtonB.isEnabled = true;
+            noteButtonC.isEnabled = true;
+            noteButtonD.isEnabled = true;
+            noteButtonE.isEnabled = true;
+            noteButtonF.isEnabled = true;
+            noteButtonG.isEnabled = true;
+            
+            noteButtonA.alpha = 1
+            noteButtonB.alpha = 1
+            noteButtonC.alpha = 1
+            noteButtonD.alpha = 1
+            noteButtonE.alpha = 1
+            noteButtonF.alpha = 1
+            noteButtonG.alpha = 1
+            
         }
     }
     
