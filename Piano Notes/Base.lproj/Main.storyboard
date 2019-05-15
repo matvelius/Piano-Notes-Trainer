@@ -97,7 +97,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JI7-xy-e6Q" userLabel="Main Container">
                                 <rect key="frame" x="0.0" y="139" width="1366" height="885"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="white_piano_12.9_large" translatesAutoresizingMaskIntoConstraints="NO" id="Kqr-Q3-q8M">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="white_piano_12.9_large" translatesAutoresizingMaskIntoConstraints="NO" id="Kqr-Q3-q8M" userLabel="Piano Background Image">
                                         <rect key="frame" x="0.0" y="77" width="1366" height="808"/>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="white_piano_12.9_large" translatesAutoresizingMaskIntoConstraints="NO" id="PeW-eg-9HV">
@@ -166,7 +166,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SfW-Tf-CLW" userLabel="all letters">
                                         <rect key="frame" x="229.5" y="110" width="907" height="100"/>
                                         <subviews>
-                                            <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zPC-OD-elJ" userLabel="G">
+                                            <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zPC-OD-elJ" userLabel="G">
                                                 <rect key="frame" x="807" y="0.0" width="100" height="100"/>
                                                 <gestureRecognizers/>
                                                 <constraints>
@@ -183,7 +183,7 @@
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Oyr-TJ-21U" userLabel="between F &amp; G">
                                                 <rect key="frame" x="772.5" y="0.0" width="34.5" height="100"/>
                                             </imageView>
-                                            <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PEp-9J-Ifz" userLabel="F">
+                                            <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PEp-9J-Ifz" userLabel="F">
                                                 <rect key="frame" x="672.5" y="0.0" width="100" height="100"/>
                                                 <gestureRecognizers/>
                                                 <constraints>
@@ -200,7 +200,7 @@
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="RmL-Tp-3tm" userLabel="between E &amp; F">
                                                 <rect key="frame" x="638" y="0.0" width="34.5" height="100"/>
                                             </imageView>
-                                            <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ucd-Eh-NI4" userLabel="E">
+                                            <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ucd-Eh-NI4" userLabel="E">
                                                 <rect key="frame" x="538" y="0.0" width="100" height="100"/>
                                                 <gestureRecognizers/>
                                                 <constraints>
@@ -217,7 +217,7 @@
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="UZI-Ox-EoS" userLabel="between D &amp; E">
                                                 <rect key="frame" x="503.5" y="0.0" width="34.5" height="100"/>
                                             </imageView>
-                                            <button opaque="NO" tag="4" contentMode="scaleToFill" placeholderIntrinsicWidth="110" placeholderIntrinsicHeight="110" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YCd-Zs-4kT" userLabel="D">
+                                            <button opaque="NO" tag="3" contentMode="scaleToFill" placeholderIntrinsicWidth="110" placeholderIntrinsicHeight="110" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YCd-Zs-4kT" userLabel="D">
                                                 <rect key="frame" x="403.5" y="0.0" width="100" height="100"/>
                                                 <gestureRecognizers/>
                                                 <constraints>
@@ -238,7 +238,7 @@
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="i4X-je-UF6" userLabel="between C &amp; D">
                                                 <rect key="frame" x="369" y="0.0" width="34.5" height="100"/>
                                             </imageView>
-                                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R7e-Tw-SC2" userLabel="C">
+                                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R7e-Tw-SC2" userLabel="C">
                                                 <rect key="frame" x="269" y="0.0" width="100" height="100"/>
                                                 <gestureRecognizers/>
                                                 <constraints>
@@ -255,7 +255,7 @@
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2oz-1q-Abw" userLabel="between B &amp; C">
                                                 <rect key="frame" x="234.5" y="0.0" width="34.5" height="100"/>
                                             </imageView>
-                                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cpq-fy-UKY" userLabel="B">
+                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cpq-fy-UKY" userLabel="B">
                                                 <rect key="frame" x="134.5" y="0.0" width="100" height="100"/>
                                                 <gestureRecognizers/>
                                                 <constraints>
@@ -272,7 +272,7 @@
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bLo-vd-vTh" userLabel="between A &amp; B">
                                                 <rect key="frame" x="100" y="0.0" width="34.5" height="100"/>
                                             </imageView>
-                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tVB-E4-Spp" userLabel="A">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tVB-E4-Spp" userLabel="A">
                                                 <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                                 <gestureRecognizers/>
                                                 <constraints>
@@ -352,7 +352,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ucu-fc-WoN" userLabel="sharps">
                                         <rect key="frame" x="229.5" y="44" width="907" height="56"/>
                                         <subviews>
-                                            <button opaque="NO" tag="7" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WWC-jf-Chu" userLabel="sharp">
+                                            <button opaque="NO" tag="6" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WWC-jf-Chu" userLabel="sharp">
                                                 <rect key="frame" x="807" y="0.0" width="100" height="56"/>
                                                 <size key="titleShadowOffset" width="1" height="1"/>
                                                 <state key="normal" image="sharp">
@@ -364,7 +364,7 @@
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="OD8-iz-GA4" userLabel="between">
                                                 <rect key="frame" x="772.5" y="0.0" width="34.5" height="56"/>
                                             </imageView>
-                                            <button opaque="NO" tag="6" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cQS-mJ-CEi" userLabel="sharp">
+                                            <button opaque="NO" tag="5" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cQS-mJ-CEi" userLabel="sharp">
                                                 <rect key="frame" x="672.5" y="0.0" width="100" height="56"/>
                                                 <size key="titleShadowOffset" width="1" height="1"/>
                                                 <state key="normal" image="sharp">
@@ -376,7 +376,7 @@
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="u8z-EJ-zjP" userLabel="between">
                                                 <rect key="frame" x="638" y="0.0" width="34.5" height="56"/>
                                             </imageView>
-                                            <button opaque="NO" tag="5" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xod-po-PyJ" userLabel="sharp">
+                                            <button opaque="NO" tag="4" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xod-po-PyJ" userLabel="sharp">
                                                 <rect key="frame" x="538" y="0.0" width="100" height="56"/>
                                                 <size key="titleShadowOffset" width="1" height="1"/>
                                                 <state key="normal" image="sharp">
@@ -388,7 +388,7 @@
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="FFd-Jh-RM4" userLabel="between">
                                                 <rect key="frame" x="503.5" y="0.0" width="34.5" height="56"/>
                                             </imageView>
-                                            <button opaque="NO" tag="4" contentMode="scaleToFill" placeholderIntrinsicWidth="110" placeholderIntrinsicHeight="110" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zoM-hy-uSw" userLabel="sharp">
+                                            <button opaque="NO" tag="3" contentMode="scaleToFill" placeholderIntrinsicWidth="110" placeholderIntrinsicHeight="110" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zoM-hy-uSw" userLabel="sharp">
                                                 <rect key="frame" x="403.5" y="0.0" width="100" height="56"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" relation="lessThanOrEqual" constant="61.5" id="QZO-yI-Mbi"/>
@@ -404,7 +404,7 @@
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pUD-Kw-zA0" userLabel="between">
                                                 <rect key="frame" x="369" y="0.0" width="34.5" height="56"/>
                                             </imageView>
-                                            <button opaque="NO" tag="3" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xEQ-Nq-1Tz" userLabel="sharp">
+                                            <button opaque="NO" tag="2" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xEQ-Nq-1Tz" userLabel="sharp">
                                                 <rect key="frame" x="269" y="0.0" width="100" height="56"/>
                                                 <size key="titleShadowOffset" width="1" height="1"/>
                                                 <state key="normal" image="sharp">
@@ -416,7 +416,7 @@
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="h2E-xV-J0V" userLabel="between">
                                                 <rect key="frame" x="234.5" y="0.0" width="34.5" height="56"/>
                                             </imageView>
-                                            <button opaque="NO" tag="2" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7HQ-9a-elb" userLabel="sharp">
+                                            <button opaque="NO" tag="1" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7HQ-9a-elb" userLabel="sharp">
                                                 <rect key="frame" x="134.5" y="0.0" width="100" height="56"/>
                                                 <gestureRecognizers/>
                                                 <size key="titleShadowOffset" width="1" height="1"/>
@@ -429,7 +429,7 @@
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9Wj-ys-DBX" userLabel="between">
                                                 <rect key="frame" x="100" y="0.0" width="34.5" height="56"/>
                                             </imageView>
-                                            <button opaque="NO" tag="1" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vfi-DJ-p56" userLabel="sharp">
+                                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vfi-DJ-p56" userLabel="sharp">
                                                 <rect key="frame" x="0.0" y="0.0" width="100" height="56"/>
                                                 <gestureRecognizers/>
                                                 <size key="titleShadowOffset" width="1" height="1"/>
@@ -500,7 +500,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lkt-CX-jcE" userLabel="flats">
                                         <rect key="frame" x="229.5" y="220" width="907" height="56"/>
                                         <subviews>
-                                            <button opaque="NO" tag="7" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="byI-wM-mVi" userLabel="flat">
+                                            <button opaque="NO" tag="6" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="byI-wM-mVi" userLabel="flat">
                                                 <rect key="frame" x="807" y="0.0" width="100" height="56"/>
                                                 <size key="titleShadowOffset" width="1" height="1"/>
                                                 <state key="normal" image="flat">
@@ -512,7 +512,7 @@
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tEw-sp-C3e" userLabel="between">
                                                 <rect key="frame" x="772.5" y="0.0" width="34.5" height="56"/>
                                             </imageView>
-                                            <button opaque="NO" tag="6" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hu4-y0-jV2" userLabel="flat">
+                                            <button opaque="NO" tag="5" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hu4-y0-jV2" userLabel="flat">
                                                 <rect key="frame" x="672.5" y="0.0" width="100" height="56"/>
                                                 <size key="titleShadowOffset" width="1" height="1"/>
                                                 <state key="normal" image="flat">
@@ -524,7 +524,7 @@
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lhr-7p-e37" userLabel="between">
                                                 <rect key="frame" x="638" y="0.0" width="34.5" height="56"/>
                                             </imageView>
-                                            <button opaque="NO" tag="5" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cbJ-UK-jH1" userLabel="flat">
+                                            <button opaque="NO" tag="4" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cbJ-UK-jH1" userLabel="flat">
                                                 <rect key="frame" x="538" y="0.0" width="100" height="56"/>
                                                 <size key="titleShadowOffset" width="1" height="1"/>
                                                 <state key="normal" image="flat">
@@ -536,7 +536,7 @@
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fLR-2H-DgZ" userLabel="between">
                                                 <rect key="frame" x="503.5" y="0.0" width="34.5" height="56"/>
                                             </imageView>
-                                            <button opaque="NO" tag="4" contentMode="scaleToFill" placeholderIntrinsicWidth="110" placeholderIntrinsicHeight="110" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cmD-DR-DtT" userLabel="flat">
+                                            <button opaque="NO" tag="3" contentMode="scaleToFill" placeholderIntrinsicWidth="110" placeholderIntrinsicHeight="110" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cmD-DR-DtT" userLabel="flat">
                                                 <rect key="frame" x="403.5" y="0.0" width="100" height="56"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" relation="lessThanOrEqual" constant="61.5" id="Tgs-B6-YzH"/>
@@ -552,7 +552,7 @@
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="r97-Ae-KWT" userLabel="between">
                                                 <rect key="frame" x="369" y="0.0" width="34.5" height="56"/>
                                             </imageView>
-                                            <button opaque="NO" tag="3" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AMe-ET-9L3" userLabel="flat">
+                                            <button opaque="NO" tag="2" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AMe-ET-9L3" userLabel="flat">
                                                 <rect key="frame" x="269" y="0.0" width="100" height="56"/>
                                                 <size key="titleShadowOffset" width="1" height="1"/>
                                                 <state key="normal" image="flat">
@@ -564,7 +564,7 @@
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="akz-Rb-paA" userLabel="between">
                                                 <rect key="frame" x="234.5" y="0.0" width="34.5" height="56"/>
                                             </imageView>
-                                            <button opaque="NO" tag="2" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QNg-Cz-Bky" userLabel="flat">
+                                            <button opaque="NO" tag="1" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QNg-Cz-Bky" userLabel="flat">
                                                 <rect key="frame" x="134.5" y="0.0" width="100" height="56"/>
                                                 <gestureRecognizers/>
                                                 <size key="titleShadowOffset" width="1" height="1"/>
@@ -577,7 +577,7 @@
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KAw-hO-nR4" userLabel="between">
                                                 <rect key="frame" x="100" y="0.0" width="34.5" height="56"/>
                                             </imageView>
-                                            <button opaque="NO" tag="1" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HJv-nR-U3N" userLabel="flat">
+                                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HJv-nR-U3N" userLabel="flat">
                                                 <rect key="frame" x="0.0" y="0.0" width="100" height="56"/>
                                                 <color key="backgroundColor" white="1" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <gestureRecognizers/>
@@ -689,35 +689,50 @@
                                         <constraints>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="43" id="WPJ-qV-xlo"/>
                                         </constraints>
+                                        <connections>
+                                            <action selector="blackKeyButtonTouched:" destination="BYZ-38-t0r" eventType="touchDown" id="1fu-Qh-Y6E"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RgE-uD-iDc" userLabel="blackKeyButton">
                                         <rect key="frame" x="73" y="0.0" width="43" height="250"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="0"/>
                                         <constraints>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="43" id="vVJ-ui-e9Z"/>
                                         </constraints>
                                         <connections>
                                             <action selector="blackKeyButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="l3C-wP-qKU"/>
+                                            <action selector="blackKeyButtonTouched:" destination="BYZ-38-t0r" eventType="touchDragInside" id="CbM-S9-xs9"/>
+                                            <action selector="blackKeyButtonTouched:" destination="BYZ-38-t0r" eventType="touchDown" id="Ebe-CW-mmJ"/>
+                                            <action selector="touchDraggedOutsideKeyButton:" destination="BYZ-38-t0r" eventType="touchDragOutside" id="Hbs-Sa-Unm"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CZU-4E-dTI" userLabel="blackKeyButton">
                                         <rect key="frame" x="145.5" y="0.0" width="43" height="250"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="1"/>
                                         <constraints>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="43" id="UYt-cC-1Gi"/>
                                         </constraints>
                                         <connections>
                                             <action selector="blackKeyButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="CcF-n1-h1y"/>
+                                            <action selector="blackKeyButtonTouched:" destination="BYZ-38-t0r" eventType="touchDragInside" id="jG1-w7-oeh"/>
+                                            <action selector="blackKeyButtonTouched:" destination="BYZ-38-t0r" eventType="touchDown" id="zZf-Fn-yFb"/>
+                                            <action selector="touchDraggedOutsideKeyButton:" destination="BYZ-38-t0r" eventType="touchDragOutside" id="KQZ-iW-SJ6"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HT0-sk-Ibi" userLabel="blackKeyButton">
                                         <rect key="frame" x="218.5" y="0.0" width="43" height="250"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="2"/>
                                         <constraints>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="43" id="wnz-oN-VcV"/>
                                         </constraints>
                                         <connections>
                                             <action selector="blackKeyButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="SiF-Yv-mM7"/>
+                                            <action selector="blackKeyButtonTouched:" destination="BYZ-38-t0r" eventType="touchDragInside" id="IEP-hF-kYQ"/>
+                                            <action selector="blackKeyButtonTouched:" destination="BYZ-38-t0r" eventType="touchDown" id="NNH-Il-2NS"/>
+                                            <action selector="touchDraggedOutsideKeyButton:" destination="BYZ-38-t0r" eventType="touchDragOutside" id="QR5-3e-mCz"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QTW-GJ-1Dh" userLabel="blackKeyButton">
@@ -726,25 +741,36 @@
                                         <constraints>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="43" id="XZC-YB-a44"/>
                                         </constraints>
+                                        <connections>
+                                            <action selector="blackKeyButtonTouched:" destination="BYZ-38-t0r" eventType="touchDown" id="OFU-lp-zHI"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V7C-9b-7Sa" userLabel="blackKeyButton">
                                         <rect key="frame" x="364" y="0.0" width="43" height="250"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="3"/>
                                         <constraints>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="43" id="GxU-hu-Gfa"/>
                                         </constraints>
                                         <connections>
                                             <action selector="blackKeyButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rka-XU-hyF"/>
+                                            <action selector="blackKeyButtonTouched:" destination="BYZ-38-t0r" eventType="touchDown" id="65T-s4-kCW"/>
+                                            <action selector="blackKeyButtonTouched:" destination="BYZ-38-t0r" eventType="touchDragInside" id="Do3-aF-xYa"/>
+                                            <action selector="touchDraggedOutsideKeyButton:" destination="BYZ-38-t0r" eventType="touchDragOutside" id="B05-Z7-1TE"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ps0-h7-KPi" userLabel="blackKeyButton">
                                         <rect key="frame" x="436.5" y="0.0" width="43" height="250"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="4"/>
                                         <constraints>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="43" id="Xyj-Wi-nbp"/>
                                         </constraints>
                                         <connections>
                                             <action selector="blackKeyButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="k9w-TE-Yx3"/>
+                                            <action selector="blackKeyButtonTouched:" destination="BYZ-38-t0r" eventType="touchDragInside" id="b7q-ND-2XP"/>
+                                            <action selector="blackKeyButtonTouched:" destination="BYZ-38-t0r" eventType="touchDown" id="pCl-y3-8vN"/>
+                                            <action selector="touchDraggedOutsideKeyButton:" destination="BYZ-38-t0r" eventType="touchDragOutside" id="HnZ-5n-MOy"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZKb-0V-Kvp" userLabel="blackKeyButton">
@@ -753,35 +779,50 @@
                                         <constraints>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="43" id="SOi-jT-SCH"/>
                                         </constraints>
+                                        <connections>
+                                            <action selector="blackKeyButtonTouched:" destination="BYZ-38-t0r" eventType="touchDown" id="2i9-ob-uLN"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C8e-nE-3CX" userLabel="blackKeyButton">
                                         <rect key="frame" x="582" y="0.0" width="43" height="250"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="5"/>
                                         <constraints>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="43" id="0YW-tI-DDT"/>
                                         </constraints>
                                         <connections>
                                             <action selector="blackKeyButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tm9-ih-8jc"/>
+                                            <action selector="blackKeyButtonTouched:" destination="BYZ-38-t0r" eventType="touchDown" id="Rew-up-6cd"/>
+                                            <action selector="blackKeyButtonTouched:" destination="BYZ-38-t0r" eventType="touchDragInside" id="iTO-uw-8Gc"/>
+                                            <action selector="touchDraggedOutsideKeyButton:" destination="BYZ-38-t0r" eventType="touchDragOutside" id="F7P-je-vNC"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s0V-AI-fU8" userLabel="blackKeyButton">
                                         <rect key="frame" x="655" y="0.0" width="43" height="250"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="6"/>
                                         <constraints>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="43" id="23u-Cd-kr4"/>
                                         </constraints>
                                         <connections>
                                             <action selector="blackKeyButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mQX-Ii-JYc"/>
+                                            <action selector="blackKeyButtonTouched:" destination="BYZ-38-t0r" eventType="touchDragInside" id="s8u-GP-M9Q"/>
+                                            <action selector="blackKeyButtonTouched:" destination="BYZ-38-t0r" eventType="touchDown" id="sbU-e9-waN"/>
+                                            <action selector="touchDraggedOutsideKeyButton:" destination="BYZ-38-t0r" eventType="touchDragOutside" id="7WS-hm-QNT"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0g8-W0-10Q" userLabel="blackKeyButton">
                                         <rect key="frame" x="728" y="0.0" width="43" height="250"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="7"/>
                                         <constraints>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="43" id="g82-jm-cVd"/>
                                         </constraints>
                                         <connections>
                                             <action selector="blackKeyButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RFt-Vu-IPI"/>
+                                            <action selector="blackKeyButtonTouched:" destination="BYZ-38-t0r" eventType="touchDragInside" id="6sx-hq-CPk"/>
+                                            <action selector="blackKeyButtonTouched:" destination="BYZ-38-t0r" eventType="touchDown" id="bxf-Vb-LG6"/>
+                                            <action selector="touchDraggedOutsideKeyButton:" destination="BYZ-38-t0r" eventType="touchDragOutside" id="aQa-ES-vTh"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="11" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P5j-xx-Hpz" userLabel="blackKeyButton">
@@ -790,25 +831,36 @@
                                         <constraints>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="43" id="3GU-Os-hId"/>
                                         </constraints>
+                                        <connections>
+                                            <action selector="blackKeyButtonTouched:" destination="BYZ-38-t0r" eventType="touchDown" id="ygu-aE-hC7"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" tag="12" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nRD-K0-69u" userLabel="blackKeyButton">
                                         <rect key="frame" x="873.5" y="0.0" width="43" height="250"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="8"/>
                                         <constraints>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="43" id="CxD-Da-B5h"/>
                                         </constraints>
                                         <connections>
                                             <action selector="blackKeyButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eT4-o7-GH9"/>
+                                            <action selector="blackKeyButtonTouched:" destination="BYZ-38-t0r" eventType="touchDown" id="2be-UK-5LX"/>
+                                            <action selector="blackKeyButtonTouched:" destination="BYZ-38-t0r" eventType="touchDragInside" id="HBa-PL-1RI"/>
+                                            <action selector="touchDraggedOutsideKeyButton:" destination="BYZ-38-t0r" eventType="touchDragOutside" id="CaJ-OD-hI4"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="13" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Du-p6-yXQ" userLabel="blackKeyButton">
                                         <rect key="frame" x="946" y="0.0" width="43" height="250"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="9"/>
                                         <constraints>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="43" id="3Vg-xV-64z"/>
                                         </constraints>
                                         <connections>
                                             <action selector="blackKeyButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Xpb-Ed-1hg"/>
+                                            <action selector="blackKeyButtonTouched:" destination="BYZ-38-t0r" eventType="touchDragInside" id="BHe-4J-kwW"/>
+                                            <action selector="blackKeyButtonTouched:" destination="BYZ-38-t0r" eventType="touchDown" id="iVV-a1-mP4"/>
+                                            <action selector="touchDraggedOutsideKeyButton:" destination="BYZ-38-t0r" eventType="touchDragOutside" id="1Cd-Oj-s13"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="14" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yxY-cs-rL2" userLabel="blackKeyButton">
@@ -817,35 +869,50 @@
                                         <constraints>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="43" id="O6b-nU-z5h"/>
                                         </constraints>
+                                        <connections>
+                                            <action selector="blackKeyButtonTouched:" destination="BYZ-38-t0r" eventType="touchDown" id="K8j-NI-hPs"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" tag="15" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tk6-si-MJ9" userLabel="blackKeyButton">
                                         <rect key="frame" x="1091.5" y="0.0" width="43" height="250"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="10"/>
                                         <constraints>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="43" id="8fD-0n-pEu"/>
                                         </constraints>
                                         <connections>
                                             <action selector="blackKeyButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="g7P-et-uJG"/>
+                                            <action selector="blackKeyButtonTouched:" destination="BYZ-38-t0r" eventType="touchDragInside" id="mlj-4k-qdF"/>
+                                            <action selector="blackKeyButtonTouched:" destination="BYZ-38-t0r" eventType="touchDown" id="zvG-g2-RGF"/>
+                                            <action selector="touchDraggedOutsideKeyButton:" destination="BYZ-38-t0r" eventType="touchDragOutside" id="gfy-qd-AhK"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="16" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CTb-CL-S9b" userLabel="blackKeyButton">
                                         <rect key="frame" x="1164.5" y="0.0" width="43" height="250"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="11"/>
                                         <constraints>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="43" id="K4K-yh-n0Z"/>
                                         </constraints>
                                         <connections>
                                             <action selector="blackKeyButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="oxN-kP-zDt"/>
+                                            <action selector="blackKeyButtonTouched:" destination="BYZ-38-t0r" eventType="touchDragInside" id="ATh-Yw-8Ua"/>
+                                            <action selector="blackKeyButtonTouched:" destination="BYZ-38-t0r" eventType="touchDown" id="f7S-dw-LFZ"/>
+                                            <action selector="touchDraggedOutsideKeyButton:" destination="BYZ-38-t0r" eventType="touchDragOutside" id="4GS-D3-svN"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="17" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="naF-VO-IUP" userLabel="blackKeyButton">
                                         <rect key="frame" x="1237" y="0.0" width="43" height="250"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="12"/>
                                         <constraints>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="43" id="fJE-3D-6vG"/>
                                         </constraints>
                                         <connections>
                                             <action selector="blackKeyButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Yg5-bA-TbU"/>
+                                            <action selector="blackKeyButtonTouched:" destination="BYZ-38-t0r" eventType="touchDragInside" id="6Fl-Fi-BOL"/>
+                                            <action selector="blackKeyButtonTouched:" destination="BYZ-38-t0r" eventType="touchDown" id="xNT-AT-iOV"/>
+                                            <action selector="touchDraggedOutsideKeyButton:" destination="BYZ-38-t0r" eventType="touchDragOutside" id="e9p-Ad-CU1"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="18" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bgn-Tv-J1G" userLabel="blackKeyButton">
@@ -854,13 +921,16 @@
                                         <constraints>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="43" id="ge7-lt-Hku"/>
                                         </constraints>
+                                        <connections>
+                                            <action selector="blackKeyButtonTouched:" destination="BYZ-38-t0r" eventType="touchDown" id="RtF-Gh-BoK"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="250" id="3WG-V6-olN"/>
                                 </constraints>
                             </stackView>
-                            <stackView opaque="NO" alpha="0.59999999999999998" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="wGh-ws-fia" userLabel="White Key Buttons Stack">
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="wGh-ws-fia" userLabel="White Key Buttons Stack">
                                 <rect key="frame" x="0.0" y="739" width="1390" height="140"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Omt-Rb-utK">
@@ -870,7 +940,10 @@
                                             <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
+                                            <action selector="touchDraggedOutsideKeyButton:" destination="BYZ-38-t0r" eventType="touchDragOutside" id="BqZ-6r-k5P"/>
                                             <action selector="whiteKeyButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="OfY-hb-0Qq"/>
+                                            <action selector="whiteKeyButtonTouched:" destination="BYZ-38-t0r" eventType="touchDragInside" id="5JH-I8-qXs"/>
+                                            <action selector="whiteKeyButtonTouched:" destination="BYZ-38-t0r" eventType="touchDown" id="75P-5C-y2X"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EK9-hD-XMY">
@@ -880,7 +953,10 @@
                                             <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
+                                            <action selector="touchDraggedOutsideKeyButton:" destination="BYZ-38-t0r" eventType="touchDragOutside" id="egl-j5-3ye"/>
                                             <action selector="whiteKeyButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ukC-Fa-BnP"/>
+                                            <action selector="whiteKeyButtonTouched:" destination="BYZ-38-t0r" eventType="touchDown" id="kaw-u7-sTd"/>
+                                            <action selector="whiteKeyButtonTouched:" destination="BYZ-38-t0r" eventType="touchDragInside" id="ztC-yM-vNi"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HAJ-0h-ee4">
@@ -890,7 +966,10 @@
                                             <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
+                                            <action selector="touchDraggedOutsideKeyButton:" destination="BYZ-38-t0r" eventType="touchDragOutside" id="8h7-Pp-EYP"/>
                                             <action selector="whiteKeyButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dgT-ET-iAY"/>
+                                            <action selector="whiteKeyButtonTouched:" destination="BYZ-38-t0r" eventType="touchDown" id="t3t-NC-ZvU"/>
+                                            <action selector="whiteKeyButtonTouched:" destination="BYZ-38-t0r" eventType="touchDragInside" id="vH6-T5-Ezy"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X82-vR-Ejw">
@@ -900,7 +979,10 @@
                                             <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
+                                            <action selector="touchDraggedOutsideKeyButton:" destination="BYZ-38-t0r" eventType="touchDragOutside" id="pNS-ui-mK6"/>
                                             <action selector="whiteKeyButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qrz-Ux-BLB"/>
+                                            <action selector="whiteKeyButtonTouched:" destination="BYZ-38-t0r" eventType="touchDragInside" id="3z7-ej-QxF"/>
+                                            <action selector="whiteKeyButtonTouched:" destination="BYZ-38-t0r" eventType="touchDown" id="tWS-Po-xhA"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bep-su-jKK">
@@ -910,7 +992,10 @@
                                             <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
+                                            <action selector="touchDraggedOutsideKeyButton:" destination="BYZ-38-t0r" eventType="touchDragOutside" id="F1v-9L-ts0"/>
                                             <action selector="whiteKeyButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Vaj-sA-aqu"/>
+                                            <action selector="whiteKeyButtonTouched:" destination="BYZ-38-t0r" eventType="touchDragInside" id="GKt-Xe-5yK"/>
+                                            <action selector="whiteKeyButtonTouched:" destination="BYZ-38-t0r" eventType="touchDown" id="NSs-gn-2NT"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Qu-pC-S2M">
@@ -920,7 +1005,10 @@
                                             <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
+                                            <action selector="touchDraggedOutsideKeyButton:" destination="BYZ-38-t0r" eventType="touchDragOutside" id="JbO-XJ-L1t"/>
                                             <action selector="whiteKeyButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="To8-2v-IaB"/>
+                                            <action selector="whiteKeyButtonTouched:" destination="BYZ-38-t0r" eventType="touchDown" id="7yf-LJ-agP"/>
+                                            <action selector="whiteKeyButtonTouched:" destination="BYZ-38-t0r" eventType="touchDragInside" id="dTl-Ch-RwI"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9vJ-a0-t2M">
@@ -930,7 +1018,10 @@
                                             <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
+                                            <action selector="touchDraggedOutsideKeyButton:" destination="BYZ-38-t0r" eventType="touchDragOutside" id="xRW-aK-cUO"/>
                                             <action selector="whiteKeyButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JAa-eU-RVS"/>
+                                            <action selector="whiteKeyButtonTouched:" destination="BYZ-38-t0r" eventType="touchDragInside" id="jPB-Y3-IGP"/>
+                                            <action selector="whiteKeyButtonTouched:" destination="BYZ-38-t0r" eventType="touchDown" id="o6M-DV-qf4"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rcW-Od-0ja">
@@ -940,7 +1031,10 @@
                                             <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
+                                            <action selector="touchDraggedOutsideKeyButton:" destination="BYZ-38-t0r" eventType="touchDragOutside" id="UHB-kx-y9s"/>
                                             <action selector="whiteKeyButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6Y2-wC-hXW"/>
+                                            <action selector="whiteKeyButtonTouched:" destination="BYZ-38-t0r" eventType="touchDown" id="1vu-2p-VvC"/>
+                                            <action selector="whiteKeyButtonTouched:" destination="BYZ-38-t0r" eventType="touchDragInside" id="Cga-Kp-6en"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w2z-MX-O9d">
@@ -950,7 +1044,10 @@
                                             <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
+                                            <action selector="touchDraggedOutsideKeyButton:" destination="BYZ-38-t0r" eventType="touchDragOutside" id="maH-rL-Lw8"/>
                                             <action selector="whiteKeyButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="SQ7-lg-Oad"/>
+                                            <action selector="whiteKeyButtonTouched:" destination="BYZ-38-t0r" eventType="touchDown" id="Kjd-Z0-xbb"/>
+                                            <action selector="whiteKeyButtonTouched:" destination="BYZ-38-t0r" eventType="touchDragInside" id="yLj-oi-giV"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Pu-M8-v7R">
@@ -960,7 +1057,10 @@
                                             <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
+                                            <action selector="touchDraggedOutsideKeyButton:" destination="BYZ-38-t0r" eventType="touchDragOutside" id="1ga-gc-Yge"/>
                                             <action selector="whiteKeyButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GDc-la-3mS"/>
+                                            <action selector="whiteKeyButtonTouched:" destination="BYZ-38-t0r" eventType="touchDragInside" id="7zg-5Z-PVV"/>
+                                            <action selector="whiteKeyButtonTouched:" destination="BYZ-38-t0r" eventType="touchDown" id="v5U-Mz-OBZ"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S6E-33-xfc">
@@ -970,7 +1070,10 @@
                                             <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
+                                            <action selector="touchDraggedOutsideKeyButton:" destination="BYZ-38-t0r" eventType="touchDragOutside" id="50f-6f-Wr5"/>
                                             <action selector="whiteKeyButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6D7-Yz-KDZ"/>
+                                            <action selector="whiteKeyButtonTouched:" destination="BYZ-38-t0r" eventType="touchDragInside" id="ebe-Q3-5IQ"/>
+                                            <action selector="whiteKeyButtonTouched:" destination="BYZ-38-t0r" eventType="touchDown" id="ow6-TS-CKv"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="11" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Dq-Xi-qwx">
@@ -980,7 +1083,10 @@
                                             <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
+                                            <action selector="touchDraggedOutsideKeyButton:" destination="BYZ-38-t0r" eventType="touchDragOutside" id="lWm-gv-V0N"/>
                                             <action selector="whiteKeyButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="h6q-yM-URn"/>
+                                            <action selector="whiteKeyButtonTouched:" destination="BYZ-38-t0r" eventType="touchDragInside" id="cOb-ic-ej3"/>
+                                            <action selector="whiteKeyButtonTouched:" destination="BYZ-38-t0r" eventType="touchDown" id="suq-b8-MRh"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="12" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xp4-gK-qjh">
@@ -990,7 +1096,10 @@
                                             <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
+                                            <action selector="touchDraggedOutsideKeyButton:" destination="BYZ-38-t0r" eventType="touchDragOutside" id="6fe-zU-zI8"/>
                                             <action selector="whiteKeyButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0GI-0K-xzq"/>
+                                            <action selector="whiteKeyButtonTouched:" destination="BYZ-38-t0r" eventType="touchDown" id="Ubw-qB-tDj"/>
+                                            <action selector="whiteKeyButtonTouched:" destination="BYZ-38-t0r" eventType="touchDragInside" id="iDk-0a-CW3"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="13" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ktx-fs-y1h">
@@ -1000,7 +1109,10 @@
                                             <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
+                                            <action selector="touchDraggedOutsideKeyButton:" destination="BYZ-38-t0r" eventType="touchDragOutside" id="5By-A6-xKT"/>
                                             <action selector="whiteKeyButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4YW-xt-3pv"/>
+                                            <action selector="whiteKeyButtonTouched:" destination="BYZ-38-t0r" eventType="touchDragInside" id="IMr-ZL-aPC"/>
+                                            <action selector="whiteKeyButtonTouched:" destination="BYZ-38-t0r" eventType="touchDown" id="tFe-g2-jye"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="14" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="db5-Bs-NoT">
@@ -1010,7 +1122,10 @@
                                             <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
+                                            <action selector="touchDraggedOutsideKeyButton:" destination="BYZ-38-t0r" eventType="touchDragOutside" id="fwl-1G-MU4"/>
                                             <action selector="whiteKeyButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RNb-V0-1bN"/>
+                                            <action selector="whiteKeyButtonTouched:" destination="BYZ-38-t0r" eventType="touchDown" id="6LP-6J-d2I"/>
+                                            <action selector="whiteKeyButtonTouched:" destination="BYZ-38-t0r" eventType="touchDragInside" id="fXs-gg-l4M"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="15" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Giw-Xu-hZn">
@@ -1020,7 +1135,10 @@
                                             <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
+                                            <action selector="touchDraggedOutsideKeyButton:" destination="BYZ-38-t0r" eventType="touchDragOutside" id="V9g-AW-qpV"/>
                                             <action selector="whiteKeyButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pCx-1E-TAb"/>
+                                            <action selector="whiteKeyButtonTouched:" destination="BYZ-38-t0r" eventType="touchDown" id="97L-WZ-fo1"/>
+                                            <action selector="whiteKeyButtonTouched:" destination="BYZ-38-t0r" eventType="touchDragInside" id="Bul-C9-DsA"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="16" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j5R-ok-GDh">
@@ -1030,7 +1148,10 @@
                                             <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
+                                            <action selector="touchDraggedOutsideKeyButton:" destination="BYZ-38-t0r" eventType="touchDragOutside" id="TCb-Cn-kDM"/>
                                             <action selector="whiteKeyButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="AXb-6u-ify"/>
+                                            <action selector="whiteKeyButtonTouched:" destination="BYZ-38-t0r" eventType="touchDragInside" id="ZA8-LW-0f9"/>
+                                            <action selector="whiteKeyButtonTouched:" destination="BYZ-38-t0r" eventType="touchDown" id="vPX-Zw-GGs"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="17" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pC5-aU-wZg">
@@ -1040,7 +1161,10 @@
                                             <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
+                                            <action selector="touchDraggedOutsideKeyButton:" destination="BYZ-38-t0r" eventType="touchDragOutside" id="kCE-WD-eMX"/>
                                             <action selector="whiteKeyButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="NN4-ZU-eUn"/>
+                                            <action selector="whiteKeyButtonTouched:" destination="BYZ-38-t0r" eventType="touchDown" id="b5A-Ar-dnx"/>
+                                            <action selector="whiteKeyButtonTouched:" destination="BYZ-38-t0r" eventType="touchDragInside" id="oCx-u4-bQe"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -1055,7 +1179,7 @@
                                     <action selector="darkOverlayPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="a36-X9-Yae"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QG9-26-Oaz" userLabel="Menu Container">
+                            <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QG9-26-Oaz" userLabel="Menu Container">
                                 <rect key="frame" x="0.0" y="0.0" width="455.5" height="1024"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SETTINGS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l7U-vx-unQ">
@@ -1145,7 +1269,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="bottom" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="REk-5q-Mva" userLabel="only black keys">
                                         <rect key="frame" x="66" y="539" width="323" height="67"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" translatesAutoresizingMaskIntoConstraints="NO" id="ygK-mO-yER" userLabel="white keys">
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" translatesAutoresizingMaskIntoConstraints="NO" id="ygK-mO-yER" userLabel="stack">
                                                 <rect key="frame" x="0.0" y="0.0" width="323" height="31"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="bottom" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ONLY BLACK KEYS:" textAlignment="center" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zii-bm-afJ">
@@ -1330,8 +1454,10 @@
                     </view>
                     <navigationItem key="navigationItem" id="upv-Dd-Knf"/>
                     <connections>
+                        <outlet property="blackKeySettingsSegmentedControlOutlet" destination="eFW-Mp-dPM" id="Ngn-Hn-dpV"/>
                         <outlet property="darkOverlayOutlet" destination="TMX-dv-0h9" id="Tgn-Ej-7Zi"/>
                         <outlet property="flatsViewOutlet" destination="lkt-CX-jcE" id="dEz-0q-upx"/>
+                        <outlet property="includeEnharmonicsSwitchOutlet" destination="TfK-IR-Y48" id="ODY-8Q-555"/>
                         <outlet property="menuBackgroundOutlet" destination="QG9-26-Oaz" id="5NY-0c-wug"/>
                         <outlet property="menuButtonOutlet" destination="2co-F0-3U7" id="1ST-40-bMw"/>
                         <outlet property="menuLeadingConstraint" destination="EHH-lo-W0B" id="n9K-O9-YNZ"/>
@@ -1343,8 +1469,10 @@
                         <outlet property="noteButtonE" destination="ucd-Eh-NI4" id="eJ7-KA-1sg"/>
                         <outlet property="noteButtonF" destination="PEp-9J-Ifz" id="jWq-t6-OOk"/>
                         <outlet property="noteButtonG" destination="zPC-OD-elJ" id="p89-Mr-19y"/>
+                        <outlet property="onlyBlackKeysSwitchOutlet" destination="jwN-de-VD1" id="TOS-qo-SGw"/>
                         <outlet property="onlyWhiteKeysSwitchOutlet" destination="wkB-FH-tXJ" id="lOG-js-VlV"/>
-                        <outlet property="pianoImage" destination="PeW-eg-9HV" id="aHr-fh-2dz"/>
+                        <outlet property="pianoBackgroundImage" destination="Kqr-Q3-q8M" id="7AY-s1-gNn"/>
+                        <outlet property="pianoKeyImage" destination="PeW-eg-9HV" id="aHr-fh-2dz"/>
                         <outlet property="scoreLabel" destination="sBK-js-cjK" id="lwG-mi-Vee"/>
                         <outlet property="sharpsViewOutlet" destination="Ucu-fc-WoN" id="rGN-gL-672"/>
                         <outlet property="stars" destination="fee-2h-mBH" id="c84-78-SiM"/>
@@ -1407,6 +1535,13 @@
                         <outletCollection property="whiteKeyButtons" destination="Giw-Xu-hZn" collectionClass="NSMutableArray" id="37a-Bd-muo"/>
                         <outletCollection property="whiteKeyButtons" destination="j5R-ok-GDh" collectionClass="NSMutableArray" id="Xks-IJ-pew"/>
                         <outletCollection property="whiteKeyButtons" destination="pC5-aU-wZg" collectionClass="NSMutableArray" id="kml-0Y-n8l"/>
+                        <outletCollection property="noteButtonsOutletCollection" destination="tVB-E4-Spp" collectionClass="NSMutableArray" id="CDN-cX-Ydj"/>
+                        <outletCollection property="noteButtonsOutletCollection" destination="Cpq-fy-UKY" collectionClass="NSMutableArray" id="xHQ-p3-8l8"/>
+                        <outletCollection property="noteButtonsOutletCollection" destination="R7e-Tw-SC2" collectionClass="NSMutableArray" id="Z6g-Gj-98d"/>
+                        <outletCollection property="noteButtonsOutletCollection" destination="YCd-Zs-4kT" collectionClass="NSMutableArray" id="UIg-nR-Uqx"/>
+                        <outletCollection property="noteButtonsOutletCollection" destination="ucd-Eh-NI4" collectionClass="NSMutableArray" id="tZ0-it-NqL"/>
+                        <outletCollection property="noteButtonsOutletCollection" destination="PEp-9J-Ifz" collectionClass="NSMutableArray" id="ic0-c2-svd"/>
+                        <outletCollection property="noteButtonsOutletCollection" destination="zPC-OD-elJ" collectionClass="NSMutableArray" id="dbt-pi-etV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

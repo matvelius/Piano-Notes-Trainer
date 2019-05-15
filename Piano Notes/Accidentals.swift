@@ -9,7 +9,7 @@
 import Foundation
 
 // keeping track of the accidentals
-enum Accidentals {
+enum Accidentals: CaseIterable {
     case sharp
     case flat
     case neither
