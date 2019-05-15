@@ -1469,6 +1469,7 @@
                         <outlet property="noteButtonE" destination="ucd-Eh-NI4" id="eJ7-KA-1sg"/>
                         <outlet property="noteButtonF" destination="PEp-9J-Ifz" id="jWq-t6-OOk"/>
                         <outlet property="noteButtonG" destination="zPC-OD-elJ" id="p89-Mr-19y"/>
+                        <outlet property="onlyBlackKeysSwitchOutlet" destination="jwN-de-VD1" id="TOS-qo-SGw"/>
                         <outlet property="onlyWhiteKeysSwitchOutlet" destination="wkB-FH-tXJ" id="lOG-js-VlV"/>
                         <outlet property="pianoBackgroundImage" destination="Kqr-Q3-q8M" id="7AY-s1-gNn"/>
                         <outlet property="pianoKeyImage" destination="PeW-eg-9HV" id="aHr-fh-2dz"/>

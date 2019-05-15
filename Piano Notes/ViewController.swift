@@ -113,9 +113,11 @@ class ViewController: UIViewController {
         
         switch currentGameMode {
         case .A:
+            print("switching to mode B")
             currentGameMode = .B
             includeEnharmonicsSwitchOutlet.isEnabled = true
         case .B:
+            print("switching to mode A")
             currentGameMode = .A
             includeEnharmonicsSwitchOutlet.isEnabled = false
         }
@@ -129,7 +131,9 @@ class ViewController: UIViewController {
     @IBAction func onlyWhiteKeysSwitch(_ sender: UISwitch) {
         
         // disable sharps and flats, make them invisible, disable gesture recognizers
-        if sender.isOn == true {
+        if sender.isOn {
+            
+            onlyBlackKeysSwitchOutlet.setOn(false, animated: true)
             
             setToOnlyWhiteKeys()
         
@@ -151,7 +155,6 @@ class ViewController: UIViewController {
             
             whiteKeySettingsSegmentedControlOutlet.selectedSegmentIndex = 0
             
-            
             enableSharps()
             sharpsViewOutlet.alpha = 1
             enableFlats()
@@ -171,22 +174,20 @@ class ViewController: UIViewController {
     // enable / disable based on the white keys switch
     @IBAction func whiteKeySettingsSegmentedControl(_ sender: UISegmentedControl) {
         
+        onlyWhiteKeysSwitchOutlet.setOn(true, animated: true)
+        onlyBlackKeysSwitchOutlet.setOn(false, animated: true)
+        
+        
         if sender.selectedSegmentIndex == 0 {
             
             // all white keys
             setToOnlyWhiteKeys()
             
-            onlyWhiteKeysSwitchOutlet.setOn(true, animated: true)
-            
             enableButtons()
-            
-            noteButtonA.alpha = 1
-            noteButtonB.alpha = 1
-            noteButtonC.alpha = 1
-            noteButtonD.alpha = 1
-            noteButtonE.alpha = 1
-            noteButtonF.alpha = 1
-            noteButtonG.alpha = 1
+            disableSharps()
+            sharpsViewOutlet.alpha = 0
+            disableFlats()
+            flatsViewOutlet.alpha = 0
             
             startNewRound()
             
@@ -195,26 +196,11 @@ class ViewController: UIViewController {
             // only C D E
             setToOnlyCDE()
             
-            onlyWhiteKeysSwitchOutlet.setOn(true, animated: true)
-            
             disableButtons()
             disableSharps()
             sharpsViewOutlet.alpha = 0
             disableFlats()
             flatsViewOutlet.alpha = 0
-            
-            noteButtonA.alpha = 0.3
-            noteButtonB.alpha = 0.3
-            noteButtonF.alpha = 0.3
-            noteButtonG.alpha = 0.3
-            
-            noteButtonC.alpha = 1
-            noteButtonD.alpha = 1
-            noteButtonE.alpha = 1
-            
-            noteButtonC.isEnabled = true
-            noteButtonD.isEnabled = true
-            noteButtonE.isEnabled = true
             
             startNewRound()
             
@@ -223,27 +209,11 @@ class ViewController: UIViewController {
             // only F G A B
             setToOnlyFGAB()
             
-            onlyWhiteKeysSwitchOutlet.setOn(true, animated: true)
-
             disableButtons()
             disableSharps()
             sharpsViewOutlet.alpha = 0
             disableFlats()
             flatsViewOutlet.alpha = 0
-            
-            noteButtonC.alpha = 0.3
-            noteButtonD.alpha = 0.3
-            noteButtonE.alpha = 0.3
-            
-            noteButtonA.alpha = 1
-            noteButtonB.alpha = 1
-            noteButtonF.alpha = 1
-            noteButtonG.alpha = 1
-            
-            noteButtonF.isEnabled = true
-            noteButtonG.isEnabled = true
-            noteButtonA.isEnabled = true
-            noteButtonB.isEnabled = true
             
             startNewRound()
             
@@ -265,11 +235,24 @@ class ViewController: UIViewController {
         
     }
     
+    
+    @IBOutlet weak var onlyBlackKeysSwitchOutlet: UISwitch!
+    
     @IBAction func onlyBlackKeysSwitch(_ sender: UISwitch) {
         if sender.isOn {
             setToOnlyBlackKeys()
+            
+            blackKeySettingsSegmentedControlOutlet.selectedSegmentIndex = 0
             weirdEnharmonicsEnabled = false
             onlyWhiteKeysSwitchOutlet.setOn(false, animated: true)
+            
+            enableButtons()
+            
+            enableSharps()
+            sharpsViewOutlet.alpha = 1
+            enableFlats()
+            flatsViewOutlet.alpha = 1
+            
             startNewRound()
         } else {
             setToAllNoteChoices()
@@ -281,7 +264,14 @@ class ViewController: UIViewController {
     
     @IBAction func blackKeySettingsSegmentedControl(_ sender: UISegmentedControl) {
         
+        onlyWhiteKeysSwitchOutlet.setOn(false, animated: true)
+        whiteKeySettingsSegmentedControlOutlet.selectedSegmentIndex = 0
+        onlyBlackKeysSwitchOutlet.setOn(true, animated: true)
+        
+        enableButtons()
+        
         if sender.selectedSegmentIndex == 0 {
+            
             // all black keys
             setToOnlyBlackKeys()
             
@@ -291,6 +281,7 @@ class ViewController: UIViewController {
             flatsViewOutlet.alpha = 1
             
         } else if sender.selectedSegmentIndex == 1 {
+            
             // only sharps
             setToOnlySharps()
             
@@ -673,7 +664,7 @@ class ViewController: UIViewController {
             
             var accidentalOrNot: Accidentals = .neither
             
-            if allNoteChoicesEnabled || onlyBlackKeysEnabled {
+            if allNoteChoicesEnabled {
             
                 accidentalOrNotIndex = Int.random(in: 0...2)
                 
@@ -683,9 +674,19 @@ class ViewController: UIViewController {
                 
                 accidentalOrNot = Accidentals.allCases[accidentalOrNotIndex]
             
+            } else if onlyBlackKeysEnabled {
+                
+                accidentalOrNotIndex = Int.random(in: 0...1)
+                
+//                while accidentalOrNotIndex == lastAccidentalOrNotIndex {
+//                    accidentalOrNotIndex = Int.random(in: 0...1)
+//                }
+                
+                accidentalOrNot = Accidentals.allCases[accidentalOrNotIndex]
+            
             } else if onlyWeirdEnharmonicsEnabled {
                 
-                accidentalOrNotIndex = Int.random(in: 1...2)
+                accidentalOrNotIndex = Int.random(in: 0...1)
                 
                 // IF I LEFT THIS IN, IT WOULD JUST KEEP SWITCHING, RIGHT?
 //                while accidentalOrNotIndex == lastAccidentalOrNotIndex {
