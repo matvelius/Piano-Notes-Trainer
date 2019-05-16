@@ -1583,6 +1583,21 @@
             </objects>
             <point key="canvasLocation" x="676.86676427525617" y="107.8125"/>
         </scene>
+        <!--Notes On Staff View Controller-->
+        <scene sceneID="Qoc-gM-v9U">
+            <objects>
+                <viewController id="vCV-Es-ama" customClass="NotesOnStaffViewController" customModule="Piano_Notes" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="tec-47-C5m">
+                        <rect key="frame" x="0.0" y="0.0" width="1366" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="cGR-eH-SAd"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Puy-bs-p1t" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1394" y="116"/>
+        </scene>
         <!--Initial View Controller-->
         <scene sceneID="8XM-xb-p9F">
             <objects>
