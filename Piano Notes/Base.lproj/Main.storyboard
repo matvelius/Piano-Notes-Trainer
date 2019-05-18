@@ -1596,14 +1596,14 @@
                                 <rect key="frame" x="0.0" y="24" width="1366" height="1000"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="staffA2" translatesAutoresizingMaskIntoConstraints="NO" id="gqB-He-zfK" userLabel="note on staff">
-                                <rect key="frame" x="412.5" y="117" width="541.5" height="500"/>
+                                <rect key="frame" x="392.5" y="122" width="541.5" height="500"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="gqB-He-zfK" secondAttribute="height" multiplier="1083:1000" id="Gla-gb-11H"/>
                                 </constraints>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="name_the_highlighted_note" translatesAutoresizingMaskIntoConstraints="NO" id="COz-gC-a0h">
-                                <rect key="frame" x="297.5" y="91" width="771" height="51"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tap_the_correct_key" translatesAutoresizingMaskIntoConstraints="NO" id="COz-gC-a0h">
+                                <rect key="frame" x="220.5" y="91" width="925" height="61"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="COz-gC-a0h" secondAttribute="height" multiplier="257:17" id="rml-Os-b7l"/>
                                 </constraints>
@@ -1611,17 +1611,16 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="COz-gC-a0h" firstAttribute="width" secondItem="cGR-eH-SAd" secondAttribute="width" multiplier="0.56442" id="0ZX-ju-Pqs"/>
+                            <constraint firstItem="COz-gC-a0h" firstAttribute="width" secondItem="cGR-eH-SAd" secondAttribute="width" multiplier="0.6773" id="0ZX-ju-Pqs"/>
                             <constraint firstItem="COz-gC-a0h" firstAttribute="top" secondItem="tec-47-C5m" secondAttribute="topMargin" constant="67" id="1B8-hS-ijF"/>
-                            <constraint firstItem="gqB-He-zfK" firstAttribute="centerX" secondItem="tec-47-C5m" secondAttribute="centerX" id="2xj-8p-iV2"/>
+                            <constraint firstItem="gqB-He-zfK" firstAttribute="centerX" secondItem="tec-47-C5m" secondAttribute="centerX" constant="-20" id="2xj-8p-iV2"/>
                             <constraint firstItem="gqB-He-zfK" firstAttribute="height" secondItem="Bcp-rj-qSy" secondAttribute="height" multiplier="1:2" id="MXv-ra-sZ4"/>
                             <constraint firstItem="Bcp-rj-qSy" firstAttribute="bottom" secondItem="tec-47-C5m" secondAttribute="bottom" id="PYA-r2-1Op"/>
                             <constraint firstItem="Bcp-rj-qSy" firstAttribute="trailing" secondItem="cGR-eH-SAd" secondAttribute="trailing" id="QPH-6d-rYL"/>
                             <constraint firstItem="gqB-He-zfK" firstAttribute="width" secondItem="Bcp-rj-qSy" secondAttribute="width" multiplier="541.5:1366" id="c55-se-KYE"/>
                             <constraint firstItem="Bcp-rj-qSy" firstAttribute="leading" secondItem="cGR-eH-SAd" secondAttribute="leading" id="cyA-SK-TZb"/>
-                            <constraint firstItem="COz-gC-a0h" firstAttribute="width" secondItem="COz-gC-a0h" secondAttribute="height" multiplier="257:17" id="luL-pw-4tG"/>
                             <constraint firstItem="COz-gC-a0h" firstAttribute="centerX" secondItem="tec-47-C5m" secondAttribute="centerX" id="qBS-nZ-EEL"/>
-                            <constraint firstItem="gqB-He-zfK" firstAttribute="top" secondItem="COz-gC-a0h" secondAttribute="bottom" constant="-25" id="wyS-Tq-m7O"/>
+                            <constraint firstItem="gqB-He-zfK" firstAttribute="top" secondItem="COz-gC-a0h" secondAttribute="bottom" constant="-30" id="wyS-Tq-m7O"/>
                             <constraint firstItem="Bcp-rj-qSy" firstAttribute="top" secondItem="tec-47-C5m" secondAttribute="topMargin" id="zkA-3d-O9o"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="cGR-eH-SAd"/>
@@ -1822,6 +1821,7 @@
         <image name="sharp_pressed" width="210" height="123"/>
         <image name="staffA2" width="1083" height="1000"/>
         <image name="stars0" width="754" height="102"/>
+        <image name="tap_the_correct_key" width="1902" height="102"/>
         <image name="white_piano_12.9_large" width="910.66668701171875" height="538.66668701171875"/>
     </resources>
     <inferredMetricsTieBreakers>
