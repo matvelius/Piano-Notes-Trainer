@@ -108,18 +108,29 @@ class ViewController: UIViewController {
     }
     
     
+    @IBOutlet weak var topLabelOutlet: UIImageView!
+    
+    
     @IBAction func modeSwitchFlipped(_ sender: UISegmentedControl) {
 //        currentGameMode = (currentGameMode == .B) ? .A : .B
+        
+        let labelScaleMultiplier = 1.2
+        let labelScaleMultiplierBackToNormal = 1.0
         
         switch currentGameMode {
         case .A:
             print("switching to mode B")
             currentGameMode = .B
             includeEnharmonicsSwitchOutlet.isEnabled = true
+            topLabelOutlet.image = UIImage(named: "tap_the_correct_key")
+            topLabelOutlet.transform = CGAffineTransform(scaleX: CGFloat(labelScaleMultiplier), y: CGFloat(labelScaleMultiplier))
         case .B:
             print("switching to mode A")
             currentGameMode = .A
             includeEnharmonicsSwitchOutlet.isEnabled = false
+            topLabelOutlet.image = UIImage(named: "name_the_highlighted_note")
+            topLabelOutlet.transform = CGAffineTransform(scaleX: CGFloat(labelScaleMultiplierBackToNormal ), y: CGFloat(labelScaleMultiplierBackToNormal))
+//            topLabelOutlet.frame.width
         }
         
         startNewRound()
