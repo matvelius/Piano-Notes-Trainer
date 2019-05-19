@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="vCV-Es-ama">
     <device id="ipad12_9rounded" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
@@ -1595,12 +1595,16 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="notes_on_staff_piano_background" translatesAutoresizingMaskIntoConstraints="NO" id="Bcp-rj-qSy" userLabel="piano_background">
                                 <rect key="frame" x="0.0" y="24" width="1366" height="1000"/>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="staffA2" translatesAutoresizingMaskIntoConstraints="NO" id="gqB-He-zfK" userLabel="note on staff">
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="staffA2" translatesAutoresizingMaskIntoConstraints="NO" id="gqB-He-zfK" userLabel="note on staff">
                                 <rect key="frame" x="392.5" y="122" width="541.5" height="500"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="gqB-He-zfK" secondAttribute="height" multiplier="1083:1000" id="Gla-gb-11H"/>
                                 </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="iIp-0g-gv6" appends="YES" id="ocu-DE-MCt"/>
+                                </connections>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tap_the_correct_key" translatesAutoresizingMaskIntoConstraints="NO" id="COz-gC-a0h">
                                 <rect key="frame" x="220.5" y="91" width="925" height="61"/>
@@ -1625,8 +1629,17 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="cGR-eH-SAd"/>
                     </view>
+                    <connections>
+                        <outlet property="noteOnStaffImage" destination="gqB-He-zfK" id="WgL-1C-j0v"/>
+                        <outlet property="panGestureRecognizerOutlet" destination="iIp-0g-gv6" id="QJr-Yv-BQp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Puy-bs-p1t" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="iIp-0g-gv6">
+                    <connections>
+                        <action selector="handlePanGestureWithRecognizer:" destination="vCV-Es-ama" id="TWw-9F-05i"/>
+                    </connections>
+                </panGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1337" y="108"/>
         </scene>

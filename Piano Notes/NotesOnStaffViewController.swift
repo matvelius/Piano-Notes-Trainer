@@ -9,22 +9,33 @@
 import UIKit
 
 class NotesOnStaffViewController: UIViewController {
-
+    
+    @IBOutlet weak var noteOnStaffImage: UIImageView!
+    
+    @IBOutlet var panGestureRecognizerOutlet: UIPanGestureRecognizer!
+    
+    var currentNoteIndex = 10
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        noteOnStaffImage.image = UIImage(named: "staff\(whiteNotesOnLargeKeyboard[currentNoteIndex])")
         // Do any additional setup after loading the view.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func handlePanGesture(recognizer: UIPanGestureRecognizer) {
+        
+        
+        
+        if recognizer.velocity(in: self.view).y < 0 {
+            print("panning up!")
+            noteOnStaffImage.image = UIImage(named: "staff\(whiteNotesOnLargeKeyboard[currentNoteIndex + 1])")
+        } else if recognizer.velocity(in: self.view).y > 0 {
+            print("panning down!")
+            noteOnStaffImage.image = UIImage(named: "staff\(whiteNotesOnLargeKeyboard[currentNoteIndex - 1])")
+        }
+        
     }
-    */
+    
 
 }
