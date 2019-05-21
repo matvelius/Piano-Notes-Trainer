@@ -20,7 +20,6 @@ class NotesOnStaffViewController: UIViewController {
         super.viewDidLoad()
         
         noteOnStaffImage.image = UIImage(named: "staff\(whiteNotesOnLargeKeyboard[locationTracker])")
-        // Do any additional setup after loading the view.
     }
     
     var noteOnStaffPanGestureRecognizerLocation: CGFloat = 0
@@ -42,24 +41,6 @@ class NotesOnStaffViewController: UIViewController {
         
         noteOnStaffPanGestureRecognizerLocation = recognizer.location(in: self.noteOnStaffImage).y
         
-        print(noteOnStaffPanGestureRecognizerLocation)
-        
-//        locationTracker = noteOnStaffPanGestureRecognizerLocation
-//
-//        if recognizer.state == .began {
-//
-//            if noteOnStaffPanGestureRecognizerLocation > 0 {
-//                print("panning up!")
-//                noteOnStaffImage.image = UIImage(named: "staff\(whiteNotesOnLargeKeyboard[currentNoteIndex + 1])")
-//            } else {
-//                print("panning down!")
-//                noteOnStaffImage.image = UIImage(named: "staff\(whiteNotesOnLargeKeyboard[currentNoteIndex - 1])")
-//            }
-//
-//        }
-        
-        
-        
         
         if recognizer.velocity(in: self.view).y < 0 && locationTracker < whiteNotesOnLargeKeyboard.count - 1 {
             print("panning up!")
@@ -70,12 +51,7 @@ class NotesOnStaffViewController: UIViewController {
             print("panning down!")
         }
         
-//        func checkIfPanGestureEnded() {
-//            if recognizer.state == .ended {
-//                noteOnStaffPanGestureRecognizerLocation = 0
-//            }
-//        }
-        
+
     }
     
 
