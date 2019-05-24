@@ -14,15 +14,29 @@ class NotesOnStaffViewController: UIViewController {
     
     @IBOutlet var panGestureRecognizerOutlet: UIPanGestureRecognizer!
     
-    @IBOutlet weak var sharpButtonOutlet: UIButton!
     
     @IBAction func sharpButtonPressed(_ sender: UIButton) {
     }
     
-    @IBOutlet weak var naturalButtonOutlet: UIButton!
-    
     @IBAction func naturalButtonPressed(_ sender: UIButton) {
     }
+    
+    @IBAction func flatButtonPressed(_ sender: UIButton) {
+    }
+    
+    @IBAction func upArrowButtonPressed(_ sender: UIButton) {
+    }
+    
+    @IBOutlet weak var checkButtonOutlet: UIButton!
+    
+    @IBAction func checkButtonPressed(_ sender: UIButton) {
+    }
+    
+    @IBAction func downArrowButtonPressed(_ sender: UIButton) {
+    }
+    
+    
+    
     
     var currentNoteIndex = 10
     
