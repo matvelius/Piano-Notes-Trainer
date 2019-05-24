@@ -25,6 +25,10 @@ class NotesOnStaffViewController: UIViewController {
     }
     
     @IBAction func upArrowButtonPressed(_ sender: UIButton) {
+        if currentNoteIndex < whiteNotesOnLargeKeyboard.count - 1 {
+            currentNoteIndex += 1
+            updateNoteOnStaffImage()
+        }
     }
     
     @IBOutlet weak var checkButtonOutlet: UIButton!
@@ -33,6 +37,10 @@ class NotesOnStaffViewController: UIViewController {
     }
     
     @IBAction func downArrowButtonPressed(_ sender: UIButton) {
+        if currentNoteIndex > 0 {
+            currentNoteIndex -= 1
+            updateNoteOnStaffImage()
+        }
     }
     
     
@@ -43,21 +51,23 @@ class NotesOnStaffViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        noteOnStaffImage.image = UIImage(named: "staff\(whiteNotesOnLargeKeyboard[Int(round(locationTracker))])")
+        noteOnStaffImage.image = UIImage(named: "staff\(whiteNotesOnLargeKeyboard[currentNoteIndex])")
     }
     
 //    var noteOnStaffPanGestureRecognizerLocation: CGFloat = 0
     
     var locationTracker: Double = Double(whiteNotesOnLargeKeyboard.count / 2) {
         didSet {
+            currentNoteIndex = Int(round(locationTracker))
             updateNoteOnStaffImage()
         }
     }
     
     func updateNoteOnStaffImage() {
 //        while locationTracker > 0 && locationTracker < whiteNotesOnLargeKeyboard.count {
-            print("locationTracker: \(locationTracker)")
-            noteOnStaffImage.image = UIImage(named: "staff\(whiteNotesOnLargeKeyboard[Int(round(locationTracker))])")
+        print("locationTracker: \(locationTracker)")
+        print("currentNoteIndex: \(currentNoteIndex)")
+        noteOnStaffImage.image = UIImage(named: "staff\(whiteNotesOnLargeKeyboard[currentNoteIndex])")
 //        }
     }
     
@@ -84,10 +94,6 @@ class NotesOnStaffViewController: UIViewController {
             }
         }
         
-        
-        
-
     }
     
-
 }

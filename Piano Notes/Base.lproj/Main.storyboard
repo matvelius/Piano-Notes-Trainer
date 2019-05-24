@@ -1651,6 +1651,9 @@
                                         </constraints>
                                         <state key="normal" image="flat"/>
                                         <state key="highlighted" image="flat_pressed"/>
+                                        <connections>
+                                            <action selector="flatButtonPressed:" destination="vCV-Es-ama" eventType="touchUpInside" id="WyG-GY-Fmh"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <viewLayoutGuide key="safeArea" id="IHP-MF-gPZ"/>
@@ -1666,6 +1669,9 @@
                                         </constraints>
                                         <state key="normal" image="arrow_up"/>
                                         <state key="highlighted" image="arrow_up_pressed"/>
+                                        <connections>
+                                            <action selector="upArrowButtonPressed:" destination="vCV-Es-ama" eventType="touchUpInside" id="2kz-Mg-PTK"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QTI-d7-4cg">
                                         <rect key="frame" x="0.0" y="90.5" width="100" height="57"/>
@@ -1675,6 +1681,9 @@
                                         </constraints>
                                         <state key="normal" image="check"/>
                                         <state key="highlighted" image="check_pressed"/>
+                                        <connections>
+                                            <action selector="checkButtonPressed:" destination="vCV-Es-ama" eventType="touchUpInside" id="GRf-uP-BSj"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X3g-fg-JWq">
                                         <rect key="frame" x="0.0" y="181.5" width="100" height="57"/>
@@ -1682,7 +1691,10 @@
                                             <constraint firstAttribute="width" secondItem="X3g-fg-JWq" secondAttribute="height" multiplier="202:115" id="NGn-A3-cIf"/>
                                         </constraints>
                                         <state key="normal" image="arrow_down"/>
-                                        <state key="highlighted" image="Add"/>
+                                        <state key="highlighted" image="arrow_down_pressed"/>
+                                        <connections>
+                                            <action selector="downArrowButtonPressed:" destination="vCV-Es-ama" eventType="touchUpInside" id="Y8e-1M-YMM"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <viewLayoutGuide key="safeArea" id="jg4-Mq-YeF"/>
@@ -1714,10 +1726,9 @@
                         <viewLayoutGuide key="safeArea" id="cGR-eH-SAd"/>
                     </view>
                     <connections>
-                        <outlet property="naturalButtonOutlet" destination="B4l-9i-Qh1" id="Uuf-g0-tWV"/>
+                        <outlet property="checkButtonOutlet" destination="QTI-d7-4cg" id="52C-FY-wf9"/>
                         <outlet property="noteOnStaffImage" destination="gqB-He-zfK" id="WgL-1C-j0v"/>
                         <outlet property="panGestureRecognizerOutlet" destination="iIp-0g-gv6" id="QJr-Yv-BQp"/>
-                        <outlet property="sharpButtonOutlet" destination="XUU-hi-oKk" id="Stp-kt-oxz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Puy-bs-p1t" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1892,7 +1903,6 @@
     <resources>
         <image name="A_default" width="220" height="220"/>
         <image name="A_pressed" width="220" height="220"/>
-        <image name="Add" width="16" height="16"/>
         <image name="B_default" width="220" height="220"/>
         <image name="B_pressed" width="220" height="220"/>
         <image name="C_default" width="220" height="220"/>
@@ -1906,6 +1916,7 @@
         <image name="G_default" width="220" height="220"/>
         <image name="G_pressed" width="220" height="220"/>
         <image name="arrow_down" width="202" height="115"/>
+        <image name="arrow_down_pressed" width="202" height="115"/>
         <image name="arrow_up" width="202" height="115"/>
         <image name="arrow_up_pressed" width="202" height="115"/>
         <image name="check" width="210" height="112"/>
