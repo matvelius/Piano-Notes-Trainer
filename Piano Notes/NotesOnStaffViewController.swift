@@ -18,10 +18,15 @@ class NotesOnStaffViewController: UIViewController {
     
     
     @IBAction func sharpButtonPressed(_ sender: UIButton) {
-//        str.insert("N", at: str.index(str.endIndex, offsetBy: -1))
-//        currentNoteOnStaffImageName = "staff\(whiteNotesOnLargeKeyboard[currentNoteIndex])"
-        if currentNoteOnStaffImageName[currentNoteOnStaffImageName.index(currentNoteOnStaffImageName.endIndex, offsetBy: -2)] != "#" {
+        let currentNoteOnStaffImageNameSecondToLastCharacter = currentNoteOnStaffImageName[currentNoteOnStaffImageName.index(currentNoteOnStaffImageName.endIndex, offsetBy: -2)]
+        
+        print("currentNoteOnStaffImageName: \(currentNoteOnStaffImageName), currentNoteOnStaffImageNameSecondToLastCharacter: \(currentNoteOnStaffImageNameSecondToLastCharacter)")
+        
+        if  currentNoteOnStaffImageNameSecondToLastCharacter != "#" && currentNoteOnStaffImageNameSecondToLastCharacter != "b" {
             currentNoteOnStaffImageName.insert("#", at: currentNoteOnStaffImageName.index(currentNoteOnStaffImageName.endIndex, offsetBy: -1))
+            updateNoteOnStaffImage(optionalImageName: currentNoteOnStaffImageName)
+        } else if currentNoteOnStaffImageNameSecondToLastCharacter == "b" {
+            currentNoteOnStaffImageName = currentNoteOnStaffImageName.replacingOccurrences(of: "b", with: "#")
             updateNoteOnStaffImage(optionalImageName: currentNoteOnStaffImageName)
         }
     }
@@ -30,6 +35,17 @@ class NotesOnStaffViewController: UIViewController {
     }
     
     @IBAction func flatButtonPressed(_ sender: UIButton) {
+        let currentNoteOnStaffImageNameSecondToLastCharacter = currentNoteOnStaffImageName[currentNoteOnStaffImageName.index(currentNoteOnStaffImageName.endIndex, offsetBy: -2)]
+        
+        print("currentNoteOnStaffImageName: \(currentNoteOnStaffImageName), currentNoteOnStaffImageNameSecondToLastCharacter: \(currentNoteOnStaffImageNameSecondToLastCharacter)")
+        
+        if  currentNoteOnStaffImageNameSecondToLastCharacter != "#" && currentNoteOnStaffImageNameSecondToLastCharacter != "b" {
+            currentNoteOnStaffImageName.insert("#", at: currentNoteOnStaffImageName.index(currentNoteOnStaffImageName.endIndex, offsetBy: -1))
+            updateNoteOnStaffImage(optionalImageName: currentNoteOnStaffImageName)
+        } else if currentNoteOnStaffImageNameSecondToLastCharacter == "#" {
+            currentNoteOnStaffImageName = currentNoteOnStaffImageName.replacingOccurrences(of: "#", with: "b")
+            updateNoteOnStaffImage(optionalImageName: currentNoteOnStaffImageName)
+        }
     }
     
     @IBAction func upArrowButtonPressed(_ sender: UIButton) {
@@ -61,8 +77,6 @@ class NotesOnStaffViewController: UIViewController {
         
     }
     
-//    var noteOnStaffPanGestureRecognizerLocation: CGFloat = 0
-    
     var locationTracker: Double = Double(whiteNotesOnLargeKeyboard.count / 2) {
         didSet {
             currentNoteIndex = Int(round(locationTracker))
@@ -77,6 +91,7 @@ class NotesOnStaffViewController: UIViewController {
             currentNoteOnStaffImageName = "staff\(whiteNotesOnLargeKeyboard[currentNoteIndex])"
             noteOnStaffImage.image = UIImage(named: currentNoteOnStaffImageName)
         }
+        print("currentNoteOnStaffImageName: \(currentNoteOnStaffImageName)")
         print("locationTracker: \(locationTracker)")
         print("currentNoteIndex: \(currentNoteIndex)")
 
