@@ -32,6 +32,14 @@ class NotesOnStaffViewController: UIViewController {
     }
     
     @IBAction func naturalButtonPressed(_ sender: UIButton) {
+        let currentNoteOnStaffImageNameSecondToLastCharacter = currentNoteOnStaffImageName[currentNoteOnStaffImageName.index(currentNoteOnStaffImageName.endIndex, offsetBy: -2)]
+        if currentNoteOnStaffImageNameSecondToLastCharacter == "#" {
+            currentNoteOnStaffImageName = currentNoteOnStaffImageName.replacingOccurrences(of: "#", with: "")
+            updateNoteOnStaffImage(optionalImageName: currentNoteOnStaffImageName)
+        } else if currentNoteOnStaffImageNameSecondToLastCharacter == "b" {
+            currentNoteOnStaffImageName = currentNoteOnStaffImageName.replacingOccurrences(of: "b", with: "")
+            updateNoteOnStaffImage(optionalImageName: currentNoteOnStaffImageName)
+        }
     }
     
     @IBAction func flatButtonPressed(_ sender: UIButton) {
@@ -40,7 +48,7 @@ class NotesOnStaffViewController: UIViewController {
         print("currentNoteOnStaffImageName: \(currentNoteOnStaffImageName), currentNoteOnStaffImageNameSecondToLastCharacter: \(currentNoteOnStaffImageNameSecondToLastCharacter)")
         
         if  currentNoteOnStaffImageNameSecondToLastCharacter != "#" && currentNoteOnStaffImageNameSecondToLastCharacter != "b" {
-            currentNoteOnStaffImageName.insert("#", at: currentNoteOnStaffImageName.index(currentNoteOnStaffImageName.endIndex, offsetBy: -1))
+            currentNoteOnStaffImageName.insert("b", at: currentNoteOnStaffImageName.index(currentNoteOnStaffImageName.endIndex, offsetBy: -1))
             updateNoteOnStaffImage(optionalImageName: currentNoteOnStaffImageName)
         } else if currentNoteOnStaffImageNameSecondToLastCharacter == "#" {
             currentNoteOnStaffImageName = currentNoteOnStaffImageName.replacingOccurrences(of: "#", with: "b")
