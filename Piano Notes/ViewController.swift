@@ -790,8 +790,10 @@ class ViewController: UIViewController {
             
             print("CORRECT")
             
+            // different logic based on game mode
             switch currentGameMode {
-                
+            
+            // mode A (where a note on the keyboard is highlighed)
             case .A:
                 // if dealing with sharp or flat, light up regular letter + #/b symbol
                 if currentUserAnswer.count == 2 {
@@ -834,6 +836,7 @@ class ViewController: UIViewController {
                 
                 disableButtons()
                 
+            // mode B: one of the letters (and maybe a # or b) lights up
             case .B:
                 // turn the key user pressed to green
                 // (identify whether it's a white or black key)

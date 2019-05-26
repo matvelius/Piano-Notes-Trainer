@@ -18,60 +18,118 @@ class NotesOnStaffViewController: UIViewController {
     
     
     @IBAction func sharpButtonPressed(_ sender: UIButton) {
+        
+        
         let currentNoteOnStaffImageNameSecondToLastCharacter = currentNoteOnStaffImageName[currentNoteOnStaffImageName.index(currentNoteOnStaffImageName.endIndex, offsetBy: -2)]
         
         print("currentNoteOnStaffImageName: \(currentNoteOnStaffImageName), currentNoteOnStaffImageNameSecondToLastCharacter: \(currentNoteOnStaffImageNameSecondToLastCharacter)")
         
-        if  currentNoteOnStaffImageNameSecondToLastCharacter != "#" && currentNoteOnStaffImageNameSecondToLastCharacter != "b" {
+        if  currentAccidental == .neither {
+            
+            currentAccidental = .sharp
+            
             currentNoteOnStaffImageName.insert("#", at: currentNoteOnStaffImageName.index(currentNoteOnStaffImageName.endIndex, offsetBy: -1))
+            
             updateNoteOnStaffImage(optionalImageName: currentNoteOnStaffImageName)
-        } else if currentNoteOnStaffImageNameSecondToLastCharacter == "b" {
+            
+        } else if currentAccidental == .flat {
+            
+            currentAccidental = .sharp
+            
             currentNoteOnStaffImageName = currentNoteOnStaffImageName.replacingOccurrences(of: "b", with: "#")
             updateNoteOnStaffImage(optionalImageName: currentNoteOnStaffImageName)
         }
+        
+//        if  currentNoteOnStaffImageNameSecondToLastCharacter != "#" && currentNoteOnStaffImageNameSecondToLastCharacter != "b" {
+//            currentNoteOnStaffImageName.insert("#", at: currentNoteOnStaffImageName.index(currentNoteOnStaffImageName.endIndex, offsetBy: -1))
+//            updateNoteOnStaffImage(optionalImageName: currentNoteOnStaffImageName)
+//        } else if currentNoteOnStaffImageNameSecondToLastCharacter == "b" {
+//            currentNoteOnStaffImageName = currentNoteOnStaffImageName.replacingOccurrences(of: "b", with: "#")
+//            updateNoteOnStaffImage(optionalImageName: currentNoteOnStaffImageName)
+//        }
     }
     
     @IBAction func naturalButtonPressed(_ sender: UIButton) {
-        let currentNoteOnStaffImageNameSecondToLastCharacter = currentNoteOnStaffImageName[currentNoteOnStaffImageName.index(currentNoteOnStaffImageName.endIndex, offsetBy: -2)]
-        if currentNoteOnStaffImageNameSecondToLastCharacter == "#" {
-            currentNoteOnStaffImageName = currentNoteOnStaffImageName.replacingOccurrences(of: "#", with: "")
-            updateNoteOnStaffImage(optionalImageName: currentNoteOnStaffImageName)
-        } else if currentNoteOnStaffImageNameSecondToLastCharacter == "b" {
-            currentNoteOnStaffImageName = currentNoteOnStaffImageName.replacingOccurrences(of: "b", with: "")
-            updateNoteOnStaffImage(optionalImageName: currentNoteOnStaffImageName)
-        }
-    }
-    
-    @IBAction func flatButtonPressed(_ sender: UIButton) {
+        
         let currentNoteOnStaffImageNameSecondToLastCharacter = currentNoteOnStaffImageName[currentNoteOnStaffImageName.index(currentNoteOnStaffImageName.endIndex, offsetBy: -2)]
         
         print("currentNoteOnStaffImageName: \(currentNoteOnStaffImageName), currentNoteOnStaffImageNameSecondToLastCharacter: \(currentNoteOnStaffImageNameSecondToLastCharacter)")
         
-        if  currentNoteOnStaffImageNameSecondToLastCharacter != "#" && currentNoteOnStaffImageNameSecondToLastCharacter != "b" {
-            currentNoteOnStaffImageName.insert("b", at: currentNoteOnStaffImageName.index(currentNoteOnStaffImageName.endIndex, offsetBy: -1))
+        if currentAccidental == .sharp {
+            currentNoteOnStaffImageName = currentNoteOnStaffImageName.replacingOccurrences(of: "#", with: "")
             updateNoteOnStaffImage(optionalImageName: currentNoteOnStaffImageName)
-        } else if currentNoteOnStaffImageNameSecondToLastCharacter == "#" {
+            currentAccidental = .neither
+        } else if currentAccidental == .flat {
+            currentNoteOnStaffImageName = currentNoteOnStaffImageName.replacingOccurrences(of: "b", with: "")
+            updateNoteOnStaffImage(optionalImageName: currentNoteOnStaffImageName)
+            currentAccidental = .neither
+        }
+        
+//        if currentNoteOnStaffImageNameSecondToLastCharacter == "#" {
+//            currentNoteOnStaffImageName = currentNoteOnStaffImageName.replacingOccurrences(of: "#", with: "")
+//            updateNoteOnStaffImage(optionalImageName: currentNoteOnStaffImageName)
+//        } else if currentNoteOnStaffImageNameSecondToLastCharacter == "b" {
+//            currentNoteOnStaffImageName = currentNoteOnStaffImageName.replacingOccurrences(of: "b", with: "")
+//            updateNoteOnStaffImage(optionalImageName: currentNoteOnStaffImageName)
+//        }
+    }
+    
+    @IBAction func flatButtonPressed(_ sender: UIButton) {
+        
+        let currentNoteOnStaffImageNameSecondToLastCharacter = currentNoteOnStaffImageName[currentNoteOnStaffImageName.index(currentNoteOnStaffImageName.endIndex, offsetBy: -2)]
+        
+        print("currentNoteOnStaffImageName: \(currentNoteOnStaffImageName), currentNoteOnStaffImageNameSecondToLastCharacter: \(currentNoteOnStaffImageNameSecondToLastCharacter)")
+        
+        if  currentAccidental == .neither {
+            
+            currentAccidental = .flat
+            
+            currentNoteOnStaffImageName.insert("b", at: currentNoteOnStaffImageName.index(currentNoteOnStaffImageName.endIndex, offsetBy: -1))
+            
+            updateNoteOnStaffImage(optionalImageName: currentNoteOnStaffImageName)
+            
+        } else if currentAccidental == .sharp {
+            
+            currentAccidental = .flat
+            
             currentNoteOnStaffImageName = currentNoteOnStaffImageName.replacingOccurrences(of: "#", with: "b")
             updateNoteOnStaffImage(optionalImageName: currentNoteOnStaffImageName)
         }
+        
+//        if  currentNoteOnStaffImageNameSecondToLastCharacter != "#" && currentNoteOnStaffImageNameSecondToLastCharacter != "b" {
+//            currentNoteOnStaffImageName.insert("b", at: currentNoteOnStaffImageName.index(currentNoteOnStaffImageName.endIndex, offsetBy: -1))
+//            updateNoteOnStaffImage(optionalImageName: currentNoteOnStaffImageName)
+//        } else if currentNoteOnStaffImageNameSecondToLastCharacter == "#" {
+//            currentNoteOnStaffImageName = currentNoteOnStaffImageName.replacingOccurrences(of: "#", with: "b")
+//            updateNoteOnStaffImage(optionalImageName: currentNoteOnStaffImageName)
+//        }
     }
     
     @IBAction func upArrowButtonPressed(_ sender: UIButton) {
         if currentNoteIndex < whiteNotesOnLargeKeyboard.count - 1 {
             currentNoteIndex += 1
             updateNoteOnStaffImage(optionalImageName: nil)
+            currentAccidental = .neither
         }
     }
     
     @IBOutlet weak var checkButtonOutlet: UIButton!
     
+    var userAnswer = ""
+    
     @IBAction func checkButtonPressed(_ sender: UIButton) {
+        userAnswer = currentNoteOnStaffImageName
+        print(userAnswer)
+        checkAnswer()
+        
+        // generate new note; be sure to reset the accidental!
     }
     
     @IBAction func downArrowButtonPressed(_ sender: UIButton) {
         if currentNoteIndex > 0 {
             currentNoteIndex -= 1
             updateNoteOnStaffImage(optionalImageName: nil)
+            currentAccidental = .neither
         }
     }
     
@@ -81,6 +139,7 @@ class NotesOnStaffViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        currentAccidental = .neither
         updateNoteOnStaffImage(optionalImageName: nil)
         
     }
@@ -89,6 +148,7 @@ class NotesOnStaffViewController: UIViewController {
         didSet {
             currentNoteIndex = Int(round(locationTracker))
             updateNoteOnStaffImage(optionalImageName: nil)
+            currentAccidental = .neither
         }
     }
     
@@ -103,6 +163,10 @@ class NotesOnStaffViewController: UIViewController {
         print("locationTracker: \(locationTracker)")
         print("currentNoteIndex: \(currentNoteIndex)")
 
+    }
+    
+    func checkAnswer() {
+        print("check answer")
     }
     
     @IBAction func handlePanGesture(recognizer: UIPanGestureRecognizer) {
