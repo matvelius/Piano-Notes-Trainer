@@ -8,11 +8,11 @@
 
 import Foundation
 
-let enharmonicEquivalenceDictionary = [("A", nil), ("A#", "Bb"), ("B", "Cb"), ("C", "B#"), ("C#", "Db"), ("D", nil), ("D#", "Eb"), ("E", "Fb"), ("F", "E#"), ("F#", "Gb"), ("G", nil), ("G#", "Ab")]
+let enharmonicEquivalenceCollection = [("A", nil), ("A#", "Bb"), ("B", "Cb"), ("C", "B#"), ("C#", "Db"), ("D", nil), ("D#", "Eb"), ("E", "Fb"), ("F", "E#"), ("F#", "Gb"), ("G", nil), ("G#", "Ab")]
 
 func getEnharmonic(currentNote: String) -> String? {
     
-    for (noteOne, noteTwo) in enharmonicEquivalenceDictionary {
+    for (noteOne, noteTwo) in enharmonicEquivalenceCollection {
         if noteOne == currentNote {
             return noteTwo
         } else if noteTwo == currentNote {

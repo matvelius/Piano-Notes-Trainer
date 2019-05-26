@@ -136,6 +136,7 @@ class NotesOnStaffViewController: UIViewController {
 
     var currentNoteIndex = 10
     
+    // REFACTOR SOME (MOST?) OF THIS TO viewDidAppear() ?!
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -167,6 +168,181 @@ class NotesOnStaffViewController: UIViewController {
     
     func checkAnswer() {
         print("check answer")
+    }
+    
+    func generateNewNote() {
+        
+        // enable or disable buttons/keys depending on current game mode
+//        switch currentGameMode {
+//        case .A:
+//            enableButtons()
+//            enableSharps()
+//            enableFlats()
+//            disableWhiteKeyButtons()
+//            disableBlackKeyButtons()
+//        case .B:
+//            disableButtons()
+//            disableSharps()
+//            disableFlats()
+//            enableWhiteKeyButtons()
+//            enableBlackKeyButtons()
+//        }
+        
+        // remove notes marked wrong
+//        if !notesAlreadyAttempted.isEmpty {
+//            for subview in self.pianoKeyImage.subviews {
+//                subview.removeFromSuperview()
+//            }
+//        }
+        
+//        notesAlreadyAttempted = [""]
+        
+//        if currentGameMode == .A {
+//            
+//            randomNewNoteIndex = Int.random(in: 0...randomNewNoteIndexUpperLimit)
+//            
+//            while randomNewNoteIndex == lastRandomNumber {
+//                randomNewNoteIndex = Int.random(in: 0...randomNewNoteIndexUpperLimit)
+//            }
+//            
+//            currentNote = currentNoteChoices[randomNewNoteIndex]
+//            print("the current note is \(currentNote)")
+//            
+//            let currentNoteNameLength = currentNote.count
+//            
+//            // 3-character note names need to be converted to 2-character ones
+//            // (because octave doesn't matter)
+//            if currentNoteNameLength == 3 {
+//                currentCorrectAnswer = String(currentNote[currentNote.startIndex...currentNote.index(after: currentNote.startIndex)])
+//                //            print("currentCorrectAnswer when name length == 3: \(currentCorrectAnswer)")
+//            } else {
+//                currentCorrectAnswer = String(currentNote[currentNote.startIndex])
+//                //            print("currentCorrectAnswer when name length == \(currentNoteNameLength): \(currentCorrectAnswer)")
+//            }
+//            //        currentCorrectAnswer = String(currentNote[currentNote.startIndex])
+//            print("currentCorrectAnswer is \(currentCorrectAnswer)")
+//            
+//            pianoKeyImage.image = UIImage(named: "\(currentNote)_shown")
+//            
+//            // MODE B
+//        } else {
+//            
+//            pianoKeyImage.image = nil
+//            
+//            var upperNoteChoiceLimit = 6
+//            
+//            // LIMIT NUMBER OF NOTE CHOICES FOR NEW NOTE
+//            
+//            switch currentNoteChoices {
+//            case onlyCDE:
+//                upperNoteChoiceLimit = 2
+//            case onlyFGAB, onlyWeirdEnharmonics:
+//                upperNoteChoiceLimit = 3
+//            default: break
+//            }
+//            
+//            randomNewNoteIndex = Int.random(in: 0...upperNoteChoiceLimit)
+//            
+//            while randomNewNoteIndex == lastRandomNumber {
+//                randomNewNoteIndex = Int.random(in: 0...upperNoteChoiceLimit)
+//            }
+//            
+//            var accidentalOrNot: Accidentals = .neither
+//            
+//            if allNoteChoicesEnabled {
+//                
+//                accidentalOrNotIndex = Int.random(in: 0...2)
+//                
+//                while accidentalOrNotIndex == lastAccidentalOrNotIndex {
+//                    accidentalOrNotIndex = Int.random(in: 0...2)
+//                }
+//                
+//                accidentalOrNot = Accidentals.allCases[accidentalOrNotIndex]
+//                
+//            } else if onlyBlackKeysEnabled {
+//                
+//                accidentalOrNotIndex = Int.random(in: 0...1)
+//                
+//                //                while accidentalOrNotIndex == lastAccidentalOrNotIndex {
+//                //                    accidentalOrNotIndex = Int.random(in: 0...1)
+//                //                }
+//                
+//                accidentalOrNot = Accidentals.allCases[accidentalOrNotIndex]
+//                
+//            } else if onlyWeirdEnharmonicsEnabled {
+//                
+//                accidentalOrNotIndex = Int.random(in: 0...1)
+//                
+//                // IF I LEFT THIS IN, IT WOULD JUST KEEP SWITCHING, RIGHT?
+//                //                while accidentalOrNotIndex == lastAccidentalOrNotIndex {
+//                //                    accidentalOrNotIndex = Int.random(in: 1...2)
+//                //                }
+//                
+//                accidentalOrNot = Accidentals.allCases[accidentalOrNotIndex]
+//                
+//            } else if onlySharpsEnabled {
+//                
+//                accidentalOrNot = .sharp
+//                
+//            } else if onlyFlatsEnabled {
+//                
+//                accidentalOrNot = .flat
+//                
+//            }
+//            
+//            // if noteChoices[1] == "#" (for only sharps) !
+//            
+//            switch accidentalOrNot {
+//            case .neither:
+//                // NOT BASIC NOTE NAMES, BUT... ?
+//                switch currentNoteChoices {
+//                case onlyCDE:
+//                    currentNote = basicNoteNamesOnlyCDE[randomNewNoteIndex]
+//                case onlyFGAB:
+//                    currentNote = basicNoteNamesOnlyFGAB[randomNewNoteIndex]
+//                default:
+//                    currentNote = basicNoteNames[randomNewNoteIndex]
+//                }
+//                
+//                currentAccidental = .neither
+//            case .sharp:
+//                currentNote = basicNoteNames[randomNewNoteIndex] + "#"
+//                
+//                // generate new note if current note is a weird enharmonic
+//                if !weirdEnharmonicsEnabled && (currentNote == "B#" || currentNote == "E#") {
+//                    generateNewNote()
+//                } else {
+//                    sharpsOutletCollection[randomNewNoteIndex].setImage(UIImage(named: "sharp_shown"), for: UIControl.State.normal)
+//                    currentAccidental = .sharp
+//                }
+//            case .flat:
+//                currentNote = basicNoteNames[randomNewNoteIndex] + "b"
+//                
+//                // generate new note if current note is a weird enharmonic
+//                if !weirdEnharmonicsEnabled && (currentNote == "Cb" || currentNote == "Fb") {
+//                    generateNewNote()
+//                } else {
+//                    flatsOutletCollection[randomNewNoteIndex].setImage(UIImage(named: "flat_shown"), for: UIControl.State.normal)
+//                    currentAccidental = .flat
+//                }
+//            }
+//            
+//            
+//            print("current note should be: \(currentNote)")
+//            
+//            currentCorrectAnswer = currentNote
+//            
+//            let currentNoteToShow = currentNote[currentNote.startIndex]
+//            let currentNoteIndex = basicNoteNames.firstIndex(of: String(currentNoteToShow))!
+//            
+//            let buttonImageName = "\(currentNoteToShow)_shown"
+//            guard let image = UIImage(named: buttonImageName) else { return }
+//            noteButtonsOutletCollection![currentNoteIndex].setImage(image, for: UIControl.State.normal)
+//            
+//        }
+//        
+//        lastRandomNumber = randomNewNoteIndex
+//        lastAccidentalOrNotIndex = accidentalOrNotIndex
     }
     
     @IBAction func handlePanGesture(recognizer: UIPanGestureRecognizer) {

@@ -458,7 +458,7 @@ class ViewController: UIViewController {
         checkAnswer()
     }
     
-    
+    // REFACTOR SOME (MOST?) OF THIS TO viewDidAppear() ?!
     override func viewDidLoad() {
         
         super.viewDidLoad()
@@ -615,6 +615,7 @@ class ViewController: UIViewController {
             enableBlackKeyButtons()
         }
         
+        // remove notes marked wrong
         if !notesAlreadyAttempted.isEmpty {
             for subview in self.pianoKeyImage.subviews {
                 subview.removeFromSuperview()
