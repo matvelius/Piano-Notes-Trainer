@@ -170,6 +170,9 @@ class NotesOnStaffViewController: UIViewController {
         print("check answer")
     }
     
+    var randomNewNoteIndex = 10
+    var lastRandomNumber = 10
+    
     func generateNewNote() {
         
         // enable or disable buttons/keys depending on current game mode
@@ -198,18 +201,18 @@ class NotesOnStaffViewController: UIViewController {
 //        notesAlreadyAttempted = [""]
         
 //        if currentGameMode == .A {
-//            
-//            randomNewNoteIndex = Int.random(in: 0...randomNewNoteIndexUpperLimit)
-//            
-//            while randomNewNoteIndex == lastRandomNumber {
-//                randomNewNoteIndex = Int.random(in: 0...randomNewNoteIndexUpperLimit)
-//            }
-//            
+//
+            randomNewNoteIndex = Int.random(in: 0...randomNewNoteIndexUpperLimit)
+
+            while randomNewNoteIndex == lastRandomNumber {
+                randomNewNoteIndex = Int.random(in: 0...randomNewNoteIndexUpperLimit)
+            }
+//
 //            currentNote = currentNoteChoices[randomNewNoteIndex]
 //            print("the current note is \(currentNote)")
-//            
+//
 //            let currentNoteNameLength = currentNote.count
-//            
+//
 //            // 3-character note names need to be converted to 2-character ones
 //            // (because octave doesn't matter)
 //            if currentNoteNameLength == 3 {
@@ -221,18 +224,18 @@ class NotesOnStaffViewController: UIViewController {
 //            }
 //            //        currentCorrectAnswer = String(currentNote[currentNote.startIndex])
 //            print("currentCorrectAnswer is \(currentCorrectAnswer)")
-//            
+//
 //            pianoKeyImage.image = UIImage(named: "\(currentNote)_shown")
-//            
+//
 //            // MODE B
 //        } else {
-//            
+//
 //            pianoKeyImage.image = nil
-//            
+//
 //            var upperNoteChoiceLimit = 6
-//            
+//
 //            // LIMIT NUMBER OF NOTE CHOICES FOR NEW NOTE
-//            
+//
 //            switch currentNoteChoices {
 //            case onlyCDE:
 //                upperNoteChoiceLimit = 2
@@ -240,58 +243,58 @@ class NotesOnStaffViewController: UIViewController {
 //                upperNoteChoiceLimit = 3
 //            default: break
 //            }
-//            
+//
 //            randomNewNoteIndex = Int.random(in: 0...upperNoteChoiceLimit)
-//            
+//
 //            while randomNewNoteIndex == lastRandomNumber {
 //                randomNewNoteIndex = Int.random(in: 0...upperNoteChoiceLimit)
 //            }
-//            
+//
 //            var accidentalOrNot: Accidentals = .neither
-//            
+//
 //            if allNoteChoicesEnabled {
-//                
+//
 //                accidentalOrNotIndex = Int.random(in: 0...2)
-//                
+//
 //                while accidentalOrNotIndex == lastAccidentalOrNotIndex {
 //                    accidentalOrNotIndex = Int.random(in: 0...2)
 //                }
-//                
+//
 //                accidentalOrNot = Accidentals.allCases[accidentalOrNotIndex]
-//                
+//
 //            } else if onlyBlackKeysEnabled {
-//                
+//
 //                accidentalOrNotIndex = Int.random(in: 0...1)
-//                
+//
 //                //                while accidentalOrNotIndex == lastAccidentalOrNotIndex {
 //                //                    accidentalOrNotIndex = Int.random(in: 0...1)
 //                //                }
-//                
+//
 //                accidentalOrNot = Accidentals.allCases[accidentalOrNotIndex]
-//                
+//
 //            } else if onlyWeirdEnharmonicsEnabled {
-//                
+//
 //                accidentalOrNotIndex = Int.random(in: 0...1)
-//                
+//
 //                // IF I LEFT THIS IN, IT WOULD JUST KEEP SWITCHING, RIGHT?
 //                //                while accidentalOrNotIndex == lastAccidentalOrNotIndex {
 //                //                    accidentalOrNotIndex = Int.random(in: 1...2)
 //                //                }
-//                
+//
 //                accidentalOrNot = Accidentals.allCases[accidentalOrNotIndex]
-//                
+//
 //            } else if onlySharpsEnabled {
-//                
+//
 //                accidentalOrNot = .sharp
-//                
+//
 //            } else if onlyFlatsEnabled {
-//                
+//
 //                accidentalOrNot = .flat
-//                
+//
 //            }
-//            
+//
 //            // if noteChoices[1] == "#" (for only sharps) !
-//            
+//
 //            switch accidentalOrNot {
 //            case .neither:
 //                // NOT BASIC NOTE NAMES, BUT... ?
@@ -303,11 +306,11 @@ class NotesOnStaffViewController: UIViewController {
 //                default:
 //                    currentNote = basicNoteNames[randomNewNoteIndex]
 //                }
-//                
+//
 //                currentAccidental = .neither
 //            case .sharp:
 //                currentNote = basicNoteNames[randomNewNoteIndex] + "#"
-//                
+//
 //                // generate new note if current note is a weird enharmonic
 //                if !weirdEnharmonicsEnabled && (currentNote == "B#" || currentNote == "E#") {
 //                    generateNewNote()
@@ -317,7 +320,7 @@ class NotesOnStaffViewController: UIViewController {
 //                }
 //            case .flat:
 //                currentNote = basicNoteNames[randomNewNoteIndex] + "b"
-//                
+//
 //                // generate new note if current note is a weird enharmonic
 //                if !weirdEnharmonicsEnabled && (currentNote == "Cb" || currentNote == "Fb") {
 //                    generateNewNote()
@@ -326,21 +329,21 @@ class NotesOnStaffViewController: UIViewController {
 //                    currentAccidental = .flat
 //                }
 //            }
-//            
-//            
+//
+//
 //            print("current note should be: \(currentNote)")
-//            
+//
 //            currentCorrectAnswer = currentNote
-//            
+//
 //            let currentNoteToShow = currentNote[currentNote.startIndex]
 //            let currentNoteIndex = basicNoteNames.firstIndex(of: String(currentNoteToShow))!
-//            
+//
 //            let buttonImageName = "\(currentNoteToShow)_shown"
 //            guard let image = UIImage(named: buttonImageName) else { return }
 //            noteButtonsOutletCollection![currentNoteIndex].setImage(image, for: UIControl.State.normal)
-//            
+//
 //        }
-//        
+//
 //        lastRandomNumber = randomNewNoteIndex
 //        lastAccidentalOrNotIndex = accidentalOrNotIndex
     }
