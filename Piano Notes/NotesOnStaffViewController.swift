@@ -181,12 +181,29 @@ class NotesOnStaffViewController: UIViewController {
     }
     
     func checkAnswer() {
+        
         print("currentNoteOnStaffImageName: \(currentNoteOnStaffImageName)")
+        
         currentUserAnswer = currentAccidental == .neither ? String(currentNoteOnStaffImageName.suffix(2)) : String(currentNoteOnStaffImageName.suffix(3))
         print("currentUserAnswer: \(currentUserAnswer)")
         
-        if currentUserAnswer == currentCorrectAnswer {
+        let currentUserAnswerWithoutOctave = currentAccidental == .neither ? String(currentUserAnswer.prefix(1)) : String(currentUserAnswer.prefix(2))
+        
+        print("currentUserAnswerWithoutOctave: \(currentUserAnswerWithoutOctave)")
+        
+        
+        
+        var currentEnharmonic = getEnharmonic(currentNote: currentUserAnswerWithoutOctave)
+        
+        if currentEnharmonic != nil {
+            currentEnharmonic! += String(currentUserAnswer.suffix(1))
+        }
+        
+        print("currentEnharmonic: \(currentEnharmonic)")
+        
+        if currentUserAnswer == currentCorrectAnswer || currentEnharmonic! == currentCorrectAnswer {
             print("correct!")
+            generateNewNote()
         } else {
             print("incorrect!")
         }
