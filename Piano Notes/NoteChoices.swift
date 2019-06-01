@@ -197,5 +197,14 @@ func setRandomNewNoteUpperIndex() {
     randomNewNoteIndexUpperLimit = currentNoteChoices.count - 1
 }
 
+var lastRandomNumber: Int = -1
+var randomNewNoteIndex = Int.random(in: 0...15)
 
+func generateNewRandomNoteIndex() {
+    randomNewNoteIndex = Int.random(in: 0...randomNewNoteIndexUpperLimit)
+    
+    while randomNewNoteIndex == lastRandomNumber {
+        randomNewNoteIndex = Int.random(in: 0...randomNewNoteIndexUpperLimit)
+    }
+}
 

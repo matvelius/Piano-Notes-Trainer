@@ -388,8 +388,8 @@ class ViewController: UIViewController {
     
     
     // placeholder variable for last-selected random number
-    var lastRandomNumber: Int = -1
-    var randomNewNoteIndex = Int.random(in: 0...15)
+//    var lastRandomNumber: Int = -1
+//    var randomNewNoteIndex = Int.random(in: 0...15)
     var lastAccidentalOrNotIndex: Int = -1
     var accidentalOrNotIndex = Int.random(in: 0...2)
     
@@ -626,11 +626,12 @@ class ViewController: UIViewController {
         
         if currentGameMode == .A {
         
-            randomNewNoteIndex = Int.random(in: 0...randomNewNoteIndexUpperLimit)
-            
-            while randomNewNoteIndex == lastRandomNumber {
-                randomNewNoteIndex = Int.random(in: 0...randomNewNoteIndexUpperLimit)
-            }
+//            randomNewNoteIndex = Int.random(in: 0...randomNewNoteIndexUpperLimit)
+//
+//            while randomNewNoteIndex == lastRandomNumber {
+//                randomNewNoteIndex = Int.random(in: 0...randomNewNoteIndexUpperLimit)
+//            }
+            generateNewRandomNoteIndex()
             
             currentNote = currentNoteChoices[randomNewNoteIndex]
             print("the current note is \(currentNote)")
@@ -656,23 +657,27 @@ class ViewController: UIViewController {
             
             pianoKeyImage.image = nil
             
-            var upperNoteChoiceLimit = 6
+//            var upperNoteChoiceLimit = 6
+            randomNewNoteIndexUpperLimit = 6
             
             // LIMIT NUMBER OF NOTE CHOICES FOR NEW NOTE
             
             switch currentNoteChoices {
             case onlyCDE:
-                upperNoteChoiceLimit = 2
+//                upperNoteChoiceLimit = 2
+                randomNewNoteIndexUpperLimit = 2
             case onlyFGAB, onlyWeirdEnharmonics:
-                upperNoteChoiceLimit = 3
+                randomNewNoteIndexUpperLimit = 3
+//                upperNoteChoiceLimit = 3
             default: break
             }
             
-            randomNewNoteIndex = Int.random(in: 0...upperNoteChoiceLimit)
-            
-            while randomNewNoteIndex == lastRandomNumber {
-                randomNewNoteIndex = Int.random(in: 0...upperNoteChoiceLimit)
-            }
+//            randomNewNoteIndex = Int.random(in: 0...upperNoteChoiceLimit)
+//
+//            while randomNewNoteIndex == lastRandomNumber {
+//                randomNewNoteIndex = Int.random(in: 0...upperNoteChoiceLimit)
+//            }
+            generateNewRandomNoteIndex()
             
             var accidentalOrNot: Accidentals = .neither
             
