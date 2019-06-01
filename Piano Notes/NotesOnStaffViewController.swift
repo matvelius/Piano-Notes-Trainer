@@ -109,8 +109,8 @@ class NotesOnStaffViewController: UIViewController {
     }
     
     @IBAction func upArrowButtonPressed(_ sender: UIButton) {
-        if currentNoteIndex < whiteNotesOnLargeKeyboard.count - 1 {
-            currentNoteIndex += 1
+        if currentNoteOnStaffIndex < whiteNotesOnLargeKeyboard.count - 1 {
+            currentNoteOnStaffIndex += 1
             updateNoteOnStaffImage(optionalImageName: nil)
             currentAccidental = .neither
         }
@@ -129,15 +129,23 @@ class NotesOnStaffViewController: UIViewController {
     }
     
     @IBAction func downArrowButtonPressed(_ sender: UIButton) {
-        if currentNoteIndex > 0 {
-            currentNoteIndex -= 1
+        if currentNoteOnStaffIndex > 0 {
+            currentNoteOnStaffIndex -= 1
             updateNoteOnStaffImage(optionalImageName: nil)
             currentAccidental = .neither
         }
     }
     
 
-    var currentNoteIndex = 10
+    var currentNoteOnStaffIndex = 10
+    
+    // placeholder variables for comparing answers
+    var currentCorrectAnswer = ""
+    var currentUserAnswer = ""
+
+    // do I need this?
+//    // placeholder for current note
+//    var currentNote = ""
     
     // REFACTOR SOME (MOST?) OF THIS TO viewDidAppear() ?!
     override func viewDidLoad() {
@@ -153,7 +161,7 @@ class NotesOnStaffViewController: UIViewController {
     
     var locationTracker: Double = Double(whiteNotesOnLargeKeyboard.count / 2) {
         didSet {
-            currentNoteIndex = Int(round(locationTracker))
+            currentNoteOnStaffIndex = Int(round(locationTracker))
             updateNoteOnStaffImage(optionalImageName: nil)
             currentAccidental = .neither
         }
@@ -163,17 +171,26 @@ class NotesOnStaffViewController: UIViewController {
         if let imageName = optionalImageName {
             noteOnStaffImage.image = UIImage(named: imageName)
         } else {
-            currentNoteOnStaffImageName = "staff\(whiteNotesOnLargeKeyboard[currentNoteIndex])"
+            currentNoteOnStaffImageName = "staff\(whiteNotesOnLargeKeyboard[currentNoteOnStaffIndex])"
             noteOnStaffImage.image = UIImage(named: currentNoteOnStaffImageName)
         }
         print("currentNoteOnStaffImageName: \(currentNoteOnStaffImageName)")
         print("locationTracker: \(locationTracker)")
-        print("currentNoteIndex: \(currentNoteIndex)")
+        print("currentNoteIndex: \(currentNoteOnStaffIndex)")
 
     }
     
     func checkAnswer() {
-        print("check answer")
+        print("currentNoteOnStaffImageName: \(currentNoteOnStaffImageName)")
+        currentUserAnswer = currentAccidental == .neither ? String(currentNoteOnStaffImageName.suffix(2)) : String(currentNoteOnStaffImageName.suffix(3))
+        print("currentUserAnswer: \(currentUserAnswer)")
+        
+        if currentUserAnswer == currentCorrectAnswer {
+            print("correct!")
+        } else {
+            print("incorrect!")
+        }
+
     }
     
 //    var randomNewNoteIndex = 10
@@ -208,13 +225,15 @@ class NotesOnStaffViewController: UIViewController {
         
 //        if currentGameMode == .A {
 
-        currentNoteChoices = whiteNotesOnLargeKeyboard
+        currentNoteChoices = allNotesOnLargeKeyboard
         setRandomNewNoteUpperIndex()
         generateNewRandomNoteIndex()
-        print("currentNoteChoices[randomNewNoteIndex]: \(currentNoteChoices[randomNewNoteIndex])")
+        currentCorrectAnswer = currentNoteChoices[randomNewNoteIndex]
+        print("currentNoteChoices[randomNewNoteIndex]: \(currentCorrectAnswer)")
         lastRandomNumber = randomNewNoteIndex
         
-        pianoNoteDisplayed.image = UIImage(named: "large_\(currentNoteChoices[randomNewNoteIndex])_shown")
+        pianoNoteDisplayed.image = UIImage(named: "large_\(currentCorrectAnswer)_shown")
+        
         
         
 //
