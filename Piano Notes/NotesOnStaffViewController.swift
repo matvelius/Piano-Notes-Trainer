@@ -12,6 +12,9 @@ class NotesOnStaffViewController: UIViewController {
     
     @IBOutlet weak var noteOnStaffImage: UIImageView!
     
+    
+    @IBOutlet weak var pianoNoteDisplayed: UIImageView!
+    
     var currentNoteOnStaffImageName = ""
     
     @IBOutlet var panGestureRecognizerOutlet: UIPanGestureRecognizer!
@@ -140,9 +143,12 @@ class NotesOnStaffViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        pianoNoteDisplayed.alpha = 1
+        
         currentAccidental = .neither
         updateNoteOnStaffImage(optionalImageName: nil)
         
+        generateNewNote()
     }
     
     var locationTracker: Double = Double(whiteNotesOnLargeKeyboard.count / 2) {
@@ -170,8 +176,8 @@ class NotesOnStaffViewController: UIViewController {
         print("check answer")
     }
     
-    var randomNewNoteIndex = 10
-    var lastRandomNumber = 10
+//    var randomNewNoteIndex = 10
+//    var lastRandomNumber = 10
     
     func generateNewNote() {
         
@@ -201,12 +207,16 @@ class NotesOnStaffViewController: UIViewController {
 //        notesAlreadyAttempted = [""]
         
 //        if currentGameMode == .A {
-//
-            randomNewNoteIndex = Int.random(in: 0...randomNewNoteIndexUpperLimit)
 
-            while randomNewNoteIndex == lastRandomNumber {
-                randomNewNoteIndex = Int.random(in: 0...randomNewNoteIndexUpperLimit)
-            }
+        currentNoteChoices = whiteNotesOnLargeKeyboard
+        setRandomNewNoteUpperIndex()
+        generateNewRandomNoteIndex()
+        print("currentNoteChoices[randomNewNoteIndex]: \(currentNoteChoices[randomNewNoteIndex])")
+        lastRandomNumber = randomNewNoteIndex
+        
+        pianoNoteDisplayed.image = UIImage(named: "large_\(currentNoteChoices[randomNewNoteIndex])_shown")
+        
+        
 //
 //            currentNote = currentNoteChoices[randomNewNoteIndex]
 //            print("the current note is \(currentNote)")
