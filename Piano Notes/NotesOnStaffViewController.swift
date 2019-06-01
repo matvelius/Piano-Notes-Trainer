@@ -193,13 +193,35 @@ class NotesOnStaffViewController: UIViewController {
         
         
         
-        var currentEnharmonic = getEnharmonic(currentNote: currentUserAnswerWithoutOctave)
+        var currentEnharmonic: String? = getEnharmonic(currentNote: currentUserAnswerWithoutOctave)
         
         if currentEnharmonic != nil {
-            currentEnharmonic! += String(currentUserAnswer.suffix(1))
+            
+            if currentUserAnswer == "B#2" ||
+               currentUserAnswer == "B#3" ||
+               currentUserAnswer == "B#4" ||
+               currentUserAnswer == "B#5" {
+                
+                currentEnharmonic! += String(Int(currentUserAnswer.suffix(1))! + 1)
+
+            } else if currentUserAnswer == "Cb3" ||
+                      currentUserAnswer == "Cb4" ||
+                      currentUserAnswer == "Cb5" ||
+                      currentUserAnswer == "Cb6" {
+                
+                currentEnharmonic! += String(Int(currentUserAnswer.suffix(1))! - 1)
+                
+            } else {
+            
+                currentEnharmonic! += String(currentUserAnswer.suffix(1))
+                
+            }
+            
         }
         
+        print("currentCorrectAnswer: \(currentCorrectAnswer)")
         print("currentEnharmonic: \(currentEnharmonic)")
+        print("currentUserAnswer: \(currentUserAnswer)")
         
         if currentUserAnswer == currentCorrectAnswer || currentEnharmonic! == currentCorrectAnswer {
             print("correct!")
