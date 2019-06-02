@@ -7,8 +7,14 @@
 //
 
 import UIKit
+import AVFoundation
 
 class NotesOnStaffViewController: UIViewController {
+    
+    // instance variable to hold the AVAudioPlayer object
+    var audioPlayer: AVAudioPlayer?
+    
+    var soundsEnabled = true
     
     @IBOutlet weak var noteOnStaffImage: UIImageView!
     
@@ -228,6 +234,17 @@ class NotesOnStaffViewController: UIViewController {
             generateNewNote()
         } else {
             print("incorrect!")
+            // play "wrong" sound
+            if soundsEnabled {
+                loadSound(currentSound: "wrong")
+                audioPlayer!.play()
+                audioPlayer!.setVolume(0.05, fadeDuration: 0)
+            }
+            checkButtonOutlet.setImage(UIImage(named: "check_wrong"), for: .normal)
+            DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1), execute:{
+                self.checkButtonOutlet.setImage(UIImage(named: "check"), for: .normal)
+            })
+            
         }
 
     }
@@ -437,6 +454,23 @@ class NotesOnStaffViewController: UIViewController {
             }
         }
         
+    }
+    
+    func loadSound(currentSound: String) {
+        // sound file
+        if let sound = Bundle.main.path(forResource: currentSound, ofType: "aiff") {
+            
+            do {
+                // try to initialize with the URL created above
+                audioPlayer = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: sound))
+                audioPlayer?.prepareToPlay()
+            }
+            catch {
+                print(error)
+            }
+        } else {
+            print("whoops, couldn't load the sound '\(currentSound)'")
+        }
     }
     
 }
