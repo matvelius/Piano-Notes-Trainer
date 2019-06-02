@@ -231,7 +231,12 @@ class NotesOnStaffViewController: UIViewController {
         
         if currentUserAnswer == currentCorrectAnswer || currentEnharmonic! == currentCorrectAnswer {
             print("correct!")
-            generateNewNote()
+            checkButtonOutlet.setImage(UIImage(named: "check_right"), for: .normal)
+            DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1), execute:{
+                self.checkButtonOutlet.setImage(UIImage(named: "check"), for: .normal)
+                self.generateNewNote()
+            })
+            
         } else {
             print("incorrect!")
             // play "wrong" sound
