@@ -1704,7 +1704,7 @@
                                 </subviews>
                                 <viewLayoutGuide key="safeArea" id="jg4-Mq-YeF"/>
                             </stackView>
-                            <stackView opaque="NO" alpha="0.80000000000000004" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="39M-bi-zO3" userLabel="White Key Buttons Stack">
+                            <stackView opaque="NO" alpha="0.59999999999999998" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="39M-bi-zO3" userLabel="White Key Buttons Stack">
                                 <rect key="frame" x="3" y="802" width="1370" height="99"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ROb-PG-Ztu">
@@ -2186,41 +2186,413 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Zka-4J-w4h" userLabel="bottom of keys placeholder">
                                 <rect key="frame" x="0.0" y="901" width="1366" height="123"/>
                             </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="C6l-iF-rLG" userLabel="between 2 and 3 black keys">
+                                <rect key="frame" x="3" y="624" width="27.5" height="178"/>
+                                <color key="backgroundColor" red="0.1552500104" green="0.4241788319" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="27.5" id="g2J-wY-aEb"/>
+                                </constraints>
+                            </imageView>
+                            <stackView opaque="NO" alpha="0.55000001192092896" contentMode="scaleToFill" distribution="equalSpacing" spacing="27.5" translatesAutoresizingMaskIntoConstraints="NO" id="f9C-Sv-wQH" userLabel="2 Black Key Buttons Stack">
+                                <rect key="frame" x="33" y="624" width="75.5" height="178"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q14-ic-Ngg" userLabel="blackKeyButton">
+                                        <rect key="frame" x="0.0" y="0.0" width="24" height="178"/>
+                                        <color key="backgroundColor" red="0.0" green="1" blue="0.52390272010000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="24" id="07A-Pi-s8W"/>
+                                        </constraints>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GgU-dJ-cv6" userLabel="blackKeyButton">
+                                        <rect key="frame" x="51.5" y="0.0" width="24" height="178"/>
+                                        <color key="backgroundColor" red="0.0" green="1" blue="0.52390272010000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="GgU-dJ-cv6" firstAttribute="width" secondItem="q14-ic-Ngg" secondAttribute="width" id="3Ya-iv-iOX"/>
+                                    <constraint firstAttribute="height" constant="178" id="nvy-DT-MVE"/>
+                                </constraints>
+                            </stackView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RFX-uM-4u9" userLabel="between 2 and 3 black keys">
+                                <rect key="frame" x="108.5" y="624" width="27.5" height="178"/>
+                                <color key="backgroundColor" red="0.1552500104" green="0.4241788319" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="27.5" id="O7o-SZ-qzf"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gg6-mG-9oV" userLabel="between 2 and 3 black keys">
+                                <rect key="frame" x="136" y="624" width="27.5" height="178"/>
+                                <color key="backgroundColor" red="0.1552500104" green="0.4241788319" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="27.5" id="kJD-Dz-wf5"/>
+                                </constraints>
+                            </imageView>
+                            <stackView opaque="NO" alpha="0.55000001192092896" contentMode="scaleToFill" distribution="equalSpacing" spacing="27" translatesAutoresizingMaskIntoConstraints="NO" id="xME-kU-jX8" userLabel="3 Black Key Buttons Stack">
+                                <rect key="frame" x="163.5" y="624" width="126" height="178"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k85-9x-VXt" userLabel="blackKeyButton">
+                                        <rect key="frame" x="0.0" y="0.0" width="24" height="178"/>
+                                        <color key="backgroundColor" red="0.0" green="1" blue="0.52390272010000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="24" id="wga-GP-a5U"/>
+                                        </constraints>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F6p-pK-oNR" userLabel="blackKeyButton">
+                                        <rect key="frame" x="51" y="0.0" width="24" height="178"/>
+                                        <color key="backgroundColor" red="0.0" green="1" blue="0.52390272010000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8wK-ua-X0r" userLabel="blackKeyButton">
+                                        <rect key="frame" x="102" y="0.0" width="24" height="178"/>
+                                        <color key="backgroundColor" red="0.0" green="1" blue="0.52390272010000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="F6p-pK-oNR" firstAttribute="width" secondItem="k85-9x-VXt" secondAttribute="width" id="Mrq-2w-aW2"/>
+                                    <constraint firstItem="8wK-ua-X0r" firstAttribute="width" secondItem="k85-9x-VXt" secondAttribute="width" id="ZPP-cN-3QP"/>
+                                    <constraint firstAttribute="height" constant="178" id="sgB-6G-u0n"/>
+                                </constraints>
+                            </stackView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9rB-sT-5F9" userLabel="between 2 and 3 black keys">
+                                <rect key="frame" x="289.5" y="624" width="27" height="178"/>
+                                <color key="backgroundColor" red="0.1552500104" green="0.4241788319" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="27" id="4Ba-vp-YGz"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="snd-in-8iO" userLabel="between 2 and 3 black keys">
+                                <rect key="frame" x="316.5" y="624" width="27" height="178"/>
+                                <color key="backgroundColor" red="0.1552500104" green="0.4241788319" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="27" id="drJ-bi-iTa"/>
+                                </constraints>
+                            </imageView>
+                            <stackView opaque="NO" alpha="0.55000001192092896" contentMode="scaleToFill" distribution="equalSpacing" spacing="26.5" translatesAutoresizingMaskIntoConstraints="NO" id="Faj-B9-S4K" userLabel="2 Black Key Buttons Stack">
+                                <rect key="frame" x="343.5" y="624" width="74.5" height="178"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kn7-b1-7Mc" userLabel="blackKeyButton">
+                                        <rect key="frame" x="0.0" y="0.0" width="24" height="178"/>
+                                        <color key="backgroundColor" red="0.0" green="1" blue="0.52390272010000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="24" id="eUB-ma-SeZ"/>
+                                        </constraints>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="443-7C-8by" userLabel="blackKeyButton">
+                                        <rect key="frame" x="50.5" y="0.0" width="24" height="178"/>
+                                        <color key="backgroundColor" red="0.0" green="1" blue="0.52390272010000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="443-7C-8by" firstAttribute="width" secondItem="kn7-b1-7Mc" secondAttribute="width" id="JFg-Ta-eC9"/>
+                                    <constraint firstAttribute="height" constant="178" id="tSv-bE-R3K"/>
+                                </constraints>
+                            </stackView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fjN-aK-PeP" userLabel="between 2 and 3 black keys">
+                                <rect key="frame" x="418" y="624" width="27" height="178"/>
+                                <color key="backgroundColor" red="0.1552500104" green="0.4241788319" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="27" id="sVs-j1-a40"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dfZ-mh-Uba" userLabel="between 2 and 3 black keys">
+                                <rect key="frame" x="445" y="624" width="27" height="178"/>
+                                <color key="backgroundColor" red="0.1552500104" green="0.4241788319" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="27" id="BCE-RU-mtt"/>
+                                </constraints>
+                            </imageView>
+                            <stackView opaque="NO" alpha="0.55000001192092896" contentMode="scaleToFill" distribution="equalSpacing" spacing="26" translatesAutoresizingMaskIntoConstraints="NO" id="viz-jg-gFO" userLabel="3 Black Key Buttons Stack">
+                                <rect key="frame" x="472" y="624" width="124" height="178"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YPR-F3-Qej" userLabel="blackKeyButton">
+                                        <rect key="frame" x="0.0" y="0.0" width="24" height="178"/>
+                                        <color key="backgroundColor" red="0.0" green="1" blue="0.52390272010000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="24" id="6GA-lj-oHe"/>
+                                        </constraints>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oVj-CW-Ysf" userLabel="blackKeyButton">
+                                        <rect key="frame" x="50" y="0.0" width="24" height="178"/>
+                                        <color key="backgroundColor" red="0.0" green="1" blue="0.52390272010000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="51d-YK-cmr" userLabel="blackKeyButton">
+                                        <rect key="frame" x="100" y="0.0" width="24" height="178"/>
+                                        <color key="backgroundColor" red="0.0" green="1" blue="0.52390272010000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="51d-YK-cmr" firstAttribute="width" secondItem="YPR-F3-Qej" secondAttribute="width" id="0QY-u1-pwk"/>
+                                    <constraint firstAttribute="height" constant="178" id="9k2-WN-4Iz"/>
+                                    <constraint firstItem="oVj-CW-Ysf" firstAttribute="width" secondItem="YPR-F3-Qej" secondAttribute="width" id="OUr-1j-aBJ"/>
+                                </constraints>
+                            </stackView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Iwp-Rb-pUc" userLabel="between 2 and 3 black keys">
+                                <rect key="frame" x="596" y="624" width="27" height="178"/>
+                                <color key="backgroundColor" red="0.1552500104" green="0.4241788319" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="27" id="YGP-0b-Iz2"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="l3V-yP-DR5" userLabel="between 2 and 3 black keys">
+                                <rect key="frame" x="623" y="624" width="27" height="178"/>
+                                <color key="backgroundColor" red="0.1552500104" green="0.4241788319" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="27" id="lA8-TZ-mDI"/>
+                                </constraints>
+                            </imageView>
+                            <stackView opaque="NO" alpha="0.55000001192092896" contentMode="scaleToFill" distribution="equalSpacing" spacing="27.5" translatesAutoresizingMaskIntoConstraints="NO" id="Jlm-uC-VMz" userLabel="2 Black Key Buttons Stack">
+                                <rect key="frame" x="650" y="624" width="75.5" height="178"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Je-yS-a04" userLabel="blackKeyButton">
+                                        <rect key="frame" x="0.0" y="0.0" width="24" height="178"/>
+                                        <color key="backgroundColor" red="0.0" green="1" blue="0.52390272010000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="24" id="yN7-Sz-GeF"/>
+                                        </constraints>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pvl-hy-hRp" userLabel="blackKeyButton">
+                                        <rect key="frame" x="51.5" y="0.0" width="24" height="178"/>
+                                        <color key="backgroundColor" red="0.0" green="1" blue="0.52390272010000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="pvl-hy-hRp" firstAttribute="width" secondItem="2Je-yS-a04" secondAttribute="width" id="hKK-4q-Q1R"/>
+                                    <constraint firstAttribute="height" constant="178" id="rri-V7-ifH"/>
+                                </constraints>
+                            </stackView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DQC-5j-gWD" userLabel="between 2 and 3 black keys">
+                                <rect key="frame" x="725.5" y="624" width="28" height="178"/>
+                                <color key="backgroundColor" red="0.1552500104" green="0.4241788319" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="28" id="82Q-HP-X0J"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4wh-ha-4nq" userLabel="between 2 and 3 black keys">
+                                <rect key="frame" x="753.5" y="624" width="27" height="178"/>
+                                <color key="backgroundColor" red="0.1552500104" green="0.4241788319" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="27" id="nag-EF-8we"/>
+                                </constraints>
+                            </imageView>
+                            <stackView opaque="NO" alpha="0.55000001192092896" contentMode="scaleToFill" distribution="equalSpacing" spacing="26" translatesAutoresizingMaskIntoConstraints="NO" id="Dwc-tj-mY2" userLabel="3 Black Key Buttons Stack">
+                                <rect key="frame" x="780.5" y="624" width="124" height="178"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IDf-f7-TCf" userLabel="blackKeyButton">
+                                        <rect key="frame" x="0.0" y="0.0" width="24" height="178"/>
+                                        <color key="backgroundColor" red="0.0" green="1" blue="0.52390272010000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="24" id="aAq-KW-aQS"/>
+                                        </constraints>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PCE-Qz-40q" userLabel="blackKeyButton">
+                                        <rect key="frame" x="50" y="0.0" width="24" height="178"/>
+                                        <color key="backgroundColor" red="0.0" green="1" blue="0.52390272010000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e3Q-m5-x15" userLabel="blackKeyButton">
+                                        <rect key="frame" x="100" y="0.0" width="24" height="178"/>
+                                        <color key="backgroundColor" red="0.0" green="1" blue="0.52390272010000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="178" id="b4I-po-jqh"/>
+                                    <constraint firstItem="PCE-Qz-40q" firstAttribute="width" secondItem="IDf-f7-TCf" secondAttribute="width" id="uiL-s3-7Vu"/>
+                                    <constraint firstItem="e3Q-m5-x15" firstAttribute="width" secondItem="IDf-f7-TCf" secondAttribute="width" id="xbX-JS-GNF"/>
+                                </constraints>
+                            </stackView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7E7-7j-Dat" userLabel="between 2 and 3 black keys">
+                                <rect key="frame" x="904.5" y="624" width="27" height="178"/>
+                                <color key="backgroundColor" red="0.1552500104" green="0.4241788319" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="27" id="S30-ru-vEu"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="w36-IH-6BG" userLabel="between 2 and 3 black keys">
+                                <rect key="frame" x="931.5" y="624" width="27" height="178"/>
+                                <color key="backgroundColor" red="0.1552500104" green="0.4241788319" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="27" id="vXl-CP-87q"/>
+                                </constraints>
+                            </imageView>
+                            <stackView opaque="NO" alpha="0.55000001192092896" contentMode="scaleToFill" distribution="equalSpacing" spacing="27" translatesAutoresizingMaskIntoConstraints="NO" id="9hz-6H-Pwm" userLabel="2 Black Key Buttons Stack">
+                                <rect key="frame" x="958.5" y="624" width="75" height="178"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pql-sk-nlY" userLabel="blackKeyButton">
+                                        <rect key="frame" x="0.0" y="0.0" width="24" height="178"/>
+                                        <color key="backgroundColor" red="0.0" green="1" blue="0.52390272010000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="24" id="6eP-XX-xxe"/>
+                                        </constraints>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TTO-pK-3ux" userLabel="blackKeyButton">
+                                        <rect key="frame" x="51" y="0.0" width="24" height="178"/>
+                                        <color key="backgroundColor" red="0.0" green="1" blue="0.52390272010000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="TTO-pK-3ux" firstAttribute="width" secondItem="pql-sk-nlY" secondAttribute="width" id="EFu-EX-mRe"/>
+                                    <constraint firstAttribute="height" constant="178" id="T8j-tz-YmD"/>
+                                </constraints>
+                            </stackView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="O2a-Hm-JJm" userLabel="between 2 and 3 black keys">
+                                <rect key="frame" x="1033.5" y="624" width="27" height="178"/>
+                                <color key="backgroundColor" red="0.1552500104" green="0.4241788319" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="27" id="jQ7-mf-2FO"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="32j-1Y-Pzd" userLabel="between 2 and 3 black keys">
+                                <rect key="frame" x="1060.5" y="624" width="27" height="178"/>
+                                <color key="backgroundColor" red="0.1552500104" green="0.4241788319" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="27" id="kPo-h3-FUD"/>
+                                </constraints>
+                            </imageView>
+                            <stackView opaque="NO" alpha="0.55000001192092896" contentMode="scaleToFill" distribution="equalSpacing" spacing="27" translatesAutoresizingMaskIntoConstraints="NO" id="XoC-j4-2aV" userLabel="3 Black Key Buttons Stack">
+                                <rect key="frame" x="1087.5" y="624" width="126" height="178"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BzG-gs-636" userLabel="blackKeyButton">
+                                        <rect key="frame" x="0.0" y="0.0" width="24" height="178"/>
+                                        <color key="backgroundColor" red="0.0" green="1" blue="0.52390272010000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="24" id="VFm-8L-Tsb"/>
+                                        </constraints>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kEH-oe-5mF" userLabel="blackKeyButton">
+                                        <rect key="frame" x="51" y="0.0" width="24" height="178"/>
+                                        <color key="backgroundColor" red="0.0" green="1" blue="0.52390272010000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R1f-uy-JoS" userLabel="blackKeyButton">
+                                        <rect key="frame" x="102" y="0.0" width="24" height="178"/>
+                                        <color key="backgroundColor" red="0.0" green="1" blue="0.52390272010000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="kEH-oe-5mF" firstAttribute="width" secondItem="BzG-gs-636" secondAttribute="width" id="8wU-3c-dPr"/>
+                                    <constraint firstAttribute="height" constant="178" id="Cf0-q6-IrX"/>
+                                    <constraint firstItem="R1f-uy-JoS" firstAttribute="width" secondItem="BzG-gs-636" secondAttribute="width" id="Sv3-2v-8SJ"/>
+                                </constraints>
+                            </stackView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bx7-u3-4GS" userLabel="between 2 and 3 black keys">
+                                <rect key="frame" x="1213.5" y="624" width="27.5" height="178"/>
+                                <color key="backgroundColor" red="0.1552500104" green="0.4241788319" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="27.5" id="Lq8-QI-tok"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Dn9-cU-t8u" userLabel="between 2 and 3 black keys">
+                                <rect key="frame" x="1241" y="624" width="27.5" height="178"/>
+                                <color key="backgroundColor" red="0.1552500104" green="0.4241788319" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="27.5" id="abp-D4-oao"/>
+                                </constraints>
+                            </imageView>
+                            <stackView opaque="NO" alpha="0.55000001192092896" contentMode="scaleToFill" distribution="equalSpacing" spacing="27.5" translatesAutoresizingMaskIntoConstraints="NO" id="C8g-mt-mVb" userLabel="2 Black Key Buttons Stack">
+                                <rect key="frame" x="1268.5" y="624" width="75.5" height="178"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="006-qk-5qx" userLabel="blackKeyButton">
+                                        <rect key="frame" x="0.0" y="0.0" width="24" height="178"/>
+                                        <color key="backgroundColor" red="0.0" green="1" blue="0.52390272010000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="24" id="nxs-Ab-yzW"/>
+                                        </constraints>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VuL-UY-RD0" userLabel="blackKeyButton">
+                                        <rect key="frame" x="51.5" y="0.0" width="24" height="178"/>
+                                        <color key="backgroundColor" red="0.0" green="1" blue="0.52390272010000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="VuL-UY-RD0" firstAttribute="width" secondItem="006-qk-5qx" secondAttribute="width" id="RqF-8T-IJl"/>
+                                    <constraint firstAttribute="height" constant="178" id="b5o-wa-XH6"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="7E7-7j-Dat" firstAttribute="leading" secondItem="Dwc-tj-mY2" secondAttribute="trailing" id="037-0S-ld6"/>
+                            <constraint firstItem="Iwp-Rb-pUc" firstAttribute="centerY" secondItem="viz-jg-gFO" secondAttribute="centerY" id="0S6-jC-Aol"/>
                             <constraint firstItem="COz-gC-a0h" firstAttribute="width" secondItem="cGR-eH-SAd" secondAttribute="width" multiplier="0.6773" id="0ZX-ju-Pqs"/>
                             <constraint firstItem="COz-gC-a0h" firstAttribute="top" secondItem="tec-47-C5m" secondAttribute="topMargin" constant="67" id="1B8-hS-ijF"/>
+                            <constraint firstItem="bx7-u3-4GS" firstAttribute="leading" secondItem="XoC-j4-2aV" secondAttribute="trailing" id="1XB-hf-9FU"/>
                             <constraint firstItem="gqB-He-zfK" firstAttribute="centerX" secondItem="tec-47-C5m" secondAttribute="centerX" constant="-20" id="2xj-8p-iV2"/>
+                            <constraint firstItem="gg6-mG-9oV" firstAttribute="centerY" secondItem="RFX-uM-4u9" secondAttribute="centerY" id="37o-20-In4"/>
+                            <constraint firstItem="9rB-sT-5F9" firstAttribute="leading" secondItem="8wK-ua-X0r" secondAttribute="trailing" id="3g8-Fx-pA8"/>
+                            <constraint firstItem="l3V-yP-DR5" firstAttribute="leading" secondItem="Iwp-Rb-pUc" secondAttribute="trailing" id="3hG-br-LuM"/>
+                            <constraint firstItem="f9C-Sv-wQH" firstAttribute="leading" secondItem="RZX-aY-jH3" secondAttribute="trailing" constant="30" id="47q-XL-8Sr"/>
                             <constraint firstItem="39M-bi-zO3" firstAttribute="leading" secondItem="RZX-aY-jH3" secondAttribute="trailing" id="4rL-wQ-BWP"/>
                             <constraint firstItem="Zka-4J-w4h" firstAttribute="leading" secondItem="tec-47-C5m" secondAttribute="leading" id="6dZ-n9-REr"/>
+                            <constraint firstItem="DQC-5j-gWD" firstAttribute="centerY" secondItem="Jlm-uC-VMz" secondAttribute="centerY" id="7H7-Eq-scr"/>
                             <constraint firstItem="vzr-qh-cLh" firstAttribute="trailing" secondItem="Bcp-rj-qSy" secondAttribute="trailing" id="8CA-uS-KEl"/>
+                            <constraint firstItem="O2a-Hm-JJm" firstAttribute="leading" secondItem="9hz-6H-Pwm" secondAttribute="trailing" id="8Dy-hY-bnU"/>
                             <constraint firstItem="yxa-Ew-apy" firstAttribute="centerY" secondItem="S3S-p5-kwV" secondAttribute="centerY" id="8QL-mg-Qxm"/>
+                            <constraint firstItem="4wh-ha-4nq" firstAttribute="leading" secondItem="DQC-5j-gWD" secondAttribute="trailing" id="AgD-ZM-ROn"/>
+                            <constraint firstItem="Faj-B9-S4K" firstAttribute="leading" secondItem="snd-in-8iO" secondAttribute="trailing" id="Agz-Oe-2Si"/>
+                            <constraint firstItem="Dn9-cU-t8u" firstAttribute="centerY" secondItem="bx7-u3-4GS" secondAttribute="centerY" id="C1x-n4-x1g"/>
+                            <constraint firstItem="Dn9-cU-t8u" firstAttribute="leading" secondItem="bx7-u3-4GS" secondAttribute="trailing" id="CG7-tJ-hTU"/>
                             <constraint firstItem="RZX-aY-jH3" firstAttribute="bottom" secondItem="Zka-4J-w4h" secondAttribute="top" id="CRQ-jY-i4Z"/>
+                            <constraint firstItem="O2a-Hm-JJm" firstAttribute="centerY" secondItem="9hz-6H-Pwm" secondAttribute="centerY" id="CWa-7T-5EO"/>
                             <constraint firstItem="S3S-p5-kwV" firstAttribute="width" secondItem="gqB-He-zfK" secondAttribute="width" id="Ceb-p5-Aji"/>
+                            <constraint firstItem="bx7-u3-4GS" firstAttribute="centerY" secondItem="XoC-j4-2aV" secondAttribute="centerY" id="Dd2-0d-cLu"/>
+                            <constraint firstItem="4wh-ha-4nq" firstAttribute="centerY" secondItem="Jlm-uC-VMz" secondAttribute="centerY" id="Gmv-z8-3wy"/>
                             <constraint firstItem="yxa-Ew-apy" firstAttribute="leading" secondItem="S3S-p5-kwV" secondAttribute="trailing" constant="-30" id="HQV-lz-RVK"/>
+                            <constraint firstItem="C6l-iF-rLG" firstAttribute="leading" secondItem="RZX-aY-jH3" secondAttribute="trailing" id="HpT-Qi-ed0"/>
                             <constraint firstItem="yxa-Ew-apy" firstAttribute="height" secondItem="246-8n-5LY" secondAttribute="height" id="InU-DQ-qtD"/>
+                            <constraint firstItem="l3V-yP-DR5" firstAttribute="centerY" secondItem="Iwp-Rb-pUc" secondAttribute="centerY" id="Is8-4b-AHp"/>
                             <constraint firstItem="vzr-qh-cLh" firstAttribute="bottom" secondItem="Bcp-rj-qSy" secondAttribute="bottom" id="JPf-yJ-fLc"/>
                             <constraint firstItem="S3S-p5-kwV" firstAttribute="centerY" secondItem="246-8n-5LY" secondAttribute="centerY" id="KFd-sa-GQU"/>
+                            <constraint firstItem="Jlm-uC-VMz" firstAttribute="leading" secondItem="l3V-yP-DR5" secondAttribute="trailing" id="Kem-lh-sMV"/>
                             <constraint firstItem="246-8n-5LY" firstAttribute="trailing" secondItem="S3S-p5-kwV" secondAttribute="leading" id="Ldv-QP-sFw"/>
                             <constraint firstItem="gqB-He-zfK" firstAttribute="height" secondItem="Bcp-rj-qSy" secondAttribute="height" multiplier="1:2" id="MXv-ra-sZ4"/>
+                            <constraint firstItem="fjN-aK-PeP" firstAttribute="leading" secondItem="Faj-B9-S4K" secondAttribute="trailing" id="MnG-zk-138"/>
+                            <constraint firstItem="fjN-aK-PeP" firstAttribute="centerY" secondItem="Faj-B9-S4K" secondAttribute="centerY" id="NaB-wG-bsV"/>
+                            <constraint firstItem="Dwc-tj-mY2" firstAttribute="leading" secondItem="4wh-ha-4nq" secondAttribute="trailing" id="OAc-fa-4qs"/>
+                            <constraint firstItem="dfZ-mh-Uba" firstAttribute="centerY" secondItem="fjN-aK-PeP" secondAttribute="centerY" id="PNI-HO-pf4"/>
                             <constraint firstItem="Bcp-rj-qSy" firstAttribute="bottom" secondItem="tec-47-C5m" secondAttribute="bottom" id="PYA-r2-1Op"/>
                             <constraint firstItem="Bcp-rj-qSy" firstAttribute="trailing" secondItem="cGR-eH-SAd" secondAttribute="trailing" id="QPH-6d-rYL"/>
+                            <constraint firstItem="32j-1Y-Pzd" firstAttribute="centerY" secondItem="O2a-Hm-JJm" secondAttribute="centerY" id="TCs-sv-bZT"/>
+                            <constraint firstItem="Iwp-Rb-pUc" firstAttribute="leading" secondItem="viz-jg-gFO" secondAttribute="trailing" id="TaN-9J-tYJ"/>
+                            <constraint firstItem="Dwc-tj-mY2" firstAttribute="centerY" secondItem="Jlm-uC-VMz" secondAttribute="centerY" id="Tjy-Ty-lgt"/>
+                            <constraint firstItem="snd-in-8iO" firstAttribute="centerY" secondItem="9rB-sT-5F9" secondAttribute="centerY" id="UGY-1c-yE7"/>
                             <constraint firstItem="vzr-qh-cLh" firstAttribute="leading" secondItem="Bcp-rj-qSy" secondAttribute="leading" id="V9F-ps-k2A"/>
+                            <constraint firstItem="viz-jg-gFO" firstAttribute="centerY" secondItem="Faj-B9-S4K" secondAttribute="centerY" id="VWD-vF-5MI"/>
+                            <constraint firstItem="9hz-6H-Pwm" firstAttribute="centerY" secondItem="Dwc-tj-mY2" secondAttribute="centerY" id="WId-s7-3M7"/>
+                            <constraint firstItem="XoC-j4-2aV" firstAttribute="leading" secondItem="32j-1Y-Pzd" secondAttribute="trailing" id="WSa-Ta-Rt9"/>
+                            <constraint firstItem="XoC-j4-2aV" firstAttribute="centerY" secondItem="9hz-6H-Pwm" secondAttribute="centerY" id="Wo2-kd-Gvq"/>
                             <constraint firstItem="S3S-p5-kwV" firstAttribute="centerX" secondItem="tec-47-C5m" secondAttribute="centerX" id="Y4J-uo-hnf"/>
                             <constraint firstAttribute="bottom" secondItem="Zka-4J-w4h" secondAttribute="bottom" id="YNo-4X-w7I"/>
                             <constraint firstItem="39M-bi-zO3" firstAttribute="bottom" secondItem="Zka-4J-w4h" secondAttribute="top" id="YYb-i1-C1T"/>
+                            <constraint firstItem="C8g-mt-mVb" firstAttribute="centerY" secondItem="XoC-j4-2aV" secondAttribute="centerY" id="YvX-bi-TGf"/>
+                            <constraint firstItem="9rB-sT-5F9" firstAttribute="centerY" secondItem="xME-kU-jX8" secondAttribute="centerY" id="ZAt-qy-2u4"/>
+                            <constraint firstItem="DQC-5j-gWD" firstAttribute="leading" secondItem="Jlm-uC-VMz" secondAttribute="trailing" id="ZYt-lr-gvO"/>
+                            <constraint firstItem="xME-kU-jX8" firstAttribute="leading" secondItem="gg6-mG-9oV" secondAttribute="trailing" id="ZZ1-3y-gKG"/>
+                            <constraint firstItem="C8g-mt-mVb" firstAttribute="leading" secondItem="Dn9-cU-t8u" secondAttribute="trailing" id="Zhw-fQ-yk9"/>
+                            <constraint firstItem="32j-1Y-Pzd" firstAttribute="leading" secondItem="O2a-Hm-JJm" secondAttribute="trailing" id="a3E-xX-MNE"/>
+                            <constraint firstItem="f9C-Sv-wQH" firstAttribute="bottom" secondItem="39M-bi-zO3" secondAttribute="top" id="bFq-9M-HrK"/>
+                            <constraint firstItem="9hz-6H-Pwm" firstAttribute="leading" secondItem="w36-IH-6BG" secondAttribute="trailing" id="bWH-eq-6Qe"/>
+                            <constraint firstItem="RFX-uM-4u9" firstAttribute="centerY" secondItem="f9C-Sv-wQH" secondAttribute="centerY" id="bYK-CR-rhe"/>
                             <constraint firstItem="gqB-He-zfK" firstAttribute="width" secondItem="Bcp-rj-qSy" secondAttribute="width" multiplier="541.5:1366" id="c55-se-KYE"/>
                             <constraint firstItem="vzr-qh-cLh" firstAttribute="top" secondItem="Bcp-rj-qSy" secondAttribute="top" id="cg6-iz-ox5"/>
                             <constraint firstItem="Bcp-rj-qSy" firstAttribute="leading" secondItem="cGR-eH-SAd" secondAttribute="leading" id="cyA-SK-TZb"/>
+                            <constraint firstItem="xME-kU-jX8" firstAttribute="centerY" secondItem="f9C-Sv-wQH" secondAttribute="centerY" id="e6b-si-IIB"/>
+                            <constraint firstItem="snd-in-8iO" firstAttribute="leading" secondItem="9rB-sT-5F9" secondAttribute="trailing" id="fdk-y2-N7j"/>
+                            <constraint firstItem="viz-jg-gFO" firstAttribute="leading" secondItem="dfZ-mh-Uba" secondAttribute="trailing" id="fhB-qC-Wtz"/>
+                            <constraint firstItem="w36-IH-6BG" firstAttribute="centerY" secondItem="7E7-7j-Dat" secondAttribute="centerY" id="fjA-b1-h9f"/>
                             <constraint firstAttribute="trailing" secondItem="Zka-4J-w4h" secondAttribute="trailing" id="gFt-NV-eLp"/>
+                            <constraint firstItem="RFX-uM-4u9" firstAttribute="leading" secondItem="f9C-Sv-wQH" secondAttribute="trailing" id="gQU-ia-dSF"/>
+                            <constraint firstItem="7E7-7j-Dat" firstAttribute="centerY" secondItem="Dwc-tj-mY2" secondAttribute="centerY" id="hb9-EZ-PrC"/>
+                            <constraint firstItem="gg6-mG-9oV" firstAttribute="leading" secondItem="RFX-uM-4u9" secondAttribute="trailing" id="iDz-fq-Ha4"/>
                             <constraint firstItem="Zka-4J-w4h" firstAttribute="height" secondItem="vzr-qh-cLh" secondAttribute="height" multiplier="123:1000" id="iFR-LI-Gru"/>
                             <constraint firstItem="RZX-aY-jH3" firstAttribute="width" secondItem="vzr-qh-cLh" secondAttribute="width" multiplier="3:1366" id="k9n-rq-7RJ"/>
+                            <constraint firstItem="Jlm-uC-VMz" firstAttribute="centerY" secondItem="viz-jg-gFO" secondAttribute="centerY" id="mAH-D2-yUi"/>
                             <constraint firstItem="RZX-aY-jH3" firstAttribute="leading" secondItem="tec-47-C5m" secondAttribute="leading" id="mTZ-GM-IPy"/>
                             <constraint firstItem="COz-gC-a0h" firstAttribute="centerX" secondItem="tec-47-C5m" secondAttribute="centerX" id="qBS-nZ-EEL"/>
+                            <constraint firstItem="dfZ-mh-Uba" firstAttribute="leading" secondItem="fjN-aK-PeP" secondAttribute="trailing" id="qLO-tL-ywl"/>
+                            <constraint firstItem="Faj-B9-S4K" firstAttribute="centerY" secondItem="xME-kU-jX8" secondAttribute="centerY" id="uAw-NC-fmJ"/>
                             <constraint firstItem="S3S-p5-kwV" firstAttribute="centerY" secondItem="gqB-He-zfK" secondAttribute="centerY" id="wRX-nQ-zJB"/>
+                            <constraint firstItem="w36-IH-6BG" firstAttribute="leading" secondItem="7E7-7j-Dat" secondAttribute="trailing" id="wcD-Fy-lIu"/>
                             <constraint firstItem="gqB-He-zfK" firstAttribute="top" secondItem="COz-gC-a0h" secondAttribute="bottom" constant="-30" id="wyS-Tq-m7O"/>
                             <constraint firstItem="cGR-eH-SAd" firstAttribute="bottom" secondItem="S3S-p5-kwV" secondAttribute="bottom" constant="568" id="xFg-zs-VRa"/>
+                            <constraint firstItem="C6l-iF-rLG" firstAttribute="bottom" secondItem="39M-bi-zO3" secondAttribute="top" id="yJD-yn-1Jm"/>
+                            <constraint firstItem="C6l-iF-rLG" firstAttribute="height" secondItem="f9C-Sv-wQH" secondAttribute="height" id="zaY-BC-CcC"/>
                             <constraint firstItem="Bcp-rj-qSy" firstAttribute="top" secondItem="tec-47-C5m" secondAttribute="topMargin" id="zkA-3d-O9o"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="cGR-eH-SAd"/>
