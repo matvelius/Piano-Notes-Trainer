@@ -1704,14 +1704,530 @@
                                 </subviews>
                                 <viewLayoutGuide key="safeArea" id="jg4-Mq-YeF"/>
                             </stackView>
+                            <stackView opaque="NO" alpha="0.80000000000000004" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="39M-bi-zO3" userLabel="White Key Buttons Stack">
+                                <rect key="frame" x="3" y="801" width="1370" height="100"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ROb-PG-Ztu">
+                                        <rect key="frame" x="0.0" y="0.0" width="44" height="100"/>
+                                        <color key="backgroundColor" red="1" green="0.50360402540000004" blue="0.23813805369999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="44.200000000000003" id="lH6-S8-D2n"/>
+                                        </constraints>
+                                        <state key="normal" title="white">
+                                            <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="touchDraggedOutsideKeyButton:" destination="BYZ-38-t0r" eventType="touchDragOutside" id="X0q-cr-u7k"/>
+                                            <action selector="whiteKeyButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vbh-9O-k06"/>
+                                            <action selector="whiteKeyButtonTouched:" destination="BYZ-38-t0r" eventType="touchDown" id="Ny3-ma-w2K"/>
+                                            <action selector="whiteKeyButtonTouched:" destination="BYZ-38-t0r" eventType="touchDragInside" id="iUY-Ep-9cJ"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="1" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="84C-8O-gy7">
+                                        <rect key="frame" x="44" y="0.0" width="44.5" height="100"/>
+                                        <color key="backgroundColor" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="44.200000000000003" id="PTr-UL-TJb"/>
+                                        </constraints>
+                                        <state key="normal" title="white">
+                                            <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="touchDraggedOutsideKeyButton:" destination="BYZ-38-t0r" eventType="touchDragOutside" id="wWb-Sa-ZtZ"/>
+                                            <action selector="whiteKeyButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="L04-y9-qQ9"/>
+                                            <action selector="whiteKeyButtonTouched:" destination="BYZ-38-t0r" eventType="touchDragInside" id="PFl-J6-bW0"/>
+                                            <action selector="whiteKeyButtonTouched:" destination="BYZ-38-t0r" eventType="touchDown" id="gSL-xa-dDT"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d25-5n-Ewp">
+                                        <rect key="frame" x="88.5" y="0.0" width="44" height="100"/>
+                                        <color key="backgroundColor" red="1" green="0.50360402540000004" blue="0.23813805369999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="44.200000000000003" id="usf-bP-Orf"/>
+                                        </constraints>
+                                        <state key="normal" title="white">
+                                            <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="touchDraggedOutsideKeyButton:" destination="BYZ-38-t0r" eventType="touchDragOutside" id="BLY-LP-wgO"/>
+                                            <action selector="whiteKeyButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wBD-oy-2fT"/>
+                                            <action selector="whiteKeyButtonTouched:" destination="BYZ-38-t0r" eventType="touchDown" id="O1t-h3-el4"/>
+                                            <action selector="whiteKeyButtonTouched:" destination="BYZ-38-t0r" eventType="touchDragInside" id="gcD-o1-FCb"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="3" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e5J-fc-yRL">
+                                        <rect key="frame" x="132.5" y="0.0" width="44.5" height="100"/>
+                                        <color key="backgroundColor" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="44.200000000000003" id="xFc-Zj-tHc"/>
+                                        </constraints>
+                                        <state key="normal" title="white">
+                                            <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="touchDraggedOutsideKeyButton:" destination="BYZ-38-t0r" eventType="touchDragOutside" id="1iL-qn-Qsu"/>
+                                            <action selector="whiteKeyButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6yf-DN-YxO"/>
+                                            <action selector="whiteKeyButtonTouched:" destination="BYZ-38-t0r" eventType="touchDragInside" id="CHL-bK-CsS"/>
+                                            <action selector="whiteKeyButtonTouched:" destination="BYZ-38-t0r" eventType="touchDown" id="PyG-LU-3U6"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="2" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fuf-Rt-iwm">
+                                        <rect key="frame" x="177" y="0.0" width="44" height="100"/>
+                                        <color key="backgroundColor" red="1" green="0.50360402540000004" blue="0.23813805369999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="44.200000000000003" id="ttQ-EM-JbF"/>
+                                        </constraints>
+                                        <state key="normal" title="white">
+                                            <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="touchDraggedOutsideKeyButton:" destination="BYZ-38-t0r" eventType="touchDragOutside" id="Tv9-4r-Juf"/>
+                                            <action selector="whiteKeyButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="010-PK-aV8"/>
+                                            <action selector="whiteKeyButtonTouched:" destination="BYZ-38-t0r" eventType="touchDragInside" id="tDN-pd-1WW"/>
+                                            <action selector="whiteKeyButtonTouched:" destination="BYZ-38-t0r" eventType="touchDown" id="utt-TQ-LfB"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="3" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tj3-GZ-nFr">
+                                        <rect key="frame" x="221" y="0.0" width="44" height="100"/>
+                                        <color key="backgroundColor" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="44.200000000000003" id="cY3-A5-Vcj"/>
+                                        </constraints>
+                                        <state key="normal" title="white">
+                                            <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="touchDraggedOutsideKeyButton:" destination="BYZ-38-t0r" eventType="touchDragOutside" id="srH-8f-HqR"/>
+                                            <action selector="whiteKeyButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rbO-tt-ccp"/>
+                                            <action selector="whiteKeyButtonTouched:" destination="BYZ-38-t0r" eventType="touchDown" id="UtT-qp-LCn"/>
+                                            <action selector="whiteKeyButtonTouched:" destination="BYZ-38-t0r" eventType="touchDragInside" id="tTk-be-R21"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WAG-S8-kpZ">
+                                        <rect key="frame" x="265" y="0.0" width="44.5" height="100"/>
+                                        <color key="backgroundColor" red="1" green="0.50360402540000004" blue="0.23813805369999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="44.200000000000003" id="qli-5T-EWw"/>
+                                        </constraints>
+                                        <state key="normal" title="white">
+                                            <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="touchDraggedOutsideKeyButton:" destination="BYZ-38-t0r" eventType="touchDragOutside" id="6zO-nf-819"/>
+                                            <action selector="whiteKeyButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="CVD-XL-y32"/>
+                                            <action selector="whiteKeyButtonTouched:" destination="BYZ-38-t0r" eventType="touchDown" id="80V-RD-8JN"/>
+                                            <action selector="whiteKeyButtonTouched:" destination="BYZ-38-t0r" eventType="touchDragInside" id="T1u-uw-7OI"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="3" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fDM-GE-VFK">
+                                        <rect key="frame" x="309.5" y="0.0" width="44" height="100"/>
+                                        <color key="backgroundColor" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="44.200000000000003" id="jPb-Hb-aFq"/>
+                                        </constraints>
+                                        <state key="normal" title="white">
+                                            <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="touchDraggedOutsideKeyButton:" destination="BYZ-38-t0r" eventType="touchDragOutside" id="KyR-4b-xEd"/>
+                                            <action selector="whiteKeyButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="IHD-aB-PuG"/>
+                                            <action selector="whiteKeyButtonTouched:" destination="BYZ-38-t0r" eventType="touchDown" id="1xH-6o-VOO"/>
+                                            <action selector="whiteKeyButtonTouched:" destination="BYZ-38-t0r" eventType="touchDragInside" id="hV8-75-yb4"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="2" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Gj-k7-CQX">
+                                        <rect key="frame" x="353.5" y="0.0" width="44.5" height="100"/>
+                                        <color key="backgroundColor" red="1" green="0.50360402540000004" blue="0.23813805369999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="44.200000000000003" id="DZY-07-4fm"/>
+                                        </constraints>
+                                        <state key="normal" title="white">
+                                            <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="touchDraggedOutsideKeyButton:" destination="BYZ-38-t0r" eventType="touchDragOutside" id="QQ4-eJ-IKD"/>
+                                            <action selector="whiteKeyButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cMq-59-ZAO"/>
+                                            <action selector="whiteKeyButtonTouched:" destination="BYZ-38-t0r" eventType="touchDown" id="5xt-RK-Z3m"/>
+                                            <action selector="whiteKeyButtonTouched:" destination="BYZ-38-t0r" eventType="touchDragInside" id="ytE-c6-CLF"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="1" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rij-OH-yCR">
+                                        <rect key="frame" x="398" y="0.0" width="44" height="100"/>
+                                        <color key="backgroundColor" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="44.200000000000003" id="s2M-YD-Cub"/>
+                                        </constraints>
+                                        <state key="normal" title="white">
+                                            <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="touchDraggedOutsideKeyButton:" destination="BYZ-38-t0r" eventType="touchDragOutside" id="hLj-rc-QQ1"/>
+                                            <action selector="whiteKeyButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="M2c-x7-NNt"/>
+                                            <action selector="whiteKeyButtonTouched:" destination="BYZ-38-t0r" eventType="touchDown" id="cgz-aF-s9H"/>
+                                            <action selector="whiteKeyButtonTouched:" destination="BYZ-38-t0r" eventType="touchDragInside" id="xgy-SZ-jPF"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YOi-zf-r2c">
+                                        <rect key="frame" x="442" y="0.0" width="44" height="100"/>
+                                        <color key="backgroundColor" red="1" green="0.50360402540000004" blue="0.23813805369999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="44.200000000000003" id="uXB-9P-AK9"/>
+                                        </constraints>
+                                        <state key="normal" title="white">
+                                            <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="touchDraggedOutsideKeyButton:" destination="BYZ-38-t0r" eventType="touchDragOutside" id="xbh-JK-HQO"/>
+                                            <action selector="whiteKeyButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jQs-bb-GrT"/>
+                                            <action selector="whiteKeyButtonTouched:" destination="BYZ-38-t0r" eventType="touchDown" id="2dT-pS-js9"/>
+                                            <action selector="whiteKeyButtonTouched:" destination="BYZ-38-t0r" eventType="touchDragInside" id="OTd-Rp-V2A"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="1" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iI0-YQ-srC">
+                                        <rect key="frame" x="486" y="0.0" width="44.5" height="100"/>
+                                        <color key="backgroundColor" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="44.200000000000003" id="I1D-EZ-FfN"/>
+                                        </constraints>
+                                        <state key="normal" title="white">
+                                            <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="touchDraggedOutsideKeyButton:" destination="BYZ-38-t0r" eventType="touchDragOutside" id="X6C-Cl-5Sh"/>
+                                            <action selector="whiteKeyButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jZ9-Yr-U6Y"/>
+                                            <action selector="whiteKeyButtonTouched:" destination="BYZ-38-t0r" eventType="touchDown" id="amk-ph-45G"/>
+                                            <action selector="whiteKeyButtonTouched:" destination="BYZ-38-t0r" eventType="touchDragInside" id="sD6-oh-K9b"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="2" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="al3-eg-Saf">
+                                        <rect key="frame" x="530.5" y="0.0" width="44" height="100"/>
+                                        <color key="backgroundColor" red="1" green="0.50360402540000004" blue="0.23813805369999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="44.200000000000003" id="oBY-fW-6pw"/>
+                                        </constraints>
+                                        <state key="normal" title="white">
+                                            <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="touchDraggedOutsideKeyButton:" destination="BYZ-38-t0r" eventType="touchDragOutside" id="l2D-HF-cwK"/>
+                                            <action selector="whiteKeyButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ZHf-tI-b1I"/>
+                                            <action selector="whiteKeyButtonTouched:" destination="BYZ-38-t0r" eventType="touchDragInside" id="2dm-S2-9fe"/>
+                                            <action selector="whiteKeyButtonTouched:" destination="BYZ-38-t0r" eventType="touchDown" id="miE-G8-VAQ"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="3" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jvo-wa-mVl">
+                                        <rect key="frame" x="574.5" y="0.0" width="44.5" height="100"/>
+                                        <color key="backgroundColor" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="44.200000000000003" id="wBg-7X-td1"/>
+                                        </constraints>
+                                        <state key="normal" title="white">
+                                            <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="touchDraggedOutsideKeyButton:" destination="BYZ-38-t0r" eventType="touchDragOutside" id="uxG-3O-ojO"/>
+                                            <action selector="whiteKeyButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iFh-SM-2cr"/>
+                                            <action selector="whiteKeyButtonTouched:" destination="BYZ-38-t0r" eventType="touchDragInside" id="6La-a3-XyF"/>
+                                            <action selector="whiteKeyButtonTouched:" destination="BYZ-38-t0r" eventType="touchDown" id="jqD-hJ-FZI"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="4" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hh6-7M-y83">
+                                        <rect key="frame" x="619" y="0.0" width="44" height="100"/>
+                                        <color key="backgroundColor" red="1" green="0.50360402540000004" blue="0.23813805369999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="44.200000000000003" id="mjM-7a-DNB"/>
+                                        </constraints>
+                                        <state key="normal" title="white">
+                                            <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="touchDraggedOutsideKeyButton:" destination="BYZ-38-t0r" eventType="touchDragOutside" id="rHD-9y-fgd"/>
+                                            <action selector="whiteKeyButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="H84-QX-dwg"/>
+                                            <action selector="whiteKeyButtonTouched:" destination="BYZ-38-t0r" eventType="touchDragInside" id="CJt-A0-p32"/>
+                                            <action selector="whiteKeyButtonTouched:" destination="BYZ-38-t0r" eventType="touchDown" id="rSk-ha-vAA"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="5" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f2J-ui-opA">
+                                        <rect key="frame" x="663" y="0.0" width="44" height="100"/>
+                                        <color key="backgroundColor" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="44.200000000000003" id="6Df-Y7-vHw"/>
+                                        </constraints>
+                                        <state key="normal" title="white">
+                                            <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="touchDraggedOutsideKeyButton:" destination="BYZ-38-t0r" eventType="touchDragOutside" id="vii-FZ-gC8"/>
+                                            <action selector="whiteKeyButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="53z-vy-KeZ"/>
+                                            <action selector="whiteKeyButtonTouched:" destination="BYZ-38-t0r" eventType="touchDown" id="apD-Mk-sud"/>
+                                            <action selector="whiteKeyButtonTouched:" destination="BYZ-38-t0r" eventType="touchDragInside" id="wOm-Sx-eRW"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="4" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oRB-c9-wMc">
+                                        <rect key="frame" x="707" y="0.0" width="44.5" height="100"/>
+                                        <color key="backgroundColor" red="1" green="0.50360402540000004" blue="0.23813805369999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="44.200000000000003" id="h37-Tw-zBB"/>
+                                        </constraints>
+                                        <state key="normal" title="white">
+                                            <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="touchDraggedOutsideKeyButton:" destination="BYZ-38-t0r" eventType="touchDragOutside" id="1qR-BA-bTp"/>
+                                            <action selector="whiteKeyButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3Y8-4e-LdC"/>
+                                            <action selector="whiteKeyButtonTouched:" destination="BYZ-38-t0r" eventType="touchDragInside" id="Je9-ra-gim"/>
+                                            <action selector="whiteKeyButtonTouched:" destination="BYZ-38-t0r" eventType="touchDown" id="gb6-UP-bnd"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="5" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OP2-Yo-1Ex">
+                                        <rect key="frame" x="751.5" y="0.0" width="44" height="100"/>
+                                        <color key="backgroundColor" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="44.200000000000003" id="HrY-Og-aFS"/>
+                                        </constraints>
+                                        <state key="normal" title="white">
+                                            <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="touchDraggedOutsideKeyButton:" destination="BYZ-38-t0r" eventType="touchDragOutside" id="ALh-M1-Hlf"/>
+                                            <action selector="whiteKeyButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="u29-fV-FpH"/>
+                                            <action selector="whiteKeyButtonTouched:" destination="BYZ-38-t0r" eventType="touchDragInside" id="fXw-GH-SrI"/>
+                                            <action selector="whiteKeyButtonTouched:" destination="BYZ-38-t0r" eventType="touchDown" id="zKx-z3-ab9"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="6" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x5P-Uk-u80">
+                                        <rect key="frame" x="795.5" y="0.0" width="44.5" height="100"/>
+                                        <color key="backgroundColor" red="1" green="0.50360402540000004" blue="0.23813805369999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="44.200000000000003" id="nZc-gL-bEq"/>
+                                        </constraints>
+                                        <state key="normal" title="white">
+                                            <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="touchDraggedOutsideKeyButton:" destination="BYZ-38-t0r" eventType="touchDragOutside" id="LN0-no-FJD"/>
+                                            <action selector="whiteKeyButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="CK8-nS-6L9"/>
+                                            <action selector="whiteKeyButtonTouched:" destination="BYZ-38-t0r" eventType="touchDown" id="rAS-sw-WoA"/>
+                                            <action selector="whiteKeyButtonTouched:" destination="BYZ-38-t0r" eventType="touchDragInside" id="tVr-Fu-pNc"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="7" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yPi-ae-cFz">
+                                        <rect key="frame" x="840" y="0.0" width="44" height="100"/>
+                                        <color key="backgroundColor" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="44.200000000000003" id="dVS-K6-azX"/>
+                                        </constraints>
+                                        <state key="normal" title="white">
+                                            <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="touchDraggedOutsideKeyButton:" destination="BYZ-38-t0r" eventType="touchDragOutside" id="jyh-5p-ZaW"/>
+                                            <action selector="whiteKeyButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HET-KT-JVs"/>
+                                            <action selector="whiteKeyButtonTouched:" destination="BYZ-38-t0r" eventType="touchDown" id="2qo-mq-tSN"/>
+                                            <action selector="whiteKeyButtonTouched:" destination="BYZ-38-t0r" eventType="touchDragInside" id="Jxo-Fj-58p"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="8" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="719-AJ-2dz">
+                                        <rect key="frame" x="884" y="0.0" width="44" height="100"/>
+                                        <color key="backgroundColor" red="1" green="0.50360402540000004" blue="0.23813805369999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="44.200000000000003" id="Ag2-eJ-qDX"/>
+                                        </constraints>
+                                        <state key="normal" title="white">
+                                            <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="touchDraggedOutsideKeyButton:" destination="BYZ-38-t0r" eventType="touchDragOutside" id="xYZ-Vp-W1S"/>
+                                            <action selector="whiteKeyButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jyH-dm-pSl"/>
+                                            <action selector="whiteKeyButtonTouched:" destination="BYZ-38-t0r" eventType="touchDragInside" id="M3g-ch-4ae"/>
+                                            <action selector="whiteKeyButtonTouched:" destination="BYZ-38-t0r" eventType="touchDown" id="mXa-Kl-hnX"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="9" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vsv-Mk-mEe">
+                                        <rect key="frame" x="928" y="0.0" width="44.5" height="100"/>
+                                        <color key="backgroundColor" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="44.200000000000003" id="GYp-sd-Os1"/>
+                                        </constraints>
+                                        <state key="normal" title="white">
+                                            <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="touchDraggedOutsideKeyButton:" destination="BYZ-38-t0r" eventType="touchDragOutside" id="Tgi-P3-ekK"/>
+                                            <action selector="whiteKeyButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rRE-Mc-332"/>
+                                            <action selector="whiteKeyButtonTouched:" destination="BYZ-38-t0r" eventType="touchDown" id="9kg-An-7r8"/>
+                                            <action selector="whiteKeyButtonTouched:" destination="BYZ-38-t0r" eventType="touchDragInside" id="POW-FT-Zm2"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="10" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cKa-X2-9xQ">
+                                        <rect key="frame" x="972.5" y="0.0" width="44" height="100"/>
+                                        <color key="backgroundColor" red="1" green="0.50360402540000004" blue="0.23813805369999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="44.200000000000003" id="U27-qU-3cf"/>
+                                        </constraints>
+                                        <state key="normal" title="white">
+                                            <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="touchDraggedOutsideKeyButton:" destination="BYZ-38-t0r" eventType="touchDragOutside" id="fEP-j3-o2O"/>
+                                            <action selector="whiteKeyButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dwA-rn-hOk"/>
+                                            <action selector="whiteKeyButtonTouched:" destination="BYZ-38-t0r" eventType="touchDown" id="FJw-Jj-bDD"/>
+                                            <action selector="whiteKeyButtonTouched:" destination="BYZ-38-t0r" eventType="touchDragInside" id="ql4-65-W59"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="11" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cB2-hw-NdB">
+                                        <rect key="frame" x="1016.5" y="0.0" width="44.5" height="100"/>
+                                        <color key="backgroundColor" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="44.200000000000003" id="wiT-W3-6mn"/>
+                                        </constraints>
+                                        <state key="normal" title="white">
+                                            <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="touchDraggedOutsideKeyButton:" destination="BYZ-38-t0r" eventType="touchDragOutside" id="QHh-jq-GtO"/>
+                                            <action selector="whiteKeyButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2Oo-2k-SgC"/>
+                                            <action selector="whiteKeyButtonTouched:" destination="BYZ-38-t0r" eventType="touchDown" id="a1j-fs-SGF"/>
+                                            <action selector="whiteKeyButtonTouched:" destination="BYZ-38-t0r" eventType="touchDragInside" id="dMI-qz-lOY"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="12" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qAT-40-FkO">
+                                        <rect key="frame" x="1061" y="0.0" width="44" height="100"/>
+                                        <color key="backgroundColor" red="1" green="0.50360402540000004" blue="0.23813805369999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="44.200000000000003" id="w6S-PW-lGF"/>
+                                        </constraints>
+                                        <state key="normal" title="white">
+                                            <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="touchDraggedOutsideKeyButton:" destination="BYZ-38-t0r" eventType="touchDragOutside" id="zt9-hb-LsE"/>
+                                            <action selector="whiteKeyButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nZF-8t-N7q"/>
+                                            <action selector="whiteKeyButtonTouched:" destination="BYZ-38-t0r" eventType="touchDragInside" id="b4q-cX-xxp"/>
+                                            <action selector="whiteKeyButtonTouched:" destination="BYZ-38-t0r" eventType="touchDown" id="hmE-yV-hTz"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="15" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qjT-X8-UzK">
+                                        <rect key="frame" x="1105" y="0.0" width="44" height="100"/>
+                                        <color key="backgroundColor" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="44.200000000000003" id="qxT-p9-HBV"/>
+                                        </constraints>
+                                        <state key="normal" title="white">
+                                            <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="touchDraggedOutsideKeyButton:" destination="BYZ-38-t0r" eventType="touchDragOutside" id="neb-q1-ckN"/>
+                                            <action selector="whiteKeyButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ceM-LX-O6k"/>
+                                            <action selector="whiteKeyButtonTouched:" destination="BYZ-38-t0r" eventType="touchDragInside" id="H01-eE-3zb"/>
+                                            <action selector="whiteKeyButtonTouched:" destination="BYZ-38-t0r" eventType="touchDown" id="fnL-Ru-Wx2"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="16" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0wv-HE-fDb">
+                                        <rect key="frame" x="1149" y="0.0" width="44.5" height="100"/>
+                                        <color key="backgroundColor" red="1" green="0.50360402540000004" blue="0.23813805369999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="44.200000000000003" id="b9u-bs-mzi"/>
+                                        </constraints>
+                                        <state key="normal" title="white">
+                                            <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="touchDraggedOutsideKeyButton:" destination="BYZ-38-t0r" eventType="touchDragOutside" id="8Im-jZ-2ig"/>
+                                            <action selector="whiteKeyButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tG1-pG-tKd"/>
+                                            <action selector="whiteKeyButtonTouched:" destination="BYZ-38-t0r" eventType="touchDown" id="Yjc-Wj-elT"/>
+                                            <action selector="whiteKeyButtonTouched:" destination="BYZ-38-t0r" eventType="touchDragInside" id="fTn-pn-T1s"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="13" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mhD-GM-XVc">
+                                        <rect key="frame" x="1193.5" y="0.0" width="44" height="100"/>
+                                        <color key="backgroundColor" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="44.200000000000003" id="AIX-bo-DWJ"/>
+                                        </constraints>
+                                        <state key="normal" title="white">
+                                            <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="touchDraggedOutsideKeyButton:" destination="BYZ-38-t0r" eventType="touchDragOutside" id="Ab1-hW-W7o"/>
+                                            <action selector="whiteKeyButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="UJ6-03-Lqq"/>
+                                            <action selector="whiteKeyButtonTouched:" destination="BYZ-38-t0r" eventType="touchDragInside" id="WNp-sl-wGn"/>
+                                            <action selector="whiteKeyButtonTouched:" destination="BYZ-38-t0r" eventType="touchDown" id="fod-Je-5Z3"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="14" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mzR-aF-bqk">
+                                        <rect key="frame" x="1237.5" y="0.0" width="44.5" height="100"/>
+                                        <color key="backgroundColor" red="1" green="0.50360402540000004" blue="0.23813805369999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="44.200000000000003" id="8I6-gD-J1Z"/>
+                                        </constraints>
+                                        <state key="normal" title="white">
+                                            <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="touchDraggedOutsideKeyButton:" destination="BYZ-38-t0r" eventType="touchDragOutside" id="COm-Zt-5hz"/>
+                                            <action selector="whiteKeyButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bJt-Ud-9GJ"/>
+                                            <action selector="whiteKeyButtonTouched:" destination="BYZ-38-t0r" eventType="touchDown" id="5e6-ZA-D4F"/>
+                                            <action selector="whiteKeyButtonTouched:" destination="BYZ-38-t0r" eventType="touchDragInside" id="7FN-Cw-GK2"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="15" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uZ9-cu-UjM">
+                                        <rect key="frame" x="1282" y="0.0" width="44" height="100"/>
+                                        <color key="backgroundColor" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="44.200000000000003" id="aGN-Hn-hQK"/>
+                                        </constraints>
+                                        <state key="normal" title="white">
+                                            <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="touchDraggedOutsideKeyButton:" destination="BYZ-38-t0r" eventType="touchDragOutside" id="iqb-1T-Qif"/>
+                                            <action selector="whiteKeyButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="U0n-Zw-Cee"/>
+                                            <action selector="whiteKeyButtonTouched:" destination="BYZ-38-t0r" eventType="touchDragInside" id="I2y-WQ-Uza"/>
+                                            <action selector="whiteKeyButtonTouched:" destination="BYZ-38-t0r" eventType="touchDown" id="edc-pe-Gf2"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="16" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qp3-9k-XyG">
+                                        <rect key="frame" x="1326" y="0.0" width="44" height="100"/>
+                                        <color key="backgroundColor" red="1" green="0.50360402540000004" blue="0.23813805369999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="44.200000000000003" id="2qd-em-qZu"/>
+                                        </constraints>
+                                        <state key="normal" title="white">
+                                            <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="touchDraggedOutsideKeyButton:" destination="BYZ-38-t0r" eventType="touchDragOutside" id="mmW-dM-mI1"/>
+                                            <action selector="whiteKeyButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xHj-H3-wNn"/>
+                                            <action selector="whiteKeyButtonTouched:" destination="BYZ-38-t0r" eventType="touchDragInside" id="3Ij-wz-cZY"/>
+                                            <action selector="whiteKeyButtonTouched:" destination="BYZ-38-t0r" eventType="touchDown" id="DZU-vR-Ysn"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="pfE-ZW-xIs"/>
+                                </constraints>
+                            </stackView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="RZX-aY-jH3" userLabel="left of keys placeholder">
+                                <rect key="frame" x="0.0" y="621" width="3" height="280"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="280" id="f1t-GV-Pt0"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Zka-4J-w4h" userLabel="bottom of keys placeholder">
+                                <rect key="frame" x="0.0" y="901" width="1366" height="123"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="COz-gC-a0h" firstAttribute="width" secondItem="cGR-eH-SAd" secondAttribute="width" multiplier="0.6773" id="0ZX-ju-Pqs"/>
                             <constraint firstItem="COz-gC-a0h" firstAttribute="top" secondItem="tec-47-C5m" secondAttribute="topMargin" constant="67" id="1B8-hS-ijF"/>
                             <constraint firstItem="gqB-He-zfK" firstAttribute="centerX" secondItem="tec-47-C5m" secondAttribute="centerX" constant="-20" id="2xj-8p-iV2"/>
+                            <constraint firstItem="39M-bi-zO3" firstAttribute="leading" secondItem="RZX-aY-jH3" secondAttribute="trailing" id="4rL-wQ-BWP"/>
+                            <constraint firstItem="Zka-4J-w4h" firstAttribute="leading" secondItem="tec-47-C5m" secondAttribute="leading" id="6dZ-n9-REr"/>
                             <constraint firstItem="vzr-qh-cLh" firstAttribute="trailing" secondItem="Bcp-rj-qSy" secondAttribute="trailing" id="8CA-uS-KEl"/>
                             <constraint firstItem="yxa-Ew-apy" firstAttribute="centerY" secondItem="S3S-p5-kwV" secondAttribute="centerY" id="8QL-mg-Qxm"/>
+                            <constraint firstItem="RZX-aY-jH3" firstAttribute="bottom" secondItem="Zka-4J-w4h" secondAttribute="top" id="CRQ-jY-i4Z"/>
                             <constraint firstItem="S3S-p5-kwV" firstAttribute="width" secondItem="gqB-He-zfK" secondAttribute="width" id="Ceb-p5-Aji"/>
                             <constraint firstItem="yxa-Ew-apy" firstAttribute="leading" secondItem="S3S-p5-kwV" secondAttribute="trailing" constant="-30" id="HQV-lz-RVK"/>
                             <constraint firstItem="yxa-Ew-apy" firstAttribute="height" secondItem="246-8n-5LY" secondAttribute="height" id="InU-DQ-qtD"/>
@@ -1723,9 +2239,15 @@
                             <constraint firstItem="Bcp-rj-qSy" firstAttribute="trailing" secondItem="cGR-eH-SAd" secondAttribute="trailing" id="QPH-6d-rYL"/>
                             <constraint firstItem="vzr-qh-cLh" firstAttribute="leading" secondItem="Bcp-rj-qSy" secondAttribute="leading" id="V9F-ps-k2A"/>
                             <constraint firstItem="S3S-p5-kwV" firstAttribute="centerX" secondItem="tec-47-C5m" secondAttribute="centerX" id="Y4J-uo-hnf"/>
+                            <constraint firstAttribute="bottom" secondItem="Zka-4J-w4h" secondAttribute="bottom" id="YNo-4X-w7I"/>
+                            <constraint firstItem="39M-bi-zO3" firstAttribute="bottom" secondItem="Zka-4J-w4h" secondAttribute="top" id="YYb-i1-C1T"/>
                             <constraint firstItem="gqB-He-zfK" firstAttribute="width" secondItem="Bcp-rj-qSy" secondAttribute="width" multiplier="541.5:1366" id="c55-se-KYE"/>
                             <constraint firstItem="vzr-qh-cLh" firstAttribute="top" secondItem="Bcp-rj-qSy" secondAttribute="top" id="cg6-iz-ox5"/>
                             <constraint firstItem="Bcp-rj-qSy" firstAttribute="leading" secondItem="cGR-eH-SAd" secondAttribute="leading" id="cyA-SK-TZb"/>
+                            <constraint firstAttribute="trailing" secondItem="Zka-4J-w4h" secondAttribute="trailing" id="gFt-NV-eLp"/>
+                            <constraint firstItem="Zka-4J-w4h" firstAttribute="height" secondItem="vzr-qh-cLh" secondAttribute="height" multiplier="123:1000" id="iFR-LI-Gru"/>
+                            <constraint firstItem="RZX-aY-jH3" firstAttribute="width" secondItem="vzr-qh-cLh" secondAttribute="width" multiplier="3:1366" id="k9n-rq-7RJ"/>
+                            <constraint firstItem="RZX-aY-jH3" firstAttribute="leading" secondItem="tec-47-C5m" secondAttribute="leading" id="mTZ-GM-IPy"/>
                             <constraint firstItem="COz-gC-a0h" firstAttribute="centerX" secondItem="tec-47-C5m" secondAttribute="centerX" id="qBS-nZ-EEL"/>
                             <constraint firstItem="S3S-p5-kwV" firstAttribute="centerY" secondItem="gqB-He-zfK" secondAttribute="centerY" id="wRX-nQ-zJB"/>
                             <constraint firstItem="gqB-He-zfK" firstAttribute="top" secondItem="COz-gC-a0h" secondAttribute="bottom" constant="-30" id="wyS-Tq-m7O"/>
@@ -1925,11 +2447,11 @@
         <image name="F_pressed" width="220" height="220"/>
         <image name="G_default" width="220" height="220"/>
         <image name="G_pressed" width="220" height="220"/>
-        <image name="arrow_down" width="202" height="115"/>
+        <image name="arrow_down" width="210" height="123"/>
         <image name="arrow_down_pressed" width="202" height="115"/>
-        <image name="arrow_up" width="202" height="115"/>
+        <image name="arrow_up" width="210" height="123"/>
         <image name="arrow_up_pressed" width="202" height="115"/>
-        <image name="check" width="210" height="112"/>
+        <image name="check" width="218" height="120"/>
         <image name="check_pressed" width="210" height="112"/>
         <image name="explainer_1" width="2732" height="2048"/>
         <image name="flat" width="210" height="123"/>
@@ -1938,7 +2460,7 @@
         <image name="intro_screen_learn_normal" width="821" height="253"/>
         <image name="intro_screen_play_normal" width="821" height="253"/>
         <image name="name_the_highlighted_note" width="1543" height="102"/>
-        <image name="natural" width="210" height="112"/>
+        <image name="natural" width="218" height="120"/>
         <image name="natural_pressed" width="210" height="112"/>
         <image name="nav_triangle_L_normal" width="115" height="717"/>
         <image name="nav_triangle_R_normal" width="115" height="717"/>
