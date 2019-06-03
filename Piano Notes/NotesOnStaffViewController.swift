@@ -18,13 +18,23 @@ class NotesOnStaffViewController: UIViewController {
     
     @IBOutlet weak var noteOnStaffImage: UIImageView!
     
-    
     @IBOutlet weak var pianoNoteDisplayed: UIImageView!
     
     var currentNoteOnStaffImageName = ""
     
     @IBOutlet var panGestureRecognizerOutlet: UIPanGestureRecognizer!
     
+    @IBOutlet var keyButtonsOutletCollection: [UIButton]!
+    
+    @IBAction func keyButtonTouchUpInside(_ sender: UIButton) {
+    }
+    
+    @IBAction func keyButtonTouchDown(_ sender: UIButton) {
+    }
+    
+    
+    @IBAction func keyButtonDraggedOutside(_ sender: UIButton) {
+    }
     
     @IBAction func sharpButtonPressed(_ sender: UIButton) {
         
