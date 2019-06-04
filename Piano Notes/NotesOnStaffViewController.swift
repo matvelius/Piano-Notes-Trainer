@@ -27,6 +27,7 @@ class NotesOnStaffViewController: UIViewController {
     @IBOutlet var keyButtonsOutletCollection: [UIButton]!
     
     @IBAction func keyButtonTouchUpInside(_ sender: UIButton) {
+        print("\(sender.tag): \(allNotesOnLargeKeyboard[sender.tag])")
     }
     
     @IBAction func keyButtonTouchDown(_ sender: UIButton) {
@@ -187,6 +188,8 @@ class NotesOnStaffViewController: UIViewController {
 //        let blackKey1Transform = positiveRotationTransforms[8]
         
         keyButtonsOutletCollection.sort(by: {$0.tag < $1.tag})
+//        allNotesOnLargeKeyboard.sort(by: {$0.prefix(2) < $1.prefix(2)})
+//        print(allNotesOnLargeKeyboard)
         
         pianoNoteDisplayed.alpha = 1
         
