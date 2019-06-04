@@ -2202,10 +2202,20 @@
                                         <constraints>
                                             <constraint firstAttribute="width" constant="24" id="07A-Pi-s8W"/>
                                         </constraints>
+                                        <connections>
+                                            <action selector="keyButtonDraggedOutside:" destination="vCV-Es-ama" eventType="touchDragOutside" id="gSj-z9-Mt0"/>
+                                            <action selector="keyButtonTouchDown:" destination="vCV-Es-ama" eventType="touchDown" id="bDW-W3-RML"/>
+                                            <action selector="keyButtonTouchUpInside:" destination="vCV-Es-ama" eventType="touchUpInside" id="GV6-J5-zew"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GgU-dJ-cv6" userLabel="blackKeyButton">
                                         <rect key="frame" x="51.5" y="0.0" width="24" height="178"/>
                                         <color key="backgroundColor" red="0.0" green="1" blue="0.52390272010000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <connections>
+                                            <action selector="keyButtonDraggedOutside:" destination="vCV-Es-ama" eventType="touchDragOutside" id="NdL-MW-gla"/>
+                                            <action selector="keyButtonTouchDown:" destination="vCV-Es-ama" eventType="touchDown" id="IN1-Yh-hnO"/>
+                                            <action selector="keyButtonTouchUpInside:" destination="vCV-Es-ama" eventType="touchUpInside" id="tLW-Lz-p1u"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -2236,14 +2246,29 @@
                                         <constraints>
                                             <constraint firstAttribute="width" constant="24" id="wga-GP-a5U"/>
                                         </constraints>
+                                        <connections>
+                                            <action selector="keyButtonDraggedOutside:" destination="vCV-Es-ama" eventType="touchDragOutside" id="k9i-aa-ZDk"/>
+                                            <action selector="keyButtonTouchDown:" destination="vCV-Es-ama" eventType="touchDown" id="aaJ-YO-Stv"/>
+                                            <action selector="keyButtonTouchUpInside:" destination="vCV-Es-ama" eventType="touchUpInside" id="oLI-iL-QeX"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F6p-pK-oNR" userLabel="blackKeyButton">
                                         <rect key="frame" x="51" y="0.0" width="24" height="178"/>
                                         <color key="backgroundColor" red="0.0" green="1" blue="0.52390272010000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <connections>
+                                            <action selector="keyButtonDraggedOutside:" destination="vCV-Es-ama" eventType="touchDragOutside" id="V51-kN-pAO"/>
+                                            <action selector="keyButtonTouchDown:" destination="vCV-Es-ama" eventType="touchDown" id="tu7-hZ-n5s"/>
+                                            <action selector="keyButtonTouchUpInside:" destination="vCV-Es-ama" eventType="touchUpInside" id="aBM-cc-g6z"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8wK-ua-X0r" userLabel="blackKeyButton">
                                         <rect key="frame" x="102" y="0.0" width="24" height="178"/>
                                         <color key="backgroundColor" red="0.0" green="1" blue="0.52390272010000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <connections>
+                                            <action selector="keyButtonDraggedOutside:" destination="vCV-Es-ama" eventType="touchDragOutside" id="WaL-Zx-QsO"/>
+                                            <action selector="keyButtonTouchDown:" destination="vCV-Es-ama" eventType="touchDown" id="ab2-IS-OSo"/>
+                                            <action selector="keyButtonTouchUpInside:" destination="vCV-Es-ama" eventType="touchUpInside" id="prp-bE-ZJ3"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -2275,10 +2300,20 @@
                                         <constraints>
                                             <constraint firstAttribute="width" constant="24" id="eUB-ma-SeZ"/>
                                         </constraints>
+                                        <connections>
+                                            <action selector="keyButtonDraggedOutside:" destination="vCV-Es-ama" eventType="touchDragOutside" id="VRc-5L-md8"/>
+                                            <action selector="keyButtonTouchDown:" destination="vCV-Es-ama" eventType="touchDown" id="4n0-0i-ZEA"/>
+                                            <action selector="keyButtonTouchUpInside:" destination="vCV-Es-ama" eventType="touchUpInside" id="z4r-Qo-Cck"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" tag="15" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="443-7C-8by" userLabel="blackKeyButton">
                                         <rect key="frame" x="50.5" y="0.0" width="24" height="178"/>
                                         <color key="backgroundColor" red="0.0" green="1" blue="0.52390272010000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <connections>
+                                            <action selector="keyButtonDraggedOutside:" destination="vCV-Es-ama" eventType="touchDragOutside" id="bFU-LN-bEF"/>
+                                            <action selector="keyButtonTouchDown:" destination="vCV-Es-ama" eventType="touchDown" id="tXt-pc-aY0"/>
+                                            <action selector="keyButtonTouchUpInside:" destination="vCV-Es-ama" eventType="touchUpInside" id="Fp4-QF-kmH"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -2309,14 +2344,29 @@
                                         <constraints>
                                             <constraint firstAttribute="width" constant="24" id="6GA-lj-oHe"/>
                                         </constraints>
+                                        <connections>
+                                            <action selector="keyButtonDraggedOutside:" destination="vCV-Es-ama" eventType="touchDragOutside" id="TLS-8o-vwL"/>
+                                            <action selector="keyButtonTouchDown:" destination="vCV-Es-ama" eventType="touchDown" id="eLC-PX-MEz"/>
+                                            <action selector="keyButtonTouchUpInside:" destination="vCV-Es-ama" eventType="touchUpInside" id="dFo-ie-neu"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" tag="20" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oVj-CW-Ysf" userLabel="blackKeyButton">
                                         <rect key="frame" x="50" y="0.0" width="24" height="178"/>
                                         <color key="backgroundColor" red="0.0" green="1" blue="0.52390272010000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <connections>
+                                            <action selector="keyButtonDraggedOutside:" destination="vCV-Es-ama" eventType="touchDragOutside" id="zoj-ou-eSR"/>
+                                            <action selector="keyButtonTouchDown:" destination="vCV-Es-ama" eventType="touchDown" id="szY-lR-Iel"/>
+                                            <action selector="keyButtonTouchUpInside:" destination="vCV-Es-ama" eventType="touchUpInside" id="yL6-gM-GPh"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" tag="22" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="51d-YK-cmr" userLabel="blackKeyButton">
                                         <rect key="frame" x="100" y="0.0" width="24" height="178"/>
                                         <color key="backgroundColor" red="0.0" green="1" blue="0.52390272010000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <connections>
+                                            <action selector="keyButtonDraggedOutside:" destination="vCV-Es-ama" eventType="touchDragOutside" id="Kdz-Do-5yk"/>
+                                            <action selector="keyButtonTouchDown:" destination="vCV-Es-ama" eventType="touchDown" id="wKs-6O-CZt"/>
+                                            <action selector="keyButtonTouchUpInside:" destination="vCV-Es-ama" eventType="touchUpInside" id="s6d-3r-nEg"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -2348,10 +2398,20 @@
                                         <constraints>
                                             <constraint firstAttribute="width" constant="24" id="yN7-Sz-GeF"/>
                                         </constraints>
+                                        <connections>
+                                            <action selector="keyButtonDraggedOutside:" destination="vCV-Es-ama" eventType="touchDragOutside" id="zO6-Ah-ndR"/>
+                                            <action selector="keyButtonTouchDown:" destination="vCV-Es-ama" eventType="touchDown" id="aju-EX-9pA"/>
+                                            <action selector="keyButtonTouchUpInside:" destination="vCV-Es-ama" eventType="touchUpInside" id="PzC-Ee-Mwv"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" tag="27" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pvl-hy-hRp" userLabel="blackKeyButton">
                                         <rect key="frame" x="51.5" y="0.0" width="24" height="178"/>
                                         <color key="backgroundColor" red="0.0" green="1" blue="0.52390272010000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <connections>
+                                            <action selector="keyButtonDraggedOutside:" destination="vCV-Es-ama" eventType="touchDragOutside" id="vPE-wA-UnI"/>
+                                            <action selector="keyButtonTouchDown:" destination="vCV-Es-ama" eventType="touchDown" id="Rej-ZW-wG9"/>
+                                            <action selector="keyButtonTouchUpInside:" destination="vCV-Es-ama" eventType="touchUpInside" id="6r5-Qu-Xaa"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -2382,14 +2442,29 @@
                                         <constraints>
                                             <constraint firstAttribute="width" constant="24" id="aAq-KW-aQS"/>
                                         </constraints>
+                                        <connections>
+                                            <action selector="keyButtonDraggedOutside:" destination="vCV-Es-ama" eventType="touchDragOutside" id="879-cq-s6B"/>
+                                            <action selector="keyButtonTouchDown:" destination="vCV-Es-ama" eventType="touchDown" id="X3g-b9-Pwh"/>
+                                            <action selector="keyButtonTouchUpInside:" destination="vCV-Es-ama" eventType="touchUpInside" id="RVb-YI-rKZ"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" tag="32" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PCE-Qz-40q" userLabel="blackKeyButton">
                                         <rect key="frame" x="50" y="0.0" width="24" height="178"/>
                                         <color key="backgroundColor" red="0.0" green="1" blue="0.52390272010000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <connections>
+                                            <action selector="keyButtonDraggedOutside:" destination="vCV-Es-ama" eventType="touchDragOutside" id="L87-gs-XwU"/>
+                                            <action selector="keyButtonTouchDown:" destination="vCV-Es-ama" eventType="touchDown" id="W0h-qQ-0LH"/>
+                                            <action selector="keyButtonTouchUpInside:" destination="vCV-Es-ama" eventType="touchUpInside" id="W4l-Kv-HXv"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" tag="34" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e3Q-m5-x15" userLabel="blackKeyButton">
                                         <rect key="frame" x="100" y="0.0" width="24" height="178"/>
                                         <color key="backgroundColor" red="0.0" green="1" blue="0.52390272010000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <connections>
+                                            <action selector="keyButtonDraggedOutside:" destination="vCV-Es-ama" eventType="touchDragOutside" id="z0B-3H-yy5"/>
+                                            <action selector="keyButtonTouchDown:" destination="vCV-Es-ama" eventType="touchDown" id="nSJ-kk-Pnr"/>
+                                            <action selector="keyButtonTouchUpInside:" destination="vCV-Es-ama" eventType="touchUpInside" id="jKO-Eh-6DT"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -2421,10 +2496,20 @@
                                         <constraints>
                                             <constraint firstAttribute="width" constant="24" id="6eP-XX-xxe"/>
                                         </constraints>
+                                        <connections>
+                                            <action selector="keyButtonDraggedOutside:" destination="vCV-Es-ama" eventType="touchDragOutside" id="ZhY-Km-OsV"/>
+                                            <action selector="keyButtonTouchDown:" destination="vCV-Es-ama" eventType="touchDown" id="ls0-Du-Ivh"/>
+                                            <action selector="keyButtonTouchUpInside:" destination="vCV-Es-ama" eventType="touchUpInside" id="m1t-kT-9Gy"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" tag="39" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TTO-pK-3ux" userLabel="blackKeyButton">
                                         <rect key="frame" x="51" y="0.0" width="24" height="178"/>
                                         <color key="backgroundColor" red="0.0" green="1" blue="0.52390272010000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <connections>
+                                            <action selector="keyButtonDraggedOutside:" destination="vCV-Es-ama" eventType="touchDragOutside" id="pkA-mu-8mY"/>
+                                            <action selector="keyButtonTouchDown:" destination="vCV-Es-ama" eventType="touchDown" id="MBa-PC-PPG"/>
+                                            <action selector="keyButtonTouchUpInside:" destination="vCV-Es-ama" eventType="touchUpInside" id="PSK-5r-mb5"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -2455,14 +2540,29 @@
                                         <constraints>
                                             <constraint firstAttribute="width" constant="24" id="VFm-8L-Tsb"/>
                                         </constraints>
+                                        <connections>
+                                            <action selector="keyButtonDraggedOutside:" destination="vCV-Es-ama" eventType="touchDragOutside" id="6cr-LS-8LO"/>
+                                            <action selector="keyButtonTouchDown:" destination="vCV-Es-ama" eventType="touchDown" id="2C4-XL-mRA"/>
+                                            <action selector="keyButtonTouchUpInside:" destination="vCV-Es-ama" eventType="touchUpInside" id="aol-GY-KxD"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" tag="44" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kEH-oe-5mF" userLabel="blackKeyButton">
                                         <rect key="frame" x="51" y="0.0" width="24" height="178"/>
                                         <color key="backgroundColor" red="0.0" green="1" blue="0.52390272010000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <connections>
+                                            <action selector="keyButtonDraggedOutside:" destination="vCV-Es-ama" eventType="touchDragOutside" id="Mnh-Xl-6Ds"/>
+                                            <action selector="keyButtonTouchDown:" destination="vCV-Es-ama" eventType="touchDown" id="8FP-LG-ewK"/>
+                                            <action selector="keyButtonTouchUpInside:" destination="vCV-Es-ama" eventType="touchUpInside" id="4pG-97-HYe"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" tag="46" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R1f-uy-JoS" userLabel="blackKeyButton">
                                         <rect key="frame" x="102" y="0.0" width="24" height="178"/>
                                         <color key="backgroundColor" red="0.0" green="1" blue="0.52390272010000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <connections>
+                                            <action selector="keyButtonDraggedOutside:" destination="vCV-Es-ama" eventType="touchDragOutside" id="3Gb-tt-p6o"/>
+                                            <action selector="keyButtonTouchDown:" destination="vCV-Es-ama" eventType="touchDown" id="ce8-3c-q8C"/>
+                                            <action selector="keyButtonTouchUpInside:" destination="vCV-Es-ama" eventType="touchUpInside" id="JQM-Nw-wkh"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -2494,6 +2594,11 @@
                                         <constraints>
                                             <constraint firstAttribute="width" constant="24" id="nxs-Ab-yzW"/>
                                         </constraints>
+                                        <connections>
+                                            <action selector="keyButtonDraggedOutside:" destination="vCV-Es-ama" eventType="touchDragOutside" id="1Wj-vS-5On"/>
+                                            <action selector="keyButtonTouchDown:" destination="vCV-Es-ama" eventType="touchDown" id="CtE-Dw-BSO"/>
+                                            <action selector="keyButtonTouchUpInside:" destination="vCV-Es-ama" eventType="touchUpInside" id="f16-Qb-IjV"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" userInteractionEnabled="NO" alpha="0.0" tag="51" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VuL-UY-RD0" userLabel="blackKeyButton">
                                         <rect key="frame" x="51.5" y="0.0" width="24" height="178"/>
