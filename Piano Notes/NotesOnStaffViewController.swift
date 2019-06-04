@@ -164,6 +164,11 @@ class NotesOnStaffViewController: UIViewController {
 //    // placeholder for current note
 //    var currentNote = ""
     
+    @IBOutlet weak var scoreLabelOutlet: UILabel!
+    
+    @IBOutlet weak var starsImageOutlet: UIImageView!
+    
+    
     // REFACTOR SOME (MOST?) OF THIS TO viewDidAppear() ?!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -206,6 +211,9 @@ class NotesOnStaffViewController: UIViewController {
         print("currentNoteIndex: \(currentNoteOnStaffIndex)")
 
     }
+    
+    // for keeping track of piano keys already tried
+    var notesAlreadyAttempted = [String]()
     
     func checkAnswer() {
         
@@ -250,6 +258,7 @@ class NotesOnStaffViewController: UIViewController {
         print("currentEnharmonic: \(currentEnharmonic)")
         print("currentUserAnswer: \(currentUserAnswer)")
         
+        // RIGHT ANSWER
         if currentUserAnswer == currentCorrectAnswer || currentEnharmonic! == currentCorrectAnswer {
             print("correct!")
             checkButtonOutlet.setImage(UIImage(named: "check_right"), for: .normal)
@@ -258,6 +267,7 @@ class NotesOnStaffViewController: UIViewController {
                 self.generateNewNote()
             })
             
+        // WRONG ANSWER
         } else {
             print("incorrect!")
             // play "wrong" sound
@@ -270,6 +280,25 @@ class NotesOnStaffViewController: UIViewController {
             DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1), execute:{
                 self.checkButtonOutlet.setImage(UIImage(named: "check"), for: .normal)
             })
+            
+//            if !notesAlreadyAttempted.contains(nameOfKeyToHighlight) {
+//
+//                let wrongNoteImageName = "\(nameOfKeyToHighlight)_wrong"
+//                let wrongNoteImage = UIImage(named: wrongNoteImageName)
+//                let wrongNoteImageView = UIImageView(image: wrongNoteImage!)
+//
+//                wrongNoteImageView.translatesAutoresizingMaskIntoConstraints = false
+//                pianoKeyImage.addSubview(wrongNoteImageView)
+//
+//                NSLayoutConstraint.activate([
+//                    wrongNoteImageView.widthAnchor.constraint(equalToConstant: pianoKeyImage!.frame.width),
+//                    wrongNoteImageView.heightAnchor.constraint(equalToConstant: pianoKeyImage!.frame.height),
+//
+//                    ])
+//
+//            }
+//
+//            notesAlreadyAttempted.append(nameOfKeyToHighlight)
             
         }
 
@@ -315,6 +344,15 @@ class NotesOnStaffViewController: UIViewController {
         lastRandomNumber = randomNewNoteIndex
         
         pianoNoteDisplayed.image = UIImage(named: "large_\(currentCorrectAnswer)_shown")
+        
+//        // remove notes marked wrong
+//        if !notesAlreadyAttempted.isEmpty {
+//            for subview in self.pianoKeyImage.subviews {
+//                subview.removeFromSuperview()
+//            }
+//        }
+//        
+//        notesAlreadyAttempted = [""]
         
         
         
