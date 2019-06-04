@@ -168,28 +168,15 @@ class NotesOnStaffViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        let angleIncrement = 0.024
-//
-//        var positiveRotationTransforms = [CGAffineTransform]()
-//        var negativeRotationTransforms = [CGAffineTransform]()
-//
-//        // calculate rotation transforms
-//        for angleMultiplier in (0...9) {
-//            positiveRotationTransforms.append(CGAffineTransform(rotationAngle: CGFloat(Double(angleMultiplier) * (angleIncrement))))
-//            negativeRotationTransforms.append(CGAffineTransform(rotationAngle: CGFloat(Double(angleMultiplier) * -(angleIncrement))))
-//        }
-//
-//        let translation1xPositive = CGAffineTransform(translationX: 10, y: 0)
-//        let translation1xNegative = CGAffineTransform(translationX: -10, y: 0)
-//        let translation2xPositive = CGAffineTransform(translationX: 20, y: 0)
-//        let translation2xNegative = CGAffineTransform(translationX: -20, y: 0)
-//
-//        // concat with translation transforms
-//        let blackKey1Transform = positiveRotationTransforms[8]
+        let angleIncrement = 0.001
         
         keyButtonsOutletCollection.sort(by: {$0.tag < $1.tag})
-//        allNotesOnLargeKeyboard.sort(by: {$0.prefix(2) < $1.prefix(2)})
-//        print(allNotesOnLargeKeyboard)
+
+        
+        for index in (0...24).reversed() {
+            keyButtonsOutletCollection[index].transform = CGAffineTransform(rotationAngle: CGFloat(Double(24 - index) * angleIncrement))
+            keyButtonsOutletCollection[49 - index].transform = CGAffineTransform(rotationAngle: CGFloat(Double(24 - index) * -angleIncrement))
+        }
         
         pianoNoteDisplayed.alpha = 1
         
