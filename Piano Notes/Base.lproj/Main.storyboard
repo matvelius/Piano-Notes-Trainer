@@ -2186,21 +2186,21 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Zka-4J-w4h" userLabel="bottom of keys placeholder">
                                 <rect key="frame" x="0.0" y="901" width="1366" height="123"/>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="C6l-iF-rLG" userLabel="between 2 and 3 black keys">
-                                <rect key="frame" x="3" y="624" width="27.5" height="178"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.0" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="C6l-iF-rLG" userLabel="between 2 and 3 black keys">
+                                <rect key="frame" x="3" y="624" width="30" height="178"/>
                                 <color key="backgroundColor" red="0.1552500104" green="0.4241788319" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="27.5" id="g2J-wY-aEb"/>
+                                    <constraint firstAttribute="width" constant="30" id="g2J-wY-aEb"/>
                                 </constraints>
                             </imageView>
-                            <stackView opaque="NO" alpha="0.55000001192092896" contentMode="scaleToFill" distribution="equalSpacing" spacing="27.5" translatesAutoresizingMaskIntoConstraints="NO" id="f9C-Sv-wQH" userLabel="2 Black Key Buttons Stack">
-                                <rect key="frame" x="33" y="624" width="75.5" height="178"/>
+                            <stackView opaque="NO" alpha="0.55000001192092896" contentMode="scaleToFill" distribution="equalSpacing" spacing="24.5" translatesAutoresizingMaskIntoConstraints="NO" id="f9C-Sv-wQH" userLabel="2 Black Key Buttons Stack">
+                                <rect key="frame" x="33" y="624" width="78.5" height="178"/>
                                 <subviews>
                                     <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q14-ic-Ngg" userLabel="blackKeyButton">
-                                        <rect key="frame" x="0.0" y="0.0" width="24" height="178"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="27" height="178"/>
                                         <color key="backgroundColor" red="0.0" green="1" blue="0.52390272010000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="24" id="07A-Pi-s8W"/>
+                                            <constraint firstAttribute="width" constant="27" id="07A-Pi-s8W"/>
                                         </constraints>
                                         <connections>
                                             <action selector="keyButtonDraggedOutside:" destination="vCV-Es-ama" eventType="touchDragOutside" id="gSj-z9-Mt0"/>
@@ -2209,7 +2209,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GgU-dJ-cv6" userLabel="blackKeyButton">
-                                        <rect key="frame" x="51.5" y="0.0" width="24" height="178"/>
+                                        <rect key="frame" x="51.5" y="0.0" width="27" height="178"/>
                                         <color key="backgroundColor" red="0.0" green="1" blue="0.52390272010000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
                                             <action selector="keyButtonDraggedOutside:" destination="vCV-Es-ama" eventType="touchDragOutside" id="NdL-MW-gla"/>
@@ -2224,27 +2224,27 @@
                                 </constraints>
                             </stackView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RFX-uM-4u9" userLabel="between 2 and 3 black keys">
-                                <rect key="frame" x="108.5" y="624" width="27.5" height="178"/>
+                                <rect key="frame" x="111.5" y="624" width="27.5" height="178"/>
                                 <color key="backgroundColor" red="0.1552500104" green="0.4241788319" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="27.5" id="O7o-SZ-qzf"/>
                                 </constraints>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gg6-mG-9oV" userLabel="between 2 and 3 black keys">
-                                <rect key="frame" x="136" y="624" width="27.5" height="178"/>
+                                <rect key="frame" x="139" y="624" width="24.5" height="178"/>
                                 <color key="backgroundColor" red="0.1552500104" green="0.4241788319" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="27.5" id="kJD-Dz-wf5"/>
+                                    <constraint firstAttribute="width" constant="24.5" id="kJD-Dz-wf5"/>
                                 </constraints>
                             </imageView>
-                            <stackView opaque="NO" alpha="0.55000001192092896" contentMode="scaleToFill" distribution="equalSpacing" spacing="27" translatesAutoresizingMaskIntoConstraints="NO" id="xME-kU-jX8" userLabel="3 Black Key Buttons Stack">
-                                <rect key="frame" x="163.5" y="624" width="126" height="178"/>
+                            <stackView opaque="NO" alpha="0.55000001192092896" contentMode="scaleToFill" distribution="equalSpacing" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="xME-kU-jX8" userLabel="3 Black Key Buttons Stack">
+                                <rect key="frame" x="163.5" y="624" width="125" height="178"/>
                                 <subviews>
                                     <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k85-9x-VXt" userLabel="blackKeyButton">
-                                        <rect key="frame" x="0.0" y="0.0" width="24" height="178"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="25" height="178"/>
                                         <color key="backgroundColor" red="0.0" green="1" blue="0.52390272010000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="24" id="wga-GP-a5U"/>
+                                            <constraint firstAttribute="width" constant="25" id="wga-GP-a5U"/>
                                         </constraints>
                                         <connections>
                                             <action selector="keyButtonDraggedOutside:" destination="vCV-Es-ama" eventType="touchDragOutside" id="k9i-aa-ZDk"/>
@@ -2253,7 +2253,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F6p-pK-oNR" userLabel="blackKeyButton">
-                                        <rect key="frame" x="51" y="0.0" width="24" height="178"/>
+                                        <rect key="frame" x="50" y="0.0" width="25" height="178"/>
                                         <color key="backgroundColor" red="0.0" green="1" blue="0.52390272010000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
                                             <action selector="keyButtonDraggedOutside:" destination="vCV-Es-ama" eventType="touchDragOutside" id="V51-kN-pAO"/>
@@ -2262,7 +2262,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8wK-ua-X0r" userLabel="blackKeyButton">
-                                        <rect key="frame" x="102" y="0.0" width="24" height="178"/>
+                                        <rect key="frame" x="100" y="0.0" width="25" height="178"/>
                                         <color key="backgroundColor" red="0.0" green="1" blue="0.52390272010000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
                                             <action selector="keyButtonDraggedOutside:" destination="vCV-Es-ama" eventType="touchDragOutside" id="WaL-Zx-QsO"/>
@@ -2278,21 +2278,21 @@
                                 </constraints>
                             </stackView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9rB-sT-5F9" userLabel="between 2 and 3 black keys">
-                                <rect key="frame" x="289.5" y="624" width="27" height="178"/>
+                                <rect key="frame" x="288.5" y="624" width="27" height="178"/>
                                 <color key="backgroundColor" red="0.1552500104" green="0.4241788319" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="27" id="4Ba-vp-YGz"/>
                                 </constraints>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="snd-in-8iO" userLabel="between 2 and 3 black keys">
-                                <rect key="frame" x="316.5" y="624" width="27" height="178"/>
+                                <rect key="frame" x="315.5" y="624" width="27" height="178"/>
                                 <color key="backgroundColor" red="0.1552500104" green="0.4241788319" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="27" id="drJ-bi-iTa"/>
                                 </constraints>
                             </imageView>
-                            <stackView opaque="NO" alpha="0.55000001192092896" contentMode="scaleToFill" distribution="equalSpacing" spacing="26.5" translatesAutoresizingMaskIntoConstraints="NO" id="Faj-B9-S4K" userLabel="2 Black Key Buttons Stack">
-                                <rect key="frame" x="343.5" y="624" width="74.5" height="178"/>
+                            <stackView opaque="NO" alpha="0.55000001192092896" contentMode="scaleToFill" distribution="equalSpacing" spacing="27.5" translatesAutoresizingMaskIntoConstraints="NO" id="Faj-B9-S4K" userLabel="2 Black Key Buttons Stack">
+                                <rect key="frame" x="342.5" y="624" width="75.5" height="178"/>
                                 <subviews>
                                     <button opaque="NO" tag="13" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kn7-b1-7Mc" userLabel="blackKeyButton">
                                         <rect key="frame" x="0.0" y="0.0" width="24" height="178"/>
@@ -2307,7 +2307,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="15" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="443-7C-8by" userLabel="blackKeyButton">
-                                        <rect key="frame" x="50.5" y="0.0" width="24" height="178"/>
+                                        <rect key="frame" x="51.5" y="0.0" width="24" height="178"/>
                                         <color key="backgroundColor" red="0.0" green="1" blue="0.52390272010000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
                                             <action selector="keyButtonDraggedOutside:" destination="vCV-Es-ama" eventType="touchDragOutside" id="bFU-LN-bEF"/>
@@ -2531,14 +2531,14 @@
                                     <constraint firstAttribute="width" constant="27" id="kPo-h3-FUD"/>
                                 </constraints>
                             </imageView>
-                            <stackView opaque="NO" alpha="0.55000001192092896" contentMode="scaleToFill" distribution="equalSpacing" spacing="27" translatesAutoresizingMaskIntoConstraints="NO" id="XoC-j4-2aV" userLabel="3 Black Key Buttons Stack">
-                                <rect key="frame" x="1087.5" y="624" width="126" height="178"/>
+                            <stackView opaque="NO" alpha="0.55000001192092896" contentMode="scaleToFill" distribution="equalSpacing" spacing="26.199999999999999" translatesAutoresizingMaskIntoConstraints="NO" id="XoC-j4-2aV" userLabel="3 Black Key Buttons Stack">
+                                <rect key="frame" x="1087.5" y="624" width="125" height="178"/>
                                 <subviews>
                                     <button opaque="NO" tag="42" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BzG-gs-636" userLabel="blackKeyButton">
-                                        <rect key="frame" x="0.0" y="0.0" width="24" height="178"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="24.5" height="178"/>
                                         <color key="backgroundColor" red="0.0" green="1" blue="0.52390272010000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="24" id="VFm-8L-Tsb"/>
+                                            <constraint firstAttribute="width" constant="24.399999999999999" id="VFm-8L-Tsb"/>
                                         </constraints>
                                         <connections>
                                             <action selector="keyButtonDraggedOutside:" destination="vCV-Es-ama" eventType="touchDragOutside" id="6cr-LS-8LO"/>
@@ -2547,7 +2547,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="44" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kEH-oe-5mF" userLabel="blackKeyButton">
-                                        <rect key="frame" x="51" y="0.0" width="24" height="178"/>
+                                        <rect key="frame" x="50.5" y="0.0" width="24.5" height="178"/>
                                         <color key="backgroundColor" red="0.0" green="1" blue="0.52390272010000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
                                             <action selector="keyButtonDraggedOutside:" destination="vCV-Es-ama" eventType="touchDragOutside" id="Mnh-Xl-6Ds"/>
@@ -2556,7 +2556,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="46" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R1f-uy-JoS" userLabel="blackKeyButton">
-                                        <rect key="frame" x="102" y="0.0" width="24" height="178"/>
+                                        <rect key="frame" x="101" y="0.0" width="24" height="178"/>
                                         <color key="backgroundColor" red="0.0" green="1" blue="0.52390272010000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
                                             <action selector="keyButtonDraggedOutside:" destination="vCV-Es-ama" eventType="touchDragOutside" id="3Gb-tt-p6o"/>
@@ -2572,21 +2572,21 @@
                                 </constraints>
                             </stackView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bx7-u3-4GS" userLabel="between 2 and 3 black keys">
-                                <rect key="frame" x="1213.5" y="624" width="27.5" height="178"/>
+                                <rect key="frame" x="1212.5" y="624" width="27" height="178"/>
                                 <color key="backgroundColor" red="0.1552500104" green="0.4241788319" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="27.5" id="Lq8-QI-tok"/>
+                                    <constraint firstAttribute="width" constant="27" id="Lq8-QI-tok"/>
                                 </constraints>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Dn9-cU-t8u" userLabel="between 2 and 3 black keys">
-                                <rect key="frame" x="1241" y="624" width="27.5" height="178"/>
+                                <rect key="frame" x="1239.5" y="624" width="26" height="178"/>
                                 <color key="backgroundColor" red="0.1552500104" green="0.4241788319" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="27.5" id="abp-D4-oao"/>
+                                    <constraint firstAttribute="width" constant="26" id="abp-D4-oao"/>
                                 </constraints>
                             </imageView>
                             <stackView opaque="NO" alpha="0.55000001192092896" contentMode="scaleToFill" distribution="equalSpacing" spacing="27.5" translatesAutoresizingMaskIntoConstraints="NO" id="C8g-mt-mVb" userLabel="2 Black Key Buttons Stack">
-                                <rect key="frame" x="1268.5" y="624" width="75.5" height="178"/>
+                                <rect key="frame" x="1265.5" y="624" width="75.5" height="178"/>
                                 <subviews>
                                     <button opaque="NO" tag="49" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="006-qk-5qx" userLabel="blackKeyButton">
                                         <rect key="frame" x="0.0" y="0.0" width="24" height="178"/>
