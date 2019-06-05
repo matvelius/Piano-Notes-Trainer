@@ -25,9 +25,6 @@ class ViewController: UIViewController {
     // placeholder for current note
     var currentNote = ""
     
-    var menuIsClosed: Bool = true
-    
-    
     @IBOutlet weak var menuButtonOutlet: UIButton!
     
     @IBOutlet weak var darkOverlayOutlet: UIButton!
@@ -53,7 +50,6 @@ class ViewController: UIViewController {
     
     
     @IBAction func modeSwitchFlipped(_ sender: UISegmentedControl) {
-//        currentGameMode = (currentGameMode == .B) ? .A : .B
         
         let labelScaleMultiplier = 1.2
         let labelScaleMultiplierBackToNormal = 1.0
