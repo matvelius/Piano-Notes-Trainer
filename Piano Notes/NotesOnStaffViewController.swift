@@ -269,6 +269,20 @@ class NotesOnStaffViewController: UIViewController {
                 self.generateNewNote()
             })
             
+            // play sound
+            if soundsEnabled {
+                
+//                switch currentGameMode {
+//                case .A: loadSound(currentSound: currentNote)
+//                case .B: loadSound(currentSound: nameOfKeyToHighlight)
+//                }
+                
+                loadSound(currentSound: "\(currentCorrectAnswer)")
+                
+                audioPlayer!.play()
+                audioPlayer!.setVolume(0, fadeDuration: 2.5)
+            }
+            
             // update score
             totalScore += 1
             correctAnswersInARow += 1
