@@ -189,6 +189,8 @@ class NotesOnStaffViewController: UIViewController {
         updateNoteOnStaffImage(optionalImageName: nil)
         
         generateNewNote()
+        
+        scoreLabelOutlet.text = "0"
     }
     
     var locationTracker: Double = Double(whiteNotesOnLargeKeyboard.count / 2) {
@@ -259,13 +261,20 @@ class NotesOnStaffViewController: UIViewController {
         print("currentUserAnswer: \(currentUserAnswer)")
         
         // RIGHT ANSWER
-        if currentUserAnswer == currentCorrectAnswer || currentEnharmonic! == currentCorrectAnswer {
+        if currentUserAnswer == currentCorrectAnswer || currentEnharmonic == currentCorrectAnswer {
             print("correct!")
             checkButtonOutlet.setImage(UIImage(named: "check_right"), for: .normal)
             DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1), execute:{
                 self.checkButtonOutlet.setImage(UIImage(named: "check"), for: .normal)
                 self.generateNewNote()
             })
+            
+            // update score
+            totalScore += 1
+            correctAnswersInARow += 1
+            incorrectAnswersInARow = 0
+            giveOrTakeAStar()
+            starsImageOutlet.image = UIImage(named: "stars\(currentNumberOfStars)")
             
         // WRONG ANSWER
         } else {
@@ -280,6 +289,23 @@ class NotesOnStaffViewController: UIViewController {
             DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1), execute:{
                 self.checkButtonOutlet.setImage(UIImage(named: "check"), for: .normal)
             })
+            
+            // subtract a point
+            if totalScore > 0 {
+                totalScore -= 1
+            }
+            
+            // flash score label red #FF3939
+            self.scoreLabelOutlet.textColor = UIColor(red:1.00, green:0.22, blue:0.22, alpha:1.0)
+            // bring it back to green after a second
+            DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1), execute:{
+                self.scoreLabelOutlet.textColor = UIColor(red:0.50, green:0.96, blue:0.00, alpha:1.0)
+            })
+            
+            correctAnswersInARow = 0
+            incorrectAnswersInARow += 1
+            giveOrTakeAStar()
+            starsImageOutlet.image = UIImage(named: "stars\(currentNumberOfStars)")
             
 //            if !notesAlreadyAttempted.contains(nameOfKeyToHighlight) {
 //
@@ -301,6 +327,8 @@ class NotesOnStaffViewController: UIViewController {
 //            notesAlreadyAttempted.append(nameOfKeyToHighlight)
             
         }
+        
+        scoreLabelOutlet.text = String(totalScore)
 
     }
     

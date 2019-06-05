@@ -374,17 +374,17 @@ class ViewController: UIViewController {
     @IBOutlet weak var pianoKeyImage: UIImageView!
     
     // placeholder variable for keeping the score
-    var totalScore = 0
+//    var totalScore = 0
     @IBOutlet weak var scoreLabel: UILabel!
     
     // placeholder variable for keeping track of stars
     @IBOutlet weak var stars: UIImageView!
-    // current number of stars
-    var currentNumberOfStars = 0
-    // keeping track of correct answers in a row to give stars
-    var correctAnswersInARow = 0
-    // keeping track of incorrect answers in a row to take away stars
-    var incorrectAnswersInARow = 0
+//    // current number of stars
+//    var currentNumberOfStars = 0
+//    // keeping track of correct answers in a row to give stars
+//    var correctAnswersInARow = 0
+//    // keeping track of incorrect answers in a row to take away stars
+//    var incorrectAnswersInARow = 0
     
     
     // placeholder variable for last-selected random number
@@ -894,6 +894,7 @@ class ViewController: UIViewController {
             correctAnswersInARow += 1
             incorrectAnswersInARow = 0
             giveOrTakeAStar()
+            stars.image = UIImage(named: "stars\(currentNumberOfStars)")
             
             //            usleep(1000000) //will sleep for 1 second
             //            Thread.sleep(forTimeInterval: 60/cadence)
@@ -999,53 +1000,54 @@ class ViewController: UIViewController {
             correctAnswersInARow = 0
             incorrectAnswersInARow += 1
             giveOrTakeAStar()
+            stars.image = UIImage(named: "stars\(currentNumberOfStars)")
             
         }
         
         scoreLabel.text = String(totalScore)
     }
     
-    // decide whether or not to give/take some stars
-    func giveOrTakeAStar() {
-        
-        // add stars when user gets 5, 10, 15, 20, 25 correct answers in a row
-        switch correctAnswersInARow {
-        case 5:
-            if currentNumberOfStars < 1 {
-                currentNumberOfStars = 1
-            }
-        case 10:
-            if currentNumberOfStars < 2 {
-                currentNumberOfStars = 2
-            }
-        case 15:
-            if currentNumberOfStars < 3 {
-                currentNumberOfStars = 3
-            }
-        case 20:
-            if currentNumberOfStars < 4 {
-                currentNumberOfStars = 4
-            }
-        case 25:
-            if currentNumberOfStars < 5 {
-                currentNumberOfStars = 5
-            }
-        default:
-            break
-        }
-        
-        // take away a star each time user gets 3 answers in a row incorrectly
-        if incorrectAnswersInARow == 3 {
-            // only take away stars if the user actually has them
-            if currentNumberOfStars > 0 {
-                currentNumberOfStars -= 1
-            }
-            // reset number of incorrect answers in a row
-            incorrectAnswersInARow = 0
-        }
-        
-        stars.image = UIImage(named: "stars\(currentNumberOfStars)")
-    }
+//    // decide whether or not to give/take some stars
+//    func giveOrTakeAStar() {
+//        
+//        // add stars when user gets 5, 10, 15, 20, 25 correct answers in a row
+//        switch correctAnswersInARow {
+//        case 5:
+//            if currentNumberOfStars < 1 {
+//                currentNumberOfStars = 1
+//            }
+//        case 10:
+//            if currentNumberOfStars < 2 {
+//                currentNumberOfStars = 2
+//            }
+//        case 15:
+//            if currentNumberOfStars < 3 {
+//                currentNumberOfStars = 3
+//            }
+//        case 20:
+//            if currentNumberOfStars < 4 {
+//                currentNumberOfStars = 4
+//            }
+//        case 25:
+//            if currentNumberOfStars < 5 {
+//                currentNumberOfStars = 5
+//            }
+//        default:
+//            break
+//        }
+//        
+//        // take away a star each time user gets 3 answers in a row incorrectly
+//        if incorrectAnswersInARow == 3 {
+//            // only take away stars if the user actually has them
+//            if currentNumberOfStars > 0 {
+//                currentNumberOfStars -= 1
+//            }
+//            // reset number of incorrect answers in a row
+//            incorrectAnswersInARow = 0
+//        }
+//        
+//        stars.image = UIImage(named: "stars\(currentNumberOfStars)")
+//    }
     
     func resetButtonsToDefault() {
         
