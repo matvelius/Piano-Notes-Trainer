@@ -37,19 +37,7 @@ class ViewController: UIViewController {
     // close menu
     @IBAction func darkOverlayPressed(_ sender: UIButton) {
         
-        self.menuLeadingConstraint.constant = -460
-        
-        UIView.animate(withDuration: 0.5, delay: 0.0, options: .curveEaseIn, animations: {
-            
-            self.view.layoutIfNeeded()
-            self.darkOverlayOutlet.alpha = 0
-            self.menuBackgroundOutlet.alpha = 0
-            
-        })
-        
-        menuButtonOutlet.setTitle("☰", for: .normal)
-        
-        menuIsClosed = true
+        closeMenu()
         
     }
     
@@ -57,56 +45,9 @@ class ViewController: UIViewController {
     
     @IBAction func menuButtonPressed(_ sender: UIButton) {
         
-        // figure out how to slide the menu out
-        
-        if menuIsClosed {
-            
-            self.menuLeadingConstraint.constant = 0
-            
-            UIView.animate(withDuration: 0.5, delay: 0.0, options: .curveEaseIn, animations: {
-                
-                self.view.layoutIfNeeded()
-                self.menuButtonOutlet.alpha = 0
-                self.darkOverlayOutlet.alpha = 0.73
-                self.menuBackgroundOutlet.alpha = 1
-                
-            })
-        
-            self.menuButtonOutlet.setTitle("✕", for: .normal)
-            
-            UIView.animate(withDuration: 0.4, delay: 0.6, options: .curveEaseIn, animations: {
-                self.menuButtonOutlet.alpha = 1
-                self.view.layoutIfNeeded()
-            })
-            
-            menuIsClosed = false
-            
-        } else {
-            
-            self.menuLeadingConstraint.constant = -460
-            
-            UIView.animate(withDuration: 0.5, delay: 0.0, options: .curveEaseIn, animations: {
-            
-                self.view.layoutIfNeeded()
-                self.menuButtonOutlet.alpha = 0
-                self.darkOverlayOutlet.alpha = 0
-                self.menuBackgroundOutlet.alpha = 0
-            
-            })
-            
-            self.menuButtonOutlet.setTitle("☰", for: .normal)
-            
-            UIView.animate(withDuration: 0.4, delay: 0.6, options: .curveEaseIn, animations: {
-                self.menuButtonOutlet.alpha = 1
-                self.view.layoutIfNeeded()
-            })
-            
-            menuIsClosed = true
-            
-        }
+        menuIsClosed ? openMenu() : closeMenu()
         
     }
-    
     
     @IBOutlet weak var topLabelOutlet: UIImageView!
     
