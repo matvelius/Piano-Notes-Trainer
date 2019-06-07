@@ -168,6 +168,26 @@ class NotesOnStaffViewController: UIViewController {
     
     @IBOutlet weak var starsImageOutlet: UIImageView!
     
+    @IBOutlet weak var menuButtonOutlet: UIButton!
+    
+    @IBAction func menuButtonTapped(_ sender: UIButton) {
+        
+        menuIsClosed ? openMenu() : closeMenu()
+        
+    }
+    
+    
+    @IBOutlet weak var menuContainerOutlet: UIView!
+    
+    @IBOutlet weak var menuTrailingConstraint: NSLayoutConstraint!
+    
+    @IBOutlet weak var darkOverlayOutlet: UIButton!
+    
+    @IBAction func darkOverlayTapped(_ sender: UIButton) {
+        
+        closeMenu()
+        
+    }
     
     // REFACTOR SOME (MOST?) OF THIS TO viewDidAppear() ?!
     override func viewDidLoad() {
@@ -191,6 +211,9 @@ class NotesOnStaffViewController: UIViewController {
         generateNewNote()
         
         scoreLabelOutlet.text = "0"
+        
+        menuContainerOutlet.alpha = 0
+        menuTrailingConstraint.constant = 460
     }
     
     var locationTracker: Double = Double(whiteNotesOnLargeKeyboard.count / 2) {

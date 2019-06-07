@@ -38,7 +38,7 @@ class ViewController: UIViewController {
         
     }
     
-    @IBOutlet weak var menuBackgroundOutlet: UIView!
+    @IBOutlet weak var menuContainerOutlet: UIView!
     
     @IBAction func menuButtonPressed(_ sender: UIButton) {
         
@@ -498,7 +498,7 @@ class ViewController: UIViewController {
         calculateSharpAndFlatBounds()
         
         
-        menuBackgroundOutlet.alpha = 0
+        menuContainerOutlet.alpha = 0
         
         menuLeadingConstraint.constant = -460
         
