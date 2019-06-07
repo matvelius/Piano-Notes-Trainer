@@ -29,7 +29,7 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var darkOverlayOutlet: UIButton!
     
-    @IBOutlet weak var menuLeadingConstraint: NSLayoutConstraint!
+    @IBOutlet weak var menuTrailingConstraint: NSLayoutConstraint!
     
     // close menu
     @IBAction func darkOverlayPressed(_ sender: UIButton) {
@@ -500,7 +500,7 @@ class ViewController: UIViewController {
         
         menuContainerOutlet.alpha = 0
         
-        menuLeadingConstraint.constant = -460
+        menuTrailingConstraint.constant = 460
         
         switch Level.currentLevel.id {
         case 4, 5, 6, 7:
