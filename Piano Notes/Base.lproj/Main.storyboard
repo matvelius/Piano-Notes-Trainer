@@ -2749,7 +2749,7 @@
                                     <action selector="darkOverlayTapped:" destination="vCV-Es-ama" eventType="touchUpInside" id="ar0-Jw-Ihk"/>
                                 </connections>
                             </button>
-                            <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eMe-p2-imh" userLabel="Menu Container">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eMe-p2-imh" userLabel="Menu Container">
                                 <rect key="frame" x="910.5" y="0.0" width="455.5" height="1024"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SETTINGS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R37-yz-1EN">
@@ -2769,7 +2769,7 @@
                                                     <segment title="MODE B"/>
                                                 </segments>
                                                 <connections>
-                                                    <action selector="modeSwitchFlipped:" destination="BYZ-38-t0r" eventType="valueChanged" id="C1R-8R-gmC"/>
+                                                    <action selector="modeSegmentedControl:" destination="vCV-Es-ama" eventType="valueChanged" id="oE1-TR-nLC"/>
                                                 </connections>
                                             </segmentedControl>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalCompressionResistancePriority="749" verticalCompressionResistancePriority="751" text="MODE A: find correct note on the staff based on the piano key shown (octave matters!)" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="9" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4zP-hY-YeT">
@@ -2805,7 +2805,7 @@
                                                     <switch opaque="NO" contentMode="center" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fmG-MT-j7o">
                                                         <rect key="frame" x="282" y="0.0" width="51" height="31"/>
                                                         <connections>
-                                                            <action selector="onlyWhiteKeysSwitch:" destination="BYZ-38-t0r" eventType="valueChanged" id="7jb-uJ-VdR"/>
+                                                            <action selector="onlyTrebleClefSwitchFlipped:" destination="vCV-Es-ama" eventType="valueChanged" id="9Ya-Pr-RxT"/>
                                                         </connections>
                                                     </switch>
                                                 </subviews>
@@ -2818,7 +2818,7 @@
                                                     <segment title="ONLY ♯ AND ♭"/>
                                                 </segments>
                                                 <connections>
-                                                    <action selector="whiteKeySettingsSegmentedControl:" destination="BYZ-38-t0r" eventType="valueChanged" id="vru-UK-xls"/>
+                                                    <action selector="onlyTrebleClefSegmentedControl:" destination="vCV-Es-ama" eventType="valueChanged" id="LZH-rq-8Ki"/>
                                                 </connections>
                                             </segmentedControl>
                                         </subviews>
@@ -2846,7 +2846,7 @@
                                                     <switch opaque="NO" contentMode="center" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="BhO-1L-kLN">
                                                         <rect key="frame" x="282" y="0.0" width="51" height="31"/>
                                                         <connections>
-                                                            <action selector="onlyBlackKeysSwitch:" destination="BYZ-38-t0r" eventType="valueChanged" id="byz-cX-4r3"/>
+                                                            <action selector="onlyBassClefSwitchFlipped:" destination="vCV-Es-ama" eventType="valueChanged" id="HLa-IP-UbA"/>
                                                         </connections>
                                                     </switch>
                                                 </subviews>
@@ -2859,7 +2859,7 @@
                                                     <segment title="ONLY ♯ AND ♭"/>
                                                 </segments>
                                                 <connections>
-                                                    <action selector="whiteKeySettingsSegmentedControl:" destination="BYZ-38-t0r" eventType="valueChanged" id="NdV-pm-vbq"/>
+                                                    <action selector="onlyBassClefSegmentedControl:" destination="vCV-Es-ama" eventType="valueChanged" id="FfZ-yi-N0n"/>
                                                 </connections>
                                             </segmentedControl>
                                         </subviews>
@@ -2918,7 +2918,7 @@
                                                                         <state key="normal" image="arrow_up"/>
                                                                         <state key="highlighted" image="arrow_up_pressed"/>
                                                                         <connections>
-                                                                            <action selector="upArrowButtonPressed:" destination="vCV-Es-ama" eventType="touchUpInside" id="Jr6-DD-zdI"/>
+                                                                            <action selector="noteRangeLowNoteUp:" destination="vCV-Es-ama" eventType="touchUpInside" id="TN2-ta-ZiV"/>
                                                                         </connections>
                                                                     </button>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Iw2-yC-quQ">
@@ -2929,7 +2929,7 @@
                                                                         <state key="normal" image="arrow_down"/>
                                                                         <state key="highlighted" image="arrow_down_pressed"/>
                                                                         <connections>
-                                                                            <action selector="downArrowButtonPressed:" destination="vCV-Es-ama" eventType="touchUpInside" id="VRI-8w-Yec"/>
+                                                                            <action selector="noteRangeLowNoteDown:" destination="vCV-Es-ama" eventType="touchUpInside" id="Ekm-EZ-JnV"/>
                                                                         </connections>
                                                                     </button>
                                                                 </subviews>
@@ -2987,7 +2987,7 @@
                                                                         <state key="normal" image="arrow_up"/>
                                                                         <state key="highlighted" image="arrow_up_pressed"/>
                                                                         <connections>
-                                                                            <action selector="upArrowButtonPressed:" destination="vCV-Es-ama" eventType="touchUpInside" id="bd6-QM-o4a"/>
+                                                                            <action selector="noteRangeHighNoteUp:" destination="vCV-Es-ama" eventType="touchUpInside" id="TTX-7r-51y"/>
                                                                         </connections>
                                                                     </button>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3xw-6k-Szz">
@@ -2998,7 +2998,7 @@
                                                                         <state key="normal" image="arrow_down"/>
                                                                         <state key="highlighted" image="arrow_down_pressed"/>
                                                                         <connections>
-                                                                            <action selector="downArrowButtonPressed:" destination="vCV-Es-ama" eventType="touchUpInside" id="6dg-jH-SCW"/>
+                                                                            <action selector="noteRangeHighNoteDown:" destination="vCV-Es-ama" eventType="touchUpInside" id="Ucu-os-Ezc"/>
                                                                         </connections>
                                                                     </button>
                                                                 </subviews>
@@ -3036,7 +3036,7 @@
                                                     <switch opaque="NO" contentMode="center" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yfj-ik-o7h">
                                                         <rect key="frame" x="282" y="0.0" width="51" height="31"/>
                                                         <connections>
-                                                            <action selector="includeEnharmonicsSwitch:" destination="BYZ-38-t0r" eventType="valueChanged" id="5IY-gv-k2g"/>
+                                                            <action selector="onlyGuideNotesSwitchFlipped:" destination="vCV-Es-ama" eventType="valueChanged" id="31n-s3-m5V"/>
                                                         </connections>
                                                     </switch>
                                                 </subviews>
@@ -3067,7 +3067,7 @@
                                                     <switch opaque="NO" contentMode="center" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="xUY-T3-jmu">
                                                         <rect key="frame" x="282" y="0.0" width="51" height="31"/>
                                                         <connections>
-                                                            <action selector="onlyBlackKeysSwitch:" destination="BYZ-38-t0r" eventType="valueChanged" id="gCp-3r-Rjd"/>
+                                                            <action selector="onlyMnemonicsSwitchFlipped:" destination="vCV-Es-ama" eventType="valueChanged" id="SSU-1Z-JEs"/>
                                                         </connections>
                                                     </switch>
                                                 </subviews>
@@ -3080,7 +3080,7 @@
                                                     <segment title="ONLY LINES"/>
                                                 </segments>
                                                 <connections>
-                                                    <action selector="whiteKeySettingsSegmentedControl:" destination="BYZ-38-t0r" eventType="valueChanged" id="N3S-r7-frS"/>
+                                                    <action selector="onlyMnemonicsSegmentedControl:" destination="vCV-Es-ama" eventType="valueChanged" id="ru4-ks-Uoh"/>
                                                 </connections>
                                             </segmentedControl>
                                         </subviews>
@@ -3103,7 +3103,7 @@
                                             <switch opaque="NO" contentMode="center" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CAw-bK-XFE">
                                                 <rect key="frame" x="282" y="0.0" width="51" height="31"/>
                                                 <connections>
-                                                    <action selector="enableSoundsSwitch:" destination="BYZ-38-t0r" eventType="valueChanged" id="wSO-Cv-Pss"/>
+                                                    <action selector="enableSoundsSwitchFlipped:" destination="vCV-Es-ama" eventType="valueChanged" id="SSi-BY-lRv"/>
                                                 </connections>
                                             </switch>
                                         </subviews>
@@ -3127,7 +3127,7 @@
                                                     <switch opaque="NO" contentMode="center" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="6R7-9o-jVt">
                                                         <rect key="frame" x="282" y="0.0" width="51" height="31"/>
                                                         <connections>
-                                                            <action selector="reEnableExplainersSwitch:" destination="BYZ-38-t0r" eventType="valueChanged" id="yIg-UB-5T3"/>
+                                                            <action selector="reEnableExplainersSwitchFlipped:" destination="vCV-Es-ama" eventType="valueChanged" id="m6q-Et-81N"/>
                                                         </connections>
                                                     </switch>
                                                 </subviews>
@@ -3239,10 +3239,20 @@
                     <connections>
                         <outlet property="checkButtonOutlet" destination="QTI-d7-4cg" id="52C-FY-wf9"/>
                         <outlet property="darkOverlayOutlet" destination="KX1-pG-rpd" id="PH1-4B-2Ps"/>
+                        <outlet property="enableSoundsSwitchOutlet" destination="CAw-bK-XFE" id="XJp-wl-ETq"/>
                         <outlet property="menuButtonOutlet" destination="BWO-vq-xY0" id="4Rm-tV-Hm7"/>
                         <outlet property="menuContainerOutlet" destination="eMe-p2-imh" id="DCB-P1-GLE"/>
                         <outlet property="menuTrailingConstraint" destination="SNJ-Uq-nXg" id="XsT-84-sFy"/>
                         <outlet property="noteOnStaffImage" destination="gqB-He-zfK" id="WgL-1C-j0v"/>
+                        <outlet property="noteRangeHighNoteOutlet" destination="zFR-nf-f7G" id="LPW-RG-zhW"/>
+                        <outlet property="noteRangeLowNoteImage" destination="3qU-Lu-Fsp" id="YMP-gK-6rj"/>
+                        <outlet property="onlyBassClefSegmentedControlOutlet" destination="4L5-o2-vVe" id="0W3-xp-EGp"/>
+                        <outlet property="onlyBassClefSwitchOutlet" destination="BhO-1L-kLN" id="RxP-eY-JUK"/>
+                        <outlet property="onlyGuideNotesSwitchOutlet" destination="yfj-ik-o7h" id="zOw-ZW-pcz"/>
+                        <outlet property="onlyMnemonicsSegmentedControlOutlet" destination="3ad-Bp-7tO" id="w7r-dK-uLe"/>
+                        <outlet property="onlyMnemonicsSwitchOutlet" destination="xUY-T3-jmu" id="dZc-tJ-uw6"/>
+                        <outlet property="onlyTrebleClefSegmentedControlOutlet" destination="Cv6-Gn-0cx" id="l04-6e-42h"/>
+                        <outlet property="onlyTrebleClefSwitchOutlet" destination="fmG-MT-j7o" id="ZIM-Hj-9Hk"/>
                         <outlet property="panGestureRecognizerOutlet" destination="iIp-0g-gv6" id="QJr-Yv-BQp"/>
                         <outlet property="pianoNoteDisplayed" destination="vzr-qh-cLh" id="kJg-if-HkH"/>
                         <outlet property="scoreLabelOutlet" destination="Hmf-ec-sG9" id="gPY-IZ-g5c"/>

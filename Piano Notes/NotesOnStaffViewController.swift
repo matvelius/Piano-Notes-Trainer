@@ -39,7 +39,6 @@ class NotesOnStaffViewController: UIViewController {
     
     @IBAction func sharpButtonPressed(_ sender: UIButton) {
         
-        
         let currentNoteOnStaffImageNameSecondToLastCharacter = currentNoteOnStaffImageName[currentNoteOnStaffImageName.index(currentNoteOnStaffImageName.endIndex, offsetBy: -2)]
         
         print("currentNoteOnStaffImageName: \(currentNoteOnStaffImageName), currentNoteOnStaffImageNameSecondToLastCharacter: \(currentNoteOnStaffImageNameSecondToLastCharacter)")
@@ -60,13 +59,6 @@ class NotesOnStaffViewController: UIViewController {
             updateNoteOnStaffImage(optionalImageName: currentNoteOnStaffImageName)
         }
         
-//        if  currentNoteOnStaffImageNameSecondToLastCharacter != "#" && currentNoteOnStaffImageNameSecondToLastCharacter != "b" {
-//            currentNoteOnStaffImageName.insert("#", at: currentNoteOnStaffImageName.index(currentNoteOnStaffImageName.endIndex, offsetBy: -1))
-//            updateNoteOnStaffImage(optionalImageName: currentNoteOnStaffImageName)
-//        } else if currentNoteOnStaffImageNameSecondToLastCharacter == "b" {
-//            currentNoteOnStaffImageName = currentNoteOnStaffImageName.replacingOccurrences(of: "b", with: "#")
-//            updateNoteOnStaffImage(optionalImageName: currentNoteOnStaffImageName)
-//        }
     }
     
     @IBAction func naturalButtonPressed(_ sender: UIButton) {
@@ -85,13 +77,6 @@ class NotesOnStaffViewController: UIViewController {
             currentAccidental = .neither
         }
         
-//        if currentNoteOnStaffImageNameSecondToLastCharacter == "#" {
-//            currentNoteOnStaffImageName = currentNoteOnStaffImageName.replacingOccurrences(of: "#", with: "")
-//            updateNoteOnStaffImage(optionalImageName: currentNoteOnStaffImageName)
-//        } else if currentNoteOnStaffImageNameSecondToLastCharacter == "b" {
-//            currentNoteOnStaffImageName = currentNoteOnStaffImageName.replacingOccurrences(of: "b", with: "")
-//            updateNoteOnStaffImage(optionalImageName: currentNoteOnStaffImageName)
-//        }
     }
     
     @IBAction func flatButtonPressed(_ sender: UIButton) {
@@ -116,13 +101,6 @@ class NotesOnStaffViewController: UIViewController {
             updateNoteOnStaffImage(optionalImageName: currentNoteOnStaffImageName)
         }
         
-//        if  currentNoteOnStaffImageNameSecondToLastCharacter != "#" && currentNoteOnStaffImageNameSecondToLastCharacter != "b" {
-//            currentNoteOnStaffImageName.insert("b", at: currentNoteOnStaffImageName.index(currentNoteOnStaffImageName.endIndex, offsetBy: -1))
-//            updateNoteOnStaffImage(optionalImageName: currentNoteOnStaffImageName)
-//        } else if currentNoteOnStaffImageNameSecondToLastCharacter == "#" {
-//            currentNoteOnStaffImageName = currentNoteOnStaffImageName.replacingOccurrences(of: "#", with: "b")
-//            updateNoteOnStaffImage(optionalImageName: currentNoteOnStaffImageName)
-//        }
     }
     
     @IBAction func upArrowButtonPressed(_ sender: UIButton) {
@@ -188,6 +166,73 @@ class NotesOnStaffViewController: UIViewController {
         closeMenu()
         
     }
+    
+    
+    @IBAction func modeSegmentedControl(_ sender: UISegmentedControl) {
+    }
+    
+    @IBAction func onlyTrebleClefSwitchFlipped(_ sender: UISwitch) {
+    }
+    
+    @IBOutlet weak var onlyTrebleClefSwitchOutlet: UISwitch!
+    
+    @IBAction func onlyTrebleClefSegmentedControl(_ sender: UISegmentedControl) {
+    }
+    
+    @IBOutlet weak var onlyTrebleClefSegmentedControlOutlet: UISegmentedControl!
+    
+    @IBAction func onlyBassClefSwitchFlipped(_ sender: UISwitch) {
+    }
+    
+    @IBOutlet weak var onlyBassClefSwitchOutlet: UISwitch!
+    
+    @IBAction func onlyBassClefSegmentedControl(_ sender: UISegmentedControl) {
+    }
+    
+    @IBOutlet weak var onlyBassClefSegmentedControlOutlet: UISegmentedControl!
+    
+    
+    @IBOutlet weak var noteRangeLowNoteImage: UIImageView!
+    
+    @IBOutlet weak var noteRangeHighNoteOutlet: UIImageView!
+    
+    @IBAction func noteRangeLowNoteUp(_ sender: UIButton) {
+    }
+    
+    @IBAction func noteRangeLowNoteDown(_ sender: UIButton) {
+    }
+    
+    @IBAction func noteRangeHighNoteUp(_ sender: UIButton) {
+    }
+    
+    @IBAction func noteRangeHighNoteDown(_ sender: UIButton) {
+    }
+    
+    @IBAction func onlyGuideNotesSwitchFlipped(_ sender: UISwitch) {
+    }
+    
+    @IBOutlet weak var onlyGuideNotesSwitchOutlet: UISwitch!
+    
+    
+    @IBAction func onlyMnemonicsSwitchFlipped(_ sender: UISwitch) {
+    }
+    
+    @IBOutlet weak var onlyMnemonicsSwitchOutlet: UISwitch!
+    
+    @IBAction func onlyMnemonicsSegmentedControl(_ sender: UISegmentedControl) {
+    }
+    
+    @IBOutlet weak var onlyMnemonicsSegmentedControlOutlet: UISegmentedControl!
+    
+    @IBAction func enableSoundsSwitchFlipped(_ sender: UISwitch) {
+    }
+    
+    @IBOutlet weak var enableSoundsSwitchOutlet: UISwitch!
+    
+    
+    @IBAction func reEnableExplainersSwitchFlipped(_ sender: UISwitch) {
+    }
+    
     
     // REFACTOR SOME (MOST?) OF THIS TO viewDidAppear() ?!
     override func viewDidLoad() {
