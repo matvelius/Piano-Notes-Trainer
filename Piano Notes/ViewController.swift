@@ -412,7 +412,7 @@ class ViewController: UIViewController {
         // use sort by!
         blackKeyButtons = blackKeyButtons.sorted(by: { $0.tag < $1.tag })
         
-        let angleIncrement = 0.024
+        let angleIncrement = 0.027
         
         var positiveRotationTransforms = [CGAffineTransform]()
         var negativeRotationTransforms = [CGAffineTransform]()
@@ -425,6 +425,8 @@ class ViewController: UIViewController {
         
         let translation1xPositive = CGAffineTransform(translationX: 10, y: 0)
         let translation1xNegative = CGAffineTransform(translationX: -10, y: 0)
+        let translationTinyNegative = CGAffineTransform(translationX: -2.5, y: 0)
+        let translationTinyPositive = CGAffineTransform(translationX: 2.5, y: 0)
         let translation2xPositive = CGAffineTransform(translationX: 20, y: 0)
         let translation2xNegative = CGAffineTransform(translationX: -20, y: 0)
         
@@ -433,14 +435,14 @@ class ViewController: UIViewController {
         let blackKey2Transform = positiveRotationTransforms[7].concatenating(translation1xPositive)
         let blackKey3Transform = positiveRotationTransforms[6].concatenating(translation2xPositive)
         let blackKey5Transform = positiveRotationTransforms[4]
-        let blackKey6Transform = positiveRotationTransforms[3].concatenating(translation1xPositive)
+        let blackKey6Transform = positiveRotationTransforms[3].concatenating(translation1xPositive).concatenating(translationTinyPositive)
         let blackKey8Transform = positiveRotationTransforms[1].concatenating(translation1xNegative)
         let blackKey10Transform = negativeRotationTransforms[1].concatenating(translation1xPositive)
         let blackKey12Transform = negativeRotationTransforms[3].concatenating(translation1xNegative)
         let blackKey13Transform = negativeRotationTransforms[4]
         let blackKey15Transform = negativeRotationTransforms[6].concatenating(translation2xNegative)
         let blackKey16Transform = negativeRotationTransforms[7].concatenating(translation1xNegative)
-        let blackKey17Transform = negativeRotationTransforms[8]
+        let blackKey17Transform = negativeRotationTransforms[8].concatenating(translationTinyNegative)
         
         blackKeyButtons[0].isEnabled = false
         blackKeyButtons[0].alpha = 0
