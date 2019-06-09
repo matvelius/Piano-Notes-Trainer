@@ -59,8 +59,6 @@
 		D71DF48722A7793500789E9A /* F#5.aiff in Resources */ = {isa = PBXBuildFile; fileRef = D71DF45522A7793400789E9A /* F#5.aiff */; };
 		D71DF48822A7793500789E9A /* E5.aiff in Resources */ = {isa = PBXBuildFile; fileRef = D71DF45622A7793400789E9A /* E5.aiff */; };
 		D71E3D0C2205EA8E0001F995 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D71E3D0B2205EA8E0001F995 /* AVFoundation.framework */; };
-		D7373575227B3F1800BE2B8A /* StyleKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7373574227B3F1800BE2B8A /* StyleKit.swift */; };
-		D7373577227B3FCC00BE2B8A /* FromPaintCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7373576227B3FCC00BE2B8A /* FromPaintCode.swift */; };
 		D74992D9228C3FD90095C1B7 /* NotesOnStaffViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74992D8228C3FD90095C1B7 /* NotesOnStaffViewController.swift */; };
 		D75DE89322828C5800BBFDEF /* GameMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75DE89222828C5800BBFDEF /* GameMode.swift */; };
 		D777C81822009DDB00FA472E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D777C81722009DDB00FA472E /* AppDelegate.swift */; };
@@ -68,11 +66,11 @@
 		D777C81D22009DDB00FA472E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D777C81B22009DDB00FA472E /* Main.storyboard */; };
 		D777C81F22009DE000FA472E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D777C81E22009DE000FA472E /* Assets.xcassets */; };
 		D777C82222009DE000FA472E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D777C82022009DE000FA472E /* LaunchScreen.storyboard */; };
-		D779C8CD22A80FBF00A2059F /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = D779C8CC22A80FBF00A2059F /* Menu.swift */; };
 		D78A61DF22643EBC008706E2 /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78A61DE22643EBC008706E2 /* InitialViewController.swift */; };
 		D7C2E3DA2241C9E300A72D5C /* ExplainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C2E3D92241C9E300A72D5C /* ExplainerViewController.swift */; };
 		D7C88AC52249EFA0000F484F /* wrong.aiff in Resources */ = {isa = PBXBuildFile; fileRef = D7C88AC42249EFA0000F484F /* wrong.aiff */; };
 		D7DFCFEB22619FC700468F71 /* Enharmonics.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7DFCFEA22619FC700468F71 /* Enharmonics.swift */; };
+		D7E6BFC922AC6B0C00370F4B /* MenuAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7E6BFC822AC6B0C00370F4B /* MenuAnimation.swift */; };
 		D7EF7738227785CE00943F54 /* NoteChoices.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7EF7737227785CE00943F54 /* NoteChoices.swift */; };
 		D7EF773A2277F06B00943F54 /* Accidentals.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7EF77392277F06B00943F54 /* Accidentals.swift */; };
 		D7EF773C2277F3D200943F54 /* LevelsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7EF773B2277F3D200943F54 /* LevelsTableViewController.swift */; };
@@ -134,8 +132,6 @@
 		D71DF45522A7793400789E9A /* F#5.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = "F#5.aiff"; sourceTree = "<group>"; };
 		D71DF45622A7793400789E9A /* E5.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = E5.aiff; sourceTree = "<group>"; };
 		D71E3D0B2205EA8E0001F995 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
-		D7373574227B3F1800BE2B8A /* StyleKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StyleKit.swift; sourceTree = SOURCE_ROOT; };
-		D7373576227B3FCC00BE2B8A /* FromPaintCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FromPaintCode.swift; sourceTree = "<group>"; };
 		D74992D8228C3FD90095C1B7 /* NotesOnStaffViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesOnStaffViewController.swift; sourceTree = "<group>"; };
 		D75DE89222828C5800BBFDEF /* GameMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameMode.swift; sourceTree = "<group>"; };
 		D777C81422009DDB00FA472E /* Piano Notes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Piano Notes.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -145,11 +141,11 @@
 		D777C81E22009DE000FA472E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D777C82122009DE000FA472E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D777C82322009DE000FA472E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D779C8CC22A80FBF00A2059F /* Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
 		D78A61DE22643EBC008706E2 /* InitialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialViewController.swift; sourceTree = "<group>"; };
 		D7C2E3D92241C9E300A72D5C /* ExplainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExplainerViewController.swift; sourceTree = "<group>"; };
 		D7C88AC42249EFA0000F484F /* wrong.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = wrong.aiff; sourceTree = "<group>"; };
 		D7DFCFEA22619FC700468F71 /* Enharmonics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enharmonics.swift; sourceTree = "<group>"; };
+		D7E6BFC822AC6B0C00370F4B /* MenuAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuAnimation.swift; sourceTree = "<group>"; };
 		D7EF7737227785CE00943F54 /* NoteChoices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteChoices.swift; sourceTree = "<group>"; };
 		D7EF77392277F06B00943F54 /* Accidentals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Accidentals.swift; sourceTree = "<group>"; };
 		D7EF773B2277F3D200943F54 /* LevelsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelsTableViewController.swift; sourceTree = "<group>"; };
@@ -258,11 +254,9 @@
 			children = (
 				D777C81722009DDB00FA472E /* AppDelegate.swift */,
 				D777C81922009DDB00FA472E /* ViewController.swift */,
-				D779C8CC22A80FBF00A2059F /* Menu.swift */,
+				D7E6BFC822AC6B0C00370F4B /* MenuAnimation.swift */,
 				D71DF42322A73BBC00789E9A /* ScoreAndStars.swift */,
 				D75DE89222828C5800BBFDEF /* GameMode.swift */,
-				D7373574227B3F1800BE2B8A /* StyleKit.swift */,
-				D7373576227B3FCC00BE2B8A /* FromPaintCode.swift */,
 				D7EF7737227785CE00943F54 /* NoteChoices.swift */,
 				D7EF77392277F06B00943F54 /* Accidentals.swift */,
 				D7DFCFEA22619FC700468F71 /* Enharmonics.swift */,
@@ -414,13 +408,11 @@
 				D777C81A22009DDB00FA472E /* ViewController.swift in Sources */,
 				D7EF7738227785CE00943F54 /* NoteChoices.swift in Sources */,
 				D7EF77402277FFF000943F54 /* LevelTableViewCell.swift in Sources */,
+				D7E6BFC922AC6B0C00370F4B /* MenuAnimation.swift in Sources */,
 				D74992D9228C3FD90095C1B7 /* NotesOnStaffViewController.swift in Sources */,
-				D7373575227B3F1800BE2B8A /* StyleKit.swift in Sources */,
 				D7EF773A2277F06B00943F54 /* Accidentals.swift in Sources */,
 				D71DF42422A73BBC00789E9A /* ScoreAndStars.swift in Sources */,
 				D7EF773C2277F3D200943F54 /* LevelsTableViewController.swift in Sources */,
-				D7373577227B3FCC00BE2B8A /* FromPaintCode.swift in Sources */,
-				D779C8CD22A80FBF00A2059F /* Menu.swift in Sources */,
 				D7C2E3DA2241C9E300A72D5C /* ExplainerViewController.swift in Sources */,
 				D777C81822009DDB00FA472E /* AppDelegate.swift in Sources */,
 				D7DFCFEB22619FC700468F71 /* Enharmonics.swift in Sources */,
