@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-var menuIsClosed = false
+var menuIsClosed = true
 
 extension ViewController {
     
