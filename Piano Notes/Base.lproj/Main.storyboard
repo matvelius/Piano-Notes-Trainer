@@ -2138,18 +2138,18 @@
                                             </button>
                                         </subviews>
                                     </stackView>
-                                    <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JzE-h9-iEf" userLabel="black key container">
-                                        <rect key="frame" x="0.0" y="23" width="1338.5" height="178"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JzE-h9-iEf" userLabel="black key container">
+                                        <rect key="frame" x="5" y="23" width="1333.5" height="178"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.0" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="C6l-iF-rLG" userLabel="between 2 and 3 black keys">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="85n-02-024" userLabel="left of C#2 spacer">
                                                 <rect key="frame" x="0.0" y="0.0" width="30" height="178"/>
-                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            </imageView>
-                                            <stackView opaque="NO" alpha="0.55000001192092896" contentMode="scaleToFill" distribution="equalSpacing" spacing="24.5" translatesAutoresizingMaskIntoConstraints="NO" id="f9C-Sv-wQH" userLabel="2 Black Key Buttons Stack">
-                                                <rect key="frame" x="30" y="0.0" width="84.5" height="178"/>
+                                                <color key="backgroundColor" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </view>
+                                            <stackView opaque="NO" alpha="0.55000001192092896" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="f9C-Sv-wQH" userLabel="2 Black Key Buttons Stack">
+                                                <rect key="frame" x="30" y="0.0" width="81.5" height="178"/>
                                                 <subviews>
                                                     <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q14-ic-Ngg" userLabel="1 blackKeyButton">
-                                                        <rect key="frame" x="0.0" y="0.0" width="30" height="178"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="27" height="178"/>
                                                         <color key="backgroundColor" red="0.0" green="1" blue="0.52390272010000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <connections>
                                                             <action selector="keyButtonDraggedOutside:" destination="vCV-Es-ama" eventType="touchDragOutside" id="gSj-z9-Mt0"/>
@@ -2157,8 +2157,12 @@
                                                             <action selector="keyButtonTouchUpInside:" destination="vCV-Es-ama" eventType="touchUpInside" id="GV6-J5-zew"/>
                                                         </connections>
                                                     </button>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HoQ-hS-1NV" userLabel="spacer between 1st 2 black keys">
+                                                        <rect key="frame" x="27" y="0.0" width="27.5" height="178"/>
+                                                        <color key="backgroundColor" red="0.6705882353" green="0.4823529412" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </view>
                                                     <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GgU-dJ-cv6" userLabel="2 blackKeyButton">
-                                                        <rect key="frame" x="54.5" y="0.0" width="30" height="178"/>
+                                                        <rect key="frame" x="54.5" y="0.0" width="27" height="178"/>
                                                         <color key="backgroundColor" red="0.0" green="1" blue="0.52390272010000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <connections>
                                                             <action selector="keyButtonDraggedOutside:" destination="vCV-Es-ama" eventType="touchDragOutside" id="NdL-MW-gla"/>
@@ -2168,20 +2172,9 @@
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <constraints>
-                                                    <constraint firstItem="GgU-dJ-cv6" firstAttribute="width" secondItem="q14-ic-Ngg" secondAttribute="width" id="3Ya-iv-iOX"/>
-                                                </constraints>
                                             </stackView>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="RFX-uM-4u9" userLabel="between 2 and 3 black keys">
-                                                <rect key="frame" x="114.5" y="0.0" width="27.5" height="178"/>
-                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            </imageView>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gg6-mG-9oV" userLabel="between 2 and 3 black keys">
-                                                <rect key="frame" x="142" y="0.0" width="24.5" height="178"/>
-                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            </imageView>
                                             <stackView opaque="NO" alpha="0.55000001192092896" contentMode="scaleToFill" distribution="equalSpacing" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="xME-kU-jX8" userLabel="3 Black Key Buttons Stack">
-                                                <rect key="frame" x="166.5" y="0.0" width="125" height="178"/>
+                                                <rect key="frame" x="156.5" y="0.0" width="135" height="178"/>
                                                 <subviews>
                                                     <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k85-9x-VXt" userLabel="1 blackKeyButton">
                                                         <rect key="frame" x="0.0" y="0.0" width="25" height="178"/>
@@ -2193,7 +2186,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F6p-pK-oNR" userLabel="2 blackKeyButton">
-                                                        <rect key="frame" x="50" y="0.0" width="25" height="178"/>
+                                                        <rect key="frame" x="50" y="0.0" width="30" height="178"/>
                                                         <color key="backgroundColor" red="0.0" green="1" blue="0.52390272010000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <connections>
                                                             <action selector="keyButtonDraggedOutside:" destination="vCV-Es-ama" eventType="touchDragOutside" id="V51-kN-pAO"/>
@@ -2202,7 +2195,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8wK-ua-X0r" userLabel="3 blackKeyButton">
-                                                        <rect key="frame" x="100" y="0.0" width="25" height="178"/>
+                                                        <rect key="frame" x="105" y="0.0" width="30" height="178"/>
                                                         <color key="backgroundColor" red="0.0" green="1" blue="0.52390272010000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <connections>
                                                             <action selector="keyButtonDraggedOutside:" destination="vCV-Es-ama" eventType="touchDragOutside" id="WaL-Zx-QsO"/>
@@ -2212,21 +2205,9 @@
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <constraints>
-                                                    <constraint firstItem="F6p-pK-oNR" firstAttribute="width" secondItem="k85-9x-VXt" secondAttribute="width" id="Mrq-2w-aW2"/>
-                                                    <constraint firstItem="8wK-ua-X0r" firstAttribute="width" secondItem="k85-9x-VXt" secondAttribute="width" id="ZPP-cN-3QP"/>
-                                                </constraints>
                                             </stackView>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9rB-sT-5F9" userLabel="between 2 and 3 black keys">
-                                                <rect key="frame" x="291.5" y="0.0" width="27" height="178"/>
-                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            </imageView>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="snd-in-8iO" userLabel="between 2 and 3 black keys">
-                                                <rect key="frame" x="318.5" y="0.0" width="27" height="178"/>
-                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            </imageView>
-                                            <stackView opaque="NO" alpha="0.55000001192092896" contentMode="scaleToFill" distribution="equalSpacing" spacing="27.5" translatesAutoresizingMaskIntoConstraints="NO" id="Faj-B9-S4K" userLabel="2 Black Key Buttons Stack">
-                                                <rect key="frame" x="345.5" y="0.0" width="75.5" height="178"/>
+                                            <stackView opaque="NO" alpha="0.0" contentMode="scaleToFill" ambiguous="YES" distribution="equalSpacing" spacing="27.5" translatesAutoresizingMaskIntoConstraints="NO" id="Faj-B9-S4K" userLabel="2 Black Key Buttons Stack">
+                                                <rect key="frame" x="345.5" y="0.0" width="81.5" height="178"/>
                                                 <subviews>
                                                     <button opaque="NO" tag="13" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kn7-b1-7Mc" userLabel="1 blackKeyButton">
                                                         <rect key="frame" x="0.0" y="0.0" width="24" height="178"/>
@@ -2238,7 +2219,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" tag="15" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="443-7C-8by" userLabel="2 blackKeyButton">
-                                                        <rect key="frame" x="51.5" y="0.0" width="24" height="178"/>
+                                                        <rect key="frame" x="51.5" y="0.0" width="30" height="178"/>
                                                         <color key="backgroundColor" red="0.0" green="1" blue="0.52390272010000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <connections>
                                                             <action selector="keyButtonDraggedOutside:" destination="vCV-Es-ama" eventType="touchDragOutside" id="bFU-LN-bEF"/>
@@ -2248,23 +2229,12 @@
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <constraints>
-                                                    <constraint firstItem="443-7C-8by" firstAttribute="width" secondItem="kn7-b1-7Mc" secondAttribute="width" id="JFg-Ta-eC9"/>
-                                                </constraints>
                                             </stackView>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fjN-aK-PeP" userLabel="between 2 and 3 black keys">
-                                                <rect key="frame" x="421" y="0.0" width="27" height="178"/>
-                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            </imageView>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dfZ-mh-Uba" userLabel="between 2 and 3 black keys">
-                                                <rect key="frame" x="448" y="0.0" width="27" height="178"/>
-                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            </imageView>
-                                            <stackView opaque="NO" alpha="0.55000001192092896" contentMode="scaleToFill" distribution="equalSpacing" spacing="26" translatesAutoresizingMaskIntoConstraints="NO" id="viz-jg-gFO" userLabel="3 Black Key Buttons Stack">
-                                                <rect key="frame" x="475" y="0.0" width="142" height="178"/>
+                                            <stackView opaque="NO" alpha="0.0" contentMode="scaleToFill" ambiguous="YES" distribution="equalSpacing" spacing="26" translatesAutoresizingMaskIntoConstraints="NO" id="viz-jg-gFO" userLabel="3 Black Key Buttons Stack">
+                                                <rect key="frame" x="475" y="0.0" width="136" height="178"/>
                                                 <subviews>
                                                     <button opaque="NO" tag="18" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YPR-F3-Qej" userLabel="1 blackKeyButton">
-                                                        <rect key="frame" x="0.0" y="0.0" width="30" height="178"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="24" height="178"/>
                                                         <color key="backgroundColor" red="0.0" green="1" blue="0.52390272010000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <connections>
                                                             <action selector="keyButtonDraggedOutside:" destination="vCV-Es-ama" eventType="touchDragOutside" id="TLS-8o-vwL"/>
@@ -2273,7 +2243,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" tag="20" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oVj-CW-Ysf" userLabel="2 blackKeyButton">
-                                                        <rect key="frame" x="56" y="0.0" width="30" height="178"/>
+                                                        <rect key="frame" x="50" y="0.0" width="30" height="178"/>
                                                         <color key="backgroundColor" red="0.0" green="1" blue="0.52390272010000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <connections>
                                                             <action selector="keyButtonDraggedOutside:" destination="vCV-Es-ama" eventType="touchDragOutside" id="zoj-ou-eSR"/>
@@ -2282,7 +2252,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" tag="22" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="51d-YK-cmr" userLabel="3 blackKeyButton">
-                                                        <rect key="frame" x="112" y="0.0" width="30" height="178"/>
+                                                        <rect key="frame" x="106" y="0.0" width="30" height="178"/>
                                                         <color key="backgroundColor" red="0.0" green="1" blue="0.52390272010000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <connections>
                                                             <action selector="keyButtonDraggedOutside:" destination="vCV-Es-ama" eventType="touchDragOutside" id="Kdz-Do-5yk"/>
@@ -2292,20 +2262,8 @@
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <constraints>
-                                                    <constraint firstItem="51d-YK-cmr" firstAttribute="width" secondItem="YPR-F3-Qej" secondAttribute="width" id="0QY-u1-pwk"/>
-                                                    <constraint firstItem="oVj-CW-Ysf" firstAttribute="width" secondItem="YPR-F3-Qej" secondAttribute="width" id="OUr-1j-aBJ"/>
-                                                </constraints>
                                             </stackView>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Iwp-Rb-pUc" userLabel="between 2 and 3 black keys">
-                                                <rect key="frame" x="617" y="0.0" width="27" height="178"/>
-                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            </imageView>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="l3V-yP-DR5" userLabel="before midbetween 2 and 3 black keys">
-                                                <rect key="frame" x="644" y="0.0" width="27" height="178"/>
-                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            </imageView>
-                                            <stackView opaque="NO" alpha="0.55000001192092896" contentMode="scaleToFill" distribution="equalSpacing" spacing="27.5" translatesAutoresizingMaskIntoConstraints="NO" id="Jlm-uC-VMz" userLabel="mid 2 Black Key Buttons Stack">
+                                            <stackView opaque="NO" alpha="0.0" contentMode="scaleToFill" ambiguous="YES" distribution="equalSpacing" spacing="27.5" translatesAutoresizingMaskIntoConstraints="NO" id="Jlm-uC-VMz" userLabel="mid 2 Black Key Buttons Stack">
                                                 <rect key="frame" x="671" y="0.0" width="87.5" height="178"/>
                                                 <subviews>
                                                     <button opaque="NO" tag="25" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Je-yS-a04" userLabel="1 blackKeyButton">
@@ -2328,22 +2286,11 @@
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <constraints>
-                                                    <constraint firstItem="pvl-hy-hRp" firstAttribute="width" secondItem="2Je-yS-a04" secondAttribute="width" id="hKK-4q-Q1R"/>
-                                                </constraints>
                                             </stackView>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="DQC-5j-gWD" userLabel="between 2 and 3 black keys">
-                                                <rect key="frame" x="758.5" y="0.0" width="28" height="178"/>
-                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            </imageView>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4wh-ha-4nq" userLabel="between 2 and 3 black keys">
-                                                <rect key="frame" x="786.5" y="0.0" width="27" height="178"/>
-                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            </imageView>
-                                            <stackView opaque="NO" alpha="0.55000001192092896" contentMode="scaleToFill" distribution="equalSpacing" spacing="26" translatesAutoresizingMaskIntoConstraints="NO" id="Dwc-tj-mY2" userLabel="3 Black Key Buttons Stack">
-                                                <rect key="frame" x="813.5" y="0.0" width="124" height="178"/>
+                                            <stackView opaque="NO" alpha="0.0" contentMode="scaleToFill" ambiguous="YES" distribution="equalSpacing" spacing="26" translatesAutoresizingMaskIntoConstraints="NO" id="Dwc-tj-mY2" userLabel="3 Black Key Buttons Stack">
+                                                <rect key="frame" x="813.5" y="0.0" width="136" height="178"/>
                                                 <subviews>
-                                                    <button opaque="NO" tag="30" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IDf-f7-TCf" userLabel="blackKeyButton">
+                                                    <button opaque="NO" tag="30" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IDf-f7-TCf" userLabel="1 blackKeyButton">
                                                         <rect key="frame" x="0.0" y="0.0" width="24" height="178"/>
                                                         <color key="backgroundColor" red="0.0" green="1" blue="0.52390272010000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <connections>
@@ -2352,8 +2299,8 @@
                                                             <action selector="keyButtonTouchUpInside:" destination="vCV-Es-ama" eventType="touchUpInside" id="RVb-YI-rKZ"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" tag="32" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PCE-Qz-40q" userLabel="blackKeyButton">
-                                                        <rect key="frame" x="50" y="0.0" width="24" height="178"/>
+                                                    <button opaque="NO" tag="32" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PCE-Qz-40q" userLabel="2 blackKeyButton">
+                                                        <rect key="frame" x="50" y="0.0" width="30" height="178"/>
                                                         <color key="backgroundColor" red="0.0" green="1" blue="0.52390272010000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <connections>
                                                             <action selector="keyButtonDraggedOutside:" destination="vCV-Es-ama" eventType="touchDragOutside" id="L87-gs-XwU"/>
@@ -2361,8 +2308,8 @@
                                                             <action selector="keyButtonTouchUpInside:" destination="vCV-Es-ama" eventType="touchUpInside" id="W4l-Kv-HXv"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" tag="34" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e3Q-m5-x15" userLabel="blackKeyButton">
-                                                        <rect key="frame" x="100" y="0.0" width="24" height="178"/>
+                                                    <button opaque="NO" tag="34" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e3Q-m5-x15" userLabel="3 blackKeyButton">
+                                                        <rect key="frame" x="106" y="0.0" width="30" height="178"/>
                                                         <color key="backgroundColor" red="0.0" green="1" blue="0.52390272010000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <connections>
                                                             <action selector="keyButtonDraggedOutside:" destination="vCV-Es-ama" eventType="touchDragOutside" id="z0B-3H-yy5"/>
@@ -2372,24 +2319,12 @@
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <constraints>
-                                                    <constraint firstItem="PCE-Qz-40q" firstAttribute="width" secondItem="IDf-f7-TCf" secondAttribute="width" id="uiL-s3-7Vu"/>
-                                                    <constraint firstItem="e3Q-m5-x15" firstAttribute="width" secondItem="IDf-f7-TCf" secondAttribute="width" id="xbX-JS-GNF"/>
-                                                </constraints>
                                             </stackView>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7E7-7j-Dat" userLabel="between 2 and 3 black keys">
-                                                <rect key="frame" x="937.5" y="0.0" width="27" height="178"/>
-                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            </imageView>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="w36-IH-6BG" userLabel="between 2 and 3 black keys">
-                                                <rect key="frame" x="929" y="0.0" width="27" height="178"/>
-                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            </imageView>
-                                            <stackView opaque="NO" alpha="0.55000001192092896" contentMode="scaleToFill" distribution="equalSpacing" spacing="27" translatesAutoresizingMaskIntoConstraints="NO" id="9hz-6H-Pwm" userLabel="2 Black Key Buttons Stack">
-                                                <rect key="frame" x="956" y="0.0" width="75" height="178"/>
+                                            <stackView opaque="NO" alpha="0.0" contentMode="scaleToFill" ambiguous="YES" distribution="equalSpacing" spacing="27" translatesAutoresizingMaskIntoConstraints="NO" id="9hz-6H-Pwm" userLabel="2 Black Key Buttons Stack">
+                                                <rect key="frame" x="956" y="0.0" width="87" height="178"/>
                                                 <subviews>
-                                                    <button opaque="NO" tag="37" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pql-sk-nlY" userLabel="blackKeyButton">
-                                                        <rect key="frame" x="0.0" y="0.0" width="24" height="178"/>
+                                                    <button opaque="NO" tag="37" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pql-sk-nlY" userLabel="1 blackKeyButton">
+                                                        <rect key="frame" x="0.0" y="0.0" width="30" height="178"/>
                                                         <color key="backgroundColor" red="0.0" green="1" blue="0.52390272010000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <connections>
                                                             <action selector="keyButtonDraggedOutside:" destination="vCV-Es-ama" eventType="touchDragOutside" id="ZhY-Km-OsV"/>
@@ -2397,8 +2332,8 @@
                                                             <action selector="keyButtonTouchUpInside:" destination="vCV-Es-ama" eventType="touchUpInside" id="m1t-kT-9Gy"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" tag="39" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TTO-pK-3ux" userLabel="blackKeyButton">
-                                                        <rect key="frame" x="51" y="0.0" width="24" height="178"/>
+                                                    <button opaque="NO" tag="39" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TTO-pK-3ux" userLabel="2 blackKeyButton">
+                                                        <rect key="frame" x="57" y="0.0" width="30" height="178"/>
                                                         <color key="backgroundColor" red="0.0" green="1" blue="0.52390272010000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <connections>
                                                             <action selector="keyButtonDraggedOutside:" destination="vCV-Es-ama" eventType="touchDragOutside" id="pkA-mu-8mY"/>
@@ -2408,23 +2343,12 @@
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <constraints>
-                                                    <constraint firstItem="TTO-pK-3ux" firstAttribute="width" secondItem="pql-sk-nlY" secondAttribute="width" id="EFu-EX-mRe"/>
-                                                </constraints>
                                             </stackView>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="O2a-Hm-JJm" userLabel="between 2 and 3 black keys">
-                                                <rect key="frame" x="1031" y="0.0" width="27" height="178"/>
-                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            </imageView>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="32j-1Y-Pzd" userLabel="between 2 and 3 black keys">
-                                                <rect key="frame" x="1058" y="0.0" width="27" height="178"/>
-                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            </imageView>
-                                            <stackView opaque="NO" alpha="0.55000001192092896" contentMode="scaleToFill" distribution="equalSpacing" spacing="26.199999999999999" translatesAutoresizingMaskIntoConstraints="NO" id="XoC-j4-2aV" userLabel="3 Black Key Buttons Stack">
-                                                <rect key="frame" x="1085" y="0.0" width="125" height="178"/>
+                                            <stackView opaque="NO" alpha="0.0" contentMode="scaleToFill" ambiguous="YES" distribution="equalSpacing" spacing="26.199999999999999" translatesAutoresizingMaskIntoConstraints="NO" id="XoC-j4-2aV" userLabel="3 Black Key Buttons Stack">
+                                                <rect key="frame" x="1085" y="0.0" width="136.5" height="178"/>
                                                 <subviews>
-                                                    <button opaque="NO" tag="42" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BzG-gs-636" userLabel="blackKeyButton">
-                                                        <rect key="frame" x="0.0" y="0.0" width="24" height="178"/>
+                                                    <button opaque="NO" tag="42" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BzG-gs-636" userLabel="1 blackKeyButton">
+                                                        <rect key="frame" x="0.0" y="0.0" width="24.5" height="178"/>
                                                         <color key="backgroundColor" red="0.0" green="1" blue="0.52390272010000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <connections>
                                                             <action selector="keyButtonDraggedOutside:" destination="vCV-Es-ama" eventType="touchDragOutside" id="6cr-LS-8LO"/>
@@ -2432,8 +2356,8 @@
                                                             <action selector="keyButtonTouchUpInside:" destination="vCV-Es-ama" eventType="touchUpInside" id="aol-GY-KxD"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" tag="44" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kEH-oe-5mF" userLabel="blackKeyButton">
-                                                        <rect key="frame" x="50" y="0.0" width="24.5" height="178"/>
+                                                    <button opaque="NO" tag="44" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kEH-oe-5mF" userLabel="2 blackKeyButton">
+                                                        <rect key="frame" x="50.5" y="0.0" width="30" height="178"/>
                                                         <color key="backgroundColor" red="0.0" green="1" blue="0.52390272010000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <connections>
                                                             <action selector="keyButtonDraggedOutside:" destination="vCV-Es-ama" eventType="touchDragOutside" id="Mnh-Xl-6Ds"/>
@@ -2441,8 +2365,8 @@
                                                             <action selector="keyButtonTouchUpInside:" destination="vCV-Es-ama" eventType="touchUpInside" id="4pG-97-HYe"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" tag="46" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R1f-uy-JoS" userLabel="blackKeyButton">
-                                                        <rect key="frame" x="100.5" y="0.0" width="24.5" height="178"/>
+                                                    <button opaque="NO" tag="46" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R1f-uy-JoS" userLabel="3 blackKeyButton">
+                                                        <rect key="frame" x="106.5" y="0.0" width="30" height="178"/>
                                                         <color key="backgroundColor" red="0.0" green="1" blue="0.52390272010000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <connections>
                                                             <action selector="keyButtonDraggedOutside:" destination="vCV-Es-ama" eventType="touchDragOutside" id="3Gb-tt-p6o"/>
@@ -2452,24 +2376,12 @@
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <constraints>
-                                                    <constraint firstItem="kEH-oe-5mF" firstAttribute="width" secondItem="BzG-gs-636" secondAttribute="width" id="8wU-3c-dPr"/>
-                                                    <constraint firstItem="R1f-uy-JoS" firstAttribute="width" secondItem="BzG-gs-636" secondAttribute="width" id="Sv3-2v-8SJ"/>
-                                                </constraints>
                                             </stackView>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bx7-u3-4GS" userLabel="between 2 and 3 black keys">
-                                                <rect key="frame" x="1210" y="0.0" width="27" height="178"/>
-                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            </imageView>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Dn9-cU-t8u" userLabel="between 2 and 3 black keys">
-                                                <rect key="frame" x="1237" y="0.0" width="26" height="178"/>
-                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            </imageView>
-                                            <stackView opaque="NO" alpha="0.55000001192092896" contentMode="scaleToFill" distribution="equalSpacing" spacing="27.5" translatesAutoresizingMaskIntoConstraints="NO" id="C8g-mt-mVb" userLabel="2 Black Key Buttons Stack">
-                                                <rect key="frame" x="1263" y="0.0" width="75.5" height="178"/>
+                                            <stackView opaque="NO" alpha="0.0" contentMode="scaleToFill" ambiguous="YES" distribution="equalSpacing" spacing="27.5" translatesAutoresizingMaskIntoConstraints="NO" id="C8g-mt-mVb" userLabel="2 Black Key Buttons Stack">
+                                                <rect key="frame" x="1263" y="0.0" width="87.5" height="178"/>
                                                 <subviews>
-                                                    <button opaque="NO" tag="49" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="006-qk-5qx" userLabel="blackKeyButton">
-                                                        <rect key="frame" x="0.0" y="0.0" width="24" height="178"/>
+                                                    <button opaque="NO" tag="49" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="006-qk-5qx" userLabel="1 blackKeyButton">
+                                                        <rect key="frame" x="0.0" y="0.0" width="30" height="178"/>
                                                         <color key="backgroundColor" red="0.0" green="1" blue="0.52390272010000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <connections>
                                                             <action selector="keyButtonDraggedOutside:" destination="vCV-Es-ama" eventType="touchDragOutside" id="1Wj-vS-5On"/>
@@ -2477,110 +2389,39 @@
                                                             <action selector="keyButtonTouchUpInside:" destination="vCV-Es-ama" eventType="touchUpInside" id="f16-Qb-IjV"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" userInteractionEnabled="NO" alpha="0.0" tag="51" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VuL-UY-RD0" userLabel="blackKeyButton">
-                                                        <rect key="frame" x="51.5" y="0.0" width="24" height="178"/>
+                                                    <button opaque="NO" userInteractionEnabled="NO" alpha="0.0" tag="51" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VuL-UY-RD0" userLabel="2 blackKeyButton">
+                                                        <rect key="frame" x="57.5" y="0.0" width="30" height="178"/>
                                                         <color key="backgroundColor" red="0.0" green="1" blue="0.52390272010000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <constraints>
-                                                    <constraint firstItem="VuL-UY-RD0" firstAttribute="width" secondItem="006-qk-5qx" secondAttribute="width" id="RqF-8T-IJl"/>
-                                                </constraints>
                                             </stackView>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kh6-Xd-pbl" userLabel="spacer between 2 and 3 #1">
+                                                <rect key="frame" x="111.5" y="0.0" width="45" height="178"/>
+                                                <color key="backgroundColor" red="0.1552500104" green="0.4241788319" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </view>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstItem="7E7-7j-Dat" firstAttribute="width" secondItem="4wh-ha-4nq" secondAttribute="width" id="0hp-3y-PYw"/>
-                                            <constraint firstItem="9hz-6H-Pwm" firstAttribute="centerY" secondItem="JzE-h9-iEf" secondAttribute="centerY" id="1FJ-pV-Nwu"/>
-                                            <constraint firstItem="l3V-yP-DR5" firstAttribute="width" secondItem="dfZ-mh-Uba" secondAttribute="width" id="1zP-VO-AdS"/>
-                                            <constraint firstItem="Iwp-Rb-pUc" firstAttribute="centerY" secondItem="JzE-h9-iEf" secondAttribute="centerY" id="2kW-K6-jGY"/>
-                                            <constraint firstItem="4wh-ha-4nq" firstAttribute="leading" secondItem="DQC-5j-gWD" secondAttribute="trailing" id="3HE-2P-1kR"/>
-                                            <constraint firstItem="O2a-Hm-JJm" firstAttribute="leading" secondItem="9hz-6H-Pwm" secondAttribute="trailing" id="3Oo-H2-r00"/>
-                                            <constraint firstItem="Iwp-Rb-pUc" firstAttribute="width" secondItem="dfZ-mh-Uba" secondAttribute="width" id="5XF-3S-2pO"/>
-                                            <constraint firstItem="DQC-5j-gWD" firstAttribute="top" secondItem="4wh-ha-4nq" secondAttribute="top" id="65L-Yh-8Gg"/>
-                                            <constraint firstItem="C6l-iF-rLG" firstAttribute="height" secondItem="JzE-h9-iEf" secondAttribute="height" id="7SJ-Ui-BMv"/>
-                                            <constraint firstItem="snd-in-8iO" firstAttribute="width" secondItem="9rB-sT-5F9" secondAttribute="width" id="7Vs-yx-tmX"/>
-                                            <constraint firstItem="f9C-Sv-wQH" firstAttribute="leading" secondItem="C6l-iF-rLG" secondAttribute="trailing" id="9xs-gE-bIN"/>
-                                            <constraint firstItem="DQC-5j-gWD" firstAttribute="top" secondItem="dfZ-mh-Uba" secondAttribute="top" id="AJ0-FP-UIR"/>
-                                            <constraint firstItem="w36-IH-6BG" firstAttribute="width" secondItem="7E7-7j-Dat" secondAttribute="width" id="BMo-Ue-VBR"/>
-                                            <constraint firstItem="DQC-5j-gWD" firstAttribute="top" secondItem="Dn9-cU-t8u" secondAttribute="top" id="BRp-9E-tWv"/>
-                                            <constraint firstItem="viz-jg-gFO" firstAttribute="centerY" secondItem="JzE-h9-iEf" secondAttribute="centerY" id="BZm-Im-x71"/>
-                                            <constraint firstItem="snd-in-8iO" firstAttribute="centerY" secondItem="JzE-h9-iEf" secondAttribute="centerY" id="ELm-Q9-kCe"/>
-                                            <constraint firstItem="9hz-6H-Pwm" firstAttribute="leading" secondItem="w36-IH-6BG" secondAttribute="trailing" id="F4e-H2-sVg"/>
-                                            <constraint firstAttribute="trailing" secondItem="C8g-mt-mVb" secondAttribute="trailing" id="Fol-Lx-77G"/>
-                                            <constraint firstItem="O2a-Hm-JJm" firstAttribute="width" secondItem="w36-IH-6BG" secondAttribute="width" id="GKx-bU-acp"/>
-                                            <constraint firstItem="9rB-sT-5F9" firstAttribute="leading" secondItem="xME-kU-jX8" secondAttribute="trailing" id="HdC-aj-tDd"/>
-                                            <constraint firstItem="DQC-5j-gWD" firstAttribute="top" secondItem="snd-in-8iO" secondAttribute="top" id="HdP-DD-xze"/>
-                                            <constraint firstItem="bx7-u3-4GS" firstAttribute="centerY" secondItem="JzE-h9-iEf" secondAttribute="centerY" id="J0I-cb-tws"/>
-                                            <constraint firstItem="DQC-5j-gWD" firstAttribute="top" secondItem="9rB-sT-5F9" secondAttribute="top" id="Jpj-us-cyQ"/>
-                                            <constraint firstItem="DQC-5j-gWD" firstAttribute="top" secondItem="32j-1Y-Pzd" secondAttribute="top" id="LUO-wI-z3T"/>
-                                            <constraint firstItem="RFX-uM-4u9" firstAttribute="leading" secondItem="f9C-Sv-wQH" secondAttribute="trailing" id="M60-yN-qA8"/>
-                                            <constraint firstItem="snd-in-8iO" firstAttribute="leading" secondItem="9rB-sT-5F9" secondAttribute="trailing" id="Mof-V6-kwb"/>
-                                            <constraint firstItem="C6l-iF-rLG" firstAttribute="leading" secondItem="JzE-h9-iEf" secondAttribute="leading" id="NKe-yz-Yoi"/>
-                                            <constraint firstItem="xME-kU-jX8" firstAttribute="height" secondItem="JzE-h9-iEf" secondAttribute="height" id="NXa-li-ZlG"/>
-                                            <constraint firstItem="C8g-mt-mVb" firstAttribute="height" secondItem="JzE-h9-iEf" secondAttribute="height" id="OeE-jF-Ndb"/>
-                                            <constraint firstItem="l3V-yP-DR5" firstAttribute="leading" secondItem="Iwp-Rb-pUc" secondAttribute="trailing" id="PIk-MV-0D7"/>
-                                            <constraint firstItem="f9C-Sv-wQH" firstAttribute="centerY" secondItem="JzE-h9-iEf" secondAttribute="centerY" id="PM1-vo-WK9"/>
-                                            <constraint firstItem="XoC-j4-2aV" firstAttribute="leading" secondItem="32j-1Y-Pzd" secondAttribute="trailing" id="Pb9-n2-lMv"/>
-                                            <constraint firstItem="XoC-j4-2aV" firstAttribute="centerY" secondItem="JzE-h9-iEf" secondAttribute="centerY" id="Q7a-vv-9Iw"/>
-                                            <constraint firstItem="32j-1Y-Pzd" firstAttribute="width" secondItem="O2a-Hm-JJm" secondAttribute="width" id="QNy-Y6-Hp3"/>
-                                            <constraint firstItem="Dn9-cU-t8u" firstAttribute="centerY" secondItem="JzE-h9-iEf" secondAttribute="centerY" id="QZZ-mf-XFL"/>
-                                            <constraint firstItem="RFX-uM-4u9" firstAttribute="centerY" secondItem="JzE-h9-iEf" secondAttribute="centerY" id="Qdv-nL-y8L"/>
-                                            <constraint firstItem="xME-kU-jX8" firstAttribute="leading" secondItem="gg6-mG-9oV" secondAttribute="trailing" id="QtT-Uq-dgW"/>
-                                            <constraint firstItem="32j-1Y-Pzd" firstAttribute="centerY" secondItem="JzE-h9-iEf" secondAttribute="centerY" id="RFp-Uu-Bqw"/>
-                                            <constraint firstItem="Jlm-uC-VMz" firstAttribute="height" secondItem="JzE-h9-iEf" secondAttribute="height" id="RIw-q6-EcB"/>
-                                            <constraint firstItem="Dwc-tj-mY2" firstAttribute="height" secondItem="JzE-h9-iEf" secondAttribute="height" id="RgE-HQ-Q98"/>
-                                            <constraint firstItem="4wh-ha-4nq" firstAttribute="centerY" secondItem="JzE-h9-iEf" secondAttribute="centerY" id="S7f-mk-O3x"/>
-                                            <constraint firstItem="l3V-yP-DR5" firstAttribute="centerY" secondItem="JzE-h9-iEf" secondAttribute="centerY" id="SSQ-Dx-K9Z"/>
-                                            <constraint firstItem="9hz-6H-Pwm" firstAttribute="height" secondItem="JzE-h9-iEf" secondAttribute="height" id="SsE-zJ-Ecp"/>
-                                            <constraint firstItem="dfZ-mh-Uba" firstAttribute="centerY" secondItem="JzE-h9-iEf" secondAttribute="centerY" id="T0a-4s-Yoz"/>
-                                            <constraint firstItem="DQC-5j-gWD" firstAttribute="top" secondItem="O2a-Hm-JJm" secondAttribute="top" id="TL2-UH-ico"/>
-                                            <constraint firstItem="XoC-j4-2aV" firstAttribute="height" secondItem="JzE-h9-iEf" secondAttribute="height" id="UEb-Eh-dLQ"/>
-                                            <constraint firstItem="DQC-5j-gWD" firstAttribute="top" secondItem="bx7-u3-4GS" secondAttribute="top" id="VJN-cT-1ca"/>
-                                            <constraint firstItem="bx7-u3-4GS" firstAttribute="width" secondItem="32j-1Y-Pzd" secondAttribute="width" id="Vsd-Cl-b93"/>
-                                            <constraint firstItem="Dwc-tj-mY2" firstAttribute="leading" secondItem="4wh-ha-4nq" secondAttribute="trailing" id="Wuj-0v-1Fc"/>
-                                            <constraint firstItem="dfZ-mh-Uba" firstAttribute="width" secondItem="fjN-aK-PeP" secondAttribute="width" id="Xc1-rg-aSO"/>
-                                            <constraint firstItem="pql-sk-nlY" firstAttribute="width" secondItem="IDf-f7-TCf" secondAttribute="width" id="YGj-mQ-JUC"/>
-                                            <constraint firstItem="32j-1Y-Pzd" firstAttribute="leading" secondItem="O2a-Hm-JJm" secondAttribute="trailing" id="asT-ZR-LXu"/>
-                                            <constraint firstItem="7E7-7j-Dat" firstAttribute="centerY" secondItem="JzE-h9-iEf" secondAttribute="centerY" id="atP-Jg-cBN"/>
-                                            <constraint firstItem="DQC-5j-gWD" firstAttribute="top" secondItem="Jlm-uC-VMz" secondAttribute="top" id="blf-9g-b1i"/>
-                                            <constraint firstItem="dfZ-mh-Uba" firstAttribute="leading" secondItem="fjN-aK-PeP" secondAttribute="trailing" id="cEq-4D-jK1"/>
-                                            <constraint firstItem="fjN-aK-PeP" firstAttribute="leading" secondItem="Faj-B9-S4K" secondAttribute="trailing" id="dxk-jb-cqz"/>
-                                            <constraint firstItem="DQC-5j-gWD" firstAttribute="top" secondItem="w36-IH-6BG" secondAttribute="top" id="eDU-jt-QAO"/>
-                                            <constraint firstItem="4wh-ha-4nq" firstAttribute="width" secondItem="l3V-yP-DR5" secondAttribute="width" id="eDf-vA-hZc"/>
-                                            <constraint firstItem="Dn9-cU-t8u" firstAttribute="leading" secondItem="bx7-u3-4GS" secondAttribute="trailing" id="eLl-fl-edS"/>
-                                            <constraint firstItem="Jlm-uC-VMz" firstAttribute="centerY" secondItem="JzE-h9-iEf" secondAttribute="centerY" id="eme-cb-oyO"/>
-                                            <constraint firstItem="DQC-5j-gWD" firstAttribute="top" secondItem="fjN-aK-PeP" secondAttribute="top" id="eqV-oQ-TrL"/>
-                                            <constraint firstItem="9rB-sT-5F9" firstAttribute="centerY" secondItem="JzE-h9-iEf" secondAttribute="centerY" id="f9m-1l-xof"/>
-                                            <constraint firstItem="gg6-mG-9oV" firstAttribute="leading" secondItem="RFX-uM-4u9" secondAttribute="trailing" id="fbm-DY-ukV"/>
-                                            <constraint firstItem="viz-jg-gFO" firstAttribute="leading" secondItem="dfZ-mh-Uba" secondAttribute="trailing" id="iDN-fr-sST"/>
-                                            <constraint firstItem="DQC-5j-gWD" firstAttribute="top" secondItem="7E7-7j-Dat" secondAttribute="top" id="ikY-vx-gjD"/>
-                                            <constraint firstItem="Jlm-uC-VMz" firstAttribute="leading" secondItem="l3V-yP-DR5" secondAttribute="trailing" id="jCf-k3-WAr"/>
-                                            <constraint firstItem="f9C-Sv-wQH" firstAttribute="height" secondItem="JzE-h9-iEf" secondAttribute="height" id="jeC-WN-q5f"/>
-                                            <constraint firstItem="Iwp-Rb-pUc" firstAttribute="leading" secondItem="viz-jg-gFO" secondAttribute="trailing" id="lse-Po-ojy"/>
-                                            <constraint firstItem="C8g-mt-mVb" firstAttribute="centerY" secondItem="JzE-h9-iEf" secondAttribute="centerY" id="m09-v7-ynw"/>
-                                            <constraint firstItem="DQC-5j-gWD" firstAttribute="centerY" secondItem="JzE-h9-iEf" secondAttribute="centerY" id="n5Z-A7-Uez"/>
-                                            <constraint firstItem="DQC-5j-gWD" firstAttribute="top" secondItem="l3V-yP-DR5" secondAttribute="top" id="nfT-uy-fba"/>
-                                            <constraint firstItem="Dwc-tj-mY2" firstAttribute="centerY" secondItem="JzE-h9-iEf" secondAttribute="centerY" id="nvz-Ln-8qt"/>
-                                            <constraint firstItem="fjN-aK-PeP" firstAttribute="width" secondItem="snd-in-8iO" secondAttribute="width" id="oKW-6v-FP8"/>
-                                            <constraint firstItem="Faj-B9-S4K" firstAttribute="leading" secondItem="snd-in-8iO" secondAttribute="trailing" id="ov5-KI-AE8"/>
-                                            <constraint firstItem="DQC-5j-gWD" firstAttribute="top" secondItem="Iwp-Rb-pUc" secondAttribute="top" id="q6K-6L-cnK"/>
-                                            <constraint firstItem="DQC-5j-gWD" firstAttribute="top" secondItem="RFX-uM-4u9" secondAttribute="top" id="t2v-M1-bLR"/>
-                                            <constraint firstItem="7E7-7j-Dat" firstAttribute="leading" secondItem="Dwc-tj-mY2" secondAttribute="trailing" id="tdj-4X-16N"/>
-                                            <constraint firstItem="O2a-Hm-JJm" firstAttribute="centerY" secondItem="JzE-h9-iEf" secondAttribute="centerY" id="tpK-rt-1Fx"/>
-                                            <constraint firstItem="Faj-B9-S4K" firstAttribute="centerY" secondItem="JzE-h9-iEf" secondAttribute="centerY" id="u3L-oJ-15y"/>
-                                            <constraint firstItem="Faj-B9-S4K" firstAttribute="height" secondItem="JzE-h9-iEf" secondAttribute="height" id="uAt-8J-mfc"/>
-                                            <constraint firstItem="gg6-mG-9oV" firstAttribute="centerY" secondItem="JzE-h9-iEf" secondAttribute="centerY" id="ucR-gu-kRq"/>
-                                            <constraint firstItem="fjN-aK-PeP" firstAttribute="centerY" secondItem="JzE-h9-iEf" secondAttribute="centerY" id="v1S-W4-dIL"/>
-                                            <constraint firstItem="viz-jg-gFO" firstAttribute="height" secondItem="JzE-h9-iEf" secondAttribute="height" id="v5a-Ut-oXr"/>
-                                            <constraint firstItem="bx7-u3-4GS" firstAttribute="leading" secondItem="XoC-j4-2aV" secondAttribute="trailing" id="vSg-Vl-8Qq"/>
-                                            <constraint firstItem="DQC-5j-gWD" firstAttribute="top" secondItem="gg6-mG-9oV" secondAttribute="top" id="w4k-4g-xf4"/>
-                                            <constraint firstItem="006-qk-5qx" firstAttribute="width" secondItem="pql-sk-nlY" secondAttribute="width" id="wMk-tV-eJv"/>
-                                            <constraint firstItem="DQC-5j-gWD" firstAttribute="leading" secondItem="Jlm-uC-VMz" secondAttribute="trailing" id="xOn-XY-6ac"/>
-                                            <constraint firstItem="C8g-mt-mVb" firstAttribute="leading" secondItem="Dn9-cU-t8u" secondAttribute="trailing" id="xhU-Wq-5xZ"/>
-                                            <constraint firstItem="C6l-iF-rLG" firstAttribute="centerY" secondItem="JzE-h9-iEf" secondAttribute="centerY" id="xrH-PH-f8X"/>
-                                            <constraint firstItem="w36-IH-6BG" firstAttribute="centerY" secondItem="JzE-h9-iEf" secondAttribute="centerY" id="yT3-1N-liD"/>
-                                            <constraint firstItem="xME-kU-jX8" firstAttribute="centerY" secondItem="JzE-h9-iEf" secondAttribute="centerY" id="zjR-7p-RZK"/>
+                                            <constraint firstItem="xME-kU-jX8" firstAttribute="centerY" secondItem="JzE-h9-iEf" secondAttribute="centerY" id="3Hs-Kn-Hdi"/>
+                                            <constraint firstItem="Dwc-tj-mY2" firstAttribute="height" secondItem="JzE-h9-iEf" secondAttribute="height" id="73T-rb-2df"/>
+                                            <constraint firstItem="xME-kU-jX8" firstAttribute="height" secondItem="JzE-h9-iEf" secondAttribute="height" id="EBh-ZR-ppt"/>
+                                            <constraint firstItem="Kh6-Xd-pbl" firstAttribute="top" secondItem="JzE-h9-iEf" secondAttribute="top" id="ExQ-Jr-bEx"/>
+                                            <constraint firstItem="viz-jg-gFO" firstAttribute="height" secondItem="JzE-h9-iEf" secondAttribute="height" id="Fhs-yr-Ee9"/>
+                                            <constraint firstItem="Faj-B9-S4K" firstAttribute="height" secondItem="JzE-h9-iEf" secondAttribute="height" id="GbB-n0-ffg"/>
+                                            <constraint firstItem="85n-02-024" firstAttribute="centerY" secondItem="JzE-h9-iEf" secondAttribute="centerY" id="TVl-e3-xG5"/>
+                                            <constraint firstItem="Kh6-Xd-pbl" firstAttribute="leading" secondItem="f9C-Sv-wQH" secondAttribute="trailing" id="am2-OZ-SVt"/>
+                                            <constraint firstItem="85n-02-024" firstAttribute="leading" secondItem="JzE-h9-iEf" secondAttribute="leading" id="bbZ-QI-5UF"/>
+                                            <constraint firstItem="9hz-6H-Pwm" firstAttribute="height" secondItem="JzE-h9-iEf" secondAttribute="height" id="d42-LO-F9Y"/>
+                                            <constraint firstItem="f9C-Sv-wQH" firstAttribute="height" secondItem="JzE-h9-iEf" secondAttribute="height" id="e4R-sh-c2d"/>
+                                            <constraint firstItem="Jlm-uC-VMz" firstAttribute="height" secondItem="JzE-h9-iEf" secondAttribute="height" id="gf2-of-ca6"/>
+                                            <constraint firstItem="f9C-Sv-wQH" firstAttribute="leading" secondItem="85n-02-024" secondAttribute="trailing" id="hWI-SX-KNZ"/>
+                                            <constraint firstItem="Kh6-Xd-pbl" firstAttribute="height" secondItem="JzE-h9-iEf" secondAttribute="height" id="izp-ep-X7x"/>
+                                            <constraint firstItem="XoC-j4-2aV" firstAttribute="height" secondItem="JzE-h9-iEf" secondAttribute="height" id="oXj-np-xeF"/>
+                                            <constraint firstItem="85n-02-024" firstAttribute="height" secondItem="JzE-h9-iEf" secondAttribute="height" id="oa3-9c-c52"/>
+                                            <constraint firstItem="xME-kU-jX8" firstAttribute="leading" secondItem="Kh6-Xd-pbl" secondAttribute="trailing" id="pHZ-Od-f5Q"/>
+                                            <constraint firstItem="f9C-Sv-wQH" firstAttribute="centerY" secondItem="JzE-h9-iEf" secondAttribute="centerY" id="uTW-Ng-XQh"/>
+                                            <constraint firstItem="C8g-mt-mVb" firstAttribute="height" secondItem="JzE-h9-iEf" secondAttribute="height" id="wOU-A8-1aD"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q0v-F4-hoG" userLabel="between left and keys">
@@ -2595,7 +2436,7 @@
                                     <constraint firstItem="JzE-h9-iEf" firstAttribute="bottom" secondItem="39M-bi-zO3" secondAttribute="top" id="bKV-tD-Jl3"/>
                                     <constraint firstItem="Q0v-F4-hoG" firstAttribute="leading" secondItem="mrE-qH-7Xr" secondAttribute="leading" id="gzT-Wc-uN2"/>
                                     <constraint firstItem="Q0v-F4-hoG" firstAttribute="centerY" secondItem="mrE-qH-7Xr" secondAttribute="centerY" id="miB-Gs-i6k"/>
-                                    <constraint firstItem="JzE-h9-iEf" firstAttribute="leading" secondItem="mrE-qH-7Xr" secondAttribute="leading" id="xDa-ua-REn"/>
+                                    <constraint firstItem="JzE-h9-iEf" firstAttribute="leading" secondItem="Q0v-F4-hoG" secondAttribute="trailing" id="xDa-ua-REn"/>
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3EC-sO-rF0" userLabel="Footer">
@@ -3120,12 +2961,10 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="3EC-sO-rF0" firstAttribute="trailing" secondItem="cGR-eH-SAd" secondAttribute="trailing" id="0R4-L3-LXC"/>
-                            <constraint firstItem="JzE-h9-iEf" firstAttribute="width" secondItem="Bcp-rj-qSy" secondAttribute="width" multiplier="1338.5:1366" id="0RY-S4-TC4"/>
                             <constraint firstItem="COz-gC-a0h" firstAttribute="width" secondItem="cGR-eH-SAd" secondAttribute="width" multiplier="0.6773" id="0ZX-ju-Pqs"/>
                             <constraint firstItem="gqB-He-zfK" firstAttribute="centerX" secondItem="tec-47-C5m" secondAttribute="centerX" constant="-20" id="2xj-8p-iV2"/>
                             <constraint firstAttribute="bottom" secondItem="eMe-p2-imh" secondAttribute="bottom" id="3bw-fG-TIZ"/>
                             <constraint firstItem="nSr-W9-D5Q" firstAttribute="top" secondItem="3HW-Id-xXV" secondAttribute="bottom" id="4Id-uI-bs9"/>
-                            <constraint firstItem="DQC-5j-gWD" firstAttribute="width" secondItem="Bcp-rj-qSy" secondAttribute="width" multiplier="28:1366" id="4sQ-Jy-BHC"/>
                             <constraint firstItem="3HW-Id-xXV" firstAttribute="height" secondItem="tec-47-C5m" secondAttribute="height" multiplier="95:1024" id="5en-Zr-kYv"/>
                             <constraint firstItem="Wc3-Og-gVF" firstAttribute="height" secondItem="Bcp-rj-qSy" secondAttribute="height" multiplier="178:1000" id="5os-VR-1ac"/>
                             <constraint firstItem="IDf-f7-TCf" firstAttribute="width" secondItem="Bcp-rj-qSy" secondAttribute="width" multiplier="24:1366" id="5r6-ec-42z"/>
@@ -3136,6 +2975,7 @@
                             <constraint firstItem="3EC-sO-rF0" firstAttribute="leading" secondItem="tec-47-C5m" secondAttribute="leading" id="Aut-8V-Cq7"/>
                             <constraint firstItem="S3S-p5-kwV" firstAttribute="width" secondItem="gqB-He-zfK" secondAttribute="width" id="Ceb-p5-Aji"/>
                             <constraint firstItem="S3S-p5-kwV" firstAttribute="top" secondItem="Yns-Qx-CKC" secondAttribute="bottom" id="CkM-2u-7Kg"/>
+                            <constraint firstItem="85n-02-024" firstAttribute="width" secondItem="tec-47-C5m" secondAttribute="width" multiplier="30:1366" id="FRX-QU-nd0"/>
                             <constraint firstItem="vWE-a7-mpm" firstAttribute="width" secondItem="Bcp-rj-qSy" secondAttribute="width" multiplier="236:1366" id="FZ8-kX-1L5"/>
                             <constraint firstItem="mrE-qH-7Xr" firstAttribute="leading" secondItem="tec-47-C5m" secondAttribute="leading" id="H9d-L1-Ima"/>
                             <constraint firstItem="yxa-Ew-apy" firstAttribute="leading" secondItem="S3S-p5-kwV" secondAttribute="trailing" constant="-30" id="HQV-lz-RVK"/>
@@ -3146,12 +2986,9 @@
                             <constraint firstItem="yxa-Ew-apy" firstAttribute="height" secondItem="246-8n-5LY" secondAttribute="height" id="InU-DQ-qtD"/>
                             <constraint firstItem="Hmf-ec-sG9" firstAttribute="leading" secondItem="vWE-a7-mpm" secondAttribute="trailing" id="JGh-Pq-Iau"/>
                             <constraint firstItem="vzr-qh-cLh" firstAttribute="bottom" secondItem="Bcp-rj-qSy" secondAttribute="bottom" id="JPf-yJ-fLc"/>
-                            <constraint firstItem="Dn9-cU-t8u" firstAttribute="width" secondItem="Bcp-rj-qSy" secondAttribute="width" multiplier="26:1366" id="JoI-PV-wCz"/>
                             <constraint firstItem="S3S-p5-kwV" firstAttribute="centerY" secondItem="246-8n-5LY" secondAttribute="centerY" id="KFd-sa-GQU"/>
-                            <constraint firstItem="viz-jg-gFO" firstAttribute="width" secondItem="Bcp-rj-qSy" secondAttribute="width" multiplier="124:1366" id="L1I-Nw-RTS"/>
                             <constraint firstItem="246-8n-5LY" firstAttribute="trailing" secondItem="S3S-p5-kwV" secondAttribute="leading" id="Ldv-QP-sFw"/>
                             <constraint firstItem="vWE-a7-mpm" firstAttribute="height" secondItem="3EC-sO-rF0" secondAttribute="height" id="M14-KH-MbX"/>
-                            <constraint firstItem="9rB-sT-5F9" firstAttribute="width" secondItem="Bcp-rj-qSy" secondAttribute="width" multiplier="27:1366" id="MNJ-Am-clj"/>
                             <constraint firstItem="mrE-qH-7Xr" firstAttribute="height" secondItem="Bcp-rj-qSy" secondAttribute="height" multiplier="321.5:1000" id="MW4-Tz-fXP"/>
                             <constraint firstItem="gqB-He-zfK" firstAttribute="height" secondItem="Bcp-rj-qSy" secondAttribute="height" multiplier="1:2" id="MXv-ra-sZ4"/>
                             <constraint firstItem="Q0v-F4-hoG" firstAttribute="width" secondItem="Bcp-rj-qSy" secondAttribute="width" multiplier="5:1366" id="NcM-GH-a27"/>
@@ -3168,6 +3005,7 @@
                             <constraint firstItem="BWO-vq-xY0" firstAttribute="trailing" secondItem="cGR-eH-SAd" secondAttribute="trailing" constant="-20" id="XbP-WV-ELb"/>
                             <constraint firstItem="S3S-p5-kwV" firstAttribute="centerX" secondItem="tec-47-C5m" secondAttribute="centerX" id="Y4J-uo-hnf"/>
                             <constraint firstItem="BWO-vq-xY0" firstAttribute="top" secondItem="cGR-eH-SAd" secondAttribute="top" constant="10" id="Yc3-KP-ZiX"/>
+                            <constraint firstItem="f9C-Sv-wQH" firstAttribute="width" secondItem="tec-47-C5m" secondAttribute="width" multiplier="81.5:1366" id="a0P-Je-tuW"/>
                             <constraint firstItem="cGR-eH-SAd" firstAttribute="trailing" secondItem="nSr-W9-D5Q" secondAttribute="trailing" id="aI2-tN-diP"/>
                             <constraint firstItem="nSr-W9-D5Q" firstAttribute="leading" secondItem="cGR-eH-SAd" secondAttribute="leading" id="acO-Tb-8HA"/>
                             <constraint firstItem="kn7-b1-7Mc" firstAttribute="width" secondItem="Bcp-rj-qSy" secondAttribute="width" multiplier="24:1366" id="aia-81-38O"/>
@@ -3176,16 +3014,14 @@
                             <constraint firstItem="vzr-qh-cLh" firstAttribute="top" secondItem="Bcp-rj-qSy" secondAttribute="top" id="cg6-iz-ox5"/>
                             <constraint firstItem="Bcp-rj-qSy" firstAttribute="leading" secondItem="cGR-eH-SAd" secondAttribute="leading" id="cyA-SK-TZb"/>
                             <constraint firstItem="Yns-Qx-CKC" firstAttribute="centerX" secondItem="tec-47-C5m" secondAttribute="centerX" id="dBy-Yx-ZbW"/>
+                            <constraint firstItem="Kh6-Xd-pbl" firstAttribute="width" secondItem="tec-47-C5m" secondAttribute="width" multiplier="45:1366" id="dvX-9j-Skv"/>
                             <constraint firstItem="mrE-qH-7Xr" firstAttribute="bottom" secondItem="3EC-sO-rF0" secondAttribute="top" id="eCx-5X-9LU"/>
                             <constraint firstItem="3HW-Id-xXV" firstAttribute="centerX" secondItem="tec-47-C5m" secondAttribute="centerX" id="eWj-NN-TFX"/>
-                            <constraint firstItem="RFX-uM-4u9" firstAttribute="width" secondItem="Bcp-rj-qSy" secondAttribute="width" multiplier="27.5:1366" id="ed7-9d-dVF"/>
                             <constraint firstItem="Yns-Qx-CKC" firstAttribute="leading" secondItem="tec-47-C5m" secondAttribute="leading" id="eih-71-P8c"/>
                             <constraint firstItem="3HW-Id-xXV" firstAttribute="trailing" secondItem="tec-47-C5m" secondAttribute="trailing" id="fVD-oy-FfT"/>
                             <constraint firstAttribute="bottom" secondItem="3EC-sO-rF0" secondAttribute="bottom" id="fXQ-3H-vSS"/>
                             <constraint firstItem="Wc3-Og-gVF" firstAttribute="trailing" secondItem="cGR-eH-SAd" secondAttribute="trailing" id="fdd-Xh-zmL"/>
-                            <constraint firstItem="f9C-Sv-wQH" firstAttribute="width" secondItem="Bcp-rj-qSy" secondAttribute="width" multiplier="78.5:1366" id="g7P-of-odK"/>
                             <constraint firstItem="Yns-Qx-CKC" firstAttribute="trailing" secondItem="tec-47-C5m" secondAttribute="trailing" id="hHa-RH-6Ff"/>
-                            <constraint firstItem="Jlm-uC-VMz" firstAttribute="width" secondItem="Bcp-rj-qSy" secondAttribute="width" multiplier="75.5:1366" id="ha0-b8-WtB"/>
                             <constraint firstItem="JzE-h9-iEf" firstAttribute="trailing" secondItem="Wc3-Og-gVF" secondAttribute="leading" id="hz8-Ta-Hh7"/>
                             <constraint firstItem="JzE-h9-iEf" firstAttribute="height" secondItem="Bcp-rj-qSy" secondAttribute="height" multiplier="178:1000" id="hzY-1r-Ecc"/>
                             <constraint firstItem="o0U-9z-aao" firstAttribute="centerX" secondItem="tec-47-C5m" secondAttribute="centerX" id="iIL-Du-d8f"/>
@@ -3194,13 +3030,10 @@
                             <constraint firstItem="COz-gC-a0h" firstAttribute="top" secondItem="3HW-Id-xXV" secondAttribute="bottom" id="ja5-dx-177"/>
                             <constraint firstItem="k85-9x-VXt" firstAttribute="width" secondItem="Bcp-rj-qSy" secondAttribute="width" multiplier="25:1366" id="k3v-fi-m8T"/>
                             <constraint firstAttribute="bottom" secondItem="vWE-a7-mpm" secondAttribute="bottom" id="kBS-Ih-Cir"/>
-                            <constraint firstItem="C6l-iF-rLG" firstAttribute="width" secondItem="Bcp-rj-qSy" secondAttribute="width" multiplier="30:1366" id="nxy-jN-hhV"/>
                             <constraint firstItem="COz-gC-a0h" firstAttribute="centerX" secondItem="tec-47-C5m" secondAttribute="centerX" id="qBS-nZ-EEL"/>
-                            <constraint firstItem="gg6-mG-9oV" firstAttribute="width" secondItem="Bcp-rj-qSy" secondAttribute="width" multiplier="24.5:1366" id="qzr-bd-unW"/>
                             <constraint firstItem="Yns-Qx-CKC" firstAttribute="top" secondItem="nSr-W9-D5Q" secondAttribute="bottom" id="rSa-iA-jnH"/>
                             <constraint firstAttribute="trailing" secondItem="mrE-qH-7Xr" secondAttribute="trailing" id="sdT-mC-XvY"/>
                             <constraint firstItem="eMe-p2-imh" firstAttribute="top" secondItem="tec-47-C5m" secondAttribute="top" id="som-cL-5Se"/>
-                            <constraint firstItem="q14-ic-Ngg" firstAttribute="width" secondItem="Bcp-rj-qSy" secondAttribute="width" multiplier="27:1366" id="vfR-z0-hjF"/>
                             <constraint firstItem="S3S-p5-kwV" firstAttribute="centerY" secondItem="gqB-He-zfK" secondAttribute="centerY" id="wRX-nQ-zJB"/>
                             <constraint firstItem="Yns-Qx-CKC" firstAttribute="height" secondItem="tec-47-C5m" secondAttribute="height" multiplier="186:1024" id="ytf-m6-6Kh"/>
                             <constraint firstItem="3HW-Id-xXV" firstAttribute="leading" secondItem="tec-47-C5m" secondAttribute="leading" id="zWn-Ou-0ks"/>
