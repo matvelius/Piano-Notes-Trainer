@@ -2130,9 +2130,6 @@
                                                     <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q14-ic-Ngg" userLabel="blackKeyButton">
                                                         <rect key="frame" x="0.0" y="0.0" width="27" height="178"/>
                                                         <color key="backgroundColor" red="0.0" green="1" blue="0.52390272010000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" constant="27" id="07A-Pi-s8W"/>
-                                                        </constraints>
                                                         <connections>
                                                             <action selector="keyButtonDraggedOutside:" destination="vCV-Es-ama" eventType="touchDragOutside" id="gSj-z9-Mt0"/>
                                                             <action selector="keyButtonTouchDown:" destination="vCV-Es-ama" eventType="touchDown" id="bDW-W3-RML"/>
@@ -2168,9 +2165,6 @@
                                                     <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k85-9x-VXt" userLabel="blackKeyButton">
                                                         <rect key="frame" x="0.0" y="0.0" width="25" height="178"/>
                                                         <color key="backgroundColor" red="0.0" green="1" blue="0.52390272010000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" constant="25" id="wga-GP-a5U"/>
-                                                        </constraints>
                                                         <connections>
                                                             <action selector="keyButtonDraggedOutside:" destination="vCV-Es-ama" eventType="touchDragOutside" id="k9i-aa-ZDk"/>
                                                             <action selector="keyButtonTouchDown:" destination="vCV-Es-ama" eventType="touchDown" id="aaJ-YO-Stv"/>
@@ -2216,9 +2210,6 @@
                                                     <button opaque="NO" tag="13" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kn7-b1-7Mc" userLabel="blackKeyButton">
                                                         <rect key="frame" x="0.0" y="0.0" width="24" height="178"/>
                                                         <color key="backgroundColor" red="0.0" green="1" blue="0.52390272010000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" constant="24" id="eUB-ma-SeZ"/>
-                                                        </constraints>
                                                         <connections>
                                                             <action selector="keyButtonDraggedOutside:" destination="vCV-Es-ama" eventType="touchDragOutside" id="VRc-5L-md8"/>
                                                             <action selector="keyButtonTouchDown:" destination="vCV-Es-ama" eventType="touchDown" id="4n0-0i-ZEA"/>
@@ -2334,9 +2325,6 @@
                                                     <button opaque="NO" tag="30" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IDf-f7-TCf" userLabel="blackKeyButton">
                                                         <rect key="frame" x="0.0" y="0.0" width="24" height="178"/>
                                                         <color key="backgroundColor" red="0.0" green="1" blue="0.52390272010000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" constant="24" id="aAq-KW-aQS"/>
-                                                        </constraints>
                                                         <connections>
                                                             <action selector="keyButtonDraggedOutside:" destination="vCV-Es-ama" eventType="touchDragOutside" id="879-cq-s6B"/>
                                                             <action selector="keyButtonTouchDown:" destination="vCV-Es-ama" eventType="touchDown" id="X3g-b9-Pwh"/>
@@ -2382,9 +2370,6 @@
                                                     <button opaque="NO" tag="37" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pql-sk-nlY" userLabel="blackKeyButton">
                                                         <rect key="frame" x="0.0" y="0.0" width="24" height="178"/>
                                                         <color key="backgroundColor" red="0.0" green="1" blue="0.52390272010000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" constant="24" id="6eP-XX-xxe"/>
-                                                        </constraints>
                                                         <connections>
                                                             <action selector="keyButtonDraggedOutside:" destination="vCV-Es-ama" eventType="touchDragOutside" id="ZhY-Km-OsV"/>
                                                             <action selector="keyButtonTouchDown:" destination="vCV-Es-ama" eventType="touchDown" id="ls0-Du-Ivh"/>
@@ -2420,9 +2405,6 @@
                                                     <button opaque="NO" tag="42" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BzG-gs-636" userLabel="blackKeyButton">
                                                         <rect key="frame" x="0.0" y="0.0" width="24" height="178"/>
                                                         <color key="backgroundColor" red="0.0" green="1" blue="0.52390272010000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" constant="24.399999999999999" id="VFm-8L-Tsb"/>
-                                                        </constraints>
                                                         <connections>
                                                             <action selector="keyButtonDraggedOutside:" destination="vCV-Es-ama" eventType="touchDragOutside" id="6cr-LS-8LO"/>
                                                             <action selector="keyButtonTouchDown:" destination="vCV-Es-ama" eventType="touchDown" id="2C4-XL-mRA"/>
@@ -2468,9 +2450,6 @@
                                                     <button opaque="NO" tag="49" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="006-qk-5qx" userLabel="blackKeyButton">
                                                         <rect key="frame" x="0.0" y="0.0" width="24" height="178"/>
                                                         <color key="backgroundColor" red="0.0" green="1" blue="0.52390272010000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" constant="24" id="nxs-Ab-yzW"/>
-                                                        </constraints>
                                                         <connections>
                                                             <action selector="keyButtonDraggedOutside:" destination="vCV-Es-ama" eventType="touchDragOutside" id="1Wj-vS-5On"/>
                                                             <action selector="keyButtonTouchDown:" destination="vCV-Es-ama" eventType="touchDown" id="CtE-Dw-BSO"/>
@@ -2540,6 +2519,7 @@
                                             <constraint firstItem="bx7-u3-4GS" firstAttribute="width" secondItem="32j-1Y-Pzd" secondAttribute="width" id="Vsd-Cl-b93"/>
                                             <constraint firstItem="Dwc-tj-mY2" firstAttribute="leading" secondItem="4wh-ha-4nq" secondAttribute="trailing" id="Wuj-0v-1Fc"/>
                                             <constraint firstItem="dfZ-mh-Uba" firstAttribute="width" secondItem="fjN-aK-PeP" secondAttribute="width" id="Xc1-rg-aSO"/>
+                                            <constraint firstItem="pql-sk-nlY" firstAttribute="width" secondItem="IDf-f7-TCf" secondAttribute="width" id="YGj-mQ-JUC"/>
                                             <constraint firstItem="32j-1Y-Pzd" firstAttribute="leading" secondItem="O2a-Hm-JJm" secondAttribute="trailing" id="asT-ZR-LXu"/>
                                             <constraint firstItem="7E7-7j-Dat" firstAttribute="centerY" secondItem="JzE-h9-iEf" secondAttribute="centerY" id="atP-Jg-cBN"/>
                                             <constraint firstItem="DQC-5j-gWD" firstAttribute="top" secondItem="Jlm-uC-VMz" secondAttribute="top" id="blf-9g-b1i"/>
@@ -2574,6 +2554,7 @@
                                             <constraint firstItem="viz-jg-gFO" firstAttribute="height" secondItem="JzE-h9-iEf" secondAttribute="height" id="v5a-Ut-oXr"/>
                                             <constraint firstItem="bx7-u3-4GS" firstAttribute="leading" secondItem="XoC-j4-2aV" secondAttribute="trailing" id="vSg-Vl-8Qq"/>
                                             <constraint firstItem="DQC-5j-gWD" firstAttribute="top" secondItem="gg6-mG-9oV" secondAttribute="top" id="w4k-4g-xf4"/>
+                                            <constraint firstItem="006-qk-5qx" firstAttribute="width" secondItem="pql-sk-nlY" secondAttribute="width" id="wMk-tV-eJv"/>
                                             <constraint firstItem="DQC-5j-gWD" firstAttribute="leading" secondItem="Jlm-uC-VMz" secondAttribute="trailing" id="xOn-XY-6ac"/>
                                             <constraint firstItem="C8g-mt-mVb" firstAttribute="leading" secondItem="Dn9-cU-t8u" secondAttribute="trailing" id="xhU-Wq-5xZ"/>
                                             <constraint firstItem="C6l-iF-rLG" firstAttribute="centerY" secondItem="JzE-h9-iEf" secondAttribute="centerY" id="xrH-PH-f8X"/>
@@ -3126,10 +3107,11 @@
                             <constraint firstAttribute="bottom" secondItem="eMe-p2-imh" secondAttribute="bottom" id="3bw-fG-TIZ"/>
                             <constraint firstItem="DQC-5j-gWD" firstAttribute="width" secondItem="Bcp-rj-qSy" secondAttribute="width" multiplier="28:1366" id="4sQ-Jy-BHC"/>
                             <constraint firstItem="Wc3-Og-gVF" firstAttribute="height" secondItem="Bcp-rj-qSy" secondAttribute="height" multiplier="178:1000" id="5os-VR-1ac"/>
+                            <constraint firstItem="IDf-f7-TCf" firstAttribute="width" secondItem="Bcp-rj-qSy" secondAttribute="width" multiplier="24:1366" id="5r6-ec-42z"/>
                             <constraint firstAttribute="bottom" secondItem="o0U-9z-aao" secondAttribute="bottom" id="80s-s4-8UN"/>
                             <constraint firstItem="vzr-qh-cLh" firstAttribute="trailing" secondItem="Bcp-rj-qSy" secondAttribute="trailing" id="8CA-uS-KEl"/>
                             <constraint firstItem="yxa-Ew-apy" firstAttribute="centerY" secondItem="S3S-p5-kwV" secondAttribute="centerY" id="8QL-mg-Qxm"/>
-                            <constraint firstItem="YPR-F3-Qej" firstAttribute="width" secondItem="Bcp-rj-qSy" secondAttribute="width" id="A1u-mN-RGE"/>
+                            <constraint firstItem="YPR-F3-Qej" firstAttribute="width" secondItem="Bcp-rj-qSy" secondAttribute="width" multiplier="24:1366" id="A1u-mN-RGE"/>
                             <constraint firstItem="3EC-sO-rF0" firstAttribute="leading" secondItem="tec-47-C5m" secondAttribute="leading" id="Aut-8V-Cq7"/>
                             <constraint firstItem="S3S-p5-kwV" firstAttribute="width" secondItem="gqB-He-zfK" secondAttribute="width" id="Ceb-p5-Aji"/>
                             <constraint firstItem="vWE-a7-mpm" firstAttribute="width" secondItem="Bcp-rj-qSy" secondAttribute="width" multiplier="236:1366" id="FZ8-kX-1L5"/>
@@ -3160,6 +3142,7 @@
                             <constraint firstItem="BWO-vq-xY0" firstAttribute="trailing" secondItem="cGR-eH-SAd" secondAttribute="trailing" constant="-20" id="XbP-WV-ELb"/>
                             <constraint firstItem="S3S-p5-kwV" firstAttribute="centerX" secondItem="tec-47-C5m" secondAttribute="centerX" id="Y4J-uo-hnf"/>
                             <constraint firstItem="BWO-vq-xY0" firstAttribute="top" secondItem="cGR-eH-SAd" secondAttribute="top" constant="10" id="Yc3-KP-ZiX"/>
+                            <constraint firstItem="kn7-b1-7Mc" firstAttribute="width" secondItem="Bcp-rj-qSy" secondAttribute="width" multiplier="24:1366" id="aia-81-38O"/>
                             <constraint firstItem="gqB-He-zfK" firstAttribute="width" secondItem="Bcp-rj-qSy" secondAttribute="width" multiplier="541.5:1366" id="c55-se-KYE"/>
                             <constraint firstItem="39M-bi-zO3" firstAttribute="height" secondItem="Bcp-rj-qSy" secondAttribute="height" multiplier="99:1000" id="cBa-ne-B5C"/>
                             <constraint firstItem="vzr-qh-cLh" firstAttribute="top" secondItem="Bcp-rj-qSy" secondAttribute="top" id="cg6-iz-ox5"/>
@@ -3168,16 +3151,20 @@
                             <constraint firstItem="RFX-uM-4u9" firstAttribute="width" secondItem="Bcp-rj-qSy" secondAttribute="width" multiplier="27.5:1366" id="ed7-9d-dVF"/>
                             <constraint firstAttribute="bottom" secondItem="3EC-sO-rF0" secondAttribute="bottom" id="fXQ-3H-vSS"/>
                             <constraint firstItem="Wc3-Og-gVF" firstAttribute="trailing" secondItem="cGR-eH-SAd" secondAttribute="trailing" id="fdd-Xh-zmL"/>
+                            <constraint firstItem="f9C-Sv-wQH" firstAttribute="width" secondItem="Bcp-rj-qSy" secondAttribute="width" multiplier="78.5:1366" id="g7P-of-odK"/>
                             <constraint firstItem="Jlm-uC-VMz" firstAttribute="width" secondItem="Bcp-rj-qSy" secondAttribute="width" multiplier="75.5:1366" id="ha0-b8-WtB"/>
                             <constraint firstItem="JzE-h9-iEf" firstAttribute="trailing" secondItem="Wc3-Og-gVF" secondAttribute="leading" id="hz8-Ta-Hh7"/>
                             <constraint firstItem="JzE-h9-iEf" firstAttribute="height" secondItem="Bcp-rj-qSy" secondAttribute="height" multiplier="178:1000" id="hzY-1r-Ecc"/>
                             <constraint firstItem="o0U-9z-aao" firstAttribute="centerX" secondItem="tec-47-C5m" secondAttribute="centerX" id="iIL-Du-d8f"/>
+                            <constraint firstItem="BzG-gs-636" firstAttribute="width" secondItem="Bcp-rj-qSy" secondAttribute="width" multiplier="24.4:1366" id="iyr-zc-7yF"/>
+                            <constraint firstItem="k85-9x-VXt" firstAttribute="width" secondItem="Bcp-rj-qSy" secondAttribute="width" multiplier="25:1366" id="k3v-fi-m8T"/>
                             <constraint firstAttribute="bottom" secondItem="vWE-a7-mpm" secondAttribute="bottom" id="kBS-Ih-Cir"/>
                             <constraint firstItem="C6l-iF-rLG" firstAttribute="width" secondItem="Bcp-rj-qSy" secondAttribute="width" multiplier="30:1366" id="nxy-jN-hhV"/>
                             <constraint firstItem="COz-gC-a0h" firstAttribute="centerX" secondItem="tec-47-C5m" secondAttribute="centerX" id="qBS-nZ-EEL"/>
                             <constraint firstItem="gg6-mG-9oV" firstAttribute="width" secondItem="Bcp-rj-qSy" secondAttribute="width" multiplier="24.5:1366" id="qzr-bd-unW"/>
                             <constraint firstAttribute="trailing" secondItem="mrE-qH-7Xr" secondAttribute="trailing" id="sdT-mC-XvY"/>
                             <constraint firstItem="eMe-p2-imh" firstAttribute="top" secondItem="tec-47-C5m" secondAttribute="top" id="som-cL-5Se"/>
+                            <constraint firstItem="q14-ic-Ngg" firstAttribute="width" secondItem="Bcp-rj-qSy" secondAttribute="width" multiplier="27:1366" id="vfR-z0-hjF"/>
                             <constraint firstItem="S3S-p5-kwV" firstAttribute="centerY" secondItem="gqB-He-zfK" secondAttribute="centerY" id="wRX-nQ-zJB"/>
                             <constraint firstItem="gqB-He-zfK" firstAttribute="top" secondItem="COz-gC-a0h" secondAttribute="bottom" constant="-30" id="wyS-Tq-m7O"/>
                             <constraint firstItem="cGR-eH-SAd" firstAttribute="bottom" secondItem="S3S-p5-kwV" secondAttribute="bottom" constant="568" id="xFg-zs-VRa"/>
