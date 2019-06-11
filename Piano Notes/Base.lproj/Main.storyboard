@@ -1647,6 +1647,9 @@
                             </view>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="notes_on_staff_piano_background" translatesAutoresizingMaskIntoConstraints="NO" id="Bcp-rj-qSy" userLabel="piano_background">
                                 <rect key="frame" x="0.0" y="24" width="1366" height="1000"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Bcp-rj-qSy" secondAttribute="height" multiplier="683:500" id="BWY-Zs-bKG"/>
+                                </constraints>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.0" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vzr-qh-cLh" userLabel="piano_note">
                                 <rect key="frame" x="0.0" y="24" width="1366" height="1000"/>
@@ -2146,10 +2149,10 @@
                                                 <color key="backgroundColor" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </view>
                                             <stackView opaque="NO" alpha="0.55000001192092896" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="f9C-Sv-wQH" userLabel="2 Black Key Buttons Stack">
-                                                <rect key="frame" x="30" y="0.0" width="81.5" height="178"/>
+                                                <rect key="frame" x="30" y="0.0" width="78" height="178"/>
                                                 <subviews>
                                                     <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q14-ic-Ngg" userLabel="1 blackKeyButton">
-                                                        <rect key="frame" x="0.0" y="0.0" width="27" height="178"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="26" height="178"/>
                                                         <color key="backgroundColor" red="0.0" green="1" blue="0.52390272010000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <connections>
                                                             <action selector="keyButtonDraggedOutside:" destination="vCV-Es-ama" eventType="touchDragOutside" id="gSj-z9-Mt0"/>
@@ -2158,11 +2161,11 @@
                                                         </connections>
                                                     </button>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HoQ-hS-1NV" userLabel="spacer between 1st 2 black keys">
-                                                        <rect key="frame" x="27" y="0.0" width="27.5" height="178"/>
+                                                        <rect key="frame" x="26" y="0.0" width="26" height="178"/>
                                                         <color key="backgroundColor" red="0.6705882353" green="0.4823529412" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </view>
                                                     <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GgU-dJ-cv6" userLabel="2 blackKeyButton">
-                                                        <rect key="frame" x="54.5" y="0.0" width="27" height="178"/>
+                                                        <rect key="frame" x="52" y="0.0" width="26" height="178"/>
                                                         <color key="backgroundColor" red="0.0" green="1" blue="0.52390272010000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <connections>
                                                             <action selector="keyButtonDraggedOutside:" destination="vCV-Es-ama" eventType="touchDragOutside" id="NdL-MW-gla"/>
@@ -2173,11 +2176,11 @@
                                                 </subviews>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </stackView>
-                                            <stackView opaque="NO" alpha="0.55000001192092896" contentMode="scaleToFill" distribution="equalSpacing" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="xME-kU-jX8" userLabel="3 Black Key Buttons Stack">
-                                                <rect key="frame" x="156.5" y="0.0" width="135" height="178"/>
+                                            <stackView opaque="NO" alpha="0.55000001192092896" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="xME-kU-jX8" userLabel="3 Black Key Buttons Stack">
+                                                <rect key="frame" x="157" y="0.0" width="127" height="178"/>
                                                 <subviews>
                                                     <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k85-9x-VXt" userLabel="1 blackKeyButton">
-                                                        <rect key="frame" x="0.0" y="0.0" width="25" height="178"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="25.5" height="178"/>
                                                         <color key="backgroundColor" red="0.0" green="1" blue="0.52390272010000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <connections>
                                                             <action selector="keyButtonDraggedOutside:" destination="vCV-Es-ama" eventType="touchDragOutside" id="k9i-aa-ZDk"/>
@@ -2185,8 +2188,12 @@
                                                             <action selector="keyButtonTouchUpInside:" destination="vCV-Es-ama" eventType="touchUpInside" id="oLI-iL-QeX"/>
                                                         </connections>
                                                     </button>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1zC-0l-hvh" userLabel="spacer between 1st 2 black keys">
+                                                        <rect key="frame" x="25.5" y="0.0" width="25.5" height="178"/>
+                                                        <color key="backgroundColor" red="0.6705882353" green="0.4823529412" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </view>
                                                     <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F6p-pK-oNR" userLabel="2 blackKeyButton">
-                                                        <rect key="frame" x="50" y="0.0" width="30" height="178"/>
+                                                        <rect key="frame" x="51" y="0.0" width="25" height="178"/>
                                                         <color key="backgroundColor" red="0.0" green="1" blue="0.52390272010000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <connections>
                                                             <action selector="keyButtonDraggedOutside:" destination="vCV-Es-ama" eventType="touchDragOutside" id="V51-kN-pAO"/>
@@ -2194,8 +2201,12 @@
                                                             <action selector="keyButtonTouchUpInside:" destination="vCV-Es-ama" eventType="touchUpInside" id="aBM-cc-g6z"/>
                                                         </connections>
                                                     </button>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hGw-0l-wwb" userLabel="spacer between 1st 2 black keys">
+                                                        <rect key="frame" x="76" y="0.0" width="25.5" height="178"/>
+                                                        <color key="backgroundColor" red="0.6705882353" green="0.4823529412" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </view>
                                                     <button opaque="NO" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8wK-ua-X0r" userLabel="3 blackKeyButton">
-                                                        <rect key="frame" x="105" y="0.0" width="30" height="178"/>
+                                                        <rect key="frame" x="101.5" y="0.0" width="25.5" height="178"/>
                                                         <color key="backgroundColor" red="0.0" green="1" blue="0.52390272010000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <connections>
                                                             <action selector="keyButtonDraggedOutside:" destination="vCV-Es-ama" eventType="touchDragOutside" id="WaL-Zx-QsO"/>
@@ -2206,11 +2217,15 @@
                                                 </subviews>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </stackView>
-                                            <stackView opaque="NO" alpha="0.0" contentMode="scaleToFill" ambiguous="YES" distribution="equalSpacing" spacing="27.5" translatesAutoresizingMaskIntoConstraints="NO" id="Faj-B9-S4K" userLabel="2 Black Key Buttons Stack">
-                                                <rect key="frame" x="345.5" y="0.0" width="81.5" height="178"/>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qlh-Fd-lM9" userLabel="spacer between 3 and 2 #1">
+                                                <rect key="frame" x="284" y="0.0" width="50" height="178"/>
+                                                <color key="backgroundColor" red="0.1552500104" green="0.4241788319" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </view>
+                                            <stackView opaque="NO" alpha="0.55000000000000004" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Faj-B9-S4K" userLabel="2 Black Key Buttons Stack">
+                                                <rect key="frame" x="334" y="0.0" width="80" height="178"/>
                                                 <subviews>
                                                     <button opaque="NO" tag="13" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kn7-b1-7Mc" userLabel="1 blackKeyButton">
-                                                        <rect key="frame" x="0.0" y="0.0" width="24" height="178"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="26.5" height="178"/>
                                                         <color key="backgroundColor" red="0.0" green="1" blue="0.52390272010000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <connections>
                                                             <action selector="keyButtonDraggedOutside:" destination="vCV-Es-ama" eventType="touchDragOutside" id="VRc-5L-md8"/>
@@ -2218,8 +2233,12 @@
                                                             <action selector="keyButtonTouchUpInside:" destination="vCV-Es-ama" eventType="touchUpInside" id="z4r-Qo-Cck"/>
                                                         </connections>
                                                     </button>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fp8-Xd-rtj" userLabel="spacer between 2nd 2 black keys">
+                                                        <rect key="frame" x="26.5" y="0.0" width="27" height="178"/>
+                                                        <color key="backgroundColor" red="0.6705882353" green="0.4823529412" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </view>
                                                     <button opaque="NO" tag="15" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="443-7C-8by" userLabel="2 blackKeyButton">
-                                                        <rect key="frame" x="51.5" y="0.0" width="30" height="178"/>
+                                                        <rect key="frame" x="53.5" y="0.0" width="26.5" height="178"/>
                                                         <color key="backgroundColor" red="0.0" green="1" blue="0.52390272010000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <connections>
                                                             <action selector="keyButtonDraggedOutside:" destination="vCV-Es-ama" eventType="touchDragOutside" id="bFU-LN-bEF"/>
@@ -2397,28 +2416,33 @@
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </stackView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kh6-Xd-pbl" userLabel="spacer between 2 and 3 #1">
-                                                <rect key="frame" x="111.5" y="0.0" width="45" height="178"/>
+                                                <rect key="frame" x="108" y="0.0" width="49" height="178"/>
                                                 <color key="backgroundColor" red="0.1552500104" green="0.4241788319" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </view>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
+                                            <constraint firstItem="Faj-B9-S4K" firstAttribute="leading" secondItem="qlh-Fd-lM9" secondAttribute="trailing" id="307-yj-hiF"/>
                                             <constraint firstItem="xME-kU-jX8" firstAttribute="centerY" secondItem="JzE-h9-iEf" secondAttribute="centerY" id="3Hs-Kn-Hdi"/>
                                             <constraint firstItem="Dwc-tj-mY2" firstAttribute="height" secondItem="JzE-h9-iEf" secondAttribute="height" id="73T-rb-2df"/>
                                             <constraint firstItem="xME-kU-jX8" firstAttribute="height" secondItem="JzE-h9-iEf" secondAttribute="height" id="EBh-ZR-ppt"/>
                                             <constraint firstItem="Kh6-Xd-pbl" firstAttribute="top" secondItem="JzE-h9-iEf" secondAttribute="top" id="ExQ-Jr-bEx"/>
                                             <constraint firstItem="viz-jg-gFO" firstAttribute="height" secondItem="JzE-h9-iEf" secondAttribute="height" id="Fhs-yr-Ee9"/>
+                                            <constraint firstItem="qlh-Fd-lM9" firstAttribute="top" secondItem="JzE-h9-iEf" secondAttribute="top" id="FlW-5m-m74"/>
                                             <constraint firstItem="Faj-B9-S4K" firstAttribute="height" secondItem="JzE-h9-iEf" secondAttribute="height" id="GbB-n0-ffg"/>
                                             <constraint firstItem="85n-02-024" firstAttribute="centerY" secondItem="JzE-h9-iEf" secondAttribute="centerY" id="TVl-e3-xG5"/>
                                             <constraint firstItem="Kh6-Xd-pbl" firstAttribute="leading" secondItem="f9C-Sv-wQH" secondAttribute="trailing" id="am2-OZ-SVt"/>
+                                            <constraint firstItem="qlh-Fd-lM9" firstAttribute="height" secondItem="JzE-h9-iEf" secondAttribute="height" id="bF1-WI-8zn"/>
                                             <constraint firstItem="85n-02-024" firstAttribute="leading" secondItem="JzE-h9-iEf" secondAttribute="leading" id="bbZ-QI-5UF"/>
                                             <constraint firstItem="9hz-6H-Pwm" firstAttribute="height" secondItem="JzE-h9-iEf" secondAttribute="height" id="d42-LO-F9Y"/>
                                             <constraint firstItem="f9C-Sv-wQH" firstAttribute="height" secondItem="JzE-h9-iEf" secondAttribute="height" id="e4R-sh-c2d"/>
                                             <constraint firstItem="Jlm-uC-VMz" firstAttribute="height" secondItem="JzE-h9-iEf" secondAttribute="height" id="gf2-of-ca6"/>
                                             <constraint firstItem="f9C-Sv-wQH" firstAttribute="leading" secondItem="85n-02-024" secondAttribute="trailing" id="hWI-SX-KNZ"/>
+                                            <constraint firstItem="Faj-B9-S4K" firstAttribute="centerY" secondItem="JzE-h9-iEf" secondAttribute="centerY" id="i4C-ES-fIC"/>
                                             <constraint firstItem="Kh6-Xd-pbl" firstAttribute="height" secondItem="JzE-h9-iEf" secondAttribute="height" id="izp-ep-X7x"/>
                                             <constraint firstItem="XoC-j4-2aV" firstAttribute="height" secondItem="JzE-h9-iEf" secondAttribute="height" id="oXj-np-xeF"/>
                                             <constraint firstItem="85n-02-024" firstAttribute="height" secondItem="JzE-h9-iEf" secondAttribute="height" id="oa3-9c-c52"/>
+                                            <constraint firstItem="qlh-Fd-lM9" firstAttribute="leading" secondItem="xME-kU-jX8" secondAttribute="trailing" id="p9a-rr-yUO"/>
                                             <constraint firstItem="xME-kU-jX8" firstAttribute="leading" secondItem="Kh6-Xd-pbl" secondAttribute="trailing" id="pHZ-Od-f5Q"/>
                                             <constraint firstItem="f9C-Sv-wQH" firstAttribute="centerY" secondItem="JzE-h9-iEf" secondAttribute="centerY" id="uTW-Ng-XQh"/>
                                             <constraint firstItem="C8g-mt-mVb" firstAttribute="height" secondItem="JzE-h9-iEf" secondAttribute="height" id="wOU-A8-1aD"/>
@@ -2947,11 +2971,8 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="o0U-9z-aao" userLabel="between bottom and white keys">
-                                <rect key="frame" x="563" y="901" width="240" height="123"/>
+                                <rect key="frame" x="595" y="901" width="176" height="123"/>
                                 <color key="backgroundColor" red="0.66445907360000001" green="0.1932173355" blue="0.5121985993" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="240" id="Er9-4L-bO5"/>
-                                </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vWE-a7-mpm" userLabel="between edge and score">
                                 <rect key="frame" x="0.0" y="922.5" width="236" height="101.5"/>
@@ -2962,6 +2983,7 @@
                         <constraints>
                             <constraint firstItem="3EC-sO-rF0" firstAttribute="trailing" secondItem="cGR-eH-SAd" secondAttribute="trailing" id="0R4-L3-LXC"/>
                             <constraint firstItem="COz-gC-a0h" firstAttribute="width" secondItem="cGR-eH-SAd" secondAttribute="width" multiplier="0.6773" id="0ZX-ju-Pqs"/>
+                            <constraint firstItem="qlh-Fd-lM9" firstAttribute="width" secondItem="tec-47-C5m" secondAttribute="width" multiplier="50:1366" id="2fK-bg-hXN"/>
                             <constraint firstItem="gqB-He-zfK" firstAttribute="centerX" secondItem="tec-47-C5m" secondAttribute="centerX" constant="-20" id="2xj-8p-iV2"/>
                             <constraint firstAttribute="bottom" secondItem="eMe-p2-imh" secondAttribute="bottom" id="3bw-fG-TIZ"/>
                             <constraint firstItem="nSr-W9-D5Q" firstAttribute="top" secondItem="3HW-Id-xXV" secondAttribute="bottom" id="4Id-uI-bs9"/>
@@ -2975,28 +2997,31 @@
                             <constraint firstItem="3EC-sO-rF0" firstAttribute="leading" secondItem="tec-47-C5m" secondAttribute="leading" id="Aut-8V-Cq7"/>
                             <constraint firstItem="S3S-p5-kwV" firstAttribute="width" secondItem="gqB-He-zfK" secondAttribute="width" id="Ceb-p5-Aji"/>
                             <constraint firstItem="S3S-p5-kwV" firstAttribute="top" secondItem="Yns-Qx-CKC" secondAttribute="bottom" id="CkM-2u-7Kg"/>
+                            <constraint firstItem="Faj-B9-S4K" firstAttribute="width" secondItem="tec-47-C5m" secondAttribute="width" multiplier="80:1366" id="Duw-er-J6F"/>
                             <constraint firstItem="85n-02-024" firstAttribute="width" secondItem="tec-47-C5m" secondAttribute="width" multiplier="30:1366" id="FRX-QU-nd0"/>
                             <constraint firstItem="vWE-a7-mpm" firstAttribute="width" secondItem="Bcp-rj-qSy" secondAttribute="width" multiplier="236:1366" id="FZ8-kX-1L5"/>
                             <constraint firstItem="mrE-qH-7Xr" firstAttribute="leading" secondItem="tec-47-C5m" secondAttribute="leading" id="H9d-L1-Ima"/>
                             <constraint firstItem="yxa-Ew-apy" firstAttribute="leading" secondItem="S3S-p5-kwV" secondAttribute="trailing" constant="-30" id="HQV-lz-RVK"/>
                             <constraint firstItem="3HW-Id-xXV" firstAttribute="top" secondItem="tec-47-C5m" secondAttribute="top" id="HfR-NG-ybX"/>
                             <constraint firstItem="vWE-a7-mpm" firstAttribute="leading" secondItem="tec-47-C5m" secondAttribute="leading" id="Hug-QB-r1v"/>
-                            <constraint firstItem="o0U-9z-aao" firstAttribute="height" secondItem="Bcp-rj-qSy" secondAttribute="height" multiplier="123:1000" id="I4O-zU-VGa"/>
                             <constraint firstItem="39M-bi-zO3" firstAttribute="bottom" secondItem="o0U-9z-aao" secondAttribute="top" id="IOa-1Q-vXR"/>
                             <constraint firstItem="yxa-Ew-apy" firstAttribute="height" secondItem="246-8n-5LY" secondAttribute="height" id="InU-DQ-qtD"/>
                             <constraint firstItem="Hmf-ec-sG9" firstAttribute="leading" secondItem="vWE-a7-mpm" secondAttribute="trailing" id="JGh-Pq-Iau"/>
                             <constraint firstItem="vzr-qh-cLh" firstAttribute="bottom" secondItem="Bcp-rj-qSy" secondAttribute="bottom" id="JPf-yJ-fLc"/>
+                            <constraint firstItem="o0U-9z-aao" firstAttribute="height" secondItem="tec-47-C5m" secondAttribute="height" multiplier="123:1024" id="K17-Hp-IIU"/>
                             <constraint firstItem="S3S-p5-kwV" firstAttribute="centerY" secondItem="246-8n-5LY" secondAttribute="centerY" id="KFd-sa-GQU"/>
                             <constraint firstItem="246-8n-5LY" firstAttribute="trailing" secondItem="S3S-p5-kwV" secondAttribute="leading" id="Ldv-QP-sFw"/>
                             <constraint firstItem="vWE-a7-mpm" firstAttribute="height" secondItem="3EC-sO-rF0" secondAttribute="height" id="M14-KH-MbX"/>
                             <constraint firstItem="mrE-qH-7Xr" firstAttribute="height" secondItem="Bcp-rj-qSy" secondAttribute="height" multiplier="321.5:1000" id="MW4-Tz-fXP"/>
                             <constraint firstItem="gqB-He-zfK" firstAttribute="height" secondItem="Bcp-rj-qSy" secondAttribute="height" multiplier="1:2" id="MXv-ra-sZ4"/>
+                            <constraint firstItem="o0U-9z-aao" firstAttribute="width" secondItem="tec-47-C5m" secondAttribute="width" multiplier="176.1:1366" id="NZw-8g-J8M"/>
                             <constraint firstItem="Q0v-F4-hoG" firstAttribute="width" secondItem="Bcp-rj-qSy" secondAttribute="width" multiplier="5:1366" id="NcM-GH-a27"/>
                             <constraint firstItem="39M-bi-zO3" firstAttribute="width" secondItem="Bcp-rj-qSy" secondAttribute="width" id="OCA-Yp-RZV"/>
                             <constraint firstItem="nSr-W9-D5Q" firstAttribute="height" secondItem="tec-47-C5m" secondAttribute="height" multiplier="27:1024" id="P83-Ss-899"/>
                             <constraint firstItem="Bcp-rj-qSy" firstAttribute="bottom" secondItem="tec-47-C5m" secondAttribute="bottom" id="PYA-r2-1Op"/>
                             <constraint firstItem="Bcp-rj-qSy" firstAttribute="trailing" secondItem="cGR-eH-SAd" secondAttribute="trailing" id="QPH-6d-rYL"/>
                             <constraint firstItem="JzE-h9-iEf" firstAttribute="top" secondItem="Wc3-Og-gVF" secondAttribute="top" id="QcJ-yz-UtQ"/>
+                            <constraint firstItem="xME-kU-jX8" firstAttribute="width" secondItem="tec-47-C5m" secondAttribute="width" multiplier="127:1366" id="R9V-nI-6iZ"/>
                             <constraint firstItem="eMe-p2-imh" firstAttribute="width" secondItem="cGR-eH-SAd" secondAttribute="width" multiplier="1:3" id="SFF-oj-TJW"/>
                             <constraint firstItem="eMe-p2-imh" firstAttribute="trailing" secondItem="cGR-eH-SAd" secondAttribute="trailing" id="SNJ-Uq-nXg"/>
                             <constraint firstItem="nSr-W9-D5Q" firstAttribute="centerX" secondItem="tec-47-C5m" secondAttribute="centerX" id="UtU-2M-2jD"/>
@@ -3005,16 +3030,15 @@
                             <constraint firstItem="BWO-vq-xY0" firstAttribute="trailing" secondItem="cGR-eH-SAd" secondAttribute="trailing" constant="-20" id="XbP-WV-ELb"/>
                             <constraint firstItem="S3S-p5-kwV" firstAttribute="centerX" secondItem="tec-47-C5m" secondAttribute="centerX" id="Y4J-uo-hnf"/>
                             <constraint firstItem="BWO-vq-xY0" firstAttribute="top" secondItem="cGR-eH-SAd" secondAttribute="top" constant="10" id="Yc3-KP-ZiX"/>
-                            <constraint firstItem="f9C-Sv-wQH" firstAttribute="width" secondItem="tec-47-C5m" secondAttribute="width" multiplier="81.5:1366" id="a0P-Je-tuW"/>
+                            <constraint firstItem="f9C-Sv-wQH" firstAttribute="width" secondItem="tec-47-C5m" secondAttribute="width" multiplier="78:1366" id="a0P-Je-tuW"/>
                             <constraint firstItem="cGR-eH-SAd" firstAttribute="trailing" secondItem="nSr-W9-D5Q" secondAttribute="trailing" id="aI2-tN-diP"/>
                             <constraint firstItem="nSr-W9-D5Q" firstAttribute="leading" secondItem="cGR-eH-SAd" secondAttribute="leading" id="acO-Tb-8HA"/>
-                            <constraint firstItem="kn7-b1-7Mc" firstAttribute="width" secondItem="Bcp-rj-qSy" secondAttribute="width" multiplier="24:1366" id="aia-81-38O"/>
                             <constraint firstItem="gqB-He-zfK" firstAttribute="width" secondItem="Bcp-rj-qSy" secondAttribute="width" multiplier="541.5:1366" id="c55-se-KYE"/>
                             <constraint firstItem="39M-bi-zO3" firstAttribute="height" secondItem="Bcp-rj-qSy" secondAttribute="height" multiplier="99:1000" id="cBa-ne-B5C"/>
                             <constraint firstItem="vzr-qh-cLh" firstAttribute="top" secondItem="Bcp-rj-qSy" secondAttribute="top" id="cg6-iz-ox5"/>
                             <constraint firstItem="Bcp-rj-qSy" firstAttribute="leading" secondItem="cGR-eH-SAd" secondAttribute="leading" id="cyA-SK-TZb"/>
                             <constraint firstItem="Yns-Qx-CKC" firstAttribute="centerX" secondItem="tec-47-C5m" secondAttribute="centerX" id="dBy-Yx-ZbW"/>
-                            <constraint firstItem="Kh6-Xd-pbl" firstAttribute="width" secondItem="tec-47-C5m" secondAttribute="width" multiplier="45:1366" id="dvX-9j-Skv"/>
+                            <constraint firstItem="Kh6-Xd-pbl" firstAttribute="width" secondItem="tec-47-C5m" secondAttribute="width" multiplier="49:1366" id="dvX-9j-Skv"/>
                             <constraint firstItem="mrE-qH-7Xr" firstAttribute="bottom" secondItem="3EC-sO-rF0" secondAttribute="top" id="eCx-5X-9LU"/>
                             <constraint firstItem="3HW-Id-xXV" firstAttribute="centerX" secondItem="tec-47-C5m" secondAttribute="centerX" id="eWj-NN-TFX"/>
                             <constraint firstItem="Yns-Qx-CKC" firstAttribute="leading" secondItem="tec-47-C5m" secondAttribute="leading" id="eih-71-P8c"/>
@@ -3028,7 +3052,6 @@
                             <constraint firstItem="gqB-He-zfK" firstAttribute="top" secondItem="nSr-W9-D5Q" secondAttribute="bottom" id="iu5-UW-Clq"/>
                             <constraint firstItem="BzG-gs-636" firstAttribute="width" secondItem="Bcp-rj-qSy" secondAttribute="width" multiplier="24.4:1366" id="iyr-zc-7yF"/>
                             <constraint firstItem="COz-gC-a0h" firstAttribute="top" secondItem="3HW-Id-xXV" secondAttribute="bottom" id="ja5-dx-177"/>
-                            <constraint firstItem="k85-9x-VXt" firstAttribute="width" secondItem="Bcp-rj-qSy" secondAttribute="width" multiplier="25:1366" id="k3v-fi-m8T"/>
                             <constraint firstAttribute="bottom" secondItem="vWE-a7-mpm" secondAttribute="bottom" id="kBS-Ih-Cir"/>
                             <constraint firstItem="COz-gC-a0h" firstAttribute="centerX" secondItem="tec-47-C5m" secondAttribute="centerX" id="qBS-nZ-EEL"/>
                             <constraint firstItem="Yns-Qx-CKC" firstAttribute="top" secondItem="nSr-W9-D5Q" secondAttribute="bottom" id="rSa-iA-jnH"/>
