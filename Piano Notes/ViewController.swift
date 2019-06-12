@@ -523,12 +523,12 @@ class ViewController: UIViewController {
     }
     
 //    override func viewDidAppear(_ animated: Bool) {
-//        
+//
 //        let navBar = self.navigationController?.navigationBar
-//        
+//
 //        navBar?.isHidden = true
 //        //        navBar?.backgroundColor = UIColor.red
-//        
+//
 //    }
     
     func startNewRound() {

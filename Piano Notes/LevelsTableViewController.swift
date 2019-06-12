@@ -22,14 +22,14 @@ class LevelsTableViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        
-        let navBar = self.navigationController?.navigationBar
-        
-//        navBar?.isTranslucent = true
-        navBar?.backgroundColor = UIColor.init(red: 0, green: 0, blue: 0, alpha: 1)
-        
-    }
+//    override func viewDidAppear(_ animated: Bool) {
+//        
+//        let navBar = self.navigationController?.navigationBar
+//        
+////        navBar?.isTranslucent = true
+//        navBar?.backgroundColor = UIColor.init(red: 0, green: 0, blue: 0, alpha: 1)
+//        
+//    }
 
     // MARK: - Table view data source
 
