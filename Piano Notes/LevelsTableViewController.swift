@@ -21,6 +21,15 @@ class LevelsTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        
+        let navBar = self.navigationController?.navigationBar
+        
+//        navBar?.isTranslucent = true
+        navBar?.backgroundColor = UIColor.init(red: 0, green: 0, blue: 0, alpha: 1)
+        
+    }
 
     // MARK: - Table view data source
 
