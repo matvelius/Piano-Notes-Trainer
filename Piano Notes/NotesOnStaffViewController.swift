@@ -234,14 +234,19 @@ class NotesOnStaffViewController: UIViewController {
     
     
     @IBAction func onlyMnemonicsSwitchFlipped(_ sender: UISwitch) {
+        if !sender.isOn {
+            setToOnlyMnemonics()
+        } else {
+//            
+        }
     }
     
     @IBOutlet weak var onlyMnemonicsSwitchOutlet: UISwitch!
     
-    @IBAction func onlyMnemonicsSegmentedControl(_ sender: UISegmentedControl) {
-    }
-    
-    @IBOutlet weak var onlyMnemonicsSegmentedControlOutlet: UISegmentedControl!
+//    @IBAction func onlyMnemonicsSegmentedControl(_ sender: UISegmentedControl) {
+//    }
+//    
+//    @IBOutlet weak var onlyMnemonicsSegmentedControlOutlet: UISegmentedControl!
     
     @IBAction func enableSoundsSwitchFlipped(_ sender: UISwitch) {
         if !sender.isOn {
@@ -255,6 +260,11 @@ class NotesOnStaffViewController: UIViewController {
     
     
     @IBAction func reEnableExplainersSwitchFlipped(_ sender: UISwitch) {
+        if !sender.isOn {
+            explainersEnabled = false
+        } else {
+            explainersEnabled = true
+        }
     }
     
     
@@ -277,12 +287,24 @@ class NotesOnStaffViewController: UIViewController {
         currentAccidental = .neither
         updateNoteOnStaffImage(optionalImageName: nil)
         
-        generateNewNote()
+        
         
         scoreLabelOutlet.text = "0"
         
         menuContainerOutlet.alpha = 0
         menuTrailingConstraint.constant = 460
+        
+        // TODO: - Change this depending on level
+//        currentNoteChoices = allNotesOnLargeKeyboard
+//        setRandomNewNoteUpperIndex()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        currentNoteChoices = Level.currentLevel.noteChoices
+        print("currentNoteChoices: \(currentNoteChoices)")
+        setRandomNewNoteUpperIndex()
+        
+        generateNewNote()
     }
     
     var locationTracker: Double = Double(whiteNotesOnLargeKeyboard.count / 2) {
@@ -470,8 +492,7 @@ class NotesOnStaffViewController: UIViewController {
         
 //        if currentGameMode == .A {
 
-        currentNoteChoices = allNotesOnLargeKeyboard
-        setRandomNewNoteUpperIndex()
+        
         generateNewRandomNoteIndex()
         currentCorrectAnswer = currentNoteChoices[randomNewNoteIndex]
         print("currentNoteChoices[randomNewNoteIndex]: \(currentCorrectAnswer)")

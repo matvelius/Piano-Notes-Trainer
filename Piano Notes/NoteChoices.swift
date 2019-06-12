@@ -55,10 +55,13 @@ let onlyACEG = ["A2", "C3", "E3", "G3"]
 let onlyGBDFA = ["G2", "B2", "D3", "F3", "A3"]
 let onlyBassClefMnemonics = onlyACEG + onlyGBDFA
 
+// all mnemonics
+let allMnemonics = onlyTrebleClefMnemonics + onlyBassClefMnemonics
 
 
 
-// LEVEL SWITCHES
+
+// LEVEL-RELATED SWITCHES
 var allNoteChoicesEnabled = false
 var onlyWhiteKeysEnabled = true
 var onlyBlackKeysEnabled = false
@@ -194,6 +197,13 @@ func setToOnlyWeirdEnharmonics() {
     currentNoteChoices = onlyWeirdEnharmonics
     setRandomNewNoteUpperIndex()
 }
+
+// TODO: - FIGURE OUT NOTE CHOICE LOGIC
+func setToOnlyMnemonics() {
+    currentNoteChoices = allMnemonics
+    setRandomNewNoteUpperIndex()
+}
+
 
 func setRandomNewNoteUpperIndex() {
     randomNewNoteIndexUpperLimit = currentNoteChoices.count - 1

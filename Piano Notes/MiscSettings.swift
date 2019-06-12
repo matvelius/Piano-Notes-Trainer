@@ -11,5 +11,6 @@ import AVFoundation
 
 // instance variable to hold the AVAudioPlayer object
 var audioPlayer: AVAudioPlayer?
-
 var soundsEnabled = true
+
+

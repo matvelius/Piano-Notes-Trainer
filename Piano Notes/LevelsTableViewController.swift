@@ -79,7 +79,7 @@ class LevelsTableViewController: UITableViewController {
             
             performSegue(withIdentifier: "segueToNotesOnStaff", sender: nil)
             
-        } else if explainersOn {
+        } else if explainersEnabled {
         
             performSegue(withIdentifier: "segueToExplainers", sender: nil)
             

@@ -263,6 +263,11 @@ class ViewController: UIViewController {
     }
     
     @IBAction func reEnableExplainersSwitch(_ sender: UISwitch) {
+        if !sender.isOn {
+            explainersEnabled = false
+        } else {
+            explainersEnabled = true
+        }
     }
     
     @IBOutlet var panGestureRecognizersCollection: [UIPanGestureRecognizer]!
