@@ -32,7 +32,7 @@ let basicNoteNamesOnlyFGAB = ["F", "G", "A", "B"]
 let basicNoteNamesOnlyWeirdEnharmonics = ["B", "C", "E", "F"]
 
 // LARGE KEYBOARD -- DEAL WITH C4 AMBIGUITY!
-let whiteNotesOnLargeKeyboard = ["C2", "D2", "E2", "F2", "G2", "A2", "B2", "C3", "D3", "E3", "F3", "G3", "A3", "B3", "C4", "D4", "E4", "F4", "G4", "A4", "B4", "C5", "D5", "E5", "F5", "G5", "A5", "B5", "C6"]
+let whiteNotesOnLargeKeyboard = ["C2", "D2", "E2", "F2", "G2", "A2", "B2", "C3", "D3", "E3", "F3", "G3", "A3", "B3", "C4bass", "C4", "D4", "E4", "F4", "G4", "A4", "B4", "C5", "D5", "E5", "F5", "G5", "A5", "B5", "C6"]
 
 let blackNotesOnLargeKeyboard = ["C#2", "D#2", "F#2", "G#2", "A#2", "C#3", "D#3", "F#3", "G#3", "A#3", "C#4", "D#4", "F#4", "G#4", "A#4", "C#5", "D#5", "F#5", "G#5", "A#5", "C#6"]
 
@@ -43,7 +43,7 @@ let onlyTrebleClefBlackNotes = ["C#4", "D#4", "F#4", "G#4", "A#4", "C#5", "D#5",
 let onlyBassClefWhiteNotes = ["C2", "D2", "E2", "F2", "G2", "A2", "B2", "C3", "D3", "E3", "F3", "G3", "A3", "B3", "C4bass"]
 let onlyBassClefBlackNotes = ["C#2", "D#2", "F#2", "G#2", "A#2", "C#3", "D#3", "F#3", "G#3", "A#3", "C#4bass"]
 
-let onlyGuideNotes = ["F3", "C4", "G4"]
+let onlyGuideNotes = ["F3", "C4", "C4bass", "G4"]
 
 // treble clef mnemonics
 let onlyFACE = ["F4", "A4", "C5", "E5"]

@@ -113,7 +113,7 @@ class NotesOnStaffViewController: UIViewController {
     
     @IBAction func checkButtonPressed(_ sender: UIButton) {
         userAnswer = currentNoteOnStaffImageName
-        print(userAnswer)
+        print("userAnswer: \(userAnswer)")
         checkAnswer()
         
         // generate new note; be sure to reset the accidental!
@@ -335,6 +335,16 @@ class NotesOnStaffViewController: UIViewController {
         
         print("currentNoteOnStaffImageName: \(currentNoteOnStaffImageName)")
         
+        if currentCorrectAnswer == "C4bass" {
+            currentCorrectAnswer = "C4"
+        }
+        
+        print("going into checkAnswer, currentNoteOnStaffImageName is: \(currentNoteOnStaffImageName)")
+        if currentNoteOnStaffImageName.hasSuffix("bass") {
+            currentNoteOnStaffImageName.removeLast(4)
+            print("and now, currentNoteOnStaffImageName is: \(currentNoteOnStaffImageName)")
+        }
+        
         currentUserAnswer = currentAccidental == .neither ? String(currentNoteOnStaffImageName.suffix(2)) : String(currentNoteOnStaffImageName.suffix(3))
         print("currentUserAnswer: \(currentUserAnswer)")
         
@@ -498,7 +508,11 @@ class NotesOnStaffViewController: UIViewController {
         print("currentNoteChoices[randomNewNoteIndex]: \(currentCorrectAnswer)")
         lastRandomNumber = randomNewNoteIndex
         
-        pianoNoteDisplayed.image = UIImage(named: "large_\(currentCorrectAnswer)_shown")
+        if currentCorrectAnswer == "C4bass" {
+            pianoNoteDisplayed.image = UIImage(named: "large_C4_shown")
+        } else {
+            pianoNoteDisplayed.image = UIImage(named: "large_\(currentCorrectAnswer)_shown")
+        }
         
 //        // remove notes marked wrong
 //        if !notesAlreadyAttempted.isEmpty {
