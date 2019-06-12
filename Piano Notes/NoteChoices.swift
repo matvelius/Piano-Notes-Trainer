@@ -44,6 +44,9 @@ let onlyBassClefWhiteNotes = ["C2", "D2", "E2", "F2", "G2", "A2", "B2", "C3", "D
 let onlyBassClefBlackNotes = ["C#2", "D#2", "F#2", "G#2", "A#2", "C#3", "D#3", "F#3", "G#3", "A#3", "C#4bass"]
 
 let onlyGuideNotes = ["F3", "C4", "C4bass", "G4"]
+let onlyMiddleCToTrebleG = ["C4", "D4", "E4", "F4", "G4"]
+let onlyBassFToMiddleC = ["F3", "G3", "A3", "B3", "C4bass"]
+
 
 // treble clef mnemonics
 let onlyFACE = ["F4", "A4", "C5", "E5"]

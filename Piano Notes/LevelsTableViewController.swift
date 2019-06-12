@@ -75,7 +75,7 @@ class LevelsTableViewController: UITableViewController {
         Level.currentLevel = allLevels[indexPath.section][indexPath.row]
         
         
-        if Level.currentLevel.id == 8 {
+        if Level.currentLevel.id >= 8 {
             
             performSegue(withIdentifier: "segueToNotesOnStaff", sender: nil)
             
