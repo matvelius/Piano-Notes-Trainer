@@ -11,10 +11,6 @@ import AVFoundation
 
 class NotesOnStaffViewController: UIViewController {
     
-    // instance variable to hold the AVAudioPlayer object
-    var audioPlayer: AVAudioPlayer?
-    
-    var soundsEnabled = true
     
     @IBOutlet weak var noteOnStaffImage: UIImageView!
     
@@ -248,6 +244,11 @@ class NotesOnStaffViewController: UIViewController {
     @IBOutlet weak var onlyMnemonicsSegmentedControlOutlet: UISegmentedControl!
     
     @IBAction func enableSoundsSwitchFlipped(_ sender: UISwitch) {
+        if !sender.isOn {
+            soundsEnabled = false
+        } else {
+            soundsEnabled = true
+        }
     }
     
     @IBOutlet weak var enableSoundsSwitchOutlet: UISwitch!

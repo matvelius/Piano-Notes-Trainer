@@ -15,8 +15,8 @@ import AVFoundation
 
 class ViewController: UIViewController {
     
-    // instance variable to hold the AVAudioPlayer object
-    var audioPlayer: AVAudioPlayer?
+//    // instance variable to hold the AVAudioPlayer object
+//    var audioPlayer: AVAudioPlayer?
     
     // placeholder variables for comparing answers
     var currentCorrectAnswer = ""
@@ -252,10 +252,10 @@ class ViewController: UIViewController {
         
     }
     
-    var soundsEnabled = true
+//    var soundsEnabled = true
     
     @IBAction func enableSoundsSwitch(_ sender: UISwitch) {
-        if sender.isOn {
+        if !sender.isOn {
             soundsEnabled = false
         } else {
             soundsEnabled = true
