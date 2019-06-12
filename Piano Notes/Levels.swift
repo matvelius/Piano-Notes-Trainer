@@ -30,4 +30,4 @@ let level6 = Level(id: 6, title: "Level 6:", subtitle: "Weird enharmonics", imag
 let level7 = Level(id: 7, title: "Level 7:", subtitle: "Putting it all together!", imageName: "level7", noteChoices: allNoteChoices)
 let level8 = Level(id: 8, title: "Level 8:", subtitle: "Welcome to the grand staff: Guide Notes", imageName: "level1", noteChoices: onlyGuideNotes)
 
-let allLevels = [level1, level2, level3, level4, level5, level6, level7, level8]
+let allLevels = [[level1, level2, level3, level4, level5, level6, level7], [level8]]

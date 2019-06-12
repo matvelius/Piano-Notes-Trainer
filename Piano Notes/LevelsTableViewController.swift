@@ -33,21 +33,21 @@ class LevelsTableViewController: UITableViewController {
 
     // MARK: - Table view data source
 
-//    override func numberOfSections(in tableView: UITableView) -> Int {
-//        // #warning Incomplete implementation, return the number of sections
-//        return 0
-//    }
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        // #warning Incomplete implementation, return the number of sections
+        return titles.count
+    }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return allLevels.count
+        return allLevels[section].count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "LevelCell", for: indexPath) as! LevelTableViewCell
 
-        let level = allLevels[indexPath.row]
+        let level = allLevels[indexPath.section][indexPath.row]
         
         cell.updateCell(with: level)
         
@@ -72,7 +72,7 @@ class LevelsTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        Level.currentLevel = allLevels[indexPath.row]
+        Level.currentLevel = allLevels[indexPath.section][indexPath.row]
         
         
         if Level.currentLevel.id == 8 {
@@ -93,6 +93,12 @@ class LevelsTableViewController: UITableViewController {
 //    func configureCell() {
 //
 //    }
+    
+    let titles = ["NAMING THE NOTES", "LEARNING NOTES ON THE STAFF"]
+    
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return titles[section]
+    }
     
 
     /*
