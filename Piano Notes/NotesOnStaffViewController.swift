@@ -701,30 +701,33 @@ class NotesOnStaffViewController: UIViewController {
     
     @IBOutlet var noteRangeHighNotePanGestureOutlet: UIPanGestureRecognizer!
     
+    var lowNoteIndex = 0
     
     @IBAction func handleLowNotePan(recognizer: UIPanGestureRecognizer) {
        
         print(recognizer.location(in: noteRangeLowNoteImage).y)
         
-        let lowNoteIndex = whiteNotesOnLargeKeyboard.count - Int((Double(recognizer.location(in: noteRangeLowNoteImage).y) - noteRangeImageLocationAdjustment) / noteRangeLocationFactor)
+        lowNoteIndex = whiteNotesOnLargeKeyboard.count - Int((Double(recognizer.location(in: noteRangeLowNoteImage).y) - noteRangeImageLocationAdjustment) / noteRangeLocationFactor)
         
         print(lowNoteIndex)
         
-        if lowNoteIndex >= 0 && lowNoteIndex < whiteNotesOnLargeKeyboard.count {
+        if lowNoteIndex >= 0 && lowNoteIndex < whiteNotesOnLargeKeyboard.count && lowNoteIndex < highNoteIndex {
             noteRangeLowNoteImage.image = UIImage(named: "staff\(whiteNotesOnLargeKeyboard[lowNoteIndex])")
         }
         
         
     }
     
+    var highNoteIndex = whiteNotesOnLargeKeyboard.count - 1
+    
     @IBAction func handleHighNotePan(recognizer: UIPanGestureRecognizer) {
         print(recognizer.location(in: noteRangeLowNoteImage).y)
         
-        let highNoteIndex = whiteNotesOnLargeKeyboard.count - Int((Double(recognizer.location(in: noteRangeHighNoteImage).y) - noteRangeImageLocationAdjustment) / noteRangeLocationFactor)
+        highNoteIndex = whiteNotesOnLargeKeyboard.count - Int((Double(recognizer.location(in: noteRangeHighNoteImage).y) - noteRangeImageLocationAdjustment) / noteRangeLocationFactor)
         
         print(highNoteIndex)
         
-        if highNoteIndex >= 0 && highNoteIndex < whiteNotesOnLargeKeyboard.count {
+        if highNoteIndex >= 0 && highNoteIndex < whiteNotesOnLargeKeyboard.count && highNoteIndex > lowNoteIndex {
             noteRangeHighNoteImage.image = UIImage(named: "staff\(whiteNotesOnLargeKeyboard[highNoteIndex])")
         }
     }
