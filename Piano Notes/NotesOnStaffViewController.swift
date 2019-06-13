@@ -128,7 +128,7 @@ class NotesOnStaffViewController: UIViewController {
     }
     
 
-    var currentNoteOnStaffIndex = 10
+    var currentNoteOnStaffIndex = 15
     
     // placeholder variables for comparing answers
     var currentCorrectAnswer = ""

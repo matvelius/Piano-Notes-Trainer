@@ -126,7 +126,7 @@ class LevelsTableViewController: UITableViewController {
 //            textLabel.font = textLabel.font.withSize(50)
 //            header.isOpaque = true
 //            header.tintColor = .black
-            textLabel.font = UIFont.systemFont(ofSize: 40, weight: .heavy)
+            textLabel.font = UIFont.systemFont(ofSize: 40, weight: .bold)
             textLabel.textColor = .white
 //            textLabel.shadowColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.7)
 //            textLabel.shadowOffset = CGSize(width: 2, height: 2)
