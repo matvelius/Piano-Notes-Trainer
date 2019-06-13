@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="vCV-Es-ama">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="l1o-7Z-dlW">
     <device id="ipad12_9rounded" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
@@ -3214,6 +3214,8 @@
                         <viewLayoutGuide key="safeArea" id="cGR-eH-SAd"/>
                     </view>
                     <connections>
+                        <outlet property="accidentalsButtonsOutlet" destination="246-8n-5LY" id="Sgz-8b-aYQ"/>
+                        <outlet property="arrowAndCheckButtonsOutlet" destination="yxa-Ew-apy" id="c6E-T0-O4T"/>
                         <outlet property="checkButtonOutlet" destination="QTI-d7-4cg" id="52C-FY-wf9"/>
                         <outlet property="darkOverlayOutlet" destination="KX1-pG-rpd" id="PH1-4B-2Ps"/>
                         <outlet property="enableSoundsSwitchOutlet" destination="CAw-bK-XFE" id="XJp-wl-ETq"/>
