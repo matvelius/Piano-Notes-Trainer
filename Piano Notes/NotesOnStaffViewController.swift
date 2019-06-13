@@ -213,7 +213,8 @@ class NotesOnStaffViewController: UIViewController {
     
     @IBOutlet weak var noteRangeLowNoteImage: UIImageView!
     
-    @IBOutlet weak var noteRangeHighNoteOutlet: UIImageView!
+    @IBOutlet weak var noteRangeHighNoteImage: UIImageView!
+
     
     @IBAction func noteRangeLowNoteUp(_ sender: UIButton) {
     }
@@ -267,6 +268,9 @@ class NotesOnStaffViewController: UIViewController {
         }
     }
     
+    var noteRangeImageHeight: Double = 0
+    var noteRangeImageLocationAdjustment: Double = 0
+    var noteRangeLocationFactor: Double = 0
     
     // REFACTOR SOME (MOST?) OF THIS TO viewDidAppear() ?!
     override func viewDidLoad() {
@@ -293,6 +297,10 @@ class NotesOnStaffViewController: UIViewController {
         
         menuContainerOutlet.alpha = 0
         menuTrailingConstraint.constant = 460
+        
+        noteRangeImageHeight = Double(noteRangeLowNoteImage.bounds.height)
+        noteRangeLocationFactor = 0.8 * (noteRangeImageHeight) / Double(whiteNotesOnLargeKeyboard.count)
+        noteRangeImageLocationAdjustment = 0.09 * noteRangeImageHeight
         
         // TODO: - Change this depending on level
 //        currentNoteChoices = allNotesOnLargeKeyboard
@@ -666,7 +674,7 @@ class NotesOnStaffViewController: UIViewController {
 //        lastAccidentalOrNotIndex = accidentalOrNotIndex
     }
     
-    @IBAction func handlePanGesture(recognizer: UIPanGestureRecognizer) {
+    @IBAction func handleMainNotePanGesture(recognizer: UIPanGestureRecognizer) {
         
 //        print(recognizer.velocity(in: self.view).y)
         
@@ -688,6 +696,47 @@ class NotesOnStaffViewController: UIViewController {
         }
         
     }
+    
+    @IBOutlet var noteRangeLowNotePanGestureOutlet: UIPanGestureRecognizer!
+    
+    @IBOutlet var noteRangeHighNotePanGestureOutlet: UIPanGestureRecognizer!
+    
+    
+    @IBAction func handleLowNotePan(recognizer: UIPanGestureRecognizer) {
+       
+        print(recognizer.location(in: noteRangeLowNoteImage).y)
+        
+        let lowNoteIndex = whiteNotesOnLargeKeyboard.count - Int((Double(recognizer.location(in: noteRangeLowNoteImage).y) - noteRangeImageLocationAdjustment) / noteRangeLocationFactor)
+        
+        print(lowNoteIndex)
+        
+        if lowNoteIndex >= 0 && lowNoteIndex < whiteNotesOnLargeKeyboard.count {
+            noteRangeLowNoteImage.image = UIImage(named: "staff\(whiteNotesOnLargeKeyboard[lowNoteIndex])")
+        }
+        
+        
+    }
+    
+    @IBAction func handleHighNotePan(recognizer: UIPanGestureRecognizer) {
+        print(recognizer.location(in: noteRangeLowNoteImage).y)
+        
+        let highNoteIndex = whiteNotesOnLargeKeyboard.count - Int((Double(recognizer.location(in: noteRangeHighNoteImage).y) - noteRangeImageLocationAdjustment) / noteRangeLocationFactor)
+        
+        print(highNoteIndex)
+        
+        if highNoteIndex >= 0 && highNoteIndex < whiteNotesOnLargeKeyboard.count {
+            noteRangeHighNoteImage.image = UIImage(named: "staff\(whiteNotesOnLargeKeyboard[highNoteIndex])")
+        }
+    }
+    
+//    @IBAction func handleMenuLowNotePanGesture(_ sender: UIPanGestureRecognizer) {
+//        print(sender.location(in: noteRangeLowNoteImage))
+//    }
+    
+    
+//    @IBAction func handleMenuHightNotePanGesture(_ sender: UIPanGestureRecognizer) {
+//    }
+    
     
     func loadSound(currentSound: String) {
         // sound file
