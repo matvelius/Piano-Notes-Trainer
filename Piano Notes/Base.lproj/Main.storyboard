@@ -359,6 +359,9 @@
                                                 </state>
                                                 <state key="selected" image="sharp_pressed"/>
                                                 <state key="highlighted" image="sharp_pressed"/>
+                                                <connections>
+                                                    <action selector="sharpPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="axW-Go-jXb"/>
+                                                </connections>
                                             </button>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="OD8-iz-GA4" userLabel="between">
                                                 <rect key="frame" x="772.5" y="0.0" width="34.5" height="56"/>
@@ -371,6 +374,9 @@
                                                 </state>
                                                 <state key="selected" image="sharp_pressed"/>
                                                 <state key="highlighted" image="sharp_pressed"/>
+                                                <connections>
+                                                    <action selector="sharpPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="OVK-Xs-kb7"/>
+                                                </connections>
                                             </button>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="u8z-EJ-zjP" userLabel="between">
                                                 <rect key="frame" x="638" y="0.0" width="34.5" height="56"/>
@@ -383,6 +389,9 @@
                                                 </state>
                                                 <state key="selected" image="sharp_pressed"/>
                                                 <state key="highlighted" image="sharp_pressed"/>
+                                                <connections>
+                                                    <action selector="sharpPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Chh-cF-n38"/>
+                                                </connections>
                                             </button>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="FFd-Jh-RM4" userLabel="between">
                                                 <rect key="frame" x="503.5" y="0.0" width="34.5" height="56"/>
@@ -399,6 +408,9 @@
                                                 </state>
                                                 <state key="selected" image="sharp_pressed"/>
                                                 <state key="highlighted" image="sharp_pressed"/>
+                                                <connections>
+                                                    <action selector="sharpPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2Pc-gD-fu9"/>
+                                                </connections>
                                             </button>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pUD-Kw-zA0" userLabel="between">
                                                 <rect key="frame" x="369" y="0.0" width="34.5" height="56"/>
@@ -411,6 +423,9 @@
                                                 </state>
                                                 <state key="selected" image="sharp_pressed"/>
                                                 <state key="highlighted" image="sharp_pressed"/>
+                                                <connections>
+                                                    <action selector="sharpPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bcy-3o-Hzp"/>
+                                                </connections>
                                             </button>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="h2E-xV-J0V" userLabel="between">
                                                 <rect key="frame" x="234.5" y="0.0" width="34.5" height="56"/>
@@ -424,6 +439,9 @@
                                                 </state>
                                                 <state key="selected" image="sharp_pressed"/>
                                                 <state key="highlighted" image="sharp_pressed"/>
+                                                <connections>
+                                                    <action selector="sharpPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5Ir-jP-17n"/>
+                                                </connections>
                                             </button>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9Wj-ys-DBX" userLabel="between">
                                                 <rect key="frame" x="100" y="0.0" width="34.5" height="56"/>
@@ -437,6 +455,9 @@
                                                 </state>
                                                 <state key="selected" image="sharp_pressed"/>
                                                 <state key="highlighted" image="sharp_pressed"/>
+                                                <connections>
+                                                    <action selector="sharpPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6ie-bs-I2G"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -507,6 +528,9 @@
                                                 </state>
                                                 <state key="selected" image="flat_pressed"/>
                                                 <state key="highlighted" image="flat_pressed"/>
+                                                <connections>
+                                                    <action selector="flatPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6oZ-7Q-sRS"/>
+                                                </connections>
                                             </button>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tEw-sp-C3e" userLabel="between">
                                                 <rect key="frame" x="772.5" y="0.0" width="34.5" height="56"/>
@@ -519,6 +543,9 @@
                                                 </state>
                                                 <state key="selected" image="flat_pressed"/>
                                                 <state key="highlighted" image="flat_pressed"/>
+                                                <connections>
+                                                    <action selector="flatPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="72K-Ws-get"/>
+                                                </connections>
                                             </button>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lhr-7p-e37" userLabel="between">
                                                 <rect key="frame" x="638" y="0.0" width="34.5" height="56"/>
@@ -531,6 +558,9 @@
                                                 </state>
                                                 <state key="selected" image="flat_pressed"/>
                                                 <state key="highlighted" image="flat_pressed"/>
+                                                <connections>
+                                                    <action selector="flatPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5wF-3i-xxo"/>
+                                                </connections>
                                             </button>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fLR-2H-DgZ" userLabel="between">
                                                 <rect key="frame" x="503.5" y="0.0" width="34.5" height="56"/>
@@ -547,6 +577,9 @@
                                                 </state>
                                                 <state key="selected" image="flat_pressed"/>
                                                 <state key="highlighted" image="flat_pressed"/>
+                                                <connections>
+                                                    <action selector="flatPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5bz-ea-eSK"/>
+                                                </connections>
                                             </button>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="r97-Ae-KWT" userLabel="between">
                                                 <rect key="frame" x="369" y="0.0" width="34.5" height="56"/>
@@ -559,6 +592,9 @@
                                                 </state>
                                                 <state key="selected" image="flat_pressed"/>
                                                 <state key="highlighted" image="flat_pressed"/>
+                                                <connections>
+                                                    <action selector="flatPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gOl-79-nJq"/>
+                                                </connections>
                                             </button>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="akz-Rb-paA" userLabel="between">
                                                 <rect key="frame" x="234.5" y="0.0" width="34.5" height="56"/>
@@ -572,6 +608,9 @@
                                                 </state>
                                                 <state key="selected" image="flat_pressed"/>
                                                 <state key="highlighted" image="flat_pressed"/>
+                                                <connections>
+                                                    <action selector="flatPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ncY-IC-gxg"/>
+                                                </connections>
                                             </button>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KAw-hO-nR4" userLabel="between">
                                                 <rect key="frame" x="100" y="0.0" width="34.5" height="56"/>
@@ -586,6 +625,9 @@
                                                 </state>
                                                 <state key="selected" image="flat_pressed"/>
                                                 <state key="highlighted" image="flat_pressed"/>
+                                                <connections>
+                                                    <action selector="flatPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yxH-u9-K73"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

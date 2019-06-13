@@ -287,6 +287,21 @@ class ViewController: UIViewController {
     
     @IBOutlet var sharpsOutletCollection: [UIButton]!
     
+    @IBAction func sharpPressed(_ sender: UIButton) {
+        currentAccidental = .sharp
+        currentUserAnswer = "\(basicNoteNames[sender.tag])#"
+        currentNoteButton = noteButtonsOutletCollection[sender.tag]
+        checkAnswer()
+    }
+    
+    
+    @IBAction func flatPressed(_ sender: UIButton) {
+        currentAccidental = .flat
+        currentUserAnswer = "\(basicNoteNames[sender.tag])b"
+        currentNoteButton = noteButtonsOutletCollection[sender.tag]
+        checkAnswer()
+    }
+    
     // placeholders for calculating sharps & flats bounds
     // to use for pan gesture recognition
     
