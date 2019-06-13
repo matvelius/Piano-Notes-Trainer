@@ -18,6 +18,7 @@ class NotesOnStaffViewController: UIViewController {
     
     @IBOutlet weak var arrowAndCheckButtonsOutlet: UIStackView!
     
+    @IBOutlet weak var topLabelOutlet: UIImageView!
     
     @IBOutlet weak var pianoNoteDisplayed: UIImageView!
     
@@ -185,7 +186,7 @@ class NotesOnStaffViewController: UIViewController {
             arrowAndCheckButtonsOutlet.alpha = 0
             
 //            includeEnharmonicsSwitchOutlet.isEnabled = true
-//            topLabelOutlet.image = UIImage(named: "tap_the_correct_key")
+            topLabelOutlet.image = UIImage(named: "tap_the_correct_key")
 //            topLabelOutlet.transform = CGAffineTransform(scaleX: CGFloat(labelScaleMultiplier), y: CGFloat(labelScaleMultiplier))
         case .B:
             print("switching to mode A")
@@ -194,7 +195,7 @@ class NotesOnStaffViewController: UIViewController {
             accidentalsButtonsOutlet.alpha = 1
             arrowAndCheckButtonsOutlet.alpha = 1
 //            includeEnharmonicsSwitchOutlet.isEnabled = false
-//            topLabelOutlet.image = UIImage(named: "name_the_highlighted_note")
+            topLabelOutlet.image = UIImage(named: "choose_the_correct_note_on_staff")
 //            topLabelOutlet.transform = CGAffineTransform(scaleX: CGFloat(labelScaleMultiplierBackToNormal ), y: CGFloat(labelScaleMultiplierBackToNormal))
             //            topLabelOutlet.frame.width
         }

@@ -1704,7 +1704,7 @@
                                     <outletCollection property="gestureRecognizers" destination="iIp-0g-gv6" appends="YES" id="ocu-DE-MCt"/>
                                 </connections>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tap_the_correct_key" translatesAutoresizingMaskIntoConstraints="NO" id="COz-gC-a0h">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="choose_the_correct_note_on_staff" translatesAutoresizingMaskIntoConstraints="NO" id="COz-gC-a0h" userLabel="top_label">
                                 <rect key="frame" x="220.5" y="95" width="925" height="61"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="COz-gC-a0h" secondAttribute="height" multiplier="257:17" id="rml-Os-b7l"/>
@@ -3237,6 +3237,7 @@
                         <outlet property="pianoNoteDisplayed" destination="vzr-qh-cLh" id="kJg-if-HkH"/>
                         <outlet property="scoreLabelOutlet" destination="Hmf-ec-sG9" id="gPY-IZ-g5c"/>
                         <outlet property="starsImageOutlet" destination="zU9-5z-owL" id="RPv-Gp-NDA"/>
+                        <outlet property="topLabelOutlet" destination="COz-gC-a0h" id="urO-l2-MF9"/>
                         <outletCollection property="keyButtonsOutletCollection" destination="2np-6X-jDv" collectionClass="NSMutableArray" id="mHN-hA-bB9"/>
                         <outletCollection property="keyButtonsOutletCollection" destination="U0V-7U-keL" collectionClass="NSMutableArray" id="kzr-Fn-XlG"/>
                         <outletCollection property="keyButtonsOutletCollection" destination="2TB-gl-agb" collectionClass="NSMutableArray" id="HrX-2J-U6X"/>
@@ -3496,6 +3497,7 @@
         <image name="arrow_up_pressed" width="202" height="115"/>
         <image name="check" width="218" height="120"/>
         <image name="check_pressed" width="210" height="112"/>
+        <image name="choose_the_correct_note_on_staff" width="2200" height="102"/>
         <image name="explainer_1" width="2732" height="2048"/>
         <image name="flat" width="210" height="123"/>
         <image name="flat_pressed" width="210" height="123"/>
@@ -3517,7 +3519,6 @@
         <image name="staffC2" width="1083" height="1000"/>
         <image name="staffC6" width="1083" height="1000"/>
         <image name="stars0" width="754" height="102"/>
-        <image name="tap_the_correct_key" width="1902" height="102"/>
         <image name="white_piano_12.9_large" width="910.66668701171875" height="538.66668701171875"/>
     </resources>
     <inferredMetricsTieBreakers>
