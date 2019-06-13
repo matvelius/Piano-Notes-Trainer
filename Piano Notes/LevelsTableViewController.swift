@@ -94,11 +94,60 @@ class LevelsTableViewController: UITableViewController {
 //
 //    }
     
-    let titles = ["NAMING THE NOTES", "LEARNING NOTES ON THE STAFF"]
+    let titles = ["Naming the notes on the piano", "Learning music notation"]
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return titles[section]
     }
+    
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat
+    {
+        return 70
+    }
+    
+//    override func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+//
+//        guard let headerView = view as? UITableViewHeaderFooterView else { return }
+//
+//        headerView.backgroundView?.backgroundColor = .red
+//    }
+    
+    override func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+
+//        (view as! UITableViewHeaderFooterView).backgroundView?.backgroundColor = UIColor.white.withAlphaComponent(1)
+
+        view.tintColor = UIColor.white
+
+        let header = view as! UITableViewHeaderFooterView
+
+
+
+        if let textLabel = header.textLabel {
+//            textLabel.font = textLabel.font.withSize(50)
+//            header.isOpaque = true
+//            header.tintColor = .black
+            textLabel.font = UIFont.systemFont(ofSize: 40, weight: .heavy)
+            textLabel.textColor = .white
+//            textLabel.shadowColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.7)
+//            textLabel.shadowOffset = CGSize(width: 2, height: 2)
+            textLabel.adjustsFontSizeToFitWidth = true
+            textLabel.textAlignment = .center
+        }
+
+
+    }
+    
+//    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+//        let returnedView = UIView(frame: CGRect(x: x, y: y, width: width, height: height)) //set these values as necessary
+//        returnedView.backgroundColor = .white
+//
+//        let label = UILabel(frame: CGRect(x: x, y: y, width: width, height: height))
+//
+//        label.text = self.sectionHeaderTitleArray[section]
+//        returnedView.addSubview(label)
+//
+//        return returnedView
+//    }
     
 
     /*

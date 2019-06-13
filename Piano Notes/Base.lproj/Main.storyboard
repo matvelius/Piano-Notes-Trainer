@@ -14,30 +14,31 @@
         <scene sceneID="y3s-QD-6BG">
             <objects>
                 <tableViewController id="8JC-u7-HER" customClass="LevelsTableViewController" customModule="Piano_Notes" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="dZH-ss-fad">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="dZH-ss-fad">
                         <rect key="frame" x="0.0" y="0.0" width="1366" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <color key="separatorColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleAspectFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="LevelCell" focusStyle="custom" rowHeight="205" id="LI0-cB-Ct0" customClass="LevelTableViewCell" customModule="Piano_Notes" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="1366" height="205"/>
+                                <rect key="frame" x="0.0" y="55.5" width="1366" height="205"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="LI0-cB-Ct0" id="qwI-5X-ttC">
                                     <rect key="frame" x="0.0" y="0.0" width="1328" height="204.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LEVEL 1:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lKS-KE-S9p">
-                                            <rect key="frame" x="50" y="15" width="247.5" height="175"/>
-                                            <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="65"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LEVEL 1:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="42" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lKS-KE-S9p">
+                                            <rect key="frame" x="50" y="15" width="228.5" height="175"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="60"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
                                             <color key="shadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <size key="shadowOffset" width="1" height="1"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ES5-3h-EEF">
-                                            <rect key="frame" x="317.5" y="15" width="790.5" height="175"/>
-                                            <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="65"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="40" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ES5-3h-EEF">
+                                            <rect key="frame" x="298.5" y="15" width="809.5" height="175"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="58"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
                                             <color key="shadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1430,7 +1431,7 @@
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0we-NU-HjW" userLabel="between left and black key stack">
                                 <rect key="frame" x="0.0" y="487" width="14" height="252"/>
-                                <color key="backgroundColor" red="0.34010426490000001" green="0.47980691939999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -3266,16 +3267,12 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="intro_screen_background" translatesAutoresizingMaskIntoConstraints="NO" id="guc-KE-aqG">
                                 <rect key="frame" x="0.0" y="0.0" width="1366" height="1024"/>
                             </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="275" translatesAutoresizingMaskIntoConstraints="NO" id="zGW-Cx-JJM">
-                                <rect key="frame" x="217" y="294" width="932" height="101"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="zGW-Cx-JJM">
+                                <rect key="frame" x="217" y="294" width="932" height="128"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zbd-ox-fRn">
+                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zbd-ox-fRn" userLabel="Learn Button">
                                         <rect key="frame" x="0.0" y="0.0" width="328.5" height="101"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="328.39999999999998" id="Nho-yY-UV6"/>
-                                            <constraint firstAttribute="height" constant="101.2" id="wHU-KN-8od"/>
-                                        </constraints>
                                         <size key="titleShadowOffset" width="2" height="2"/>
                                         <state key="normal" image="intro_screen_learn_normal">
                                             <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -3287,7 +3284,11 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cit-cA-sn2">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iOD-Lf-Rja">
+                                        <rect key="frame" x="328.5" y="0.0" width="275" height="128"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cit-cA-sn2" userLabel="Play Button">
                                         <rect key="frame" x="603.5" y="0.0" width="328.5" height="101"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <size key="titleShadowOffset" width="2" height="2"/>
@@ -3314,7 +3315,10 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="zGW-Cx-JJM" firstAttribute="centerX" secondItem="Erg-dK-lbL" secondAttribute="centerX" id="2Cj-5S-XTN"/>
+                            <constraint firstItem="zbd-ox-fRn" firstAttribute="height" secondItem="KU1-L2-hcT" secondAttribute="height" multiplier="101.2:980" id="45i-Gy-KSq"/>
                             <constraint firstItem="zGW-Cx-JJM" firstAttribute="top" secondItem="KU1-L2-hcT" secondAttribute="top" constant="270" id="DKi-6g-T1x"/>
+                            <constraint firstItem="zbd-ox-fRn" firstAttribute="width" secondItem="KU1-L2-hcT" secondAttribute="width" multiplier="328.4:1366" id="jGH-jz-Hrd"/>
+                            <constraint firstItem="iOD-Lf-Rja" firstAttribute="width" secondItem="KU1-L2-hcT" secondAttribute="width" multiplier="275:1366" id="kQ2-tk-AJO"/>
                             <constraint firstItem="guc-KE-aqG" firstAttribute="top" secondItem="Erg-dK-lbL" secondAttribute="top" id="nch-JK-jKA"/>
                             <constraint firstAttribute="bottom" secondItem="guc-KE-aqG" secondAttribute="bottom" id="uJ3-Kh-ayO"/>
                             <constraint firstItem="guc-KE-aqG" firstAttribute="leading" secondItem="Erg-dK-lbL" secondAttribute="leading" id="xJk-9U-jWr"/>
