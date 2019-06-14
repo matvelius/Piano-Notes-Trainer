@@ -64,52 +64,59 @@ extension ViewController {
 
 extension NotesOnStaffViewController {
         
-        func openMenu() {
-            
-            self.menuTrailingConstraint.constant = 0
-            
-            UIView.animate(withDuration: 0.5, delay: 0.0, options: .curveEaseIn, animations: {
-                
-                self.view.layoutIfNeeded()
-                self.menuButtonOutlet.alpha = 0
-                self.darkOverlayOutlet.alpha = 0.73
-                self.menuContainerOutlet.alpha = 1
-                
-            })
-            
-            self.menuButtonOutlet.setTitle("✕", for: .normal)
-            
-            UIView.animate(withDuration: 0.4, delay: 0.6, options: .curveEaseIn, animations: {
-                self.menuButtonOutlet.alpha = 1
-                self.view.layoutIfNeeded()
-            })
-            
-            menuIsClosed = false
-            
-        }
+    func openMenu() {
         
-        func closeMenu() {
+        self.menuTrailingConstraint.constant = 0
+        
+        UIView.animate(withDuration: 0.5, delay: 0.0, options: .curveEaseIn, animations: {
             
-            self.menuTrailingConstraint.constant = 460
+            self.view.layoutIfNeeded()
+            self.menuButtonOutlet.alpha = 0
+            self.darkOverlayOutlet.alpha = 0.73
+            self.menuContainerOutlet.alpha = 1
             
-            UIView.animate(withDuration: 0.5, delay: 0.0, options: .curveEaseIn, animations: {
-                
-                self.view.layoutIfNeeded()
-                self.menuButtonOutlet.alpha = 0
-                self.darkOverlayOutlet.alpha = 0
-                self.menuContainerOutlet.alpha = 0
-                
-            })
+        })
+        
+        self.menuButtonOutlet.setTitle("✕", for: .normal)
+        
+        UIView.animate(withDuration: 0.4, delay: 0.6, options: .curveEaseIn, animations: {
+            self.menuButtonOutlet.alpha = 1
+            self.view.layoutIfNeeded()
+        })
+        
+        menuIsClosed = false
+        
+    }
+    
+    func closeMenu() {
+        
+        self.menuTrailingConstraint.constant = 460
+        
+        UIView.animate(withDuration: 0.5, delay: 0.0, options: .curveEaseIn, animations: {
             
-            self.menuButtonOutlet.setTitle("☰", for: .normal)
+            self.view.layoutIfNeeded()
+            self.menuButtonOutlet.alpha = 0
+            self.darkOverlayOutlet.alpha = 0
+            self.menuContainerOutlet.alpha = 0
             
-            UIView.animate(withDuration: 0.4, delay: 0.6, options: .curveEaseIn, animations: {
-                self.menuButtonOutlet.alpha = 1
-                self.view.layoutIfNeeded()
-            })
-            
-            menuIsClosed = true
-            
-        }
+        })
+        
+        self.menuButtonOutlet.setTitle("☰", for: .normal)
+        
+        UIView.animate(withDuration: 0.4, delay: 0.6, options: .curveEaseIn, animations: {
+            self.menuButtonOutlet.alpha = 1
+            self.view.layoutIfNeeded()
+        })
+        
+        menuIsClosed = true
+        
+        currentNoteChoices = Array(whiteNotesOnLargeKeyboard[lowNoteIndex...highNoteIndex])
+        print("currentNoteChoices: \(currentNoteChoices)")
+        setRandomNewNoteUpperIndex()
+        
+//        noteRangeLowNoteImage.image = UIImage(named: "staff\(currentNoteChoices[lowNoteIndex])")
+//        noteRangeHighNoteImage.image = UIImage(named: "staff\(currentNoteChoices[lowNoteIndex])")
+        
+    }
         
 }

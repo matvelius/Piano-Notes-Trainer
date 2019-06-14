@@ -174,9 +174,9 @@ class NotesOnStaffViewController: UIViewController {
     
     @IBAction func modeSegmentedControl(_ sender: UISegmentedControl) {
         
-//        let labelScaleMultiplier = 1.2
-//        let labelScaleMultiplierBackToNormal = 1.0
-//
+        let labelScaleMultiplier = 1.0
+        let labelScaleMultiplierBackToNormal = 1.1
+
         switch currentGameMode {
         case .A:
             print("switching to mode B")
@@ -187,7 +187,7 @@ class NotesOnStaffViewController: UIViewController {
             
 //            includeEnharmonicsSwitchOutlet.isEnabled = true
             topLabelOutlet.image = UIImage(named: "tap_the_correct_key")
-//            topLabelOutlet.transform = CGAffineTransform(scaleX: CGFloat(labelScaleMultiplier), y: CGFloat(labelScaleMultiplier))
+            topLabelOutlet.transform = CGAffineTransform(scaleX: CGFloat(labelScaleMultiplier), y: CGFloat(labelScaleMultiplier))
         case .B:
             print("switching to mode A")
             currentGameMode = .A
@@ -196,7 +196,7 @@ class NotesOnStaffViewController: UIViewController {
             arrowAndCheckButtonsOutlet.alpha = 1
 //            includeEnharmonicsSwitchOutlet.isEnabled = false
             topLabelOutlet.image = UIImage(named: "choose_the_correct_note_on_staff")
-//            topLabelOutlet.transform = CGAffineTransform(scaleX: CGFloat(labelScaleMultiplierBackToNormal ), y: CGFloat(labelScaleMultiplierBackToNormal))
+            topLabelOutlet.transform = CGAffineTransform(scaleX: CGFloat(labelScaleMultiplierBackToNormal ), y: CGFloat(labelScaleMultiplierBackToNormal))
             //            topLabelOutlet.frame.width
         }
         
@@ -320,12 +320,23 @@ class NotesOnStaffViewController: UIViewController {
 //        setRandomNewNoteUpperIndex()
     }
     
+    var lowNoteIndex = 0
+    var highNoteIndex = whiteNotesOnLargeKeyboard.count - 1
+    
     override func viewDidAppear(_ animated: Bool) {
         currentNoteChoices = Level.currentLevel.noteChoices
+        
         print("currentNoteChoices: \(currentNoteChoices)")
         setRandomNewNoteUpperIndex()
         
+        lowNoteIndex = whiteNotesOnLargeKeyboard.firstIndex(of: currentNoteChoices[0])!
+        print("lowNoteIndex in viewDidAppear: \(lowNoteIndex)")
+        highNoteIndex = whiteNotesOnLargeKeyboard.firstIndex(of: currentNoteChoices.last!)!
+        print("highNoteIndex in viewDidAppear: \(highNoteIndex)")
         generateNewNote()
+        
+        noteRangeLowNoteImage.image = UIImage(named: "staff\(whiteNotesOnLargeKeyboard[lowNoteIndex])")
+        noteRangeHighNoteImage.image = UIImage(named: "staff\(whiteNotesOnLargeKeyboard[highNoteIndex])")
     }
     
     var locationTracker: Double = Double(whiteNotesOnLargeKeyboard.count / 2) {
@@ -714,7 +725,7 @@ class NotesOnStaffViewController: UIViewController {
     
     @IBOutlet var noteRangeHighNotePanGestureOutlet: UIPanGestureRecognizer!
     
-    var lowNoteIndex = 0
+    
     
     @IBAction func handleLowNotePan(recognizer: UIPanGestureRecognizer) {
        
@@ -722,7 +733,7 @@ class NotesOnStaffViewController: UIViewController {
         
         lowNoteIndex = whiteNotesOnLargeKeyboard.count - Int((Double(recognizer.location(in: noteRangeLowNoteImage).y) - noteRangeImageLocationAdjustment) / noteRangeLocationFactor)
         
-        print(lowNoteIndex)
+        print("lowNoteIndex in handleLowNotePan:\(lowNoteIndex)")
         
         if lowNoteIndex >= 0 && lowNoteIndex < whiteNotesOnLargeKeyboard.count && lowNoteIndex < highNoteIndex {
             noteRangeLowNoteImage.image = UIImage(named: "staff\(whiteNotesOnLargeKeyboard[lowNoteIndex])")
@@ -731,14 +742,13 @@ class NotesOnStaffViewController: UIViewController {
         
     }
     
-    var highNoteIndex = whiteNotesOnLargeKeyboard.count - 1
     
     @IBAction func handleHighNotePan(recognizer: UIPanGestureRecognizer) {
         print(recognizer.location(in: noteRangeLowNoteImage).y)
         
         highNoteIndex = whiteNotesOnLargeKeyboard.count - Int((Double(recognizer.location(in: noteRangeHighNoteImage).y) - noteRangeImageLocationAdjustment) / noteRangeLocationFactor)
         
-        print(highNoteIndex)
+        print("highNoteIndex in handleHighNotePan:\(highNoteIndex)")
         
         if highNoteIndex >= 0 && highNoteIndex < whiteNotesOnLargeKeyboard.count && highNoteIndex > lowNoteIndex {
             noteRangeHighNoteImage.image = UIImage(named: "staff\(whiteNotesOnLargeKeyboard[highNoteIndex])")

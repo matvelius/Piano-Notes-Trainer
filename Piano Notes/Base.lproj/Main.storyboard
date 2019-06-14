@@ -97,6 +97,33 @@
                         <rect key="frame" x="0.0" y="0.0" width="1366" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E72-kp-4NI" userLabel="between right and black key stack">
+                                <rect key="frame" x="1370" y="487" width="240" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="5tb-RG-dHn"/>
+                                    <constraint firstAttribute="height" constant="128" id="iwu-pt-L9y"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PZR-Qo-iqb" userLabel="between stars and white keys">
+                                <rect key="frame" x="0.0" y="879" width="1366" height="36"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6uV-l7-if3" userLabel="between left edge and score">
+                                <rect key="frame" x="0.0" y="879" width="254" height="145"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1rN-4x-5j0" userLabel="between main container &amp; black keys">
+                                <rect key="frame" x="0.0" y="216" width="100" height="271"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="UCu-Bp-rMD"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0we-NU-HjW" userLabel="between left and black key stack">
+                                <rect key="frame" x="0.0" y="487" width="14" height="252"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JI7-xy-e6Q" userLabel="Main Container">
                                 <rect key="frame" x="0.0" y="139" width="1366" height="885"/>
                                 <subviews>
@@ -1207,6 +1234,16 @@
                                     </button>
                                 </subviews>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mzf-Zv-Dzk">
+                                <rect key="frame" x="20" y="42.5" width="52" height="35"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="19"/>
+                                <state key="normal" title="BACK">
+                                    <color key="titleColor" red="0.0" green="0.30588235294117649" blue="1" alpha="0.78000000000000003" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="RIy-R6-Lci" kind="unwind" unwindAction="unwindToLevelsWithUnwindSegue:" id="w40-KF-TL1"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TMX-dv-0h9" userLabel="dark overlay">
                                 <rect key="frame" x="0.0" y="0.0" width="1366" height="1024"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1410,43 +1447,6 @@
                                 </state>
                                 <connections>
                                     <action selector="menuButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="O8X-qH-DO0"/>
-                                </connections>
-                            </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E72-kp-4NI" userLabel="between right and black key stack">
-                                <rect key="frame" x="1370" y="487" width="240" height="128"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="240" id="5tb-RG-dHn"/>
-                                    <constraint firstAttribute="height" constant="128" id="iwu-pt-L9y"/>
-                                </constraints>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PZR-Qo-iqb" userLabel="between stars and white keys">
-                                <rect key="frame" x="0.0" y="879" width="1366" height="36"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6uV-l7-if3" userLabel="between left edge and score">
-                                <rect key="frame" x="0.0" y="879" width="254" height="145"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1rN-4x-5j0" userLabel="between main container &amp; black keys">
-                                <rect key="frame" x="0.0" y="216" width="100" height="271"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="100" id="UCu-Bp-rMD"/>
-                                </constraints>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0we-NU-HjW" userLabel="between left and black key stack">
-                                <rect key="frame" x="0.0" y="487" width="14" height="252"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mzf-Zv-Dzk">
-                                <rect key="frame" x="20" y="42.5" width="52" height="35"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="19"/>
-                                <state key="normal" title="BACK">
-                                    <color key="titleColor" red="0.0" green="0.30588235294117649" blue="1" alpha="0.78000000000000003" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <segue destination="RIy-R6-Lci" kind="unwind" unwindAction="unwindToLevelsWithUnwindSegue:" id="w40-KF-TL1"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -2644,6 +2644,16 @@
                                     <constraint firstItem="JzE-h9-iEf" firstAttribute="leading" secondItem="Q0v-F4-hoG" secondAttribute="trailing" id="xDa-ua-REn"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Onz-Vm-Cs8">
+                                <rect key="frame" x="20" y="42.5" width="52" height="35"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="19"/>
+                                <state key="normal" title="BACK">
+                                    <color key="titleColor" red="0.0" green="0.30588235289999999" blue="1" alpha="0.78000000000000003" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="keI-5w-fk0" kind="unwind" unwindAction="unwindToLevelsWithUnwindSegue:" id="b1t-d0-ik8"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" alpha="0.0" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KX1-pG-rpd" userLabel="dark overlay">
                                 <rect key="frame" x="0.0" y="0.0" width="1366" height="1024"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -3100,16 +3110,6 @@
                                 </state>
                                 <connections>
                                     <action selector="menuButtonTapped:" destination="vCV-Es-ama" eventType="touchUpInside" id="3vH-aI-iLK"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Onz-Vm-Cs8">
-                                <rect key="frame" x="20" y="42.5" width="52" height="35"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="19"/>
-                                <state key="normal" title="BACK">
-                                    <color key="titleColor" red="0.0" green="0.30588235289999999" blue="1" alpha="0.78000000000000003" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <segue destination="keI-5w-fk0" kind="unwind" unwindAction="unwindToLevelsWithUnwindSegue:" id="b1t-d0-ik8"/>
                                 </connections>
                             </button>
                         </subviews>
