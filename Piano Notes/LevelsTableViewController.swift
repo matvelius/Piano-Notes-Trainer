@@ -73,9 +73,27 @@ class LevelsTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         Level.currentLevel = allLevels[indexPath.section][indexPath.row]
+      
+        // FREE PLAY - NOTE NAMES
+        if (-3)...(-2) ~= Level.currentLevel.id {
+            
+            if explainersEnabled {
+                performSegue(withIdentifier: "segueToExplainers", sender: nil)
+            } else {
+                performSegue(withIdentifier: "segueToGame", sender: nil)
+            }
         
+        // FREE PLAY - NOTES ON STAFF
+        } else if (-1)...(0) ~= Level.currentLevel.id {
+            
+            if explainersEnabled {
+                performSegue(withIdentifier: "segueToExplainers", sender: nil)
+            } else {
+                performSegue(withIdentifier: "segueToNotesOnStaff", sender: nil)
+            }
         
-        if Level.currentLevel.id >= 8 {
+        // LEVELS - NOTES ON STAFF
+        } else if Level.currentLevel.id >= 8 {
             
             performSegue(withIdentifier: "segueToNotesOnStaff", sender: nil)
             
@@ -83,6 +101,7 @@ class LevelsTableViewController: UITableViewController {
         
             performSegue(withIdentifier: "segueToExplainers", sender: nil)
             
+        // NOTE NAMES
         } else {
             
             performSegue(withIdentifier: "segueToGame", sender: nil)

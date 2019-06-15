@@ -286,6 +286,6 @@ var highNoteIndex = whiteNotesOnLargeKeyboard.count - 1
 func updateNoteIndices() {
     lowNoteIndex = whiteNotesOnLargeKeyboard.firstIndex(of: currentNoteChoices[0])!
     print("lowNoteIndex in viewDidAppear: \(lowNoteIndex)")
-    highNoteIndex = whiteNotesOnLargeKeyboard.firstIndex(of: currentNoteChoices.last!)!
+    highNoteIndex = whiteNotesOnLargeKeyboard.firstIndex(of: currentNoteChoices.last!) ?? 29
     print("highNoteIndex in viewDidAppear: \(highNoteIndex)")
 }

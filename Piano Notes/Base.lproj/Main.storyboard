@@ -2722,7 +2722,7 @@
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <switch opaque="NO" contentMode="center" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KsA-Fq-ekE">
+                                                            <switch opaque="NO" contentMode="center" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="KsA-Fq-ekE">
                                                                 <rect key="frame" x="471.5" y="0.0" width="51" height="31"/>
                                                                 <connections>
                                                                     <action selector="enableAccidentalsSwitchFlipped:" destination="vCV-Es-ama" eventType="valueChanged" id="Lcx-L9-d5B"/>
@@ -2766,7 +2766,7 @@
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
-                                                                    <switch opaque="NO" contentMode="center" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fmG-MT-j7o">
+                                                                    <switch opaque="NO" contentMode="center" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="fmG-MT-j7o">
                                                                         <rect key="frame" x="201.5" y="0.0" width="51" height="31"/>
                                                                         <connections>
                                                                             <action selector="onlyTrebleClefSwitchFlipped:" destination="vCV-Es-ama" eventType="valueChanged" id="9Ya-Pr-RxT"/>
@@ -3035,7 +3035,7 @@
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <switch opaque="NO" contentMode="center" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yfj-ik-o7h">
+                                                            <switch opaque="NO" contentMode="center" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="yfj-ik-o7h">
                                                                 <rect key="frame" x="471.5" y="0.0" width="51" height="31"/>
                                                                 <connections>
                                                                     <action selector="onlyGuideNotesSwitchFlipped:" destination="vCV-Es-ama" eventType="valueChanged" id="31n-s3-m5V"/>

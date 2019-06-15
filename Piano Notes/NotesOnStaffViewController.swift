@@ -205,8 +205,17 @@ class NotesOnStaffViewController: UIViewController {
     @IBOutlet weak var enableAccidentalsSwitchOutlet: UISwitch!
     
     @IBAction func enableAccidentalsSwitchFlipped(_ sender: UISwitch) {
-        if !sender.isOn {
+        if sender.isOn {
+            // TODO: - INSTEAD OF JUST SETTING TO ALL NOTE CHOICES, SET TO
+            // CURRENT NOTE CHOICES + THE ACCIDENTALS IN BETWEEN!
+            // BUT THEN THERE SHOULD BE A SHORTCUT FOR ALL NOTE CHOICES?
             setToAllNoteChoices()
+            
+            accidentalsSegmentedControlOutlet.selectedSegmentIndex = 0
+            onlyTrebleClefSwitchOutlet.isOn = false
+            onlyBassClefSwitchOutlet.isOn = false
+            onlyGuideNotesSwitchOutlet.isOn = false
+            onlyMnemonicsSwitchOutlet.isOn = false
         } else {
             setToAllWhiteKeys()
         }
@@ -217,33 +226,33 @@ class NotesOnStaffViewController: UIViewController {
     
     @IBAction func accidentalsSegmentedControl(_ sender: UISegmentedControl) {
 //        if sender.selectedSegmentIndex == 0 {
-//            
+//
 //            // all white keys
 //            setToOnlyWhiteKeys()
-//            
+//
 //            enableButtons()
 //            disableSharps()
 //            sharpsViewOutlet.alpha = 0
 //            disableFlats()
 //            flatsViewOutlet.alpha = 0
-//            
+//
 //            startNewRound()
-//            
+//
 //        } else if sender.selectedSegmentIndex == 1 {
-//            
+//
 //            // only C D E
 //            setToOnlyCDE()
-//            
+//
 //            disableButtons()
 //            disableSharps()
 //            sharpsViewOutlet.alpha = 0
 //            disableFlats()
 //            flatsViewOutlet.alpha = 0
-//            
+//
 //            startNewRound()
-//            
+//
 //        } else {
-//            
+//
 //            // only F G A B
 //            setToOnlyFGAB()
 //            
@@ -252,21 +261,29 @@ class NotesOnStaffViewController: UIViewController {
 //            sharpsViewOutlet.alpha = 0
 //            disableFlats()
 //            flatsViewOutlet.alpha = 0
-//            
+//
 //            startNewRound()
-//            
+//
 //        }
     }
     
     @IBAction func onlyTrebleClefSwitchFlipped(_ sender: UISwitch) {
-//        if !sender.isOn {
-//            setToOnlyMnemonics()
-//        } else {
-//            //
-//        }
-//        currentNoteChoices = allTrebleClefNotes
-//        updateNoteIndices()
-//        onlyBassClefSwitchOutlet.isOn = false
+        if sender.isOn {
+            setToOnlyTrebleClef()
+            updateNoteRangeImages()
+            
+            if enableAccidentalsSwitchOutlet.isOn {
+                onlyTrebleClefSegmentedControlOutlet.selectedSegmentIndex = 0
+            } else {
+                onlyTrebleClefSegmentedControlOutlet.selectedSegmentIndex = 1
+            }
+            
+            onlyBassClefSwitchOutlet.isOn = false
+            onlyGuideNotesSwitchOutlet.isOn = false
+            onlyMnemonicsSwitchOutlet.isOn = false
+        } else {
+            setToPreviousNoteChoices()
+        }
     }
     
     @IBOutlet weak var onlyTrebleClefSwitchOutlet: UISwitch!
@@ -277,6 +294,22 @@ class NotesOnStaffViewController: UIViewController {
     @IBOutlet weak var onlyTrebleClefSegmentedControlOutlet: UISegmentedControl!
     
     @IBAction func onlyBassClefSwitchFlipped(_ sender: UISwitch) {
+        if sender.isOn {
+            setToOnlyBassClef()
+            updateNoteRangeImages()
+            
+            if enableAccidentalsSwitchOutlet.isOn {
+                onlyBassClefSegmentedControlOutlet.selectedSegmentIndex = 0
+            } else {
+                onlyBassClefSegmentedControlOutlet.selectedSegmentIndex = 1
+            }
+            
+            onlyTrebleClefSwitchOutlet.isOn = false
+            onlyGuideNotesSwitchOutlet.isOn = false
+            onlyMnemonicsSwitchOutlet.isOn = false
+        } else {
+            setToPreviousNoteChoices()
+        }
     }
     
     @IBOutlet weak var onlyBassClefSwitchOutlet: UISwitch!
@@ -305,8 +338,17 @@ class NotesOnStaffViewController: UIViewController {
     }
     
     @IBAction func onlyGuideNotesSwitchFlipped(_ sender: UISwitch) {
-        if !sender.isOn {
+        if sender.isOn {
             setToOnlyGuideNotes()
+            updateNoteRangeImages()
+            
+            enableAccidentalsSwitchOutlet.isOn = false
+            onlyTrebleClefSwitchOutlet.isOn = false
+            onlyBassClefSwitchOutlet.isOn = false
+            onlyMnemonicsSwitchOutlet.isOn = false
+            
+            onlyTrebleClefSegmentedControlOutlet.selectedSegmentIndex = 1
+            onlyBassClefSegmentedControlOutlet.selectedSegmentIndex = 1
         } else {
             setToPreviousNoteChoices()
         }
@@ -316,8 +358,17 @@ class NotesOnStaffViewController: UIViewController {
     
     
     @IBAction func onlyMnemonicsSwitchFlipped(_ sender: UISwitch) {
-        if !sender.isOn {
+        if sender.isOn {
             setToOnlyMnemonics()
+            updateNoteRangeImages()
+            
+            enableAccidentalsSwitchOutlet.isOn = false
+            onlyTrebleClefSwitchOutlet.isOn = false
+            onlyBassClefSwitchOutlet.isOn = false
+            onlyGuideNotesSwitchOutlet.isOn = false
+            
+            onlyTrebleClefSegmentedControlOutlet.selectedSegmentIndex = 1
+            onlyBassClefSegmentedControlOutlet.selectedSegmentIndex = 1
         } else {
             setToPreviousNoteChoices()
         }
@@ -393,6 +444,7 @@ class NotesOnStaffViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         currentNoteChoices = Level.currentLevel.noteChoices
+        previousNoteChoices = currentNoteChoices
         
         print("currentNoteChoices: \(currentNoteChoices)")
         setRandomNewNoteUpperIndex()
@@ -790,8 +842,6 @@ class NotesOnStaffViewController: UIViewController {
     
     @IBOutlet var noteRangeHighNotePanGestureOutlet: UIPanGestureRecognizer!
     
-    
-    
     @IBAction func handleLowNotePan(recognizer: UIPanGestureRecognizer) {
        
         print(recognizer.location(in: noteRangeLowNoteImage).y)
@@ -828,6 +878,10 @@ class NotesOnStaffViewController: UIViewController {
 //    @IBAction func handleMenuHightNotePanGesture(_ sender: UIPanGestureRecognizer) {
 //    }
     
+    func updateNoteRangeImages() {
+        noteRangeLowNoteImage.image = UIImage(named: "staff\(whiteNotesOnLargeKeyboard[lowNoteIndex])")
+        noteRangeHighNoteImage.image = UIImage(named: "staff\(whiteNotesOnLargeKeyboard[highNoteIndex])")
+    }
     
     func loadSound(currentSound: String) {
         // sound file
