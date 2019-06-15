@@ -242,6 +242,20 @@ func setToAllWhiteKeys() {
     updateNoteIndices()
 }
 
+func setToAllBlackKeys() {
+    previousNoteChoices = currentNoteChoices
+    currentNoteChoices = blackNotesOnLargeKeyboard
+    setRandomNewNoteUpperIndex()
+    updateNoteIndices()
+}
+
+func setToAllNotes() {
+    previousNoteChoices = currentNoteChoices
+    currentNoteChoices = allNotesOnLargeKeyboard
+    setRandomNewNoteUpperIndex()
+    updateNoteIndices()
+}
+
 func setToPreviousNoteChoices() {
     currentNoteChoices = previousNoteChoices
     setRandomNewNoteUpperIndex()

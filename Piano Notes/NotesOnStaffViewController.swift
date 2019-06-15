@@ -205,12 +205,57 @@ class NotesOnStaffViewController: UIViewController {
     @IBOutlet weak var enableAccidentalsSwitchOutlet: UISwitch!
     
     @IBAction func enableAccidentalsSwitchFlipped(_ sender: UISwitch) {
+        if !sender.isOn {
+            setToAllNoteChoices()
+        } else {
+            setToAllWhiteKeys()
+        }
     }
     
     @IBOutlet weak var accidentalsSegmentedControlOutlet: UISegmentedControl!
     
     
     @IBAction func accidentalsSegmentedControl(_ sender: UISegmentedControl) {
+//        if sender.selectedSegmentIndex == 0 {
+//            
+//            // all white keys
+//            setToOnlyWhiteKeys()
+//            
+//            enableButtons()
+//            disableSharps()
+//            sharpsViewOutlet.alpha = 0
+//            disableFlats()
+//            flatsViewOutlet.alpha = 0
+//            
+//            startNewRound()
+//            
+//        } else if sender.selectedSegmentIndex == 1 {
+//            
+//            // only C D E
+//            setToOnlyCDE()
+//            
+//            disableButtons()
+//            disableSharps()
+//            sharpsViewOutlet.alpha = 0
+//            disableFlats()
+//            flatsViewOutlet.alpha = 0
+//            
+//            startNewRound()
+//            
+//        } else {
+//            
+//            // only F G A B
+//            setToOnlyFGAB()
+//            
+//            disableButtons()
+//            disableSharps()
+//            sharpsViewOutlet.alpha = 0
+//            disableFlats()
+//            flatsViewOutlet.alpha = 0
+//            
+//            startNewRound()
+//            
+//        }
     }
     
     @IBAction func onlyTrebleClefSwitchFlipped(_ sender: UISwitch) {
