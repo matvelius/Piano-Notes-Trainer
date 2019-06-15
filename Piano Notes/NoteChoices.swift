@@ -11,6 +11,7 @@ import Foundation
 //struct NoteChoices {
 
 var currentNoteChoices = [""]
+var previousNoteChoices = [""]
 
 let allNoteChoices = ["F#3", "G3", "G#3", "A3", "A#3", "B3", "C4", "C#4", "D4", "D#4", "E4", "F4", "F#4", "G4", "G#4", "A4", "A#4", "B4", "C5", "C#5",  "D5", "D#5", "E5", "F5", "F#5", "G5", "G#5", "A5", "A#5"]
 
@@ -40,8 +41,10 @@ let allNotesOnLargeKeyboard = ["C2", "C#2", "D2", "D#2", "E2", "F2", "F#2", "G2"
 
 let onlyTrebleClefWhiteNotes = ["C4", "D4", "E4", "F4", "G4", "A4", "B4", "C5", "D5", "E5", "F5", "G5", "A5", "B5", "C6"]
 let onlyTrebleClefBlackNotes = ["C#4", "D#4", "F#4", "G#4", "A#4", "C#5", "D#5", "F#5", "G#5", "A#5"]
+let allTrebleClefNotes = onlyTrebleClefWhiteNotes + onlyTrebleClefBlackNotes
 let onlyBassClefWhiteNotes = ["C2", "D2", "E2", "F2", "G2", "A2", "B2", "C3", "D3", "E3", "F3", "G3", "A3", "B3", "C4bass"]
 let onlyBassClefBlackNotes = ["C#2", "D#2", "F#2", "G#2", "A#2", "C#3", "D#3", "F#3", "G#3", "A#3", "C#4bass"]
+let allBassClefNotes = onlyBassClefWhiteNotes + onlyBassClefBlackNotes
 
 let onlyGuideNotes = ["F3", "C4", "C4bass", "G4"]
 let onlyMiddleCToTrebleG = ["C4", "D4", "E4", "F4", "G4"]
@@ -203,9 +206,46 @@ func setToOnlyWeirdEnharmonics() {
 }
 
 // TODO: - FIGURE OUT NOTE CHOICE LOGIC
+func setToOnlyGuideNotes() {
+    previousNoteChoices = currentNoteChoices
+    currentNoteChoices = onlyGuideNotes
+    setRandomNewNoteUpperIndex()
+    updateNoteIndices()
+}
+
 func setToOnlyMnemonics() {
+    previousNoteChoices = currentNoteChoices
     currentNoteChoices = allMnemonics
     setRandomNewNoteUpperIndex()
+    updateNoteIndices()
+}
+
+func setToOnlyTrebleClef() {
+    previousNoteChoices = currentNoteChoices
+    currentNoteChoices = allTrebleClefNotes
+    setRandomNewNoteUpperIndex()
+    updateNoteIndices()
+}
+
+func setToOnlyBassClef() {
+    previousNoteChoices = currentNoteChoices
+    currentNoteChoices = allBassClefNotes
+    setRandomNewNoteUpperIndex()
+    updateNoteIndices()
+}
+
+// TODO: - allow user to flip back and forth between previous choice and all white keys
+func setToAllWhiteKeys() {
+    previousNoteChoices = currentNoteChoices
+    currentNoteChoices = whiteNotesOnLargeKeyboard
+    setRandomNewNoteUpperIndex()
+    updateNoteIndices()
+}
+
+func setToPreviousNoteChoices() {
+    currentNoteChoices = previousNoteChoices
+    setRandomNewNoteUpperIndex()
+    updateNoteIndices()
 }
 
 
@@ -224,3 +264,14 @@ func generateNewRandomNoteIndex() {
     }
 }
 
+var currentNoteOnStaffIndex = 15
+
+var lowNoteIndex = 0
+var highNoteIndex = whiteNotesOnLargeKeyboard.count - 1
+
+func updateNoteIndices() {
+    lowNoteIndex = whiteNotesOnLargeKeyboard.firstIndex(of: currentNoteChoices[0])!
+    print("lowNoteIndex in viewDidAppear: \(lowNoteIndex)")
+    highNoteIndex = whiteNotesOnLargeKeyboard.firstIndex(of: currentNoteChoices.last!)!
+    print("highNoteIndex in viewDidAppear: \(highNoteIndex)")
+}

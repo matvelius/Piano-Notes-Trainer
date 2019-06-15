@@ -134,8 +134,6 @@ class NotesOnStaffViewController: UIViewController {
     }
     
 
-    var currentNoteOnStaffIndex = 15
-    
     // placeholder variables for comparing answers
     var currentCorrectAnswer = ""
     var currentUserAnswer = ""
@@ -203,7 +201,27 @@ class NotesOnStaffViewController: UIViewController {
 //        startNewRound()
     }
     
+    
+    @IBOutlet weak var enableAccidentalsSwitchOutlet: UISwitch!
+    
+    @IBAction func enableAccidentalsSwitchFlipped(_ sender: UISwitch) {
+    }
+    
+    @IBOutlet weak var accidentalsSegmentedControlOutlet: UISegmentedControl!
+    
+    
+    @IBAction func accidentalsSegmentedControl(_ sender: UISegmentedControl) {
+    }
+    
     @IBAction func onlyTrebleClefSwitchFlipped(_ sender: UISwitch) {
+//        if !sender.isOn {
+//            setToOnlyMnemonics()
+//        } else {
+//            //
+//        }
+//        currentNoteChoices = allTrebleClefNotes
+//        updateNoteIndices()
+//        onlyBassClefSwitchOutlet.isOn = false
     }
     
     @IBOutlet weak var onlyTrebleClefSwitchOutlet: UISwitch!
@@ -242,6 +260,11 @@ class NotesOnStaffViewController: UIViewController {
     }
     
     @IBAction func onlyGuideNotesSwitchFlipped(_ sender: UISwitch) {
+        if !sender.isOn {
+            setToOnlyGuideNotes()
+        } else {
+            setToPreviousNoteChoices()
+        }
     }
     
     @IBOutlet weak var onlyGuideNotesSwitchOutlet: UISwitch!
@@ -251,7 +274,7 @@ class NotesOnStaffViewController: UIViewController {
         if !sender.isOn {
             setToOnlyMnemonics()
         } else {
-//            
+            setToPreviousNoteChoices()
         }
     }
     
@@ -329,10 +352,7 @@ class NotesOnStaffViewController: UIViewController {
         print("currentNoteChoices: \(currentNoteChoices)")
         setRandomNewNoteUpperIndex()
         
-        lowNoteIndex = whiteNotesOnLargeKeyboard.firstIndex(of: currentNoteChoices[0])!
-        print("lowNoteIndex in viewDidAppear: \(lowNoteIndex)")
-        highNoteIndex = whiteNotesOnLargeKeyboard.firstIndex(of: currentNoteChoices.last!)!
-        print("highNoteIndex in viewDidAppear: \(highNoteIndex)")
+        updateNoteIndices()
         generateNewNote()
         
         noteRangeLowNoteImage.image = UIImage(named: "staff\(whiteNotesOnLargeKeyboard[lowNoteIndex])")
