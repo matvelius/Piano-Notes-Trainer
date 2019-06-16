@@ -30,9 +30,14 @@ class NotesOnStaffViewController: UIViewController {
     
     @IBAction func keyButtonTouchUpInside(_ sender: UIButton) {
         print("\(sender.tag): \(allNotesOnLargeKeyboard[sender.tag])")
+        
+        checkAnswer()
     }
     
     @IBAction func keyButtonTouchDown(_ sender: UIButton) {
+        currentUserAnswer = allNotesOnLargeKeyboard[sender.tag]
+        
+        pianoNoteDisplayed.image = UIImage(named: "large_\(currentUserAnswer)_pressed")
     }
     
     
@@ -506,20 +511,26 @@ class NotesOnStaffViewController: UIViewController {
     
     func checkAnswer() {
         
+        // DO I STILL NEED THIS?
         print("currentNoteOnStaffImageName: \(currentNoteOnStaffImageName)")
         
         if currentCorrectAnswer == "C4bass" {
             currentCorrectAnswer = "C4"
         }
         
+        // DEAL WITH C4bass, C#4bass, etc (is there an etc?)
         print("going into checkAnswer, currentNoteOnStaffImageName is: \(currentNoteOnStaffImageName)")
         if currentNoteOnStaffImageName.hasSuffix("bass") {
             currentNoteOnStaffImageName.removeLast(4)
             print("and now, currentNoteOnStaffImageName is: \(currentNoteOnStaffImageName)")
         }
         
-        currentUserAnswer = currentAccidental == .neither ? String(currentNoteOnStaffImageName.suffix(2)) : String(currentNoteOnStaffImageName.suffix(3))
-        print("currentUserAnswer: \(currentUserAnswer)")
+        if currentGameMode == .A {
+        
+            currentUserAnswer = currentAccidental == .neither ? String(currentNoteOnStaffImageName.suffix(2)) : String(currentNoteOnStaffImageName.suffix(3))
+            print("currentUserAnswer: \(currentUserAnswer)")
+        
+        }
         
         let currentUserAnswerWithoutOctave = currentAccidental == .neither ? String(currentUserAnswer.prefix(1)) : String(currentUserAnswer.prefix(2))
         
@@ -529,6 +540,7 @@ class NotesOnStaffViewController: UIViewController {
         
         var currentEnharmonic: String? = getEnharmonic(currentNote: currentUserAnswerWithoutOctave)
         
+        // deal with octave difference in a B#3 = C4 kind of situation
         if currentEnharmonic != nil {
             
             if currentUserAnswer == "B#2" ||
@@ -560,11 +572,22 @@ class NotesOnStaffViewController: UIViewController {
         // RIGHT ANSWER
         if currentUserAnswer == currentCorrectAnswer || currentEnharmonic == currentCorrectAnswer {
             print("correct!")
-            checkButtonOutlet.setImage(UIImage(named: "check_right"), for: .normal)
-            DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1), execute:{
-                self.checkButtonOutlet.setImage(UIImage(named: "check"), for: .normal)
-                self.generateNewNote()
-            })
+            
+            switch currentGameMode {
+            case .A:
+                checkButtonOutlet.setImage(UIImage(named: "check_right"), for: .normal)
+                DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1), execute:{
+                    self.checkButtonOutlet.setImage(UIImage(named: "check"), for: .normal)
+                    self.generateNewNote()
+                })
+            case .B:
+                print("CORRECT - CASE B!")
+                pianoNoteDisplayed.image = UIImage(named: "large_\(currentCorrectAnswer)_right")
+                DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1), execute:{
+                    self.generateNewNote()
+                })
+            }
+            
             
             // play sound
             if soundsEnabled {
@@ -596,10 +619,34 @@ class NotesOnStaffViewController: UIViewController {
                 audioPlayer!.play()
                 audioPlayer!.setVolume(0.05, fadeDuration: 0)
             }
-            checkButtonOutlet.setImage(UIImage(named: "check_wrong"), for: .normal)
-            DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1), execute:{
-                self.checkButtonOutlet.setImage(UIImage(named: "check"), for: .normal)
-            })
+            
+            switch currentGameMode {
+            case .A:
+                checkButtonOutlet.setImage(UIImage(named: "check_wrong"), for: .normal)
+                DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1), execute:{
+                    self.checkButtonOutlet.setImage(UIImage(named: "check"), for: .normal)
+                })
+            case .B:
+                if !notesAlreadyAttempted.contains(currentUserAnswer) {
+                    
+                    let wrongNoteImageName = "large_\(currentUserAnswer)_wrong"
+                    let wrongNoteImage = UIImage(named: wrongNoteImageName)
+                    let wrongNoteImageView = UIImageView(image: wrongNoteImage!)
+                    
+                    //                wrongNoteImageView.translatesAutoresizingMaskIntoConstraints = false
+                    pianoNoteDisplayed.addSubview(wrongNoteImageView)
+                    
+                    //                NSLayoutConstraint.activate([
+                    //                    wrongNoteImageView.widthAnchor.constraint(equalToConstant: pianoKeyImage!.frame.width),
+                    //                    wrongNoteImageView.heightAnchor.constraint(equalToConstant: pianoKeyImage!.frame.height),
+                    //
+                    //                    ])
+                    notesAlreadyAttempted.append(currentUserAnswer)
+                }
+                
+            }
+            
+            
             
             // subtract a point
             if totalScore > 0 {
@@ -618,24 +665,7 @@ class NotesOnStaffViewController: UIViewController {
             giveOrTakeAStar()
             starsImageOutlet.image = UIImage(named: "stars\(currentNumberOfStars)")
             
-//            if !notesAlreadyAttempted.contains(nameOfKeyToHighlight) {
-//
-//                let wrongNoteImageName = "\(nameOfKeyToHighlight)_wrong"
-//                let wrongNoteImage = UIImage(named: wrongNoteImageName)
-//                let wrongNoteImageView = UIImageView(image: wrongNoteImage!)
-//
-//                wrongNoteImageView.translatesAutoresizingMaskIntoConstraints = false
-//                pianoKeyImage.addSubview(wrongNoteImageView)
-//
-//                NSLayoutConstraint.activate([
-//                    wrongNoteImageView.widthAnchor.constraint(equalToConstant: pianoKeyImage!.frame.width),
-//                    wrongNoteImageView.heightAnchor.constraint(equalToConstant: pianoKeyImage!.frame.height),
-//
-//                    ])
-//
-//            }
-//
-//            notesAlreadyAttempted.append(nameOfKeyToHighlight)
+
             
         }
         
@@ -687,6 +717,7 @@ class NotesOnStaffViewController: UIViewController {
         
         } else {
             
+            pianoNoteDisplayed.image = nil
             noteOnStaffImage.image = UIImage(named: "staff\(currentCorrectAnswer)")
             
         }
