@@ -40,11 +40,11 @@ let level7 = Level(id: 7, title: "Level 7:", subtitle: "Putting it all together!
 // NOTES ON STAFF
 let level8 = Level(id: 8, title: "Level 8:", subtitle: "Meet the Guide Notes", imageName: "level8", noteChoices: onlyGuideNotes)
 let level9 = Level(id: 9, title: "Level 9:", subtitle: "Middle C to Treble G", imageName: "level9", noteChoices: onlyMiddleCToTrebleG)
-let level10 = Level(id: 10, title: "Level 10:", subtitle: "Bass F to Middle C", imageName: "level1", noteChoices: onlyBassFToMiddleC)
-let level11 = Level(id: 11, title: "Level 11:", subtitle: "Bass F to Treble G", imageName: "level1", noteChoices: onlyBassFToTrebleG)
-let level12 = Level(id: 12, title: "Level 12:", subtitle: "Mnemonics practice", imageName: "level1", noteChoices: allMnemonics)
-let level13 = Level(id: 13, title: "Level 13:", subtitle: "Focus on the black keys", imageName: "level1", noteChoices: blackNotesOnLargeKeyboard)
-let level14 = Level(id: 14, title: "Level 14:", subtitle: "All the notes now!", imageName: "level1", noteChoices: allNotesOnLargeKeyboard)
+let level10 = Level(id: 10, title: "Level 10:", subtitle: "Bass F to Middle C", imageName: "level10", noteChoices: onlyBassFToMiddleC)
+let level11 = Level(id: 11, title: "Level 11:", subtitle: "Bass F to Treble G", imageName: "level11", noteChoices: onlyBassFToTrebleG)
+let level12 = Level(id: 12, title: "Level 12:", subtitle: "Mnemonics practice", imageName: "level12", noteChoices: allMnemonics)
+let level13 = Level(id: 13, title: "Level 13:", subtitle: "Focus on the black keys", imageName: "level13", noteChoices: blackNotesOnLargeKeyboard)
+let level14 = Level(id: 14, title: "Level 14:", subtitle: "All the notes now!", imageName: "level14", noteChoices: allNotesOnLargeKeyboard)
 
 
 let allLevels = [[level1, level2, level3, level4, level5, level6, level7], [level8, level9, level10, level11, level12, level13, level14]]

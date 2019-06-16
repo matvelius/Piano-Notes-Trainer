@@ -180,6 +180,7 @@ class NotesOnStaffViewController: UIViewController {
             print("switching to mode B")
             currentGameMode = .B
             
+            // hide mode A controls
             accidentalsButtonsOutlet.alpha = 0
             arrowAndCheckButtonsOutlet.alpha = 0
             
@@ -190,6 +191,7 @@ class NotesOnStaffViewController: UIViewController {
             print("switching to mode A")
             currentGameMode = .A
             
+            // show mode A controls
             accidentalsButtonsOutlet.alpha = 1
             arrowAndCheckButtonsOutlet.alpha = 1
 //            includeEnharmonicsSwitchOutlet.isEnabled = false
@@ -225,46 +227,22 @@ class NotesOnStaffViewController: UIViewController {
     
     
     @IBAction func accidentalsSegmentedControl(_ sender: UISegmentedControl) {
-//        if sender.selectedSegmentIndex == 0 {
-//
-//            // all white keys
-//            setToOnlyWhiteKeys()
-//
-//            enableButtons()
-//            disableSharps()
-//            sharpsViewOutlet.alpha = 0
-//            disableFlats()
-//            flatsViewOutlet.alpha = 0
-//
-//            startNewRound()
-//
-//        } else if sender.selectedSegmentIndex == 1 {
-//
-//            // only C D E
-//            setToOnlyCDE()
-//
-//            disableButtons()
-//            disableSharps()
-//            sharpsViewOutlet.alpha = 0
-//            disableFlats()
-//            flatsViewOutlet.alpha = 0
-//
-//            startNewRound()
-//
-//        } else {
-//
-//            // only F G A B
-//            setToOnlyFGAB()
-//            
-//            disableButtons()
-//            disableSharps()
-//            sharpsViewOutlet.alpha = 0
-//            disableFlats()
-//            flatsViewOutlet.alpha = 0
-//
-//            startNewRound()
-//
-//        }
+        
+        enableAccidentalsSwitchOutlet.isOn = true
+        
+        if sender.selectedSegmentIndex == 0 {
+            
+            allAccidentalsEnabled = true
+            
+        } else if sender.selectedSegmentIndex == 1 {
+            
+            onlySharpsEnabled = true
+       
+        } else {
+            
+            onlyFlatsEnabled = true
+            
+        }
     }
     
     @IBAction func onlyTrebleClefSwitchFlipped(_ sender: UISwitch) {
@@ -289,6 +267,26 @@ class NotesOnStaffViewController: UIViewController {
     @IBOutlet weak var onlyTrebleClefSwitchOutlet: UISwitch!
     
     @IBAction func onlyTrebleClefSegmentedControl(_ sender: UISegmentedControl) {
+        
+        onlyTrebleClefSwitchOutlet.isOn = true
+        onlyBassClefSwitchOutlet.isOn = false
+        
+        if sender.selectedSegmentIndex == 0 {
+            
+            setToOnlyTrebleClef()
+            
+        } else if sender.selectedSegmentIndex == 1 {
+            
+            setToOnlyTrebleClefWhiteKeys()
+            enableAccidentalsSwitchOutlet.isOn = false
+            
+        } else {
+            
+            setToOnlyTrebleClefBlackKeys()
+            enableAccidentalsSwitchOutlet.isOn = true
+            accidentalsSegmentedControlOutlet.selectedSegmentIndex = 0
+            
+        }
     }
     
     @IBOutlet weak var onlyTrebleClefSegmentedControlOutlet: UISegmentedControl!
@@ -315,6 +313,26 @@ class NotesOnStaffViewController: UIViewController {
     @IBOutlet weak var onlyBassClefSwitchOutlet: UISwitch!
     
     @IBAction func onlyBassClefSegmentedControl(_ sender: UISegmentedControl) {
+        
+        onlyBassClefSwitchOutlet.isOn = true
+        onlyTrebleClefSwitchOutlet.isOn = false
+        
+        if sender.selectedSegmentIndex == 0 {
+            
+            setToOnlyBassClef()
+            
+        } else if sender.selectedSegmentIndex == 1 {
+            
+            setToOnlyBassClefWhiteKeys()
+            enableAccidentalsSwitchOutlet.isOn = false
+            
+        } else {
+            
+            setToOnlyBassClefBlackKeys()
+            enableAccidentalsSwitchOutlet.isOn = true
+            accidentalsSegmentedControlOutlet.selectedSegmentIndex = 0
+            
+        }
     }
     
     @IBOutlet weak var onlyBassClefSegmentedControlOutlet: UISegmentedControl!
@@ -326,12 +344,18 @@ class NotesOnStaffViewController: UIViewController {
 
     
     @IBAction func noteRangeLowNoteUp(_ sender: UIButton) {
+        
     }
     
     @IBAction func noteRangeLowNoteDown(_ sender: UIButton) {
     }
     
     @IBAction func noteRangeHighNoteUp(_ sender: UIButton) {
+        if highNoteIndex < whiteNotesOnLargeKeyboard.count {
+            highNoteIndex += 1
+            noteRangeHighNoteImage.image = UIImage(named: "staff\(whiteNotesOnLargeKeyboard[highNoteIndex])")
+            currentNoteChoices.append(whiteNotesOnLargeKeyboard[highNoteIndex])
+        }
     }
     
     @IBAction func noteRangeHighNoteDown(_ sender: UIButton) {
@@ -648,19 +672,23 @@ class NotesOnStaffViewController: UIViewController {
 //        }
         
 //        notesAlreadyAttempted = [""]
-        
-//        if currentGameMode == .A {
-
-        
         generateNewRandomNoteIndex()
         currentCorrectAnswer = currentNoteChoices[randomNewNoteIndex]
         print("currentNoteChoices[randomNewNoteIndex]: \(currentCorrectAnswer)")
         lastRandomNumber = randomNewNoteIndex
         
-        if currentCorrectAnswer == "C4bass" {
-            pianoNoteDisplayed.image = UIImage(named: "large_C4_shown")
+        if currentGameMode == .A {
+            
+            if currentCorrectAnswer == "C4bass" {
+                pianoNoteDisplayed.image = UIImage(named: "large_C4_shown")
+            } else {
+                pianoNoteDisplayed.image = UIImage(named: "large_\(currentCorrectAnswer)_shown")
+            }
+        
         } else {
-            pianoNoteDisplayed.image = UIImage(named: "large_\(currentCorrectAnswer)_shown")
+            
+            noteOnStaffImage.image = UIImage(named: "staff\(currentCorrectAnswer)")
+            
         }
         
 //        // remove notes marked wrong

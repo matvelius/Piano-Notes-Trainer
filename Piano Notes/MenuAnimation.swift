@@ -110,9 +110,12 @@ extension NotesOnStaffViewController {
         
         menuIsClosed = true
         
+        // FIXME: - WHAT TO DO WITH CURRENT NOTE CHOICES.. UPDATE IF NEEDED, RIGHT? NOT SURE ABOUT THIS!!
         currentNoteChoices = Array(whiteNotesOnLargeKeyboard[lowNoteIndex...highNoteIndex])
         print("currentNoteChoices: \(currentNoteChoices)")
         setRandomNewNoteUpperIndex()
+        
+        generateNewNote()
         
 //        noteRangeLowNoteImage.image = UIImage(named: "staff\(currentNoteChoices[lowNoteIndex])")
 //        noteRangeHighNoteImage.image = UIImage(named: "staff\(currentNoteChoices[lowNoteIndex])")
