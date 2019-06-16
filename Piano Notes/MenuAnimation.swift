@@ -90,7 +90,7 @@ extension NotesOnStaffViewController {
     
     func closeMenu() {
         
-        self.menuTrailingConstraint.constant = 460
+        self.menuTrailingConstraint.constant = 550
         
         UIView.animate(withDuration: 0.5, delay: 0.0, options: .curveEaseIn, animations: {
             

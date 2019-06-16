@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="l1o-7Z-dlW">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="vCV-Es-ama">
     <device id="ipad12_9rounded" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
@@ -1691,7 +1691,7 @@
                                     <constraint firstAttribute="width" secondItem="Bcp-rj-qSy" secondAttribute="height" multiplier="683:500" id="BWY-Zs-bKG"/>
                                 </constraints>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.0" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vzr-qh-cLh" userLabel="piano_note">
+                            <imageView autoresizesSubviews="NO" clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.0" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vzr-qh-cLh" userLabel="piano_note">
                                 <rect key="frame" x="0.0" y="14" width="1366" height="1000"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -3204,6 +3204,7 @@
                             <constraint firstItem="o0U-9z-aao" firstAttribute="width" secondItem="tec-47-C5m" secondAttribute="width" multiplier="176.1:1366" id="NZw-8g-J8M"/>
                             <constraint firstItem="Q0v-F4-hoG" firstAttribute="width" secondItem="Bcp-rj-qSy" secondAttribute="width" multiplier="5:1366" id="NcM-GH-a27"/>
                             <constraint firstItem="39M-bi-zO3" firstAttribute="width" secondItem="Bcp-rj-qSy" secondAttribute="width" id="OCA-Yp-RZV"/>
+                            <constraint firstItem="vzr-qh-cLh" firstAttribute="height" secondItem="Bcp-rj-qSy" secondAttribute="height" id="Of7-Xz-FK2"/>
                             <constraint firstItem="nSr-W9-D5Q" firstAttribute="height" secondItem="tec-47-C5m" secondAttribute="height" multiplier="27:1024" id="P83-Ss-899"/>
                             <constraint firstItem="ZPJ-G6-G5B" firstAttribute="width" secondItem="tec-47-C5m" secondAttribute="width" multiplier="52:1366" id="PtZ-vK-yp8"/>
                             <constraint firstItem="Bcp-rj-qSy" firstAttribute="trailing" secondItem="cGR-eH-SAd" secondAttribute="trailing" id="QPH-6d-rYL"/>
@@ -3245,6 +3246,8 @@
                             <constraint firstItem="gqB-He-zfK" firstAttribute="top" secondItem="nSr-W9-D5Q" secondAttribute="bottom" id="iu5-UW-Clq"/>
                             <constraint firstItem="COz-gC-a0h" firstAttribute="top" secondItem="3HW-Id-xXV" secondAttribute="bottom" id="ja5-dx-177"/>
                             <constraint firstAttribute="bottom" secondItem="vWE-a7-mpm" secondAttribute="bottom" id="kBS-Ih-Cir"/>
+                            <constraint firstItem="vzr-qh-cLh" firstAttribute="width" secondItem="Bcp-rj-qSy" secondAttribute="width" id="mUd-Qp-peA"/>
+                            <constraint firstItem="vzr-qh-cLh" firstAttribute="centerY" secondItem="cGR-eH-SAd" secondAttribute="centerY" id="pPT-h0-yeb"/>
                             <constraint firstItem="COz-gC-a0h" firstAttribute="centerX" secondItem="tec-47-C5m" secondAttribute="centerX" id="qBS-nZ-EEL"/>
                             <constraint firstItem="uAe-70-Bet" firstAttribute="leading" secondItem="Bcp-rj-qSy" secondAttribute="leading" id="qHE-bL-xEb"/>
                             <constraint firstItem="eMe-p2-imh" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Onz-Vm-Cs8" secondAttribute="trailing" constant="8" symbolic="YES" id="qJL-03-HDR"/>
@@ -3284,6 +3287,7 @@
                         <outlet property="onlyTrebleClefSegmentedControlOutlet" destination="Cv6-Gn-0cx" id="l04-6e-42h"/>
                         <outlet property="onlyTrebleClefSwitchOutlet" destination="fmG-MT-j7o" id="ZIM-Hj-9Hk"/>
                         <outlet property="panGestureRecognizerOutlet" destination="iIp-0g-gv6" id="QJr-Yv-BQp"/>
+                        <outlet property="pianoBackgroundOutlet" destination="Bcp-rj-qSy" id="bGH-LR-SG5"/>
                         <outlet property="pianoNoteDisplayed" destination="vzr-qh-cLh" id="kJg-if-HkH"/>
                         <outlet property="scoreLabelOutlet" destination="Hmf-ec-sG9" id="gPY-IZ-g5c"/>
                         <outlet property="starsImageOutlet" destination="zU9-5z-owL" id="RPv-Gp-NDA"/>
