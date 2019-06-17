@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="vCV-Es-ama">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="l1o-7Z-dlW">
     <device id="ipad12_9rounded" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
@@ -3181,6 +3181,7 @@
                             <constraint firstItem="3EC-sO-rF0" firstAttribute="leading" secondItem="tec-47-C5m" secondAttribute="leading" id="Aut-8V-Cq7"/>
                             <constraint firstItem="S3S-p5-kwV" firstAttribute="width" secondItem="gqB-He-zfK" secondAttribute="width" id="Ceb-p5-Aji"/>
                             <constraint firstItem="S3S-p5-kwV" firstAttribute="top" secondItem="Yns-Qx-CKC" secondAttribute="bottom" id="CkM-2u-7Kg"/>
+                            <constraint firstItem="vzr-qh-cLh" firstAttribute="bottom" secondItem="Bcp-rj-qSy" secondAttribute="bottom" id="Cou-B2-pbC"/>
                             <constraint firstItem="Faj-B9-S4K" firstAttribute="width" secondItem="tec-47-C5m" secondAttribute="width" multiplier="80:1366" id="Duw-er-J6F"/>
                             <constraint firstItem="9hz-6H-Pwm" firstAttribute="width" secondItem="tec-47-C5m" secondAttribute="width" multiplier="78:1366" id="FFi-eh-emg"/>
                             <constraint firstItem="85n-02-024" firstAttribute="width" secondItem="tec-47-C5m" secondAttribute="width" multiplier="30:1366" id="FRX-QU-nd0"/>
@@ -3194,7 +3195,6 @@
                             <constraint firstItem="yxa-Ew-apy" firstAttribute="height" secondItem="246-8n-5LY" secondAttribute="height" id="InU-DQ-qtD"/>
                             <constraint firstItem="Hmf-ec-sG9" firstAttribute="leading" secondItem="vWE-a7-mpm" secondAttribute="trailing" id="JGh-Pq-Iau"/>
                             <constraint firstItem="fdg-X4-cPY" firstAttribute="width" secondItem="tec-47-C5m" secondAttribute="width" multiplier="53:1366" id="JJ1-1t-4E5"/>
-                            <constraint firstItem="vzr-qh-cLh" firstAttribute="bottom" secondItem="Bcp-rj-qSy" secondAttribute="bottom" id="JPf-yJ-fLc"/>
                             <constraint firstItem="Dwc-tj-mY2" firstAttribute="width" secondItem="tec-47-C5m" secondAttribute="width" multiplier="126:1366" id="JaQ-4b-X1c"/>
                             <constraint firstItem="S3S-p5-kwV" firstAttribute="centerY" secondItem="246-8n-5LY" secondAttribute="centerY" id="KFd-sa-GQU"/>
                             <constraint firstItem="246-8n-5LY" firstAttribute="trailing" secondItem="S3S-p5-kwV" secondAttribute="leading" id="Ldv-QP-sFw"/>
@@ -3204,7 +3204,6 @@
                             <constraint firstItem="o0U-9z-aao" firstAttribute="width" secondItem="tec-47-C5m" secondAttribute="width" multiplier="176.1:1366" id="NZw-8g-J8M"/>
                             <constraint firstItem="Q0v-F4-hoG" firstAttribute="width" secondItem="Bcp-rj-qSy" secondAttribute="width" multiplier="5:1366" id="NcM-GH-a27"/>
                             <constraint firstItem="39M-bi-zO3" firstAttribute="width" secondItem="Bcp-rj-qSy" secondAttribute="width" id="OCA-Yp-RZV"/>
-                            <constraint firstItem="vzr-qh-cLh" firstAttribute="height" secondItem="Bcp-rj-qSy" secondAttribute="height" id="Of7-Xz-FK2"/>
                             <constraint firstItem="nSr-W9-D5Q" firstAttribute="height" secondItem="tec-47-C5m" secondAttribute="height" multiplier="27:1024" id="P83-Ss-899"/>
                             <constraint firstItem="ZPJ-G6-G5B" firstAttribute="width" secondItem="tec-47-C5m" secondAttribute="width" multiplier="52:1366" id="PtZ-vK-yp8"/>
                             <constraint firstItem="Bcp-rj-qSy" firstAttribute="trailing" secondItem="cGR-eH-SAd" secondAttribute="trailing" id="QPH-6d-rYL"/>
@@ -3218,6 +3217,7 @@
                             <constraint firstItem="vzr-qh-cLh" firstAttribute="leading" secondItem="Bcp-rj-qSy" secondAttribute="leading" id="V9F-ps-k2A"/>
                             <constraint firstItem="JzE-h9-iEf" firstAttribute="height" secondItem="uAe-70-Bet" secondAttribute="height" multiplier="178:1000" id="Vfn-zY-D8Z"/>
                             <constraint firstItem="Bcp-rj-qSy" firstAttribute="centerY" secondItem="cGR-eH-SAd" secondAttribute="centerY" id="Vsn-mV-03H"/>
+                            <constraint firstItem="vzr-qh-cLh" firstAttribute="top" secondItem="Bcp-rj-qSy" secondAttribute="top" id="W1x-Q8-Pnj"/>
                             <constraint firstItem="uAe-70-Bet" firstAttribute="centerY" secondItem="Bcp-rj-qSy" secondAttribute="centerY" id="XaH-h4-k7Q"/>
                             <constraint firstItem="BWO-vq-xY0" firstAttribute="trailing" secondItem="cGR-eH-SAd" secondAttribute="trailing" constant="-20" id="XbP-WV-ELb"/>
                             <constraint firstItem="S3S-p5-kwV" firstAttribute="centerX" secondItem="tec-47-C5m" secondAttribute="centerX" id="Y4J-uo-hnf"/>
@@ -3227,7 +3227,6 @@
                             <constraint firstItem="nSr-W9-D5Q" firstAttribute="leading" secondItem="cGR-eH-SAd" secondAttribute="leading" id="acO-Tb-8HA"/>
                             <constraint firstItem="uAe-70-Bet" firstAttribute="centerX" secondItem="tec-47-C5m" secondAttribute="centerX" id="bc6-7W-mOL"/>
                             <constraint firstItem="gqB-He-zfK" firstAttribute="width" secondItem="Bcp-rj-qSy" secondAttribute="width" multiplier="541.5:1366" id="c55-se-KYE"/>
-                            <constraint firstItem="vzr-qh-cLh" firstAttribute="top" secondItem="Bcp-rj-qSy" secondAttribute="top" id="cg6-iz-ox5"/>
                             <constraint firstItem="asX-nN-gTf" firstAttribute="width" secondItem="tec-47-C5m" secondAttribute="width" multiplier="53:1366" id="cpM-ns-Pew"/>
                             <constraint firstItem="Bcp-rj-qSy" firstAttribute="leading" secondItem="cGR-eH-SAd" secondAttribute="leading" id="cyA-SK-TZb"/>
                             <constraint firstItem="Yns-Qx-CKC" firstAttribute="centerX" secondItem="tec-47-C5m" secondAttribute="centerX" id="dBy-Yx-ZbW"/>
@@ -3246,8 +3245,6 @@
                             <constraint firstItem="gqB-He-zfK" firstAttribute="top" secondItem="nSr-W9-D5Q" secondAttribute="bottom" id="iu5-UW-Clq"/>
                             <constraint firstItem="COz-gC-a0h" firstAttribute="top" secondItem="3HW-Id-xXV" secondAttribute="bottom" id="ja5-dx-177"/>
                             <constraint firstAttribute="bottom" secondItem="vWE-a7-mpm" secondAttribute="bottom" id="kBS-Ih-Cir"/>
-                            <constraint firstItem="vzr-qh-cLh" firstAttribute="width" secondItem="Bcp-rj-qSy" secondAttribute="width" id="mUd-Qp-peA"/>
-                            <constraint firstItem="vzr-qh-cLh" firstAttribute="centerY" secondItem="cGR-eH-SAd" secondAttribute="centerY" id="pPT-h0-yeb"/>
                             <constraint firstItem="COz-gC-a0h" firstAttribute="centerX" secondItem="tec-47-C5m" secondAttribute="centerX" id="qBS-nZ-EEL"/>
                             <constraint firstItem="uAe-70-Bet" firstAttribute="leading" secondItem="Bcp-rj-qSy" secondAttribute="leading" id="qHE-bL-xEb"/>
                             <constraint firstItem="eMe-p2-imh" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Onz-Vm-Cs8" secondAttribute="trailing" constant="8" symbolic="YES" id="qJL-03-HDR"/>

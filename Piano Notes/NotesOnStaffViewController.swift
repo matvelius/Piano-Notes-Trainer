@@ -630,48 +630,63 @@ class NotesOnStaffViewController: UIViewController {
                     self.checkButtonOutlet.setImage(UIImage(named: "check"), for: .normal)
                 })
             case .B:
+                pianoNoteDisplayed.image = nil
                 
                 if !notesAlreadyAttempted.contains(currentUserAnswer) {
                     
-                    print("INCORRECT - MODE B, not in notesAlreadyAttempted!")
-                    
                     let wrongNoteImageName = "large_\(currentUserAnswer)_wrong"
                     let wrongNoteImage = UIImage(named: wrongNoteImageName)
-                    var wrongNoteImageView = UIView(frame: .zero)
-                    wrongNoteImageView = UIImageView(image: wrongNoteImage!)
-                    print("\(wrongNoteImageName) : \(wrongNoteImage) : \(wrongNoteImageView)")
+                    let wrongNoteImageView = UIImageView(image: wrongNoteImage!)
                     
                     wrongNoteImageView.translatesAutoresizingMaskIntoConstraints = false
                     pianoNoteDisplayed.addSubview(wrongNoteImageView)
                     
-                    
                     NSLayoutConstraint.activate([
                         wrongNoteImageView.widthAnchor.constraint(equalToConstant: pianoNoteDisplayed!.frame.width),
-                        wrongNoteImageView.heightAnchor.constraint(equalToConstant: pianoNoteDisplayed!.frame.height),
-                        wrongNoteImageView.centerXAnchor.constraint(equalTo: pianoNoteDisplayed!.centerXAnchor),
-                        wrongNoteImageView.centerYAnchor.constraint(equalTo: pianoNoteDisplayed!.centerYAnchor)
+                        wrongNoteImageView.heightAnchor.constraint(equalToConstant: pianoNoteDisplayed!.frame.height)
                         ])
                     
-                    wrongNoteImageView.widthAnchor.constraint(equalToConstant: pianoNoteDisplayed!.intrinsicContentSize.width)
-                    wrongNoteImageView.heightAnchor.constraint(equalToConstant: pianoNoteDisplayed!.intrinsicContentSize.height)
-
-                    wrongNoteImageView.center = pianoNoteDisplayed.convert(pianoNoteDisplayed.center, from: pianoNoteDisplayed.superview)
-                    
-                    print("wrongNoteImageView.widthAnchor: \(wrongNoteImageView.widthAnchor)")
-                    print("wrongNoteImageView.heightAnchor: \(wrongNoteImageView.heightAnchor)")
-                    print("wrongNoteImageView.centerXAnchor: \(wrongNoteImageView.centerXAnchor)")
-                    print("wrongNoteImageView.centerYAnchor: \(wrongNoteImageView.centerYAnchor)")
-                    
-                    print("pianoNoteDisplayed!.frame.width: \(pianoNoteDisplayed!.frame.width)")
-                    print("pianoNoteDisplayed!.frame.height: \(pianoNoteDisplayed!.frame.height)")
-                    print("pianoNoteDisplayed!.centerXAnchor: \(pianoNoteDisplayed!.centerXAnchor)")
-                    print("pianoNoteDisplayed!.centerYAnchor: \(pianoNoteDisplayed!.centerYAnchor)")
-
-                    
-                    
-                    
-                    notesAlreadyAttempted.append(currentUserAnswer)
                 }
+                
+                notesAlreadyAttempted.append(currentUserAnswer)
+                
+//                if !notesAlreadyAttempted.contains(currentUserAnswer) {
+//
+//                    print("INCORRECT - MODE B, not in notesAlreadyAttempted!")
+//
+//                    let wrongNoteImageName = "large_\(currentUserAnswer)_wrong"
+//                    let wrongNoteImage = UIImage(named: wrongNoteImageName)
+//                    var wrongNoteImageView = UIView(frame: .zero)
+//                    wrongNoteImageView = UIImageView(image: wrongNoteImage!)
+//                    print("\(wrongNoteImageName) : \(wrongNoteImage) : \(wrongNoteImageView)")
+//
+//                    wrongNoteImageView.translatesAutoresizingMaskIntoConstraints = false
+//                    pianoNoteDisplayed.addSubview(wrongNoteImageView)
+//
+//
+//                    NSLayoutConstraint.activate([
+//                        wrongNoteImageView.widthAnchor.constraint(equalToConstant: pianoNoteDisplayed!.frame.width),
+//                        wrongNoteImageView.heightAnchor.constraint(equalToConstant: pianoNoteDisplayed!.frame.height),
+//                        wrongNoteImageView.centerXAnchor.constraint(equalTo: pianoNoteDisplayed!.centerXAnchor),
+//                        wrongNoteImageView.centerYAnchor.constraint(equalTo: pianoNoteDisplayed!.centerYAnchor)
+//                        ])
+//
+//                    wrongNoteImageView.widthAnchor.constraint(equalToConstant: pianoNoteDisplayed!.intrinsicContentSize.width)
+//                    wrongNoteImageView.heightAnchor.constraint(equalToConstant: pianoNoteDisplayed!.intrinsicContentSize.height)
+//
+//                    wrongNoteImageView.center = pianoNoteDisplayed.convert(pianoNoteDisplayed.center, from: pianoNoteDisplayed.superview)
+//
+//                    print("wrongNoteImageView.widthAnchor: \(wrongNoteImageView.widthAnchor)")
+//                    print("wrongNoteImageView.heightAnchor: \(wrongNoteImageView.heightAnchor)")
+//                    print("wrongNoteImageView.centerXAnchor: \(wrongNoteImageView.centerXAnchor)")
+//                    print("wrongNoteImageView.centerYAnchor: \(wrongNoteImageView.centerYAnchor)")
+//
+//                    print("pianoNoteDisplayed!.frame.width: \(pianoNoteDisplayed!.frame.width)")
+//                    print("pianoNoteDisplayed!.frame.height: \(pianoNoteDisplayed!.frame.height)")
+//                    print("pianoNoteDisplayed!.centerXAnchor: \(pianoNoteDisplayed!.centerXAnchor)")
+//                    print("pianoNoteDisplayed!.centerYAnchor: \(pianoNoteDisplayed!.centerYAnchor)")
+//                    notesAlreadyAttempted.append(currentUserAnswer)
+//                }
                 
             }
             
@@ -749,16 +764,18 @@ class NotesOnStaffViewController: UIViewController {
             pianoNoteDisplayed.image = nil
             noteOnStaffImage.image = UIImage(named: "staff\(currentCorrectAnswer)")
             
+            // remove notes marked wrong
+            if !notesAlreadyAttempted.isEmpty {
+                for subview in self.pianoNoteDisplayed.subviews {
+                    subview.removeFromSuperview()
+                }
+            }
+            
+            notesAlreadyAttempted = [""]
+            
         }
         
-//        // remove notes marked wrong
-//        if !notesAlreadyAttempted.isEmpty {
-//            for subview in self.pianoKeyImage.subviews {
-//                subview.removeFromSuperview()
-//            }
-//        }
-//        
-//        notesAlreadyAttempted = [""]
+        
         
         
         
