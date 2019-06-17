@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="l1o-7Z-dlW">
     <device id="ipad12_9rounded" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
@@ -3562,7 +3562,7 @@
         <image name="nav_triangle_L_normal" width="115" height="717"/>
         <image name="nav_triangle_R_normal" width="115" height="717"/>
         <image name="nav_triangle_R_pressed" width="115" height="717"/>
-        <image name="notes_on_staff_piano_background" width="2732" height="2048"/>
+        <image name="notes_on_staff_piano_background" width="1366" height="1024"/>
         <image name="score" width="754" height="102"/>
         <image name="sharp" width="210" height="123"/>
         <image name="sharp_pressed" width="210" height="123"/>

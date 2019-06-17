@@ -2,11 +2,11 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "notes_on_staff_piano_background.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
+      "filename" : "notes_on_staff_piano_background.png",
       "scale" : "2x"
     },
     {

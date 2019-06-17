@@ -613,6 +613,10 @@ class NotesOnStaffViewController: UIViewController {
             giveOrTakeAStar()
             starsImageOutlet.image = UIImage(named: "stars\(currentNumberOfStars)")
             
+            if currentNumberOfStars == 1 {
+                Alert.showFinishLevelAlert(on: self)
+            }
+            
         // WRONG ANSWER
         } else {
             print("incorrect!")
