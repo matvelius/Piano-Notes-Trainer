@@ -864,6 +864,10 @@ class ViewController: UIViewController {
             giveOrTakeAStar()
             stars.image = UIImage(named: "stars\(currentNumberOfStars)")
             
+            if currentNumberOfStars == 5 {
+                Alert.showFinishLevelAlert(on: self)
+            }
+            
             //            usleep(1000000) //will sleep for 1 second
             //            Thread.sleep(forTimeInterval: 60/cadence)
             DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1), execute: {
