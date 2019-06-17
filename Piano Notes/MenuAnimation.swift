@@ -12,7 +12,7 @@ var menuIsClosed = true
 
 // TODO: - add an "if a setting was changed" condition
 
-extension ViewController {
+extension NoteNamesViewController {
     
     func openMenu() {
     

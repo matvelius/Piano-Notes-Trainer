@@ -13,7 +13,7 @@
         <!--Levels Table View Controller-->
         <scene sceneID="y3s-QD-6BG">
             <objects>
-                <tableViewController id="8JC-u7-HER" customClass="LevelsTableViewController" customModule="Piano_Notes" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="Levels" id="8JC-u7-HER" customClass="LevelsTableViewController" customModule="Piano_Notes" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="dZH-ss-fad">
                         <rect key="frame" x="0.0" y="0.0" width="1366" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -89,10 +89,10 @@
             </objects>
             <point key="canvasLocation" x="707.8125" y="-677.34375"/>
         </scene>
-        <!--View Controller-->
+        <!--Note Names View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="Level1" modalTransitionStyle="partialCurl" id="BYZ-38-t0r" customClass="ViewController" customModule="Piano_Notes" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="NoteNames" modalTransitionStyle="partialCurl" id="BYZ-38-t0r" customClass="NoteNamesViewController" customModule="Piano_Notes" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="1366" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1645,7 +1645,7 @@
         <!--Notes On Staff View Controller-->
         <scene sceneID="Qoc-gM-v9U">
             <objects>
-                <viewController id="vCV-Es-ama" customClass="NotesOnStaffViewController" customModule="Piano_Notes" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="NotesOnStaff" id="vCV-Es-ama" customClass="NotesOnStaffViewController" customModule="Piano_Notes" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tec-47-C5m">
                         <rect key="frame" x="0.0" y="0.0" width="1366" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

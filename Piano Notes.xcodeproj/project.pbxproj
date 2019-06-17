@@ -63,7 +63,7 @@
 		D74B814422B74DD20031DFF7 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74B814322B74DD20031DFF7 /* Alert.swift */; };
 		D75DE89322828C5800BBFDEF /* GameMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75DE89222828C5800BBFDEF /* GameMode.swift */; };
 		D777C81822009DDB00FA472E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D777C81722009DDB00FA472E /* AppDelegate.swift */; };
-		D777C81A22009DDB00FA472E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D777C81922009DDB00FA472E /* ViewController.swift */; };
+		D777C81A22009DDB00FA472E /* NoteNamesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D777C81922009DDB00FA472E /* NoteNamesViewController.swift */; };
 		D777C81D22009DDB00FA472E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D777C81B22009DDB00FA472E /* Main.storyboard */; };
 		D777C81F22009DE000FA472E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D777C81E22009DE000FA472E /* Assets.xcassets */; };
 		D777C82222009DE000FA472E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D777C82022009DE000FA472E /* LaunchScreen.storyboard */; };
@@ -139,7 +139,7 @@
 		D75DE89222828C5800BBFDEF /* GameMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameMode.swift; sourceTree = "<group>"; };
 		D777C81422009DDB00FA472E /* Piano Notes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Piano Notes.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D777C81722009DDB00FA472E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D777C81922009DDB00FA472E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		D777C81922009DDB00FA472E /* NoteNamesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteNamesViewController.swift; sourceTree = "<group>"; };
 		D777C81C22009DDB00FA472E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D777C81E22009DE000FA472E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D777C82122009DE000FA472E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -257,20 +257,20 @@
 			isa = PBXGroup;
 			children = (
 				D777C81722009DDB00FA472E /* AppDelegate.swift */,
-				D777C81922009DDB00FA472E /* ViewController.swift */,
 				D7E6BFC822AC6B0C00370F4B /* MenuAnimation.swift */,
 				D71DF42322A73BBC00789E9A /* ScoreAndStars.swift */,
 				D75DE89222828C5800BBFDEF /* GameMode.swift */,
 				D7EF7737227785CE00943F54 /* NoteChoices.swift */,
 				D7EF77392277F06B00943F54 /* Accidentals.swift */,
 				D7DFCFEA22619FC700468F71 /* Enharmonics.swift */,
-				D777C81B22009DDB00FA472E /* Main.storyboard */,
 				D74B814322B74DD20031DFF7 /* Alert.swift */,
 				D7EE080722B1385600B7EB0C /* MiscSettings.swift */,
+				D777C81B22009DDB00FA472E /* Main.storyboard */,
+				D777C81922009DDB00FA472E /* NoteNamesViewController.swift */,
 				D74992D8228C3FD90095C1B7 /* NotesOnStaffViewController.swift */,
+				D7EF773B2277F3D200943F54 /* LevelsTableViewController.swift */,
 				D7EF773D2277F97100943F54 /* Levels.swift */,
 				D7EF773F2277FFF000943F54 /* LevelTableViewCell.swift */,
-				D7EF773B2277F3D200943F54 /* LevelsTableViewController.swift */,
 				D7C2E3D92241C9E300A72D5C /* ExplainerViewController.swift */,
 				D7EF774122789FC800943F54 /* ExplainersOnOrOff.swift */,
 				D78A61DE22643EBC008706E2 /* InitialViewController.swift */,
@@ -412,7 +412,7 @@
 				D7EF773E2277F97100943F54 /* Levels.swift in Sources */,
 				D74B814422B74DD20031DFF7 /* Alert.swift in Sources */,
 				D78A61DF22643EBC008706E2 /* InitialViewController.swift in Sources */,
-				D777C81A22009DDB00FA472E /* ViewController.swift in Sources */,
+				D777C81A22009DDB00FA472E /* NoteNamesViewController.swift in Sources */,
 				D7EF7738227785CE00943F54 /* NoteChoices.swift in Sources */,
 				D7EF77402277FFF000943F54 /* LevelTableViewCell.swift in Sources */,
 				D7E6BFC922AC6B0C00370F4B /* MenuAnimation.swift in Sources */,

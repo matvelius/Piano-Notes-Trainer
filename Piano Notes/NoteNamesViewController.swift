@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  NoteNamesViewController.swift
 //  Piano Notes
 //
 //  Created by Matvey on 1/29/19.
@@ -13,7 +13,7 @@ import AVFoundation
 //import AudioToolbox
 
 
-class ViewController: UIViewController {
+class NoteNamesViewController: UIViewController {
     
 //    // instance variable to hold the AVAudioPlayer object
 //    var audioPlayer: AVAudioPlayer?
@@ -864,7 +864,7 @@ class ViewController: UIViewController {
             giveOrTakeAStar()
             stars.image = UIImage(named: "stars\(currentNumberOfStars)")
             
-            if currentNumberOfStars == 5 {
+            if currentNumberOfStars == 1 {
                 Alert.showFinishLevelAlert(on: self)
             }
             
