@@ -573,8 +573,6 @@ class NoteNamesViewController: UIViewController {
     
     func generateNewNote() {
         
-        
-        
         switch currentGameMode {
         case .A:
             enableButtons()
@@ -636,15 +634,16 @@ class NoteNamesViewController: UIViewController {
             pianoKeyImage.image = nil
             
 //            var upperNoteChoiceLimit = 6
-            randomNewNoteIndexUpperLimit = 6
+            // ****
+            // DO I NEED THIS??
+            // randomNewNoteIndexUpperLimit = 6
             
-            // LIMIT NUMBER OF NOTE CHOICES FOR NEW NOTE
-            
+            // IF LEVEL REQUIRES, LIMIT NUMBER OF NOTE CHOICES FOR NEW NOTE
             switch currentNoteChoices {
             case onlyCDE:
 //                upperNoteChoiceLimit = 2
                 randomNewNoteIndexUpperLimit = 2
-            case onlyFGAB, onlyWeirdEnharmonics:
+            case onlyFGAB:
                 randomNewNoteIndexUpperLimit = 3
 //                upperNoteChoiceLimit = 3
             default: break
@@ -737,6 +736,8 @@ class NoteNamesViewController: UIViewController {
                     currentAccidental = .flat
                 }
             }
+            
+            
             
             
             print("current note should be: \(currentNote)")
@@ -1494,6 +1495,8 @@ class NoteNamesViewController: UIViewController {
         }
         
         enableButtons()
+        
+        currentGameMode = .A
         
         // determine next level
         

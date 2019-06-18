@@ -24,7 +24,7 @@ let onlyCDE = ["C4", "D4", "E4", "C5", "D5", "E5"]
 let onlyFGAB = ["G3", "A3", "B3", "F4", "G4", "A4", "B4", "F5", "G5", "A5"]
 
 // IMPLEMENT WEIRD ENHARMONICS FOR LEVEL 6!
-let onlyWeirdEnharmonics = ["B3", "C4", "E4", "F4", "B4", "C5", "E5", "F5"]
+let onlyWeirdEnharmonics = ["B#3", "Cb4", "E#4", "Fb4", "B#4", "Cb5", "E#5", "Fb5"]
 
 // FOR MODE B (NOTE NAMES)
 let basicNoteNames = ["A", "B", "C", "D", "E", "F", "G"]
