@@ -924,6 +924,21 @@ class NotesOnStaffViewController: UIViewController {
 //        lastAccidentalOrNotIndex = accidentalOrNotIndex
     }
     
+//    func startNewRound() {
+//
+//        lastRandomNumber = randomNewNoteIndex
+//        totalScore = 0
+//        scoreLabel.text = "0"
+//        correctAnswersInARow = 0
+//        incorrectAnswersInARow = 0
+//        currentNumberOfStars = 0
+//        stars.image = UIImage(named: "stars\(currentNumberOfStars)")
+//        resetButtonsToDefault()
+//
+//        generateNewNote()
+//
+//    }
+    
     @IBAction func handleMainNotePanGesture(recognizer: UIPanGestureRecognizer) {
         
 //        print(recognizer.velocity(in: self.view).y)

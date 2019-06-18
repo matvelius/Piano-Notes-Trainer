@@ -515,7 +515,7 @@ class NoteNamesViewController: UIViewController {
         // sort the note buttons outlet collection by tag
         noteButtonsOutletCollection = noteButtonsOutletCollection.sorted(by: { $0.tag < $1.tag })
         
-        setupGameForCurrentLevel()
+        
         
         calculateSharpAndFlatBounds()
         
@@ -536,10 +536,12 @@ class NoteNamesViewController: UIViewController {
         
         blackKeySettingsSegmentedControlOutlet.isEnabled = true
         
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        setupGameForCurrentLevel()
         scoreLabel.text = "0"
-        
         startNewRound()
-
     }
     
 //    override func viewDidAppear(_ animated: Bool) {
@@ -623,6 +625,9 @@ class NoteNamesViewController: UIViewController {
         // MODE B
         } else {
             
+            print("generateNewNote: Mode B! currentNoteChoices: \(currentNoteChoices)")
+            print("onlySharpsEnabled: \(onlySharpsEnabled)")
+            
             pianoKeyImage.image = nil
             
 //            var upperNoteChoiceLimit = 6
@@ -683,6 +688,7 @@ class NoteNamesViewController: UIViewController {
             } else if onlySharpsEnabled {
                 
                 accidentalOrNot = .sharp
+                print("only sharps enabled, so accidentalOrNot = .sharp!")
                 
             } else if onlyFlatsEnabled {
                 
@@ -707,7 +713,7 @@ class NoteNamesViewController: UIViewController {
                 currentAccidental = .neither
             case .sharp:
                 currentNote = basicNoteNames[randomNewNoteIndex] + "#"
-            
+                print("SHARP! currentNote: \(currentNote)")
                 // generate new note if current note is a weird enharmonic
                 if !weirdEnharmonicsEnabled && (currentNote == "B#" || currentNote == "E#") {
                     generateNewNote()
@@ -864,7 +870,7 @@ class NoteNamesViewController: UIViewController {
             giveOrTakeAStar()
             stars.image = UIImage(named: "stars\(currentNumberOfStars)")
             
-            if currentNumberOfStars == 1 {
+            if currentNumberOfStars == 5 {
                 Alert.showFinishLevelAlert(on: self)
             }
             
@@ -1452,21 +1458,21 @@ class NoteNamesViewController: UIViewController {
             flatsViewOutlet.alpha = 0
             disableGestureRecognizers()
         case 4:
-            setToOnlyBlackKeys()
+            setToOnlySharps()
             enableSharps()
             sharpsViewOutlet.alpha = 1
             disableFlats()
             flatsViewOutlet.alpha = 0
             enableGestureRecognizers()
         case 5:
-            setToOnlyBlackKeys()
+            setToOnlyFlats()
             disableSharps()
             sharpsViewOutlet.alpha = 0
             enableFlats()
             flatsViewOutlet.alpha = 1
             enableGestureRecognizers()
         case 6:
-            setToAllNoteChoices()
+            setToOnlyWeirdEnharmonics()
             enableSharps()
             sharpsViewOutlet.alpha = 1
             enableFlats()
