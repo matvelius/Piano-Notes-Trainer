@@ -573,6 +573,7 @@ class NoteNamesViewController: UIViewController {
     
     func generateNewNote() {
         
+        // enable/disable btns based on mode - move to new round?
         switch currentGameMode {
         case .A:
             enableButtons()
@@ -598,12 +599,7 @@ class NoteNamesViewController: UIViewController {
         notesAlreadyAttempted = [""]
         
         if currentGameMode == .A {
-        
-//            randomNewNoteIndex = Int.random(in: 0...randomNewNoteIndexUpperLimit)
-//
-//            while randomNewNoteIndex == lastRandomNumber {
-//                randomNewNoteIndex = Int.random(in: 0...randomNewNoteIndexUpperLimit)
-//            }
+
             generateNewRandomNoteIndex()
             print("randomNewNoteIndex: \(randomNewNoteIndex)")
             currentNote = currentNoteChoices[randomNewNoteIndex]
@@ -611,25 +607,24 @@ class NoteNamesViewController: UIViewController {
             
             let currentNoteNameLength = currentNote.count
             
+            // determine currentCorrectAnswer
             // 3-character note names need to be converted to 2-character ones
             // (because octave doesn't matter)
             if currentNoteNameLength == 3 {
                 currentCorrectAnswer = String(currentNote[currentNote.startIndex...currentNote.index(after: currentNote.startIndex)])
-    //            print("currentCorrectAnswer when name length == 3: \(currentCorrectAnswer)")
             } else {
                 currentCorrectAnswer = String(currentNote[currentNote.startIndex])
-    //            print("currentCorrectAnswer when name length == \(currentNoteNameLength): \(currentCorrectAnswer)")
             }
-    //        currentCorrectAnswer = String(currentNote[currentNote.startIndex])
+
             print("currentCorrectAnswer is \(currentCorrectAnswer)")
             
             pianoKeyImage.image = UIImage(named: "\(currentNote)_shown")
            
-        // MODE B
+        // MODE B (note name is shown, user has to press the right key)
         } else {
             
             print("generateNewNote: Mode B! currentNoteChoices: \(currentNoteChoices)")
-            print("onlySharpsEnabled: \(onlySharpsEnabled)")
+//            print("onlySharpsEnabled: \(onlySharpsEnabled)")
             
             pianoKeyImage.image = nil
             
@@ -639,6 +634,7 @@ class NoteNamesViewController: UIViewController {
             // randomNewNoteIndexUpperLimit = 6
             
             // IF LEVEL REQUIRES, LIMIT NUMBER OF NOTE CHOICES FOR NEW NOTE
+            // ISN'T THIS ALREADY CALCULATED in generateNewRandomNoteIndex() (BELOW?)
             switch currentNoteChoices {
             case onlyCDE:
 //                upperNoteChoiceLimit = 2
@@ -649,104 +645,108 @@ class NoteNamesViewController: UIViewController {
             default: break
             }
             
-//            randomNewNoteIndex = Int.random(in: 0...upperNoteChoiceLimit)
-//
-//            while randomNewNoteIndex == lastRandomNumber {
-//                randomNewNoteIndex = Int.random(in: 0...upperNoteChoiceLimit)
-//            }
+
             generateNewRandomNoteIndex()
             
-            var accidentalOrNot: Accidentals = .neither
-            
-            if allNoteChoicesEnabled {
-            
-                accidentalOrNotIndex = Int.random(in: 0...2)
-                
-                while accidentalOrNotIndex == lastAccidentalOrNotIndex {
-                    accidentalOrNotIndex = Int.random(in: 0...2)
-                }
-                
-                accidentalOrNot = Accidentals.allCases[accidentalOrNotIndex]
-            
-            } else if onlyBlackKeysEnabled {
-                
-                accidentalOrNotIndex = Int.random(in: 0...1)
-                
-//                while accidentalOrNotIndex == lastAccidentalOrNotIndex {
-//                    accidentalOrNotIndex = Int.random(in: 0...1)
-//                }
-                
-                accidentalOrNot = Accidentals.allCases[accidentalOrNotIndex]
-            
-            } else if onlyWeirdEnharmonicsEnabled {
-                
-                accidentalOrNotIndex = Int.random(in: 0...1)
-                
-                // IF I LEFT THIS IN, IT WOULD JUST KEEP SWITCHING, RIGHT?
-//                while accidentalOrNotIndex == lastAccidentalOrNotIndex {
-//                    accidentalOrNotIndex = Int.random(in: 1...2)
-//                }
-                
-                accidentalOrNot = Accidentals.allCases[accidentalOrNotIndex]
-            
-            } else if onlySharpsEnabled {
-                
-                accidentalOrNot = .sharp
-                print("only sharps enabled, so accidentalOrNot = .sharp!")
-                
-            } else if onlyFlatsEnabled {
-                
-                accidentalOrNot = .flat
-                
-            }
-            
-            // if noteChoices[1] == "#" (for only sharps) !
-
-            switch accidentalOrNot {
-            case .neither:
-                // NOT BASIC NOTE NAMES, BUT... ?
-                switch currentNoteChoices {
-                case onlyCDE:
-                    currentNote = basicNoteNamesOnlyCDE[randomNewNoteIndex]
-                case onlyFGAB:
-                    currentNote = basicNoteNamesOnlyFGAB[randomNewNoteIndex]
-                default:
-                    currentNote = basicNoteNames[randomNewNoteIndex]
-                }
-                
-                currentAccidental = .neither
-            case .sharp:
-                currentNote = basicNoteNames[randomNewNoteIndex] + "#"
-                print("SHARP! currentNote: \(currentNote)")
-                // generate new note if current note is a weird enharmonic
-                if !weirdEnharmonicsEnabled && (currentNote == "B#" || currentNote == "E#") {
-                    generateNewNote()
-                } else {
-                    sharpsOutletCollection[randomNewNoteIndex].setImage(UIImage(named: "sharp_shown"), for: UIControl.State.normal)
+            // level 6 only
+            if onlyWeirdEnharmonicsEnabled {
+                // set current note
+                currentNote = currentNoteChoices[randomNewNoteIndex]
+                print("current weird enharmonic generated: \(currentNote)")
+                let weirdEnharmonicIndex = basicNoteNames.index(of: String(currentNote.first!))
+                print("weirdEnharmonicIndex: \(weirdEnharmonicIndex)")
+                // light up the correct # or b button
+                if currentNote.last == "#" {
+                    sharpsOutletCollection[weirdEnharmonicIndex!].setImage(UIImage(named: "sharp_shown"), for: UIControl.State.normal)
                     currentAccidental = .sharp
-                }
-            case .flat:
-                currentNote = basicNoteNames[randomNewNoteIndex] + "b"
-                
-                // generate new note if current note is a weird enharmonic
-                if !weirdEnharmonicsEnabled && (currentNote == "Cb" || currentNote == "Fb") {
-                    generateNewNote()
                 } else {
-                    flatsOutletCollection[randomNewNoteIndex].setImage(UIImage(named: "flat_shown"), for: UIControl.State.normal)
+                    flatsOutletCollection[weirdEnharmonicIndex!].setImage(UIImage(named: "flat_shown"), for: UIControl.State.normal)
                     currentAccidental = .flat
                 }
+                // need to take care of the correct octave!!
+                currentCorrectAnswer = getEnharmonic(currentNote: currentNote)!
+            
+            } else {
+            
+            
+                var accidentalOrNot: Accidentals = .neither
+                
+                // decide whether or not the note is going to be a # or a b (or neither)
+                if allNoteChoicesEnabled {
+                
+                    accidentalOrNotIndex = Int.random(in: 0...2)
+                    
+                    while accidentalOrNotIndex == lastAccidentalOrNotIndex {
+                        accidentalOrNotIndex = Int.random(in: 0...2)
+                    }
+                    
+                    accidentalOrNot = Accidentals.allCases[accidentalOrNotIndex]
+                
+                } else if onlyBlackKeysEnabled || onlyWeirdEnharmonicsEnabled {
+                    
+                    accidentalOrNotIndex = Int.random(in: 0...1)
+                    
+                    accidentalOrNot = Accidentals.allCases[accidentalOrNotIndex]
+                    
+                    print("generating sharp or flat randomly: \(accidentalOrNot)")
+                
+                } else if onlySharpsEnabled {
+                    
+                    accidentalOrNot = .sharp
+                    print("only sharps enabled, so accidentalOrNot = .sharp!")
+                    
+                } else if onlyFlatsEnabled {
+                    
+                    accidentalOrNot = .flat
+                    
+                }
+                
+                // if noteChoices[1] == "#" (for only sharps) !
+
+                switch accidentalOrNot {
+                case .neither:
+                    // NOT BASIC NOTE NAMES, BUT... ?
+                    switch currentNoteChoices {
+                    case onlyCDE:
+                        currentNote = basicNoteNamesOnlyCDE[randomNewNoteIndex]
+                    case onlyFGAB:
+                        currentNote = basicNoteNamesOnlyFGAB[randomNewNoteIndex]
+                    default:
+                        currentNote = basicNoteNames[randomNewNoteIndex]
+                    }
+                    
+                    currentAccidental = .neither
+                case .sharp:
+                    currentNote = basicNoteNames[randomNewNoteIndex] + "#"
+                    print("SHARP! currentNote: \(currentNote)")
+                    // generate new note if current note is a weird enharmonic
+                    if !weirdEnharmonicsEnabled && (currentNote == "B#" || currentNote == "E#") {
+                        generateNewNote()
+                    } else {
+                        sharpsOutletCollection[randomNewNoteIndex].setImage(UIImage(named: "sharp_shown"), for: UIControl.State.normal)
+                        currentAccidental = .sharp
+                    }
+                case .flat:
+                    currentNote = basicNoteNames[randomNewNoteIndex] + "b"
+                    
+                    // generate new note if current note is a weird enharmonic
+                    if !weirdEnharmonicsEnabled && (currentNote == "Cb" || currentNote == "Fb") {
+                        generateNewNote()
+                    } else {
+                        flatsOutletCollection[randomNewNoteIndex].setImage(UIImage(named: "flat_shown"), for: UIControl.State.normal)
+                        currentAccidental = .flat
+                    }
+                }
+                
+                print("current note should be: \(currentNote)")
+                
+                currentCorrectAnswer = currentNote
             }
-            
-            
-            
-            
-            print("current note should be: \(currentNote)")
-            
-            currentCorrectAnswer = currentNote
             
             let currentNoteToShow = currentNote[currentNote.startIndex]
             let currentNoteIndex = basicNoteNames.firstIndex(of: String(currentNoteToShow))!
            
+            // set the button image
             let buttonImageName = "\(currentNoteToShow)_shown"
             guard let image = UIImage(named: buttonImageName) else { return }
             noteButtonsOutletCollection![currentNoteIndex].setImage(image, for: UIControl.State.normal)
@@ -1441,9 +1441,13 @@ class NoteNamesViewController: UIViewController {
         // set the keys to display
         let currentLevelID = Level.currentLevel.id
         
+        
+        // TODO: - FINALIZE THESE DECISIONS
         switch currentLevelID {
         case 1:
             setToOnlyCDE()
+            enableButtons()
+            currentGameMode = .A
             disableSharps()
             sharpsViewOutlet.alpha = 0
             disableFlats()
@@ -1451,6 +1455,8 @@ class NoteNamesViewController: UIViewController {
             disableGestureRecognizers()
         case 2:
             setToOnlyFGAB()
+            enableButtons()
+            currentGameMode = .A
             disableSharps()
             sharpsViewOutlet.alpha = 0
             disableFlats()
@@ -1458,6 +1464,8 @@ class NoteNamesViewController: UIViewController {
             disableGestureRecognizers()
         case 3:
             setToOnlyWhiteKeys()
+            enableButtons()
+            currentGameMode = .A
             disableSharps()
             sharpsViewOutlet.alpha = 0
             disableFlats()
@@ -1465,6 +1473,8 @@ class NoteNamesViewController: UIViewController {
             disableGestureRecognizers()
         case 4:
             setToOnlySharps()
+            enableButtons()
+            currentGameMode = .A
             enableSharps()
             sharpsViewOutlet.alpha = 1
             disableFlats()
@@ -1472,6 +1482,8 @@ class NoteNamesViewController: UIViewController {
             enableGestureRecognizers()
         case 5:
             setToOnlyFlats()
+            enableButtons()
+            currentGameMode = .A
             disableSharps()
             sharpsViewOutlet.alpha = 0
             enableFlats()
@@ -1479,13 +1491,17 @@ class NoteNamesViewController: UIViewController {
             enableGestureRecognizers()
         case 6:
             setToOnlyWeirdEnharmonics()
-            enableSharps()
+            disableButtons()
+            currentGameMode = .B
+            disableSharps()
             sharpsViewOutlet.alpha = 1
-            enableFlats()
+            disableFlats()
             flatsViewOutlet.alpha = 1
-            enableGestureRecognizers()
+            disableGestureRecognizers()
         case 7:
             setToAllNoteChoices()
+            enableButtons()
+            currentGameMode = .A
             enableSharps()
             sharpsViewOutlet.alpha = 1
             enableFlats()
@@ -1494,10 +1510,7 @@ class NoteNamesViewController: UIViewController {
         default: break
         }
         
-        enableButtons()
-        
-        currentGameMode = .A
-        
+
         // determine next level
         
     }
