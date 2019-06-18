@@ -1434,7 +1434,7 @@ class NoteNamesViewController: UIViewController {
     func setupGameForCurrentLevel() {
         
         disableButtons()
-        
+        menuButtonOutlet.alpha = 0
         // note choices
         currentNoteChoices = Level.currentLevel.noteChoices
         
