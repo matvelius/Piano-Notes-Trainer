@@ -295,6 +295,7 @@ func setToPreviousNoteChoices() {
 
 func setRandomNewNoteUpperIndex() {
     randomNewNoteIndexUpperLimit = currentNoteChoices.count - 1
+    print("randomNewNoteIndexUpperLimit: \(randomNewNoteIndexUpperLimit)")
 }
 
 var lastRandomNumber: Int = -1

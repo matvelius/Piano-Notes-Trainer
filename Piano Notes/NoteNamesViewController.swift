@@ -554,6 +554,9 @@ class NoteNamesViewController: UIViewController {
 //    }
     
     func startNewRound() {
+        setRandomNewNoteUpperIndex()
+        print("currentNoteChoices: \(currentNoteChoices)")
+        print("randomNewNoteIndexUpperLimit: \(randomNewNoteIndexUpperLimit)")
         
         lastRandomNumber = randomNewNoteIndex
         totalScore = 0
@@ -569,6 +572,8 @@ class NoteNamesViewController: UIViewController {
     }
     
     func generateNewNote() {
+        
+        
         
         switch currentGameMode {
         case .A:
@@ -602,7 +607,7 @@ class NoteNamesViewController: UIViewController {
 //                randomNewNoteIndex = Int.random(in: 0...randomNewNoteIndexUpperLimit)
 //            }
             generateNewRandomNoteIndex()
-            
+            print("randomNewNoteIndex: \(randomNewNoteIndex)")
             currentNote = currentNoteChoices[randomNewNoteIndex]
             print("the current note is \(currentNote)")
             
