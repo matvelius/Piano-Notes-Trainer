@@ -21,6 +21,10 @@ class PageCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.addSubview(lessonSlideView)
+        NSLayoutConstraint.activate([
+            lessonSlideView.widthAnchor.constraint(equalToConstant: self.frame.width),
+            lessonSlideView.heightAnchor.constraint(equalToConstant: self.frame.height)
+            ])
     }
     
     required init?(coder aDecoder: NSCoder) {
