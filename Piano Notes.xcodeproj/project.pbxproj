@@ -70,6 +70,7 @@
 		D78A61DF22643EBC008706E2 /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78A61DE22643EBC008706E2 /* InitialViewController.swift */; };
 		D7C15C7222B9EDEE003593DA /* LearnSectionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C15C7122B9EDEE003593DA /* LearnSectionTableViewController.swift */; };
 		D7C15C7422B9EFD3003593DA /* LessonsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C15C7322B9EFD3003593DA /* LessonsViewController.swift */; };
+		D7C15C7622BA82B2003593DA /* SwipingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C15C7522BA82B2003593DA /* SwipingController.swift */; };
 		D7C2E3DA2241C9E300A72D5C /* ExplainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C2E3D92241C9E300A72D5C /* ExplainerViewController.swift */; };
 		D7C88AC52249EFA0000F484F /* wrong.aiff in Resources */ = {isa = PBXBuildFile; fileRef = D7C88AC42249EFA0000F484F /* wrong.aiff */; };
 		D7DFCFEB22619FC700468F71 /* Enharmonics.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7DFCFEA22619FC700468F71 /* Enharmonics.swift */; };
@@ -149,6 +150,7 @@
 		D78A61DE22643EBC008706E2 /* InitialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialViewController.swift; sourceTree = "<group>"; };
 		D7C15C7122B9EDEE003593DA /* LearnSectionTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnSectionTableViewController.swift; sourceTree = "<group>"; };
 		D7C15C7322B9EFD3003593DA /* LessonsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonsViewController.swift; sourceTree = "<group>"; };
+		D7C15C7522BA82B2003593DA /* SwipingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipingController.swift; sourceTree = "<group>"; };
 		D7C2E3D92241C9E300A72D5C /* ExplainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExplainerViewController.swift; sourceTree = "<group>"; };
 		D7C88AC42249EFA0000F484F /* wrong.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = wrong.aiff; sourceTree = "<group>"; };
 		D7DFCFEA22619FC700468F71 /* Enharmonics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enharmonics.swift; sourceTree = "<group>"; };
@@ -280,6 +282,7 @@
 				D7C2E3D92241C9E300A72D5C /* ExplainerViewController.swift */,
 				D7EF774122789FC800943F54 /* ExplainersOnOrOff.swift */,
 				D78A61DE22643EBC008706E2 /* InitialViewController.swift */,
+				D7C15C7522BA82B2003593DA /* SwipingController.swift */,
 				D777C81E22009DE000FA472E /* Assets.xcassets */,
 				D71E3D0F2205ED7D0001F995 /* Sound Files */,
 				D777C82022009DE000FA472E /* LaunchScreen.storyboard */,
@@ -416,6 +419,7 @@
 				D7C15C7422B9EFD3003593DA /* LessonsViewController.swift in Sources */,
 				D75DE89322828C5800BBFDEF /* GameMode.swift in Sources */,
 				D7EF774222789FC800943F54 /* ExplainersOnOrOff.swift in Sources */,
+				D7C15C7622BA82B2003593DA /* SwipingController.swift in Sources */,
 				D7EF773E2277F97100943F54 /* Levels.swift in Sources */,
 				D74B814422B74DD20031DFF7 /* Alert.swift in Sources */,
 				D78A61DF22643EBC008706E2 /* InitialViewController.swift in Sources */,
