@@ -12,7 +12,10 @@ class ExplainerViewController: UIViewController {
     
     var explainerIndex = 1
     var numberOfExplainers = 4
-
+    
+    
+    @IBOutlet weak var progressBar: UIProgressView!
+    
     @IBOutlet weak var explainerImage: UIImageView!
     
     @IBOutlet weak var navTriangleLeft: UIButton!
@@ -43,6 +46,8 @@ class ExplainerViewController: UIViewController {
             explainerIndex += 1
             explainerImage.image = UIImage(named: "explainer_\(explainerIndex)")
             
+            progressBar.setProgress(Float(explainerIndex) / Float(numberOfExplainers), animated: true)
+            
         } else {
             
             performSegue(withIdentifier: "doneExplaining", sender: sender)
@@ -68,6 +73,10 @@ class ExplainerViewController: UIViewController {
         
         navTriangleRight.setImage(UIImage(named: "nav_triangle_R_normal"), for: UIControl.State.normal)
         
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        progressBar.setProgress(Float(explainerIndex) / Float(numberOfExplainers), animated: true)
     }
     
 

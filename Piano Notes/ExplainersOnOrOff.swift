@@ -8,4 +8,4 @@
 
 import Foundation
 
-var explainersOn = false
+var explainersEnabled = true

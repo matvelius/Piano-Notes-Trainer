@@ -16,6 +16,15 @@ class InitialViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+//    override func viewDidAppear(_ animated: Bool) {
+//    
+//        let navBar = self.navigationController?.navigationBar
+//        
+//        navBar?.isHidden = true
+////        navBar?.backgroundColor = UIColor.red
+//    
+//    }
+    
 
     /*
     // MARK: - Navigation

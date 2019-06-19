@@ -21,24 +21,33 @@ class LevelsTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
+    
+//    override func viewDidAppear(_ animated: Bool) {
+//        
+//        let navBar = self.navigationController?.navigationBar
+//        
+////        navBar?.isTranslucent = true
+//        navBar?.backgroundColor = UIColor.init(red: 0, green: 0, blue: 0, alpha: 1)
+//        
+//    }
 
     // MARK: - Table view data source
 
-//    override func numberOfSections(in tableView: UITableView) -> Int {
-//        // #warning Incomplete implementation, return the number of sections
-//        return 0
-//    }
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        // #warning Incomplete implementation, return the number of sections
+        return titles.count
+    }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return allLevels.count
+        return allLevels[section].count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "LevelCell", for: indexPath) as! LevelTableViewCell
 
-        let level = allLevels[indexPath.row]
+        let level = allLevels[indexPath.section][indexPath.row]
         
         cell.updateCell(with: level)
         
@@ -58,18 +67,41 @@ class LevelsTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 220
+        return 120
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        Level.currentLevel = allLevels[indexPath.row]
+        Level.currentLevel = allLevels[indexPath.section][indexPath.row]
+      
+        // FREE PLAY - NOTE NAMES
+        if (-3)...(-2) ~= Level.currentLevel.id {
+            
+            if explainersEnabled {
+                performSegue(withIdentifier: "segueToExplainers", sender: nil)
+            } else {
+                performSegue(withIdentifier: "segueToGame", sender: nil)
+            }
         
+        // FREE PLAY - NOTES ON STAFF
+        } else if (-1)...(0) ~= Level.currentLevel.id {
+            
+            if explainersEnabled {
+                performSegue(withIdentifier: "segueToExplainers", sender: nil)
+            } else {
+                performSegue(withIdentifier: "segueToNotesOnStaff", sender: nil)
+            }
         
-        if explainersOn {
+        // LEVELS - NOTES ON STAFF
+        } else if Level.currentLevel.id >= 8 {
+            
+            performSegue(withIdentifier: "segueToNotesOnStaff", sender: nil)
+            
+        } else if explainersEnabled {
         
             performSegue(withIdentifier: "segueToExplainers", sender: nil)
             
+        // NOTE NAMES
         } else {
             
             performSegue(withIdentifier: "segueToGame", sender: nil)
@@ -79,6 +111,61 @@ class LevelsTableViewController: UITableViewController {
     }
 //    func configureCell() {
 //
+//    }
+    
+    let titles = ["Naming the notes on the piano", "Learning music notation"]
+    
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return titles[section]
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat
+    {
+        return 70
+    }
+    
+//    override func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+//
+//        guard let headerView = view as? UITableViewHeaderFooterView else { return }
+//
+//        headerView.backgroundView?.backgroundColor = .red
+//    }
+    
+    override func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+
+//        (view as! UITableViewHeaderFooterView).backgroundView?.backgroundColor = UIColor.white.withAlphaComponent(1)
+
+        view.tintColor = UIColor.white
+
+        let header = view as! UITableViewHeaderFooterView
+
+
+
+        if let textLabel = header.textLabel {
+//            textLabel.font = textLabel.font.withSize(50)
+//            header.isOpaque = true
+//            header.tintColor = .black
+            textLabel.font = UIFont.systemFont(ofSize: 40, weight: .bold)
+            textLabel.textColor = .white
+//            textLabel.shadowColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.7)
+//            textLabel.shadowOffset = CGSize(width: 2, height: 2)
+            textLabel.adjustsFontSizeToFitWidth = true
+            textLabel.textAlignment = .center
+        }
+
+
+    }
+    
+//    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+//        let returnedView = UIView(frame: CGRect(x: x, y: y, width: width, height: height)) //set these values as necessary
+//        returnedView.backgroundColor = .white
+//
+//        let label = UILabel(frame: CGRect(x: x, y: y, width: width, height: height))
+//
+//        label.text = self.sectionHeaderTitleArray[section]
+//        returnedView.addSubview(label)
+//
+//        return returnedView
 //    }
     
 
@@ -126,5 +213,8 @@ class LevelsTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    @IBAction func unwindToLevels(unwindSegue: UIStoryboardSegue) {
+        
+    }
 
 }
