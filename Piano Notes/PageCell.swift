@@ -8,13 +8,18 @@
 
 import UIKit
 
+var currentSlideIndex = 0
+
 class PageCell: UICollectionViewCell {
     
     let lessonSlideView: UIImageView = {
-        let image = UIImage(named: "lesson0")
+        let image = UIImage(named: lesson1[currentSlideIndex])
         let imageView = UIImageView(image: image)
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.contentMode = .scaleAspectFit
+        
+        currentSlideIndex += 1
+        
         return imageView
     }()
     

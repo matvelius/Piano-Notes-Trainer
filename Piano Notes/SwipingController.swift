@@ -17,8 +17,13 @@ class SwipingController: UICollectionViewController, UICollectionViewDelegateFlo
         collectionView?.isPagingEnabled = true
     }
     
+    // implement various sections here, or pass in each section?
+//    override func numberOfSections(in collectionView: UICollectionView) -> Int {
+//        <#code#>
+//    }
+    
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 4
+        return lesson1.count
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
