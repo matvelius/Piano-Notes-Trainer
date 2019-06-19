@@ -456,7 +456,6 @@ class NotesOnStaffViewController: UIViewController {
         updateNoteOnStaffImage(optionalImageName: nil)
         
         
-        
         scoreLabelOutlet.text = "0"
         
         menuContainerOutlet.alpha = 0
@@ -471,6 +470,7 @@ class NotesOnStaffViewController: UIViewController {
 //        setRandomNewNoteUpperIndex()
     }
     
+    // indices for note range settings in menu
     var lowNoteIndex = 0
     var highNoteIndex = whiteNotesOnLargeKeyboard.count - 1
     
@@ -613,7 +613,7 @@ class NotesOnStaffViewController: UIViewController {
             giveOrTakeAStar()
             starsImageOutlet.image = UIImage(named: "stars\(currentNumberOfStars)")
             
-            if currentNumberOfStars == 1 {
+            if currentNumberOfStars == 5 {
                 Alert.showFinishLevelAlert(on: self)
             }
             

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="l1o-7Z-dlW">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="a5U-3N-8Er">
     <device id="ipad12_9rounded" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
@@ -3390,6 +3390,9 @@
                                                 <integer key="value" value="20"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <segue destination="d10-To-hdl" kind="show" id="7JH-Bw-Ng8"/>
+                                        </connections>
                                     </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iOD-Lf-Rja">
                                         <rect key="frame" x="328.5" y="0.0" width="275" height="128"/>
@@ -3438,6 +3441,112 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WPh-0Z-vGj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="356.66178623718884" y="-1423.2421875"/>
+        </scene>
+        <!--Learn Section Table View Controller-->
+        <scene sceneID="2kh-06-EVd">
+            <objects>
+                <tableViewController id="d10-To-hdl" customClass="LearnSectionTableViewController" customModule="Piano_Notes" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="ozR-NQ-AqB">
+                        <rect key="frame" x="0.0" y="0.0" width="1366" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="120" id="Wjc-Ka-4WA">
+                                <rect key="frame" x="0.0" y="28" width="1366" height="120"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Wjc-Ka-4WA" id="n2R-ye-xCW">
+                                    <rect key="frame" x="0.0" y="0.0" width="1366" height="119.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LESSON 1:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="42" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Fuj-L6-oBz" userLabel="Lesson Title">
+                                            <rect key="frame" x="30" y="0.0" width="220" height="119.5"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="45"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <nil key="highlightedColor"/>
+                                            <color key="shadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <size key="shadowOffset" width="1" height="1"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="40" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="d33-m3-4qG" userLabel="Lesson Subtitle">
+                                            <rect key="frame" x="270" y="0.0" width="876" height="119.5"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="43"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <nil key="highlightedColor"/>
+                                            <color key="shadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <size key="shadowOffset" width="1" height="1"/>
+                                        </label>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6pw-GM-XVe" userLabel="Lesson Image">
+                                            <rect key="frame" x="1156" y="0.0" width="200" height="119.5"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="200" id="Zbr-Nf-cbX"/>
+                                            </constraints>
+                                        </imageView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="6pw-GM-XVe" firstAttribute="top" secondItem="n2R-ye-xCW" secondAttribute="top" id="2DM-K1-cMx"/>
+                                        <constraint firstAttribute="bottom" secondItem="d33-m3-4qG" secondAttribute="bottom" id="BB6-Y2-a9I"/>
+                                        <constraint firstItem="Fuj-L6-oBz" firstAttribute="leading" secondItem="n2R-ye-xCW" secondAttribute="leading" constant="30" id="DWm-a1-2p9"/>
+                                        <constraint firstAttribute="bottom" secondItem="Fuj-L6-oBz" secondAttribute="bottom" id="DcV-Jd-4IP"/>
+                                        <constraint firstItem="6pw-GM-XVe" firstAttribute="leading" secondItem="d33-m3-4qG" secondAttribute="trailing" constant="10" id="GlK-91-Bb8"/>
+                                        <constraint firstItem="d33-m3-4qG" firstAttribute="leading" secondItem="Fuj-L6-oBz" secondAttribute="trailing" constant="20" id="U3o-hu-AHt"/>
+                                        <constraint firstAttribute="bottom" secondItem="6pw-GM-XVe" secondAttribute="bottom" id="WWa-Ia-klY"/>
+                                        <constraint firstAttribute="trailing" secondItem="6pw-GM-XVe" secondAttribute="trailing" constant="10" id="hEG-Mx-dwp"/>
+                                        <constraint firstItem="d33-m3-4qG" firstAttribute="top" secondItem="n2R-ye-xCW" secondAttribute="top" id="mhX-LN-OZi"/>
+                                        <constraint firstItem="Fuj-L6-oBz" firstAttribute="top" secondItem="n2R-ye-xCW" secondAttribute="top" id="wBV-AM-ofv"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="a5U-3N-8Er" kind="show" identifier="segueToLessons" id="gEZ-FF-5vk"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="d10-To-hdl" id="Gy9-mu-LRb"/>
+                            <outlet property="delegate" destination="d10-To-hdl" id="vmM-Mg-N6E"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AcK-NR-Tqk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-16" y="-677"/>
+        </scene>
+        <!--Lessons View Controller-->
+        <scene sceneID="bAY-HL-ZSK">
+            <objects>
+                <viewController id="a5U-3N-8Er" customClass="LessonsViewController" customModule="Piano_Notes" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3po-1P-lLm">
+                        <rect key="frame" x="0.0" y="0.0" width="1366" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lesson0" translatesAutoresizingMaskIntoConstraints="NO" id="bap-uC-fnn" userLabel="lesson_image">
+                                <rect key="frame" x="0.0" y="24" width="1366" height="980"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="NyT-eK-OrR" appends="YES" id="6Ye-Ni-rL9"/>
+                                </connections>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="bap-uC-fnn" firstAttribute="leading" secondItem="nYv-lj-bp5" secondAttribute="leading" id="1Gx-VS-lYT"/>
+                            <constraint firstItem="nYv-lj-bp5" firstAttribute="trailing" secondItem="bap-uC-fnn" secondAttribute="trailing" id="5r1-Aa-pjX"/>
+                            <constraint firstItem="bap-uC-fnn" firstAttribute="centerX" secondItem="3po-1P-lLm" secondAttribute="centerX" id="DtV-Ec-khY"/>
+                            <constraint firstItem="nYv-lj-bp5" firstAttribute="bottom" secondItem="bap-uC-fnn" secondAttribute="bottom" id="Z7p-hc-Lm0"/>
+                            <constraint firstItem="bap-uC-fnn" firstAttribute="top" secondItem="nYv-lj-bp5" secondAttribute="top" id="eSS-yl-aRh"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="nYv-lj-bp5"/>
+                    </view>
+                    <connections>
+                        <outlet property="lessonImageOutlet" destination="bap-uC-fnn" id="t2q-4Y-dKI"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3rZ-Sc-JCK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="right" id="NyT-eK-OrR">
+                    <connections>
+                        <action selector="handleSwipeGesture:" destination="a5U-3N-8Er" id="2F3-HL-twT"/>
+                    </connections>
+                </swipeGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="-743" y="89"/>
         </scene>
         <!--Explainer View Controller-->
         <scene sceneID="ioq-EP-eBb">
@@ -3556,6 +3665,7 @@
         <image name="intro_screen_background" width="5464" height="4096"/>
         <image name="intro_screen_learn_normal" width="821" height="253"/>
         <image name="intro_screen_play_normal" width="821" height="253"/>
+        <image name="lesson0" width="1366" height="1024"/>
         <image name="line" width="361" height="1"/>
         <image name="name_the_highlighted_note" width="1543" height="102"/>
         <image name="natural" width="218" height="120"/>
@@ -3574,6 +3684,6 @@
         <image name="white_piano_12.9_large" width="910.66668701171875" height="538.66668701171875"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="gpG-aX-QFw"/>
+        <segue reference="h7l-c7-UJA"/>
     </inferredMetricsTieBreakers>
 </document>
