@@ -24,6 +24,8 @@ class LessonsViewController: UIViewController {
             print("swiping right!")
         } else if recognizer.direction == .left {
             print("swiping left!")
+            lessonImageOutlet.animationImages = [UIImage(named: "lesson1.1"), UIImage(named: "lesson1.2")] as? [UIImage]
+//            lessonImageOutlet.image = UIImage(named: "lesson1.1")
         }
     }
     
