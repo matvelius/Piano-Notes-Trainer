@@ -19,14 +19,15 @@ class LessonsViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    
-    @IBAction func handleSwipeGesture(_ sender: UISwipeGestureRecognizer) {
-        if sender.direction == .right {
+    @IBAction func handleSwipeGesture(recognizer: UISwipeGestureRecognizer) {
+        if recognizer.direction == .right {
             print("swiping right!")
-        } else if sender.direction == .left {
+        } else if recognizer.direction == .left {
             print("swiping left!")
         }
     }
+    
+
     
     /*
     // MARK: - Navigation
