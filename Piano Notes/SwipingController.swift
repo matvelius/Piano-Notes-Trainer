@@ -8,6 +8,8 @@
 
 import UIKit
 
+var currentSlideIndex = 0
+
 class SwipingController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     
     override func viewDidLoad() {
@@ -23,12 +25,15 @@ class SwipingController: UICollectionViewController, UICollectionViewDelegateFlo
 //    }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return lesson1.count
+//        print("lesson1.count: \(lesson1.count)")
+        return 5
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellId", for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellId", for: indexPath) as! PageCell
 //        cell.backgroundColor = indexPath.row % 2 == 0 ? .red : .green
+        currentSlideIndex = indexPath.row
+        print("currentSlideIndex: \(currentSlideIndex)")
         return cell
     }
     

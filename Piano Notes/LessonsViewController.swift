@@ -11,7 +11,7 @@ import UIKit
 class LessonsViewController: UIViewController {
     
     
-    @IBOutlet weak var lessonImageOutlet: UIImageView!
+//    @IBOutlet weak var lessonImageOutlet: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,15 +19,15 @@ class LessonsViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    @IBAction func handleSwipeGesture(recognizer: UISwipeGestureRecognizer) {
-        if recognizer.direction == .right {
-            print("swiping right!")
-        } else if recognizer.direction == .left {
-            print("swiping left!")
-            lessonImageOutlet.animationImages = [UIImage(named: "lesson1.1"), UIImage(named: "lesson1.2")] as? [UIImage]
-//            lessonImageOutlet.image = UIImage(named: "lesson1.1")
-        }
-    }
+//    @IBAction func handleSwipeGesture(recognizer: UISwipeGestureRecognizer) {
+//        if recognizer.direction == .right {
+//            print("swiping right!")
+//        } else if recognizer.direction == .left {
+//            print("swiping left!")
+////            lessonImageOutlet.animationImages = [UIImage(named: "lesson1.1"), UIImage(named: "lesson1.2")] as? [UIImage]
+////            lessonImageOutlet.image = UIImage(named: "lesson1.1")
+//        }
+//    }
     
 
     

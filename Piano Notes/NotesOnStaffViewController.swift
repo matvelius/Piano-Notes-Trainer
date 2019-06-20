@@ -642,13 +642,15 @@ class NotesOnStaffViewController: UIViewController {
                     let wrongNoteImage = UIImage(named: wrongNoteImageName)
                     let wrongNoteImageView = UIImageView(image: wrongNoteImage!)
                     
-                    wrongNoteImageView.translatesAutoresizingMaskIntoConstraints = false
-                    pianoNoteDisplayed.addSubview(wrongNoteImageView)
+                    addSameSize(subview: wrongNoteImageView, onTopOf: pianoNoteDisplayed)
                     
-                    NSLayoutConstraint.activate([
-                        wrongNoteImageView.widthAnchor.constraint(equalToConstant: pianoNoteDisplayed!.frame.width),
-                        wrongNoteImageView.heightAnchor.constraint(equalToConstant: pianoNoteDisplayed!.frame.height)
-                        ])
+//                    wrongNoteImageView.translatesAutoresizingMaskIntoConstraints = false
+//                    pianoNoteDisplayed.addSubview(wrongNoteImageView)
+//
+//                    NSLayoutConstraint.activate([
+//                        wrongNoteImageView.widthAnchor.constraint(equalToConstant: pianoNoteDisplayed!.frame.width),
+//                        wrongNoteImageView.heightAnchor.constraint(equalToConstant: pianoNoteDisplayed!.frame.height)
+//                        ])
                     
                 }
                 
@@ -1022,6 +1024,17 @@ class NotesOnStaffViewController: UIViewController {
         } else {
             print("whoops, couldn't load the sound '\(currentSound)'")
         }
+    }
+    
+    func addSameSize(subview: UIView, onTopOf superview: UIView) {
+        superview.addSubview(subview)
+        
+        subview.translatesAutoresizingMaskIntoConstraints = false
+        
+        subview.centerXAnchor.constraint(equalTo: superview.centerXAnchor).isActive = true
+        subview.centerYAnchor.constraint(equalTo: superview.centerYAnchor).isActive = true
+        subview.widthAnchor.constraint(equalTo: superview.widthAnchor).isActive = true
+        subview.heightAnchor.constraint(equalTo: superview.heightAnchor).isActive = true
     }
     
 }
