@@ -10,4 +10,5 @@ import UIKit
 
 class LessonSlideCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var slideImage: UIImageView!
+    
 }

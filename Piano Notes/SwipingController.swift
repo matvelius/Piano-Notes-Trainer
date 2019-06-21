@@ -12,6 +12,9 @@ var currentSlideIndex = 0
 
 class SwipingController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     
+    
+    @IBOutlet weak var progressViewOutlet: UIProgressView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -20,6 +23,15 @@ class SwipingController: UICollectionViewController, UICollectionViewDelegateFlo
         
         let myLayout = collectionView.collectionViewLayout as! UICollectionViewFlowLayout
         myLayout.itemSize = CGSize(width: width, height: height)
+        
+//        progressViewOutlet.transform = progressViewOutlet.transform.scaledBy(x: 1, y: 10)
+        
+//        let transform : CGAffineTransform = CGAffineTransform(scaleX: 1.0, y: 6.0)
+//        progressViewOutlet.transform = transform
+        
+//        progressViewOutlet.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        
+//        superview.widthAnchor).isActive = true
         
 //        if let flowLayout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
 //            flowLayout.estimatedItemSize = CGSize(width: view.frame.width, height: view.frame.height)
@@ -50,6 +62,8 @@ class SwipingController: UICollectionViewController, UICollectionViewDelegateFlo
         let image = UIImage(named: lesson1[currentSlideIndex])
 //        let imageView = UIImageView(image: image)
         cell.slideImage.image = image
+        
+        progressViewOutlet.setProgress(Float(currentSlideIndex + 1)/Float(lesson1.count), animated: true)
         
         return cell
     }

@@ -1035,6 +1035,7 @@ class NotesOnStaffViewController: UIViewController {
         subview.centerYAnchor.constraint(equalTo: superview.centerYAnchor).isActive = true
         subview.widthAnchor.constraint(equalTo: superview.widthAnchor).isActive = true
         subview.heightAnchor.constraint(equalTo: superview.heightAnchor).isActive = true
+        subview.contentMode = superview.contentMode
     }
     
 }
