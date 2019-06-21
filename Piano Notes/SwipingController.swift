@@ -13,10 +13,22 @@ var currentSlideIndex = 0
 class SwipingController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     
     override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        let height: CGFloat = self.view.frame.height
+        let width: CGFloat = self.view.frame.width
+        
+        let myLayout = collectionView.collectionViewLayout as! UICollectionViewFlowLayout
+        myLayout.itemSize = CGSize(width: width, height: height)
+        
+//        if let flowLayout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
+//            flowLayout.estimatedItemSize = CGSize(width: view.frame.width, height: view.frame.height)
+//        }
 //        collectionView?.backgroundColor = .white
 //        collectionView.register(LessonSlideCollectionViewCell.self, forCellWithReuseIdentifier: "cellId")
         
         collectionView?.isPagingEnabled = true
+        
     }
     
     // implement various sections here, or pass in each section?
@@ -43,7 +55,9 @@ class SwipingController: UICollectionViewController, UICollectionViewDelegateFlo
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: view.frame.width, height: view.frame.height)
+//        return CGSize(width: view.frame.width, height: view.frame.height)
+        return CGSize.init(width: collectionView.bounds.width,
+        height: collectionView.bounds.height)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {

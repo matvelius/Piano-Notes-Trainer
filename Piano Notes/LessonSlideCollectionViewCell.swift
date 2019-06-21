@@ -10,9 +10,4 @@ import UIKit
 
 class LessonSlideCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var slideImage: UIImageView!
-    
-//    NSLayoutConstraint.activate([
-//        self.widthAnchor.constraint(equalToConstant: self.superview.frame.width),
-//        self.heightAnchor.constraint(equalToConstant: self.frame.height)
-//    ])
 }
