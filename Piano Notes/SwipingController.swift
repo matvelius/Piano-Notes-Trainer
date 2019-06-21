@@ -13,8 +13,8 @@ var currentSlideIndex = 0
 class SwipingController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     
     override func viewDidLoad() {
-        collectionView?.backgroundColor = .white
-        collectionView.register(PageCell.self, forCellWithReuseIdentifier: "cellId")
+//        collectionView?.backgroundColor = .white
+//        collectionView.register(LessonSlideCollectionViewCell.self, forCellWithReuseIdentifier: "cellId")
         
         collectionView?.isPagingEnabled = true
     }
@@ -30,10 +30,15 @@ class SwipingController: UICollectionViewController, UICollectionViewDelegateFlo
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellId", for: indexPath) as! PageCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellID", for: indexPath) as! LessonSlideCollectionViewCell
 //        cell.backgroundColor = indexPath.row % 2 == 0 ? .red : .green
         currentSlideIndex = indexPath.row
         print("currentSlideIndex: \(currentSlideIndex)")
+        print("named: lesson1[currentSlideIndex]: \(lesson1[currentSlideIndex])")
+        let image = UIImage(named: lesson1[currentSlideIndex])
+//        let imageView = UIImageView(image: image)
+        cell.slideImage.image = image
+        
         return cell
     }
     
