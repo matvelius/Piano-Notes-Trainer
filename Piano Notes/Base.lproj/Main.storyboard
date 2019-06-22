@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="d10-To-hdl">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="l1o-7Z-dlW">
     <device id="ipad12_9rounded" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
@@ -78,6 +78,7 @@
                             <outlet property="delegate" destination="8JC-u7-HER" id="A2G-6O-WuI"/>
                         </connections>
                     </tableView>
+                    <tabBarItem key="tabBarItem" systemItem="topRated" id="ZCM-qz-LRw"/>
                     <navigationItem key="navigationItem" id="Kkg-tL-LQ8"/>
                     <connections>
                         <segue destination="ocB-fJ-hDj" kind="show" identifier="segueToExplainers" animates="NO" id="Dij-og-4Df"/>
@@ -87,7 +88,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VpB-Rx-fLn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="707.8125" y="-677.34375"/>
+            <point key="canvasLocation" x="1254" y="-583"/>
         </scene>
         <!--Note Names View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -1640,7 +1641,7 @@
                     </connections>
                 </panGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1369.9853587115665" y="106.640625"/>
+            <point key="canvasLocation" x="1513" y="721"/>
         </scene>
         <!--Notes On Staff View Controller-->
         <scene sceneID="Qoc-gM-v9U">
@@ -3359,7 +3360,7 @@
                     </connections>
                 </panGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="2271.3030746705708" y="106.640625"/>
+            <point key="canvasLocation" x="2284" y="721"/>
         </scene>
         <!--Initial View Controller-->
         <scene sceneID="8XM-xb-p9F">
@@ -3389,14 +3390,14 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <segue destination="d10-To-hdl" kind="show" id="7JH-Bw-Ng8"/>
+                                            <action selector="buttonPressed:" destination="l1o-7Z-dlW" eventType="touchUpInside" id="4go-lu-e3U"/>
                                         </connections>
                                     </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iOD-Lf-Rja">
                                         <rect key="frame" x="328.5" y="0.0" width="275" height="128"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
-                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cit-cA-sn2" userLabel="Play Button">
+                                    <button opaque="NO" tag="1" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cit-cA-sn2" userLabel="Play Button">
                                         <rect key="frame" x="603.5" y="0.0" width="328.5" height="101"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <size key="titleShadowOffset" width="2" height="2"/>
@@ -3410,7 +3411,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <segue destination="8JC-u7-HER" kind="show" id="SgD-2t-bsM"/>
+                                            <action selector="buttonPressed:" destination="l1o-7Z-dlW" eventType="touchUpInside" id="zbd-3B-KVm"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -3435,10 +3436,13 @@
                         <viewLayoutGuide key="safeArea" id="KU1-L2-hcT"/>
                     </view>
                     <navigationItem key="navigationItem" id="Rvn-E1-AYK"/>
+                    <connections>
+                        <segue destination="AWR-ed-pf4" kind="show" identifier="toSections" id="r9i-QQ-bl6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WPh-0Z-vGj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="356.66178623718884" y="-1423.2421875"/>
+            <point key="canvasLocation" x="447" y="-2154"/>
         </scene>
         <!--Learn Section Table View Controller-->
         <scene sceneID="2kh-06-EVd">
@@ -3506,10 +3510,11 @@
                             <outlet property="delegate" destination="d10-To-hdl" id="vmM-Mg-N6E"/>
                         </connections>
                     </tableView>
+                    <tabBarItem key="tabBarItem" systemItem="bookmarks" id="Mi4-s4-3EF"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AcK-NR-Tqk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-16" y="-677"/>
+            <point key="canvasLocation" x="120" y="-560"/>
         </scene>
         <!--Swiping Controller-->
         <scene sceneID="bAY-HL-ZSK">
@@ -3573,7 +3578,7 @@
                     </connections>
                 </swipeGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="-49.194729136163978" y="88.4765625"/>
+            <point key="canvasLocation" x="-313" y="952"/>
         </scene>
         <!--Explainer View Controller-->
         <scene sceneID="ioq-EP-eBb">
@@ -3661,7 +3666,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cmE-Yr-TVd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="677.74524158125905" y="107.8125"/>
+            <point key="canvasLocation" x="767" y="721"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="7wt-Ie-AUp">
@@ -3679,7 +3684,27 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rp5-65-hTN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-743.19180087847724" y="88.4765625"/>
+            <point key="canvasLocation" x="-32" y="199"/>
+        </scene>
+        <!--Sections Tab Bar Controller-->
+        <scene sceneID="P9M-yi-v5L">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="AWR-ed-pf4" customClass="SectionsTabBarController" customModule="Piano_Notes" customModuleProvider="target" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="OLF-Md-idA">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="d10-To-hdl" kind="relationship" relationship="viewControllers" id="Ba9-K9-gtl"/>
+                        <segue destination="8JC-u7-HER" kind="relationship" relationship="viewControllers" id="yiH-Ul-FWT"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LO7-fb-x7n" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tabBarItem systemItem="bookmarks" id="HJ1-UM-XqC"/>
+            </objects>
+            <point key="canvasLocation" x="338" y="-1369"/>
         </scene>
     </scenes>
     <resources>
