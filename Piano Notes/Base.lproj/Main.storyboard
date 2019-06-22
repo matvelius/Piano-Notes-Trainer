@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="vCV-Es-ama">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="d10-To-hdl">
     <device id="ipad12_9rounded" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
@@ -1640,7 +1640,7 @@
                     </connections>
                 </panGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="676.3819095477387" y="107.19424460431655"/>
+            <point key="canvasLocation" x="1369.9853587115665" y="106.640625"/>
         </scene>
         <!--Notes On Staff View Controller-->
         <scene sceneID="Qoc-gM-v9U">
@@ -3359,7 +3359,7 @@
                     </connections>
                 </panGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1577.3869346733668" y="107.19424460431655"/>
+            <point key="canvasLocation" x="2271.3030746705708" y="106.640625"/>
         </scene>
         <!--Initial View Controller-->
         <scene sceneID="8XM-xb-p9F">
@@ -3449,7 +3449,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="120" id="Wjc-Ka-4WA">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="learnSectionCell" rowHeight="120" id="Wjc-Ka-4WA">
                                 <rect key="frame" x="0.0" y="28" width="1366" height="120"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Wjc-Ka-4WA" id="n2R-ye-xCW">
@@ -3493,7 +3493,7 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="a5U-3N-8Er" kind="show" identifier="segueToLessons" id="gEZ-FF-5vk"/>
+                                    <segue destination="qaA-kj-6H0" kind="show" identifier="segueToLessons" id="gEZ-FF-5vk"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -3521,25 +3521,9 @@
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
-                        <view key="backgroundView" contentMode="scaleToFill" id="vhT-bq-zmt">
-                            <rect key="frame" x="0.0" y="0.0" width="1366" height="1024"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <subviews>
-                                <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progressViewStyle="bar" translatesAutoresizingMaskIntoConstraints="NO" id="Ity-9o-Q14">
-                                    <rect key="frame" x="-6" y="511.5" width="1377" height="1.5"/>
-                                </progressView>
-                            </subviews>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <constraints>
-                                <constraint firstItem="Ity-9o-Q14" firstAttribute="bottom" secondItem="vhT-bq-zmt" secondAttribute="bottom" id="ehA-av-5Wf"/>
-                                <constraint firstItem="Ity-9o-Q14" firstAttribute="leading" secondItem="vhT-bq-zmt" secondAttribute="leading" id="mC5-nR-Rk2"/>
-                                <constraint firstAttribute="trailing" secondItem="Ity-9o-Q14" secondAttribute="trailing" id="yfP-P6-VCg"/>
-                            </constraints>
-                            <viewLayoutGuide key="safeArea" id="Tuh-zL-b5J"/>
-                        </view>
                         <cells>
                             <collectionViewCell opaque="NO" multipleTouchEnabled="YES" contentMode="scaleToFill" reuseIdentifier="cellID" id="Lbx-5r-30Q" customClass="LessonSlideCollectionViewCell" customModule="Piano_Notes" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="47.5" width="1377" height="929"/>
+                                <rect key="frame" x="0.0" y="0.5" width="1377" height="929"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                     <rect key="frame" x="0.0" y="0.0" width="1377" height="929"/>
@@ -3564,11 +3548,16 @@
                             </collectionViewCell>
                         </cells>
                     </collectionView>
-                    <connections>
-                        <outlet property="progressViewOutlet" destination="Ity-9o-Q14" id="Bs1-dA-bWA"/>
-                    </connections>
+                    <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="Xlq-kV-ota">
+                        <barButtonItem key="leftBarButtonItem" title="Back" id="1hA-iX-uzN">
+                            <connections>
+                                <segue destination="bNF-Jd-RN2" kind="unwind" unwindAction="unwindToLearnSectionWithUnwindSegue:" id="Hcq-0M-2r6"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3rZ-Sc-JCK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="bNF-Jd-RN2" userLabel="Exit" sceneMemberID="exit"/>
                 <swipeGestureRecognizer direction="right" id="NyT-eK-OrR">
                     <connections>
                         <action selector="handleSwipeGestureWithRecognizer:" destination="a5U-3N-8Er" id="3ad-VS-O39"/>
@@ -3580,7 +3569,7 @@
                     </connections>
                 </swipeGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="-743.19180087847724" y="88.4765625"/>
+            <point key="canvasLocation" x="-49.194729136163978" y="88.4765625"/>
         </scene>
         <!--Explainer View Controller-->
         <scene sceneID="ioq-EP-eBb">
@@ -3668,7 +3657,25 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cmE-Yr-TVd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-16" y="108"/>
+            <point key="canvasLocation" x="677.74524158125905" y="107.8125"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="7wt-Ie-AUp">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="qaA-kj-6H0" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="o7I-dg-e3U">
+                        <rect key="frame" x="0.0" y="24" width="1366" height="50"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="a5U-3N-8Er" kind="relationship" relationship="rootViewController" id="JZO-NR-RFQ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rp5-65-hTN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-743.19180087847724" y="88.4765625"/>
         </scene>
     </scenes>
     <resources>

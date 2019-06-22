@@ -12,9 +12,6 @@ var currentSlideIndex = 0
 
 class SwipingController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     
-    
-    @IBOutlet weak var progressViewOutlet: UIProgressView!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -43,6 +40,13 @@ class SwipingController: UICollectionViewController, UICollectionViewDelegateFlo
         
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        // let height: CGFloat = -50 //whatever height you want to add to the existing height
+        let bounds = self.navigationController!.navigationBar.bounds
+        self.navigationController?.navigationBar.frame = CGRect(x: 0, y: 0, width: bounds.width, height: bounds.height - 50)
+    }
+    
     // implement various sections here, or pass in each section?
 //    override func numberOfSections(in collectionView: UICollectionView) -> Int {
 //        <#code#>
@@ -59,13 +63,22 @@ class SwipingController: UICollectionViewController, UICollectionViewDelegateFlo
         currentSlideIndex = indexPath.row
         print("currentSlideIndex: \(currentSlideIndex)")
         print("named: lesson1[currentSlideIndex]: \(lesson1[currentSlideIndex])")
+        print("swiping!")
         let image = UIImage(named: lesson1[currentSlideIndex])
 //        let imageView = UIImageView(image: image)
         cell.slideImage.image = image
         
-        progressViewOutlet.setProgress(Float(currentSlideIndex + 1)/Float(lesson1.count), animated: true)
+//        progressViewOutlet.setProgress(Float(currentSlideIndex + 1)/Float(lesson1.count), animated: true)
         
         return cell
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+//        backButtonOutlet.alpha = 0
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+//        backButtonOutlet.alpha = 1
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

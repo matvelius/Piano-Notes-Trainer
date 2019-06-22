@@ -12,6 +12,7 @@ import UIKit
 
 class PageCell: UICollectionViewCell {
     
+    
     let lessonSlideView: UIImageView = {
         let image = UIImage(named: lesson1[currentSlideIndex])
         print("lesson1[currentSlideIndex]: \(lesson1[currentSlideIndex])")
