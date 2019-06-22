@@ -13,13 +13,22 @@ class SectionsTabBarController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-//        if currentSection == 0 {
-//            tabBarController?.selectedIndex = 0
-//            print("selection 0 confirmed!")
-//        } else if currentSection == 1 {
-//            tabBarController?.selectedIndex = 1
-//            print("selection 1 confirmed!")
-//        }
+//        UITabBar.appearance().tintColor = UIColor(red: 254/255.0, green: 105/255.0, blue: 51/255.0, alpha: 100.0)
+        
+
+        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        //        tabBarItem.image = UIImage(named: "tabBarIconLearn")
+        tabBar.items?[0].title = "LEARN"
+        tabBar.items?[0].image = UIImage(named: "tabBarIconLearn")
+        tabBar.items?[0].imageInsets = UIEdgeInsets(top: 10, left: 5, bottom: 5, right: 5)
+        //        tabBar.items?[0].image?.
+        
+        tabBar.items?[1].title = "PLAY"
+        tabBar.items?[1].image = UIImage(named: "tabBarIconPlay")
+        tabBar.items?[1].imageInsets = UIEdgeInsets(top: 10, left: 5, bottom: 5, right: 5)
     }
     
 

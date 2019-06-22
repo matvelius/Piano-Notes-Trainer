@@ -78,7 +78,7 @@
                             <outlet property="delegate" destination="8JC-u7-HER" id="A2G-6O-WuI"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" systemItem="topRated" id="ZCM-qz-LRw"/>
+                    <tabBarItem key="tabBarItem" id="ZCM-qz-LRw"/>
                     <navigationItem key="navigationItem" id="Kkg-tL-LQ8"/>
                     <connections>
                         <segue destination="ocB-fJ-hDj" kind="show" identifier="segueToExplainers" animates="NO" id="Dij-og-4Df"/>
@@ -3510,7 +3510,7 @@
                             <outlet property="delegate" destination="d10-To-hdl" id="vmM-Mg-N6E"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" systemItem="bookmarks" id="Mi4-s4-3EF"/>
+                    <tabBarItem key="tabBarItem" id="Mi4-s4-3EF"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AcK-NR-Tqk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
