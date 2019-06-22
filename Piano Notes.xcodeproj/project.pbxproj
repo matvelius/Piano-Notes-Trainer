@@ -77,6 +77,7 @@
 		D7C15C7C22BC4F78003593DA /* LessonSlidesCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C15C7B22BC4F78003593DA /* LessonSlidesCollectionViewController.swift */; };
 		D7C2E3DA2241C9E300A72D5C /* ExplainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C2E3D92241C9E300A72D5C /* ExplainerViewController.swift */; };
 		D7C88AC52249EFA0000F484F /* wrong.aiff in Resources */ = {isa = PBXBuildFile; fileRef = D7C88AC42249EFA0000F484F /* wrong.aiff */; };
+		D7D1F8B622BDE7980065162D /* CustomNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D1F8B522BDE7980065162D /* CustomNavigationBar.swift */; };
 		D7DFCFEB22619FC700468F71 /* Enharmonics.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7DFCFEA22619FC700468F71 /* Enharmonics.swift */; };
 		D7E6BFC922AC6B0C00370F4B /* MenuAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7E6BFC822AC6B0C00370F4B /* MenuAnimation.swift */; };
 		D7EE080822B1385600B7EB0C /* MiscSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7EE080722B1385600B7EB0C /* MiscSettings.swift */; };
@@ -161,6 +162,7 @@
 		D7C15C7B22BC4F78003593DA /* LessonSlidesCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonSlidesCollectionViewController.swift; sourceTree = "<group>"; };
 		D7C2E3D92241C9E300A72D5C /* ExplainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExplainerViewController.swift; sourceTree = "<group>"; };
 		D7C88AC42249EFA0000F484F /* wrong.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = wrong.aiff; sourceTree = "<group>"; };
+		D7D1F8B522BDE7980065162D /* CustomNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationBar.swift; sourceTree = "<group>"; };
 		D7DFCFEA22619FC700468F71 /* Enharmonics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enharmonics.swift; sourceTree = "<group>"; };
 		D7E6BFC822AC6B0C00370F4B /* MenuAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuAnimation.swift; sourceTree = "<group>"; };
 		D7EE080722B1385600B7EB0C /* MiscSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiscSettings.swift; sourceTree = "<group>"; };
@@ -293,6 +295,7 @@
 				D7EF774122789FC800943F54 /* ExplainersOnOrOff.swift */,
 				D78A61DE22643EBC008706E2 /* InitialViewController.swift */,
 				D7C15C7522BA82B2003593DA /* SwipingController.swift */,
+				D7D1F8B522BDE7980065162D /* CustomNavigationBar.swift */,
 				D7C15C7722BA8BBA003593DA /* PageCell.swift */,
 				D7C15C7922BAC8C1003593DA /* LessonSlides.swift */,
 				D777C81E22009DE000FA472E /* Assets.xcassets */,
@@ -442,6 +445,7 @@
 				D7EF77402277FFF000943F54 /* LevelTableViewCell.swift in Sources */,
 				D7C15C7222B9EDEE003593DA /* LearnSectionTableViewController.swift in Sources */,
 				D7E6BFC922AC6B0C00370F4B /* MenuAnimation.swift in Sources */,
+				D7D1F8B622BDE7980065162D /* CustomNavigationBar.swift in Sources */,
 				D74992D9228C3FD90095C1B7 /* NotesOnStaffViewController.swift in Sources */,
 				D7C15C7C22BC4F78003593DA /* LessonSlidesCollectionViewController.swift in Sources */,
 				D7EF773A2277F06B00943F54 /* Accidentals.swift in Sources */,

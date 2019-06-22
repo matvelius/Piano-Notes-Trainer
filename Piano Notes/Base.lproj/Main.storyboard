@@ -3664,7 +3664,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="qaA-kj-6H0" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="o7I-dg-e3U">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="o7I-dg-e3U" customClass="CINavigationBar" customModule="Piano_Notes" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="24" width="1366" height="50"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
