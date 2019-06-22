@@ -16,10 +16,10 @@ class LearnSectionTableViewCell: UITableViewCell {
     
     @IBOutlet weak var lessonImage: UIImageView!
     
-    func updateCell(with level: Level) {
-        lessonTitle.text = level.title.uppercased()
-        lessonSubtitle.text = level.subtitle
-        lessonImage.image = UIImage(named: "\(level.imageName)")
+    func updateCell(with lesson: [String], imageIndex: Int) {
+        lessonTitle.text = lesson[0].uppercased()
+        lessonSubtitle.text = lesson[1]
+        lessonImage.image = UIImage(named: "lesson\(imageIndex)img")
     }
 
     override func awakeFromNib() {

@@ -9,6 +9,7 @@
 import UIKit
 
 var currentSlideIndex = 0
+var currentLesson = 0
 
 class SwipingController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     
@@ -57,17 +58,18 @@ class SwipingController: UICollectionViewController, UICollectionViewDelegateFlo
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
 //        print("lesson1.count: \(lesson1.count)")
-        return 5
+        return allLessons[currentLesson].count
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellID", for: indexPath) as! LessonSlideCollectionViewCell
 //        cell.backgroundColor = indexPath.row % 2 == 0 ? .red : .green
         currentSlideIndex = indexPath.row
-        print("currentSlideIndex: \(currentSlideIndex)")
-        print("named: lesson1[currentSlideIndex]: \(lesson1[currentSlideIndex])")
-        print("swiping!")
-        let image = UIImage(named: lesson1[currentSlideIndex])
+//        let currentLessonToShow = currentLesson
+//        print("currentSlideIndex: \(currentSlideIndex)")
+//        print("named: lesson1[currentSlideIndex]: \(lesson1[currentSlideIndex])")
+//        print("swiping!")
+        let image = UIImage(named: allLessons[currentLesson][currentSlideIndex])
 //        let imageView = UIImageView(image: image)
         cell.slideImage.image = image
         

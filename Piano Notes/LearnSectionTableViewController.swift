@@ -31,12 +31,16 @@ class LearnSectionTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 1
+        return 4
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "learnSectionCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "learnSectionCell", for: indexPath) as! LearnSectionTableViewCell
+        
+        let lesson = allLessonTitlesAndSubtitles[indexPath.row]
+        
+        cell.updateCell(with: lesson, imageIndex: indexPath.row + 1)
 
         // Configure the cell...
 
@@ -45,11 +49,12 @@ class LearnSectionTableViewController: UITableViewController {
    
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        currentLesson = indexPath.row
         performSegue(withIdentifier: "segueToLessons", sender: nil)
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 120
+        return 180
     }
 
     /*
