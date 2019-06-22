@@ -13,7 +13,7 @@ import UIKit
 class CINavigationBar: UINavigationBar {
     
     //set NavigationBar's height
-    @IBInspectable var customHeight : CGFloat = 10
+    @IBInspectable var customHeight : CGFloat = 5
     
     override func sizeThatFits(_ size: CGSize) -> CGSize {
         
@@ -26,9 +26,8 @@ class CINavigationBar: UINavigationBar {
         
         print("It called")
         
-        self.tintColor = .black
+        self.tintColor = UIColor(red:0.00, green:0.40, blue:0.96, alpha:1.0)
         self.backgroundColor = UIColor.clear
-        
         
         
         for subview in self.subviews {
@@ -37,7 +36,7 @@ class CINavigationBar: UINavigationBar {
                 
                 subview.frame = CGRect(x: 0, y: 0, width: self.frame.width, height: customHeight)
                 
-                subview.backgroundColor = .blue
+                subview.backgroundColor = UIColor.clear
                 subview.sizeToFit()
             }
             
@@ -47,7 +46,7 @@ class CINavigationBar: UINavigationBar {
             if stringFromClass.contains("UINavigationBarContentView") {
                 
                 //Set Center Y
-                let centerY = (customHeight - subview.frame.height) / 3.0
+                let centerY = CGFloat(2)
                 subview.frame = CGRect(x: 0, y: centerY, width: self.frame.width, height: subview.frame.height)
                 subview.backgroundColor = UIColor.clear
                 subview.sizeToFit()

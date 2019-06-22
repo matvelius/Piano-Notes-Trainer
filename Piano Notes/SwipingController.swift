@@ -46,8 +46,8 @@ class SwipingController: UICollectionViewController, UICollectionViewDelegateFlo
 //        let bounds = self.navigationController!.navigationBar.bounds
 //        self.navigationController?.navigationBar.frame = CGRect(x: 0, y: -20, width: bounds.width, height: bounds.height/2)
 //        self.navigationController?.navigationBar.heightAnchor.constraint(equalToConstant: CGFloat(1))
-        let size = CGSize(width: UIScreen.main.bounds.size.width, height: 100)
-        navigationController?.navigationBar.frame = CGRect(x: 0, y: 0, width: size.width, height: size.height)
+//        let size = CGSize(width: UIScreen.main.bounds.size.width, height: 100)
+//        navigationController?.navigationBar.frame = CGRect(x: 0, y: 0, width: size.width, height: size.height)
     }
     
     // implement various sections here, or pass in each section?

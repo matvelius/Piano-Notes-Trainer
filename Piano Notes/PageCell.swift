@@ -19,6 +19,7 @@ class PageCell: UICollectionViewCell {
         let imageView = UIImageView(image: image)
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.contentMode = .scaleAspectFit
+//        imageView.frame.origin.y = 500
         return imageView
     }()
     
@@ -27,8 +28,10 @@ class PageCell: UICollectionViewCell {
         self.addSubview(lessonSlideView)
         NSLayoutConstraint.activate([
             lessonSlideView.widthAnchor.constraint(equalToConstant: self.frame.width),
-            lessonSlideView.heightAnchor.constraint(equalToConstant: self.frame.height)
+            lessonSlideView.heightAnchor.constraint(equalToConstant: self.frame.height),
+//            lessonSlideView.centerYAnchor.constraint(equalTo: self.frame.origin.y - 10)
             ])
+//        self.lessonSlideView.frame.origin.y = 500
     }
     
     required init?(coder aDecoder: NSCoder) {

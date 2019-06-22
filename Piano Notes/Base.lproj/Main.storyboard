@@ -3530,7 +3530,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qzJ-mk-fMl" userLabel="slideImage">
-                                            <rect key="frame" x="0.0" y="0.0" width="1377" height="929"/>
+                                            <rect key="frame" x="0.0" y="-15" width="1377" height="929"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </imageView>
                                     </subviews>
@@ -3539,8 +3539,8 @@
                                 <constraints>
                                     <constraint firstItem="qzJ-mk-fMl" firstAttribute="trailing" secondItem="Lbx-5r-30Q" secondAttribute="trailing" id="3nb-rb-oaz"/>
                                     <constraint firstItem="qzJ-mk-fMl" firstAttribute="leading" secondItem="Lbx-5r-30Q" secondAttribute="leading" id="FLr-dC-Ohg"/>
-                                    <constraint firstItem="qzJ-mk-fMl" firstAttribute="bottom" secondItem="Lbx-5r-30Q" secondAttribute="bottom" id="GhN-y1-G8U"/>
-                                    <constraint firstItem="qzJ-mk-fMl" firstAttribute="top" secondItem="Lbx-5r-30Q" secondAttribute="top" id="kPQ-Ov-7wQ"/>
+                                    <constraint firstItem="qzJ-mk-fMl" firstAttribute="bottom" secondItem="Lbx-5r-30Q" secondAttribute="bottom" constant="-15" id="GhN-y1-G8U"/>
+                                    <constraint firstItem="qzJ-mk-fMl" firstAttribute="top" secondItem="Lbx-5r-30Q" secondAttribute="top" constant="-15" id="kPQ-Ov-7wQ"/>
                                 </constraints>
                                 <connections>
                                     <outlet property="slideImage" destination="qzJ-mk-fMl" id="rWr-Ci-D2E"/>
