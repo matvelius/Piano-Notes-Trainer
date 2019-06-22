@@ -27,7 +27,7 @@ class CINavigationBar: UINavigationBar {
         print("It called")
         
         self.tintColor = .black
-        self.backgroundColor = .red
+        self.backgroundColor = UIColor.clear
         
         
         
@@ -49,7 +49,7 @@ class CINavigationBar: UINavigationBar {
                 //Set Center Y
                 let centerY = (customHeight - subview.frame.height) / 3.0
                 subview.frame = CGRect(x: 0, y: centerY, width: self.frame.width, height: subview.frame.height)
-                subview.backgroundColor = .green
+                subview.backgroundColor = UIColor.clear
                 subview.sizeToFit()
                 
             }
