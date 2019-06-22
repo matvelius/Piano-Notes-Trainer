@@ -9,11 +9,12 @@
 
 import UIKit
 
-@IBDesignable
+//@IBDesignable
 class CINavigationBar: UINavigationBar {
     
     //set NavigationBar's height
-    @IBInspectable var customHeight : CGFloat = 5
+//    @IBInspectable
+    var customHeight : CGFloat = 5
     
     override func sizeThatFits(_ size: CGSize) -> CGSize {
         

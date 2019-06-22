@@ -71,6 +71,11 @@ class SwipingController: UICollectionViewController, UICollectionViewDelegateFlo
 //        let imageView = UIImageView(image: image)
         cell.slideImage.image = image
         
+        let selectedView = UIView()
+        selectedView.backgroundColor = UIColor(red: 250/255, green: 250/255, blue: 250/255, alpha: 0.1)
+        cell.selectedBackgroundView = selectedView
+
+        
 //        progressViewOutlet.setProgress(Float(currentSlideIndex + 1)/Float(lesson1.count), animated: true)
         
         return cell

@@ -3449,7 +3449,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="learnSectionCell" rowHeight="120" id="Wjc-Ka-4WA">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="learnSectionCell" rowHeight="120" id="Wjc-Ka-4WA" customClass="LearnSectionTableViewCell" customModule="Piano_Notes" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="1366" height="120"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Wjc-Ka-4WA" id="n2R-ye-xCW">
@@ -3492,7 +3492,11 @@
                                         <constraint firstItem="Fuj-L6-oBz" firstAttribute="top" secondItem="n2R-ye-xCW" secondAttribute="top" id="wBV-AM-ofv"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
+                                    <outlet property="lessonImage" destination="6pw-GM-XVe" id="4uu-7Y-iYV"/>
+                                    <outlet property="lessonSubtitle" destination="d33-m3-4qG" id="sUr-58-dy6"/>
+                                    <outlet property="lessonTitle" destination="Fuj-L6-oBz" id="c0s-rf-86X"/>
                                     <segue destination="qaA-kj-6H0" kind="show" identifier="segueToLessons" id="gEZ-FF-5vk"/>
                                 </connections>
                             </tableViewCell>
