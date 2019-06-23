@@ -1440,7 +1440,7 @@
                                     <constraint firstItem="VYo-S1-wTe" firstAttribute="width" secondItem="QG9-26-Oaz" secondAttribute="width" multiplier="5:5.8" id="w2t-W3-2Ze"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2co-F0-3U7" userLabel="Menu Button">
+                            <button opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2co-F0-3U7" userLabel="Menu Button">
                                 <rect key="frame" x="1316" y="34" width="30" height="52"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="33"/>
                                 <state key="normal" title="☰">
@@ -1450,6 +1450,19 @@
                                     <action selector="menuButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="O8X-qH-DO0"/>
                                 </connections>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="currentLevel" translatesAutoresizingMaskIntoConstraints="NO" id="XKU-ZS-dZg">
+                                <rect key="frame" x="1246" y="42.5" width="100" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="nSm-k4-ZId"/>
+                                    <constraint firstAttribute="width" constant="100" id="xJ7-D2-5Kd"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="14" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zgy-Gk-0gw" userLabel="currentLevelLabel">
+                                <rect key="frame" x="1310" y="47.5" width="22.5" height="24"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="20"/>
+                                <color key="textColor" red="0.50196078431372548" green="0.95686274509803915" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <gestureRecognizers/>
@@ -1491,6 +1504,8 @@
                             <constraint firstItem="E72-kp-4NI" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="trailing" constant="4" id="Tm7-qc-rIe"/>
                             <constraint firstItem="8yb-AG-ugB" firstAttribute="width" secondItem="6Tk-OE-BBY" secondAttribute="width" multiplier="0.56442" id="V3e-aa-CjG"/>
                             <constraint firstItem="JI7-xy-e6Q" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="885:1024" id="VL2-xl-One"/>
+                            <constraint firstItem="Zgy-Gk-0gw" firstAttribute="centerX" secondItem="XKU-ZS-dZg" secondAttribute="centerX" constant="25" id="W1u-Q7-Oxq"/>
+                            <constraint firstItem="XKU-ZS-dZg" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" constant="-20" id="XZx-3H-OuT"/>
                             <constraint firstItem="whS-R1-wiA" firstAttribute="top" secondItem="1rN-4x-5j0" secondAttribute="bottom" id="XqV-8y-zBS"/>
                             <constraint firstItem="whS-R1-wiA" firstAttribute="height" secondItem="PeW-eg-9HV" secondAttribute="height" multiplier="252:808" id="YEJ-WD-HoE"/>
                             <constraint firstItem="whS-R1-wiA" firstAttribute="leading" secondItem="0we-NU-HjW" secondAttribute="trailing" id="YS7-di-eZm"/>
@@ -1504,6 +1519,8 @@
                             <constraint firstItem="E72-kp-4NI" firstAttribute="top" secondItem="whS-R1-wiA" secondAttribute="top" id="hTg-xn-Nzf"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="PZR-Qo-iqb" secondAttribute="trailing" id="imG-mf-tnc"/>
                             <constraint firstItem="JI7-xy-e6Q" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="lSd-Sr-joe"/>
+                            <constraint firstItem="XKU-ZS-dZg" firstAttribute="top" secondItem="mzf-Zv-Dzk" secondAttribute="top" id="pVB-7I-c9y"/>
+                            <constraint firstItem="Zgy-Gk-0gw" firstAttribute="centerY" secondItem="XKU-ZS-dZg" secondAttribute="centerY" constant="-5" id="qIH-cC-Au3"/>
                             <constraint firstItem="mzf-Zv-Dzk" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="t8F-eF-BWU"/>
                             <constraint firstItem="1rN-4x-5j0" firstAttribute="height" secondItem="Kqr-Q3-q8M" secondAttribute="height" multiplier="271:808" id="tc3-6G-7dY"/>
                             <constraint firstItem="0we-NU-HjW" firstAttribute="top" secondItem="whS-R1-wiA" secondAttribute="top" id="vzw-r3-z4P"/>
@@ -1641,7 +1658,7 @@
                     </connections>
                 </panGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1513" y="721"/>
+            <point key="canvasLocation" x="1512.7379209370424" y="720.703125"/>
         </scene>
         <!--Notes On Staff View Controller-->
         <scene sceneID="Qoc-gM-v9U">
@@ -3692,6 +3709,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="AWR-ed-pf4" customClass="SectionsTabBarController" customModule="Piano_Notes" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="OLF-Md-idA">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="barTintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -3729,6 +3747,7 @@
         <image name="check" width="218" height="120"/>
         <image name="check_pressed" width="210" height="112"/>
         <image name="choose_the_correct_note_on_staff" width="2200" height="102"/>
+        <image name="currentLevel" width="270" height="76"/>
         <image name="explainer_1" width="2732" height="2048"/>
         <image name="flat" width="210" height="123"/>
         <image name="flat_pressed" width="210" height="123"/>
