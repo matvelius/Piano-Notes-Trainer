@@ -3280,6 +3280,7 @@
                     <connections>
                         <outlet property="accidentalsButtonsOutlet" destination="246-8n-5LY" id="Sgz-8b-aYQ"/>
                         <outlet property="accidentalsSegmentedControlOutlet" destination="LaR-DN-X8R" id="6Wr-Wk-Jql"/>
+                        <outlet property="allKeyButtons" destination="mrE-qH-7Xr" id="xfp-8i-ND9"/>
                         <outlet property="arrowAndCheckButtonsOutlet" destination="yxa-Ew-apy" id="c6E-T0-O4T"/>
                         <outlet property="checkButtonOutlet" destination="QTI-d7-4cg" id="52C-FY-wf9"/>
                         <outlet property="darkOverlayOutlet" destination="KX1-pG-rpd" id="PH1-4B-2Ps"/>

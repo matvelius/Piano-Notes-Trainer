@@ -29,6 +29,8 @@ class NotesOnStaffViewController: UIViewController {
     
     @IBOutlet var panGestureRecognizerOutlet: UIPanGestureRecognizer!
     
+    @IBOutlet weak var allKeyButtons: UIView!
+    
     @IBOutlet var keyButtonsOutletCollection: [UIButton]!
     
     @IBAction func keyButtonTouchUpInside(_ sender: UIButton) {
@@ -208,7 +210,7 @@ class NotesOnStaffViewController: UIViewController {
             //            topLabelOutlet.frame.width
         }
         
-//        startNewRound()
+        startNewRound()
     }
     
     
@@ -482,10 +484,12 @@ class NotesOnStaffViewController: UIViewController {
         setRandomNewNoteUpperIndex()
         
         updateNoteIndices()
-        generateNewNote()
+//        generateNewNote()
         
         noteRangeLowNoteImage.image = UIImage(named: "staff\(whiteNotesOnLargeKeyboard[lowNoteIndex])")
         noteRangeHighNoteImage.image = UIImage(named: "staff\(whiteNotesOnLargeKeyboard[highNoteIndex])")
+        
+        startNewRound()
     }
     
     var locationTracker: Double = Double(whiteNotesOnLargeKeyboard.count / 2) {
@@ -613,7 +617,7 @@ class NotesOnStaffViewController: UIViewController {
             giveOrTakeAStar()
             starsImageOutlet.image = UIImage(named: "stars\(currentNumberOfStars)")
             
-            if currentNumberOfStars == 1 && Level.currentLevel.id > 0 {
+            if currentNumberOfStars == 5 && Level.currentLevel.id > 0 {
                 Alert.showFinishLevelAlert(on: self)
                 levelsCompleted.append(Level.currentLevel.id)
                 print("levelsCompleted: \(levelsCompleted)")
@@ -762,6 +766,9 @@ class NotesOnStaffViewController: UIViewController {
         
         if currentGameMode == .A {
             
+            allKeyButtons.isUserInteractionEnabled = false
+            noteOnStaffImage.isUserInteractionEnabled = true
+            
             if currentCorrectAnswer == "C4bass" {
                 pianoNoteDisplayed.image = UIImage(named: "large_C4_shown")
             } else {
@@ -769,6 +776,9 @@ class NotesOnStaffViewController: UIViewController {
             }
         
         } else {
+            
+            allKeyButtons.isUserInteractionEnabled = true
+            noteOnStaffImage.isUserInteractionEnabled = false
             
             pianoNoteDisplayed.image = nil
             noteOnStaffImage.image = UIImage(named: "staff\(currentCorrectAnswer)")
@@ -929,20 +939,19 @@ class NotesOnStaffViewController: UIViewController {
 //        lastAccidentalOrNotIndex = accidentalOrNotIndex
     }
     
-//    func startNewRound() {
-//
-//        lastRandomNumber = randomNewNoteIndex
-//        totalScore = 0
-//        scoreLabel.text = "0"
-//        correctAnswersInARow = 0
-//        incorrectAnswersInARow = 0
-//        currentNumberOfStars = 0
-//        stars.image = UIImage(named: "stars\(currentNumberOfStars)")
-//        resetButtonsToDefault()
-//
-//        generateNewNote()
-//
-//    }
+    func startNewRound() {
+
+        lastRandomNumber = randomNewNoteIndex
+        totalScore = 0
+        scoreLabelOutlet.text = "0"
+        correctAnswersInARow = 0
+        incorrectAnswersInARow = 0
+        currentNumberOfStars = 0
+        starsImageOutlet.image = UIImage(named: "stars\(currentNumberOfStars)")
+
+        generateNewNote()
+        
+    }
     
     @IBAction func handleMainNotePanGesture(recognizer: UIPanGestureRecognizer) {
         
