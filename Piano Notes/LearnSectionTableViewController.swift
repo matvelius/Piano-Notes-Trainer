@@ -63,7 +63,7 @@ class LearnSectionTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 180
+        return view.frame.height / 4.5
     }
 
     /*
