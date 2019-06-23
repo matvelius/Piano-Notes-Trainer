@@ -24,7 +24,10 @@ class LevelsTableViewController: UITableViewController {
     
     override func viewWillAppear(_ animated:Bool) {
         super.viewWillAppear(animated)
-        tableView.reloadData()
+        if let retrievedLevelInfo = AppData.loadFromFile() {
+            levelsCompleted = retrievedLevelInfo
+            tableView.reloadData()
+        }
     }
     
 //    override func viewDidAppear(_ animated: Bool) {

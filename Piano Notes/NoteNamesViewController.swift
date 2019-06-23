@@ -878,7 +878,10 @@ class NoteNamesViewController: UIViewController {
             
             if currentNumberOfStars == 1 && Level.currentLevel.id > 0 {
                 Alert.showFinishLevelAlert(on: self)
-                allLevels[0][Level.currentLevel.id - 1].isComplete = true
+//                allLevels[0][Level.currentLevel.id - 1].isComplete = true
+                levelsCompleted.append(Level.currentLevel.id)
+                print("levelsCompleted: \(levelsCompleted)")
+                AppData.saveToFile(levelsCompleted: levelsCompleted)
             }
             
             //            usleep(1000000) //will sleep for 1 second

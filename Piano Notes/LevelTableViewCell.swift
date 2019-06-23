@@ -21,7 +21,7 @@ class LevelTableViewCell: UITableViewCell {
         levelTitle.text = level.title.uppercased()
         levelSubtitle.text = level.subtitle
         
-        if level.isComplete {
+        if levelsCompleted.contains(level.id) {
             levelImage.image = UIImage(named: "level_complete")
         } else {
             levelImage.image = UIImage(named: "\(level.imageName)")

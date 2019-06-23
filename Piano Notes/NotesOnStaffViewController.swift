@@ -615,7 +615,9 @@ class NotesOnStaffViewController: UIViewController {
             
             if currentNumberOfStars == 1 && Level.currentLevel.id > 0 {
                 Alert.showFinishLevelAlert(on: self)
-                allLevels[1][Level.currentLevel.id - 1].isComplete = true
+                levelsCompleted.append(Level.currentLevel.id)
+                print("levelsCompleted: \(levelsCompleted)")
+                AppData.saveToFile(levelsCompleted: levelsCompleted)
             }
             
         // WRONG ANSWER
