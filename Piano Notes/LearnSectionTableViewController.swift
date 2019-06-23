@@ -14,6 +14,15 @@ class LearnSectionTableViewController: UITableViewController {
         super.viewDidLoad()
         
         tableView.backgroundView = UIImageView(image: UIImage(named: "intro_screen_background_blurry"))
+        
+//        tabBar.items?[0].title = "LEARN"
+//        tabBar.items?[0].image = UIImage(named: "tabBarIconLearn")
+//        tabBar.items?[0].imageInsets = UIEdgeInsets(top: 10, left: 5, bottom: 5, right: 5)
+        
+        //// **************!!!!/ /////
+//        tabBarItem.title = "LEARN"
+//        tabBarItem.image = UIImage(named: "tabBarIconLearn")
+//        tabBarItem.imageInsets = UIEdgeInsets(top: 10, left: 5, bottom: 5, right: 5)
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false

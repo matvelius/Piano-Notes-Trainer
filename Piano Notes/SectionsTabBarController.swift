@@ -23,12 +23,12 @@ class SectionsTabBarController: UITabBarController {
         //        tabBarItem.image = UIImage(named: "tabBarIconLearn")
         tabBar.items?[0].title = "LEARN"
         tabBar.items?[0].image = UIImage(named: "tabBarIconLearn")
-        tabBar.items?[0].imageInsets = UIEdgeInsets(top: 10, left: 5, bottom: 5, right: 5)
+//        tabBar.items?[0].imageInsets = UIEdgeInsets(top: 10, left: 5, bottom: 5, right: 5)
         //        tabBar.items?[0].image?.
         
         tabBar.items?[1].title = "PLAY"
         tabBar.items?[1].image = UIImage(named: "tabBarIconPlay")
-        tabBar.items?[1].imageInsets = UIEdgeInsets(top: 10, left: 5, bottom: 5, right: 5)
+//        tabBar.items?[1].imageInsets = UIEdgeInsets(top: 10, left: 5, bottom: 5, right: 5)
     }
     
 
