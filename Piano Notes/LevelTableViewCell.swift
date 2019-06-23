@@ -17,9 +17,16 @@ class LevelTableViewCell: UITableViewCell {
     @IBOutlet weak var levelImage: UIImageView!
     
     func updateCell(with level: Level) {
+        
         levelTitle.text = level.title.uppercased()
         levelSubtitle.text = level.subtitle
-        levelImage.image = UIImage(named: "\(level.imageName)")
+        
+        if level.isComplete {
+            levelImage.image = UIImage(named: "level_complete")
+        } else {
+            levelImage.image = UIImage(named: "\(level.imageName)")
+        }
+        
     }
     
     override func awakeFromNib() {

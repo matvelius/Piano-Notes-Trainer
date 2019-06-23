@@ -22,6 +22,11 @@ class LevelsTableViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
     
+    override func viewWillAppear(_ animated:Bool) {
+        super.viewWillAppear(animated)
+        tableView.reloadData()
+    }
+    
 //    override func viewDidAppear(_ animated: Bool) {
 //        
 //        let navBar = self.navigationController?.navigationBar

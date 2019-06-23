@@ -876,8 +876,9 @@ class NoteNamesViewController: UIViewController {
             giveOrTakeAStar()
             stars.image = UIImage(named: "stars\(currentNumberOfStars)")
             
-            if currentNumberOfStars == 5 {
+            if currentNumberOfStars == 1 && Level.currentLevel.id > 0 {
                 Alert.showFinishLevelAlert(on: self)
+                allLevels[0][Level.currentLevel.id - 1].isComplete = true
             }
             
             //            usleep(1000000) //will sleep for 1 second
