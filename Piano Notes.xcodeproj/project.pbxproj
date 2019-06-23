@@ -64,6 +64,8 @@
 		D735959122BEAC9A00907FAB /* SectionsTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D735959022BEAC9A00907FAB /* SectionsTabBarController.swift */; };
 		D74992D9228C3FD90095C1B7 /* NotesOnStaffViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74992D8228C3FD90095C1B7 /* NotesOnStaffViewController.swift */; };
 		D74B814422B74DD20031DFF7 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74B814322B74DD20031DFF7 /* Alert.swift */; };
+		D75714B622BFDF49001E323A /* CustomSwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75714B522BFDF49001E323A /* CustomSwitch.swift */; };
+		D75714B822BFE4A1001E323A /* CustomThumbView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75714B722BFE4A1001E323A /* CustomThumbView.swift */; };
 		D75DE89322828C5800BBFDEF /* GameMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75DE89222828C5800BBFDEF /* GameMode.swift */; };
 		D777C81822009DDB00FA472E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D777C81722009DDB00FA472E /* AppDelegate.swift */; };
 		D777C81A22009DDB00FA472E /* NoteNamesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D777C81922009DDB00FA472E /* NoteNamesViewController.swift */; };
@@ -149,6 +151,8 @@
 		D735959022BEAC9A00907FAB /* SectionsTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionsTabBarController.swift; sourceTree = "<group>"; };
 		D74992D8228C3FD90095C1B7 /* NotesOnStaffViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesOnStaffViewController.swift; sourceTree = "<group>"; };
 		D74B814322B74DD20031DFF7 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
+		D75714B522BFDF49001E323A /* CustomSwitch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSwitch.swift; sourceTree = "<group>"; };
+		D75714B722BFE4A1001E323A /* CustomThumbView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomThumbView.swift; sourceTree = "<group>"; };
 		D75DE89222828C5800BBFDEF /* GameMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameMode.swift; sourceTree = "<group>"; };
 		D777C81422009DDB00FA472E /* Piano Notes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Piano Notes.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D777C81722009DDB00FA472E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -286,6 +290,8 @@
 				D74B814322B74DD20031DFF7 /* Alert.swift */,
 				D7EE080722B1385600B7EB0C /* MiscSettings.swift */,
 				D777C81B22009DDB00FA472E /* Main.storyboard */,
+				D75714B522BFDF49001E323A /* CustomSwitch.swift */,
+				D75714B722BFE4A1001E323A /* CustomThumbView.swift */,
 				D735959022BEAC9A00907FAB /* SectionsTabBarController.swift */,
 				D73479B322BC570800D7774D /* LessonSlideCollectionViewCell.swift */,
 				D7C15C7B22BC4F78003593DA /* LessonSlidesCollectionViewController.swift */,
@@ -444,6 +450,7 @@
 				D7EF773E2277F97100943F54 /* Levels.swift in Sources */,
 				D74B814422B74DD20031DFF7 /* Alert.swift in Sources */,
 				D78A61DF22643EBC008706E2 /* InitialViewController.swift in Sources */,
+				D75714B822BFE4A1001E323A /* CustomThumbView.swift in Sources */,
 				D777C81A22009DDB00FA472E /* NoteNamesViewController.swift in Sources */,
 				D7EF7738227785CE00943F54 /* NoteChoices.swift in Sources */,
 				D7C15C7A22BAC8C1003593DA /* LessonSlides.swift in Sources */,
@@ -455,6 +462,7 @@
 				D7D1F8B622BDE7980065162D /* CustomNavigationBar.swift in Sources */,
 				D74992D9228C3FD90095C1B7 /* NotesOnStaffViewController.swift in Sources */,
 				D7C15C7C22BC4F78003593DA /* LessonSlidesCollectionViewController.swift in Sources */,
+				D75714B622BFDF49001E323A /* CustomSwitch.swift in Sources */,
 				D7EF773A2277F06B00943F54 /* Accidentals.swift in Sources */,
 				D735958F22BE8C1E00907FAB /* LearnSectionTableViewCell.swift in Sources */,
 				D7EE080822B1385600B7EB0C /* MiscSettings.swift in Sources */,
