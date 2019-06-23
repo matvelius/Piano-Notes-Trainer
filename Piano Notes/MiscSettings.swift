@@ -50,6 +50,8 @@ struct AppData: Codable {
     
 }
 
+let labelScaleMultiplier = 1.2
+let labelScaleMultiplierBackToNormal = 1.0
 
 
 

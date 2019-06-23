@@ -15,6 +15,27 @@ import AVFoundation
 
 class NoteNamesViewController: UIViewController {
     
+    
+    @IBOutlet weak var currentLevelOutlet: UILabel!
+    
+    @IBOutlet weak var modeSwitchOutlet: CustomSwitch!
+    
+    @IBAction func customModeSwitchFlipped(_ sender: CustomSwitch) {
+        print("SWITCH TRIGGERED!")
+        switch currentGameMode {
+        case .B:
+            switchToModeA()
+        case .A:
+            switchToModeB()
+        }
+        
+        startNewRound()
+    }
+    
+    
+    @IBOutlet weak var modeStack: UIStackView!
+    
+    
 //    // instance variable to hold the AVAudioPlayer object
 //    var audioPlayer: AVAudioPlayer?
     
@@ -51,23 +72,11 @@ class NoteNamesViewController: UIViewController {
     
     @IBAction func modeSwitchFlipped(_ sender: UISegmentedControl) {
         
-        let labelScaleMultiplier = 1.2
-        let labelScaleMultiplierBackToNormal = 1.0
-        
         switch currentGameMode {
         case .A:
-            print("switching to mode B")
-            currentGameMode = .B
-            includeEnharmonicsSwitchOutlet.isEnabled = true
-            topLabelOutlet.image = UIImage(named: "tap_the_correct_key")
-            topLabelOutlet.transform = CGAffineTransform(scaleX: CGFloat(labelScaleMultiplier), y: CGFloat(labelScaleMultiplier))
+            switchToModeB()
         case .B:
-            print("switching to mode A")
-            currentGameMode = .A
-            includeEnharmonicsSwitchOutlet.isEnabled = false
-            topLabelOutlet.image = UIImage(named: "name_the_highlighted_note")
-            topLabelOutlet.transform = CGAffineTransform(scaleX: CGFloat(labelScaleMultiplierBackToNormal ), y: CGFloat(labelScaleMultiplierBackToNormal))
-//            topLabelOutlet.frame.width
+            switchToModeA()
         }
         
         startNewRound()
@@ -1445,73 +1454,108 @@ class NoteNamesViewController: UIViewController {
         // set the keys to display
         let currentLevelID = Level.currentLevel.id
         
+        // normally the mode switch is available
+        // disable for weird enharmonics (and anything else that's only 1 mode?)
+        // and for free play
+        modeStack.alpha = 1
         
         // TODO: - FINALIZE THESE DECISIONS
         switch currentLevelID {
+            
         case 1:
+            currentLevelOutlet.text = "1"
+            modeSwitchOutlet.setOn(on: false, animated: false)
+            currentGameMode = .A
+            
             setToOnlyCDE()
             enableButtons()
-            currentGameMode = .A
             disableSharps()
             sharpsViewOutlet.alpha = 0
             disableFlats()
             flatsViewOutlet.alpha = 0
             disableGestureRecognizers()
+            
         case 2:
+            currentLevelOutlet.text = "2"
+            modeSwitchOutlet.setOn(on: false, animated: false)
+            currentGameMode = .A
+            
             setToOnlyFGAB()
             enableButtons()
-            currentGameMode = .A
             disableSharps()
             sharpsViewOutlet.alpha = 0
             disableFlats()
             flatsViewOutlet.alpha = 0
             disableGestureRecognizers()
+            
         case 3:
+            currentLevelOutlet.text = "3"
+            modeSwitchOutlet.setOn(on: false, animated: false)
+            currentGameMode = .A
+            
             setToOnlyWhiteKeys()
             enableButtons()
-            currentGameMode = .A
             disableSharps()
             sharpsViewOutlet.alpha = 0
             disableFlats()
             flatsViewOutlet.alpha = 0
             disableGestureRecognizers()
+            
         case 4:
+            currentLevelOutlet.text = "4"
+            modeSwitchOutlet.setOn(on: false, animated: false)
+            currentGameMode = .A
+            
             setToOnlySharps()
             enableButtons()
-            currentGameMode = .A
             enableSharps()
             sharpsViewOutlet.alpha = 1
             disableFlats()
             flatsViewOutlet.alpha = 0
             enableGestureRecognizers()
+            
         case 5:
+            currentLevelOutlet.text = "5"
+            modeSwitchOutlet.setOn(on: false, animated: false)
+            currentGameMode = .A
+            
             setToOnlyFlats()
             enableButtons()
-            currentGameMode = .A
             disableSharps()
             sharpsViewOutlet.alpha = 0
             enableFlats()
             flatsViewOutlet.alpha = 1
             enableGestureRecognizers()
+            
         case 6:
+            currentLevelOutlet.text = "6"
+            modeSwitchOutlet.setOn(on: true, animated: false)
+            currentGameMode = .B
+            modeStack.alpha = 0
+            
             setToOnlyWeirdEnharmonics()
             disableButtons()
-            currentGameMode = .B
             disableSharps()
             sharpsViewOutlet.alpha = 1
             disableFlats()
             flatsViewOutlet.alpha = 1
             disableGestureRecognizers()
+            
         case 7:
+            currentLevelOutlet.text = "7"
+            modeSwitchOutlet.setOn(on: false, animated: false)
+            currentGameMode = .A
+            
             setToAllNoteChoices()
             enableButtons()
-            currentGameMode = .A
             enableSharps()
             sharpsViewOutlet.alpha = 1
             enableFlats()
             flatsViewOutlet.alpha = 1
             enableGestureRecognizers()
+            
         default: break
+            
         }
         
 
@@ -1603,6 +1647,31 @@ class NoteNamesViewController: UIViewController {
         // calculate note button bounds for pan gesture recognition
         noteButtonUpperBoundY = noteButtonD.bounds.maxY
         noteButtonLowerBoundY = noteButtonD.bounds.minY
+    }
+
+    func switchToModeA() {
+        print("switching to mode A")
+        currentGameMode = .A
+        includeEnharmonicsSwitchOutlet.isEnabled = false
+        topLabelOutlet.image = UIImage(named: "name_the_highlighted_note")
+        topLabelOutlet.transform = CGAffineTransform(scaleX: CGFloat(labelScaleMultiplierBackToNormal ), y: CGFloat(labelScaleMultiplierBackToNormal))
+    }
+    
+    func switchToModeB() {
+        print("switching to mode B")
+        currentGameMode = .B
+        includeEnharmonicsSwitchOutlet.isEnabled = true
+        topLabelOutlet.image = UIImage(named: "tap_the_correct_key")
+        topLabelOutlet.transform = CGAffineTransform(scaleX: CGFloat(labelScaleMultiplier), y: CGFloat(labelScaleMultiplier))
+        
+        switch Level.currentLevel.id {
+        case 1:
+            currentNoteChoices = onlyCDE
+        case 2:
+            currentNoteChoices = onlyFGAB
+        default:
+            currentNoteChoices = basicNoteNames
+        }
     }
     
 }
