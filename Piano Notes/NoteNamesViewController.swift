@@ -647,11 +647,9 @@ class NoteNamesViewController: UIViewController {
             // ISN'T THIS ALREADY CALCULATED in generateNewRandomNoteIndex() (BELOW?)
             switch currentNoteChoices {
             case onlyCDE:
-//                upperNoteChoiceLimit = 2
                 randomNewNoteIndexUpperLimit = 2
-            case onlyFGAB:
+            case onlyFGAB, onlyWeirdEnharmonics:
                 randomNewNoteIndexUpperLimit = 3
-//                upperNoteChoiceLimit = 3
             default:
                 randomNewNoteIndexUpperLimit = 6
             }
@@ -1453,6 +1451,7 @@ class NoteNamesViewController: UIViewController {
         menuButtonOutlet.alpha = 0
         // note choices
         currentNoteChoices = Level.currentLevel.noteChoices
+        currentLevelOutlet.text = String(Level.currentLevel.id)
         
         // set the keys to display
         let currentLevelID = Level.currentLevel.id
@@ -1466,9 +1465,9 @@ class NoteNamesViewController: UIViewController {
         switch currentLevelID {
             
         case 1:
-            currentLevelOutlet.text = "1"
+            
             modeSwitchOutlet.setOn(on: false, animated: false)
-            currentGameMode = .A
+            switchToModeA()
             
             setToOnlyCDE()
             enableButtons()
@@ -1479,9 +1478,9 @@ class NoteNamesViewController: UIViewController {
             disableGestureRecognizers()
             
         case 2:
-            currentLevelOutlet.text = "2"
+            
             modeSwitchOutlet.setOn(on: false, animated: false)
-            currentGameMode = .A
+            switchToModeA()
             
             setToOnlyFGAB()
             enableButtons()
@@ -1492,9 +1491,9 @@ class NoteNamesViewController: UIViewController {
             disableGestureRecognizers()
             
         case 3:
-            currentLevelOutlet.text = "3"
+            
             modeSwitchOutlet.setOn(on: false, animated: false)
-            currentGameMode = .A
+            switchToModeA()
             
             setToOnlyWhiteKeys()
             enableButtons()
@@ -1505,9 +1504,9 @@ class NoteNamesViewController: UIViewController {
             disableGestureRecognizers()
             
         case 4:
-            currentLevelOutlet.text = "4"
+            
             modeSwitchOutlet.setOn(on: false, animated: false)
-            currentGameMode = .A
+            switchToModeA()
             
             setToOnlySharps()
             enableButtons()
@@ -1518,9 +1517,9 @@ class NoteNamesViewController: UIViewController {
             enableGestureRecognizers()
             
         case 5:
-            currentLevelOutlet.text = "5"
+            
             modeSwitchOutlet.setOn(on: false, animated: false)
-            currentGameMode = .A
+            switchToModeA()
             
             setToOnlyFlats()
             enableButtons()
@@ -1531,9 +1530,9 @@ class NoteNamesViewController: UIViewController {
             enableGestureRecognizers()
             
         case 6:
-            currentLevelOutlet.text = "6"
+            
             modeSwitchOutlet.setOn(on: true, animated: false)
-            currentGameMode = .B
+            switchToModeB()
             modeStack.alpha = 0
             
             setToOnlyWeirdEnharmonics()
@@ -1545,9 +1544,9 @@ class NoteNamesViewController: UIViewController {
             disableGestureRecognizers()
             
         case 7:
-            currentLevelOutlet.text = "7"
+            
             modeSwitchOutlet.setOn(on: false, animated: false)
-            currentGameMode = .A
+            switchToModeA()
             
             setToAllNoteChoices()
             enableButtons()

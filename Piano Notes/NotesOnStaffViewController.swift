@@ -464,6 +464,18 @@ class NotesOnStaffViewController: UIViewController {
         currentNoteChoices = Level.currentLevel.noteChoices
         previousNoteChoices = currentNoteChoices
         
+        currentGameMode = .A
+        
+        switch Level.currentLevel.id {
+        case 8:
+            modeSwitchOutlet.setOn(on: true, animated: false)
+            switchModes()
+        default:
+            modeSwitchOutlet.setOn(on: false, animated: false)
+        }
+        
+        currentLevelOutlet.text = String(Level.currentLevel.id)
+        
         print("currentNoteChoices: \(currentNoteChoices)")
         setRandomNewNoteUpperIndex()
         
@@ -635,56 +647,10 @@ class NotesOnStaffViewController: UIViewController {
                     
                     addSameSize(subview: wrongNoteImageView, onTopOf: pianoNoteDisplayed)
                     
-//                    wrongNoteImageView.translatesAutoresizingMaskIntoConstraints = false
-//                    pianoNoteDisplayed.addSubview(wrongNoteImageView)
-//
-//                    NSLayoutConstraint.activate([
-//                        wrongNoteImageView.widthAnchor.constraint(equalToConstant: pianoNoteDisplayed!.frame.width),
-//                        wrongNoteImageView.heightAnchor.constraint(equalToConstant: pianoNoteDisplayed!.frame.height)
-//                        ])
-                    
                 }
                 
                 notesAlreadyAttempted.append(currentUserAnswer)
-                
-//                if !notesAlreadyAttempted.contains(currentUserAnswer) {
-//
-//                    print("INCORRECT - MODE B, not in notesAlreadyAttempted!")
-//
-//                    let wrongNoteImageName = "large_\(currentUserAnswer)_wrong"
-//                    let wrongNoteImage = UIImage(named: wrongNoteImageName)
-//                    var wrongNoteImageView = UIView(frame: .zero)
-//                    wrongNoteImageView = UIImageView(image: wrongNoteImage!)
-//                    print("\(wrongNoteImageName) : \(wrongNoteImage) : \(wrongNoteImageView)")
-//
-//                    wrongNoteImageView.translatesAutoresizingMaskIntoConstraints = false
-//                    pianoNoteDisplayed.addSubview(wrongNoteImageView)
-//
-//
-//                    NSLayoutConstraint.activate([
-//                        wrongNoteImageView.widthAnchor.constraint(equalToConstant: pianoNoteDisplayed!.frame.width),
-//                        wrongNoteImageView.heightAnchor.constraint(equalToConstant: pianoNoteDisplayed!.frame.height),
-//                        wrongNoteImageView.centerXAnchor.constraint(equalTo: pianoNoteDisplayed!.centerXAnchor),
-//                        wrongNoteImageView.centerYAnchor.constraint(equalTo: pianoNoteDisplayed!.centerYAnchor)
-//                        ])
-//
-//                    wrongNoteImageView.widthAnchor.constraint(equalToConstant: pianoNoteDisplayed!.intrinsicContentSize.width)
-//                    wrongNoteImageView.heightAnchor.constraint(equalToConstant: pianoNoteDisplayed!.intrinsicContentSize.height)
-//
-//                    wrongNoteImageView.center = pianoNoteDisplayed.convert(pianoNoteDisplayed.center, from: pianoNoteDisplayed.superview)
-//
-//                    print("wrongNoteImageView.widthAnchor: \(wrongNoteImageView.widthAnchor)")
-//                    print("wrongNoteImageView.heightAnchor: \(wrongNoteImageView.heightAnchor)")
-//                    print("wrongNoteImageView.centerXAnchor: \(wrongNoteImageView.centerXAnchor)")
-//                    print("wrongNoteImageView.centerYAnchor: \(wrongNoteImageView.centerYAnchor)")
-//
-//                    print("pianoNoteDisplayed!.frame.width: \(pianoNoteDisplayed!.frame.width)")
-//                    print("pianoNoteDisplayed!.frame.height: \(pianoNoteDisplayed!.frame.height)")
-//                    print("pianoNoteDisplayed!.centerXAnchor: \(pianoNoteDisplayed!.centerXAnchor)")
-//                    print("pianoNoteDisplayed!.centerYAnchor: \(pianoNoteDisplayed!.centerYAnchor)")
-//                    notesAlreadyAttempted.append(currentUserAnswer)
-//                }
-                
+ 
             }
             
             
@@ -714,44 +680,15 @@ class NotesOnStaffViewController: UIViewController {
 
     }
     
-//    var randomNewNoteIndex = 10
-//    var lastRandomNumber = 10
     
     func generateNewNote() {
-        
-        // enable or disable buttons/keys depending on current game mode
-//        switch currentGameMode {
-//        case .A:
-//            enableButtons()
-//            enableSharps()
-//            enableFlats()
-//            disableWhiteKeyButtons()
-//            disableBlackKeyButtons()
-//        case .B:
-//            disableButtons()
-//            disableSharps()
-//            disableFlats()
-//            enableWhiteKeyButtons()
-//            enableBlackKeyButtons()
-//        }
-        
-        // remove notes marked wrong
-//        if !notesAlreadyAttempted.isEmpty {
-//            for subview in self.pianoKeyImage.subviews {
-//                subview.removeFromSuperview()
-//            }
-//        }
-        
-//        notesAlreadyAttempted = [""]
+      
         generateNewRandomNoteIndex()
         currentCorrectAnswer = currentNoteChoices[randomNewNoteIndex]
         print("currentNoteChoices[randomNewNoteIndex]: \(currentCorrectAnswer)")
         lastRandomNumber = randomNewNoteIndex
         
         if currentGameMode == .A {
-            
-            allKeyButtons.isUserInteractionEnabled = false
-            noteOnStaffImage.isUserInteractionEnabled = true
             
             if currentCorrectAnswer == "C4bass" {
                 pianoNoteDisplayed.image = UIImage(named: "large_C4_shown")
@@ -760,9 +697,6 @@ class NotesOnStaffViewController: UIViewController {
             }
         
         } else {
-            
-            allKeyButtons.isUserInteractionEnabled = true
-            noteOnStaffImage.isUserInteractionEnabled = false
             
             pianoNoteDisplayed.image = nil
             noteOnStaffImage.image = UIImage(named: "staff\(currentCorrectAnswer)")
@@ -778,149 +712,6 @@ class NotesOnStaffViewController: UIViewController {
             
         }
         
-        
-        
-        
-        
-//
-//            currentNote = currentNoteChoices[randomNewNoteIndex]
-//            print("the current note is \(currentNote)")
-//
-//            let currentNoteNameLength = currentNote.count
-//
-//            // 3-character note names need to be converted to 2-character ones
-//            // (because octave doesn't matter)
-//            if currentNoteNameLength == 3 {
-//                currentCorrectAnswer = String(currentNote[currentNote.startIndex...currentNote.index(after: currentNote.startIndex)])
-//                //            print("currentCorrectAnswer when name length == 3: \(currentCorrectAnswer)")
-//            } else {
-//                currentCorrectAnswer = String(currentNote[currentNote.startIndex])
-//                //            print("currentCorrectAnswer when name length == \(currentNoteNameLength): \(currentCorrectAnswer)")
-//            }
-//            //        currentCorrectAnswer = String(currentNote[currentNote.startIndex])
-//            print("currentCorrectAnswer is \(currentCorrectAnswer)")
-//
-//            pianoKeyImage.image = UIImage(named: "\(currentNote)_shown")
-//
-//            // MODE B
-//        } else {
-//
-//            pianoKeyImage.image = nil
-//
-//            var upperNoteChoiceLimit = 6
-//
-//            // LIMIT NUMBER OF NOTE CHOICES FOR NEW NOTE
-//
-//            switch currentNoteChoices {
-//            case onlyCDE:
-//                upperNoteChoiceLimit = 2
-//            case onlyFGAB, onlyWeirdEnharmonics:
-//                upperNoteChoiceLimit = 3
-//            default: break
-//            }
-//
-//            randomNewNoteIndex = Int.random(in: 0...upperNoteChoiceLimit)
-//
-//            while randomNewNoteIndex == lastRandomNumber {
-//                randomNewNoteIndex = Int.random(in: 0...upperNoteChoiceLimit)
-//            }
-//
-//            var accidentalOrNot: Accidentals = .neither
-//
-//            if allNoteChoicesEnabled {
-//
-//                accidentalOrNotIndex = Int.random(in: 0...2)
-//
-//                while accidentalOrNotIndex == lastAccidentalOrNotIndex {
-//                    accidentalOrNotIndex = Int.random(in: 0...2)
-//                }
-//
-//                accidentalOrNot = Accidentals.allCases[accidentalOrNotIndex]
-//
-//            } else if onlyBlackKeysEnabled {
-//
-//                accidentalOrNotIndex = Int.random(in: 0...1)
-//
-//                //                while accidentalOrNotIndex == lastAccidentalOrNotIndex {
-//                //                    accidentalOrNotIndex = Int.random(in: 0...1)
-//                //                }
-//
-//                accidentalOrNot = Accidentals.allCases[accidentalOrNotIndex]
-//
-//            } else if onlyWeirdEnharmonicsEnabled {
-//
-//                accidentalOrNotIndex = Int.random(in: 0...1)
-//
-//                // IF I LEFT THIS IN, IT WOULD JUST KEEP SWITCHING, RIGHT?
-//                //                while accidentalOrNotIndex == lastAccidentalOrNotIndex {
-//                //                    accidentalOrNotIndex = Int.random(in: 1...2)
-//                //                }
-//
-//                accidentalOrNot = Accidentals.allCases[accidentalOrNotIndex]
-//
-//            } else if onlySharpsEnabled {
-//
-//                accidentalOrNot = .sharp
-//
-//            } else if onlyFlatsEnabled {
-//
-//                accidentalOrNot = .flat
-//
-//            }
-//
-//            // if noteChoices[1] == "#" (for only sharps) !
-//
-//            switch accidentalOrNot {
-//            case .neither:
-//                // NOT BASIC NOTE NAMES, BUT... ?
-//                switch currentNoteChoices {
-//                case onlyCDE:
-//                    currentNote = basicNoteNamesOnlyCDE[randomNewNoteIndex]
-//                case onlyFGAB:
-//                    currentNote = basicNoteNamesOnlyFGAB[randomNewNoteIndex]
-//                default:
-//                    currentNote = basicNoteNames[randomNewNoteIndex]
-//                }
-//
-//                currentAccidental = .neither
-//            case .sharp:
-//                currentNote = basicNoteNames[randomNewNoteIndex] + "#"
-//
-//                // generate new note if current note is a weird enharmonic
-//                if !weirdEnharmonicsEnabled && (currentNote == "B#" || currentNote == "E#") {
-//                    generateNewNote()
-//                } else {
-//                    sharpsOutletCollection[randomNewNoteIndex].setImage(UIImage(named: "sharp_shown"), for: UIControl.State.normal)
-//                    currentAccidental = .sharp
-//                }
-//            case .flat:
-//                currentNote = basicNoteNames[randomNewNoteIndex] + "b"
-//
-//                // generate new note if current note is a weird enharmonic
-//                if !weirdEnharmonicsEnabled && (currentNote == "Cb" || currentNote == "Fb") {
-//                    generateNewNote()
-//                } else {
-//                    flatsOutletCollection[randomNewNoteIndex].setImage(UIImage(named: "flat_shown"), for: UIControl.State.normal)
-//                    currentAccidental = .flat
-//                }
-//            }
-//
-//
-//            print("current note should be: \(currentNote)")
-//
-//            currentCorrectAnswer = currentNote
-//
-//            let currentNoteToShow = currentNote[currentNote.startIndex]
-//            let currentNoteIndex = basicNoteNames.firstIndex(of: String(currentNoteToShow))!
-//
-//            let buttonImageName = "\(currentNoteToShow)_shown"
-//            guard let image = UIImage(named: buttonImageName) else { return }
-//            noteButtonsOutletCollection![currentNoteIndex].setImage(image, for: UIControl.State.normal)
-//
-//        }
-//
-//        lastRandomNumber = randomNewNoteIndex
-//        lastAccidentalOrNotIndex = accidentalOrNotIndex
     }
     
     func startNewRound() {
@@ -1045,6 +836,9 @@ class NotesOnStaffViewController: UIViewController {
             accidentalsButtonsOutlet.alpha = 0
             arrowAndCheckButtonsOutlet.alpha = 0
             
+            allKeyButtons.isUserInteractionEnabled = true
+            noteOnStaffImage.isUserInteractionEnabled = false
+            
             //            includeEnharmonicsSwitchOutlet.isEnabled = true
             topLabelOutlet.image = UIImage(named: "tap_the_correct_key")
             topLabelOutlet.transform = CGAffineTransform(scaleX: CGFloat(labelScaleMultiplierNotesOnStaff), y: CGFloat(labelScaleMultiplierNotesOnStaff))
@@ -1055,6 +849,10 @@ class NotesOnStaffViewController: UIViewController {
             // show mode A controls
             accidentalsButtonsOutlet.alpha = 1
             arrowAndCheckButtonsOutlet.alpha = 1
+            
+            allKeyButtons.isUserInteractionEnabled = false
+            noteOnStaffImage.isUserInteractionEnabled = true
+            
             //            includeEnharmonicsSwitchOutlet.isEnabled = false
             topLabelOutlet.image = UIImage(named: "choose_the_correct_note_on_staff")
             topLabelOutlet.transform = CGAffineTransform(scaleX: CGFloat(labelScaleMultiplierBackToNormalNotesOnStaff ), y: CGFloat(labelScaleMultiplierBackToNormalNotesOnStaff))

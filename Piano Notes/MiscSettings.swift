@@ -53,7 +53,7 @@ struct AppData: Codable {
 let labelScaleMultiplier = 1.2
 let labelScaleMultiplierBackToNormal = 1.0
 
-let labelScaleMultiplierNotesOnStaff = 1.0
+let labelScaleMultiplierNotesOnStaff = 0.9
 let labelScaleMultiplierBackToNormalNotesOnStaff = 1.1
 
 
