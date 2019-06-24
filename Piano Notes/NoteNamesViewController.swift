@@ -28,7 +28,7 @@ class NoteNamesViewController: UIViewController {
         case .A:
             switchToModeB()
         }
-        
+
         startNewRound()
     }
     
@@ -651,7 +651,8 @@ class NoteNamesViewController: UIViewController {
             case onlyFGAB:
                 randomNewNoteIndexUpperLimit = 3
 //                upperNoteChoiceLimit = 3
-            default: break
+            default:
+                randomNewNoteIndexUpperLimit = 6
             }
             
 
@@ -672,7 +673,7 @@ class NoteNamesViewController: UIViewController {
                     flatsOutletCollection[weirdEnharmonicIndex!].setImage(UIImage(named: "flat_shown"), for: UIControl.State.normal)
                     currentAccidental = .flat
                 }
-                // need to take care of the correct octave!!
+                // need to take care of the correct octave!!??
                 currentCorrectAnswer = getEnharmonic(currentNote: currentNote)!
             
             } else {
@@ -693,6 +694,7 @@ class NoteNamesViewController: UIViewController {
                 
                 } else if onlyBlackKeysEnabled || onlyWeirdEnharmonicsEnabled {
                     
+                    // only sharps or flats
                     accidentalOrNotIndex = Int.random(in: 0...1)
                     
                     accidentalOrNot = Accidentals.allCases[accidentalOrNotIndex]
@@ -757,8 +759,8 @@ class NoteNamesViewController: UIViewController {
            
             // set the button image
             let buttonImageName = "\(currentNoteToShow)_shown"
-            guard let image = UIImage(named: buttonImageName) else { return }
-            noteButtonsOutletCollection![currentNoteIndex].setImage(image, for: UIControl.State.normal)
+            guard let buttonUIImage = UIImage(named: buttonImageName) else { return }
+            noteButtonsOutletCollection![currentNoteIndex].setImage(buttonUIImage, for: UIControl.State.normal)
             
         }
         
@@ -1664,14 +1666,14 @@ class NoteNamesViewController: UIViewController {
         topLabelOutlet.image = UIImage(named: "tap_the_correct_key")
         topLabelOutlet.transform = CGAffineTransform(scaleX: CGFloat(labelScaleMultiplier), y: CGFloat(labelScaleMultiplier))
         
-        switch Level.currentLevel.id {
-        case 1:
-            currentNoteChoices = onlyCDE
-        case 2:
-            currentNoteChoices = onlyFGAB
-        default:
-            currentNoteChoices = basicNoteNames
-        }
+//        switch Level.currentLevel.id {
+//        case 1:
+//            currentNoteChoices = onlyCDE
+//        case 2:
+//            currentNoteChoices = onlyFGAB
+//        default:
+//            currentNoteChoices = basicNoteNames
+//        }
     }
     
 }
