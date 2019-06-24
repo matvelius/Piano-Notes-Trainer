@@ -1563,6 +1563,7 @@
                         <outlet property="darkOverlayOutlet" destination="TMX-dv-0h9" id="Tgn-Ej-7Zi"/>
                         <outlet property="flatsViewOutlet" destination="lkt-CX-jcE" id="dEz-0q-upx"/>
                         <outlet property="includeEnharmonicsSwitchOutlet" destination="TfK-IR-Y48" id="ODY-8Q-555"/>
+                        <outlet property="levelAndModeStack" destination="ii4-JI-2gy" id="LhE-qH-E6T"/>
                         <outlet property="menuButtonOutlet" destination="2co-F0-3U7" id="1ST-40-bMw"/>
                         <outlet property="menuContainerOutlet" destination="QG9-26-Oaz" id="5NY-0c-wug"/>
                         <outlet property="menuTrailingConstraint" destination="EHH-lo-W0B" id="pFb-CA-dT9"/>
@@ -2709,7 +2710,7 @@
                                     <action selector="darkOverlayTapped:" destination="vCV-Es-ama" eventType="touchUpInside" id="ar0-Jw-Ihk"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eMe-p2-imh" userLabel="Menu Container">
+                            <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eMe-p2-imh" userLabel="Menu Container">
                                 <rect key="frame" x="819.5" y="0.0" width="546.5" height="1024"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="yO1-DH-JZd" userLabel="menu items stack">
@@ -3197,7 +3198,7 @@
                                     <constraint firstItem="yO1-DH-JZd" firstAttribute="centerY" secondItem="eMe-p2-imh" secondAttribute="centerY" id="haP-mF-Ehb"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BWO-vq-xY0" userLabel="Menu Button">
+                            <button opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BWO-vq-xY0" userLabel="Menu Button">
                                 <rect key="frame" x="1316" y="34" width="30" height="52"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="33"/>
                                 <state key="normal" title="☰">
@@ -3207,6 +3208,50 @@
                                     <action selector="menuButtonTapped:" destination="vCV-Es-ama" eventType="touchUpInside" id="3vH-aI-iLK"/>
                                 </connections>
                             </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="GbA-dD-E8A" userLabel="level &amp; mode stack">
+                                <rect key="frame" x="1236.5" y="42.5" width="109.5" height="55"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="Z3v-ZS-arC" userLabel="level stack">
+                                        <rect key="frame" x="0.0" y="0.0" width="109.5" height="28"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="LEVEL:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e2i-oW-tZb">
+                                                <rect key="frame" x="0.0" y="0.0" width="59.5" height="28"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="19"/>
+                                                <color key="textColor" red="0.20770967009999999" green="0.44428956510000001" blue="0.9655750394" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="14" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sSZ-lO-wYZ" userLabel="currentLevelLabel">
+                                                <rect key="frame" x="75.5" y="0.0" width="34" height="28"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="24"/>
+                                                <color key="textColor" red="0.50196078430000002" green="0.95686274510000002" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="J0a-oc-cNy" userLabel="mode stack">
+                                        <rect key="frame" x="0.0" y="32" width="109.5" height="23"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MODE:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dNX-n6-WE6">
+                                                <rect key="frame" x="0.0" y="0.5" width="59.5" height="22.5"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="19"/>
+                                                <color key="textColor" red="0.20770967009999999" green="0.44428956510000001" blue="0.9655750394" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cFZ-eD-FPS" userLabel="currentModeSwitch" customClass="CustomSwitch" customModule="Piano_Notes" customModuleProvider="target">
+                                                <rect key="frame" x="63.5" y="0.0" width="46" height="23"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="23" id="C8I-QM-fM9"/>
+                                                    <constraint firstAttribute="width" constant="46" id="oHg-jK-kKq"/>
+                                                </constraints>
+                                                <connections>
+                                                    <action selector="customModeSwitchFlipped:" destination="vCV-Es-ama" eventType="touchUpInside" id="u7O-2X-8Zp"/>
+                                                </connections>
+                                            </view>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -3226,6 +3271,7 @@
                             <constraint firstItem="Onz-Vm-Cs8" firstAttribute="leading" secondItem="cGR-eH-SAd" secondAttribute="leading" constant="20" id="AUr-6T-jSS"/>
                             <constraint firstItem="C8g-mt-mVb" firstAttribute="width" secondItem="tec-47-C5m" secondAttribute="width" multiplier="78:1366" id="Al6-1E-UtF"/>
                             <constraint firstItem="3EC-sO-rF0" firstAttribute="leading" secondItem="tec-47-C5m" secondAttribute="leading" id="Aut-8V-Cq7"/>
+                            <constraint firstItem="GbA-dD-E8A" firstAttribute="top" secondItem="Onz-Vm-Cs8" secondAttribute="top" id="BWZ-6g-VTd"/>
                             <constraint firstItem="S3S-p5-kwV" firstAttribute="width" secondItem="gqB-He-zfK" secondAttribute="width" id="Ceb-p5-Aji"/>
                             <constraint firstItem="S3S-p5-kwV" firstAttribute="top" secondItem="Yns-Qx-CKC" secondAttribute="bottom" id="CkM-2u-7Kg"/>
                             <constraint firstItem="vzr-qh-cLh" firstAttribute="bottom" secondItem="Bcp-rj-qSy" secondAttribute="bottom" id="Cou-B2-pbC"/>
@@ -3268,6 +3314,7 @@
                             <constraint firstItem="vzr-qh-cLh" firstAttribute="top" secondItem="Bcp-rj-qSy" secondAttribute="top" id="W1x-Q8-Pnj"/>
                             <constraint firstItem="uAe-70-Bet" firstAttribute="centerY" secondItem="Bcp-rj-qSy" secondAttribute="centerY" id="XaH-h4-k7Q"/>
                             <constraint firstItem="BWO-vq-xY0" firstAttribute="trailing" secondItem="cGR-eH-SAd" secondAttribute="trailing" constant="-20" id="XbP-WV-ELb"/>
+                            <constraint firstItem="GbA-dD-E8A" firstAttribute="trailing" secondItem="cGR-eH-SAd" secondAttribute="trailing" constant="-20" id="Xz5-O3-WvH"/>
                             <constraint firstItem="S3S-p5-kwV" firstAttribute="centerX" secondItem="tec-47-C5m" secondAttribute="centerX" id="Y4J-uo-hnf"/>
                             <constraint firstItem="BWO-vq-xY0" firstAttribute="top" secondItem="cGR-eH-SAd" secondAttribute="top" constant="10" id="Yc3-KP-ZiX"/>
                             <constraint firstItem="f9C-Sv-wQH" firstAttribute="width" secondItem="tec-47-C5m" secondAttribute="width" multiplier="78:1366" id="a0P-Je-tuW"/>
@@ -3315,12 +3362,16 @@
                         <outlet property="allKeyButtons" destination="mrE-qH-7Xr" id="xfp-8i-ND9"/>
                         <outlet property="arrowAndCheckButtonsOutlet" destination="yxa-Ew-apy" id="c6E-T0-O4T"/>
                         <outlet property="checkButtonOutlet" destination="QTI-d7-4cg" id="52C-FY-wf9"/>
+                        <outlet property="currentLevelOutlet" destination="sSZ-lO-wYZ" id="Xz3-KD-aAN"/>
                         <outlet property="darkOverlayOutlet" destination="KX1-pG-rpd" id="PH1-4B-2Ps"/>
                         <outlet property="enableAccidentalsSwitchOutlet" destination="KsA-Fq-ekE" id="Igs-d0-lZq"/>
                         <outlet property="enableSoundsSwitchOutlet" destination="CAw-bK-XFE" id="XJp-wl-ETq"/>
+                        <outlet property="levelAndModeStack" destination="GbA-dD-E8A" id="VeE-7L-Lgo"/>
                         <outlet property="menuButtonOutlet" destination="BWO-vq-xY0" id="4Rm-tV-Hm7"/>
                         <outlet property="menuContainerOutlet" destination="eMe-p2-imh" id="DCB-P1-GLE"/>
                         <outlet property="menuTrailingConstraint" destination="SNJ-Uq-nXg" id="XsT-84-sFy"/>
+                        <outlet property="modeStack" destination="J0a-oc-cNy" id="ceT-fx-aUU"/>
+                        <outlet property="modeSwitchOutlet" destination="cFZ-eD-FPS" id="Wao-W1-lHE"/>
                         <outlet property="noteOnStaffImage" destination="gqB-He-zfK" id="WgL-1C-j0v"/>
                         <outlet property="noteRangeHighNoteImage" destination="zFR-nf-f7G" id="LPW-RG-zhW"/>
                         <outlet property="noteRangeHighNotePanGestureOutlet" destination="Gxh-lg-Vvw" id="Rta-oA-ic9"/>

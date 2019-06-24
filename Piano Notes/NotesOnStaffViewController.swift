@@ -180,37 +180,21 @@ class NotesOnStaffViewController: UIViewController {
     
     // TODO: change the top label, and change its size as well? or re-implement using an actual label?
     
+    @IBOutlet weak var currentLevelOutlet: UILabel!
+    
+    @IBOutlet weak var modeSwitchOutlet: CustomSwitch!
+    
+    @IBOutlet weak var levelAndModeStack: UIStackView!
+    @IBOutlet weak var modeStack: UIStackView!
+    
+    
+    
+    @IBAction func customModeSwitchFlipped(_ sender: CustomSwitch) {
+        switchModes()
+    }
+    
     @IBAction func modeSegmentedControl(_ sender: UISegmentedControl) {
-        
-        let labelScaleMultiplier = 1.0
-        let labelScaleMultiplierBackToNormal = 1.1
-
-        switch currentGameMode {
-        case .A:
-            print("switching to mode B")
-            currentGameMode = .B
-            
-            // hide mode A controls
-            accidentalsButtonsOutlet.alpha = 0
-            arrowAndCheckButtonsOutlet.alpha = 0
-            
-//            includeEnharmonicsSwitchOutlet.isEnabled = true
-            topLabelOutlet.image = UIImage(named: "tap_the_correct_key")
-            topLabelOutlet.transform = CGAffineTransform(scaleX: CGFloat(labelScaleMultiplier), y: CGFloat(labelScaleMultiplier))
-        case .B:
-            print("switching to mode A")
-            currentGameMode = .A
-            
-            // show mode A controls
-            accidentalsButtonsOutlet.alpha = 1
-            arrowAndCheckButtonsOutlet.alpha = 1
-//            includeEnharmonicsSwitchOutlet.isEnabled = false
-            topLabelOutlet.image = UIImage(named: "choose_the_correct_note_on_staff")
-            topLabelOutlet.transform = CGAffineTransform(scaleX: CGFloat(labelScaleMultiplierBackToNormal ), y: CGFloat(labelScaleMultiplierBackToNormal))
-            //            topLabelOutlet.frame.width
-        }
-        
-        startNewRound()
+        switchModes()
     }
     
     
@@ -1049,6 +1033,35 @@ class NotesOnStaffViewController: UIViewController {
         subview.heightAnchor.constraint(equalTo: superview.heightAnchor).isActive = true
         
         subview.contentMode = superview.contentMode
+    }
+    
+    func switchModes() {
+        switch currentGameMode {
+        case .A:
+            print("switching to mode B")
+            currentGameMode = .B
+            
+            // hide mode A controls
+            accidentalsButtonsOutlet.alpha = 0
+            arrowAndCheckButtonsOutlet.alpha = 0
+            
+            //            includeEnharmonicsSwitchOutlet.isEnabled = true
+            topLabelOutlet.image = UIImage(named: "tap_the_correct_key")
+            topLabelOutlet.transform = CGAffineTransform(scaleX: CGFloat(labelScaleMultiplierNotesOnStaff), y: CGFloat(labelScaleMultiplierNotesOnStaff))
+        case .B:
+            print("switching to mode A")
+            currentGameMode = .A
+            
+            // show mode A controls
+            accidentalsButtonsOutlet.alpha = 1
+            arrowAndCheckButtonsOutlet.alpha = 1
+            //            includeEnharmonicsSwitchOutlet.isEnabled = false
+            topLabelOutlet.image = UIImage(named: "choose_the_correct_note_on_staff")
+            topLabelOutlet.transform = CGAffineTransform(scaleX: CGFloat(labelScaleMultiplierBackToNormalNotesOnStaff ), y: CGFloat(labelScaleMultiplierBackToNormalNotesOnStaff))
+            //            topLabelOutlet.frame.width
+        }
+        
+        startNewRound()
     }
     
 }

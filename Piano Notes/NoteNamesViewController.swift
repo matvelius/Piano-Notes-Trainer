@@ -33,6 +33,7 @@ class NoteNamesViewController: UIViewController {
     }
     
     
+    @IBOutlet weak var levelAndModeStack: UIStackView!
     @IBOutlet weak var modeStack: UIStackView!
     
     
@@ -1665,15 +1666,6 @@ class NoteNamesViewController: UIViewController {
         includeEnharmonicsSwitchOutlet.isEnabled = true
         topLabelOutlet.image = UIImage(named: "tap_the_correct_key")
         topLabelOutlet.transform = CGAffineTransform(scaleX: CGFloat(labelScaleMultiplier), y: CGFloat(labelScaleMultiplier))
-        
-//        switch Level.currentLevel.id {
-//        case 1:
-//            currentNoteChoices = onlyCDE
-//        case 2:
-//            currentNoteChoices = onlyFGAB
-//        default:
-//            currentNoteChoices = basicNoteNames
-//        }
     }
     
 }
