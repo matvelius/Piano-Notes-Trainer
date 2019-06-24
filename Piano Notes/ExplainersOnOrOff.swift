@@ -8,4 +8,8 @@
 
 import Foundation
 
-var explainersEnabled = true
+var explainersEnabled = true {
+    didSet {
+        print("explainersEnabled value changed to: \(explainersEnabled)")
+    }
+}

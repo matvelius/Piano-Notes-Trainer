@@ -84,7 +84,7 @@
 		D7D1F8B622BDE7980065162D /* CustomNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D1F8B522BDE7980065162D /* CustomNavigationBar.swift */; };
 		D7DFCFEB22619FC700468F71 /* Enharmonics.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7DFCFEA22619FC700468F71 /* Enharmonics.swift */; };
 		D7E6BFC922AC6B0C00370F4B /* MenuAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7E6BFC822AC6B0C00370F4B /* MenuAnimation.swift */; };
-		D7EE080822B1385600B7EB0C /* MiscSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7EE080722B1385600B7EB0C /* MiscSettings.swift */; };
+		D7EE080822B1385600B7EB0C /* PersistenceAndMiscSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7EE080722B1385600B7EB0C /* PersistenceAndMiscSettings.swift */; };
 		D7EF7738227785CE00943F54 /* NoteChoices.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7EF7737227785CE00943F54 /* NoteChoices.swift */; };
 		D7EF773A2277F06B00943F54 /* Accidentals.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7EF77392277F06B00943F54 /* Accidentals.swift */; };
 		D7EF773C2277F3D200943F54 /* LevelsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7EF773B2277F3D200943F54 /* LevelsTableViewController.swift */; };
@@ -173,7 +173,7 @@
 		D7D1F8B522BDE7980065162D /* CustomNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationBar.swift; sourceTree = "<group>"; };
 		D7DFCFEA22619FC700468F71 /* Enharmonics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enharmonics.swift; sourceTree = "<group>"; };
 		D7E6BFC822AC6B0C00370F4B /* MenuAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuAnimation.swift; sourceTree = "<group>"; };
-		D7EE080722B1385600B7EB0C /* MiscSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiscSettings.swift; sourceTree = "<group>"; };
+		D7EE080722B1385600B7EB0C /* PersistenceAndMiscSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceAndMiscSettings.swift; sourceTree = "<group>"; };
 		D7EF7737227785CE00943F54 /* NoteChoices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteChoices.swift; sourceTree = "<group>"; };
 		D7EF77392277F06B00943F54 /* Accidentals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Accidentals.swift; sourceTree = "<group>"; };
 		D7EF773B2277F3D200943F54 /* LevelsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelsTableViewController.swift; sourceTree = "<group>"; };
@@ -288,7 +288,7 @@
 				D7EF77392277F06B00943F54 /* Accidentals.swift */,
 				D7DFCFEA22619FC700468F71 /* Enharmonics.swift */,
 				D74B814322B74DD20031DFF7 /* Alert.swift */,
-				D7EE080722B1385600B7EB0C /* MiscSettings.swift */,
+				D7EE080722B1385600B7EB0C /* PersistenceAndMiscSettings.swift */,
 				D777C81B22009DDB00FA472E /* Main.storyboard */,
 				D75714B522BFDF49001E323A /* CustomSwitch.swift */,
 				D75714B722BFE4A1001E323A /* CustomThumbView.swift */,
@@ -465,7 +465,7 @@
 				D75714B622BFDF49001E323A /* CustomSwitch.swift in Sources */,
 				D7EF773A2277F06B00943F54 /* Accidentals.swift in Sources */,
 				D735958F22BE8C1E00907FAB /* LearnSectionTableViewCell.swift in Sources */,
-				D7EE080822B1385600B7EB0C /* MiscSettings.swift in Sources */,
+				D7EE080822B1385600B7EB0C /* PersistenceAndMiscSettings.swift in Sources */,
 				D71DF42422A73BBC00789E9A /* ScoreAndStars.swift in Sources */,
 				D7EF773C2277F3D200943F54 /* LevelsTableViewController.swift in Sources */,
 				D7C2E3DA2241C9E300A72D5C /* ExplainerViewController.swift in Sources */,

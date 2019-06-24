@@ -15,7 +15,6 @@ import AVFoundation
 
 class NoteNamesViewController: UIViewController {
     
-    
     @IBOutlet weak var currentLevelOutlet: UILabel!
     
     @IBOutlet weak var modeSwitchOutlet: CustomSwitch!
@@ -890,8 +889,11 @@ class NoteNamesViewController: UIViewController {
                 Alert.showFinishLevelAlert(on: self)
 //                allLevels[0][Level.currentLevel.id - 1].isComplete = true
                 levelsCompleted.append(Level.currentLevel.id)
-                print("levelsCompleted: \(levelsCompleted)")
-                AppData.saveToFile(levelsCompleted: levelsCompleted)
+//                AppData.dataToSaveForCurrentUser
+                dataToSaveForCurrentUser.levelsCompleted = levelsCompleted
+                print("dataToSaveForCurrentUser.levelsCompleted: \(dataToSaveForCurrentUser.levelsCompleted)")
+                
+                AppData.saveToFile(dataToSave: dataToSaveForCurrentUser)
             }
             
             //            usleep(1000000) //will sleep for 1 second

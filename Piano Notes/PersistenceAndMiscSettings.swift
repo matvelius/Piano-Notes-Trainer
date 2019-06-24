@@ -13,6 +13,18 @@ import AVFoundation
 var audioPlayer: AVAudioPlayer?
 var soundsEnabled = true
 
+struct dataToSavePrototype: Codable {
+    var levelsCompleted: [Int]
+    var miscSettings: [Bool]
+    
+    init(levelsCompleted: [Int], miscSettings: [Bool]) {
+        self.levelsCompleted = levelsCompleted
+        self.miscSettings = miscSettings
+    }
+}
+
+var dataToSaveForCurrentUser = dataToSavePrototype(levelsCompleted: [0], miscSettings: [true])
+
 struct AppData: Codable {
     
 //    var levelsCompleted = [Level]()
@@ -20,16 +32,17 @@ struct AppData: Codable {
 //    required init(from decoder: Decoder) throws {
 //        <#code#>
 //    }
+//    static var dataToSaveForCurrentUser: dataToSavePrototype? = nil
     
     static let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
     
     static let archiveURL = documentsDirectory.appendingPathComponent("pianoAppData").appendingPathExtension("plist")
     
-    static func saveToFile(levelsCompleted: [Int]) {
+    static func saveToFile(dataToSave: dataToSavePrototype) {
         
         let propertyListEncoder = PropertyListEncoder()
         
-        let encodedData = try? propertyListEncoder.encode(levelsCompleted)
+        let encodedData = try? propertyListEncoder.encode(dataToSave)
         
         try? encodedData?.write(to: archiveURL, options: .noFileProtection)
         
@@ -37,11 +50,11 @@ struct AppData: Codable {
         
     }
     
-    static func loadFromFile() -> [Int]? {
+    static func loadFromFile() -> dataToSavePrototype? {
         let propertyListDecoder = PropertyListDecoder()
         if let retrievedData = try? Data(contentsOf: AppData.archiveURL),
             let decodedData = try?
-                propertyListDecoder.decode(Array<Int>.self, from: retrievedData) {
+                propertyListDecoder.decode(dataToSavePrototype.self, from: retrievedData) {
             return decodedData
         }
 
