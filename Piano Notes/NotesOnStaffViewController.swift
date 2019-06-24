@@ -412,9 +412,9 @@ class NotesOnStaffViewController: UIViewController {
     
     @IBAction func reEnableExplainersSwitchFlipped(_ sender: UISwitch) {
         if !sender.isOn {
-            explainersEnabled = false
+            explainersEnabledNotesOnStaff = false
         } else {
-            explainersEnabled = true
+            explainersEnabledNotesOnStaff = true
         }
     }
     
@@ -495,6 +495,12 @@ class NotesOnStaffViewController: UIViewController {
         noteRangeHighNoteImage.image = UIImage(named: "staff\(whiteNotesOnLargeKeyboard[highNoteIndex])")
         
         startNewRound()
+        
+        if soundsEnabled {
+            enableSoundsSwitchOutlet.isOn = true
+        } else {
+            enableSoundsSwitchOutlet.isOn = false
+        }
     }
     
     var locationTracker: Double = Double(whiteNotesOnLargeKeyboard.count / 2) {
@@ -625,10 +631,10 @@ class NotesOnStaffViewController: UIViewController {
             if currentNumberOfStars == 5 && Level.currentLevel.id > 0 {
                 Alert.showFinishLevelAlert(on: self)
                 levelsCompleted.append(Level.currentLevel.id)
-                dataToSaveForCurrentUser.levelsCompleted = levelsCompleted
-                print("dataToSaveForCurrentUser.levelsCompleted: \(dataToSaveForCurrentUser.levelsCompleted)")
+                appDataForCurrentUser.levelsCompleted = levelsCompleted
+                print("dataToSaveForCurrentUser.levelsCompleted: \(appDataForCurrentUser.levelsCompleted)")
                 
-                AppData.saveToFile(dataToSave: dataToSaveForCurrentUser)
+//                AppData.saveToFile(dataToSave: appDataForCurrentUser)
             }
             
         // WRONG ANSWER

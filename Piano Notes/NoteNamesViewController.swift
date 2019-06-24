@@ -261,7 +261,8 @@ class NoteNamesViewController: UIViewController {
         
     }
     
-//    var soundsEnabled = true
+    
+    @IBOutlet weak var enableSoundsSwitchOutlet: UISwitch!
     
     @IBAction func enableSoundsSwitch(_ sender: UISwitch) {
         if !sender.isOn {
@@ -273,9 +274,11 @@ class NoteNamesViewController: UIViewController {
     
     @IBAction func reEnableExplainersSwitch(_ sender: UISwitch) {
         if !sender.isOn {
-            explainersEnabled = false
+            explainersEnabledNoteNames = false
+            explainersEnabledNotesOnStaff = false
         } else {
-            explainersEnabled = true
+            explainersEnabledNoteNames = true
+            explainersEnabledNotesOnStaff = true
         }
     }
     
@@ -551,6 +554,11 @@ class NoteNamesViewController: UIViewController {
         setupGameForCurrentLevel()
         scoreLabel.text = "0"
         startNewRound()
+        if soundsEnabled {
+            enableSoundsSwitchOutlet.isOn = true
+        } else {
+            enableSoundsSwitchOutlet.isOn = false
+        }
     }
     
 //    override func viewDidAppear(_ animated: Bool) {
@@ -890,10 +898,10 @@ class NoteNamesViewController: UIViewController {
 //                allLevels[0][Level.currentLevel.id - 1].isComplete = true
                 levelsCompleted.append(Level.currentLevel.id)
 //                AppData.dataToSaveForCurrentUser
-                dataToSaveForCurrentUser.levelsCompleted = levelsCompleted
-                print("dataToSaveForCurrentUser.levelsCompleted: \(dataToSaveForCurrentUser.levelsCompleted)")
+                appDataForCurrentUser.levelsCompleted = levelsCompleted
+                print("dataToSaveForCurrentUser.levelsCompleted: \(appDataForCurrentUser.levelsCompleted)")
                 
-                AppData.saveToFile(dataToSave: dataToSaveForCurrentUser)
+//                AppData.saveToFile(dataToSave: appDataForCurrentUser)
             }
             
             //            usleep(1000000) //will sleep for 1 second

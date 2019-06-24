@@ -12,6 +12,7 @@ class ExplainerViewController: UIViewController {
     
     var explainerStartIndex = 1
     var explainerEndIndex = 5
+    var explainerCurrentIndex = 1
     
     
     @IBOutlet weak var progressBar: UIProgressView!
@@ -29,10 +30,10 @@ class ExplainerViewController: UIViewController {
     
     @IBAction func navTriangleLeftPressed(_ sender: UIButton) {
         
-        if explainerStartIndex > 1 {
+        if explainerCurrentIndex > explainerStartIndex {
             
-            explainerStartIndex -= 1
-            explainerImage.image = UIImage(named: "explainer_\(explainerStartIndex)")
+            explainerCurrentIndex -= 1
+            explainerImage.image = UIImage(named: "explainer_\(explainerCurrentIndex)")
             
             if explainerStartIndex == 1 {
                 
@@ -40,18 +41,20 @@ class ExplainerViewController: UIViewController {
                 
             }
             
+            updateProgressBar()
+            
         }
         
     }
     
     @IBAction func navTriangleRightPressed(_ sender: UIButton) {
         
-        if explainerStartIndex < explainerEndIndex {
+        if explainerCurrentIndex < explainerEndIndex {
             
-            explainerStartIndex += 1
-            explainerImage.image = UIImage(named: "explainer_\(explainerStartIndex)")
+            explainerCurrentIndex += 1
+            explainerImage.image = UIImage(named: "explainer_\(explainerCurrentIndex)")
             
-            progressBar.setProgress(Float(explainerStartIndex) / Float(explainerEndIndex), animated: true)
+            updateProgressBar()
             
         } else {
             
@@ -69,7 +72,7 @@ class ExplainerViewController: UIViewController {
     
     
     override func viewDidAppear(_ animated: Bool) {
-    
+        
         switch currentGameType {
         case .noteNames:
             explainerStartIndex = 1
@@ -79,7 +82,9 @@ class ExplainerViewController: UIViewController {
             explainerEndIndex = 8
         }
         
-        explainerImage.image = UIImage(named: "explainer_\(explainerStartIndex)")
+        explainerCurrentIndex = explainerStartIndex
+        
+        explainerImage.image = UIImage(named: "explainer_\(explainerCurrentIndex)")
         
         navTriangleLeft.isEnabled = false
         
@@ -87,18 +92,35 @@ class ExplainerViewController: UIViewController {
         
         navTriangleRight.setImage(UIImage(named: "nav_triangle_R_normal"), for: UIControl.State.normal)
         
-        progressBar.setProgress(Float(explainerStartIndex) / Float(explainerEndIndex), animated: true)
+        updateProgressBar()
     }
     
     func segueToGame() {
         
         switch currentGameType {
         case .noteNames:
+            explainersEnabledNoteNames = false
             performSegue(withIdentifier: "doneExplainingToNoteNames", sender: nil)
         case .notesOnStaff:
+            explainersEnabledNotesOnStaff = false
             performSegue(withIdentifier: "doneExplainingToNotesOnStaff", sender: nil)
         }
 
+    }
+    
+    func updateProgressBar() {
+        var currentProgress = 0
+        var progressBarEndIndex = 5
+        
+        switch currentGameType {
+        case .noteNames:
+            currentProgress = explainerCurrentIndex
+            progressBarEndIndex = 5
+        case .notesOnStaff:
+            currentProgress = explainerCurrentIndex - 5
+            progressBarEndIndex = 3
+        }
+        progressBar.setProgress(Float(currentProgress) / Float(progressBarEndIndex), animated: true)
     }
 
 }

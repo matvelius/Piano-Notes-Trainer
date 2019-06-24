@@ -24,10 +24,11 @@ class LevelsTableViewController: UITableViewController {
     
     override func viewWillAppear(_ animated:Bool) {
         super.viewWillAppear(animated)
-        if let retrievedData = AppData.loadFromFile() {
-            levelsCompleted = retrievedData.levelsCompleted
-            tableView.reloadData()
-        }
+//        if let retrievedData = AppData.loadFromFile() {
+//            levelsCompleted = retrievedData.levelsCompleted
+//            tableView.reloadData()
+//        }
+        tableView.reloadData()
     }
     
 //    override func viewDidAppear(_ animated: Bool) {
@@ -87,7 +88,7 @@ class LevelsTableViewController: UITableViewController {
             
             currentGameType = .noteNames
             
-            if explainersEnabled {
+            if explainersEnabledNoteNames {
                 performSegue(withIdentifier: "segueToExplainers", sender: nil)
             } else {
                 performSegue(withIdentifier: "segueToNoteNames", sender: nil)
@@ -98,7 +99,7 @@ class LevelsTableViewController: UITableViewController {
             
             currentGameType = .notesOnStaff
             
-            if explainersEnabled {
+            if explainersEnabledNotesOnStaff {
                 performSegue(withIdentifier: "segueToExplainers", sender: nil)
             } else {
                 performSegue(withIdentifier: "segueToNotesOnStaff", sender: nil)

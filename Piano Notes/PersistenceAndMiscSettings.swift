@@ -11,19 +11,24 @@ import AVFoundation
 
 // instance variable to hold the AVAudioPlayer object
 var audioPlayer: AVAudioPlayer?
-var soundsEnabled = true
 
 struct dataToSavePrototype: Codable {
     var levelsCompleted: [Int]
-    var miscSettings: [Bool]
+    var lessonsCompleted: [Int]
+    var explainersEnabledNoteNames: Bool
+    var explainersEnabledNotesOnStaff: Bool
+    var soundsEnabled: Bool
     
-    init(levelsCompleted: [Int], miscSettings: [Bool]) {
+    init(levelsCompleted: [Int], lessonsCompleted: [Int], explainersEnabledNoteNames: Bool, explainersEnabledNotesOnStaff: Bool, soundsEnabled: Bool) {
         self.levelsCompleted = levelsCompleted
-        self.miscSettings = miscSettings
+        self.lessonsCompleted = lessonsCompleted
+        self.explainersEnabledNoteNames = explainersEnabledNoteNames
+        self.explainersEnabledNotesOnStaff = explainersEnabledNotesOnStaff
+        self.soundsEnabled = soundsEnabled
     }
 }
 
-var dataToSaveForCurrentUser = dataToSavePrototype(levelsCompleted: [0], miscSettings: [true])
+var appDataForCurrentUser = dataToSavePrototype(levelsCompleted: [], lessonsCompleted: [], explainersEnabledNoteNames: true, explainersEnabledNotesOnStaff: true, soundsEnabled: true)
 
 struct AppData: Codable {
     
@@ -70,6 +75,22 @@ let labelScaleMultiplierNotesOnStaff = 1.0
 let labelScaleMultiplierBackToNormalNotesOnStaff = 0.9
 
 
+var levelsCompleted = appDataForCurrentUser.levelsCompleted
+var lessonsCompleted = appDataForCurrentUser.lessonsCompleted
+var explainersEnabledNoteNames = appDataForCurrentUser.explainersEnabledNoteNames
+var explainersEnabledNotesOnStaff = appDataForCurrentUser.explainersEnabledNotesOnStaff
+var soundsEnabled = appDataForCurrentUser.soundsEnabled
+
+//{
+//    didSet {
+//        print("explainersEnabled value changed to: \(explainersEnabled)")
+//
+//        appDataForCurrentUser.miscSettings[0] = true
+//        print("dataToSaveForCurrentUser.miscSettings: \(appDataForCurrentUser.miscSettings)")
+//
+//        AppData.saveToFile(dataToSave: appDataForCurrentUser)
+//    }
+//}
 
 
 

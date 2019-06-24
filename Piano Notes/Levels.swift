@@ -51,4 +51,3 @@ var level14 = Level(id: 14, title: "Level 14:", subtitle: "All the notes now!", 
 
 var allLevels = [[freeplay1, freeplay2, freeplay3, freeplay4], [level1, level2, level3, level4, level5, level6, level7], [level8, level9, level10, level11, level12, level13, level14]]
 
-var levelsCompleted = [Int]()

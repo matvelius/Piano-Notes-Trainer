@@ -1561,6 +1561,7 @@
                         <outlet property="blackKeySettingsSegmentedControlOutlet" destination="eFW-Mp-dPM" id="Ngn-Hn-dpV"/>
                         <outlet property="currentLevelOutlet" destination="Zgy-Gk-0gw" id="Pr6-P7-aUH"/>
                         <outlet property="darkOverlayOutlet" destination="TMX-dv-0h9" id="Tgn-Ej-7Zi"/>
+                        <outlet property="enableSoundsSwitchOutlet" destination="AlI-q6-sWW" id="KS6-hS-rHW"/>
                         <outlet property="flatsViewOutlet" destination="lkt-CX-jcE" id="dEz-0q-upx"/>
                         <outlet property="includeEnharmonicsSwitchOutlet" destination="TfK-IR-Y48" id="ODY-8Q-555"/>
                         <outlet property="levelAndModeStack" destination="ii4-JI-2gy" id="LhE-qH-E6T"/>
@@ -3693,7 +3694,7 @@
                                 <rect key="frame" x="0.0" y="24" width="1366" height="980"/>
                             </imageView>
                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progressViewStyle="bar" translatesAutoresizingMaskIntoConstraints="NO" id="POa-Tj-g11">
-                                <rect key="frame" x="0.0" y="999" width="1366" height="6"/>
+                                <rect key="frame" x="0.0" y="1019" width="1366" height="6"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="5" id="zBk-zO-9cL"/>
                                 </constraints>
@@ -3752,7 +3753,7 @@
                             <constraint firstItem="oXW-qM-tFj" firstAttribute="leading" secondItem="GME-4K-2zm" secondAttribute="leading" constant="20" id="pRZ-Rf-Qo0"/>
                             <constraint firstItem="Xd0-0D-gns" firstAttribute="leading" secondItem="GME-4K-2zm" secondAttribute="leading" id="puh-AB-KuH"/>
                             <constraint firstItem="oUe-B0-TM1" firstAttribute="centerY" secondItem="ciP-ib-WW8" secondAttribute="centerY" id="qH5-As-nNc"/>
-                            <constraint firstItem="GME-4K-2zm" firstAttribute="bottom" secondItem="POa-Tj-g11" secondAttribute="bottom" id="qSP-Ai-BSH"/>
+                            <constraint firstItem="POa-Tj-g11" firstAttribute="bottom" secondItem="ciP-ib-WW8" secondAttribute="bottom" id="qSP-Ai-BSH"/>
                             <constraint firstItem="Pvh-OJ-xAE" firstAttribute="leading" secondItem="oUe-B0-TM1" secondAttribute="leading" id="tBl-a9-Vs5"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="GME-4K-2zm"/>
@@ -3856,7 +3857,7 @@
         <image name="white_piano_12.9_large" width="910.66668701171875" height="538.66668701171875"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Nhi-lG-mWi"/>
-        <segue reference="h7l-c7-UJA"/>
+        <segue reference="Ojy-u5-yal"/>
+        <segue reference="gpG-aX-QFw"/>
     </inferredMetricsTieBreakers>
 </document>
