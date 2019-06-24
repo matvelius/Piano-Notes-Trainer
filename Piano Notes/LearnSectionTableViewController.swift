@@ -30,6 +30,11 @@ class LearnSectionTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
+    
+    override func viewWillAppear(_ animated:Bool) {
+        super.viewWillAppear(animated)
+        tableView.reloadData()
+    }
 
     // MARK: - Table view data source
 
@@ -49,7 +54,7 @@ class LearnSectionTableViewController: UITableViewController {
         
         let lesson = allLessonTitlesAndSubtitles[indexPath.row]
         
-        cell.updateCell(with: lesson, imageIndex: indexPath.row + 1)
+        cell.updateCell(with: lesson, lessonID: indexPath.row, imageIndex: indexPath.row + 1)
 
         // Configure the cell...
 

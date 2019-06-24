@@ -16,3 +16,4 @@ let lesson3 = ["lesson3.1", "lesson3.2", "lesson3.3", "lesson3.4", "lesson3.5", 
 let lesson4 = ["lesson4.1", "lesson4.2", "lesson4.3", "lesson4.4", "lesson4.5", "lesson4.6", "lesson4.7", "lesson4.8", "lesson4.9", "lesson4.10", "lesson4.11", "lesson999"]
 
 let allLessons = [lesson1, lesson2, lesson3, lesson4]
+let lessonIDs = [0, 1, 2, 3]

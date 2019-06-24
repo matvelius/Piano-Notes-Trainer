@@ -66,7 +66,14 @@ class SwipingController: UICollectionViewController, UICollectionViewDelegateFlo
 //        cell.backgroundColor = indexPath.row % 2 == 0 ? .red : .green
         currentSlideIndex = indexPath.row
 //        let currentLessonToShow = currentLesson
-//        print("currentSlideIndex: \(currentSlideIndex)")
+        print("currentSlideIndex: \(currentSlideIndex)")
+        
+        
+        // when user swipes to last slide, append to lessonsCompleted
+        if currentSlideIndex == allLessons[currentLesson].count - 1 {
+            lessonsCompleted.append(currentLesson)
+            print("lessonsCompleted: \(lessonsCompleted)")
+        }
 //        print("named: lesson1[currentSlideIndex]: \(lesson1[currentSlideIndex])")
 //        print("swiping!")
         let image = UIImage(named: allLessons[currentLesson][currentSlideIndex])

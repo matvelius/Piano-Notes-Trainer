@@ -24,10 +24,10 @@ struct Level: Codable {
 }
 
 // FREE PLAY
-let freeplay1 = Level(id: -3, title: "Free Play", subtitle: "Note Names - Mode A", imageName: "freeplay1", noteChoices: allNoteChoicesNoteNames)
-let freeplay2 = Level(id: -2, title: "Free Play", subtitle: "Note Names - Mode B", imageName: "freeplay2", noteChoices: allNoteChoicesNoteNames)
-let freeplay3 = Level(id: -1, title: "Free Play", subtitle: "Note on Staff - Mode A", imageName: "freeplay3", noteChoices: allNotesOnLargeKeyboard)
-let freeplay4 = Level(id: 0, title: "Free Play", subtitle: "Note on Staff - Mode B", imageName: "freeplay4", noteChoices: allNotesOnLargeKeyboard)
+let freeplay1 = Level(id: -3, title: "Freeplay:", subtitle: "Note Names - Mode A", imageName: "freeplay1", noteChoices: allNoteChoicesNoteNames)
+let freeplay2 = Level(id: -2, title: "Freeplay:", subtitle: "Note Names - Mode B", imageName: "freeplay2", noteChoices: allNoteChoicesNoteNames)
+let freeplay3 = Level(id: -1, title: "Freeplay:", subtitle: "Note on Staff - Mode A", imageName: "freeplay3", noteChoices: allNotesOnLargeKeyboard)
+let freeplay4 = Level(id: 0, title: "Freeplay:", subtitle: "Note on Staff - Mode B", imageName: "freeplay4", noteChoices: allNotesOnLargeKeyboard)
 
 
 // NOTE NAMES
