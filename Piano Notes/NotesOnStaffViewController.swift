@@ -205,7 +205,7 @@ class NotesOnStaffViewController: UIViewController {
             // TODO: - INSTEAD OF JUST SETTING TO ALL NOTE CHOICES, SET TO
             // CURRENT NOTE CHOICES + THE ACCIDENTALS IN BETWEEN!
             // BUT THEN THERE SHOULD BE A SHORTCUT FOR ALL NOTE CHOICES?
-            setToAllNoteChoices()
+            setToAllNotesOnStaff()
             
             accidentalsSegmentedControlOutlet.selectedSegmentIndex = 0
             onlyTrebleClefSwitchOutlet.isOn = false
@@ -467,6 +467,15 @@ class NotesOnStaffViewController: UIViewController {
         currentGameMode = .A
         
         switch Level.currentLevel.id {
+        case -1:
+            menuButtonOutlet.alpha = 1
+            levelAndModeStack.alpha = 0
+            modeSwitchOutlet.setOn(on: false, animated: false)
+        case 0:
+            menuButtonOutlet.alpha = 1
+            levelAndModeStack.alpha = 0
+            modeSwitchOutlet.setOn(on: true, animated: false)
+            switchModes()
         case 8:
             modeSwitchOutlet.setOn(on: true, animated: false)
             switchModes()

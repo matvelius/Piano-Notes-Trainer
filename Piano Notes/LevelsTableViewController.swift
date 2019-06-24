@@ -82,37 +82,27 @@ class LevelsTableViewController: UITableViewController {
         
         Level.currentLevel = allLevels[indexPath.section][indexPath.row]
       
-        // FREE PLAY - NOTE NAMES
-        if (-3)...(-2) ~= Level.currentLevel.id {
+        // NOTE NAMES
+        if (-3)...(-2) ~= Level.currentLevel.id || (1)...(7) ~= Level.currentLevel.id {
+            
+            currentGameType = .noteNames
             
             if explainersEnabled {
                 performSegue(withIdentifier: "segueToExplainers", sender: nil)
             } else {
-                performSegue(withIdentifier: "segueToGame", sender: nil)
+                performSegue(withIdentifier: "segueToNoteNames", sender: nil)
             }
         
-        // FREE PLAY - NOTES ON STAFF
-        } else if (-1)...(0) ~= Level.currentLevel.id {
+        // NOTES ON STAFF
+        } else {
+            
+            currentGameType = .notesOnStaff
             
             if explainersEnabled {
                 performSegue(withIdentifier: "segueToExplainers", sender: nil)
             } else {
                 performSegue(withIdentifier: "segueToNotesOnStaff", sender: nil)
             }
-        
-        // LEVELS - NOTES ON STAFF
-        } else if Level.currentLevel.id >= 8 {
-            
-            performSegue(withIdentifier: "segueToNotesOnStaff", sender: nil)
-            
-        } else if explainersEnabled {
-        
-            performSegue(withIdentifier: "segueToExplainers", sender: nil)
-            
-        // NOTE NAMES
-        } else {
-            
-            performSegue(withIdentifier: "segueToGame", sender: nil)
                 
         }
         
@@ -121,7 +111,7 @@ class LevelsTableViewController: UITableViewController {
 //
 //    }
     
-    let titles = ["Naming the notes on the piano", "Learning music notation"]
+    let titles = ["Freeplay","Naming the notes on the piano", "Learning music notation"]
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return titles[section]

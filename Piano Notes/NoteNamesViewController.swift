@@ -107,7 +107,7 @@ class NoteNamesViewController: UIViewController {
         // otherwise reenable everything
         } else {
             
-            setToAllNoteChoices()
+            setToAllNoteChoicesNoteNames()
             
             enableButtons()
             
@@ -213,7 +213,7 @@ class NoteNamesViewController: UIViewController {
             
             startNewRound()
         } else {
-            setToAllNoteChoices()
+            setToAllNoteChoicesNoteNames()
             startNewRound()
         }
     }
@@ -1459,11 +1459,46 @@ class NoteNamesViewController: UIViewController {
         // normally the mode switch is available
         // disable for weird enharmonics (and anything else that's only 1 mode?)
         // and for free play
+        
         modeStack.alpha = 1
         
         // TODO: - FINALIZE THESE DECISIONS
         switch currentLevelID {
+        
+        // FREEPLAY SECTION
+        case -3:
             
+            modeSwitchOutlet.setOn(on: false, animated: false)
+            switchToModeA()
+            
+            setToAllNoteChoicesNoteNames()
+            enableButtons()
+            enableSharps()
+            sharpsViewOutlet.alpha = 1
+            enableFlats()
+            flatsViewOutlet.alpha = 1
+            enableGestureRecognizers()
+            
+            menuButtonOutlet.alpha = 1
+            levelAndModeStack.alpha = 0
+            
+        case -2:
+            
+            modeSwitchOutlet.setOn(on: true, animated: false)
+            switchToModeB()
+            
+            setToAllNoteChoicesNoteNames()
+            disableButtons()
+            disableSharps()
+            sharpsViewOutlet.alpha = 1
+            disableFlats()
+            flatsViewOutlet.alpha = 1
+            disableGestureRecognizers()
+            
+            menuButtonOutlet.alpha = 1
+            levelAndModeStack.alpha = 0
+            
+        // NOTENAMES SECTION
         case 1:
             
             modeSwitchOutlet.setOn(on: false, animated: false)
@@ -1548,7 +1583,7 @@ class NoteNamesViewController: UIViewController {
             modeSwitchOutlet.setOn(on: false, animated: false)
             switchToModeA()
             
-            setToAllNoteChoices()
+            setToAllNoteChoicesNoteNames()
             enableButtons()
             enableSharps()
             sharpsViewOutlet.alpha = 1

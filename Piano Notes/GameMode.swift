@@ -14,3 +14,10 @@ enum GameMode {
 }
 
 var currentGameMode: GameMode = .A
+
+enum GameType {
+    case noteNames
+    case notesOnStaff
+}
+
+var currentGameType: GameType = .noteNames

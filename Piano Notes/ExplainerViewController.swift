@@ -10,13 +10,18 @@ import UIKit
 
 class ExplainerViewController: UIViewController {
     
-    var explainerIndex = 1
-    var numberOfExplainers = 4
+    var explainerStartIndex = 1
+    var explainerEndIndex = 5
     
     
     @IBOutlet weak var progressBar: UIProgressView!
     
     @IBOutlet weak var explainerImage: UIImageView!
+    
+    
+    @IBAction func skipButtonPressed(_ sender: UIButton) {
+        segueToGame()
+    }
     
     @IBOutlet weak var navTriangleLeft: UIButton!
     
@@ -24,12 +29,12 @@ class ExplainerViewController: UIViewController {
     
     @IBAction func navTriangleLeftPressed(_ sender: UIButton) {
         
-        if explainerIndex > 1 {
+        if explainerStartIndex > 1 {
             
-            explainerIndex -= 1
-            explainerImage.image = UIImage(named: "explainer_\(explainerIndex)")
+            explainerStartIndex -= 1
+            explainerImage.image = UIImage(named: "explainer_\(explainerStartIndex)")
             
-            if explainerIndex == 1 {
+            if explainerStartIndex == 1 {
                 
                 navTriangleLeft.isEnabled = false
                 
@@ -41,16 +46,16 @@ class ExplainerViewController: UIViewController {
     
     @IBAction func navTriangleRightPressed(_ sender: UIButton) {
         
-        if explainerIndex < numberOfExplainers {
+        if explainerStartIndex < explainerEndIndex {
             
-            explainerIndex += 1
-            explainerImage.image = UIImage(named: "explainer_\(explainerIndex)")
+            explainerStartIndex += 1
+            explainerImage.image = UIImage(named: "explainer_\(explainerStartIndex)")
             
-            progressBar.setProgress(Float(explainerIndex) / Float(numberOfExplainers), animated: true)
+            progressBar.setProgress(Float(explainerStartIndex) / Float(explainerEndIndex), animated: true)
             
         } else {
             
-            performSegue(withIdentifier: "doneExplaining", sender: sender)
+            segueToGame()
             
         }
         
@@ -60,12 +65,21 @@ class ExplainerViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    
+    override func viewDidAppear(_ animated: Bool) {
+    
+        switch currentGameType {
+        case .noteNames:
+            explainerStartIndex = 1
+            explainerEndIndex = 5
+        case .notesOnStaff:
+            explainerStartIndex = 6
+            explainerEndIndex = 8
+        }
         
-        explainerImage.image = UIImage(named: "explainer_1")
-        
-//        imageName = "\(currentUserAnswer)_wrong"
-//        let image = UIImage(named: imageName)
-//        currentNoteButton.setImage(image, for: UIControl.State.normal)
+        explainerImage.image = UIImage(named: "explainer_\(explainerStartIndex)")
         
         navTriangleLeft.isEnabled = false
         
@@ -73,21 +87,18 @@ class ExplainerViewController: UIViewController {
         
         navTriangleRight.setImage(UIImage(named: "nav_triangle_R_normal"), for: UIControl.State.normal)
         
+        progressBar.setProgress(Float(explainerStartIndex) / Float(explainerEndIndex), animated: true)
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        progressBar.setProgress(Float(explainerIndex) / Float(numberOfExplainers), animated: true)
-    }
-    
+    func segueToGame() {
+        
+        switch currentGameType {
+        case .noteNames:
+            performSegue(withIdentifier: "doneExplainingToNoteNames", sender: nil)
+        case .notesOnStaff:
+            performSegue(withIdentifier: "doneExplainingToNotesOnStaff", sender: nil)
+        }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
     }
-    */
 
 }

@@ -82,13 +82,13 @@
                     <navigationItem key="navigationItem" id="Kkg-tL-LQ8"/>
                     <connections>
                         <segue destination="ocB-fJ-hDj" kind="show" identifier="segueToExplainers" animates="NO" id="Dij-og-4Df"/>
-                        <segue destination="BYZ-38-t0r" kind="show" identifier="segueToGame" animates="NO" id="h7l-c7-UJA"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="segueToNoteNames" animates="NO" id="h7l-c7-UJA"/>
                         <segue destination="vCV-Es-ama" kind="show" identifier="segueToNotesOnStaff" id="Nhi-lG-mWi"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VpB-Rx-fLn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1254" y="-583"/>
+            <point key="canvasLocation" x="1298" y="-504"/>
         </scene>
         <!--Note Names View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -1691,7 +1691,7 @@
                     </connections>
                 </panGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1512.7379209370424" y="720.703125"/>
+            <point key="canvasLocation" x="422" y="1515"/>
         </scene>
         <!--Notes On Staff View Controller-->
         <scene sceneID="Qoc-gM-v9U">
@@ -3461,7 +3461,7 @@
                     </connections>
                 </panGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="2284" y="721"/>
+            <point key="canvasLocation" x="2132" y="1604"/>
         </scene>
         <!--Initial View Controller-->
         <scene sceneID="8XM-xb-p9F">
@@ -3722,8 +3722,8 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pvh-OJ-xAE">
-                                <rect key="frame" x="1206" y="74" width="110" height="52"/>
-                                <color key="backgroundColor" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <rect key="frame" x="1261.5" y="711.5" width="110" height="52"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="110" id="Mwp-Xd-ycM"/>
                                 </constraints>
@@ -3735,16 +3735,15 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <segue destination="BYZ-38-t0r" kind="show" animates="NO" id="0z7-So-mTa"/>
+                                    <action selector="skipButtonPressed:" destination="ocB-fJ-hDj" eventType="touchUpInside" id="5Wt-Sk-cPP"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.27450980392156865" green="0.27450980392156865" blue="0.27450980392156865" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="oXW-qM-tFj" firstAttribute="centerY" secondItem="ciP-ib-WW8" secondAttribute="centerY" id="5cf-ew-zrJ"/>
-                            <constraint firstItem="GME-4K-2zm" firstAttribute="trailing" secondItem="Pvh-OJ-xAE" secondAttribute="trailing" constant="50" id="Ijn-fD-hot"/>
+                            <constraint firstItem="Pvh-OJ-xAE" firstAttribute="top" secondItem="oUe-B0-TM1" secondAttribute="bottom" constant="20" id="AHG-3a-BKl"/>
                             <constraint firstItem="Xd0-0D-gns" firstAttribute="top" secondItem="GME-4K-2zm" secondAttribute="top" id="Kbt-sY-r8y"/>
-                            <constraint firstItem="Pvh-OJ-xAE" firstAttribute="top" secondItem="GME-4K-2zm" secondAttribute="top" constant="50" id="NFw-1d-KiF"/>
                             <constraint firstAttribute="trailing" secondItem="POa-Tj-g11" secondAttribute="trailing" id="QtW-K0-TB1"/>
                             <constraint firstItem="POa-Tj-g11" firstAttribute="leading" secondItem="ciP-ib-WW8" secondAttribute="leading" id="aGb-HS-9Lv"/>
                             <constraint firstItem="GME-4K-2zm" firstAttribute="trailing" secondItem="Xd0-0D-gns" secondAttribute="trailing" id="caj-ek-a8e"/>
@@ -3754,6 +3753,7 @@
                             <constraint firstItem="Xd0-0D-gns" firstAttribute="leading" secondItem="GME-4K-2zm" secondAttribute="leading" id="puh-AB-KuH"/>
                             <constraint firstItem="oUe-B0-TM1" firstAttribute="centerY" secondItem="ciP-ib-WW8" secondAttribute="centerY" id="qH5-As-nNc"/>
                             <constraint firstItem="GME-4K-2zm" firstAttribute="bottom" secondItem="POa-Tj-g11" secondAttribute="bottom" id="qSP-Ai-BSH"/>
+                            <constraint firstItem="Pvh-OJ-xAE" firstAttribute="leading" secondItem="oUe-B0-TM1" secondAttribute="leading" id="tBl-a9-Vs5"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="GME-4K-2zm"/>
                     </view>
@@ -3762,12 +3762,13 @@
                         <outlet property="navTriangleLeft" destination="oXW-qM-tFj" id="Di1-aQ-lzb"/>
                         <outlet property="navTriangleRight" destination="oUe-B0-TM1" id="3gG-nu-3ZY"/>
                         <outlet property="progressBar" destination="POa-Tj-g11" id="sid-La-W4s"/>
-                        <segue destination="BYZ-38-t0r" kind="show" identifier="doneExplaining" animates="NO" id="gpG-aX-QFw"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="doneExplainingToNoteNames" animates="NO" id="gpG-aX-QFw"/>
+                        <segue destination="vCV-Es-ama" kind="show" identifier="doneExplainingToNotesOnStaff" id="Ojy-u5-yal"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cmE-Yr-TVd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="767" y="721"/>
+            <point key="canvasLocation" x="1298" y="721"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="7wt-Ie-AUp">
@@ -3855,6 +3856,7 @@
         <image name="white_piano_12.9_large" width="910.66668701171875" height="538.66668701171875"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="Nhi-lG-mWi"/>
         <segue reference="h7l-c7-UJA"/>
     </inferredMetricsTieBreakers>
 </document>
