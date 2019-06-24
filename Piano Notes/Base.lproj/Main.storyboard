@@ -3448,7 +3448,7 @@
                 <exit id="keI-5w-fk0" userLabel="Exit" sceneMemberID="exit"/>
                 <panGestureRecognizer minimumNumberOfTouches="1" id="iIp-0g-gv6" userLabel="Main Note On Staff Pan Gesture Recognizer Outlet">
                     <connections>
-                        <action selector="handleMainNotePanGestureWithRecognizer:" destination="vCV-Es-ama" id="TWw-9F-05i"/>
+                        <action selector="handleNoteOnStaffPanningWithRecognizer:" destination="vCV-Es-ama" id="CGb-yK-YEq"/>
                     </connections>
                 </panGestureRecognizer>
                 <panGestureRecognizer minimumNumberOfTouches="1" id="xNt-ex-bBV" userLabel="Menu Low Note Pan Gesture Recognizer">

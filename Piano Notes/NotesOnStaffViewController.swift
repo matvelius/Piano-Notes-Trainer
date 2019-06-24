@@ -422,6 +422,10 @@ class NotesOnStaffViewController: UIViewController {
     var noteRangeImageLocationAdjustment: Double = 0
     var noteRangeLocationFactor: Double = 0
     
+    var noteOnStaffImageHeight: Double = 0
+    var noteOnStaffImageLocationAdjustment: Double = 0
+    var noteOnStaffLocationFactor: Double = 0
+    
     // REFACTOR SOME (MOST?) OF THIS TO viewDidAppear() ?!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -450,6 +454,10 @@ class NotesOnStaffViewController: UIViewController {
         noteRangeImageHeight = Double(noteRangeLowNoteImage.bounds.height)
         noteRangeLocationFactor = 0.8 * (noteRangeImageHeight) / Double(whiteNotesOnLargeKeyboard.count)
         noteRangeImageLocationAdjustment = 0.09 * noteRangeImageHeight
+        
+        noteOnStaffImageHeight = Double(noteOnStaffImage.bounds.height)
+        noteOnStaffLocationFactor = 0.8 * (noteOnStaffImageHeight) / Double(whiteNotesOnLargeKeyboard.count)
+        noteOnStaffImageLocationAdjustment = 0.09 * noteOnStaffImageHeight
         
         // TODO: - Change this depending on level
 //        currentNoteChoices = allNotesOnLargeKeyboard
@@ -800,6 +808,24 @@ class NotesOnStaffViewController: UIViewController {
         }
     }
     
+    var noteIndex = 0
+    
+    @IBAction func handleNoteOnStaffPanning(recognizer: UIPanGestureRecognizer) {
+        print(recognizer.location(in: noteOnStaffImage).y)
+        
+        noteIndex = whiteNotesOnLargeKeyboard.count - Int((Double(recognizer.location(in: noteOnStaffImage).y) - noteOnStaffImageLocationAdjustment) / noteOnStaffLocationFactor)
+        
+        print("highNoteIndex in handleHighNotePan:\(highNoteIndex)")
+        
+        if noteIndex >= 0 && noteIndex < whiteNotesOnLargeKeyboard.count {
+            noteOnStaffImage.image = UIImage(named: "staff\(whiteNotesOnLargeKeyboard[noteIndex])")
+            currentNoteOnStaffIndex = noteIndex
+            currentNoteOnStaffImageName = "staff\(whiteNotesOnLargeKeyboard[currentNoteOnStaffIndex])"
+//            updateNoteOnStaffImage(optionalImageName: nil)
+            currentAccidental = .neither
+        }
+    }
+    
 //    @IBAction func handleMenuLowNotePanGesture(_ sender: UIPanGestureRecognizer) {
 //        print(sender.location(in: noteRangeLowNoteImage))
 //    }
@@ -830,6 +856,7 @@ class NotesOnStaffViewController: UIViewController {
         }
     }
     
+    // function for adding subviews
     func addSameSize(subview: UIView, onTopOf superview: UIView) {
         superview.addSubview(subview)
         
