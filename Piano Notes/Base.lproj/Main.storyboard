@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="8JC-u7-HER">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="l1o-7Z-dlW">
     <device id="ipad12_9rounded" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
@@ -3831,7 +3831,7 @@
         <image name="check" width="218" height="120"/>
         <image name="check_pressed" width="210" height="112"/>
         <image name="choose_the_correct_note_on_staff" width="2200" height="102"/>
-        <image name="explainer_1" width="2732" height="2048"/>
+        <image name="explainer_1" width="1366" height="1024"/>
         <image name="flat" width="210" height="123"/>
         <image name="flat_pressed" width="210" height="123"/>
         <image name="intro_screen_background" width="5464" height="4096"/>
