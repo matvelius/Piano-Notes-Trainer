@@ -113,12 +113,26 @@ extension NotesOnStaffViewController {
         menuIsClosed = true
         
         // FIXME: - WHAT TO DO WITH CURRENT NOTE CHOICES.. UPDATE IF NEEDED, RIGHT? NOT SURE ABOUT THIS!!
-        currentNoteChoices = Array(whiteNotesOnLargeKeyboard[lowNoteIndex...highNoteIndex])
+        
+        if allAccidentalsEnabled {
+
+            let tempLowNoteIndex = allNotesOnLargeKeyboard.index(of: whiteNotesOnLargeKeyboard[lowNoteIndex])!
+            let tempHighNoteIndex = allNotesOnLargeKeyboard.index(of: whiteNotesOnLargeKeyboard[highNoteIndex])!
+            
+            
+            currentNoteChoices = Array(allNotesOnLargeKeyboard[tempLowNoteIndex...tempHighNoteIndex])
+        } else {
+            currentNoteChoices = Array(whiteNotesOnLargeKeyboard[lowNoteIndex...highNoteIndex])
+        }
+        
         print("currentNoteChoices: \(currentNoteChoices)")
         setRandomNewNoteUpperIndex()
         
         generateNewNote()
         
+        if currentGameMode == .A {
+            noteOnStaffImage.image = UIImage(named: "staffC4")
+        }
 //        noteRangeLowNoteImage.image = UIImage(named: "staff\(currentNoteChoices[lowNoteIndex])")
 //        noteRangeHighNoteImage.image = UIImage(named: "staff\(currentNoteChoices[lowNoteIndex])")
         
