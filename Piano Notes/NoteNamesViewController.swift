@@ -1291,14 +1291,14 @@ class NoteNamesViewController: UIViewController {
         currentNoteButton.setImage(image, for: UIControl.State.normal)
         
         // recognize flat
-        if recognizerWithinFlatRange {
+        if recognizerWithinFlatRange && !onlySharpsEnabled {
             
             panGestureOver = checkIfStateEnded(onSharpOrFlat: .flat)
             
             if panGestureOver { checkAnswer() }
             
         // recognize sharp
-        } else if recognizerWithinSharpRange {
+        } else if recognizerWithinSharpRange && !onlyFlatsEnabled {
             
             panGestureOver = checkIfStateEnded(onSharpOrFlat: .sharp)
             
