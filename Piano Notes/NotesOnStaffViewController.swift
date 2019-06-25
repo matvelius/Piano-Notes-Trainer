@@ -59,7 +59,11 @@ class NotesOnStaffViewController: UIViewController {
             
             currentAccidental = .sharp
             
-            currentNoteOnStaffImageName.insert("#", at: currentNoteOnStaffImageName.index(currentNoteOnStaffImageName.endIndex, offsetBy: -1))
+            if currentNoteOnStaffImageName.contains("Bass") {
+                currentNoteOnStaffImageName.insert("#", at: currentNoteOnStaffImageName.index(currentNoteOnStaffImageName.endIndex, offsetBy: -5))
+            } else {
+                currentNoteOnStaffImageName.insert("#", at: currentNoteOnStaffImageName.index(currentNoteOnStaffImageName.endIndex, offsetBy: -1))
+            }
             
             updateNoteOnStaffImage(optionalImageName: currentNoteOnStaffImageName)
             
@@ -101,7 +105,11 @@ class NotesOnStaffViewController: UIViewController {
             
             currentAccidental = .flat
             
-            currentNoteOnStaffImageName.insert("b", at: currentNoteOnStaffImageName.index(currentNoteOnStaffImageName.endIndex, offsetBy: -1))
+            if currentNoteOnStaffImageName.contains("Bass") {
+                currentNoteOnStaffImageName.insert("b", at: currentNoteOnStaffImageName.index(currentNoteOnStaffImageName.endIndex, offsetBy: -5))
+            } else {
+                currentNoteOnStaffImageName.insert("b", at: currentNoteOnStaffImageName.index(currentNoteOnStaffImageName.endIndex, offsetBy: -1))
+            }
             
             updateNoteOnStaffImage(optionalImageName: currentNoteOnStaffImageName)
             
@@ -241,18 +249,21 @@ class NotesOnStaffViewController: UIViewController {
     
     @IBAction func onlyTrebleClefSwitchFlipped(_ sender: UISwitch) {
         if sender.isOn {
-            setToOnlyTrebleClef()
-            updateNoteRangeImages()
             
             if enableAccidentalsSwitchOutlet.isOn {
                 onlyTrebleClefSegmentedControlOutlet.selectedSegmentIndex = 0
+                setToOnlyTrebleClef()
             } else {
                 onlyTrebleClefSegmentedControlOutlet.selectedSegmentIndex = 1
+                setToOnlyTrebleClefWhiteKeys()
             }
+            
+            updateNoteRangeImages()
             
             onlyBassClefSwitchOutlet.isOn = false
             onlyGuideNotesSwitchOutlet.isOn = false
             onlyMnemonicsSwitchOutlet.isOn = false
+            
         } else {
             setToPreviousNoteChoices()
         }
@@ -287,14 +298,16 @@ class NotesOnStaffViewController: UIViewController {
     
     @IBAction func onlyBassClefSwitchFlipped(_ sender: UISwitch) {
         if sender.isOn {
-            setToOnlyBassClef()
-            updateNoteRangeImages()
             
             if enableAccidentalsSwitchOutlet.isOn {
                 onlyBassClefSegmentedControlOutlet.selectedSegmentIndex = 0
+                setToOnlyBassClef()
             } else {
                 onlyBassClefSegmentedControlOutlet.selectedSegmentIndex = 1
+                setToOnlyBassClefWhiteKeys()
             }
+            
+            updateNoteRangeImages()
             
             onlyTrebleClefSwitchOutlet.isOn = false
             onlyGuideNotesSwitchOutlet.isOn = false
@@ -345,7 +358,7 @@ class NotesOnStaffViewController: UIViewController {
     }
     
     @IBAction func noteRangeHighNoteUp(_ sender: UIButton) {
-        if highNoteIndex < whiteNotesOnLargeKeyboard.count {
+        if highNoteIndex < whiteNotesOnLargeKeyboard.count - 1 {
             highNoteIndex += 1
             noteRangeHighNoteImage.image = UIImage(named: "staff\(whiteNotesOnLargeKeyboard[highNoteIndex])")
             currentNoteChoices.append(whiteNotesOnLargeKeyboard[highNoteIndex])
@@ -476,6 +489,8 @@ class NotesOnStaffViewController: UIViewController {
         
         currentGameMode = .A
         
+        modeStack.alpha = 1
+        
         switch Level.currentLevel.id {
         case -1:
             menuButtonOutlet.alpha = 1
@@ -491,6 +506,10 @@ class NotesOnStaffViewController: UIViewController {
             setupForModeB()
         case 8:
             modeSwitchOutlet.setOn(on: true, animated: false)
+            setupForModeB()
+        case 13:
+            modeSwitchOutlet.setOn(on: true, animated: false)
+            modeStack.alpha = 0
             setupForModeB()
         default:
             modeSwitchOutlet.setOn(on: false, animated: false)
@@ -548,13 +567,13 @@ class NotesOnStaffViewController: UIViewController {
         // DO I STILL NEED THIS?
         print("currentNoteOnStaffImageName: \(currentNoteOnStaffImageName)")
         
-        if currentCorrectAnswer == "C4bass" {
+        if currentCorrectAnswer == "C4Bass" {
             currentCorrectAnswer = "C4"
         }
         
         // DEAL WITH C4bass, C#4bass, etc (is there an etc?)
         print("going into checkAnswer, currentNoteOnStaffImageName is: \(currentNoteOnStaffImageName)")
-        if currentNoteOnStaffImageName.hasSuffix("bass") {
+        if currentNoteOnStaffImageName.hasSuffix("Bass") {
             currentNoteOnStaffImageName.removeLast(4)
             print("and now, currentNoteOnStaffImageName is: \(currentNoteOnStaffImageName)")
         }
@@ -825,7 +844,7 @@ class NotesOnStaffViewController: UIViewController {
         
         noteIndex = whiteNotesOnLargeKeyboard.count - Int((Double(recognizer.location(in: noteOnStaffImage).y) - noteOnStaffImageLocationAdjustment) / noteOnStaffLocationFactor)
         
-        print("highNoteIndex in handleHighNotePan:\(highNoteIndex)")
+//        print("highNoteIndex in handleHighNotePan:\(highNoteIndex)")
         
         if noteIndex >= 0 && noteIndex < whiteNotesOnLargeKeyboard.count {
             noteOnStaffImage.image = UIImage(named: "staff\(whiteNotesOnLargeKeyboard[noteIndex])")
@@ -843,6 +862,10 @@ class NotesOnStaffViewController: UIViewController {
     
 //    @IBAction func handleMenuHightNotePanGesture(_ sender: UIPanGestureRecognizer) {
 //    }
+    
+    func updateLowAndHighNoteIndices() {
+        
+    }
     
     func updateNoteRangeImages() {
         noteRangeLowNoteImage.image = UIImage(named: "staff\(whiteNotesOnLargeKeyboard[lowNoteIndex])")
