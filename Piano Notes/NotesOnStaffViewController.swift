@@ -899,7 +899,7 @@ class NotesOnStaffViewController: UIViewController {
     
     @IBAction func handleHighNotePan(recognizer: UIPanGestureRecognizer) {
 
-        // only move the note if it's in a certain range
+        // only move the note if it's in a certain range 
         if highNoteIndex < whiteNotesOnLargeKeyboard.count - 1 && highNoteIndex > lowNoteIndex + 1 {
             
             let newTempNoteIndex = whiteNotesOnLargeKeyboard.count - Int((Double(recognizer.location(in: noteRangeHighNoteImage).y) - noteRangeImageLocationAdjustment) / noteRangeLocationFactor)
