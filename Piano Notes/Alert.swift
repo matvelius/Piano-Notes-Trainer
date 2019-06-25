@@ -28,22 +28,24 @@ struct Alert {
             vc.present(backToLevels, animated: true, completion: nil)
             }))
         
-        // decide whether to add the "Next level" button
-        if (1)...(6) ~= Level.currentLevel.id {
-            alert.addAction(UIAlertAction(title: "Next level", style: .cancel, handler: { (action: UIAlertAction!) in
-                    // go to next level
-                    Level.currentLevel = allLevels[0][Level.currentLevel.id]
-                    let nextNoteNameLevel = storyBoard.instantiateViewController(withIdentifier: "NoteNames") as! NoteNamesViewController
-                    vc.present(nextNoteNameLevel, animated: true, completion: nil)
-            }))
-        } else if (8)...(13) ~= Level.currentLevel.id {
-            alert.addAction(UIAlertAction(title: "Next level", style: .cancel, handler:
-                { (action: UIAlertAction!) in
-                    Level.currentLevel = allLevels[1][Level.currentLevel.id - 7]
-                    let nextNotesOnStaffLevel = storyBoard.instantiateViewController(withIdentifier: "NotesOnStaff") as! NotesOnStaffViewController
-                    vc.present(nextNotesOnStaffLevel, animated: true, completion: nil)
-            }))
-        }
+        // TODO: - IMPLEMENT LATER (NEED TO ADD SPLASH SCREENS ON EACH LEVEL
+        
+//        // decide whether to add the "Next level" button
+//        if (1)...(6) ~= Level.currentLevel.id {
+//            alert.addAction(UIAlertAction(title: "Next level", style: .cancel, handler: { (action: UIAlertAction!) in
+//                    // go to next level
+//                    Level.currentLevel = allLevels[0][Level.currentLevel.id]
+//                    let nextNoteNameLevel = storyBoard.instantiateViewController(withIdentifier: "NoteNames") as! NoteNamesViewController
+//                    vc.present(nextNoteNameLevel, animated: true, completion: nil)
+//            }))
+//        } else if (8)...(13) ~= Level.currentLevel.id {
+//            alert.addAction(UIAlertAction(title: "Next level", style: .cancel, handler:
+//                { (action: UIAlertAction!) in
+//                    Level.currentLevel = allLevels[1][Level.currentLevel.id - 7]
+//                    let nextNotesOnStaffLevel = storyBoard.instantiateViewController(withIdentifier: "NotesOnStaff") as! NotesOnStaffViewController
+//                    vc.present(nextNotesOnStaffLevel, animated: true, completion: nil)
+//            }))
+//        }
         
         vc.present(alert, animated: true)
     }

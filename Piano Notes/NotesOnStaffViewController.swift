@@ -412,8 +412,10 @@ class NotesOnStaffViewController: UIViewController {
     
     @IBAction func reEnableExplainersSwitchFlipped(_ sender: UISwitch) {
         if !sender.isOn {
+            explainersEnabledNoteNames = false
             explainersEnabledNotesOnStaff = false
         } else {
+            explainersEnabledNoteNames = true
             explainersEnabledNotesOnStaff = true
         }
     }
