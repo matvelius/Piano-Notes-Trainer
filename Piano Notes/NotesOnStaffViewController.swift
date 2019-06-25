@@ -773,24 +773,35 @@ class NotesOnStaffViewController: UIViewController {
             incorrectAnswersInARow += 1
             giveOrTakeAStar()
             starsImageOutlet.image = UIImage(named: "stars\(currentNumberOfStars)")
-            
-
-            
+        
         }
         
         scoreLabelOutlet.text = String(totalScore)
 
     }
     
+    var lastAccidentalOrNotIndex: Int = -1
+    var accidentalOrNot: Accidentals = .neither
     
     func generateNewNote() {
       
         generateNewRandomNoteIndex()
-        currentCorrectAnswer = currentNoteChoices[randomNewNoteIndex]
-        print("currentNoteChoices[randomNewNoteIndex]: \(currentCorrectAnswer)")
         lastRandomNumber = randomNewNoteIndex
         
+        pianoNoteDisplayed.image = nil
+        
+        // remove notes marked wrong
+        if !notesAlreadyAttempted.isEmpty {
+            for subview in self.pianoNoteDisplayed.subviews {
+                subview.removeFromSuperview()
+            }
+        }
+        
+        notesAlreadyAttempted = [""]
+        
         if currentGameMode == .A {
+            
+            currentCorrectAnswer = currentNoteChoices[randomNewNoteIndex]
             
             if currentCorrectAnswer == "C4bass" {
                 pianoNoteDisplayed.image = UIImage(named: "large_C4_shown")
@@ -798,19 +809,82 @@ class NotesOnStaffViewController: UIViewController {
                 pianoNoteDisplayed.image = UIImage(named: "large_\(currentCorrectAnswer)_shown")
             }
         
+        // MODE B
         } else {
             
-            pianoNoteDisplayed.image = nil
-            noteOnStaffImage.image = UIImage(named: "staff\(currentCorrectAnswer)")
+            print("currentNoteChoices in generateNewNote(): \(currentNoteChoices)")
             
-            // remove notes marked wrong
-            if !notesAlreadyAttempted.isEmpty {
-                for subview in self.pianoNoteDisplayed.subviews {
-                    subview.removeFromSuperview()
+            if allAccidentalsEnabled {
+                
+                if currentNoteChoices[randomNewNoteIndex].contains("#") {
+                
+                    let randomSharpOrFlat = Int.random(in: 0...1)
+                    
+                    // flat
+                    if randomSharpOrFlat == 1 {
+                        
+                        let currentTempNoteNameWithOctave = currentNoteChoices[randomNewNoteIndex]
+                        
+                        let currentOctave = currentTempNoteNameWithOctave.last!
+                        
+                        let currentTempNoteNameWithoutOctave = String(currentTempNoteNameWithOctave[currentTempNoteNameWithOctave.startIndex...currentTempNoteNameWithOctave.index(after: currentTempNoteNameWithOctave.startIndex)])
+                       
+                        var currentNoteToDisplay = getEnharmonic(currentNote: currentTempNoteNameWithoutOctave)!
+                        
+                        currentNoteToDisplay.append(currentOctave)
+                        
+                        print("MODE B, allAccidentalsEnabled, contains(#)... currentNoteToDisplay: \(currentNoteToDisplay)")
+                        
+                        currentCorrectAnswer = currentNoteChoices[randomNewNoteIndex]
+                        
+                        // display a flat (but correctAnswer is still a sharp!)
+                        noteOnStaffImage.image = UIImage(named: "staff\(currentNoteToDisplay)")
+                        
+                    // sharp
+                    } else {
+                        currentCorrectAnswer = currentNoteChoices[randomNewNoteIndex]
+                        noteOnStaffImage.image = UIImage(named: "staff\(currentCorrectAnswer)")
+                    }
+                
+                // show regular note
+                } else {
+                    
+                    currentCorrectAnswer = currentNoteChoices[randomNewNoteIndex]
+                    noteOnStaffImage.image = UIImage(named: "staff\(currentCorrectAnswer)")
                 }
+                
+            } else if onlySharpsEnabled {
+                
+                currentCorrectAnswer = currentNoteChoices[randomNewNoteIndex]
+                noteOnStaffImage.image = UIImage(named: "staff\(currentCorrectAnswer)")
+                
+            } else if onlyFlatsEnabled {
+            
+                let currentTempNoteNameWithOctave = currentNoteChoices[randomNewNoteIndex]
+                
+                let currentOctave = currentTempNoteNameWithOctave.last!
+                
+                let currentTempNoteNameWithoutOctave = String(currentTempNoteNameWithOctave[currentTempNoteNameWithOctave.startIndex...currentTempNoteNameWithOctave.index(after: currentTempNoteNameWithOctave.startIndex)])
+                
+                var currentNoteToDisplay = getEnharmonic(currentNote: currentTempNoteNameWithoutOctave)!
+                
+                currentNoteToDisplay.append(currentOctave)
+                
+                print("MODE B, allAccidentalsEnabled, contains(#)... currentNoteToDisplay: \(currentNoteToDisplay)")
+                
+                currentCorrectAnswer = currentNoteChoices[randomNewNoteIndex]
+                
+                // display a flat (but correctAnswer is still a sharp!)
+                noteOnStaffImage.image = UIImage(named: "staff\(currentNoteToDisplay)")
+                
+            } else {
+                
+                currentCorrectAnswer = currentNoteChoices[randomNewNoteIndex]
+                noteOnStaffImage.image = UIImage(named: "staff\(currentCorrectAnswer)")
+                
             }
             
-            notesAlreadyAttempted = [""]
+            print("!!! currentCorrectAnswer should be: \(currentCorrectAnswer)!!!")
             
         }
         
@@ -921,7 +995,7 @@ class NotesOnStaffViewController: UIViewController {
             
             print("currentNoteChoices.last: \(currentNoteChoices.last)")
             
-            if allAccidentalsEnabled {
+            if allAccidentalsEnabled || onlySharpsEnabled || onlyFlatsEnabled {
                 let tempHighestNoteIndex = allNotesOnLargeKeyboard.index(of: currentNoteChoices.last!)!
                 currentNoteChoices.append(allNotesOnLargeKeyboard[tempHighestNoteIndex + 1])
             } else {

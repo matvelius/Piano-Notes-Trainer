@@ -88,6 +88,9 @@ extension NotesOnStaffViewController {
         
         menuIsClosed = false
         
+        noteRangeLowNoteImage.image = UIImage(named: "staff\(whiteNotesOnLargeKeyboard[lowNoteIndex])")
+        noteRangeHighNoteImage.image = UIImage(named: "staff\(whiteNotesOnLargeKeyboard[highNoteIndex])")
+        
     }
     
     func closeMenu() {
@@ -128,11 +131,11 @@ extension NotesOnStaffViewController {
         print("currentNoteChoices: \(currentNoteChoices)")
         setRandomNewNoteUpperIndex()
         
-        generateNewNote()
-        
         if currentGameMode == .A {
             noteOnStaffImage.image = UIImage(named: "staffC4")
         }
+        
+        startNewRound()
 //        noteRangeLowNoteImage.image = UIImage(named: "staff\(currentNoteChoices[lowNoteIndex])")
 //        noteRangeHighNoteImage.image = UIImage(named: "staff\(currentNoteChoices[lowNoteIndex])")
         
