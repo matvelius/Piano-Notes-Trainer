@@ -213,6 +213,7 @@ func setToOnlyWeirdEnharmonics() {
 func setToOnlyGuideNotes() {
     previousNoteChoices = currentNoteChoices
     currentNoteChoices = onlyGuideNotes
+    allAccidentalsEnabled = false
     setRandomNewNoteUpperIndex()
     updateNoteIndices()
 }
@@ -220,6 +221,7 @@ func setToOnlyGuideNotes() {
 func setToOnlyMnemonics() {
     previousNoteChoices = currentNoteChoices
     currentNoteChoices = allMnemonics
+    allAccidentalsEnabled = false
     setRandomNewNoteUpperIndex()
     updateNoteIndices()
 }
@@ -227,6 +229,7 @@ func setToOnlyMnemonics() {
 func setToOnlyTrebleClef() {
     previousNoteChoices = currentNoteChoices
     currentNoteChoices = allTrebleClefNotes
+    allAccidentalsEnabled = true
     setRandomNewNoteUpperIndex()
     updateNoteIndices()
 }
@@ -234,6 +237,7 @@ func setToOnlyTrebleClef() {
 func setToOnlyTrebleClefWhiteKeys() {
     previousNoteChoices = currentNoteChoices
     currentNoteChoices = onlyTrebleClefWhiteNotes
+    allAccidentalsEnabled = false
     setRandomNewNoteUpperIndex()
     updateNoteIndices()
 }
@@ -241,6 +245,7 @@ func setToOnlyTrebleClefWhiteKeys() {
 func setToOnlyTrebleClefBlackKeys() {
     previousNoteChoices = currentNoteChoices
     currentNoteChoices = onlyTrebleClefBlackNotes
+    allAccidentalsEnabled = true
     setRandomNewNoteUpperIndex()
     updateNoteIndices()
 }
@@ -248,6 +253,7 @@ func setToOnlyTrebleClefBlackKeys() {
 func setToOnlyBassClef() {
     previousNoteChoices = currentNoteChoices
     currentNoteChoices = allBassClefNotes
+    allAccidentalsEnabled = true
     setRandomNewNoteUpperIndex()
     updateNoteIndices()
 }
@@ -255,6 +261,7 @@ func setToOnlyBassClef() {
 func setToOnlyBassClefWhiteKeys() {
     previousNoteChoices = currentNoteChoices
     currentNoteChoices = onlyBassClefWhiteNotes
+    allAccidentalsEnabled = false
     setRandomNewNoteUpperIndex()
     updateNoteIndices()
 }
@@ -262,6 +269,7 @@ func setToOnlyBassClefWhiteKeys() {
 func setToOnlyBassClefBlackKeys() {
     previousNoteChoices = currentNoteChoices
     currentNoteChoices = onlyBassClefBlackNotes
+    allAccidentalsEnabled = true
     setRandomNewNoteUpperIndex()
     updateNoteIndices()
 }
@@ -270,6 +278,7 @@ func setToOnlyBassClefBlackKeys() {
 func setToAllWhiteKeys() {
     previousNoteChoices = currentNoteChoices
     currentNoteChoices = whiteNotesOnLargeKeyboard
+    allAccidentalsEnabled = false
     setRandomNewNoteUpperIndex()
     updateNoteIndices()
 }
@@ -277,6 +286,7 @@ func setToAllWhiteKeys() {
 func setToAllBlackKeys() {
     previousNoteChoices = currentNoteChoices
     currentNoteChoices = blackNotesOnLargeKeyboard
+    allAccidentalsEnabled = true
     setRandomNewNoteUpperIndex()
     updateNoteIndices()
 }
@@ -284,6 +294,7 @@ func setToAllBlackKeys() {
 func setToAllNotesOnStaff() {
     previousNoteChoices = currentNoteChoices
     currentNoteChoices = allNotesOnLargeKeyboard
+    allAccidentalsEnabled = true
     setRandomNewNoteUpperIndex()
     updateNoteIndices()
 }
@@ -335,7 +346,7 @@ func updateNoteIndices() {
         highNoteIndex = whiteNotesOnLargeKeyboard.firstIndex(of: currentNoteChoices.last!) ?? 29
     }
     
-    print("highNoteIndex in viewDidAppear: \(highNoteIndex)")
-    print("lowNoteIndex in viewDidAppear: \(lowNoteIndex)")
+    print("highNoteIndex: \(highNoteIndex)")
+    print("lowNoteIndex: \(lowNoteIndex)")
 
 }

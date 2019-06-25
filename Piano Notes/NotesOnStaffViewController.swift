@@ -235,13 +235,19 @@ class NotesOnStaffViewController: UIViewController {
         if sender.selectedSegmentIndex == 0 {
             
             allAccidentalsEnabled = true
+            onlySharpsEnabled = false
+            onlyFlatsEnabled = false
             
         } else if sender.selectedSegmentIndex == 1 {
             
+            allAccidentalsEnabled = false
             onlySharpsEnabled = true
+            onlyFlatsEnabled = false
        
         } else {
             
+            allAccidentalsEnabled = false
+            onlySharpsEnabled = false
             onlyFlatsEnabled = true
             
         }
@@ -351,21 +357,63 @@ class NotesOnStaffViewController: UIViewController {
 
     
     @IBAction func noteRangeLowNoteUp(_ sender: UIButton) {
-        
+        if lowNoteIndex < highNoteIndex - 1 {
+            currentNoteChoices.removeFirst()
+            print("currentNoteChoices: \(currentNoteChoices)")
+            
+            updateNoteIndices()
+            
+            noteRangeLowNoteImage.image = UIImage(named: "staff\(whiteNotesOnLargeKeyboard[lowNoteIndex])")
+        }
     }
     
     @IBAction func noteRangeLowNoteDown(_ sender: UIButton) {
+        if lowNoteIndex > 0 {
+            
+            if allAccidentalsEnabled {
+                let tempLowestNoteIndex = allNotesOnLargeKeyboard.index(of: currentNoteChoices.first!)!
+                currentNoteChoices.insert(allNotesOnLargeKeyboard[tempLowestNoteIndex - 1], at: 0)
+            } else {
+                let tempLowestNoteIndex = whiteNotesOnLargeKeyboard.index(of: currentNoteChoices.first!)!
+                currentNoteChoices.insert(whiteNotesOnLargeKeyboard[tempLowestNoteIndex - 1], at: 0)
+            }
+            
+            updateNoteIndices()
+            
+            noteRangeLowNoteImage.image = UIImage(named: "staff\(whiteNotesOnLargeKeyboard[lowNoteIndex])")
+            
+        }
     }
     
     @IBAction func noteRangeHighNoteUp(_ sender: UIButton) {
         if highNoteIndex < whiteNotesOnLargeKeyboard.count - 1 {
-            highNoteIndex += 1
+            
+            if allAccidentalsEnabled {
+                let tempHighestNoteIndex = allNotesOnLargeKeyboard.index(of: currentNoteChoices.last!)!
+                currentNoteChoices.append(allNotesOnLargeKeyboard[tempHighestNoteIndex + 1])
+            } else {
+                let tempHighestNoteIndex = whiteNotesOnLargeKeyboard.index(of: currentNoteChoices.last!)!
+                currentNoteChoices.append(whiteNotesOnLargeKeyboard[tempHighestNoteIndex + 1])
+            }
+            
+            updateNoteIndices()
+            
             noteRangeHighNoteImage.image = UIImage(named: "staff\(whiteNotesOnLargeKeyboard[highNoteIndex])")
-            currentNoteChoices.append(whiteNotesOnLargeKeyboard[highNoteIndex])
+        
         }
     }
     
     @IBAction func noteRangeHighNoteDown(_ sender: UIButton) {
+        if highNoteIndex > lowNoteIndex + 1 {
+            
+            currentNoteChoices.removeLast()
+            print("currentNoteChoices: \(currentNoteChoices)")
+            
+            updateNoteIndices()
+            
+            noteRangeHighNoteImage.image = UIImage(named: "staff\(whiteNotesOnLargeKeyboard[highNoteIndex])")
+            
+        }
     }
     
     @IBAction func onlyGuideNotesSwitchFlipped(_ sender: UISwitch) {
@@ -480,8 +528,8 @@ class NotesOnStaffViewController: UIViewController {
     }
     
     // indices for note range settings in menu
-    var lowNoteIndex = 0
-    var highNoteIndex = whiteNotesOnLargeKeyboard.count - 1
+//    var lowNoteIndex = 0
+//    var highNoteIndex = whiteNotesOnLargeKeyboard.count - 1
     
     override func viewDidAppear(_ animated: Bool) {
         currentNoteChoices = Level.currentLevel.noteChoices
@@ -496,13 +544,13 @@ class NotesOnStaffViewController: UIViewController {
             menuButtonOutlet.alpha = 1
             levelAndModeStack.alpha = 0
             modeSwitchOutlet.setOn(on: false, animated: false)
-            
+            enableAccidentalsSwitchOutlet.isOn = true
             setupForModeA()
         case 0:
             menuButtonOutlet.alpha = 1
             levelAndModeStack.alpha = 0
             modeSwitchOutlet.setOn(on: true, animated: false)
-            
+            enableAccidentalsSwitchOutlet.isOn = true
             setupForModeB()
         case 8:
             modeSwitchOutlet.setOn(on: true, animated: false)
@@ -809,31 +857,79 @@ class NotesOnStaffViewController: UIViewController {
     
     @IBOutlet var noteRangeHighNotePanGestureOutlet: UIPanGestureRecognizer!
     
+    var previousTempLowNoteIndex = 0
+    
     @IBAction func handleLowNotePan(recognizer: UIPanGestureRecognizer) {
        
-        print(recognizer.location(in: noteRangeLowNoteImage).y)
-        
-        lowNoteIndex = whiteNotesOnLargeKeyboard.count - Int((Double(recognizer.location(in: noteRangeLowNoteImage).y) - noteRangeImageLocationAdjustment) / noteRangeLocationFactor)
-        
-        print("lowNoteIndex in handleLowNotePan:\(lowNoteIndex)")
-        
-        if lowNoteIndex >= 0 && lowNoteIndex < whiteNotesOnLargeKeyboard.count && lowNoteIndex < highNoteIndex {
+        // only move the note if it's in a certain range
+        if lowNoteIndex > 0 && lowNoteIndex < highNoteIndex - 1 {
+            
+            let newTempNoteIndex = whiteNotesOnLargeKeyboard.count - Int((Double(recognizer.location(in: noteRangeLowNoteImage).y) - noteRangeImageLocationAdjustment) / noteRangeLocationFactor)
+            
+            // going up
+            if newTempNoteIndex > previousTempLowNoteIndex {
+                
+                currentNoteChoices.removeFirst()
+    
+                updateNoteIndices()
+                
+            // going down
+            } else if newTempNoteIndex < previousTempLowNoteIndex {
+                
+                if allAccidentalsEnabled {
+                    let tempLowestNoteIndex = allNotesOnLargeKeyboard.index(of: currentNoteChoices.first!)!
+                    currentNoteChoices.insert(allNotesOnLargeKeyboard[tempLowestNoteIndex - 1], at: 0)
+                } else {
+                    let tempLowestNoteIndex = whiteNotesOnLargeKeyboard.index(of: currentNoteChoices.first!)!
+                    currentNoteChoices.insert(whiteNotesOnLargeKeyboard[tempLowestNoteIndex - 1], at: 0)
+                }
+                
+                updateNoteIndices()
+                
+            }
+            
             noteRangeLowNoteImage.image = UIImage(named: "staff\(whiteNotesOnLargeKeyboard[lowNoteIndex])")
+            
+            previousTempLowNoteIndex = newTempNoteIndex
         }
-        
         
     }
     
+    var previousTempHighNoteIndex = 0
     
     @IBAction func handleHighNotePan(recognizer: UIPanGestureRecognizer) {
-        print(recognizer.location(in: noteRangeLowNoteImage).y)
-        
-        highNoteIndex = whiteNotesOnLargeKeyboard.count - Int((Double(recognizer.location(in: noteRangeHighNoteImage).y) - noteRangeImageLocationAdjustment) / noteRangeLocationFactor)
-        
-        print("highNoteIndex in handleHighNotePan:\(highNoteIndex)")
-        
-        if highNoteIndex >= 0 && highNoteIndex < whiteNotesOnLargeKeyboard.count && highNoteIndex > lowNoteIndex {
+
+        // only move the note if it's in a certain range
+        if highNoteIndex < whiteNotesOnLargeKeyboard.count - 1 && highNoteIndex > lowNoteIndex + 1 {
+            
+            let newTempNoteIndex = whiteNotesOnLargeKeyboard.count - Int((Double(recognizer.location(in: noteRangeHighNoteImage).y) - noteRangeImageLocationAdjustment) / noteRangeLocationFactor)
+            
+            // going up
+            if newTempNoteIndex > previousTempHighNoteIndex {
+                
+                if allAccidentalsEnabled {
+                    let tempHighestNoteIndex = allNotesOnLargeKeyboard.index(of: currentNoteChoices.last!)!
+                    currentNoteChoices.append(allNotesOnLargeKeyboard[tempHighestNoteIndex + 1])
+                } else {
+                    let tempHighestNoteIndex = whiteNotesOnLargeKeyboard.index(of: currentNoteChoices.last!)!
+                    currentNoteChoices.append(whiteNotesOnLargeKeyboard[tempHighestNoteIndex + 1])
+                }
+                
+                updateNoteIndices()
+                
+                // going down
+            } else if newTempNoteIndex < previousTempHighNoteIndex {
+                
+                currentNoteChoices.removeLast()
+                  
+                updateNoteIndices()
+                
+            }
+            
             noteRangeHighNoteImage.image = UIImage(named: "staff\(whiteNotesOnLargeKeyboard[highNoteIndex])")
+            
+            previousTempHighNoteIndex = newTempNoteIndex
+            
         }
     }
     
@@ -929,6 +1025,9 @@ class NotesOnStaffViewController: UIViewController {
         //            includeEnharmonicsSwitchOutlet.isEnabled = false
         topLabelOutlet.image = UIImage(named: "choose_the_correct_note_on_staff")
         topLabelOutlet.transform = CGAffineTransform(scaleX: CGFloat(labelScaleMultiplierBackToNormalNotesOnStaff ), y: CGFloat(labelScaleMultiplierBackToNormalNotesOnStaff))
+        
+        accidentalsSegmentedControlOutlet.selectedSegmentIndex = 0
+        accidentalsSegmentedControlOutlet.isEnabled = false
     }
     
     func setupForModeB() {
@@ -944,6 +1043,8 @@ class NotesOnStaffViewController: UIViewController {
         //            includeEnharmonicsSwitchOutlet.isEnabled = true
         topLabelOutlet.image = UIImage(named: "tap_the_correct_key")
         topLabelOutlet.transform = CGAffineTransform(scaleX: CGFloat(labelScaleMultiplierNotesOnStaff), y: CGFloat(labelScaleMultiplierNotesOnStaff))
+        
+        accidentalsSegmentedControlOutlet.isEnabled = true
     }
     
 }
