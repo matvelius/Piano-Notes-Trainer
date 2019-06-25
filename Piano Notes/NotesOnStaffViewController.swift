@@ -272,6 +272,8 @@ class NotesOnStaffViewController: UIViewController {
             
         } else {
             setToPreviousNoteChoices()
+            onlyTrebleClefSegmentedControlOutlet.selectedSegmentIndex = 0
+            onlyBassClefSegmentedControlOutlet.selectedSegmentIndex = 0
         }
     }
     
@@ -320,6 +322,8 @@ class NotesOnStaffViewController: UIViewController {
             onlyMnemonicsSwitchOutlet.isOn = false
         } else {
             setToPreviousNoteChoices()
+            onlyTrebleClefSegmentedControlOutlet.selectedSegmentIndex = 0
+            onlyBassClefSegmentedControlOutlet.selectedSegmentIndex = 0
         }
     }
     
@@ -531,7 +535,7 @@ class NotesOnStaffViewController: UIViewController {
 //    var lowNoteIndex = 0
 //    var highNoteIndex = whiteNotesOnLargeKeyboard.count - 1
     
-    override func viewDidAppear(_ animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         currentNoteChoices = Level.currentLevel.noteChoices
         previousNoteChoices = currentNoteChoices
         
@@ -619,6 +623,10 @@ class NotesOnStaffViewController: UIViewController {
         
         if currentCorrectAnswer == "C4Bass" {
             currentCorrectAnswer = "C4"
+        } else if currentCorrectAnswer == "C#4Bass" {
+            currentCorrectAnswer = "C#4"
+        } else if currentCorrectAnswer == "Cb4Bass" {
+            currentCorrectAnswer = "B3"
         }
         
         // DEAL WITH C4bass, C#4bass, etc (is there an etc?)
@@ -823,7 +831,11 @@ class NotesOnStaffViewController: UIViewController {
                     // flat
                     if randomSharpOrFlat == 1 {
                         
-                        let currentTempNoteNameWithOctave = currentNoteChoices[randomNewNoteIndex]
+                        var currentTempNoteNameWithOctave = currentNoteChoices[randomNewNoteIndex]
+                        
+                        if currentTempNoteNameWithOctave.contains("Bass") {
+                            currentTempNoteNameWithOctave.removeLast(4)
+                        }
                         
                         let currentOctave = currentTempNoteNameWithOctave.last!
                         
@@ -859,23 +871,36 @@ class NotesOnStaffViewController: UIViewController {
                 noteOnStaffImage.image = UIImage(named: "staff\(currentCorrectAnswer)")
                 
             } else if onlyFlatsEnabled {
+                
+                if currentNoteChoices[randomNewNoteIndex].contains("#") {
             
-                let currentTempNoteNameWithOctave = currentNoteChoices[randomNewNoteIndex]
-                
-                let currentOctave = currentTempNoteNameWithOctave.last!
-                
-                let currentTempNoteNameWithoutOctave = String(currentTempNoteNameWithOctave[currentTempNoteNameWithOctave.startIndex...currentTempNoteNameWithOctave.index(after: currentTempNoteNameWithOctave.startIndex)])
-                
-                var currentNoteToDisplay = getEnharmonic(currentNote: currentTempNoteNameWithoutOctave)!
-                
-                currentNoteToDisplay.append(currentOctave)
-                
-                print("MODE B, allAccidentalsEnabled, contains(#)... currentNoteToDisplay: \(currentNoteToDisplay)")
-                
-                currentCorrectAnswer = currentNoteChoices[randomNewNoteIndex]
-                
-                // display a flat (but correctAnswer is still a sharp!)
-                noteOnStaffImage.image = UIImage(named: "staff\(currentNoteToDisplay)")
+                    var currentTempNoteNameWithOctave = currentNoteChoices[randomNewNoteIndex]
+                    
+                    if currentTempNoteNameWithOctave.contains("Bass") {
+                        currentTempNoteNameWithOctave.removeLast(4)
+                    }
+                    
+                    let currentOctave = currentTempNoteNameWithOctave.last!
+                    
+                    let currentTempNoteNameWithoutOctave = String(currentTempNoteNameWithOctave[currentTempNoteNameWithOctave.startIndex...currentTempNoteNameWithOctave.index(after: currentTempNoteNameWithOctave.startIndex)])
+                    
+                    var currentNoteToDisplay = getEnharmonic(currentNote: currentTempNoteNameWithoutOctave)!
+                    
+                    currentNoteToDisplay.append(currentOctave)
+                    
+                    print("MODE B, allAccidentalsEnabled, contains(#)... currentNoteToDisplay: \(currentNoteToDisplay)")
+                    
+                    currentCorrectAnswer = currentNoteChoices[randomNewNoteIndex]
+                    
+                    // display a flat (but correctAnswer is still a sharp!)
+                    noteOnStaffImage.image = UIImage(named: "staff\(currentNoteToDisplay)")
+                    
+                } else {
+                    
+                    currentCorrectAnswer = currentNoteChoices[randomNewNoteIndex]
+                    noteOnStaffImage.image = UIImage(named: "staff\(currentCorrectAnswer)")
+                    
+                }
                 
             } else {
                 
