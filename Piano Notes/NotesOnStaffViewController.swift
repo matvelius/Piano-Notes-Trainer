@@ -545,12 +545,14 @@ class NotesOnStaffViewController: UIViewController {
             levelAndModeStack.alpha = 0
             modeSwitchOutlet.setOn(on: false, animated: false)
             enableAccidentalsSwitchOutlet.isOn = true
+            setToAllNotesOnStaff()
             setupForModeA()
         case 0:
             menuButtonOutlet.alpha = 1
             levelAndModeStack.alpha = 0
             modeSwitchOutlet.setOn(on: true, animated: false)
             enableAccidentalsSwitchOutlet.isOn = true
+            setToAllNotesOnStaff()
             setupForModeB()
         case 8:
             modeSwitchOutlet.setOn(on: true, animated: false)
@@ -862,75 +864,89 @@ class NotesOnStaffViewController: UIViewController {
     @IBAction func handleLowNotePan(recognizer: UIPanGestureRecognizer) {
        
         // only move the note if it's in a certain range
-        if lowNoteIndex > 0 && lowNoteIndex < highNoteIndex - 1 {
+//        if lowNoteIndex >= 0  {
+        
+        print("low note moving")
+        
+        let newTempNoteIndex = whiteNotesOnLargeKeyboard.count - Int((Double(recognizer.location(in: noteRangeLowNoteImage).y) - noteRangeImageLocationAdjustment) / noteRangeLocationFactor)
+        
+        // going up
+        if newTempNoteIndex > previousTempLowNoteIndex && lowNoteIndex < highNoteIndex - 1 {
             
-            let newTempNoteIndex = whiteNotesOnLargeKeyboard.count - Int((Double(recognizer.location(in: noteRangeLowNoteImage).y) - noteRangeImageLocationAdjustment) / noteRangeLocationFactor)
+            print("low note moving up")
             
-            // going up
-            if newTempNoteIndex > previousTempLowNoteIndex {
-                
-                currentNoteChoices.removeFirst()
-    
-                updateNoteIndices()
-                
-            // going down
-            } else if newTempNoteIndex < previousTempLowNoteIndex {
-                
-                if allAccidentalsEnabled {
-                    let tempLowestNoteIndex = allNotesOnLargeKeyboard.index(of: currentNoteChoices.first!)!
-                    currentNoteChoices.insert(allNotesOnLargeKeyboard[tempLowestNoteIndex - 1], at: 0)
-                } else {
-                    let tempLowestNoteIndex = whiteNotesOnLargeKeyboard.index(of: currentNoteChoices.first!)!
-                    currentNoteChoices.insert(whiteNotesOnLargeKeyboard[tempLowestNoteIndex - 1], at: 0)
-                }
-                
-                updateNoteIndices()
-                
+            currentNoteChoices.removeFirst()
+
+            updateNoteIndices()
+            
+        // going down
+        } else if newTempNoteIndex < previousTempLowNoteIndex && lowNoteIndex > 0 {
+            
+            print("low note moving down")
+            
+            if allAccidentalsEnabled {
+                let tempLowestNoteIndex = allNotesOnLargeKeyboard.index(of: currentNoteChoices.first!)!
+                currentNoteChoices.insert(allNotesOnLargeKeyboard[tempLowestNoteIndex - 1], at: 0)
+            } else {
+                let tempLowestNoteIndex = whiteNotesOnLargeKeyboard.index(of: currentNoteChoices.first!)!
+                currentNoteChoices.insert(whiteNotesOnLargeKeyboard[tempLowestNoteIndex - 1], at: 0)
             }
             
-            noteRangeLowNoteImage.image = UIImage(named: "staff\(whiteNotesOnLargeKeyboard[lowNoteIndex])")
+            updateNoteIndices()
             
-            previousTempLowNoteIndex = newTempNoteIndex
         }
+        
+        noteRangeLowNoteImage.image = UIImage(named: "staff\(whiteNotesOnLargeKeyboard[lowNoteIndex])")
+        
+        previousTempLowNoteIndex = newTempNoteIndex
+//        }
         
     }
     
-    var previousTempHighNoteIndex = 0
+    var previousTempHighNoteIndex = whiteNotesOnLargeKeyboard.count - 1
     
     @IBAction func handleHighNotePan(recognizer: UIPanGestureRecognizer) {
 
-        // only move the note if it's in a certain range 
-        if highNoteIndex < whiteNotesOnLargeKeyboard.count - 1 && highNoteIndex > lowNoteIndex + 1 {
+//        // only move the note if it's in a certain range
+//        if highNoteIndex < whiteNotesOnLargeKeyboard.count - 1 && highNoteIndex > lowNoteIndex + 1 {
+        
+        print("high note moving")
+        
+        let newTempNoteIndex = whiteNotesOnLargeKeyboard.count - Int((Double(recognizer.location(in: noteRangeHighNoteImage).y) - noteRangeImageLocationAdjustment) / noteRangeLocationFactor)
+        
+        // going up
+        if newTempNoteIndex > previousTempHighNoteIndex && highNoteIndex < whiteNotesOnLargeKeyboard.count - 1 {
             
-            let newTempNoteIndex = whiteNotesOnLargeKeyboard.count - Int((Double(recognizer.location(in: noteRangeHighNoteImage).y) - noteRangeImageLocationAdjustment) / noteRangeLocationFactor)
+            print("high note moving up")
             
-            // going up
-            if newTempNoteIndex > previousTempHighNoteIndex {
-                
-                if allAccidentalsEnabled {
-                    let tempHighestNoteIndex = allNotesOnLargeKeyboard.index(of: currentNoteChoices.last!)!
-                    currentNoteChoices.append(allNotesOnLargeKeyboard[tempHighestNoteIndex + 1])
-                } else {
-                    let tempHighestNoteIndex = whiteNotesOnLargeKeyboard.index(of: currentNoteChoices.last!)!
-                    currentNoteChoices.append(whiteNotesOnLargeKeyboard[tempHighestNoteIndex + 1])
-                }
-                
-                updateNoteIndices()
-                
-                // going down
-            } else if newTempNoteIndex < previousTempHighNoteIndex {
-                
-                currentNoteChoices.removeLast()
-                  
-                updateNoteIndices()
-                
+            print("currentNoteChoices.last: \(currentNoteChoices.last)")
+            
+            if allAccidentalsEnabled {
+                let tempHighestNoteIndex = allNotesOnLargeKeyboard.index(of: currentNoteChoices.last!)!
+                currentNoteChoices.append(allNotesOnLargeKeyboard[tempHighestNoteIndex + 1])
+            } else {
+                let tempHighestNoteIndex = whiteNotesOnLargeKeyboard.index(of: currentNoteChoices.last!)!
+                currentNoteChoices.append(whiteNotesOnLargeKeyboard[tempHighestNoteIndex + 1])
             }
             
-            noteRangeHighNoteImage.image = UIImage(named: "staff\(whiteNotesOnLargeKeyboard[highNoteIndex])")
+            updateNoteIndices()
             
-            previousTempHighNoteIndex = newTempNoteIndex
+            // going down
+        } else if newTempNoteIndex < previousTempHighNoteIndex && highNoteIndex > lowNoteIndex + 1 {
+            
+            print("high note moving down")
+            
+            currentNoteChoices.removeLast()
+            
+            updateNoteIndices()
             
         }
+        
+        noteRangeHighNoteImage.image = UIImage(named: "staff\(whiteNotesOnLargeKeyboard[highNoteIndex])")
+        
+        previousTempHighNoteIndex = newTempNoteIndex
+            
+//        }
     }
     
     var noteIndex = 0
