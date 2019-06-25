@@ -11,7 +11,7 @@ import UIKit
 class ExplainerViewController: UIViewController {
     
     var explainerStartIndex = 1
-    var explainerEndIndex = 5
+    var explainerEndIndex = 6
     var explainerCurrentIndex = 1
     
     
@@ -76,10 +76,10 @@ class ExplainerViewController: UIViewController {
         switch currentGameType {
         case .noteNames:
             explainerStartIndex = 1
-            explainerEndIndex = 5
+            explainerEndIndex = 6
         case .notesOnStaff:
-            explainerStartIndex = 6
-            explainerEndIndex = 8
+            explainerStartIndex = 7
+            explainerEndIndex = 9
         }
         
         explainerCurrentIndex = explainerStartIndex
@@ -115,9 +115,9 @@ class ExplainerViewController: UIViewController {
         switch currentGameType {
         case .noteNames:
             currentProgress = explainerCurrentIndex
-            progressBarEndIndex = 5
+            progressBarEndIndex = 6
         case .notesOnStaff:
-            currentProgress = explainerCurrentIndex - 5
+            currentProgress = explainerCurrentIndex - 6
             progressBarEndIndex = 3
         }
         progressBar.setProgress(Float(currentProgress) / Float(progressBarEndIndex), animated: true)

@@ -778,6 +778,8 @@ class NoteNamesViewController: UIViewController {
     // for keeping track of piano keys already tried
     var notesAlreadyAttempted = [String]()
     
+    var showAlertAtFiveStars = true
+    
     func checkAnswer() {
         
         // placeholder variable for button image name
@@ -893,13 +895,14 @@ class NoteNamesViewController: UIViewController {
             giveOrTakeAStar()
             stars.image = UIImage(named: "stars\(currentNumberOfStars)")
             
-            if currentNumberOfStars == 5 && Level.currentLevel.id > 0 {
+            if currentNumberOfStars == 5 && Level.currentLevel.id > 0 && showAlertAtFiveStars {
                 Alert.showFinishLevelAlert(on: self)
 //                allLevels[0][Level.currentLevel.id - 1].isComplete = true
                 levelsCompleted.append(Level.currentLevel.id)
 //                AppData.dataToSaveForCurrentUser
                 appDataForCurrentUser.levelsCompleted = levelsCompleted
                 print("dataToSaveForCurrentUser.levelsCompleted: \(appDataForCurrentUser.levelsCompleted)")
+                showAlertAtFiveStars = false
                 
 //                AppData.saveToFile(dataToSave: appDataForCurrentUser)
             }

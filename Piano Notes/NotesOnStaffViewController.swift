@@ -479,16 +479,20 @@ class NotesOnStaffViewController: UIViewController {
             menuButtonOutlet.alpha = 1
             levelAndModeStack.alpha = 0
             modeSwitchOutlet.setOn(on: false, animated: false)
+            
+            setupForModeA()
         case 0:
             menuButtonOutlet.alpha = 1
             levelAndModeStack.alpha = 0
             modeSwitchOutlet.setOn(on: true, animated: false)
-            switchModes()
+            
+            setupForModeB()
         case 8:
             modeSwitchOutlet.setOn(on: true, animated: false)
-            switchModes()
+            setupForModeB()
         default:
             modeSwitchOutlet.setOn(on: false, animated: false)
+            setupForModeA()
         }
         
         currentLevelOutlet.text = String(Level.currentLevel.id)
@@ -534,6 +538,8 @@ class NotesOnStaffViewController: UIViewController {
     
     // for keeping track of piano keys already tried
     var notesAlreadyAttempted = [String]()
+    
+    var showAlertAtFiveStars = true
     
     func checkAnswer() {
         
@@ -636,12 +642,12 @@ class NotesOnStaffViewController: UIViewController {
             giveOrTakeAStar()
             starsImageOutlet.image = UIImage(named: "stars\(currentNumberOfStars)")
             
-            if currentNumberOfStars == 5 && Level.currentLevel.id > 0 {
+            if currentNumberOfStars == 5 && Level.currentLevel.id > 0 && showAlertAtFiveStars {
                 Alert.showFinishLevelAlert(on: self)
                 levelsCompleted.append(Level.currentLevel.id)
                 appDataForCurrentUser.levelsCompleted = levelsCompleted
                 print("dataToSaveForCurrentUser.levelsCompleted: \(appDataForCurrentUser.levelsCompleted)")
-                
+                showAlertAtFiveStars = false 
 //                AppData.saveToFile(dataToSave: appDataForCurrentUser)
             }
             
@@ -753,28 +759,30 @@ class NotesOnStaffViewController: UIViewController {
         
     }
     
-    @IBAction func handleMainNotePanGesture(recognizer: UIPanGestureRecognizer) {
-        
-//        print(recognizer.velocity(in: self.view).y)
-        
-        if recognizer.velocity(in: self.view).y < 0 && Int(locationTracker) < whiteNotesOnLargeKeyboard.count - 1 {
-//            print("panning up!")
-            locationTracker += 0.17
-            
-            if recognizer.velocity(in: self.view).y < -150 && Int(locationTracker) < whiteNotesOnLargeKeyboard.count - 1 {
-                locationTracker += 0.5
-            }
-        
-        } else if recognizer.velocity(in: self.view).y > 0 && locationTracker > 0 {
-            locationTracker -= 0.17
-//            print("panning down!")
-            
-            if recognizer.velocity(in: self.view).y > 150 && locationTracker > 0 {
-                locationTracker -= 0.5
-            }
-        }
-        
-    }
+    // old way of scrolling thru the notes on staff
+    
+//    @IBAction func handleMainNotePanGesture(recognizer: UIPanGestureRecognizer) {
+//
+////        print(recognizer.velocity(in: self.view).y)
+//
+//        if recognizer.velocity(in: self.view).y < 0 && Int(locationTracker) < whiteNotesOnLargeKeyboard.count - 1 {
+////            print("panning up!")
+//            locationTracker += 0.17
+//
+//            if recognizer.velocity(in: self.view).y < -150 && Int(locationTracker) < whiteNotesOnLargeKeyboard.count - 1 {
+//                locationTracker += 0.5
+//            }
+//
+//        } else if recognizer.velocity(in: self.view).y > 0 && locationTracker > 0 {
+//            locationTracker -= 0.17
+////            print("panning down!")
+//
+//            if recognizer.velocity(in: self.view).y > 150 && locationTracker > 0 {
+//                locationTracker -= 0.5
+//            }
+//        }
+//
+//    }
     
     @IBOutlet var noteRangeLowNotePanGestureOutlet: UIPanGestureRecognizer!
     
@@ -874,36 +882,43 @@ class NotesOnStaffViewController: UIViewController {
         switch currentGameMode {
         case .A:
             print("switching to mode B")
-            currentGameMode = .B
-            
-            // hide mode A controls
-            accidentalsButtonsOutlet.alpha = 0
-            arrowAndCheckButtonsOutlet.alpha = 0
-            
-            allKeyButtons.isUserInteractionEnabled = true
-            noteOnStaffImage.isUserInteractionEnabled = false
-            
-            //            includeEnharmonicsSwitchOutlet.isEnabled = true
-            topLabelOutlet.image = UIImage(named: "tap_the_correct_key")
-            topLabelOutlet.transform = CGAffineTransform(scaleX: CGFloat(labelScaleMultiplierNotesOnStaff), y: CGFloat(labelScaleMultiplierNotesOnStaff))
+            setupForModeB()
         case .B:
             print("switching to mode A")
-            currentGameMode = .A
-            
-            // show mode A controls
-            accidentalsButtonsOutlet.alpha = 1
-            arrowAndCheckButtonsOutlet.alpha = 1
-            
-            allKeyButtons.isUserInteractionEnabled = false
-            noteOnStaffImage.isUserInteractionEnabled = true
-            
-            //            includeEnharmonicsSwitchOutlet.isEnabled = false
-            topLabelOutlet.image = UIImage(named: "choose_the_correct_note_on_staff")
-            topLabelOutlet.transform = CGAffineTransform(scaleX: CGFloat(labelScaleMultiplierBackToNormalNotesOnStaff ), y: CGFloat(labelScaleMultiplierBackToNormalNotesOnStaff))
-            //            topLabelOutlet.frame.width
+            setupForModeA()
         }
         
         startNewRound()
+    }
+    
+    func setupForModeA() {
+        currentGameMode = .A
+        
+        // show mode A controls
+        accidentalsButtonsOutlet.alpha = 1
+        arrowAndCheckButtonsOutlet.alpha = 1
+        
+        allKeyButtons.isUserInteractionEnabled = false
+        noteOnStaffImage.isUserInteractionEnabled = true
+        
+        //            includeEnharmonicsSwitchOutlet.isEnabled = false
+        topLabelOutlet.image = UIImage(named: "choose_the_correct_note_on_staff")
+        topLabelOutlet.transform = CGAffineTransform(scaleX: CGFloat(labelScaleMultiplierBackToNormalNotesOnStaff ), y: CGFloat(labelScaleMultiplierBackToNormalNotesOnStaff))
+    }
+    
+    func setupForModeB() {
+        currentGameMode = .B
+        
+        // hide mode A controls
+        accidentalsButtonsOutlet.alpha = 0
+        arrowAndCheckButtonsOutlet.alpha = 0
+        
+        allKeyButtons.isUserInteractionEnabled = true
+        noteOnStaffImage.isUserInteractionEnabled = false
+        
+        //            includeEnharmonicsSwitchOutlet.isEnabled = true
+        topLabelOutlet.image = UIImage(named: "tap_the_correct_key")
+        topLabelOutlet.transform = CGAffineTransform(scaleX: CGFloat(labelScaleMultiplierNotesOnStaff), y: CGFloat(labelScaleMultiplierNotesOnStaff))
     }
     
 }
