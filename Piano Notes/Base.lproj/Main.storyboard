@@ -1707,7 +1707,7 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nSr-W9-D5Q" userLabel="between top spacer and note on staff">
-                                <rect key="frame" x="0.0" y="95" width="1366" height="27"/>
+                                <rect key="frame" x="0.0" y="95" width="1366" height="31"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uAe-70-Bet" userLabel="TRUTH">
@@ -1718,11 +1718,11 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yns-Qx-CKC" userLabel="between red spacer and lining up note on staff">
-                                <rect key="frame" x="0.0" y="122" width="1366" height="186"/>
+                                <rect key="frame" x="0.0" y="126" width="1366" height="186"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="S3S-p5-kwV" userLabel="line up note on staff btns">
-                                <rect key="frame" x="412.5" y="308" width="541.5" height="103.5"/>
+                                <rect key="frame" x="412.5" y="312" width="541.5" height="103.5"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wc3-Og-gVF" userLabel="between black keys and right">
@@ -1746,7 +1746,7 @@
                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
                             <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="staffA2" translatesAutoresizingMaskIntoConstraints="NO" id="gqB-He-zfK" userLabel="note on staff">
-                                <rect key="frame" x="392.5" y="122" width="541.5" height="475.5"/>
+                                <rect key="frame" x="392.5" y="126" width="541.5" height="475.5"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <gestureRecognizers/>
                                 <connections>
@@ -1760,7 +1760,7 @@
                                 </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="34" translatesAutoresizingMaskIntoConstraints="NO" id="246-8n-5LY" userLabel="accidentals buttons">
-                                <rect key="frame" x="312.5" y="240.5" width="100" height="238.5"/>
+                                <rect key="frame" x="312.5" y="244.5" width="100" height="238.5"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XUU-hi-oKk">
                                         <rect key="frame" x="0.0" y="0.0" width="100" height="56.5"/>
@@ -1802,7 +1802,7 @@
                                 <viewLayoutGuide key="safeArea" id="IHP-MF-gPZ"/>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="34" translatesAutoresizingMaskIntoConstraints="NO" id="yxa-Ew-apy" userLabel="arrow &amp; check buttons">
-                                <rect key="frame" x="924" y="240.5" width="100" height="238.5"/>
+                                <rect key="frame" x="924" y="244.5" width="100" height="238.5"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ER3-C7-JRH">
                                         <rect key="frame" x="0.0" y="0.0" width="100" height="56.5"/>
@@ -3299,7 +3299,7 @@
                             <constraint firstItem="Q0v-F4-hoG" firstAttribute="width" secondItem="Bcp-rj-qSy" secondAttribute="width" multiplier="5:1366" id="NcM-GH-a27"/>
                             <constraint firstItem="Bcp-rj-qSy" firstAttribute="top" secondItem="tec-47-C5m" secondAttribute="top" id="Nl7-QD-dNV"/>
                             <constraint firstItem="39M-bi-zO3" firstAttribute="width" secondItem="Bcp-rj-qSy" secondAttribute="width" id="OCA-Yp-RZV"/>
-                            <constraint firstItem="nSr-W9-D5Q" firstAttribute="height" secondItem="tec-47-C5m" secondAttribute="height" multiplier="27:1024" id="P83-Ss-899"/>
+                            <constraint firstItem="nSr-W9-D5Q" firstAttribute="height" secondItem="tec-47-C5m" secondAttribute="height" multiplier="31:1024" id="P83-Ss-899"/>
                             <constraint firstItem="ZPJ-G6-G5B" firstAttribute="width" secondItem="tec-47-C5m" secondAttribute="width" multiplier="52:1366" id="PtZ-vK-yp8"/>
                             <constraint firstItem="Bcp-rj-qSy" firstAttribute="trailing" secondItem="tec-47-C5m" secondAttribute="trailing" id="QPH-6d-rYL"/>
                             <constraint firstItem="JzE-h9-iEf" firstAttribute="top" secondItem="Wc3-Og-gVF" secondAttribute="top" id="QcJ-yz-UtQ"/>
