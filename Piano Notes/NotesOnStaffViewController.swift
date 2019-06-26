@@ -841,8 +841,12 @@ class NotesOnStaffViewController: UIViewController {
             
             currentCorrectAnswer = currentNoteChoices[randomNewNoteIndex]
             
-            if currentCorrectAnswer == "C4bass" {
+            if currentCorrectAnswer == "C4Bass" {
                 pianoNoteDisplayed.image = UIImage(named: "large_C4_shown")
+            } else if currentCorrectAnswer == "C#4Bass" {
+                pianoNoteDisplayed.image = UIImage(named: "large_C#4_shown")
+            } else if currentCorrectAnswer == "Cb4Bass" {
+                pianoNoteDisplayed.image = UIImage(named: "large_B3_shown")
             } else {
                 pianoNoteDisplayed.image = UIImage(named: "large_\(currentCorrectAnswer)_shown")
             }
