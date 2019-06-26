@@ -1174,6 +1174,7 @@ class NotesOnStaffViewController: UIViewController {
         accidentalsButtonsOutlet.alpha = 1
         arrowAndCheckButtonsOutlet.alpha = 1
         
+        allKeyButtons.alpha = 0
         allKeyButtons.isUserInteractionEnabled = false
         noteOnStaffImage.isUserInteractionEnabled = true
         
@@ -1192,6 +1193,7 @@ class NotesOnStaffViewController: UIViewController {
         accidentalsButtonsOutlet.alpha = 0
         arrowAndCheckButtonsOutlet.alpha = 0
         
+        allKeyButtons.alpha = 1
         allKeyButtons.isUserInteractionEnabled = true
         noteOnStaffImage.isUserInteractionEnabled = false
         
