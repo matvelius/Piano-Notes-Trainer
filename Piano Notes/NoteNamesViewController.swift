@@ -91,6 +91,8 @@ class NoteNamesViewController: UIViewController {
         if sender.isOn {
             
             onlyBlackKeysSwitchOutlet.setOn(false, animated: true)
+            weirdEnharmonicsEnabled = false
+            includeEnharmonicsSwitchOutlet.isOn = false
             
             setToOnlyWhiteKeys()
         
@@ -133,6 +135,9 @@ class NoteNamesViewController: UIViewController {
         
         onlyWhiteKeysSwitchOutlet.setOn(true, animated: true)
         onlyBlackKeysSwitchOutlet.setOn(false, animated: true)
+        blackKeySettingsSegmentedControlOutlet.selectedSegmentIndex = 0
+        weirdEnharmonicsEnabled = false
+        includeEnharmonicsSwitchOutlet.isOn = false
         
         
         if sender.selectedSegmentIndex == 0 {
@@ -186,6 +191,10 @@ class NoteNamesViewController: UIViewController {
         
         if sender.isOn {
             weirdEnharmonicsEnabled = true
+            onlyWhiteKeysSwitchOutlet.isOn = false
+            onlyBlackKeysSwitchOutlet.isOn = false
+            whiteKeySettingsSegmentedControlOutlet.selectedSegmentIndex = 0
+            blackKeySettingsSegmentedControlOutlet.selectedSegmentIndex = 0
         } else {
             weirdEnharmonicsEnabled = false
         }
@@ -201,6 +210,7 @@ class NoteNamesViewController: UIViewController {
             
             blackKeySettingsSegmentedControlOutlet.selectedSegmentIndex = 0
             weirdEnharmonicsEnabled = false
+            includeEnharmonicsSwitchOutlet.isOn = false
             onlyWhiteKeysSwitchOutlet.setOn(false, animated: true)
             
             enableButtons()
@@ -224,6 +234,8 @@ class NoteNamesViewController: UIViewController {
         onlyWhiteKeysSwitchOutlet.setOn(false, animated: true)
         whiteKeySettingsSegmentedControlOutlet.selectedSegmentIndex = 0
         onlyBlackKeysSwitchOutlet.setOn(true, animated: true)
+        weirdEnharmonicsEnabled = false
+        includeEnharmonicsSwitchOutlet.isOn = false
         
         enableButtons()
         
@@ -559,6 +571,8 @@ class NoteNamesViewController: UIViewController {
         } else {
             enableSoundsSwitchOutlet.isOn = false
         }
+        
+        includeEnharmonicsSwitchOutlet.isOn = false
     }
     
 //    override func viewDidAppear(_ animated: Bool) {
