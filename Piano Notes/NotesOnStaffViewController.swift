@@ -304,6 +304,8 @@ class NotesOnStaffViewController: UIViewController {
             
         }
         
+        updateNoteRangeImages()
+        
         onlyMnemonicsSwitchOutlet.isOn = false
     }
     
@@ -355,6 +357,8 @@ class NotesOnStaffViewController: UIViewController {
             accidentalsSegmentedControlOutlet.selectedSegmentIndex = 0
             
         }
+        
+        updateNoteRangeImages()
         
         onlyMnemonicsSwitchOutlet.isOn = false
     }
