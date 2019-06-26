@@ -251,6 +251,9 @@ class NotesOnStaffViewController: UIViewController {
             onlyFlatsEnabled = true
             
         }
+        
+        onlyMnemonicsSwitchOutlet.isOn = false
+        
     }
     
     @IBAction func onlyTrebleClefSwitchFlipped(_ sender: UISwitch) {
@@ -300,6 +303,8 @@ class NotesOnStaffViewController: UIViewController {
             accidentalsSegmentedControlOutlet.selectedSegmentIndex = 0
             
         }
+        
+        onlyMnemonicsSwitchOutlet.isOn = false
     }
     
     @IBOutlet weak var onlyTrebleClefSegmentedControlOutlet: UISegmentedControl!
@@ -350,6 +355,8 @@ class NotesOnStaffViewController: UIViewController {
             accidentalsSegmentedControlOutlet.selectedSegmentIndex = 0
             
         }
+        
+        onlyMnemonicsSwitchOutlet.isOn = false
     }
     
     @IBOutlet weak var onlyBassClefSegmentedControlOutlet: UISegmentedControl!
@@ -462,12 +469,15 @@ class NotesOnStaffViewController: UIViewController {
             updateNoteRangeImages()
             
             enableAccidentalsSwitchOutlet.isOn = false
+            accidentalsSegmentedControlOutlet.selectedSegmentIndex = 0
+            
             onlyTrebleClefSwitchOutlet.isOn = false
             onlyBassClefSwitchOutlet.isOn = false
             onlyGuideNotesSwitchOutlet.isOn = false
             
             onlyTrebleClefSegmentedControlOutlet.selectedSegmentIndex = 1
             onlyBassClefSegmentedControlOutlet.selectedSegmentIndex = 1
+            print("currentNoteChoices in Mnemonics: \(currentNoteChoices)")
         } else {
             setToPreviousNoteChoices()
         }
@@ -1110,6 +1120,7 @@ class NotesOnStaffViewController: UIViewController {
     func updateNoteRangeImages() {
         noteRangeLowNoteImage.image = UIImage(named: "staff\(whiteNotesOnLargeKeyboard[lowNoteIndex])")
         noteRangeHighNoteImage.image = UIImage(named: "staff\(whiteNotesOnLargeKeyboard[highNoteIndex])")
+        print("note range images updated!")
     }
     
     func loadSound(currentSound: String) {
