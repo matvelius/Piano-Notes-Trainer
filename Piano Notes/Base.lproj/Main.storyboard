@@ -21,7 +21,7 @@
                         <color key="separatorColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleAspectFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="LevelCell" focusStyle="custom" rowHeight="120" id="LI0-cB-Ct0" customClass="LevelTableViewCell" customModule="Piano_Notes" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="LevelCell" focusStyle="custom" rowHeight="120" id="LI0-cB-Ct0" customClass="LevelTableViewCell" customModule="Piano_Notes" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="55.5" width="1366" height="120"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="LI0-cB-Ct0" id="qwI-5X-ttC">
@@ -3555,7 +3555,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="learnSectionCell" rowHeight="120" id="Wjc-Ka-4WA" customClass="LearnSectionTableViewCell" customModule="Piano_Notes" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="learnSectionCell" focusStyle="custom" rowHeight="120" id="Wjc-Ka-4WA" customClass="LearnSectionTableViewCell" customModule="Piano_Notes" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="1366" height="120"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Wjc-Ka-4WA" id="n2R-ye-xCW">
@@ -3858,7 +3858,7 @@
         <image name="white_piano_12.9_large" width="910.66668701171875" height="538.66668701171875"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Ojy-u5-yal"/>
-        <segue reference="gpG-aX-QFw"/>
+        <segue reference="Nhi-lG-mWi"/>
+        <segue reference="h7l-c7-UJA"/>
     </inferredMetricsTieBreakers>
 </document>

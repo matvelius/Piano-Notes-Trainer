@@ -55,8 +55,10 @@ class LearnSectionTableViewController: UITableViewController {
         let lesson = allLessonTitlesAndSubtitles[indexPath.row]
         
         cell.updateCell(with: lesson, lessonID: indexPath.row, imageIndex: indexPath.row + 1)
-
-        // Configure the cell...
+        
+        let selectedView = UIView()
+        selectedView.backgroundColor = UIColor(red: 250/255, green: 250/255, blue: 250/255, alpha: 0.1)
+        cell.selectedBackgroundView = selectedView
 
         return cell
     }
