@@ -19,6 +19,9 @@ class NoteNamesViewController: UIViewController {
     
     @IBOutlet weak var modeSwitchOutlet: CustomSwitch!
     
+    
+    
+    
     @IBAction func customModeSwitchFlipped(_ sender: CustomSwitch) {
         print("SWITCH TRIGGERED!")
         switch currentGameMode {
@@ -69,8 +72,9 @@ class NoteNamesViewController: UIViewController {
     
     @IBOutlet weak var topLabelOutlet: UIImageView!
     
+    @IBOutlet weak var modeSegmentedControlOutlet: UISegmentedControl!
     
-    @IBAction func modeSwitchFlipped(_ sender: UISegmentedControl) {
+    @IBAction func modeSegmentedControlChanged(_ sender: UISegmentedControl) {
         
         switch currentGameMode {
         case .A:
@@ -1472,8 +1476,14 @@ class NoteNamesViewController: UIViewController {
         // FREEPLAY SECTION
         case -3:
             
-            modeSwitchOutlet.setOn(on: false, animated: false)
+//            modeSwitchOutlet.setOn(on: false, animated: false)
             switchToModeA()
+            includeEnharmonicsSwitchOutlet.isEnabled = false
+            includeEnharmonicsSwitchOutlet.isOn = false
+            onlyWhiteKeysSwitchOutlet.isOn = false
+            whiteKeySettingsSegmentedControlOutlet.selectedSegmentIndex = 0
+            onlyBlackKeysSwitchOutlet.isOn = false
+            blackKeySettingsSegmentedControlOutlet.selectedSegmentIndex = 0
             
             setToAllNoteChoicesNoteNames()
             enableButtons()
@@ -1488,8 +1498,15 @@ class NoteNamesViewController: UIViewController {
             
         case -2:
             
-            modeSwitchOutlet.setOn(on: true, animated: false)
+//            modeSwitchOutlet.setOn(on: true, animated: false)
             switchToModeB()
+            
+            includeEnharmonicsSwitchOutlet.isEnabled = true
+            includeEnharmonicsSwitchOutlet.isOn = true
+            onlyWhiteKeysSwitchOutlet.isOn = false
+            whiteKeySettingsSegmentedControlOutlet.selectedSegmentIndex = 0
+            onlyBlackKeysSwitchOutlet.isOn = false
+            blackKeySettingsSegmentedControlOutlet.selectedSegmentIndex = 0
             
             setToAllNoteChoicesNoteNames()
             disableButtons()
@@ -1696,6 +1713,7 @@ class NoteNamesViewController: UIViewController {
         includeEnharmonicsSwitchOutlet.isEnabled = false
         topLabelOutlet.image = UIImage(named: "name_the_highlighted_note")
         topLabelOutlet.transform = CGAffineTransform(scaleX: CGFloat(labelScaleMultiplierBackToNormal ), y: CGFloat(labelScaleMultiplierBackToNormal))
+        modeSegmentedControlOutlet.selectedSegmentIndex = 0
     }
     
     func switchToModeB() {
@@ -1704,6 +1722,7 @@ class NoteNamesViewController: UIViewController {
         includeEnharmonicsSwitchOutlet.isEnabled = true
         topLabelOutlet.image = UIImage(named: "tap_the_correct_key")
         topLabelOutlet.transform = CGAffineTransform(scaleX: CGFloat(labelScaleMultiplier), y: CGFloat(labelScaleMultiplier))
+        modeSegmentedControlOutlet.selectedSegmentIndex = 1
     }
     
 }

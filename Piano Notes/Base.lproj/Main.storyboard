@@ -1275,7 +1275,7 @@
                                                             <segment title="MODE B"/>
                                                         </segments>
                                                         <connections>
-                                                            <action selector="modeSwitchFlipped:" destination="BYZ-38-t0r" eventType="valueChanged" id="7yk-2b-DHi"/>
+                                                            <action selector="modeSegmentedControlChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="7yk-2b-DHi"/>
                                                         </connections>
                                                     </segmentedControl>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalCompressionResistancePriority="749" verticalCompressionResistancePriority="751" text="MODE A: choose correct note-name based on the piano key shown" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aYS-rP-bjD">
@@ -1568,6 +1568,7 @@
                         <outlet property="menuButtonOutlet" destination="2co-F0-3U7" id="1ST-40-bMw"/>
                         <outlet property="menuContainerOutlet" destination="QG9-26-Oaz" id="5NY-0c-wug"/>
                         <outlet property="menuTrailingConstraint" destination="EHH-lo-W0B" id="pFb-CA-dT9"/>
+                        <outlet property="modeSegmentedControlOutlet" destination="7Vo-KA-Cd6" id="Gxr-lf-D5J"/>
                         <outlet property="modeStack" destination="3KJ-ai-L39" id="hCM-Wc-SwG"/>
                         <outlet property="modeSwitchOutlet" destination="XCE-TS-1sj" id="CMj-4f-R8H"/>
                         <outlet property="noteButtonA" destination="tVB-E4-Spp" id="GUG-jX-giW"/>
