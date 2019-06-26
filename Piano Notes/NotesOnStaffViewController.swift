@@ -581,6 +581,7 @@ class NotesOnStaffViewController: UIViewController {
             modeSwitchOutlet.setOn(on: true, animated: false)
             modeStack.alpha = 0
             setupForModeB()
+            setToAllBlackKeys()
         default:
             modeSwitchOutlet.setOn(on: false, animated: false)
             setupForModeA()
