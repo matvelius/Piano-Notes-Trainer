@@ -701,30 +701,8 @@ class NotesOnStaffViewController: UIViewController {
         if currentUserAnswer == currentCorrectAnswer || currentEnharmonic == currentCorrectAnswer {
             print("correct!")
             
-            switch currentGameMode {
-            case .A:
-                checkButtonOutlet.setImage(UIImage(named: "check_right"), for: .normal)
-                DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1), execute:{
-                    self.checkButtonOutlet.setImage(UIImage(named: "check"), for: .normal)
-                    self.generateNewNote()
-                })
-            case .B:
-                print("CORRECT - CASE B!")
-                pianoNoteDisplayed.image = UIImage(named: "large_\(currentCorrectAnswer)_right")
-                DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1), execute:{
-                    self.generateNewNote()
-                })
-            }
-            
-            
             // play sound
             if soundsEnabled {
-                
-//                switch currentGameMode {
-//                case .A: loadSound(currentSound: currentNote)
-//                case .B: loadSound(currentSound: nameOfKeyToHighlight)
-//                }
-                
                 loadSound(currentSound: "\(currentCorrectAnswer)")
                 
                 audioPlayer!.play()
@@ -737,6 +715,27 @@ class NotesOnStaffViewController: UIViewController {
             incorrectAnswersInARow = 0
             giveOrTakeAStar()
             starsImageOutlet.image = UIImage(named: "stars\(currentNumberOfStars)")
+            
+            allKeyButtons.alpha = 0
+            
+            switch currentGameMode {
+            case .A:
+                checkButtonOutlet.setImage(UIImage(named: "check_right"), for: .normal)
+                DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1), execute:{
+                    self.checkButtonOutlet.setImage(UIImage(named: "check"), for: .normal)
+                    self.generateNewNote()
+                })
+            case .B:
+                print("CORRECT - CASE B!")
+                pianoNoteDisplayed.image = UIImage(named: "large_\(currentCorrectAnswer)_right")
+                DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1), execute:{
+                    self.generateNewNote()
+                    self.allKeyButtons.alpha = 1
+                })
+            }
+            
+            
+            
             
             if currentNumberOfStars == 5 && Level.currentLevel.id > 0 && showAlertAtFiveStars {
                 Alert.showFinishLevelAlert(on: self)

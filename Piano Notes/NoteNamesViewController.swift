@@ -867,26 +867,6 @@ class NoteNamesViewController: UIViewController {
                 audioPlayer!.play()
                 audioPlayer!.setVolume(0, fadeDuration: 2.5)
             }
-            //            print(currentNote)
-            //            play(sound: "\(currentNote)", ofType: .wav)
-            
-            
-            // ANIMATING BUTTON SIZE ON CORRECT ANSWER:
-//            noteButtonAHeight.constant = 130
-//
-//            UIView.animate(withDuration: 2.5) {
-//                self.view.layoutIfNeeded()
-//            }
-            
-//            self.menuLeadingConstraint.constant = -460
-            
-//            UIView.animate(withDuration: 0.5, delay: 0.0, options: .curveEaseIn, animations: {
-//
-//                self.view.layoutIfNeeded()
-//                self.darkOverlayOutlet.alpha = 0
-//                self.menuBackgroundOutlet.alpha = 0
-//
-//            })
             
             // update score
             totalScore += 1
@@ -897,14 +877,11 @@ class NoteNamesViewController: UIViewController {
             
             if currentNumberOfStars == 5 && Level.currentLevel.id > 0 && showAlertAtFiveStars {
                 Alert.showFinishLevelAlert(on: self)
-//                allLevels[0][Level.currentLevel.id - 1].isComplete = true
                 levelsCompleted.append(Level.currentLevel.id)
-//                AppData.dataToSaveForCurrentUser
                 appDataForCurrentUser.levelsCompleted = levelsCompleted
                 print("dataToSaveForCurrentUser.levelsCompleted: \(appDataForCurrentUser.levelsCompleted)")
                 showAlertAtFiveStars = false
                 
-//                AppData.saveToFile(dataToSave: appDataForCurrentUser)
             }
             
             //            usleep(1000000) //will sleep for 1 second
