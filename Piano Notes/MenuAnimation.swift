@@ -179,10 +179,10 @@ extension NotesOnStaffViewController {
             
             print("allAccidentalsEnabled || onlySharpsEnabled || onlyFlatsEnabled, whiteNotesOnLargeKeyboard[lowNoteIndex]: \(whiteNotesOnLargeKeyboard[lowNoteIndex]), whiteNotesOnLargeKeyboard[highNoteIndex]: \(whiteNotesOnLargeKeyboard[highNoteIndex])")
 
-            let tempLowNoteIndex = allNotesOnLargeKeyboard.index(of: whiteNotesOnLargeKeyboard[lowNoteIndex])!
-            let tempHighNoteIndex = allNotesOnLargeKeyboard.index(of: whiteNotesOnLargeKeyboard[highNoteIndex])!
+            let tempLowNoteIndex = allNotesOnLargeKeyboardForVariousSettings.index(of: whiteNotesOnLargeKeyboard[lowNoteIndex])!
+            let tempHighNoteIndex = allNotesOnLargeKeyboardForVariousSettings.index(of: whiteNotesOnLargeKeyboard[highNoteIndex])!
             
-            currentNoteChoices = Array(allNotesOnLargeKeyboard[tempLowNoteIndex...tempHighNoteIndex])
+            currentNoteChoices = Array(allNotesOnLargeKeyboardForVariousSettings[tempLowNoteIndex...tempHighNoteIndex])
             
         } else {
             

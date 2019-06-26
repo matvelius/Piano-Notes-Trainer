@@ -361,9 +361,11 @@ class NotesOnStaffViewController: UIViewController {
 
     
     @IBAction func noteRangeLowNoteUp(_ sender: UIButton) {
+        
         if lowNoteIndex < highNoteIndex - 1 {
             currentNoteChoices.removeFirst()
             print("currentNoteChoices: \(currentNoteChoices)")
+            
             
             updateNoteIndices()
             
@@ -372,11 +374,18 @@ class NotesOnStaffViewController: UIViewController {
     }
     
     @IBAction func noteRangeLowNoteDown(_ sender: UIButton) {
+        
+        if lowNoteIndex < 15 {
+            onlyTrebleClefBlackNotesEnabled = false
+            onlyTrebleClefSwitchOutlet.isOn = false
+            onlyTrebleClefSegmentedControlOutlet.selectedSegmentIndex = 0
+        }
+        
         if lowNoteIndex > 0 {
             
             if allAccidentalsEnabled {
-                let tempLowestNoteIndex = allNotesOnLargeKeyboard.index(of: currentNoteChoices.first!)!
-                currentNoteChoices.insert(allNotesOnLargeKeyboard[tempLowestNoteIndex - 1], at: 0)
+                let tempLowestNoteIndex = allNotesOnLargeKeyboardForVariousSettings.index(of: currentNoteChoices.first!)!
+                currentNoteChoices.insert(allNotesOnLargeKeyboardForVariousSettings[tempLowestNoteIndex - 1], at: 0)
             } else {
                 let tempLowestNoteIndex = whiteNotesOnLargeKeyboard.index(of: currentNoteChoices.first!)!
                 currentNoteChoices.insert(whiteNotesOnLargeKeyboard[tempLowestNoteIndex - 1], at: 0)
@@ -390,11 +399,18 @@ class NotesOnStaffViewController: UIViewController {
     }
     
     @IBAction func noteRangeHighNoteUp(_ sender: UIButton) {
+        
+        if highNoteIndex > 14 {
+            onlyBassClefBlackNotesEnabled = false
+            onlyBassClefSwitchOutlet.isOn = false
+            onlyBassClefSegmentedControlOutlet.selectedSegmentIndex = 0
+        }
+        
         if highNoteIndex < whiteNotesOnLargeKeyboard.count - 1 {
             
             if allAccidentalsEnabled {
-                let tempHighestNoteIndex = allNotesOnLargeKeyboard.index(of: currentNoteChoices.last!)!
-                currentNoteChoices.append(allNotesOnLargeKeyboard[tempHighestNoteIndex + 1])
+                let tempHighestNoteIndex = allNotesOnLargeKeyboardForVariousSettings.index(of: currentNoteChoices.last!)!
+                currentNoteChoices.append(allNotesOnLargeKeyboardForVariousSettings[tempHighestNoteIndex + 1])
             } else {
                 let tempHighestNoteIndex = whiteNotesOnLargeKeyboard.index(of: currentNoteChoices.last!)!
                 currentNoteChoices.append(whiteNotesOnLargeKeyboard[tempHighestNoteIndex + 1])
@@ -961,6 +977,13 @@ class NotesOnStaffViewController: UIViewController {
     var previousTempLowNoteIndex = 0
     
     @IBAction func handleLowNotePan(recognizer: UIPanGestureRecognizer) {
+        
+        if lowNoteIndex < 15 {
+            onlyTrebleClefBlackNotesEnabled = false
+            onlyTrebleClefSwitchOutlet.isOn = false
+            onlyTrebleClefSegmentedControlOutlet.selectedSegmentIndex = 0
+        }
+        
        
         // only move the note if it's in a certain range
 //        if lowNoteIndex >= 0  {
@@ -984,8 +1007,8 @@ class NotesOnStaffViewController: UIViewController {
             print("low note moving down")
             
             if allAccidentalsEnabled {
-                let tempLowestNoteIndex = allNotesOnLargeKeyboard.index(of: currentNoteChoices.first!)!
-                currentNoteChoices.insert(allNotesOnLargeKeyboard[tempLowestNoteIndex - 1], at: 0)
+                let tempLowestNoteIndex = allNotesOnLargeKeyboardForVariousSettings.index(of: currentNoteChoices.first!)!
+                currentNoteChoices.insert(allNotesOnLargeKeyboardForVariousSettings[tempLowestNoteIndex - 1], at: 0)
             } else {
                 let tempLowestNoteIndex = whiteNotesOnLargeKeyboard.index(of: currentNoteChoices.first!)!
                 currentNoteChoices.insert(whiteNotesOnLargeKeyboard[tempLowestNoteIndex - 1], at: 0)
@@ -1005,7 +1028,13 @@ class NotesOnStaffViewController: UIViewController {
     var previousTempHighNoteIndex = whiteNotesOnLargeKeyboard.count - 1
     
     @IBAction func handleHighNotePan(recognizer: UIPanGestureRecognizer) {
-
+        
+        if highNoteIndex > 14 {
+            onlyBassClefBlackNotesEnabled = false
+            onlyBassClefSwitchOutlet.isOn = false
+            onlyBassClefSegmentedControlOutlet.selectedSegmentIndex = 0
+        }
+        
 //        // only move the note if it's in a certain range
 //        if highNoteIndex < whiteNotesOnLargeKeyboard.count - 1 && highNoteIndex > lowNoteIndex + 1 {
         
@@ -1021,8 +1050,8 @@ class NotesOnStaffViewController: UIViewController {
             print("currentNoteChoices.last: \(currentNoteChoices.last)")
             
             if allAccidentalsEnabled || onlySharpsEnabled || onlyFlatsEnabled {
-                let tempHighestNoteIndex = allNotesOnLargeKeyboard.index(of: currentNoteChoices.last!)!
-                currentNoteChoices.append(allNotesOnLargeKeyboard[tempHighestNoteIndex + 1])
+                let tempHighestNoteIndex = allNotesOnLargeKeyboardForVariousSettings.index(of: currentNoteChoices.last!)!
+                currentNoteChoices.append(allNotesOnLargeKeyboardForVariousSettings[tempHighestNoteIndex + 1])
             } else {
                 let tempHighestNoteIndex = whiteNotesOnLargeKeyboard.index(of: currentNoteChoices.last!)!
                 currentNoteChoices.append(whiteNotesOnLargeKeyboard[tempHighestNoteIndex + 1])

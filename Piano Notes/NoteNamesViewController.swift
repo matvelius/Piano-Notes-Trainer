@@ -550,7 +550,7 @@ class NoteNamesViewController: UIViewController {
         
     }
     
-    override func viewDidAppear(_ animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         setupGameForCurrentLevel()
         scoreLabel.text = "0"
         startNewRound()
