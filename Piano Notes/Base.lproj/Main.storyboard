@@ -3794,7 +3794,7 @@
         <!--Sections Tab Bar Controller-->
         <scene sceneID="P9M-yi-v5L">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="AWR-ed-pf4" customClass="SectionsTabBarController" customModule="Piano_Notes" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="Sections" automaticallyAdjustsScrollViewInsets="NO" id="AWR-ed-pf4" customClass="SectionsTabBarController" customModule="Piano_Notes" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleAspectFill" insetsLayoutMarginsFromSafeArea="NO" id="OLF-Md-idA">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>

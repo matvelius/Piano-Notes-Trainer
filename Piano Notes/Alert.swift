@@ -24,8 +24,9 @@ struct Alert {
         alert.addAction(UIAlertAction(title: "Keep playing", style: .default, handler: nil))
         
         alert.addAction(UIAlertAction(title: "Back to menu", style: .default, handler: { (action: UIAlertAction!) in
-            let backToLevels = storyBoard.instantiateViewController(withIdentifier: "Levels") as! LevelsTableViewController
-            vc.present(backToLevels, animated: true, completion: nil)
+            let backToSections = storyBoard.instantiateViewController(withIdentifier: "Sections") as! SectionsTabBarController
+            backToSections.selectedIndex = 1
+            vc.present(backToSections, animated: true, completion: nil)
             }))
         
         // TODO: - IMPLEMENT LATER (NEED TO ADD SPLASH SCREENS ON EACH LEVEL
