@@ -34,7 +34,6 @@ class NotesOnStaffViewController: UIViewController {
     @IBOutlet var keyButtonsOutletCollection: [UIButton]!
     
     @IBAction func keyButtonTouchUpInside(_ sender: UIButton) {
-        print("\(sender.tag): \(allNotesOnLargeKeyboard[sender.tag])")
         
         checkAnswer()
     }
@@ -53,7 +52,6 @@ class NotesOnStaffViewController: UIViewController {
         
         let currentNoteOnStaffImageNameSecondToLastCharacter = currentNoteOnStaffImageName[currentNoteOnStaffImageName.index(currentNoteOnStaffImageName.endIndex, offsetBy: -2)]
         
-        print("currentNoteOnStaffImageName: \(currentNoteOnStaffImageName), currentNoteOnStaffImageNameSecondToLastCharacter: \(currentNoteOnStaffImageNameSecondToLastCharacter)")
         
         if  currentAccidental == .neither {
             
@@ -81,8 +79,6 @@ class NotesOnStaffViewController: UIViewController {
         
         let currentNoteOnStaffImageNameSecondToLastCharacter = currentNoteOnStaffImageName[currentNoteOnStaffImageName.index(currentNoteOnStaffImageName.endIndex, offsetBy: -2)]
         
-        print("currentNoteOnStaffImageName: \(currentNoteOnStaffImageName), currentNoteOnStaffImageNameSecondToLastCharacter: \(currentNoteOnStaffImageNameSecondToLastCharacter)")
-        
         if currentAccidental == .sharp {
             currentNoteOnStaffImageName = currentNoteOnStaffImageName.replacingOccurrences(of: "#", with: "")
             updateNoteOnStaffImage(optionalImageName: currentNoteOnStaffImageName)
@@ -98,8 +94,6 @@ class NotesOnStaffViewController: UIViewController {
     @IBAction func flatButtonPressed(_ sender: UIButton) {
         
         let currentNoteOnStaffImageNameSecondToLastCharacter = currentNoteOnStaffImageName[currentNoteOnStaffImageName.index(currentNoteOnStaffImageName.endIndex, offsetBy: -2)]
-        
-        print("currentNoteOnStaffImageName: \(currentNoteOnStaffImageName), currentNoteOnStaffImageNameSecondToLastCharacter: \(currentNoteOnStaffImageNameSecondToLastCharacter)")
         
         if  currentAccidental == .neither {
             
@@ -137,10 +131,7 @@ class NotesOnStaffViewController: UIViewController {
     
     @IBAction func checkButtonPressed(_ sender: UIButton) {
         userAnswer = currentNoteOnStaffImageName
-        print("userAnswer: \(userAnswer)")
         checkAnswer()
-        
-        // generate new note; be sure to reset the accidental!
     }
     
     @IBAction func downArrowButtonPressed(_ sender: UIButton) {
@@ -375,8 +366,6 @@ class NotesOnStaffViewController: UIViewController {
         
         if lowNoteIndex < highNoteIndex - 1 {
             currentNoteChoices.removeFirst()
-            print("currentNoteChoices: \(currentNoteChoices)")
-            
             
             updateNoteIndices()
             
@@ -438,7 +427,6 @@ class NotesOnStaffViewController: UIViewController {
         if highNoteIndex > lowNoteIndex + 1 {
             
             currentNoteChoices.removeLast()
-            print("currentNoteChoices: \(currentNoteChoices)")
             
             updateNoteIndices()
             
@@ -469,6 +457,7 @@ class NotesOnStaffViewController: UIViewController {
     
     @IBAction func onlyMnemonicsSwitchFlipped(_ sender: UISwitch) {
         if sender.isOn {
+            
             setToOnlyMnemonics()
             updateNoteRangeImages()
             
@@ -481,9 +470,11 @@ class NotesOnStaffViewController: UIViewController {
             
             onlyTrebleClefSegmentedControlOutlet.selectedSegmentIndex = 1
             onlyBassClefSegmentedControlOutlet.selectedSegmentIndex = 1
-            print("currentNoteChoices in Mnemonics: \(currentNoteChoices)")
+
         } else {
+            
             setToPreviousNoteChoices()
+            
         }
     }
     
@@ -603,7 +594,6 @@ class NotesOnStaffViewController: UIViewController {
         
         currentLevelOutlet.text = String(Level.currentLevel.id)
         
-        print("currentNoteChoices: \(currentNoteChoices)")
         setRandomNewNoteUpperIndex()
         
         updateNoteIndices()
@@ -636,9 +626,6 @@ class NotesOnStaffViewController: UIViewController {
             currentNoteOnStaffImageName = "staff\(whiteNotesOnLargeKeyboard[currentNoteOnStaffIndex])"
             noteOnStaffImage.image = UIImage(named: currentNoteOnStaffImageName)
         }
-        print("currentNoteOnStaffImageName: \(currentNoteOnStaffImageName)")
-        print("locationTracker: \(locationTracker)")
-        print("currentNoteIndex: \(currentNoteOnStaffIndex)")
 
     }
     
@@ -649,8 +636,6 @@ class NotesOnStaffViewController: UIViewController {
     
     func checkAnswer() {
         
-        // DO I STILL NEED THIS?
-        print("currentNoteOnStaffImageName: \(currentNoteOnStaffImageName)")
         
         if currentCorrectAnswer == "C4Bass" {
             currentCorrectAnswer = "C4"
@@ -660,23 +645,19 @@ class NotesOnStaffViewController: UIViewController {
             currentCorrectAnswer = "B3"
         }
         
-        // DEAL WITH C4bass, C#4bass, etc (is there an etc?)
-        print("going into checkAnswer, currentNoteOnStaffImageName is: \(currentNoteOnStaffImageName)")
+
         if currentNoteOnStaffImageName.hasSuffix("Bass") {
             currentNoteOnStaffImageName.removeLast(4)
-            print("and now, currentNoteOnStaffImageName is: \(currentNoteOnStaffImageName)")
         }
         
         if currentGameMode == .A {
         
             currentUserAnswer = currentAccidental == .neither ? String(currentNoteOnStaffImageName.suffix(2)) : String(currentNoteOnStaffImageName.suffix(3))
-            print("currentUserAnswer: \(currentUserAnswer)")
         
         }
         
         let currentUserAnswerWithoutOctave = currentAccidental == .neither ? String(currentUserAnswer.prefix(1)) : String(currentUserAnswer.prefix(2))
         
-        print("currentUserAnswerWithoutOctave: \(currentUserAnswerWithoutOctave)")
         
         
         
@@ -707,13 +688,9 @@ class NotesOnStaffViewController: UIViewController {
             
         }
         
-        print("currentCorrectAnswer: \(currentCorrectAnswer)")
-        print("currentEnharmonic: \(currentEnharmonic)")
-        print("currentUserAnswer: \(currentUserAnswer)")
-        
+       
         // RIGHT ANSWER
         if currentUserAnswer == currentCorrectAnswer || currentEnharmonic == currentCorrectAnswer {
-            print("correct!")
             
             // play sound
             if soundsEnabled {
@@ -740,7 +717,6 @@ class NotesOnStaffViewController: UIViewController {
                     self.generateNewNote()
                 })
             case .B:
-                print("CORRECT - CASE B!")
                 pianoNoteDisplayed.image = UIImage(named: "large_\(currentCorrectAnswer)_right")
                 DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1), execute:{
                     self.generateNewNote()
@@ -755,14 +731,12 @@ class NotesOnStaffViewController: UIViewController {
                 Alert.showFinishLevelAlert(on: self)
                 levelsCompleted.append(Level.currentLevel.id)
                 appDataForCurrentUser.levelsCompleted = levelsCompleted
-                print("dataToSaveForCurrentUser.levelsCompleted: \(appDataForCurrentUser.levelsCompleted)")
-                showAlertAtFiveStars = false 
+                showAlertAtFiveStars = false
 //                AppData.saveToFile(dataToSave: appDataForCurrentUser)
             }
             
         // WRONG ANSWER
         } else {
-            print("incorrect!")
             // play "wrong" sound
             if soundsEnabled {
                 loadSound(currentSound: "wrong")
@@ -854,8 +828,6 @@ class NotesOnStaffViewController: UIViewController {
         // MODE B
         } else {
             
-            print("currentNoteChoices in generateNewNote(): \(currentNoteChoices)")
-            
             if allAccidentalsEnabled {
                 
                 if currentNoteChoices[randomNewNoteIndex].contains("#") {
@@ -878,8 +850,6 @@ class NotesOnStaffViewController: UIViewController {
                         var currentNoteToDisplay = getEnharmonic(currentNote: currentTempNoteNameWithoutOctave)!
                         
                         currentNoteToDisplay.append(currentOctave)
-                        
-                        print("MODE B, allAccidentalsEnabled, contains(#)... currentNoteToDisplay: \(currentNoteToDisplay)")
                         
                         currentCorrectAnswer = currentNoteChoices[randomNewNoteIndex]
                         
@@ -922,8 +892,6 @@ class NotesOnStaffViewController: UIViewController {
                     
                     currentNoteToDisplay.append(currentOctave)
                     
-                    print("MODE B, allAccidentalsEnabled, contains(#)... currentNoteToDisplay: \(currentNoteToDisplay)")
-                    
                     currentCorrectAnswer = currentNoteChoices[randomNewNoteIndex]
                     
                     // display a flat (but correctAnswer is still a sharp!)
@@ -942,8 +910,6 @@ class NotesOnStaffViewController: UIViewController {
                 noteOnStaffImage.image = UIImage(named: "staff\(currentCorrectAnswer)")
                 
             }
-            
-            print("!!! currentCorrectAnswer should be: \(currentCorrectAnswer)!!!")
             
         }
         
@@ -1006,14 +972,12 @@ class NotesOnStaffViewController: UIViewController {
         // only move the note if it's in a certain range
 //        if lowNoteIndex >= 0  {
         
-        print("low note moving")
         
         let newTempNoteIndex = whiteNotesOnLargeKeyboard.count - Int((Double(recognizer.location(in: noteRangeLowNoteImage).y) - noteRangeImageLocationAdjustment) / noteRangeLocationFactor)
         
         // going up
         if newTempNoteIndex > previousTempLowNoteIndex && lowNoteIndex < highNoteIndex - 1 {
             
-            print("low note moving up")
             
             currentNoteChoices.removeFirst()
 
@@ -1022,7 +986,6 @@ class NotesOnStaffViewController: UIViewController {
         // going down
         } else if newTempNoteIndex < previousTempLowNoteIndex && lowNoteIndex > 0 {
             
-            print("low note moving down")
             
             if allAccidentalsEnabled {
                 let tempLowestNoteIndex = allNotesOnLargeKeyboardForVariousSettings.index(of: currentNoteChoices.first!)!
@@ -1056,16 +1019,12 @@ class NotesOnStaffViewController: UIViewController {
 //        // only move the note if it's in a certain range
 //        if highNoteIndex < whiteNotesOnLargeKeyboard.count - 1 && highNoteIndex > lowNoteIndex + 1 {
         
-        print("high note moving")
         
         let newTempNoteIndex = whiteNotesOnLargeKeyboard.count - Int((Double(recognizer.location(in: noteRangeHighNoteImage).y) - noteRangeImageLocationAdjustment) / noteRangeLocationFactor)
         
         // going up
         if newTempNoteIndex > previousTempHighNoteIndex && highNoteIndex < whiteNotesOnLargeKeyboard.count - 1 {
             
-            print("high note moving up")
-            
-            print("currentNoteChoices.last: \(currentNoteChoices.last)")
             
             if allAccidentalsEnabled || onlySharpsEnabled || onlyFlatsEnabled {
                 let tempHighestNoteIndex = allNotesOnLargeKeyboardForVariousSettings.index(of: currentNoteChoices.last!)!
@@ -1080,8 +1039,6 @@ class NotesOnStaffViewController: UIViewController {
             // going down
         } else if newTempNoteIndex < previousTempHighNoteIndex && highNoteIndex > lowNoteIndex + 1 {
             
-            print("high note moving down")
-            
             currentNoteChoices.removeLast()
             
             updateNoteIndices()
@@ -1091,35 +1048,25 @@ class NotesOnStaffViewController: UIViewController {
         noteRangeHighNoteImage.image = UIImage(named: "staff\(whiteNotesOnLargeKeyboard[highNoteIndex])")
         
         previousTempHighNoteIndex = newTempNoteIndex
-            
-//        }
+        
     }
     
     var noteIndex = 0
     
     @IBAction func handleNoteOnStaffPanning(recognizer: UIPanGestureRecognizer) {
-        print(recognizer.location(in: noteOnStaffImage).y)
         
         noteIndex = whiteNotesOnLargeKeyboard.count - Int((Double(recognizer.location(in: noteOnStaffImage).y) - noteOnStaffImageLocationAdjustment) / noteOnStaffLocationFactor)
         
-//        print("highNoteIndex in handleHighNotePan:\(highNoteIndex)")
         
         if noteIndex >= 0 && noteIndex < whiteNotesOnLargeKeyboard.count {
             noteOnStaffImage.image = UIImage(named: "staff\(whiteNotesOnLargeKeyboard[noteIndex])")
             currentNoteOnStaffIndex = noteIndex
             currentNoteOnStaffImageName = "staff\(whiteNotesOnLargeKeyboard[currentNoteOnStaffIndex])"
-//            updateNoteOnStaffImage(optionalImageName: nil)
             currentAccidental = .neither
         }
     }
     
-//    @IBAction func handleMenuLowNotePanGesture(_ sender: UIPanGestureRecognizer) {
-//        print(sender.location(in: noteRangeLowNoteImage))
-//    }
-    
-    
-//    @IBAction func handleMenuHightNotePanGesture(_ sender: UIPanGestureRecognizer) {
-//    }
+
     
     func updateLowAndHighNoteIndices() {
         
@@ -1128,7 +1075,6 @@ class NotesOnStaffViewController: UIViewController {
     func updateNoteRangeImages() {
         noteRangeLowNoteImage.image = UIImage(named: "staff\(whiteNotesOnLargeKeyboard[lowNoteIndex])")
         noteRangeHighNoteImage.image = UIImage(named: "staff\(whiteNotesOnLargeKeyboard[highNoteIndex])")
-        print("note range images updated!")
     }
     
     func loadSound(currentSound: String) {
@@ -1151,10 +1097,8 @@ class NotesOnStaffViewController: UIViewController {
     func switchModes() {
         switch currentGameMode {
         case .A:
-            print("switching to mode B")
             setupForModeB()
         case .B:
-            print("switching to mode A")
             setupForModeA()
         }
         

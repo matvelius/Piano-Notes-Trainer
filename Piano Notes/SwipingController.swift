@@ -22,20 +22,7 @@ class SwipingController: UICollectionViewController, UICollectionViewDelegateFlo
         let myLayout = collectionView.collectionViewLayout as! UICollectionViewFlowLayout
         myLayout.itemSize = CGSize(width: width, height: height)
         
-//        progressViewOutlet.transform = progressViewOutlet.transform.scaledBy(x: 1, y: 10)
-        
-//        let transform : CGAffineTransform = CGAffineTransform(scaleX: 1.0, y: 6.0)
-//        progressViewOutlet.transform = transform
-        
-//        progressViewOutlet.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
-        
-//        superview.widthAnchor).isActive = true
-        
-//        if let flowLayout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
-//            flowLayout.estimatedItemSize = CGSize(width: view.frame.width, height: view.frame.height)
-//        }
-//        collectionView?.backgroundColor = .white
-//        collectionView.register(LessonSlideCollectionViewCell.self, forCellWithReuseIdentifier: "cellId")
+
         
         collectionView?.isPagingEnabled = true
         

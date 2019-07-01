@@ -23,7 +23,6 @@ class NoteNamesViewController: UIViewController {
     
     
     @IBAction func customModeSwitchFlipped(_ sender: CustomSwitch) {
-        print("SWITCH TRIGGERED!")
         switch currentGameMode {
         case .B:
             switchToModeA()
@@ -390,7 +389,6 @@ class NoteNamesViewController: UIViewController {
     
     
     @IBAction func whiteKeyButtonTouched(_ sender: UIButton) {
-        print("white key touched; sender.tag: \(sender.tag)")
         
         whiteKeyButtonIndex = sender.tag
         
@@ -406,17 +404,11 @@ class NoteNamesViewController: UIViewController {
 
     
     @IBAction func whiteKeyButtonPressed(_ sender: UIButton) {
-        print("white key sender.tag: \(sender.tag)")
         
         whiteKeyButtonIndex = sender.tag
         nameOfKeyToHighlight = onlyWhiteKeys[whiteKeyButtonIndex - 1]
-//        pianoKeyImage.image = UIImage(named: "\(nameOfKeyToHighlight)_pressed")
         currentUserAnswer = String(nameOfKeyToHighlight[nameOfKeyToHighlight.startIndex])
-//        currentCorrectAnswer = String(currentNote[currentNote.startIndex...currentNote.index(after: currentNote.startIndex)])
-        print("currentUserAnswer: \(currentUserAnswer)")
-//        currentNoteButton = noteButtonB
-//        setCurrentNoteXBounds()
-        
+
         checkAnswer()
     }
     
@@ -424,7 +416,6 @@ class NoteNamesViewController: UIViewController {
         
         guard let blackKeyButtonIndex = Int(sender.accessibilityIdentifier!) else { return }
         
-        print("black key touched; blackKeyButtonIndex: \(blackKeyButtonIndex)")
         nameOfKeyToHighlight = onlyBlackKeys[blackKeyButtonIndex]
         pianoKeyImage.image = UIImage(named: "\(nameOfKeyToHighlight)_pressed")
         
@@ -438,7 +429,6 @@ class NoteNamesViewController: UIViewController {
         
         currentUserAnswer = String(nameOfKeyToHighlight[nameOfKeyToHighlight.startIndex...nameOfKeyToHighlight.index(after: nameOfKeyToHighlight.startIndex)])
         
-        print("currentUserAnswer: \(currentUserAnswer)")
         
         checkAnswer()
     }
@@ -517,7 +507,6 @@ class NoteNamesViewController: UIViewController {
         blackKeyButtons[18].isEnabled = false
         blackKeyButtons[18].alpha = 0
         
-//        print("blackKeyButtons[1].accessibilityIdentifier: \(blackKeyButtons[1].accessibilityIdentifier)")
         
         ////////////////////////////////////////////
         //////// LINE UP WHITE KEY BUTTONS /////////
@@ -579,19 +568,9 @@ class NoteNamesViewController: UIViewController {
         includeEnharmonicsSwitchOutlet.isOn = false
     }
     
-//    override func viewDidAppear(_ animated: Bool) {
-//
-//        let navBar = self.navigationController?.navigationBar
-//
-//        navBar?.isHidden = true
-//        //        navBar?.backgroundColor = UIColor.red
-//
-//    }
     
     func startNewRound() {
         setRandomNewNoteUpperIndex()
-        print("currentNoteChoices: \(currentNoteChoices)")
-        print("randomNewNoteIndexUpperLimit: \(randomNewNoteIndexUpperLimit)")
         
         lastRandomNumber = randomNewNoteIndex
         totalScore = 0
@@ -636,9 +615,7 @@ class NoteNamesViewController: UIViewController {
         if currentGameMode == .A {
 
             generateNewRandomNoteIndex()
-            print("randomNewNoteIndex: \(randomNewNoteIndex)")
             currentNote = currentNoteChoices[randomNewNoteIndex]
-            print("the current note is \(currentNote)")
             
             let currentNoteNameLength = currentNote.count
             
@@ -651,15 +628,12 @@ class NoteNamesViewController: UIViewController {
                 currentCorrectAnswer = String(currentNote[currentNote.startIndex])
             }
 
-            print("currentCorrectAnswer is \(currentCorrectAnswer)")
             
             pianoKeyImage.image = UIImage(named: "\(currentNote)_shown")
            
         // MODE B (note name is shown, user has to press the right key)
         } else {
             
-            print("generateNewNote: Mode B! currentNoteChoices: \(currentNoteChoices)")
-//            print("onlySharpsEnabled: \(onlySharpsEnabled)")
             
             pianoKeyImage.image = nil
             
@@ -686,9 +660,9 @@ class NoteNamesViewController: UIViewController {
             if onlyWeirdEnharmonicsEnabled {
                 // set current note
                 currentNote = currentNoteChoices[randomNewNoteIndex]
-                print("current weird enharmonic generated: \(currentNote)")
+
                 let weirdEnharmonicIndex = basicNoteNames.index(of: String(currentNote.first!))
-                print("weirdEnharmonicIndex: \(weirdEnharmonicIndex)")
+
                 // light up the correct # or b button
                 if currentNote.last == "#" {
                     sharpsOutletCollection[weirdEnharmonicIndex!].setImage(UIImage(named: "sharp_shown"), for: UIControl.State.normal)
@@ -723,12 +697,10 @@ class NoteNamesViewController: UIViewController {
                     
                     accidentalOrNot = Accidentals.allCases[accidentalOrNotIndex]
                     
-                    print("generating sharp or flat randomly: \(accidentalOrNot)")
-                
+                    
                 } else if onlySharpsEnabled {
                     
                     accidentalOrNot = .sharp
-                    print("only sharps enabled, so accidentalOrNot = .sharp!")
                     
                 } else if onlyFlatsEnabled {
                     
@@ -753,7 +725,6 @@ class NoteNamesViewController: UIViewController {
                     currentAccidental = .neither
                 case .sharp:
                     currentNote = basicNoteNames[randomNewNoteIndex] + "#"
-                    print("SHARP! currentNote: \(currentNote)")
                     // generate new note if current note is a weird enharmonic
                     if !weirdEnharmonicsEnabled && (currentNote == "B#" || currentNote == "E#") {
                         generateNewNote()
@@ -773,7 +744,6 @@ class NoteNamesViewController: UIViewController {
                     }
                 }
                 
-                print("current note should be: \(currentNote)")
                 
                 currentCorrectAnswer = currentNote
             }
@@ -806,12 +776,8 @@ class NoteNamesViewController: UIViewController {
         // get enharmonic equivalent
         let currentEnharmonic: String? = getEnharmonic(currentNote: currentUserAnswer)
         
-        print("currentEnharmonic: \(currentEnharmonic)")
-        
         // right answer
         if currentUserAnswer == currentCorrectAnswer || currentEnharmonic == currentCorrectAnswer {
-            
-            print("CORRECT")
             
             // different logic based on game mode
             switch currentGameMode {
@@ -853,7 +819,6 @@ class NoteNamesViewController: UIViewController {
                     
                 }
                 
-                print("imageName = \(imageName)")
                 let image = UIImage(named: imageName)
                 currentNoteButton.setImage(image, for: UIControl.State.normal)
                 
@@ -863,9 +828,6 @@ class NoteNamesViewController: UIViewController {
             case .B:
                 // turn the key user pressed to green
                 // (identify whether it's a white or black key)
-                print("CORRECT! CASE .B")
-                
-//                nameOfKeyToHighlight = onlyWhiteKeys[whiteKeyButtonIndex - 1]
                 
                 pianoKeyImage.image = UIImage(named: "\(nameOfKeyToHighlight)_right")
                 
@@ -897,7 +859,6 @@ class NoteNamesViewController: UIViewController {
                 Alert.showFinishLevelAlert(on: self)
                 levelsCompleted.append(Level.currentLevel.id)
                 appDataForCurrentUser.levelsCompleted = levelsCompleted
-                print("dataToSaveForCurrentUser.levelsCompleted: \(appDataForCurrentUser.levelsCompleted)")
                 showAlertAtFiveStars = false
                 
             }
@@ -911,7 +872,6 @@ class NoteNamesViewController: UIViewController {
                 switch currentGameMode {
                 case .A:
                     self.enableButtons()
-                    print("buttons should be enabled!")
                 case .B:
                     self.enableWhiteKeyButtons()
                     self.enableBlackKeyButtons()
@@ -922,8 +882,6 @@ class NoteNamesViewController: UIViewController {
             
         // wrong answer
         } else {
-            
-            print("wrong!")
             
             // show result (red button)
             // if dealing with sharp or flat, light up regular letter + #/b symbol
@@ -956,12 +914,10 @@ class NoteNamesViewController: UIViewController {
                 audioPlayer!.setVolume(0.05, fadeDuration: 0)
             }
             
-            print("currentUserAnswer is: \(currentUserAnswer)")
-            
+
             if currentGameMode == .A {
                 // color button red
                 imageName = "\(currentUserAnswer[currentUserAnswer.startIndex])_wrong"
-                print("imageName is \(imageName)")
                 let image = UIImage(named: imageName)
                 currentNoteButton.setImage(image, for: UIControl.State.normal)
                 
@@ -1223,7 +1179,6 @@ class NoteNamesViewController: UIViewController {
             for sharp in sharpsOutletCollection {
                 if sharp.tag == currentNoteButton.tag && sharp.currentImage != UIImage(named: "sharp_wrong") {
                     sharp.setImage(UIImage(named: "sharp"), for: .normal)
-                    print("setting sharp image back to normal")
                 }
             }
 
@@ -1305,37 +1260,11 @@ class NoteNamesViewController: UIViewController {
             panGestureOver = checkIfStateEnded(onSharpOrFlat: .neither)
             
         }
-//        else {
-//
-//            panGestureOver = checkIfStateEnded(onSharpOrFlat: .neither)
-//
-//            if panGestureOver {
-//                //                currentUserAnswer = "\(currentUserAnswer)#"
-//                //                print(currentUserAnswer)
-//
-//                checkAnswer()
-//            }
-//
-//        }
+
         
     }
     
-    //  figure out which button is sending the translation message
-    //  get coordinates of the triangle button (as a variable -- changes with size right?)
-    //  make sure buttons look correct depending on user action
-    
-    //        checkIfStateEnded()
-    
-    // when pan gesture is over, reset the button
-    //        } else if recognizer.state == .ended {
-    //
-    //            let image = UIImage(named: "\(currentUserAnswer)_default")
-    //            currentNoteButton.setImage(image, for: UIControl.State.normal)
-    //
-    //        }
-    // use tag to identify button?
-    //        print(recognizer.view?.tag)
-    
+   
     
     
 //    func play(sound: String, ofType type: SoundExtension) {
@@ -1653,7 +1582,6 @@ class NoteNamesViewController: UIViewController {
     }
 
     func switchToModeA() {
-        print("switching to mode A")
         currentGameMode = .A
         includeEnharmonicsSwitchOutlet.isEnabled = false
         topLabelOutlet.image = UIImage(named: "name_the_highlighted_note")
@@ -1669,7 +1597,6 @@ class NoteNamesViewController: UIViewController {
     }
     
     func switchToModeB() {
-        print("switching to mode B")
         currentGameMode = .B
         includeEnharmonicsSwitchOutlet.isEnabled = true
         topLabelOutlet.image = UIImage(named: "tap_the_correct_key")

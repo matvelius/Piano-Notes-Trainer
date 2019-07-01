@@ -25,8 +25,6 @@ class CINavigationBar: UINavigationBar {
     override func layoutSubviews() {
         super.layoutSubviews()
         
-        print("It called")
-        
         self.tintColor = UIColor(red:0.00, green:0.40, blue:0.96, alpha:1.0)
         self.backgroundColor = UIColor.clear
         
@@ -50,7 +48,7 @@ class CINavigationBar: UINavigationBar {
                 let centerY = CGFloat(2)
                 subview.frame = CGRect(x: 0, y: centerY, width: self.frame.width, height: subview.frame.height)
                 subview.backgroundColor = UIColor.clear
-                subview.sizeToFit()
+//                subview.sizeToFit()
                 
             }
         }
