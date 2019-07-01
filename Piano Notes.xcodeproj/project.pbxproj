@@ -59,6 +59,7 @@
 		D71DF48722A7793500789E9A /* F#5.aiff in Resources */ = {isa = PBXBuildFile; fileRef = D71DF45522A7793400789E9A /* F#5.aiff */; };
 		D71DF48822A7793500789E9A /* E5.aiff in Resources */ = {isa = PBXBuildFile; fileRef = D71DF45622A7793400789E9A /* E5.aiff */; };
 		D71E3D0C2205EA8E0001F995 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D71E3D0B2205EA8E0001F995 /* AVFoundation.framework */; };
+		D72F456622C9B64600226C3A /* ViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D72F456522C9B64600226C3A /* ViewControllerExtensions.swift */; };
 		D73479B422BC570800D7774D /* LessonSlideCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D73479B322BC570800D7774D /* LessonSlideCollectionViewCell.swift */; };
 		D735958F22BE8C1E00907FAB /* LearnSectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D735958E22BE8C1D00907FAB /* LearnSectionTableViewCell.swift */; };
 		D735959122BEAC9A00907FAB /* SectionsTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D735959022BEAC9A00907FAB /* SectionsTabBarController.swift */; };
@@ -145,6 +146,7 @@
 		D71DF45522A7793400789E9A /* F#5.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = "F#5.aiff"; sourceTree = "<group>"; };
 		D71DF45622A7793400789E9A /* E5.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = E5.aiff; sourceTree = "<group>"; };
 		D71E3D0B2205EA8E0001F995 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		D72F456522C9B64600226C3A /* ViewControllerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerExtensions.swift; sourceTree = "<group>"; };
 		D73479B322BC570800D7774D /* LessonSlideCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonSlideCollectionViewCell.swift; sourceTree = "<group>"; };
 		D735958E22BE8C1D00907FAB /* LearnSectionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnSectionTableViewCell.swift; sourceTree = "<group>"; };
 		D735959022BEAC9A00907FAB /* SectionsTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionsTabBarController.swift; sourceTree = "<group>"; };
@@ -280,6 +282,7 @@
 			children = (
 				D777C81722009DDB00FA472E /* AppDelegate.swift */,
 				D7E6BFC822AC6B0C00370F4B /* MenuAnimation.swift */,
+				D72F456522C9B64600226C3A /* ViewControllerExtensions.swift */,
 				D71DF42322A73BBC00789E9A /* ScoreAndStars.swift */,
 				D75DE89222828C5800BBFDEF /* GameMode.swift */,
 				D7EF77392277F06B00943F54 /* Accidentals.swift */,
@@ -455,6 +458,7 @@
 				D7EF77402277FFF000943F54 /* LevelTableViewCell.swift in Sources */,
 				D7C15C7222B9EDEE003593DA /* LearnSectionTableViewController.swift in Sources */,
 				D7E6BFC922AC6B0C00370F4B /* MenuAnimation.swift in Sources */,
+				D72F456622C9B64600226C3A /* ViewControllerExtensions.swift in Sources */,
 				D7D1F8B622BDE7980065162D /* CustomNavigationBar.swift in Sources */,
 				D74992D9228C3FD90095C1B7 /* NotesOnStaffViewController.swift in Sources */,
 				D7C15C7C22BC4F78003593DA /* LessonSlidesCollectionViewController.swift in Sources */,

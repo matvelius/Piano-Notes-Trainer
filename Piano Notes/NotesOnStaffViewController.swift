@@ -1148,20 +1148,6 @@ class NotesOnStaffViewController: UIViewController {
         }
     }
     
-    // function for adding subviews
-    func addSameSize(subview: UIView, onTopOf superview: UIView) {
-        superview.addSubview(subview)
-        
-        subview.translatesAutoresizingMaskIntoConstraints = false
-        
-        subview.centerXAnchor.constraint(equalTo: superview.centerXAnchor).isActive = true
-        subview.centerYAnchor.constraint(equalTo: superview.centerYAnchor).isActive = true
-        subview.widthAnchor.constraint(equalTo: superview.widthAnchor).isActive = true
-        subview.heightAnchor.constraint(equalTo: superview.heightAnchor).isActive = true
-        
-        subview.contentMode = superview.contentMode
-    }
-    
     func switchModes() {
         switch currentGameMode {
         case .A:

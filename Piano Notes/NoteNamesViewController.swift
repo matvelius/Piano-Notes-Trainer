@@ -976,14 +976,16 @@ class NoteNamesViewController: UIViewController {
                     let wrongNoteImage = UIImage(named: wrongNoteImageName)
                     let wrongNoteImageView = UIImageView(image: wrongNoteImage!)
                     
-                    wrongNoteImageView.translatesAutoresizingMaskIntoConstraints = false
-                    pianoKeyImage.addSubview(wrongNoteImageView)
+                    addSameSize(subview: wrongNoteImageView, onTopOf: pianoKeyImage)
                     
-                    NSLayoutConstraint.activate([
-                        wrongNoteImageView.widthAnchor.constraint(equalToConstant: pianoKeyImage!.frame.width),
-                        wrongNoteImageView.heightAnchor.constraint(equalToConstant: pianoKeyImage!.frame.height),
-        
-                    ])
+//                    wrongNoteImageView.translatesAutoresizingMaskIntoConstraints = false
+//                    pianoKeyImage.addSubview(wrongNoteImageView)
+//
+//                    NSLayoutConstraint.activate([
+//                        wrongNoteImageView.widthAnchor.constraint(equalToConstant: pianoKeyImage!.frame.width),
+//                        wrongNoteImageView.heightAnchor.constraint(equalToConstant: pianoKeyImage!.frame.height),
+//
+//                    ])
                     
                 }
                 
