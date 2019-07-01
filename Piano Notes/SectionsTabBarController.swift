@@ -12,6 +12,8 @@ class SectionsTabBarController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+//        navigationController?.preferredStatusBarStyle.
+        edgesForExtendedLayout = []
 
 //        UITabBar.appearance().tintColor = UIColor(red: 254/255.0, green: 105/255.0, blue: 51/255.0, alpha: 100.0)
         

@@ -78,7 +78,9 @@
                             <outlet property="delegate" destination="8JC-u7-HER" id="A2G-6O-WuI"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" id="ZCM-qz-LRw"/>
+                    <tabBarItem key="tabBarItem" id="ZCM-qz-LRw">
+                        <inset key="imageInsets" minX="7" minY="7" maxX="7" maxY="7"/>
+                    </tabBarItem>
                     <navigationItem key="navigationItem" id="Kkg-tL-LQ8"/>
                     <connections>
                         <segue destination="ocB-fJ-hDj" kind="show" identifier="segueToExplainers" animates="NO" id="Dij-og-4Df"/>
@@ -3613,7 +3615,9 @@
                             <outlet property="delegate" destination="d10-To-hdl" id="vmM-Mg-N6E"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" id="Mi4-s4-3EF"/>
+                    <tabBarItem key="tabBarItem" id="Mi4-s4-3EF">
+                        <inset key="imageInsets" minX="7" minY="7" maxX="7" maxY="7"/>
+                    </tabBarItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AcK-NR-Tqk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -3796,7 +3800,7 @@
             <objects>
                 <tabBarController storyboardIdentifier="Sections" automaticallyAdjustsScrollViewInsets="NO" id="AWR-ed-pf4" customClass="SectionsTabBarController" customModule="Piano_Notes" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="OLF-Md-idA">
+                    <tabBar key="tabBar" contentMode="scaleAspectFill" insetsLayoutMarginsFromSafeArea="NO" id="OLF-Md-idA">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
