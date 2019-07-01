@@ -978,15 +978,6 @@ class NoteNamesViewController: UIViewController {
                     
                     addSameSize(subview: wrongNoteImageView, onTopOf: pianoKeyImage)
                     
-//                    wrongNoteImageView.translatesAutoresizingMaskIntoConstraints = false
-//                    pianoKeyImage.addSubview(wrongNoteImageView)
-//
-//                    NSLayoutConstraint.activate([
-//                        wrongNoteImageView.widthAnchor.constraint(equalToConstant: pianoKeyImage!.frame.width),
-//                        wrongNoteImageView.heightAnchor.constraint(equalToConstant: pianoKeyImage!.frame.height),
-//
-//                    ])
-                    
                 }
                 
                 notesAlreadyAttempted.append(nameOfKeyToHighlight)
@@ -1478,7 +1469,6 @@ class NoteNamesViewController: UIViewController {
         // FREEPLAY SECTION
         case -3:
             
-//            modeSwitchOutlet.setOn(on: false, animated: false)
             switchToModeA()
             includeEnharmonicsSwitchOutlet.isEnabled = false
             includeEnharmonicsSwitchOutlet.isOn = false
@@ -1488,19 +1478,12 @@ class NoteNamesViewController: UIViewController {
             blackKeySettingsSegmentedControlOutlet.selectedSegmentIndex = 0
             
             setToAllNoteChoicesNoteNames()
-            enableButtons()
-            enableSharps()
-            sharpsViewOutlet.alpha = 1
-            enableFlats()
-            flatsViewOutlet.alpha = 1
-            enableGestureRecognizers()
             
             menuButtonOutlet.alpha = 1
             levelAndModeStack.alpha = 0
             
         case -2:
             
-//            modeSwitchOutlet.setOn(on: true, animated: false)
             switchToModeB()
             
             includeEnharmonicsSwitchOutlet.isEnabled = true
@@ -1511,12 +1494,7 @@ class NoteNamesViewController: UIViewController {
             blackKeySettingsSegmentedControlOutlet.selectedSegmentIndex = 0
             
             setToAllNoteChoicesNoteNames()
-            disableButtons()
-            disableSharps()
-            sharpsViewOutlet.alpha = 1
-            disableFlats()
-            flatsViewOutlet.alpha = 1
-            disableGestureRecognizers()
+
             
             menuButtonOutlet.alpha = 1
             levelAndModeStack.alpha = 0
@@ -1528,12 +1506,7 @@ class NoteNamesViewController: UIViewController {
             switchToModeA()
             
             setToOnlyCDE()
-            enableButtons()
-            disableSharps()
-            sharpsViewOutlet.alpha = 0
-            disableFlats()
-            flatsViewOutlet.alpha = 0
-            disableGestureRecognizers()
+
             
         case 2:
             
@@ -1541,12 +1514,7 @@ class NoteNamesViewController: UIViewController {
             switchToModeA()
             
             setToOnlyFGAB()
-            enableButtons()
-            disableSharps()
-            sharpsViewOutlet.alpha = 0
-            disableFlats()
-            flatsViewOutlet.alpha = 0
-            disableGestureRecognizers()
+ 
             
         case 3:
             
@@ -1554,12 +1522,7 @@ class NoteNamesViewController: UIViewController {
             switchToModeA()
             
             setToOnlyWhiteKeys()
-            enableButtons()
-            disableSharps()
-            sharpsViewOutlet.alpha = 0
-            disableFlats()
-            flatsViewOutlet.alpha = 0
-            disableGestureRecognizers()
+ 
             
         case 4:
             
@@ -1567,12 +1530,7 @@ class NoteNamesViewController: UIViewController {
             switchToModeA()
             
             setToOnlySharps()
-            enableButtons()
-            enableSharps()
-            sharpsViewOutlet.alpha = 1
-            disableFlats()
-            flatsViewOutlet.alpha = 0
-            enableGestureRecognizers()
+
             
         case 5:
             
@@ -1580,12 +1538,7 @@ class NoteNamesViewController: UIViewController {
             switchToModeA()
             
             setToOnlyFlats()
-            enableButtons()
-            disableSharps()
-            sharpsViewOutlet.alpha = 0
-            enableFlats()
-            flatsViewOutlet.alpha = 1
-            enableGestureRecognizers()
+
             
         case 6:
             
@@ -1594,12 +1547,7 @@ class NoteNamesViewController: UIViewController {
             modeStack.alpha = 0
             
             setToOnlyWeirdEnharmonics()
-            disableButtons()
-            disableSharps()
-            sharpsViewOutlet.alpha = 1
-            disableFlats()
-            flatsViewOutlet.alpha = 1
-            disableGestureRecognizers()
+   
             
         case 7:
             
@@ -1607,12 +1555,7 @@ class NoteNamesViewController: UIViewController {
             switchToModeA()
             
             setToAllNoteChoicesNoteNames()
-            enableButtons()
-            enableSharps()
-            sharpsViewOutlet.alpha = 1
-            enableFlats()
-            flatsViewOutlet.alpha = 1
-            enableGestureRecognizers()
+
             
         default: break
             
@@ -1716,6 +1659,13 @@ class NoteNamesViewController: UIViewController {
         topLabelOutlet.image = UIImage(named: "name_the_highlighted_note")
         topLabelOutlet.transform = CGAffineTransform(scaleX: CGFloat(labelScaleMultiplierBackToNormal ), y: CGFloat(labelScaleMultiplierBackToNormal))
         modeSegmentedControlOutlet.selectedSegmentIndex = 0
+        
+        enableButtons()
+        enableSharps()
+        sharpsViewOutlet.alpha = 1
+        enableFlats()
+        flatsViewOutlet.alpha = 1
+        enableGestureRecognizers()
     }
     
     func switchToModeB() {
@@ -1725,6 +1675,13 @@ class NoteNamesViewController: UIViewController {
         topLabelOutlet.image = UIImage(named: "tap_the_correct_key")
         topLabelOutlet.transform = CGAffineTransform(scaleX: CGFloat(labelScaleMultiplier), y: CGFloat(labelScaleMultiplier))
         modeSegmentedControlOutlet.selectedSegmentIndex = 1
+        
+        disableButtons()
+        disableSharps()
+        sharpsViewOutlet.alpha = 1
+        disableFlats()
+        flatsViewOutlet.alpha = 1
+        disableGestureRecognizers()
     }
     
 }
