@@ -50,7 +50,7 @@ class NotesOnStaffViewController: UIViewController {
     
     @IBAction func sharpButtonPressed(_ sender: UIButton) {
         
-        let currentNoteOnStaffImageNameSecondToLastCharacter = currentNoteOnStaffImageName[currentNoteOnStaffImageName.index(currentNoteOnStaffImageName.endIndex, offsetBy: -2)]
+//        let currentNoteOnStaffImageNameSecondToLastCharacter = currentNoteOnStaffImageName[currentNoteOnStaffImageName.index(currentNoteOnStaffImageName.endIndex, offsetBy: -2)]
         
         
         if  currentAccidental == .neither {
@@ -77,7 +77,7 @@ class NotesOnStaffViewController: UIViewController {
     
     @IBAction func naturalButtonPressed(_ sender: UIButton) {
         
-        let currentNoteOnStaffImageNameSecondToLastCharacter = currentNoteOnStaffImageName[currentNoteOnStaffImageName.index(currentNoteOnStaffImageName.endIndex, offsetBy: -2)]
+//        let currentNoteOnStaffImageNameSecondToLastCharacter = currentNoteOnStaffImageName[currentNoteOnStaffImageName.index(currentNoteOnStaffImageName.endIndex, offsetBy: -2)]
         
         if currentAccidental == .sharp {
             currentNoteOnStaffImageName = currentNoteOnStaffImageName.replacingOccurrences(of: "#", with: "")
@@ -93,7 +93,7 @@ class NotesOnStaffViewController: UIViewController {
     
     @IBAction func flatButtonPressed(_ sender: UIButton) {
         
-        let currentNoteOnStaffImageNameSecondToLastCharacter = currentNoteOnStaffImageName[currentNoteOnStaffImageName.index(currentNoteOnStaffImageName.endIndex, offsetBy: -2)]
+//        let currentNoteOnStaffImageNameSecondToLastCharacter = currentNoteOnStaffImageName[currentNoteOnStaffImageName.index(currentNoteOnStaffImageName.endIndex, offsetBy: -2)]
         
         if  currentAccidental == .neither {
             
@@ -1045,7 +1045,11 @@ class NotesOnStaffViewController: UIViewController {
             
         }
         
+        print("staff\(whiteNotesOnLargeKeyboard[highNoteIndex])")
+        
         noteRangeHighNoteImage.image = UIImage(named: "staff\(whiteNotesOnLargeKeyboard[highNoteIndex])")
+        
+        
         
         previousTempHighNoteIndex = newTempNoteIndex
         
