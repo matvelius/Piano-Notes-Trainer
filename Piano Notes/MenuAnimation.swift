@@ -138,8 +138,6 @@ extension NotesOnStaffViewController {
                 tempKeyHigh.insert("#", at: tempKeyHigh.index(before: tempKeyHigh.endIndex))
             }
             
-            print("onlyTrebleClefBlackNotesEnabled, tempKeyLow: \(tempKeyLow)")
-            print("onlyTrebleClefBlackNotesEnabled, tempKeyHigh: \(tempKeyHigh)")
             
             let tempLowNoteIndex = onlyTrebleClefBlackNotes.index(of: tempKeyLow)!
             let tempHighNoteIndex = onlyTrebleClefBlackNotes.index(of: tempKeyHigh)!
@@ -167,17 +165,12 @@ extension NotesOnStaffViewController {
                 tempKeyHigh.insert("#", at: tempKeyHigh.index(before: tempKeyHigh.endIndex))
             }
             
-            print("onlyBassClefBlackNotesEnabled, tempKeyLow: \(tempKeyLow)")
-            print("onlyBassClefBlackNotesEnabled, tempKeyHigh: \(tempKeyHigh)")
-            
             let tempLowNoteIndex = onlyBassClefBlackNotes.index(of: tempKeyLow)!
             let tempHighNoteIndex = onlyBassClefBlackNotes.index(of: tempKeyHigh)!
             
             currentNoteChoices = Array(onlyBassClefBlackNotes[tempLowNoteIndex...tempHighNoteIndex])
         
         } else if allAccidentalsEnabled || onlySharpsEnabled || onlyFlatsEnabled {
-            
-            print("allAccidentalsEnabled || onlySharpsEnabled || onlyFlatsEnabled, whiteNotesOnLargeKeyboard[lowNoteIndex]: \(whiteNotesOnLargeKeyboard[lowNoteIndex]), whiteNotesOnLargeKeyboard[highNoteIndex]: \(whiteNotesOnLargeKeyboard[highNoteIndex])")
 
             let tempLowNoteIndex = allNotesOnLargeKeyboardForVariousSettings.index(of: whiteNotesOnLargeKeyboard[lowNoteIndex])!
             let tempHighNoteIndex = allNotesOnLargeKeyboardForVariousSettings.index(of: whiteNotesOnLargeKeyboard[highNoteIndex])!
@@ -190,7 +183,6 @@ extension NotesOnStaffViewController {
             
         }
         
-        print("currentNoteChoices: \(currentNoteChoices)")
         setRandomNewNoteUpperIndex()
         
         if currentGameMode == .A {

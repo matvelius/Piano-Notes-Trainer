@@ -51,8 +51,6 @@ struct AppData: Codable {
         
         try? encodedData?.write(to: archiveURL, options: .noFileProtection)
         
-        print("DATA SAVED TO FILE")
-        
     }
     
     static func loadFromFile() -> dataToSavePrototype? {

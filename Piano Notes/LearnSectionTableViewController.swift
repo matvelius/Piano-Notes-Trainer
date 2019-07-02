@@ -13,6 +13,8 @@ class LearnSectionTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        edgesForExtendedLayout = []
+        
         tableView.backgroundView = UIImageView(image: UIImage(named: "intro_screen_background_blurry"))
         
 //        tabBar.items?[0].title = "LEARN"

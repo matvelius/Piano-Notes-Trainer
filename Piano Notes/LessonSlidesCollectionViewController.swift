@@ -33,7 +33,6 @@ class LessonSlidesCollectionViewController: UICollectionViewController, UICollec
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellId", for: indexPath) as! PageCell
         //        cell.backgroundColor = indexPath.row % 2 == 0 ? .red : .green
         currentSlideIndex = indexPath.row
-        print("currentSlideIndex: \(currentSlideIndex)")
         return cell
     }
     

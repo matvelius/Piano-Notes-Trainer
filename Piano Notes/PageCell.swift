@@ -15,7 +15,6 @@ class PageCell: UICollectionViewCell {
     
     let lessonSlideView: UIImageView = {
         let image = UIImage(named: lesson1[currentSlideIndex])
-        print("lesson1[currentSlideIndex]: \(lesson1[currentSlideIndex])")
         let imageView = UIImageView(image: image)
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.contentMode = .scaleAspectFit
@@ -29,9 +28,7 @@ class PageCell: UICollectionViewCell {
         NSLayoutConstraint.activate([
             lessonSlideView.widthAnchor.constraint(equalToConstant: self.frame.width),
             lessonSlideView.heightAnchor.constraint(equalToConstant: self.frame.height),
-//            lessonSlideView.centerYAnchor.constraint(equalTo: self.frame.origin.y - 10)
             ])
-//        self.lessonSlideView.frame.origin.y = 500
     }
     
     required init?(coder aDecoder: NSCoder) {

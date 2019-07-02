@@ -245,8 +245,6 @@ func setToOnlyTrebleClef() {
     onlyBassClefBlackNotesEnabled = false
     setRandomNewNoteUpperIndex()
     updateNoteIndices()
-    print("HIGH INDEX: \(highNoteIndex)")
-    print("LOW INDEX: \(lowNoteIndex)")
 }
 
 func setToOnlyTrebleClefWhiteKeys() {
@@ -341,7 +339,6 @@ func setToPreviousNoteChoices() {
 
 func setRandomNewNoteUpperIndex() {
     randomNewNoteIndexUpperLimit = currentNoteChoices.count - 1
-    print("randomNewNoteIndexUpperLimit: \(randomNewNoteIndexUpperLimit)")
 }
 
 var lastRandomNumber: Int = -1
@@ -378,8 +375,5 @@ func updateNoteIndices() {
         lowNoteIndex = whiteNotesOnLargeKeyboard.firstIndex(of: currentNoteChoices[0]) ?? allNotesOnLargeKeyboard.firstIndex(of: currentNoteChoices[0]) ?? 0
         highNoteIndex = whiteNotesOnLargeKeyboard.firstIndex(of: currentNoteChoices.last!) ?? 29
     }
-    
-    print("highNoteIndex: \(highNoteIndex)")
-    print("lowNoteIndex: \(lowNoteIndex)")
 
 }

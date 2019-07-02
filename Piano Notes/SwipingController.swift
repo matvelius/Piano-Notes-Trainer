@@ -59,7 +59,6 @@ class SwipingController: UICollectionViewController, UICollectionViewDelegateFlo
         // when user swipes to last slide, append to lessonsCompleted
         if currentSlideIndex == allLessons[currentLesson].count - 1 {
             lessonsCompleted.append(currentLesson)
-            print("lessonsCompleted: \(lessonsCompleted)")
         }
 //        print("named: lesson1[currentSlideIndex]: \(lesson1[currentSlideIndex])")
 //        print("swiping!")

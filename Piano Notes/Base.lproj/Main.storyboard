@@ -3639,7 +3639,7 @@
                         </collectionViewFlowLayout>
                         <cells>
                             <collectionViewCell opaque="NO" multipleTouchEnabled="YES" contentMode="scaleToFill" reuseIdentifier="cellID" id="Lbx-5r-30Q" customClass="LessonSlideCollectionViewCell" customModule="Piano_Notes" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.5" width="1377" height="929"/>
+                                <rect key="frame" x="0.0" y="-22" width="1377" height="929"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                     <rect key="frame" x="0.0" y="0.0" width="1377" height="929"/>
@@ -3777,14 +3777,15 @@
             </objects>
             <point key="canvasLocation" x="1298" y="721"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Custom Navigation Controller View Controller-->
         <scene sceneID="7wt-Ie-AUp">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="qaA-kj-6H0" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="qaA-kj-6H0" customClass="CustomNavigationControllerViewController" customModule="Piano_Notes" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="o7I-dg-e3U" customClass="CINavigationBar" customModule="Piano_Notes" customModuleProvider="target">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="o7I-dg-e3U">
                         <rect key="frame" x="0.0" y="24" width="1366" height="50"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -3798,8 +3799,9 @@
         <!--Sections Tab Bar Controller-->
         <scene sceneID="P9M-yi-v5L">
             <objects>
-                <tabBarController storyboardIdentifier="Sections" automaticallyAdjustsScrollViewInsets="NO" id="AWR-ed-pf4" customClass="SectionsTabBarController" customModule="Piano_Notes" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="Sections" automaticallyAdjustsScrollViewInsets="NO" modalTransitionStyle="crossDissolve" id="AWR-ed-pf4" customClass="SectionsTabBarController" customModule="Piano_Notes" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
+                    <nil key="simulatedTopBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleAspectFill" insetsLayoutMarginsFromSafeArea="NO" id="OLF-Md-idA">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>

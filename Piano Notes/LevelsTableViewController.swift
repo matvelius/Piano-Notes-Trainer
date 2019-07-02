@@ -13,6 +13,10 @@ class LevelsTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+//        if #available(iOS 11.0, *) {
+//            self.contentInsetAdjustmentBehavior = .never
+//        }
+        
         tableView.backgroundView = UIImageView(image: UIImage(named: "intro_screen_background_blurry"))
 
         // Uncomment the following line to preserve selection between presentations
