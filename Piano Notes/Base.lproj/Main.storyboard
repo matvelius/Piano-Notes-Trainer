@@ -3484,6 +3484,9 @@
                                     <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zbd-ox-fRn" userLabel="Learn Button">
                                         <rect key="frame" x="0.0" y="0.0" width="328.5" height="101"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="zbd-ox-fRn" secondAttribute="height" multiplier="328:101" id="Ge8-xR-Jmv"/>
+                                        </constraints>
                                         <size key="titleShadowOffset" width="2" height="2"/>
                                         <state key="normal" image="intro_screen_learn_normal">
                                             <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -3529,7 +3532,6 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="zGW-Cx-JJM" firstAttribute="centerX" secondItem="Erg-dK-lbL" secondAttribute="centerX" id="2Cj-5S-XTN"/>
-                            <constraint firstItem="zbd-ox-fRn" firstAttribute="height" secondItem="KU1-L2-hcT" secondAttribute="height" multiplier="101.2:980" id="45i-Gy-KSq"/>
                             <constraint firstItem="zGW-Cx-JJM" firstAttribute="top" secondItem="KU1-L2-hcT" secondAttribute="top" constant="270" id="DKi-6g-T1x"/>
                             <constraint firstItem="zbd-ox-fRn" firstAttribute="width" secondItem="KU1-L2-hcT" secondAttribute="width" multiplier="328.4:1366" id="jGH-jz-Hrd"/>
                             <constraint firstItem="iOD-Lf-Rja" firstAttribute="width" secondItem="KU1-L2-hcT" secondAttribute="width" multiplier="275:1366" id="kQ2-tk-AJO"/>
@@ -3865,7 +3867,7 @@
         <image name="white_piano_12.9_large" width="910.66668701171875" height="538.66668701171875"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Nhi-lG-mWi"/>
-        <segue reference="h7l-c7-UJA"/>
+        <segue reference="Ojy-u5-yal"/>
+        <segue reference="gpG-aX-QFw"/>
     </inferredMetricsTieBreakers>
 </document>
