@@ -26,6 +26,7 @@ class InitialViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toSections" {
             if let vc = segue.destination as? UITabBarController {
+                vc.modalPresentationStyle = .fullScreen
                 vc.selectedIndex = currentSection
             }
         }
