@@ -514,6 +514,8 @@ class NotesOnStaffViewController: UIViewController {
     var noteOnStaffImageLocationAdjustment: Double = 0
     var noteOnStaffLocationFactor: Double = 0
     
+    @IBOutlet weak var copyrightLabel: UILabel!
+    
     // REFACTOR SOME (MOST?) OF THIS TO viewDidAppear() ?!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -550,6 +552,8 @@ class NotesOnStaffViewController: UIViewController {
         // TODO: - Change this depending on level
 //        currentNoteChoices = allNotesOnLargeKeyboard
 //        setRandomNewNoteUpperIndex()
+        
+        self.copyrightLabel.text = "© \(Calendar.current.component(.year, from: Date())) MATVEY"
     }
     
     // indices for note range settings in menu

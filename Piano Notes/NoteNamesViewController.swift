@@ -433,6 +433,8 @@ class NoteNamesViewController: UIViewController {
         checkAnswer()
     }
     
+    @IBOutlet weak var copyrightLabel: UILabel!
+    
     // REFACTOR SOME (MOST?) OF THIS TO viewDidAppear() ?!
     override func viewDidLoad() {
         
@@ -552,6 +554,8 @@ class NoteNamesViewController: UIViewController {
         weirdEnharmonicsEnabled = false
         
         blackKeySettingsSegmentedControlOutlet.isEnabled = true
+        
+        self.copyrightLabel.text = "© \(Calendar.current.component(.year, from: Date())) MATVEY"
         
     }
     

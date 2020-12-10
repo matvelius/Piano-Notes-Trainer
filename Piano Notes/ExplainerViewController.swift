@@ -14,6 +14,9 @@ class ExplainerViewController: UIViewController {
     var explainerEndIndex = 6
     var explainerCurrentIndex = 1
     
+    @IBOutlet weak var mainView: UIView!
+    
+    @IBOutlet weak var cover: UIView!
     
     @IBOutlet weak var progressBar: UIProgressView!
     
@@ -27,6 +30,8 @@ class ExplainerViewController: UIViewController {
     @IBOutlet weak var navTriangleLeft: UIButton!
     
     @IBOutlet weak var navTriangleRight: UIButton!
+    
+    @IBOutlet weak var skip: UIButton!
     
     @IBAction func navTriangleLeftPressed(_ sender: UIButton) {
         
@@ -68,10 +73,32 @@ class ExplainerViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.mainView.alpha = 0
+        self.navTriangleLeft.alpha = 0
+        self.navTriangleRight.alpha = 0
+        self.skip.alpha = 0
+        self.progressBar.alpha = 0
+        self.explainerImage.alpha = 0
+        
+        self.cover.alpha = 1
     }
     
     
     override func viewDidAppear(_ animated: Bool) {
+        
+        super.viewDidAppear(animated)
+        
+        UIView.animate(withDuration: 1) {
+            self.mainView.alpha = 1.0
+            self.navTriangleLeft.alpha = 1.0
+            self.navTriangleRight.alpha = 1.0
+            self.skip.alpha = 1.0
+            self.progressBar.alpha = 1.0
+            self.explainerImage.alpha = 1.0
+            
+            self.cover.alpha = 0
+        }
         
         switch currentGameType {
         case .noteNames:
@@ -95,7 +122,27 @@ class ExplainerViewController: UIViewController {
         updateProgressBar()
     }
     
+//    override func viewWillDisappear(_ animated: Bool) {
+//        self.mainView.alpha = 0
+//        self.navTriangleLeft.alpha = 0
+//        self.navTriangleRight.alpha = 0
+//        self.skip.alpha = 0
+//        self.progressBar.alpha = 0
+//        print("view will disappear")
+//    }
+    
     func segueToGame() {
+        
+        UIView.animate(withDuration: 1) {
+            self.mainView.alpha = 0
+            self.navTriangleLeft.alpha = 0
+            self.navTriangleRight.alpha = 0
+            self.skip.alpha = 0
+            self.progressBar.alpha = 0
+            self.explainerImage.alpha = 0
+            
+            self.cover.alpha = 1
+        }
         
         switch currentGameType {
         case .noteNames:
