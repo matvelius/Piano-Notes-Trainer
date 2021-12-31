@@ -554,6 +554,13 @@ class NotesOnStaffViewController: UIViewController {
 //        setRandomNewNoteUpperIndex()
         
         self.copyrightLabel.text = "© \(Calendar.current.component(.year, from: Date())) MATVEY"
+        
+        // fixes sound not working on device
+        do {
+            try AVAudioSession.sharedInstance().setCategory(.playAndRecord)
+        } catch {
+            print ("There is an issue with this code!")
+        }
     }
     
     // indices for note range settings in menu

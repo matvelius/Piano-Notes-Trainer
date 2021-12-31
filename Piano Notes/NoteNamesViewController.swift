@@ -557,6 +557,12 @@ class NoteNamesViewController: UIViewController {
         
         self.copyrightLabel.text = "© \(Calendar.current.component(.year, from: Date())) MATVEY"
         
+        // fixes sound not working on device
+        do {
+            try AVAudioSession.sharedInstance().setCategory(.playAndRecord)
+        } catch {
+            print ("There is an issue with this code!")
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -1116,6 +1122,7 @@ class NoteNamesViewController: UIViewController {
                 // try to initialize with the URL created above
                 audioPlayer = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: sound))
                 audioPlayer?.prepareToPlay()
+                print("*** sound loaded")
             }
             catch {
                 print(error)
