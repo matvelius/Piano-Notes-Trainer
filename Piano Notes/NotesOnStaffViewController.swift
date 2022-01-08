@@ -46,13 +46,10 @@ class NotesOnStaffViewController: UIViewController {
     
     
     @IBAction func keyButtonDraggedOutside(_ sender: UIButton) {
+        pianoNoteDisplayed.image = nil
     }
     
     @IBAction func sharpButtonPressed(_ sender: UIButton) {
-        
-//        let currentNoteOnStaffImageNameSecondToLastCharacter = currentNoteOnStaffImageName[currentNoteOnStaffImageName.index(currentNoteOnStaffImageName.endIndex, offsetBy: -2)]
-        
-        
         if  currentAccidental == .neither {
             
             currentAccidental = .sharp
